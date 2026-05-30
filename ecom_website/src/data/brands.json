@@ -1,0 +1,23 @@
+[
+  {
+    "id": "brand-1",
+    "name": "GreenLife",
+    "slug": "greenlife",
+    "description": "GreenLife creates everyday household essentials made from certified organic, renewable bamboo and plant fibers.",
+    "logo": "/images/brands/greenlife.png"
+  },
+  {
+    "id": "brand-2",
+    "name": "EarthGlow",
+    "slug": "earthglow",
+    "description": "EarthGlow is dedicated to formulating clean, zero-waste skin and personal care products using natural botanical extracts.",
+    "logo": "/images/brands/earthglow.png"
+  },
+  {
+    "id": "brand-3",
+    "name": "TerraWare",
+    "slug": "terraware",
+    "description": "TerraWare manufactures highly durable, reusable steel and glass products to help people transition away from single-use plastics.",
+    "logo": "/images/brands/terraware.png"
+  }
+]

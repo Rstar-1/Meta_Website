@@ -1,0 +1,23 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Kitchen & Dining",
+    "slug": "kitchen-dining",
+    "description": "Durable, reusable, and plastic-free solutions for a zero-waste kitchen.",
+    "image": "/images/categories/kitchen.jpg"
+  },
+  {
+    "id": "cat-2",
+    "name": "Personal Care",
+    "slug": "personal-care",
+    "description": "Organic, cruelty-free, and natural body care products that are kind to you and the planet.",
+    "image": "/images/categories/personal-care.jpg"
+  },
+  {
+    "id": "cat-3",
+    "name": "Home & Lifestyle",
+    "slug": "home-lifestyle",
+    "description": "Eco-friendly accessories and utility items designed to elevate sustainable living at home.",
+    "image": "/images/categories/home-lifestyle.jpg"
+  }
+]

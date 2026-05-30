@@ -1,0 +1,82 @@
+[
+  {
+    "id": "prod-1",
+    "name": "Premium Bamboo Utensil Set",
+    "slug": "premium-bamboo-utensil-set",
+    "description": "A lightweight, travel-friendly set of reusable utensils made from 100% natural, organic bamboo. Perfect for office lunches, camping, and picnics.",
+    "price": "14.99",
+    "priceCurrency": "USD",
+    "inStock": true,
+    "sku": "BAM-UT-001",
+    "mpn": "BAMUT001",
+    "brand": "GreenLife",
+    "category": "Kitchen & Dining",
+    "images": ["/images/products/bamboo-utensils-1.jpg", "/images/products/bamboo-utensils-2.jpg"],
+    "tags": ["bamboo", "utensils", "reusable", "kitchen", "zero-waste"],
+    "priceValidUntil": "2030-12-31",
+    "aggregateRating": {
+      "ratingValue": "4.8",
+      "reviewCount": "12"
+    }
+  },
+  {
+    "id": "prod-2",
+    "name": "Organic Bamboo Cotton Swabs",
+    "slug": "organic-bamboo-cotton-swabs",
+    "description": "Pack of 200 biodegradable cotton swabs with organic cotton tips and sustainable bamboo sticks. 100% compostable and plastic-free.",
+    "price": "5.99",
+    "priceCurrency": "USD",
+    "inStock": true,
+    "sku": "BAM-SW-002",
+    "mpn": "BAMSW002",
+    "brand": "GreenLife",
+    "category": "Personal Care",
+    "images": ["/images/products/cotton-swabs-1.jpg"],
+    "tags": ["cotton swabs", "bamboo", "biodegradable", "hygiene", "compostable"],
+    "priceValidUntil": "2030-12-31",
+    "aggregateRating": {
+      "ratingValue": "4.9",
+      "reviewCount": "45"
+    }
+  },
+  {
+    "id": "prod-3",
+    "name": "Zero-Waste Organic Shampoo Bar",
+    "slug": "zero-waste-organic-shampoo-bar",
+    "description": "A highly concentrated, long-lasting shampoo bar infused with organic coconut oil and lavender. Equivalent to two liquid shampoo bottles, plastic-free packaging.",
+    "price": "12.50",
+    "priceCurrency": "USD",
+    "inStock": true,
+    "sku": "SHM-BAR-003",
+    "mpn": "SHMBAR003",
+    "brand": "EarthGlow",
+    "category": "Personal Care",
+    "images": ["/images/products/shampoo-bar-1.jpg", "/images/products/shampoo-bar-2.jpg"],
+    "tags": ["shampoo bar", "organic", "zero-waste", "hair care", "lavender"],
+    "priceValidUntil": "2030-12-31",
+    "aggregateRating": {
+      "ratingValue": "4.7",
+      "reviewCount": "28"
+    }
+  },
+  {
+    "id": "prod-4",
+    "name": "Double-Walled Insulated Steel Bottle",
+    "slug": "double-walled-insulated-steel-bottle",
+    "description": "Keeps your drinks ice-cold for 24 hours or piping hot for 12 hours. Made of premium food-grade 18/8 stainless steel with a leak-proof bamboo cap.",
+    "price": "29.99",
+    "priceCurrency": "USD",
+    "inStock": true,
+    "sku": "STL-BTL-004",
+    "mpn": "STLBTL004",
+    "brand": "TerraWare",
+    "category": "Home & Lifestyle",
+    "images": ["/images/products/steel-bottle-1.jpg"],
+    "tags": ["bottle", "stainless steel", "insulated", "reusable", "hydration"],
+    "priceValidUntil": "2030-12-31",
+    "aggregateRating": {
+      "ratingValue": "4.9",
+      "reviewCount": "64"
+    }
+  }
+]

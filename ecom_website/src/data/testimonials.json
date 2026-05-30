@@ -1,0 +1,26 @@
+[
+  {
+    "id": "test-1",
+    "name": "Sarah Jenkins",
+    "role": "Verified Buyer",
+    "rating": 5,
+    "feedback": "I absolutely love the bamboo utensil set! It is super lightweight, sturdy, and fits perfectly in my purse. Plus, the packaging was completely plastic-free!",
+    "avatar": "/images/avatars/sarah.jpg"
+  },
+  {
+    "id": "test-2",
+    "name": "Michael Chen",
+    "role": "Sustainable Lifestyle Blogger",
+    "rating": 5,
+    "feedback": "The lavender shampoo bar is a complete game-changer. It lathers up beautifully, leaves my hair feeling incredibly clean, and saves so much plastic waste. Highly recommended!",
+    "avatar": "/images/avatars/michael.jpg"
+  },
+  {
+    "id": "test-3",
+    "name": "Emily Watson",
+    "role": "Eco-Conscious Parent",
+    "rating": 4,
+    "feedback": "Great customer support and fast shipping. The insulated steel bottle keeps my water ice-cold all day during summer trips. Will definitely be ordering again.",
+    "avatar": "/images/avatars/emily.jpg"
+  }
+]
