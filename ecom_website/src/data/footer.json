@@ -1,0 +1,87 @@
+{
+  "brand": {
+    "logo": "⚙️",
+    "name": "Metatech",
+    "description": "ISO 9001:2015 certified engineering and automated manufacturing solutions for global B2B operations and assembly.",
+    "socials": [
+      {
+        "platform": "facebook",
+        "icon": "f",
+        "url": "#"
+      },
+      {
+        "platform": "twitter",
+        "icon": "t",
+        "url": "#"
+      },
+      {
+        "platform": "instagram",
+        "icon": "i",
+        "url": "#"
+      }
+    ]
+  },
+  "columns": [
+    {
+      "title": "Quick Links",
+      "links": [
+        {
+          "label": "Home",
+          "path": "/"
+        },
+        {
+          "label": "Systems Catalog",
+          "path": "/products"
+        },
+        {
+          "label": "Departments",
+          "path": "/category"
+        },
+        {
+          "label": "Partners",
+          "path": "/brands"
+        }
+      ]
+    },
+    {
+      "title": "Commissioning Support",
+      "links": [
+        {
+          "label": "About Group",
+          "path": "/about"
+        },
+        {
+          "label": "Contact Desk",
+          "path": "/contact"
+        },
+        {
+          "label": "Engineering Insights",
+          "path": "/blog"
+        },
+        {
+          "label": "RFQ Portal",
+          "path": "/enquiry"
+        }
+      ]
+    }
+  ],
+  "newsletter": {
+    "title": "Technical Updates",
+    "description": "Get automation updates, engineering journals, and catalog releases.",
+    "placeholder": "Corporate email...",
+    "buttonText": "Subscribe"
+  },
+  "bottom": {
+    "copyright": "© 2026 Metatech Industries. All rights reserved. Registered ISO-9001 Facility.",
+    "links": [
+      {
+        "label": "Security Statement",
+        "url": "#"
+      },
+      {
+        "label": "Terms of Machinery Commissioning",
+        "url": "#"
+      }
+    ]
+  }
+}

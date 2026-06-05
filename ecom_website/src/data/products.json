@@ -1,82 +1,113 @@
 [
   {
     "id": "prod-1",
-    "name": "Premium Bamboo Utensil Set",
-    "slug": "premium-bamboo-utensil-set",
-    "description": "A lightweight, travel-friendly set of reusable utensils made from 100% natural, organic bamboo. Perfect for office lunches, camping, and picnics.",
-    "price": "14.99",
+    "name": "CNC Laser Head Assembly v4",
+    "slug": "cnc-laser-head-assembly-v4",
+    "description": "A high-performance laser calibration module for CNC machines. Features dual-axis optics, carbon fiber housing, and integrated water cooling channels.",
+    "price": "2499.00",
     "priceCurrency": "USD",
     "inStock": true,
-    "sku": "BAM-UT-001",
-    "mpn": "BAMUT001",
-    "brand": "GreenLife",
-    "category": "Kitchen & Dining",
-    "images": ["/images/products/bamboo-utensils-1.jpg", "/images/products/bamboo-utensils-2.jpg"],
-    "tags": ["bamboo", "utensils", "reusable", "kitchen", "zero-waste"],
+    "sku": "CNC-LSR-V4",
+    "mpn": "CNCLSRV4",
+    "brand": "Optima Laser",
+    "category": "Precision Tooling",
+    "images": [
+      "/images/products/laser-1.jpg"
+    ],
+    "tags": [
+      "cnc",
+      "laser",
+      "tooling",
+      "optics",
+      "manufacturing"
+    ],
     "priceValidUntil": "2030-12-31",
     "aggregateRating": {
-      "ratingValue": "4.8",
-      "reviewCount": "12"
+      "ratingValue": "4.9",
+      "reviewCount": "18"
     }
   },
   {
     "id": "prod-2",
-    "name": "Organic Bamboo Cotton Swabs",
-    "slug": "organic-bamboo-cotton-swabs",
-    "description": "Pack of 200 biodegradable cotton swabs with organic cotton tips and sustainable bamboo sticks. 100% compostable and plastic-free.",
-    "price": "5.99",
+    "name": "Industrial Robotic Arm Armature",
+    "slug": "industrial-robotic-arm-armature",
+    "description": "Six-axis robotic manipulator arm designed for fast material handling, high-speed sorting, and precision welding. Seamless integration with standard PLCs.",
+    "price": "14500.00",
     "priceCurrency": "USD",
     "inStock": true,
-    "sku": "BAM-SW-002",
-    "mpn": "BAMSW002",
-    "brand": "GreenLife",
-    "category": "Personal Care",
-    "images": ["/images/products/cotton-swabs-1.jpg"],
-    "tags": ["cotton swabs", "bamboo", "biodegradable", "hygiene", "compostable"],
+    "sku": "ROB-ARM-6X",
+    "mpn": "ROBARM6X",
+    "brand": "Apex Robotics",
+    "category": "Robotics & Automation",
+    "images": [
+      "/images/products/robotic-arm-1.jpg"
+    ],
+    "tags": [
+      "robotics",
+      "automation",
+      "assembly",
+      "robotic arm"
+    ],
     "priceValidUntil": "2030-12-31",
     "aggregateRating": {
-      "ratingValue": "4.9",
-      "reviewCount": "45"
+      "ratingValue": "4.8",
+      "reviewCount": "24"
     }
   },
   {
     "id": "prod-3",
-    "name": "Zero-Waste Organic Shampoo Bar",
-    "slug": "zero-waste-organic-shampoo-bar",
-    "description": "A highly concentrated, long-lasting shampoo bar infused with organic coconut oil and lavender. Equivalent to two liquid shampoo bottles, plastic-free packaging.",
-    "price": "12.50",
+    "name": "High-Load Hydraulic Press Unit",
+    "slug": "high-load-hydraulic-press-unit",
+    "description": "50-ton hydraulic forging press equipped with digital load monitoring, automated cycle control, and safety light curtains.",
+    "price": "8900.00",
     "priceCurrency": "USD",
     "inStock": true,
-    "sku": "SHM-BAR-003",
-    "mpn": "SHMBAR003",
-    "brand": "EarthGlow",
-    "category": "Personal Care",
-    "images": ["/images/products/shampoo-bar-1.jpg", "/images/products/shampoo-bar-2.jpg"],
-    "tags": ["shampoo bar", "organic", "zero-waste", "hair care", "lavender"],
+    "sku": "HYD-PRS-50T",
+    "mpn": "HYDPRS50T",
+    "brand": "Titan Hydraulics",
+    "category": "Heavy Machinery",
+    "images": [
+      "/images/products/press-1.jpg"
+    ],
+    "tags": [
+      "hydraulics",
+      "press",
+      "forging",
+      "machinery",
+      "heavy duty"
+    ],
     "priceValidUntil": "2030-12-31",
     "aggregateRating": {
       "ratingValue": "4.7",
-      "reviewCount": "28"
+      "reviewCount": "12"
     }
   },
   {
     "id": "prod-4",
-    "name": "Double-Walled Insulated Steel Bottle",
-    "slug": "double-walled-insulated-steel-bottle",
-    "description": "Keeps your drinks ice-cold for 24 hours or piping hot for 12 hours. Made of premium food-grade 18/8 stainless steel with a leak-proof bamboo cap.",
-    "price": "29.99",
+    "name": "Pneumatic Actuator Control Grid",
+    "slug": "pneumatic-actuator-control-grid",
+    "description": "Multi-valve digital manifold assembly for micro-second control of heavy pneumatic cylinders. Supports EtherNet/IP and Modbus TCP protocols.",
+    "price": "1250.00",
     "priceCurrency": "USD",
     "inStock": true,
-    "sku": "STL-BTL-004",
-    "mpn": "STLBTL004",
-    "brand": "TerraWare",
-    "category": "Home & Lifestyle",
-    "images": ["/images/products/steel-bottle-1.jpg"],
-    "tags": ["bottle", "stainless steel", "insulated", "reusable", "hydration"],
+    "sku": "PNM-VAL-MNF",
+    "mpn": "PNMVALMNF",
+    "brand": "Titan Hydraulics",
+    "category": "Robotics & Automation",
+    "images": [
+      "/images/products/manifold-1.jpg"
+    ],
+    "tags": [
+      "pneumatics",
+      "actuators",
+      "manifold",
+      "valves",
+      "control system"
+    ],
     "priceValidUntil": "2030-12-31",
     "aggregateRating": {
       "ratingValue": "4.9",
-      "reviewCount": "64"
+      "reviewCount": "32"
     }
   }
 ]

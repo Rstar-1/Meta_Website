@@ -1,18 +1,18 @@
 [
   {
-    "question": "What materials are your eco-friendly products made of?",
-    "answer": "Our products are manufactured using certified sustainable and natural materials such as organic bamboo, organic cotton, food-grade stainless steel, and plant-based biodegradable composites."
+    "question": "What quality certifications do your components hold?",
+    "answer": "All Apex Industrial products are manufactured under strict ISO 9001:2015 quality management standards and carry relevant CE, UL, and RoHS safety certifications."
   },
   {
-    "question": "Do you offer plastic-free shipping?",
-    "answer": "Yes, we are 100% committed to zero-waste shipping. All our orders are packed using recycled paper boxes, compostable paper tape, and biodegradable cornstarch peanuts."
+    "question": "Do you provide custom engineering configurations?",
+    "answer": "Yes, our in-house engineering team provides design modification services, custom CAD blueprints, and custom-tuned control firmware tailored to your facility automation needs."
   },
   {
-    "question": "Can I recycle or compost the packaging?",
-    "answer": "Absolutely! All cardboard boxes and paper tape can be recycled in your regular recycling bin. Our packing peanuts are water-soluble and can be composted or dissolved safely in water."
+    "question": "What is the standard lead time for B2B wholesale orders?",
+    "answer": "Stock components ship within 3-5 business days. Custom engineering, customized manifold brackets, or high-volume orders usually require a lead time of 4 to 6 weeks."
   },
   {
-    "question": "How long does standard delivery take?",
-    "answer": "Standard domestic delivery usually takes between 3 to 5 business days. Once your order has shipped, you will receive a tracking link via email."
+    "question": "Do you provide onsite installation support?",
+    "answer": "We offer remote digital commissioning tutorials and optional onsite engineering support for mechanical installation, calibration, and PLC programming integrations."
   }
 ]

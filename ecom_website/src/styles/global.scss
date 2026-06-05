@@ -1,0 +1,59 @@
+/* ======================= Start-NavFoot ======================= */
+.navbar .activetext {
+    color: var(--gray);
+}
+
+.navbar .active {
+    color: var(--warning) !important;
+}
+
+.navbar .navhide {
+    position: absolute;
+    right: -50%;
+    width: 50% !important;
+    transition: all 0.3s ease-in 0s;
+}
+
+.navbar .navview {
+    position: absolute;
+    right: 0%;
+    width: 100% !important;
+    transition: all 0.3s ease-in 0s;
+}
+
+/* ======================= End-NavFoot ======================= */
+
+/* ======================= Start-Hero ======================= */
+.animate-hero-bg {
+  animation: heroBgFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-hero-content {
+  animation: heroContentSlide 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+@keyframes heroBgFade {
+  0% {
+    filter: blur(10px);
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes heroContentSlide {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* ======================= End-Hero ======================= */
