@@ -15,6 +15,9 @@ const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
 const Enquiry = lazy(() => import('../pages/enquiry/Enquiry'))
 const Contact = lazy(() => import('../pages/contact/Contact'))
 const About = lazy(() => import('../pages/about/About'))
+const Home2 = lazy(() => import('../pages/home2/Home2'))
+const Home3 = lazy(() => import('../pages/home3/Home3'))
+const Home4 = lazy(() => import('../pages/home4/Home4'))
 
 // 🔐 Protected Route (simple version)
 const ProtectedRoute = ({ children }) => {
@@ -42,6 +45,9 @@ function AppRoutes() {
           <Route path="connect" element={<Contact />} />
           <Route path="about" element={<About />} />
         </Route>
+        <Route path="home2" element={<Home2 />} />
+        <Route path="home3" element={<Home3 />} />
+        <Route path="home4" element={<Home4 />} />
         <Route path="*" element={<h2 style={{ textAlign: 'center', padding: '100px 20px', fontFamily: 'Outfit, sans-serif' }}>404 - Page Not Found</h2>} />
       </Routes>
     </Suspense>
