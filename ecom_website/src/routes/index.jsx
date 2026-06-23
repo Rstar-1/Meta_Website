@@ -15,15 +15,7 @@ const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
 const Enquiry = lazy(() => import('../pages/enquiry/Enquiry'))
 const Contact = lazy(() => import('../pages/contact/Contact'))
 const About = lazy(() => import('../pages/about/About'))
-const Home4 = lazy(() => import('../pages/home4/Home4'))
 
-// 🔐 Protected Route (simple version)
-const ProtectedRoute = ({ children }) => {
-  const auth = JSON.parse(localStorage.getItem('appState'))
-  const isLoggedIn = auth?.auth?.isLoggedIn
-
-  return isLoggedIn ? children : <Navigate to="/login" replace />
-}
 
 function AppRoutes() {
   return (
@@ -43,7 +35,6 @@ function AppRoutes() {
           <Route path="connect" element={<Contact />} />
           <Route path="about" element={<About />} />
         </Route>
-        <Route path="home4" element={<Home4 />} />
         <Route path="*" element={<h2 style={{ textAlign: 'center', padding: '100px 20px', fontFamily: 'Outfit, sans-serif' }}>404 - Page Not Found</h2>} />
       </Routes>
     </Suspense>

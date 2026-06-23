@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-// 🧩 Import Justdial UI Sections
-import Header from './sections/Header';
 import Hero from './sections/Hero';
 import BrowseCategory from './sections/BrowseCategory';
 import PopularProducts from './sections/PopularProducts';
@@ -12,7 +10,6 @@ import BusinessPromo from './sections/BusinessPromo';
 import AppPromo from './sections/AppPromo';
 import LatestArticles from './sections/LatestArticles';
 import TopCities from './sections/TopCities';
-import Footer from './sections/Footer';
 
 // 🎨 Import Styles (SCSS)
 import themeStyles from '../../styles/theme.scss?inline';
@@ -128,13 +125,8 @@ const Home4 = () => {
 
   return (
     <ShadowContainer css={`${themeStyles}\n${structureStyles}\n${home4Styles}`}>
-      <div className="home4-wrapper">
-        {/* 🧭 Header */}
-        <Header
-          onSearch={handleSearch}
-          onCategorySelect={handleSubNavSelect}
-          activeSubNav={activeSubNav}
-        />
+      <>
+
 
         {/* ⚡ Hero Banner */}
         <Hero onSearch={handleSearch} />
@@ -163,10 +155,7 @@ const Home4 = () => {
         {/* 📍 Top Cities Links */}
         <TopCities onCitySelect={handleCitySelect} />
 
-        {/* 🦶 Footer */}
-        <Footer onSocialClick={handleSocialClick} />
 
-        {/* 🍞 Interactive Notification Toast Stack */}
         <div className="home4-toasts-stack">
           {toasts.map((toast) => (
             <div
@@ -178,7 +167,7 @@ const Home4 = () => {
             </div>
           ))}
         </div>
-      </div>
+      </>
     </ShadowContainer>
   );
 };
