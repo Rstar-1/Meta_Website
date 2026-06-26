@@ -23,33 +23,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer ref={footerRef} className="bg-white w-full py-60">
-      <style>{`
-        .footer-link {
-          color: #6b6375 !important;
-          transition: color 0.2s ease !important;
-        }
-        .footer-link:hover {
-          color: var(--primary) !important;
-        }
-        .social-link {
-          transition: all 0.2s ease !important;
-        }
-        .social-link:hover {
-          background: var(--primary) !important;
-          color: var(--white) !important;
-          border-color: var(--primary) !important;
-          transform: translateY(-2px) !important;
-        }
-        .newsletter-input:focus {
-          border-color: var(--primary) !important;
-        }
-        .newsletter-btn:hover {
-          background: var(--primary) !important;
-          opacity: 0.9;
-        }
-      `}</style>
-
+    <footer ref={footerRef} className="bg-dark w-full py-50" style={{ backgroundColor: '#0f1623' }}>
       <Container>
         <div>
           <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
@@ -63,11 +37,8 @@ const Footer = () => {
                 opacity: isVisible ? 1 : 0
               }}
             >
-              <div className="flex items-center gap-6 mb-15">
-                <span className='title-text'>{footerData.brand.logo}</span>
-                <span className="title-text font-700 text-dark">{footerData.brand.name}</span>
-              </div>
-              <p className="para-text" style={{ color: "#6b6375" }}>
+              <h4 className="title-text font-700 text-white">{footerData.brand.name}</h4>
+              <p className="small-text font-500 mt-8" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
                 {footerData.brand.description}
               </p>
               <div className="flex gap-12 mt-30">
@@ -75,8 +46,8 @@ const Footer = () => {
                   <a
                     key={idx}
                     href={social.url}
-                    className="social-link center-div border-ec rounded-full"
-                    style={{ width: '36px', height: '36px', backgroundColor: 'rgba(122, 27, 231, 0.05)', color: '#0f1623' }}
+                    className="social-link center-div rounded-full"
+                    style={{ width: '36px', height: '36px', backgroundColor: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)' }}
                   >
                     {social.icon}
                   </a>
@@ -96,7 +67,7 @@ const Footer = () => {
                   transitionDelay: `${(idx + 1) * 150}ms`
                 }}
               >
-                <h3 className="text-dark mid-text mb-20 font-600">{col.title}</h3>
+                <h3 className="text-white mid-text mb-20 font-600">{col.title}</h3>
                 <ul className="list-none" style={{ padding: 0, margin: 0 }}>
                   {col.links.map((link, linkIdx) => (
                     <li key={linkIdx} className="mb-12">
@@ -122,21 +93,21 @@ const Footer = () => {
                 transitionDelay: `${(footerData.columns.length + 1) * 150}ms`
               }}
             >
-              <h3 className="text-dark mid-text mb-20 font-600">{footerData.newsletter.title}</h3>
-              <p className="small-text" style={{ color: "#6b6375" }}>
+              <h3 className="text-white mid-text mb-20 font-600">{footerData.newsletter.title}</h3>
+              <p className="small-text" style={{ color: "rgba(255, 255, 255, 0.6)" }}>
                 {footerData.newsletter.description}
               </p>
               <form className="flex gap-8 mt-15" onSubmit={(e) => { e.preventDefault(); alert('Subscribed!') }}>
                 <input
                   type="email"
                   placeholder={footerData.newsletter.placeholder}
-                  className="bg-white border-ec rounded-5 px-12 py-8 text-dark"
+                  className="newsletter-input rounded-5 px-12 py-8 text-white"
                   style={{ flex: 1, outline: 'none' }}
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-primary text-white border-0 px-14 py-8 rounded-5 font-600 cursor-pointer"
+                  className="newsletter-btn bg-primary text-white border-0 px-14 py-8 rounded-5 font-600 cursor-pointer"
                 >
                   {footerData.newsletter.buttonText}
                 </button>
@@ -149,9 +120,9 @@ const Footer = () => {
           <div
             className="flex justify-between items-center sm-flex-column sm-text-center mt-40 pt-25"
             style={{
-              borderTop: "1px solid #e5e4e7",
+              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
               gap: "15px",
-              color: "#6b6375",
+              color: "rgba(255, 255, 255, 0.5)",
               transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
               transform: isVisible ? "translateY(0)" : "translateY(30px)",
               opacity: isVisible ? 1 : 0,

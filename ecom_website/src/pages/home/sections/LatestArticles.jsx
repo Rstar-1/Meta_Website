@@ -1,47 +1,59 @@
-import React from 'react';
-import { articles } from '../data/home4Data';
+import articles from '../../../data/homeArticles.json';
+import Container from '../../../components/common/Container';
 
 const LatestArticles = ({ onArticleClick }) => {
-  // Helper to format tags into CSS classes
-  const getTagClass = (tag) => {
-    return `article-tag tag-${tag.toLowerCase().replace(/\s+/g, '-')}`;
-  };
+
 
   return (
-    <section className="home4-articles-section">
-      <div className="section-header">
-        <h2 className="section-title">Latest from Justdial</h2>
-        <a href="#articles-all" className="view-all-link">
-          View All Articles ➔
-        </a>
-      </div>
+    <Container className="bg-forth">
+      <div className="w-full pt-30 pb-20">
+        <div className="flex justify-between items-center mb-24">
+          <h2 className="title-text text-dark font-600">Latest from Justdial</h2>
+          <p className="text-primary font-500 cursor-pointer small-text">
+            View All Articles ➔
+          </p>
+        </div>
 
-      <div className="articles-grid">
-        {articles.map((article) => (
-          <article 
-            key={article.id} 
-            className="article-card"
-            onClick={() => onArticleClick && onArticleClick(article)}
-          >
-            <div className="article-img-box">
-              <img src={article.image} alt={article.title} loading="lazy" />
-            </div>
+        {/* Articles Grid */}
+        <div className='grid-cols-4 gap-12'>
+          {articles.map((article) => (
+            <article
+              key={article.id}
+              className="bg-white rounded-5 overflow-hidden cursor-pointer"
 
-            <div className="article-details">
-              <span className={getTagClass(article.tag)}>
-                {article.tag}
-              </span>
-              <h3 className="article-title">{article.title}</h3>
-              <div className="article-meta">
-                <span>{article.date}</span>
-                <span>•</span>
-                <span>{article.readTime}</span>
+            >
+              {/* Image box */}
+              <div className="overflow-hidden relative">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  loading="lazy"
+                  className="w-full h-200 object-cover"
+
+                />
               </div>
-            </div>
-          </article>
-        ))}
+
+              {/* Details */}
+              <div className="p-10">
+                <p
+                  className="px-12 py-5 rounded-5 font-600 mini-text mb-10 w-max bg-light-primary text-primary"
+                >
+                  {article.tag}
+                </p>
+
+                <h3
+                  className="text-dark font-600 mid-text line-clamp1"
+                >
+                  {article.title}
+                </h3>
+                <p className='text-primary font-500 mini-text mt-3'>{article.date} • {article.readTime}</p>
+                <p className='text-gray small-text line-clamp2 mt-7'>{article.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

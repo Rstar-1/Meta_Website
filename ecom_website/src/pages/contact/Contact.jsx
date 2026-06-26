@@ -1,6 +1,5 @@
 import React from 'react'
 import ContactForm from '../../components/forms/ContactForm'
-import PatchSection from '../home/sections/PatchSection'
 import Banner from '../../components/layout/Banner'
 import BlogList from '../blog/BlogList'
 
@@ -14,7 +13,6 @@ const Contact = () => {
       />
       <ContactForm />
       <BlogList />
-      <PatchSection />
     </>
   )
 }

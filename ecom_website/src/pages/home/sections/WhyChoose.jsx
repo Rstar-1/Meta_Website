@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Container from '../../../components/common/Container';
 
 const WhyChoose = () => {
+
   const points = [
     {
       id: 'wc-1',
@@ -29,21 +31,44 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="home4-why-choose-section">
-      <div className="why-choose-grid">
-        {points.map((point) => (
-          <div key={point.id} className="why-choose-card">
-            <div className="card-icon-box">
-              <span>{point.icon}</span>
+    <Container>
+      <div className="w-full p-30 my-20 bg-forth rounded-5">
+        <h2 className="title-text text-dark font-600">Why Choose Us ?</h2>
+        <p className="text-gray small-text mt-1">
+          Genuine & reliable business listings
+        </p>
+        <div className="grid-cols-4 gap-20 mt-30">
+          {points.map((point) => (
+            <div
+              key={point.id}
+              className="flex items-center gap-12"
+            >
+              <div className='w-20'>
+                <div
+                  className="flex items-center justify-center rounded-full"
+                  style={{
+                    backgroundColor: '#f3f4f6',
+                    width: '60px',
+                    height: '60px',
+                    fontSize: '22px'
+                  }}
+                >
+                  {point.icon}
+                </div>
+              </div>
+              <div className="w-80">
+                <h3 className="text-dark font-600 mid-text">
+                  {point.title}
+                </h3>
+                <p className="text-gray mini-text mt-2">
+                  {point.desc}
+                </p>
+              </div>
             </div>
-            <div className="why-choose-info">
-              <h3 className="why-choose-title">{point.title}</h3>
-              <p className="why-choose-desc">{point.desc}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

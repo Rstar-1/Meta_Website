@@ -1,0 +1,57 @@
+[
+  {
+    "id": "biz-1",
+    "name": "UrbanClap",
+    "category": "Home Services",
+    "rating": 4.6,
+    "reviews": "1.2K",
+    "location": "Delhi",
+    "phone": "9876543210",
+    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=500&auto=format&fit=crop",
+    "logo": "UC"
+  },
+  {
+    "id": "biz-2",
+    "name": "Apollo Hospitals",
+    "category": "Hospitals",
+    "rating": 4.8,
+    "reviews": "2.5K",
+    "location": "Delhi",
+    "phone": "9988776655",
+    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=500&auto=format&fit=crop",
+    "logo": "AH"
+  },
+  {
+    "id": "biz-3",
+    "name": "ICICI Bank",
+    "category": "Banks",
+    "rating": 4.5,
+    "reviews": "3.1K",
+    "location": "Delhi",
+    "phone": "9900112233",
+    "image": "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?q=80&w=500&auto=format&fit=crop",
+    "logo": "i"
+  },
+  {
+    "id": "biz-4",
+    "name": "Pizza Hut",
+    "category": "Restaurants",
+    "rating": 4.2,
+    "reviews": "845",
+    "location": "Delhi",
+    "phone": "9898989898",
+    "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500&auto=format&fit=crop",
+    "logo": "PH"
+  },
+  {
+    "id": "biz-5",
+    "name": "Blue Dart Express",
+    "category": "Courier Services",
+    "rating": 4.4,
+    "reviews": "982",
+    "location": "Delhi",
+    "phone": "9797979797",
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=500&auto=format&fit=crop",
+    "logo": "BD"
+  }
+]

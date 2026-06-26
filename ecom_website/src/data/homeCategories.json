@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Steel Pipes",
+    "icon": "⚙️",
+    "color": "#e8f0fe"
+  },
+  {
+    "id": "cat-2",
+    "name": "Steel Sheets",
+    "icon": "🛡️",
+    "color": "#fde8e8"
+  },
+  {
+    "id": "cat-3",
+    "name": "Steel Coils",
+    "icon": "🌀",
+    "color": "#fef3c7"
+  },
+  {
+    "id": "cat-4",
+    "name": "Printers",
+    "icon": "🖨️",
+    "color": "#fce7f3"
+  },
+  {
+    "id": "cat-5",
+    "name": "Ink Cartridges",
+    "icon": "💧",
+    "color": "#d1fae5"
+  },
+  {
+    "id": "cat-6",
+    "name": "Office Stationery",
+    "icon": "📁",
+    "color": "#dbeafe"
+  },
+  {
+    "id": "cat-7",
+    "name": "More",
+    "icon": "•••",
+    "color": "#f3f4f6"
+  }
+]

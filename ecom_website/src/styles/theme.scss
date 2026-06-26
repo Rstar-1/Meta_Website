@@ -3,10 +3,10 @@
 /* ======================= Start-Color ======================= */
 
 :root {
-    --primary: #7a1be7 !important;
-    --secondary: #05f !important;
-    --tertiary: #fafafa !important;
-    --forth: #f7fbff9d !important;
+    --primary: #1e74db !important;
+    --secondary: #6b63ff !important;
+    --tertiary: rgba(250, 250, 250, 0.671) !important;
+    --forth: #fafafa !important;
     --success: #1cb012bc !important;
     --successtext: #25771fbc !important;
     --warning: #fb5711 !important;
@@ -326,11 +326,11 @@ input,
 
 .small-text {
     font-size: 15px !important;
-    line-height: 26px !important;
+    line-height: 24px !important;
 }
 
 .mini-text {
-    font-size: 13px !important;
+    font-size: 12px !important;
     line-height: 16px !important;
 }
 

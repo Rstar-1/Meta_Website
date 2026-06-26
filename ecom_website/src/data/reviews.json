@@ -1,0 +1,53 @@
+{
+  "overallRating": "4.6",
+  "ratingScale": "5",
+  "totalReviews": "25,000+",
+  "userReviews": [
+    {
+      "id": "rev-1",
+      "name": "Rahul Sharma",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
+      "rating": 5,
+      "time": "2 days ago",
+      "text": "Very helpful platform! Found the best service provider nearby. Highly recommend!"
+    },
+    {
+      "id": "rev-2",
+      "name": "Priya Mehta",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
+      "rating": 5,
+      "time": "1 week ago",
+      "text": "Amazing experience. Easy to use and reliable listings. Saved me a lot of time."
+    },
+    {
+      "id": "rev-3",
+      "name": "Ankit Verma",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "rating": 5,
+      "time": "2 weeks ago",
+      "text": "Great platform for local business discovery. Customer support is also very responsive."
+    }
+  ],
+  "platforms": [
+    {
+      "name": "Google",
+      "rating": "4.6/5",
+      "reviews": "12,500 reviews"
+    },
+    {
+      "name": "Trustpilot",
+      "rating": "4.5/5",
+      "reviews": "6,200 reviews"
+    },
+    {
+      "name": "Justdial",
+      "rating": "4.6/5",
+      "reviews": "4,800 reviews"
+    },
+    {
+      "name": "Facebook",
+      "rating": "4.7/5",
+      "reviews": "1,500 reviews"
+    }
+  ]
+}

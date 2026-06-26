@@ -1,0 +1,46 @@
+[
+  {
+    "id": "art-1",
+    "tag": "Marketing",
+    "tagColor": "#e0f2fe",
+    "tagTextColor": "#0369a1",
+    "title": "Enhancing B2B Marketing for Steel & Printer Product Sellers",
+    "description": "Learn how to capture digital leads, target corporate purchasers, and leverage localized search tactics to drive high-volume wholesale enquiries.",
+    "date": "June 25, 2026",
+    "readTime": "5 min read",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop"
+  },
+  {
+    "id": "art-2",
+    "tag": "Seller Growth",
+    "tagColor": "#f3e8ff",
+    "tagTextColor": "#7e22ce",
+    "title": "Unlocking Local Wholesale Leads: A Guide for Industrial Suppliers",
+    "description": "Discover action-oriented B2B methods to connect with localized engineering buyers, fabrication workshops, and distributors looking for bulk deliveries.",
+    "date": "June 24, 2026",
+    "readTime": "6 min read",
+    "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=500&auto=format&fit=crop"
+  },
+  {
+    "id": "art-3",
+    "tag": "SEO Tips",
+    "tagColor": "#e2e8f0",
+    "tagTextColor": "#334155",
+    "title": "Optimizing Product Listing Data to Increase Search Visibility",
+    "description": "Step-by-step techniques to improve search ranks, write compelling B2B titles, and structure descriptions so prospective clients find your listings first.",
+    "date": "June 22, 2026",
+    "readTime": "4 min read",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=500&auto=format&fit=crop"
+  },
+  {
+    "id": "art-4",
+    "tag": "Data Strategy",
+    "tagColor": "#d1fae5",
+    "tagTextColor": "#065f46",
+    "title": "How Standardizing Technical Specs Enhances Distributor Trust",
+    "description": "Standardized spec sheets, material certificates, and clear dimensions build instant credibility, leading to faster procurement cycles.",
+    "date": "June 20, 2026",
+    "readTime": "7 min read",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=500&auto=format&fit=crop"
+  }
+]
