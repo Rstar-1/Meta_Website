@@ -21,7 +21,7 @@ const Home = () => {
       <ProductSteel />
       <WhyChoose />
       <TopCity />
-      <FeaturedBusinesses />
+      {/* <FeaturedBusinesses /> */}
       <LatestArticles />
       <BusinessPromo />
       <Review />

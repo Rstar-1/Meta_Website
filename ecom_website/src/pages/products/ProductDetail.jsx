@@ -1,251 +1,141 @@
-import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import products from '../../data/products.json'
 import ProductSchema from '../../components/seo/ProductSchema'
 import SeoHelmet from '../../components/seo/SeoHelmet'
+import Container from '../../components/common/Container'
+
+// Import product images from assets
+import printerHp88a from '../../assets/printer_hp_88a.png'
+import printerCanon746 from '../../assets/printer_canon_746.png'
+import printerCanon74s from '../../assets/printer_canon_74s.png'
+import printerEpson003 from '../../assets/printer_epson_003.png'
+import printerBrotherTn2321 from '../../assets/printer_brother_tn2321.png'
+
+// Import section components
+import {
+  ProductBreadcrumb,
+  ProductOverview,
+  FeatureHighlights,
+  ProductTabs,
+  RelatedProducts,
+  ProductReviews,
+  GetBestPriceForm,
+  SupplierCard,
+  TrustAssurance,
+  ShareProduct
+} from './sections'
 
 const ProductDetail = () => {
   const { id } = useParams()
-  const navigate = useNavigate()
-  const product = products.find(p => p.id === id) || products[0];
+  const foundProduct = products.find(p => p.id === id || p.slug === id)
 
-  const handleEnquiry = () => {
-    navigate(`/enquiry?productId=${product.id}`)
+  // Default product data matching the requested UI image
+  const productData = {
+    title: foundProduct ? foundProduct.name : 'HP 88A Toner Cartridge (Black)',
+    brand: foundProduct ? foundProduct.brand : 'PrintMax Solutions',
+    rating: foundProduct ? parseFloat(foundProduct.aggregateRating?.ratingValue || 4.6) : 4.6,
+    reviewCount: foundProduct ? (foundProduct.aggregateRating?.reviewCount || 245) : 245,
+    price: foundProduct ? `₹ ${foundProduct.price} / Piece` : '₹ 1,250 / Piece',
+    priceSubtext: 'Prices are inclusive of all taxes',
+    isBestseller: true,
+    description: foundProduct ? foundProduct.description : 'HP 88A Toner Cartridge (Black) delivers professional quality prints with crisp text and sharp images. Designed for reliability and high performance, it ensures consistent results and long lasting prints.',
+    specs: [
+      { label: 'Cartridge Type', value: 'Toner Cartridge' },
+      { label: 'Color', value: 'Black' },
+      { label: 'Model', value: 'HP 88A (CC388A)' },
+      { label: 'Compatibility', value: 'HP LaserJet P1007, P1008, P1106, P1108, M1136, M1213nf, M1216nfh, M126nw' },
+      { label: 'Page Yield', value: 'Up to 1500 pages (at 5% coverage)' },
+      { label: 'Technology', value: 'Laser Toner' },
+      { label: 'Warranty', value: '6 Months' },
+      { label: 'Condition', value: 'New' },
+      { label: 'Pack Type', value: 'Box' },
+      { label: 'Supply Type', value: 'Wholesale / Bulk' },
+      { label: 'Usage/Application', value: 'For Laser Printers' }
+    ]
   }
 
-  const icons = {
-    'prod-1': '⚡',
-    'prod-2': '🤖',
-    'prod-3': '⚙️',
-    'prod-4': '🔌'
-  };
+  // Thumbnails gallery list
+  const galleryImages = [
+    printerHp88a,
+    printerCanon74s,
+    printerCanon746,
+    printerEpson003,
+    printerBrotherTn2321
+  ]
+
+  const [activeImage, setActiveImage] = useState(printerHp88a)
+  const [activeTab, setActiveTab] = useState('description')
+  const [isWishlist, setIsWishlist] = useState(false)
+
+  // Related products data
+  const relatedProducts = [
+    { id: 'rel-1', title: 'HP 85A Toner Cartridge (Black)', price: '₹ 1,150 / Piece', image: printerHp88a },
+    { id: 'rel-2', title: 'Canon 737 Toner Cartridge (Black)', price: '₹ 1,200 / Piece', image: printerCanon74s },
+    { id: 'rel-3', title: 'Brother TN2321 Toner Cartridge', price: '₹ 1,400 / Piece', image: printerBrotherTn2321 },
+    { id: 'rel-4', title: 'Epson 003 Ink Bottle (Black)', price: '₹ 320 / Piece', image: printerEpson003 },
+    { id: 'rel-5', title: 'Canon 745 Black Ink Cartridge', price: '₹ 880 / Piece', image: printerCanon74s },
+    { id: 'rel-6', title: 'Canon 746 Color Ink Cartridge', price: '₹ 900 / Piece', image: printerCanon746 }
+  ]
 
   return (
-    <div className="detail-container">
-      <SeoHelmet 
-        title={product.name}
-        description={product.description}
-        keywords={product.tags}
-        image={product.images[0]}
-        path={`/products/${product.slug}`}
+    <Container>
+      {/* SEO Components */}
+      <SeoHelmet
+        title={productData.title}
+        description={productData.description}
+        keywords={['HP 88A', 'Toner Cartridge', 'Printer Ink', 'PrintMax Solutions']}
+        image={activeImage}
+        path="/product-detail"
         type="product"
       />
-      <ProductSchema product={product} />
+      <ProductSchema product={foundProduct || { name: productData.title, description: productData.description, price: '1250', sku: 'HP-88A' }} />
 
-      <style>{`
-        .detail-container {
-          padding: 50px 30px;
-          max-width: 1200px;
-          margin: 0 auto;
-          font-family: 'Outfit', sans-serif;
-        }
-        .back-btn {
-          background: transparent;
-          border: none;
-          color: #aa3bff;
-          font-size: 1rem;
-          font-weight: 600;
-          cursor: pointer;
-          margin-bottom: 30px;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-        .product-view {
-          display: grid;
-          grid-template-columns: 1.2fr 1fr;
-          gap: 50px;
-          margin-bottom: 50px;
-        }
-        .gallery-box {
-          background: #faf9fb;
-          border: 1px solid #e5e4e7;
-          border-radius: 16px;
-          height: 400px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 8rem;
-        }
-        .info-box {
-          display: flex;
-          flex-direction: column;
-        }
-        .prod-brand {
-          font-size: 0.9rem;
-          color: #aa3bff;
-          text-transform: uppercase;
-          font-weight: 700;
-          letter-spacing: 1px;
-          margin-bottom: 10px;
-        }
-        .prod-name {
-          font-size: 2.2rem;
-          color: #08060d;
-          font-weight: 800;
-          margin-bottom: 15px;
-          line-height: 1.2;
-        }
-        .rating-row {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 20px;
-        }
-        .stars {
-          color: #f59e0b;
-        }
-        .review-count {
-          color: #6b6375;
-          font-size: 0.9rem;
-        }
-        .price-tag {
-          font-size: 2rem;
-          color: #08060d;
-          font-weight: 800;
-          margin-bottom: 25px;
-        }
-        .desc-title {
-          font-size: 1.1rem;
-          color: #08060d;
-          font-weight: 600;
-          margin-bottom: 10px;
-        }
-        .desc-text {
-          color: #6b6375;
-          line-height: 1.6;
-          font-size: 0.95rem;
-          margin-bottom: 30px;
-        }
-        .action-row {
-          display: flex;
-          gap: 20px;
-        }
-        .btn-enquiry {
-          background: linear-gradient(135deg, #aa3bff, #7c3aed);
-          color: #ffffff;
-          border: none;
-          padding: 15px 35px;
-          font-size: 1rem;
-          font-weight: 700;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(170, 59, 255, 0.2);
-          flex: 1;
-        }
-        .btn-enquiry:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(170, 59, 255, 0.35);
-        }
-        .btn-call {
-          background: #ffffff;
-          color: #08060d;
-          border: 1px solid #e5e4e7;
-          padding: 15px 35px;
-          font-size: 1rem;
-          font-weight: 700;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-        .btn-call:hover {
-          background: #faf9fb;
-          border-color: #6b6375;
-        }
-        .specifications-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin-top: 40px;
-          background: #faf9fb;
-          border-radius: 12px;
-          overflow: hidden;
-          border: 1px solid #e5e4e7;
-        }
-        .spec-row {
-          border-bottom: 1px solid #e5e4e7;
-        }
-        .spec-row:last-child {
-          border-bottom: none;
-        }
-        .spec-label {
-          padding: 15px 20px;
-          color: #6b6375;
-          font-weight: 600;
-          width: 30%;
-          background: rgba(170, 59, 255, 0.02);
-        }
-        .spec-val {
-          padding: 15px 20px;
-          color: #08060d;
-        }
-        @media (max-width: 868px) {
-          .product-view {
-            grid-template-columns: 1fr;
-            gap: 30px;
-          }
-          .gallery-box { height: 300px; font-size: 6rem; }
-        }
-      `}</style>
+      <div className='py-50'>
+        <ProductBreadcrumb title={productData.title} />
 
-      <button className="back-btn" onClick={() => navigate('/products')}>
-        ← Back to Catalog
-      </button>
+        <div className='flex gap-12 mt-20'>
 
-      <div className="product-view">
-        <div className="gallery-box">
-          {icons[product.id] || '🛠️'}
-        </div>
+          <div className='w-75'>
+            <ProductOverview
+              productData={productData}
+              galleryImages={galleryImages}
+              activeImage={activeImage}
+              setActiveImage={setActiveImage}
+              isWishlist={isWishlist}
+              setIsWishlist={setIsWishlist}
+            />
 
-        <div className="info-box">
-          <span className="prod-brand">{product.brand}</span>
-          <h1 className="prod-name">{product.name}</h1>
-          
-          <div className="rating-row">
-            <span className="stars">
-              {'★'.repeat(Math.round(parseFloat(product.aggregateRating.ratingValue)))}
-              {'☆'.repeat(5 - Math.round(parseFloat(product.aggregateRating.ratingValue)))}
-            </span>
-            <span className="review-count">({product.aggregateRating.reviewCount} calibration reviews)</span>
+            <FeatureHighlights />
+
+            <ProductTabs
+              productData={productData}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
           </div>
 
-          <div className="price-tag">${product.price} <span style={{fontSize: '1rem', color: '#6b6375', fontWeight: 500}}>Unit price</span></div>
+          <div className='w-25'>
+            {/* 1. GET BEST PRICE FORM CARD */}
+            <GetBestPriceForm />
 
-          <h3 className="desc-title">System Description</h3>
-          <p className="desc-text">{product.description}</p>
+            {/* 2. SUPPLIER CARD */}
+            <SupplierCard brand={productData.brand} />
 
-          <div className="action-row">
-            <button className="btn-enquiry" onClick={handleEnquiry}>
-              Request Technical Quote
-            </button>
-            <button className="btn-call" onClick={() => alert('Call Engineering support at +1-555-0199')}>
-              Contact Engineer
-            </button>
+            {/* 3. TRUST & ASSURANCE CARD */}
+            <TrustAssurance />
+
+            {/* 4. SHARE THIS PRODUCT CARD */}
+            <ShareProduct />
           </div>
+
         </div>
+
+        <RelatedProducts relatedProducts={relatedProducts} />
+        <ProductReviews />
+
       </div>
-
-      <table className="specifications-table">
-        <tbody>
-          <tr className="spec-row">
-            <td className="spec-label">System Part (SKU)</td>
-            <td className="spec-val">{product.sku}</td>
-          </tr>
-          <tr className="spec-row">
-            <td className="spec-label">Model (MPN)</td>
-            <td className="spec-val">{product.mpn}</td>
-          </tr>
-          <tr className="spec-row">
-            <td className="spec-label">Supply Status</td>
-            <td className="spec-val">{product.inStock ? 'Available (Standard Lead Times Apply)' : 'On Backorder'}</td>
-          </tr>
-          <tr className="spec-row">
-            <td className="spec-label">Keywords</td>
-            <td className="spec-val">{product.tags.join(', ')}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    </Container>
   )
 }
 

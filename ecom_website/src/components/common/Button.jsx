@@ -2,6 +2,7 @@ import React from "react";
 
 const Button = ({
   text = "",
+  children,
   version = "v1",
   bg = "primary",
   color = "white",
@@ -35,7 +36,7 @@ const Button = ({
         } ${className}`}
       style={style}
     >
-      {text}
+      {children || text}
     </button>
   );
 };
