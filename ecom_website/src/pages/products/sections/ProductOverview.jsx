@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../../components/common/Button'
+import Icon from '../../../components/common/Icon'
 
 const ProductOverview = ({
   productData,
@@ -58,9 +59,7 @@ const ProductOverview = ({
           </div>
 
           <div className='flex items-center gap-4 mb-6'>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0284c7" className='flex'>
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-            </svg>
+            <Icon name="Verified" width="18" height="18" fill="#0284c7" />
             <p className='mini-text text-info font-500'>Verified Supplier</p>
           </div>
 
@@ -101,9 +100,7 @@ const ProductOverview = ({
               style={{ border: '1.5px solid #22c55e', color: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
               className="font-600"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#16a34a">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.107 4.04 4.15-1.087z" />
-              </svg>
+              <Icon name="WhatsApp" width="20" height="20" fill="#16a34a" />
               Chat on WhatsApp
             </Button>
           </div>
