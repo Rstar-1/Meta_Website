@@ -18,13 +18,13 @@ import {
   ProductOverview,
   FeatureHighlights,
   ProductTabs,
-  RelatedProducts,
   ProductReviews,
   GetBestPriceForm,
   SupplierCard,
   TrustAssurance,
   ShareProduct
 } from './sections'
+import PopularProducts from '../home/sections/PopularProducts'
 
 const ProductDetail = () => {
   const { id } = useParams()
@@ -68,19 +68,8 @@ const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState('description')
   const [isWishlist, setIsWishlist] = useState(false)
 
-  // Related products data
-  const relatedProducts = [
-    { id: 'rel-1', title: 'HP 85A Toner Cartridge (Black)', price: '₹ 1,150 / Piece', image: printerHp88a },
-    { id: 'rel-2', title: 'Canon 737 Toner Cartridge (Black)', price: '₹ 1,200 / Piece', image: printerCanon74s },
-    { id: 'rel-3', title: 'Brother TN2321 Toner Cartridge', price: '₹ 1,400 / Piece', image: printerBrotherTn2321 },
-    { id: 'rel-4', title: 'Epson 003 Ink Bottle (Black)', price: '₹ 320 / Piece', image: printerEpson003 },
-    { id: 'rel-5', title: 'Canon 745 Black Ink Cartridge', price: '₹ 880 / Piece', image: printerCanon74s },
-    { id: 'rel-6', title: 'Canon 746 Color Ink Cartridge', price: '₹ 900 / Piece', image: printerCanon746 }
-  ]
-
   return (
     <Container>
-      {/* SEO Components */}
       <SeoHelmet
         title={productData.title}
         description={productData.description}
@@ -116,22 +105,15 @@ const ProductDetail = () => {
           </div>
 
           <div className='w-25'>
-            {/* 1. GET BEST PRICE FORM CARD */}
             <GetBestPriceForm />
-
-            {/* 2. SUPPLIER CARD */}
             <SupplierCard brand={productData.brand} />
-
-            {/* 3. TRUST & ASSURANCE CARD */}
             <TrustAssurance />
-
-            {/* 4. SHARE THIS PRODUCT CARD */}
             <ShareProduct />
           </div>
 
         </div>
 
-        <RelatedProducts relatedProducts={relatedProducts} />
+        <PopularProducts />
         <ProductReviews />
 
       </div>
