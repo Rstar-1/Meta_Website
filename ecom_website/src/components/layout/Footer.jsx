@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Container from '../common/Container'
 import footerData from '../../data/footer.json'
+import logoImg from '../../assets/sobo_logo.png'
 
 const Footer = () => {
   const navigate = useNavigate()
@@ -37,6 +38,20 @@ const Footer = () => {
                 opacity: isVisible ? 1 : 0
               }}
             >
+              <div className="mb-15 flex items-center">
+                <img 
+                  src={logoImg} 
+                  alt="SOBO Marketing Solution Logo" 
+                  style={{ 
+                    maxHeight: '55px', 
+                    width: 'auto', 
+                    objectFit: 'contain',
+                    borderRadius: '6px',
+                    padding: '4px 10px',
+                    backgroundColor: '#ffffff'
+                  }} 
+                />
+              </div>
               <h4 className="title-text font-700 text-white">{footerData.brand.name}</h4>
               <p className="small-text font-500 mt-8" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
                 {footerData.brand.description}

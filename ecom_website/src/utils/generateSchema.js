@@ -129,10 +129,19 @@ export const generateSchema = {
     };
   },
 
-  faq: (faqs = []) => {
+  faq: (faqs = [], logo = '/sobo_logo.png') => {
     return {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
+      'image': logo,
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'SOBO Marketing Solution',
+        'logo': {
+          '@type': 'ImageObject',
+          'url': logo
+        }
+      },
       'mainEntity': faqs.map(faq => ({
         '@type': 'Question',
         'name': faq.question,

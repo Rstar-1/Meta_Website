@@ -4,6 +4,7 @@ import Container from "../common/Container";
 import Button from "../common/Button";
 import Image from "../common/Image";
 import headerData from "../../data/header.json";
+import logoImg from "../../assets/sobo_logo.png";
 
 const ProductsMenu = ({ onItemClick }) => (
   <>
@@ -173,10 +174,16 @@ const Header = () => {
       <Container>
         <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
           <div className="flex items-center gap-8">
-            <NavLink to="/">
-              <p className="text-dark font-600 headpara-text">
-                LUMINA<span className="text-warning">.PRO</span>
-              </p>
+            <NavLink to="/" className="flex items-center" style={{ textDecoration: 'none' }}>
+              <img 
+                src={logoImg} 
+                alt="SOBO Marketing Solution Logo" 
+                style={{ 
+                  maxHeight: '42px', 
+                  width: 'auto', 
+                  objectFit: 'contain' 
+                }} 
+              />
             </NavLink>
 
             <div className="flex sm-hidden md-hidden items-center h-full ml-40">

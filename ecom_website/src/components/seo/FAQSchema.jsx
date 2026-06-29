@@ -1,8 +1,9 @@
 import React from 'react'
 import { generateSchema } from '../../utils/generateSchema'
+import logoImg from '../../assets/sobo_logo.png'
 
-const FAQSchema = ({ faqs = [] }) => {
-  const schema = generateSchema.faq(faqs);
+const FAQSchema = ({ faqs = [], logo = logoImg }) => {
+  const schema = generateSchema.faq(faqs, logo);
   return (
     <script type="application/ld+json">
       {JSON.stringify(schema)}
