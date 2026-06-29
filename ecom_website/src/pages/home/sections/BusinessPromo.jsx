@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 
 const BusinessPromo = ({ onRegisterBusiness }) => {
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 1200
-  );
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const isMobile = windowWidth <= 768;
-
   return (
     <Container className='bg-forth'>
       <div className="w-full py-30">
         <div
-          className={isMobile ? "flex flex-column items-center text-center p-30 gap-20" : "flex items-center justify-between p-40"}
+          className="flex md-flex-column sm-flex-column items-center justify-between p-40 md-p-30 sm-p-20 gap-20"
           style={{
             background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
             borderRadius: '5px',
@@ -27,7 +15,7 @@ const BusinessPromo = ({ onRegisterBusiness }) => {
           }}
         >
           {/* Text Side */}
-          <div className="flex flex-column text-left" style={{ alignItems: isMobile ? 'center' : 'flex-start', textAlign: isMobile ? 'center' : 'left' }}>
+          <div className="flex flex-column">
             <h2
               className="text-white font-700 head-text"
             >

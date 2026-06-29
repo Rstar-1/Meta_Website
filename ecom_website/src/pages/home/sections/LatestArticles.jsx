@@ -15,7 +15,7 @@ const LatestArticles = ({ onArticleClick }) => {
         </div>
 
         {/* Articles Grid */}
-        <div className='grid-cols-4 gap-12'>
+        <div className='grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12'>
           {articles.map((article) => (
             <article
               key={article.id}

@@ -179,7 +179,7 @@ const Header = () => {
               </p>
             </NavLink>
 
-            <div className="flex sm-hidden items-center h-full ml-40">
+            <div className="flex sm-hidden md-hidden items-center h-full ml-40">
               {headerData.navLinks?.map((item, i) => (
                 <div
                   key={i}
@@ -209,16 +209,17 @@ const Header = () => {
 
                   {item?.hasMegaMenu && activeMenu === item?.label && (
                     <div
-                      className="absolute z-50 bg-white border"
+                      className="absolute z-50 bg-white border rounded-5 shadow-lg"
                       style={{
                         top: "65px",
                         left: "50%",
                         transform: "translateX(-50%)",
+                        maxWidth: "90vw",
                       }}
                     >
                       <div
                         className={`${item?.cols} items-start`}
-                        style={{ width: item?.width }}
+                        style={{ width: item?.width, maxWidth: "100%" }}
                       >
                         <MegaMenuContent
                           label={item?.label}
@@ -234,7 +235,7 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-20">
-            <div className="sm-hidden">
+            <div className="sm-hidden md-hidden">
               <Button
                 text="Talk to Engineer"
                 version="v2"
@@ -243,9 +244,9 @@ const Header = () => {
               />
             </div>
 
-            {/* Hamburger Menu Toggle Button for Mobile Devices */}
+            {/* Hamburger Menu Toggle Button for Mobile/Tablet Devices */}
             <button
-              className="hidden cursor-pointer bg-transparent border-0 text-dark p-10 hover:text-warning"
+              className="hidden md-block sm-block cursor-pointer bg-transparent border-0 text-dark p-10 hover:text-warning"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               style={{ fontSize: "1.6rem", border: "none" }}
               onMouseEnter={(e) => e.currentTarget.style.color = "var(--warning)"}

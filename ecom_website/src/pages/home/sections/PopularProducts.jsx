@@ -1,8 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import popularProducts from '../../../data/homePopularProducts.json';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 
-const PopularProducts = ({ onViewProduct }) => {
+const PopularProducts = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/product-detail');
+  };
 
   return (
     <Container className='bg-white'>
@@ -11,16 +17,16 @@ const PopularProducts = ({ onViewProduct }) => {
           className="flex justify-between items-center"
         >
           <h2 className="title-text text-dark font-600">Popular Products</h2>
-          <p className='text-primary font-500 cursor-pointer small-text'>
+          <p className='text-primary font-500 cursor-pointer small-text' onClick={handleNavigate}>
             View All Products ➔</p>
         </div>
 
-        <div className='grid-cols-6 gap-12 mt-20'>
+        <div className='grid-cols-6 md-grid-cols-3 sm-grid-cols-2 gap-12 mt-20'>
           {popularProducts.map((product) => (
             <div
               key={product.id}
               className="bg-white border-ec rounded-10 p-12 cursor-pointer"
-              onClick={() => onViewProduct && onViewProduct(product.name)}
+              onClick={handleNavigate}
             >
               <div className="overflow-hidden rounded-5 relative">
                 <img
@@ -46,6 +52,10 @@ const PopularProducts = ({ onViewProduct }) => {
                   bg="primary"
                   version="v3"
                   className='mt-10'
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleNavigate();
+                  }}
                 />
               </div>
             </div>

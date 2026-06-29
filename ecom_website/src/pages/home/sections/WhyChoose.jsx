@@ -37,7 +37,7 @@ const WhyChoose = () => {
         <p className="text-gray small-text mt-1">
           Genuine & reliable business listings
         </p>
-        <div className="grid-cols-4 gap-20 mt-30">
+        <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-20 mt-30">
           {points.map((point) => (
             <div
               key={point.id}

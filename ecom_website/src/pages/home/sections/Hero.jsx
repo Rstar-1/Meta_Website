@@ -45,7 +45,7 @@ const Hero = ({ onSearch }) => {
   ];
 
   return (
-    <Container className='h-500 flex items-center' style={{ background: `linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54)), url(${background})`, backgroundPosition: 'right' }}>
+    <Container className='h-500 md-h-auto sm-h-auto py-40 flex items-center' style={{ background: `linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54)), url(${background})`, backgroundPosition: 'right', backgroundSize: 'cover' }}>
       <div className="w-full">
         <h1 className="large-text text-white font-700 uppercase">
           India's No. 1<br />
@@ -53,7 +53,7 @@ const Hero = ({ onSearch }) => {
         </h1>
 
         {/* Badges Row */}
-        <div className="flex items-center gap-12 mt-30">
+        <div className="flex sm-flex-wrap items-center gap-12 mt-30">
           {badges.map((badge) => (
             <div key={badge.id} className="flex items-center gap-12 mr-18">
               <div className="icon-lg bg-white rounded-5">
@@ -68,11 +68,11 @@ const Hero = ({ onSearch }) => {
         </div>
 
         {/* Search Form */}
-        <form className="flex items-center gap-12 mt-15 bg-white py-12 px-16 rounded-10 w-70" onSubmit={handleSearchSubmit}>
+        <form className="flex md-flex-column sm-flex-column items-center gap-12 mt-15 bg-white py-12 px-16 rounded-10 w-70 md-w-full sm-w-full" onSubmit={handleSearchSubmit}>
 
-          <div className="flex items-center gap-12 w-20">
+          <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
             <Icon name="Grid" width="20" height="20" stroke="var(--primary)" />
-            <select className='h-input border-0 bg-forth'
+            <select className='h-input border-0 bg-forth w-full'
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
@@ -84,21 +84,21 @@ const Hero = ({ onSearch }) => {
             </select>
           </div>
 
-          <div className="flex items-center gap-12 w-45">
+          <div className="flex items-center gap-12 w-45 md-w-full sm-w-full">
             <Icon name="Search" width="20" height="20" stroke="var(--primary)" />
             <input
               type="text"
-              className="h-input border-0 bg-forth"
+              className="h-input border-0 bg-forth w-full"
               placeholder="What are you looking for?"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
 
-          <div className="flex items-center gap-12 w-20">
+          <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
             <Icon name="MapPin" width="20" height="20" stroke="var(--primary)" />
             <select
-              className="h-input border-0 bg-forth"
+              className="h-input border-0 bg-forth w-full"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             >
@@ -110,22 +110,24 @@ const Hero = ({ onSearch }) => {
             </select>
           </div>
 
-          <div className="w-15">
+          <div className="w-15 md-w-full sm-w-full">
             <Button
               type="submit"
               text="Apply Filters"
               bg="primary"
               version='v3'
+              className="w-full"
             />
           </div>
         </form>
 
         {/* Popular Searches */}
-        <div className="flex items-center gap-12 mt-26">
+        <div className="flex sm-flex-wrap items-center gap-12 mt-26">
           <p className="para-text text-white font-500">Popular Searches:</p>
           {popularSearches.map((tag, index) => (
             <p
-              className='bg-transparent small-text text-white px-20 py-4 rounded-10'
+              key={index}
+              className='bg-transparent small-text text-white px-20 py-4 rounded-10 border-white'
             >
               {tag}
             </p>

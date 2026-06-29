@@ -66,9 +66,9 @@ const Review = () => {
     <Container >
       <div className="w-full py-40">
         <div className="bg-white rounded-10">
-          <div className="flex items-center gap-6">
+          <div className="flex md-flex-column sm-flex-column items-center gap-16">
 
-            <div className='w-20 px-10'>
+            <div className='w-20 md-w-full sm-w-full px-10'>
               <h3 className="title-text font-700 text-dark">
                 What Our Users Say
               </h3>
@@ -79,7 +79,7 @@ const Review = () => {
 
             <div className="desktop-vertical-divider md-hidden" />
 
-            <div className='w-20 px-10'>
+            <div className='w-20 md-w-full sm-w-full px-10'>
               <div className="text-dark">
                 <span className="large-text font-700" style={{ fontSize: '38px', lineHeight: '1' }}>
                   {reviewsData.overallRating}
@@ -100,7 +100,7 @@ const Review = () => {
 
             <div className="desktop-vertical-divider md-hidden" />
 
-            <div className="grid-cols-3 md-grid-cols-1 gap-12 w-70 px-10">
+            <div className="grid-cols-3 md-grid-cols-1 sm-grid-cols-1 gap-12 w-70 md-w-full sm-w-full px-10">
               {reviewsData.userReviews.map((rev) => (
                 <div key={rev.id} className="">
                   <div className="flex items-center gap-12 mb-10">
@@ -137,7 +137,7 @@ const Review = () => {
 
           <div className="w-full my-24" style={{ height: '1px', backgroundColor: '#ececec' }} />
 
-          <div className="grid-cols-4 gap-12">
+          <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
             {reviewsData.platforms.map((plat) => (
               <div key={plat.name} className="flex items-center justify-center gap-12">
                 {renderPlatformLogo(plat.name)}
