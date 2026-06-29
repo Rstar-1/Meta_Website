@@ -1,239 +1,208 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import products from '../../data/products.json'
-import categories from '../../data/categories.json'
-import brands from '../../data/brands.json'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import products from '../../data/products.json';
+import Container from '../../components/common/Container';
+import Button from '../../components/common/Button';
+
+// Import local product images for reliable rendering
+import printerHp88a from '../../assets/printer_hp_88a.png';
+import printerCanon74s from '../../assets/printer_canon_74s.png';
+import printerCanon746 from '../../assets/printer_canon_746.png';
+import printerEpson003 from '../../assets/printer_epson_003.png';
+import printerBrotherTn2321 from '../../assets/printer_brother_tn2321.png';
+import printerSamsungD111s from '../../assets/printer_samsung_d111s.png';
+import ss304Sheets from '../../assets/ss_304_sheets.png';
+import ss304Pipes from '../../assets/ss_304_pipes.png';
+import ssCoils from '../../assets/ss_coils.png';
+import ss316Rods from '../../assets/ss_316_rods.png';
+
+const imageMap = {
+  'printer-1': printerHp88a,
+  'printer-2': printerCanon74s,
+  'printer-3': printerCanon746,
+  'printer-4': printerEpson003,
+  'printer-5': printerBrotherTn2321,
+  'printer-6': printerSamsungD111s,
+  'steel-1': ss304Sheets,
+  'steel-2': ss304Pipes,
+  'steel-3': ssCoils,
+  'steel-4': ss316Rods,
+};
 
 const Products = () => {
-  const navigate = useNavigate()
-  const [selectedCat, setSelectedCat] = useState('All')
-  const [selectedBrand, setSelectedBrand] = useState('All')
-  const [search, setSearch] = useState('')
+  const navigate = useNavigate();
+  const [selectedCat, setSelectedCat] = useState('All');
+  const [search, setSearch] = useState('');
 
-  const filteredProducts = products.filter(p => {
+  const filteredProducts = products.filter((p) => {
     const matchesCat = selectedCat === 'All' || p.category === selectedCat;
-    const matchesBrand = selectedBrand === 'All' || p.brand === selectedBrand;
-    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || 
-                          p.description.toLowerCase().includes(search.toLowerCase());
-    return matchesCat && matchesBrand && matchesSearch;
-  })
+    const matchesSearch =
+      p.name.toLowerCase().includes(search.toLowerCase()) ||
+      p.description.toLowerCase().includes(search.toLowerCase());
+    return matchesCat && matchesSearch;
+  });
+
+  const handleProductClick = (id) => {
+    navigate(`/product-detail/${id}`);
+  };
 
   return (
-    <div className="shop-container">
-      <style>{`
-        .shop-container {
-          padding: 50px 30px;
-          max-width: 1200px;
-          margin: 0 auto;
-          font-family: 'Outfit', sans-serif;
-        }
-        .shop-title {
-          font-size: 2.2rem;
-          font-weight: 700;
-          color: #08060d;
-          margin-bottom: 30px;
-        }
-        .shop-title span {
-          color: #aa3bff;
-        }
-        .filter-section {
-          background: #faf9fb;
-          border: 1px solid #e5e4e7;
-          border-radius: 12px;
-          padding: 20px;
-          margin-bottom: 40px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          align-items: center;
-        }
-        .filter-group {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        .filter-label {
-          font-size: 0.85rem;
-          color: #6b6375;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-        .filter-select, .search-input {
-          background: #ffffff;
-          border: 1px solid #e5e4e7;
-          color: #08060d;
-          padding: 10px 16px;
-          border-radius: 6px;
-          font-size: 0.95rem;
-          outline: none;
-          min-width: 180px;
-        }
-        .filter-select:focus, .search-input:focus {
-          border-color: #aa3bff;
-        }
-        .search-input {
-          min-width: 250px;
-          flex: 1;
-        }
-        .results-count {
-          color: #6b6375;
-          font-size: 0.95rem;
-          margin-bottom: 20px;
-        }
-        .products-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-          gap: 30px;
-        }
-        .product-card {
-          background: #ffffff;
-          border: 1px solid #e5e4e7;
-          border-radius: 12px;
-          padding: 20px;
-          display: flex;
-          flex-direction: column;
-          transition: all 0.3s ease;
-          position: relative;
-          box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01);
-        }
-        .product-card:hover {
-          transform: translateY(-5px);
-          border-color: rgba(170, 59, 255, 0.4);
-          box-shadow: 0 10px 30px rgba(170, 59, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.02);
-        }
-        .product-img-box {
-          height: 180px;
-          background: #faf9fb;
-          border-radius: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 3.5rem;
-          margin-bottom: 15px;
-          border: 1px solid #faf9fb;
-        }
-        .product-brand {
-          font-size: 0.8rem;
-          color: #aa3bff;
-          text-transform: uppercase;
-          font-weight: 600;
-          letter-spacing: 0.5px;
-          margin-bottom: 5px;
-        }
-        .product-name {
-          font-size: 1.1rem;
-          color: #08060d;
-          font-weight: 600;
-          margin-bottom: 10px;
-          line-height: 1.4;
-          height: 48px;
-          overflow: hidden;
-        }
-        .product-meta-row {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-top: auto;
-        }
-        .product-price {
-          font-size: 1.25rem;
-          color: #08060d;
-          font-weight: 700;
-        }
-        .view-btn {
-          background: #aa3bff;
-          border: none;
-          color: #ffffff;
-          width: 36px;
-          height: 36px;
-          border-radius: 8px;
-          font-weight: 600;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.2s ease;
-        }
-        .view-btn:hover {
-          background: #7c3aed;
-        }
-      `}</style>
+    <Container className="bg-white">
+      <div className="w-full py-30">
+        {/* Top Search & Filter Bar */}
+        <div className="flex justify-between items-center flex-wrap gap-12 mb-30 p-16 bg-white border-ec rounded-10">
+          <div className="flex items-center gap-12 flex-1 min-w-250">
+            <input
+              type="text"
+              placeholder="Search printer cartridges, steel products..."
+              className="w-full p-10 border-ec rounded-5 outline-none font-400 text-dark small-text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
 
-      <h1 className="shop-title">Systems <span>Catalog</span></h1>
-
-      <div className="filter-section">
-        <div className="filter-group" style={{ flex: 1 }}>
-          <span className="filter-label">Search Systems</span>
-          <input 
-            type="text" 
-            placeholder="Search by part number, model, tags..." 
-            className="search-input"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-
-        <div className="filter-group">
-          <span className="filter-label">Department</span>
-          <select 
-            className="filter-select"
-            value={selectedCat}
-            onChange={(e) => setSelectedCat(e.target.value)}
-          >
-            <option value="All">All Departments</option>
-            {categories.map(c => (
-              <option key={c.id} value={c.name}>{c.name}</option>
+          <div className="flex items-center gap-10">
+            {['All', 'Printer Cartridges', 'Steel Products'].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCat(cat)}
+                className={`px-16 py-8 rounded-5 cursor-pointer border-0 font-500 small-text transition-all ${
+                  selectedCat === cat
+                    ? 'bg-primary text-white'
+                    : 'bg-white text-dark border-ec hover:bg-gray-100'
+                }`}
+                style={{
+                  border: selectedCat === cat ? 'none' : '1px solid #e5e7eb',
+                }}
+              >
+                {cat}
+              </button>
             ))}
-          </select>
+          </div>
         </div>
 
-        <div className="filter-group">
-          <span className="filter-label">OEM Partner</span>
-          <select 
-            className="filter-select"
-            value={selectedBrand}
-            onChange={(e) => setSelectedBrand(e.target.value)}
+        {/* Section Header matching exact requested UI */}
+        <div className="flex justify-between items-center mb-20">
+          <h2 className="title-text text-dark font-600">
+            {selectedCat === 'Printer Cartridges'
+              ? 'Popular Printer Cartridges'
+              : selectedCat === 'Steel Products'
+              ? 'Popular Steel Products'
+              : 'Popular Printer Cartridges'}
+          </h2>
+          <p
+            className="text-primary font-500 cursor-pointer small-text hover:underline"
+            onClick={() => {
+              setSelectedCat('All');
+              setSearch('');
+            }}
           >
-            <option value="All">All Partners</option>
-            {brands.map(b => (
-              <option key={b.id} value={b.name}>{b.name}</option>
-            ))}
-          </select>
+            View All Products &gt;
+          </p>
         </div>
-      </div>
 
-      <div className="results-count">
-        Showing {filteredProducts.length} of {products.length} systems
-      </div>
+        {/* Product Cards Grid matching exact requested UI */}
+        <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-16">
+          {filteredProducts.map((product) => {
+            const imgSrc = imageMap[product.id] || product.image;
+            return (
+              <div
+                key={product.id}
+                className="bg-white border-ec rounded-10 p-12 cursor-pointer flex flex-column justify-between hover-shadow transition-all"
+                onClick={() => handleProductClick(product.id)}
+                style={{
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '16px',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                }}
+              >
+                <div>
+                  {/* Product Image Container */}
+                  <div
+                    className="overflow-hidden rounded-8 flex items-center justify-center p-12"
+                    style={{
+                      background: '#f8fafc',
+                      height: '220px',
+                      borderRadius: '8px',
+                    }}
+                  >
+                    <img
+                      src={imgSrc}
+                      alt={product.name}
+                      loading="lazy"
+                      className="max-h-full max-w-full object-contain"
+                      style={{ maxHeight: '180px', objectFit: 'contain' }}
+                    />
+                  </div>
 
-      <div className="products-grid">
-        {filteredProducts.map((p, idx) => {
-          const icons = {
-            'prod-1': '⚡',
-            'prod-2': '🤖',
-            'prod-3': '⚙️',
-            'prod-4': '🔌'
-          };
-          return (
-            <div key={p.id} className="product-card">
-              <div className="product-img-box">
-                {icons[p.id] || '🛠️'}
+                  {/* Product Metadata */}
+                  <div className="mt-12">
+                    <h3
+                      className="text-dark font-600 line-clamp1"
+                      style={{
+                        fontSize: '1.05rem',
+                        color: '#0f172a',
+                        marginBottom: '4px',
+                      }}
+                    >
+                      {product.name}
+                    </h3>
+                    <p
+                      className="text-gray mini-text"
+                      style={{ color: '#64748b', fontSize: '0.85rem' }}
+                    >
+                      {product.subtitle || 'Starting from'}
+                    </p>
+                    <p
+                      className="text-dark font-600 mt-4"
+                      style={{
+                        color: '#0f172a',
+                        fontSize: '1rem',
+                        fontWeight: '700',
+                        marginTop: '4px',
+                      }}
+                    >
+                      {product.priceDisplay || `₹ ${product.price} / Piece`}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Blue View Products Button at Bottom */}
+                <div className="mt-16">
+                  <Button
+                    text="View Products"
+                    bg="primary"
+                    version="v3"
+                    className="w-full font-500 py-10"
+                    style={{
+                      backgroundColor: '#2563eb',
+                      color: '#ffffff',
+                      borderRadius: '8px',
+                      fontWeight: '500',
+                      fontSize: '0.95rem',
+                      padding: '10px 0',
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleProductClick(product.id);
+                    }}
+                  />
+                </div>
               </div>
-              <span className="product-brand">{p.brand}</span>
-              <h3 className="product-name">{p.name}</h3>
-              <div className="product-meta-row">
-                <span className="product-price">${p.price}</span>
-                <button className="view-btn" onClick={() => navigate(`/product-detail/${p.id}`)}>
-                  ➔
-                </button>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
+            );
+          })}
+        </div>
 
-export default Products
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-50 text-gray">
+            <p className="mid-text font-500">No products found matching your search.</p>
+          </div>
+        )}
+      </div>
+    </Container>
+  );
+};
+
+export default Products;

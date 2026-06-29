@@ -1,113 +1,162 @@
 [
   {
-    "id": "prod-1",
-    "name": "CNC Laser Head Assembly v4",
-    "slug": "cnc-laser-head-assembly-v4",
-    "description": "A high-performance laser calibration module for CNC machines. Features dual-axis optics, carbon fiber housing, and integrated water cooling channels.",
-    "price": "2499.00",
-    "priceCurrency": "USD",
+    "id": "printer-1",
+    "name": "HP 88A Toner Cartridge",
+    "slug": "hp-88a-toner-cartridge",
+    "description": "Professional quality black toner cartridge for HP LaserJet printers. Ensures crisp, sharp text and smooth grayscale images.",
+    "price": "1,250",
+    "priceDisplay": "₹ 1,250 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
     "inStock": true,
-    "sku": "CNC-LSR-V4",
-    "mpn": "CNCLSRV4",
-    "brand": "Optima Laser",
-    "category": "Precision Tooling",
-    "images": [
-      "/images/products/laser-1.jpg"
-    ],
-    "tags": [
-      "cnc",
-      "laser",
-      "tooling",
-      "optics",
-      "manufacturing"
-    ],
-    "priceValidUntil": "2030-12-31",
-    "aggregateRating": {
-      "ratingValue": "4.9",
-      "reviewCount": "18"
-    }
+    "sku": "HP-88A",
+    "brand": "HP",
+    "category": "Printer Cartridges",
+    "image": "/src/assets/printer_hp_88a.png",
+    "tags": ["hp", "toner", "cartridge", "laserjet", "printer"]
   },
   {
-    "id": "prod-2",
-    "name": "Industrial Robotic Arm Armature",
-    "slug": "industrial-robotic-arm-armature",
-    "description": "Six-axis robotic manipulator arm designed for fast material handling, high-speed sorting, and precision welding. Seamless integration with standard PLCs.",
-    "price": "14500.00",
-    "priceCurrency": "USD",
+    "id": "printer-2",
+    "name": "Canon 74S Black Ink Cartridge",
+    "slug": "canon-74s-black-ink-cartridge",
+    "description": "High yield genuine black ink cartridge for Canon PIXMA series. Produces fade-resistant document text and sharp prints.",
+    "price": "840",
+    "priceDisplay": "₹ 840 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
     "inStock": true,
-    "sku": "ROB-ARM-6X",
-    "mpn": "ROBARM6X",
-    "brand": "Apex Robotics",
-    "category": "Robotics & Automation",
-    "images": [
-      "/images/products/robotic-arm-1.jpg"
-    ],
-    "tags": [
-      "robotics",
-      "automation",
-      "assembly",
-      "robotic arm"
-    ],
-    "priceValidUntil": "2030-12-31",
-    "aggregateRating": {
-      "ratingValue": "4.8",
-      "reviewCount": "24"
-    }
+    "sku": "CAN-74S",
+    "brand": "Canon",
+    "category": "Printer Cartridges",
+    "image": "/src/assets/printer_canon_74s.png",
+    "tags": ["canon", "ink", "cartridge", "pixma", "black"]
   },
   {
-    "id": "prod-3",
-    "name": "High-Load Hydraulic Press Unit",
-    "slug": "high-load-hydraulic-press-unit",
-    "description": "50-ton hydraulic forging press equipped with digital load monitoring, automated cycle control, and safety light curtains.",
-    "price": "8900.00",
-    "priceCurrency": "USD",
+    "id": "printer-3",
+    "name": "Canon 746 Color Ink Cartridge",
+    "slug": "canon-746-color-ink-cartridge",
+    "description": "Vibrant tri-color ink cartridge for high quality photo and document printing with long lasting color fidelity.",
+    "price": "980",
+    "priceDisplay": "₹ 980 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
     "inStock": true,
-    "sku": "HYD-PRS-50T",
-    "mpn": "HYDPRS50T",
-    "brand": "Titan Hydraulics",
-    "category": "Heavy Machinery",
-    "images": [
-      "/images/products/press-1.jpg"
-    ],
-    "tags": [
-      "hydraulics",
-      "press",
-      "forging",
-      "machinery",
-      "heavy duty"
-    ],
-    "priceValidUntil": "2030-12-31",
-    "aggregateRating": {
-      "ratingValue": "4.7",
-      "reviewCount": "12"
-    }
+    "sku": "CAN-746",
+    "brand": "Canon",
+    "category": "Printer Cartridges",
+    "image": "/src/assets/printer_canon_746.png",
+    "tags": ["canon", "ink", "color", "cartridge", "photo"]
   },
   {
-    "id": "prod-4",
-    "name": "Pneumatic Actuator Control Grid",
-    "slug": "pneumatic-actuator-control-grid",
-    "description": "Multi-valve digital manifold assembly for micro-second control of heavy pneumatic cylinders. Supports EtherNet/IP and Modbus TCP protocols.",
-    "price": "1250.00",
-    "priceCurrency": "USD",
+    "id": "printer-4",
+    "name": "Epson 003 Ink Bottle (Black)",
+    "slug": "epson-003-ink-bottle-black",
+    "description": "Ultra high capacity black ink bottle for Epson EcoTank printers. Eco-friendly refilling with smudge-free output.",
+    "price": "320",
+    "priceDisplay": "₹ 320 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
     "inStock": true,
-    "sku": "PNM-VAL-MNF",
-    "mpn": "PNMVALMNF",
-    "brand": "Titan Hydraulics",
-    "category": "Robotics & Automation",
-    "images": [
-      "/images/products/manifold-1.jpg"
-    ],
-    "tags": [
-      "pneumatics",
-      "actuators",
-      "manifold",
-      "valves",
-      "control system"
-    ],
-    "priceValidUntil": "2030-12-31",
-    "aggregateRating": {
-      "ratingValue": "4.9",
-      "reviewCount": "32"
-    }
+    "sku": "EPS-003",
+    "brand": "Epson",
+    "category": "Printer Cartridges",
+    "image": "/src/assets/printer_epson_003.png",
+    "tags": ["epson", "ink bottle", "ecotank", "black"]
+  },
+  {
+    "id": "printer-5",
+    "name": "Brother TN2321 Toner Cartridge",
+    "slug": "brother-tn2321-toner-cartridge",
+    "description": "High capacity monochrome toner cartridge delivering crisp laser prints for heavy duty office printing.",
+    "price": "1,180",
+    "priceDisplay": "₹ 1,180 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "BRO-TN2321",
+    "brand": "Brother",
+    "category": "Printer Cartridges",
+    "image": "/src/assets/printer_brother_tn2321.png",
+    "tags": ["brother", "toner", "laser", "black"]
+  },
+  {
+    "id": "printer-6",
+    "name": "Samsung MLT-D111S Toner Cartridge",
+    "slug": "samsung-mlt-d111s-toner-cartridge",
+    "description": "Reliable Samsung original laser toner cartridge for Xpress series printers. Standard yield with reliable performance.",
+    "price": "1,250",
+    "priceDisplay": "₹ 1,250 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "SAM-D111S",
+    "brand": "Samsung",
+    "category": "Printer Cartridges",
+    "image": "/src/assets/printer_samsung_d111s.png",
+    "tags": ["samsung", "toner", "xpress", "laser"]
+  },
+  {
+    "id": "steel-1",
+    "name": "SS 304 Sheets",
+    "slug": "ss-304-sheets",
+    "description": "Premium industrial grade stainless steel 304 sheets. Excellent corrosion resistance and durability for manufacturing.",
+    "price": "190",
+    "priceDisplay": "₹ 190 / Kg",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "STL-304-SHT",
+    "brand": "Wadhumal Steel",
+    "category": "Steel Products",
+    "image": "/src/assets/ss_304_sheets.png",
+    "tags": ["steel", "ss304", "sheets", "industrial"]
+  },
+  {
+    "id": "steel-2",
+    "name": "SS 304 Pipes",
+    "slug": "ss-304-pipes",
+    "description": "Seamless and welded stainless steel 304 pipes for structural, plumbing, and industrial fluid transport applications.",
+    "price": "210",
+    "priceDisplay": "₹ 210 / Kg",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "STL-304-PIP",
+    "brand": "Wadhumal Steel",
+    "category": "Steel Products",
+    "image": "/src/assets/ss_304_pipes.png",
+    "tags": ["steel", "ss304", "pipes", "industrial"]
+  },
+  {
+    "id": "steel-3",
+    "name": "SS Coils",
+    "slug": "ss-coils",
+    "description": "Cold rolled stainless steel coils engineered for deep drawing and precision press manufacturing.",
+    "price": "185",
+    "priceDisplay": "₹ 185 / Kg",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "STL-COIL",
+    "brand": "Wadhumal Steel",
+    "category": "Steel Products",
+    "image": "/src/assets/ss_coils.png",
+    "tags": ["steel", "coils", "raw material"]
+  },
+  {
+    "id": "steel-4",
+    "name": "SS 316 Rods",
+    "slug": "ss-316-rods",
+    "description": "Marine grade stainless steel 316 round rods offering superior resistance to chemical environments and chloride corrosion.",
+    "price": "250",
+    "priceDisplay": "₹ 250 / Kg",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "STL-316-ROD",
+    "brand": "Wadhumal Steel",
+    "category": "Steel Products",
+    "image": "/src/assets/ss_316_rods.png",
+    "tags": ["steel", "ss316", "rods", "round bar"]
   }
 ]
