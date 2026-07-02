@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Container from "../../../components/common/Container";
 import Fade from "../../../components/common/Fade";
 import Banner from "../../../components/layout/Banner";
+import Icon from "../../../components/common/Icon";
 import blogsData from "../../../data/blogs.json";
 
 const CATEGORIES = [
@@ -130,10 +131,7 @@ const BlogList = memo(() => {
                                         }}
                                     />
 
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex text-gray absolute top-0 right-0 m-11">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
+                                    <Icon name="Search" width="18" height="18" className="absolute top-0 right-0 m-11 text-gray" strokeWidth="2" />
                                 </div>
                             </div>
 
@@ -321,21 +319,14 @@ const BlogList = memo(() => {
 
                             {/* Newsletter Widget */}
                             <div className="bg-dark text-white rounded-10 p-20 mb-20 relative overflow-hidden">
-                                <svg
-                                    className="absolute"
+                                <Icon
+                                    name="Send"
                                     width="36"
                                     height="36"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
+                                    className="absolute text-white"
                                     strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
                                     style={{ color: "rgba(255, 255, 255, 0.06)", right: "15px", top: "15px", pointerEvents: "none" }}
-                                >
-                                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                </svg>
+                                />
 
                                 <h3 className="mid-text font-500 text-white">Subscribe to Our Newsletter</h3>
                                 <p className="mini-text text-white mt-6 mb-20" style={{ opacity: 0.85 }}>

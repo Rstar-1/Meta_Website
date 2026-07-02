@@ -5,6 +5,7 @@ import SeoHelmet from '../../components/seo/SeoHelmet';
 import BlogSchema from '../../components/seo/BlogSchema';
 import Container from '../../components/common/Container';
 import Fade from '../../components/common/Fade';
+import Icon from '../../components/common/Icon';
 import LatestArticles from '../home/sections/LatestArticles';
 
 // Helper to get detailed mock content for each blog post to build a rich, premium reading experience
@@ -347,9 +348,7 @@ const BlogDetail = () => {
                   rel="noreferrer"
                   className="share-btn"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.5C10.5 0 9 1.624 9 4.833V8z" />
-                  </svg>
+                  <Icon name="Facebook" width="18" height="18" fill="currentColor" />
                 </a>
 
                 {/* Twitter Share */}
@@ -361,9 +360,7 @@ const BlogDetail = () => {
                   rel="noreferrer"
                   className="share-btn"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
+                  <Icon name="Twitter" width="16" height="16" fill="currentColor" />
                 </a>
 
                 {/* LinkedIn Share */}
@@ -375,26 +372,12 @@ const BlogDetail = () => {
                   rel="noreferrer"
                   className="share-btn"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
+                  <Icon name="LinkedIn" width="16" height="16" fill="currentColor" />
                 </a>
 
                 {/* Copy URL */}
                 <button onClick={copyToClipboard} className="share-btn" title="Copy link">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                  </svg>
+                  <Icon name="CopyLink" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" />
                 </button>
               </div>
             </div>
@@ -416,17 +399,7 @@ const BlogDetail = () => {
                 <div className="hidden sm-flex md-flex gap-10 items-center mb-25 bg-white p-12 rounded-5 border-ec">
                   <span className="small-text font-600 text-dark">Share:</span>
                   <button onClick={copyToClipboard} className="share-btn" title="Copy link">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                    </svg>
+                    <Icon name="CopyLink" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" />
                   </button>
                   <a
                     href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -436,9 +409,7 @@ const BlogDetail = () => {
                     rel="noreferrer"
                     className="share-btn"
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.5C10.5 0 9 1.624 9 4.833V8z" />
-                    </svg>
+                    <Icon name="Facebook" width="16" height="16" fill="currentColor" />
                   </a>
                   <a
                     href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -448,9 +419,7 @@ const BlogDetail = () => {
                     rel="noreferrer"
                     className="share-btn"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
+                    <Icon name="Twitter" width="14" height="14" fill="currentColor" />
                   </a>
                 </div>
 
@@ -534,32 +503,24 @@ const BlogDetail = () => {
                     {/* Author Social Media Handles */}
                     <div className="flex gap-10 mt-12">
                       <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                        <svg
+                        <Icon
+                          name="LinkedInOutline"
                           width="16"
                           height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
                           className="text-gray hover:text-primary transition-all"
-                        >
-                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                          <rect x="2" y="9" width="4" height="12" />
-                          <circle cx="4" cy="4" r="2" />
-                        </svg>
+                        />
                       </a>
                       <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                        <svg
+                        <Icon
+                          name="TwitterOutline"
                           width="16"
                           height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
                           className="text-gray hover:text-primary transition-all"
-                        >
-                          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                        </svg>
+                        />
                       </a>
                     </div>
                   </div>
@@ -625,13 +586,11 @@ const BlogDetail = () => {
 
                 {/* Sidebar Newsletter Subscribe Widget */}
                 <div className="bg-dark text-white rounded-10 p-20 mb-20 relative overflow-hidden">
-                  <svg
-                    className="absolute"
+                  <Icon
+                    name="Send"
                     width="42"
                     height="42"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
+                    className="absolute text-white"
                     strokeWidth="1.5"
                     style={{
                       color: 'rgba(255, 255, 255, 0.05)',
@@ -639,10 +598,7 @@ const BlogDetail = () => {
                       top: '15px',
                       pointerEvents: 'none',
                     }}
-                  >
-                    <line x1="22" y1="2" x2="11" y2="13" />
-                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                  </svg>
+                  />
 
                   <h3 className="mid-text font-600 text-white mb-6">Subscribe to Our Newsletter</h3>
                   <p className="mini-text text-white opacity-80 mb-15 leading-tight">
