@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Button from '../../../components/common/Button'
 import Icon from '../../../components/common/Icon'
 import Container from '../../../components/common/Container'
+import Image from '../../../components/common/Image'
 
 // Inline GetBestPriceForm Component
 const GetBestPriceForm = () => {

@@ -81,11 +81,9 @@ const ProductDetail = () => {
           isWishlist={isWishlist}
           setIsWishlist={setIsWishlist}
         />
-
-        <PopularProducts />
-        <ProductReviews />
-
       </div>
+      <PopularProducts />
+      <ProductReviews />
     </>
   )
 }
