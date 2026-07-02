@@ -45,7 +45,7 @@ const Hero = ({ onSearch }) => {
   ];
 
   return (
-    <Container className='h-500 md-h-auto sm-h-auto py-40 flex items-center' style={{ background: `linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54)), url(${background})`, backgroundPosition: 'right', backgroundSize: 'cover' }}>
+    <Container className='h-500 sm-h-700 py-40 flex items-center' style={{ background: `linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54)), url(${background})`, backgroundPosition: 'right', backgroundSize: 'cover' }}>
       <div className="w-full">
         <h1 className="large-text text-white font-700 uppercase">
           India's No. 1<br />
@@ -68,7 +68,7 @@ const Hero = ({ onSearch }) => {
         </div>
 
         {/* Search Form */}
-        <form className="flex md-flex-column sm-flex-column items-center gap-12 mt-15 bg-white py-12 px-16 rounded-10 w-70 md-w-full sm-w-full" onSubmit={handleSearchSubmit}>
+        <form className="flex md-grid-cols-1 sm-grid-cols-1 items-center gap-12 mt-15 bg-white py-12 px-16 sm-px-1 rounded-10 w-70 md-w-full sm-w-full" onSubmit={handleSearchSubmit}>
 
           <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
             <Icon name="Grid" width="20" height="20" stroke="var(--primary)" />

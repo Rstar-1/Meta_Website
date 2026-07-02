@@ -7,7 +7,7 @@ const BusinessPromo = ({ onRegisterBusiness }) => {
     <Container className='bg-forth'>
       <div className="w-full py-30">
         <div
-          className="flex md-flex-column sm-flex-column items-center justify-between p-40 md-p-30 sm-p-20 gap-20"
+          className="flex sm-grid-cols-1 items-center justify-between p-40 md-p-30 sm-p-20 gap-12"
           style={{
             background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
             borderRadius: '5px',
@@ -33,7 +33,7 @@ const BusinessPromo = ({ onRegisterBusiness }) => {
             text="List Your Business"
             bg="warning"
             version="v2"
-            className="font-700 cursor-pointer"
+            className="font-500 cursor-pointer"
           />
         </div>
       </div>

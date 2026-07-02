@@ -243,6 +243,7 @@ input,
     font-size: 84px !important;
     margin: 0px !important;
     line-height: 90px !important;
+    font-weight: 500 !important;
 
     @media (max-width: 640px) {
         font-size: 42px !important;
@@ -256,29 +257,34 @@ input,
     font-size: 52px !important;
     margin: 0px !important;
     line-height: 65px !important;
+    font-weight: 500 !important;
 
     @media (max-width: 640px) {
-        font-size: 36px !important;
+        font-size: 30px !important;
         margin: 0px !important;
-        line-height: 56px !important;
+        line-height: 44px !important;
+        font-weight: 500 !important;
     }
 }
 
 .head-text {
-    font-size: 40px !important;
-    line-height: 52px !important;
+    font-size: 34px !important;
+    line-height: 44px !important;
     margin: 0px !important;
+    font-weight: 500 !important;
 
     @media (max-width: 640px) {
         font-size: 24px !important;
         margin: 0px !important;
         line-height: 36px !important;
+        font-weight: 500 !important;
     }
 }
 
 .title-text {
-    font-size: 24px !important;
+    font-size: 22px !important;
     margin: 0px !important;
+    font-weight: 500 !important;
 
     @media (max-width: 640px) {
         font-size: 20px !important;
@@ -287,37 +293,38 @@ input,
 }
 
 .mid-text {
-    font-size: 18px !important;
-    margin: 0px !important;
-}
-
-.headmini-text {
     font-size: 14px !important;
     margin: 0px !important;
+    font-weight: 500 !important;
 }
 
 .headpara-text {
     font-size: 20px !important;
     line-height: 30px !important;
+    font-weight: 400 !important;
 
     @media (max-width: 640px) {
         font-size: 20px !important;
         line-height: 28px !important;
+        font-weight: 500 !important;
     }
 }
 
 .midpara-text {
     font-size: 18px !important;
+    font-weight: 400 !important;
 
     @media (max-width: 640px) {
         font-size: 15px !important;
         line-height: 21px !important;
+        font-weight: 500 !important;
     }
 }
 
 .para-text {
     font-size: 16px !important;
     line-height: 22px !important;
+    font-weight: 400 !important;
 
     @media (max-width: 640px) {
         font-size: 16px !important;
@@ -325,13 +332,15 @@ input,
 }
 
 .small-text {
-    font-size: 15px !important;
-    line-height: 24px !important;
+    font-size: 13px !important;
+    line-height: 18px !important;
+    font-weight: 400 !important;
 }
 
 .mini-text {
-    font-size: 12px !important;
-    line-height: 16px !important;
+    font-size: 11px !important;
+    line-height: 18px !important;
+    font-weight: 400 !important;
 }
 
 /* ======================= End-Fontsize ======================= */

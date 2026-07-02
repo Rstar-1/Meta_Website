@@ -139,7 +139,7 @@ const Review = () => {
 
           <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
             {reviewsData.platforms.map((plat) => (
-              <div key={plat.name} className="flex items-center justify-center gap-12">
+              <div key={plat.name} className="flex items-center justify-center sm-justify-start gap-12">
                 {renderPlatformLogo(plat.name)}
 
                 <div className="flex items-center gap-6" style={{ fontSize: '14px' }}>

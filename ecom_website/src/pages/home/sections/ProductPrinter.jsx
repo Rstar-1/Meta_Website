@@ -21,7 +21,7 @@ const ProductPrinter = () => {
           </p>
         </div>
 
-        <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12 mt-20">
+        <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-2 gap-12 mt-20">
           {printerProducts?.slice(0, 4)?.map((product) => (
             <div
               key={product.id}
@@ -34,7 +34,7 @@ const ProductPrinter = () => {
                     src={product.image}
                     alt={product.name}
                     loading="lazy"
-                    className="w-full h-250 object-cover rounded-5"
+                    className="w-full h-250 sm-h-150 object-cover rounded-5"
                   />
                 </div>
 
