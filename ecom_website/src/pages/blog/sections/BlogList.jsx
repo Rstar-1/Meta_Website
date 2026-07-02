@@ -2,6 +2,7 @@ import React, { memo, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "../../../components/common/Container";
 import Fade from "../../../components/common/Fade";
+import Banner from "../../../components/layout/Banner";
 import blogsData from "../../../data/blogs.json";
 
 const CATEGORIES = [
@@ -98,6 +99,14 @@ const BlogList = memo(() => {
           color: var(--primary) !important;
         }
       `}</style>
+
+            {/* --- Page Banner --- */}
+            <Banner
+                style={{ background: "linear-gradient(135deg, #021B44 0%, #00102A 100%)" }}
+                img="https://metatechnical.org/images/banners/blog.png"
+                title="Latest Articles"
+                desc="Insights, strategies, and tips to help your business grow with smart marketing."
+            />
 
             {/* --- Main Content Area --- */}
             <div className="bg-forth py-50">
