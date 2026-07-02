@@ -10,7 +10,7 @@ const Home = lazy(() => import('../pages/home/Home'))
 const Products = lazy(() => import('../pages/products/Products'))
 const ProductDetail = lazy(() => import('../pages/products/ProductDetail'))
 const Brands = lazy(() => import('../pages/brands/Brands'))
-const BlogList = lazy(() => import('../pages/blog/BlogList'))
+const Blogs = lazy(() => import('../pages/blog/Blogs'))
 const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
 const Enquiry = lazy(() => import('../pages/enquiry/Enquiry'))
 const Contact = lazy(() => import('../pages/contact/Contact'))
@@ -28,7 +28,7 @@ function AppRoutes() {
           <Route path="product-detail" element={<ProductDetail />} />
           <Route path="product-detail/:id" element={<ProductDetail />} />
           <Route path="brands" element={<Brands />} />
-          <Route path="blog" element={<BlogList />} />
+          <Route path="blog" element={<Blogs />} />
           <Route path="blog-detail" element={<BlogDetail />} />
           <Route path="blog-detail/:id" element={<BlogDetail />} />
           <Route path="enquiry" element={<Enquiry />} />

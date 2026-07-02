@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from '../../components/layout/Banner'
 import DetailSection from './sections/DetailSection'
 import Timeline from './sections/Timeline'
-import BlogList from '../blog/BlogList'
+import BlogList from '../blog/sections/BlogList'
 
 const About = () => {
   return (

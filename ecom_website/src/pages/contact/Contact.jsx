@@ -1,7 +1,7 @@
 import React from 'react'
 import ContactForm from '../../components/forms/ContactForm'
 import Banner from '../../components/layout/Banner'
-import BlogList from '../blog/BlogList'
+import BlogList from '../blog/sections/BlogList'
 
 const Contact = () => {
   return (

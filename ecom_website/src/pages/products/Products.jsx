@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import products from '../../data/products.json';
 import Container from '../../components/common/Container';
 import Button from '../../components/common/Button';
@@ -31,8 +31,15 @@ const imageMap = {
 
 const Products = () => {
   const navigate = useNavigate();
-  const [selectedCat, setSelectedCat] = useState('All');
+  const location = useLocation();
+  const [selectedCat, setSelectedCat] = useState(location.state?.category || 'All');
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    if (location.state?.category) {
+      setSelectedCat(location.state.category);
+    }
+  }, [location.state?.category]);
 
   const filteredProducts = products.filter((p) => {
     const matchesCat = selectedCat === 'All' || p.category === selectedCat;
@@ -66,11 +73,10 @@ const Products = () => {
               <button
                 key={cat}
                 onClick={() => setSelectedCat(cat)}
-                className={`px-16 py-8 rounded-5 cursor-pointer border-0 font-500 small-text transition-all ${
-                  selectedCat === cat
-                    ? 'bg-primary text-white'
-                    : 'bg-white text-dark border-ec hover:bg-gray-100'
-                }`}
+                className={`px-16 py-8 rounded-5 cursor-pointer border-0 font-500 small-text transition-all ${selectedCat === cat
+                  ? 'bg-primary text-white'
+                  : 'bg-white text-dark border-ec hover:bg-gray-100'
+                  }`}
                 style={{
                   border: selectedCat === cat ? 'none' : '1px solid #e5e7eb',
                 }}
@@ -87,8 +93,8 @@ const Products = () => {
             {selectedCat === 'Printer Cartridges'
               ? 'Popular Printer Cartridges'
               : selectedCat === 'Steel Products'
-              ? 'Popular Steel Products'
-              : 'Popular Printer Cartridges'}
+                ? 'Popular Steel Products'
+                : 'Popular Printer Cartridges'}
           </h2>
           <p
             className="text-primary font-500 cursor-pointer small-text hover:underline"
@@ -102,43 +108,31 @@ const Products = () => {
         </div>
 
         {/* Product Cards Grid matching exact requested UI */}
-        <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-16">
+        <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
           {filteredProducts.map((product) => {
             const imgSrc = imageMap[product.id] || product.image;
             return (
               <div
                 key={product.id}
-                className="bg-white border-ec rounded-10 p-12 cursor-pointer flex flex-column justify-between hover-shadow transition-all"
+                className="bg-white border-ec rounded-10 p-12 cursor-pointer transition-all"
                 onClick={() => handleProductClick(product.id)}
-                style={{
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '12px',
-                  padding: '16px',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                }}
               >
                 <div>
                   {/* Product Image Container */}
                   <div
-                    className="overflow-hidden rounded-8 flex items-center justify-center p-12"
-                    style={{
-                      background: '#f8fafc',
-                      height: '220px',
-                      borderRadius: '8px',
-                    }}
+                    className="overflow-hidden rounded-5"
+
                   >
                     <img
                       src={imgSrc}
                       alt={product.name}
                       loading="lazy"
-                      className="max-h-full max-w-full object-contain"
-                      style={{ maxHeight: '180px', objectFit: 'contain' }}
+                      className="w-full object-cover h-200 flex"
                     />
                   </div>
 
                   {/* Product Metadata */}
-                  <div className="mt-12">
+                  <div className="mt-8">
                     <h3
                       className="text-dark font-600 line-clamp1"
                       style={{
