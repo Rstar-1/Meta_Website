@@ -5,6 +5,7 @@ import Button from "../common/Button";
 import Image from "../common/Image";
 import headerData from "../../data/header.json";
 import logoImg from "../../assets/sobo_logo.png";
+import productsData from "../../data/products.json";
 
 const ProductsMenu = ({ onItemClick }) => (
   <>
@@ -53,100 +54,106 @@ const ProductsMenu = ({ onItemClick }) => (
       <p className="small-text text-gray font-400 mt-6">
         {headerData.productsMenu.bannerDesc}
       </p>
-      <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link" onClick={onItemClick}>
+      <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link" onClick={() => onItemClick()}>
         {headerData.productsMenu.bannerLinkText} →
       </p>
     </div>
-    {headerData.productsMenu.sections.map((section, idx) => (
-      <div key={idx} className="p-18">
-        <p className="text-gray uppercase small-text font-500">{section.title}</p>
-        <div className="grid grid-cols-1 gap-8 mt-12">
-          {section.items.map((item, index) => (
-            <div
-              key={index}
-              className="mega-menu-item"
-              onClick={onItemClick}
-            >
-              <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>{item}</p>
-              <span className="arrow-icon">➔</span>
-            </div>
-          ))}
+    {[...new Set(productsData.map((p) => p.category))].map((cat, idx) => {
+      const items = productsData.filter((p) => p.category === cat);
+      return (
+        <div key={idx} className="p-18">
+          <p className="text-gray uppercase small-text font-500">{cat}</p>
+          <div className="grid grid-cols-1 gap-8 mt-12">
+            {items.map((product) => (
+              <div
+                key={product.id}
+                className="mega-menu-item"
+                onClick={() => onItemClick(product.id)}
+              >
+                <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>
+                  {product.name}
+                </p>
+                <span className="arrow-icon">➔</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      );
+    })}
   </>
 );
 
-const IndustryMenu = ({ onItemClick }) => (
-  <>
-    <style>{`
-      .mega-menu-item {
-        padding: 10px 0px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .mega-menu-item:hover {
-        background-color: var(--tertiary) !important;
-        transform: translateX(3px);
-      }
-      .mega-menu-item:hover p {
-        color: var(--warning) !important;
-      }
-      .mega-menu-link:hover {
-        color: var(--warning) !important;
-      }
-      .arrow-icon {
-        font-size: 0.8rem;
-        color: var(--gray);
-        opacity: 0;
-        transform: translateX(-5px);
-        transition: all 0.2s ease;
-        padding-right: 15px;
-      }
-      .mega-menu-item:hover .arrow-icon {
-        opacity: 1;
-        transform: translateX(0);
-        color: var(--warning) !important;
-      }
-    `}</style>
-    <div className="bg-tertiary p-18">
-      <Image
-        src={headerData.industryMenu.bannerImage}
-        alt="Industry"
-        className="flex w-full h-200 object-cover rounded-5"
-      />
-      <h4 className="mid-text text-dark font-500 pt-20">{headerData.industryMenu.bannerTitle}</h4>
-      <p className="small-text text-gray font-400 mt-6">
-        {headerData.industryMenu.bannerDesc}
-      </p>
-      <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link" onClick={onItemClick}>
-        {headerData.industryMenu.bannerLinkText} →
-      </p>
-    </div>
-    {headerData.industryMenu.sections.map((section, idx) => (
-      <div key={idx} className="p-18">
-        <p className="text-gray uppercase small-text font-500">{section.title}</p>
+const IndustryMenu = ({ onItemClick }) => {
+  const categories = [...new Set(productsData.map((p) => p.category))];
+  return (
+    <>
+      <style>{`
+        .mega-menu-item {
+          padding: 10px 0px;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .mega-menu-item:hover {
+          background-color: var(--tertiary) !important;
+          transform: translateX(3px);
+        }
+        .mega-menu-item:hover p {
+          color: var(--warning) !important;
+        }
+        .mega-menu-link:hover {
+          color: var(--warning) !important;
+        }
+        .arrow-icon {
+          font-size: 0.8rem;
+          color: var(--gray);
+          opacity: 0;
+          transform: translateX(-5px);
+          transition: all 0.2s ease;
+          padding-right: 15px;
+        }
+        .mega-menu-item:hover .arrow-icon {
+          opacity: 1;
+          transform: translateX(0);
+          color: var(--warning) !important;
+        }
+      `}</style>
+      <div className="bg-tertiary p-18">
+        <Image
+          src={headerData.industryMenu.bannerImage}
+          alt="Industry"
+          className="flex w-full h-200 object-cover rounded-5"
+        />
+        <h4 className="mid-text text-dark font-500 pt-20">{headerData.industryMenu.bannerTitle}</h4>
+        <p className="small-text text-gray font-400 mt-6">
+          {headerData.industryMenu.bannerDesc}
+        </p>
+        <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link" onClick={() => onItemClick()}>
+          {headerData.industryMenu.bannerLinkText} →
+        </p>
+      </div>
+      <div className="p-18">
+        <p className="text-gray uppercase small-text font-500">Product Categories</p>
         <div className="grid grid-cols-1 gap-8 mt-12">
-          {section.items.map((item, index) => (
+          {categories.map((cat, index) => (
             <div
               key={index}
               className="mega-menu-item"
-              onClick={onItemClick}
+              onClick={() => onItemClick(null, cat)}
             >
-              <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>{item}</p>
+              <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>{cat}</p>
               <span className="arrow-icon">➔</span>
             </div>
           ))}
         </div>
       </div>
-    ))}
-  </>
-);
+    </>
+  );
+};
 
 const MegaMenuContent = memo(({ label, onItemClick, navigate }) => {
   switch (label) {
@@ -164,9 +171,15 @@ const Header = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  const handleItemClick = () => {
+  const handleItemClick = (productId, categoryName) => {
     setActiveMenu(null);
-    navigate("/products");
+    if (productId) {
+      navigate(`/product-detail/${productId}`);
+    } else if (categoryName) {
+      navigate("/products", { state: { category: categoryName } });
+    } else {
+      navigate("/products");
+    }
   };
 
   return (
