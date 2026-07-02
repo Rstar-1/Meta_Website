@@ -4,6 +4,7 @@ import Container from "../../../components/common/Container";
 import Fade from "../../../components/common/Fade";
 import Banner from "../../../components/layout/Banner";
 import Icon from "../../../components/common/Icon";
+import Image from "../../../components/common/Image";
 import blogsData from "../../../data/blogs.json";
 
 const CATEGORIES = [
@@ -157,7 +158,7 @@ const BlogList = memo(() => {
                                                         className="w-40 sm-w-full overflow-hidden cursor-pointer"
                                                         onClick={() => navigate(`/blog-detail/${blog.id}`)}
                                                     >
-                                                        <img
+                                                        <Image
                                                             src={blog.image}
                                                             alt={blog.title}
                                                             className="w-full h-250 object-cover flex"
@@ -189,7 +190,7 @@ const BlogList = memo(() => {
                                                         {/* Card Footer */}
                                                         <div className="flex items-center justify-between pt-8 bordh">
                                                             <div className="flex items-center gap-10">
-                                                                <img
+                                                                <Image
                                                                     src={blog.authorAvatar || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60"}
                                                                     alt={blog.authorName}
                                                                     className="rounded-full"
@@ -298,7 +299,7 @@ const BlogList = memo(() => {
                                                 onClick={() => navigate(`/blog-detail/${post.id}`)}
                                             >
                                                 <div className="overflow-hidden w-35">
-                                                    <img
+                                                    <Image
                                                         src={post.image}
                                                         alt={post.title}
                                                         className="w-full object-cover rounded-10"

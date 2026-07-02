@@ -2,6 +2,7 @@ import React from 'react';
 import reviewsData from '../../../data/reviews.json';
 import Container from '../../../components/common/Container';
 import Icon from '../../../components/common/Icon';
+import Image from '../../../components/common/Image';
 
 const Review = () => {
   const renderStars = (rating) => {
@@ -104,7 +105,7 @@ const Review = () => {
               {reviewsData.userReviews.map((rev) => (
                 <div key={rev.id} className="">
                   <div className="flex items-center gap-12 mb-10">
-                    <img
+                    <Image
                       src={rev.avatar}
                       alt={rev.name}
                       loading="lazy"

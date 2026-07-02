@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import products from '../../data/products.json';
 import Container from '../../components/common/Container';
-import Button from '../../components/common/Button';
+import CardLayout from '../../components/layout/CardLayout';
 
 // Import local product images for reliable rendering
 import printerHp88a from '../../assets/printer_hp_88a.png';
@@ -108,86 +108,18 @@ const Products = () => {
         </div>
 
         {/* Product Cards Grid matching exact requested UI */}
-        <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
-          {filteredProducts.map((product) => {
-            const imgSrc = imageMap[product.id] || product.image;
-            return (
-              <div
-                key={product.id}
-                className="bg-white border-ec rounded-10 p-12 cursor-pointer transition-all"
-                onClick={() => handleProductClick(product.id)}
-              >
-                <div>
-                  {/* Product Image Container */}
-                  <div
-                    className="overflow-hidden rounded-5"
-
-                  >
-                    <img
-                      src={imgSrc}
-                      alt={product.name}
-                      loading="lazy"
-                      className="w-full object-cover h-200 flex"
-                    />
-                  </div>
-
-                  {/* Product Metadata */}
-                  <div className="mt-8">
-                    <h3
-                      className="text-dark font-600 line-clamp1"
-                      style={{
-                        fontSize: '1.05rem',
-                        color: '#0f172a',
-                        marginBottom: '4px',
-                      }}
-                    >
-                      {product.name}
-                    </h3>
-                    <p
-                      className="text-gray mini-text"
-                      style={{ color: '#64748b', fontSize: '0.85rem' }}
-                    >
-                      {product.subtitle || 'Starting from'}
-                    </p>
-                    <p
-                      className="text-dark font-600 mt-4"
-                      style={{
-                        color: '#0f172a',
-                        fontSize: '1rem',
-                        fontWeight: '700',
-                        marginTop: '4px',
-                      }}
-                    >
-                      {product.priceDisplay || `₹ ${product.price} / Piece`}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Blue View Products Button at Bottom */}
-                <div className="mt-16">
-                  <Button
-                    text="View Products"
-                    bg="primary"
-                    version="v3"
-                    className="w-full font-500 py-10"
-                    style={{
-                      backgroundColor: '#2563eb',
-                      color: '#ffffff',
-                      borderRadius: '8px',
-                      fontWeight: '500',
-                      fontSize: '0.95rem',
-                      padding: '10px 0',
-                    }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleProductClick(product.id);
-                    }}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <CardLayout
+          items={filteredProducts}
+          cardType="product"
+          imageMap={imageMap}
+          imageHeight="h-200"
+          cols="4"
+          mdCols="2"
+          smCols="1"
+          gap="12"
+          onCardClick={(product) => handleProductClick(product.id)}
+          onButtonClick={(product) => handleProductClick(product.id)}
+        />
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-50 text-gray">

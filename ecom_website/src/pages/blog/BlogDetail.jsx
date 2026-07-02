@@ -6,6 +6,7 @@ import BlogSchema from '../../components/seo/BlogSchema';
 import Container from '../../components/common/Container';
 import Fade from '../../components/common/Fade';
 import Icon from '../../components/common/Icon';
+import Image from '../../components/common/Image';
 import LatestArticles from '../home/sections/LatestArticles';
 
 // Helper to get detailed mock content for each blog post to build a rich, premium reading experience
@@ -307,7 +308,7 @@ const BlogDetail = () => {
             {/* Metadata: Author, Date, Read Time */}
             <div className="flex items-center gap-12 sm-grid-cols-1 flex-wrap">
               <div className="flex items-center gap-10">
-                <img
+                <Image
                   src={
                     post.authorAvatar ||
                     'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
@@ -387,7 +388,7 @@ const BlogDetail = () => {
               <Fade direction="up" distance={30} delay={100}>
                 {/* Main Article Image */}
                 <div className="overflow-hidden rounded-10 mb-35">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full object-cover flex"
@@ -483,7 +484,7 @@ const BlogDetail = () => {
 
                 {/* Author Bio Card Widget */}
                 <div className="author-bio-box rounded-10 p-20 flex gap-20 sm-grid-cols-1 items-start">
-                  <img
+                  <Image
                     src={
                       post.authorAvatar ||
                       'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
@@ -557,7 +558,7 @@ const BlogDetail = () => {
                         className="popular-item flex items-center gap-12 cursor-pointer"
                         onClick={() => navigate(`/blog-detail/${popPost.id}`)}
                       >
-                        <img
+                        <Image
                           src={popPost.image}
                           alt={popPost.title}
                           className="rounded-5 flex"

@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import products from '../../data/products.json'
 import ProductSchema from '../../components/seo/ProductSchema'
 import SeoHelmet from '../../components/seo/SeoHelmet'
-import Container from '../../components/common/Container'
 
 // Import product images from assets
 import printerHp88a from '../../assets/printer_hp_88a.png'
@@ -14,15 +13,8 @@ import printerBrotherTn2321 from '../../assets/printer_brother_tn2321.png'
 
 // Import section components
 import {
-  ProductBreadcrumb,
   ProductOverview,
-  FeatureHighlights,
-  ProductTabs,
-  ProductReviews,
-  GetBestPriceForm,
-  SupplierCard,
-  TrustAssurance,
-  ShareProduct
+  ProductReviews
 } from './sections'
 import PopularProducts from '../home/sections/PopularProducts'
 
@@ -65,11 +57,10 @@ const ProductDetail = () => {
   ]
 
   const [activeImage, setActiveImage] = useState(printerHp88a)
-  const [activeTab, setActiveTab] = useState('description')
   const [isWishlist, setIsWishlist] = useState(false)
 
   return (
-    <Container>
+    <>
       <SeoHelmet
         title={productData.title}
         description={productData.description}
@@ -81,43 +72,21 @@ const ProductDetail = () => {
       <ProductSchema product={foundProduct || { name: productData.title, description: productData.description, price: '1250', sku: 'HP-88A' }} />
 
       <div className='py-50'>
-        <ProductBreadcrumb title={productData.title} />
-
-        <div className='flex gap-12 mt-20'>
-
-          <div className='w-75'>
-            <ProductOverview
-              productData={productData}
-              galleryImages={galleryImages}
-              activeImage={activeImage}
-              setActiveImage={setActiveImage}
-              isWishlist={isWishlist}
-              setIsWishlist={setIsWishlist}
-            />
-
-            <FeatureHighlights />
-
-            <ProductTabs
-              productData={productData}
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-          </div>
-
-          <div className='w-25'>
-            <GetBestPriceForm />
-            <SupplierCard brand={productData.brand} />
-            <TrustAssurance />
-            <ShareProduct />
-          </div>
-
-        </div>
+        <ProductOverview
+          title={productData.title}
+          productData={productData}
+          galleryImages={galleryImages}
+          activeImage={activeImage}
+          setActiveImage={setActiveImage}
+          isWishlist={isWishlist}
+          setIsWishlist={setIsWishlist}
+        />
 
         <PopularProducts />
         <ProductReviews />
 
       </div>
-    </Container>
+    </>
   )
 }
 

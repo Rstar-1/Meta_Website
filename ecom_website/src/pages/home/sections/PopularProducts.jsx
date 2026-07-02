@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import popularProducts from '../../../data/homePopularProducts.json';
 import Container from '../../../components/common/Container';
-import Button from '../../../components/common/Button';
+import CardLayout from '../../../components/layout/CardLayout';
 
 const PopularProducts = () => {
   const navigate = useNavigate();
@@ -21,46 +21,18 @@ const PopularProducts = () => {
             View All Products ➔</p>
         </div>
 
-        <div className='grid-cols-6 md-grid-cols-3 sm-grid-cols-2 gap-12 mt-20'>
-          {popularProducts.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white border-ec rounded-10 p-12 cursor-pointer"
-              onClick={handleNavigate}
-            >
-              <div className="overflow-hidden rounded-5 relative">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  loading="lazy"
-                  className="w-full h-150 object-cover rounded-5"
-                />
-              </div>
-
-              <div className='mt-10'>
-                <h3
-                  className="text-dark font-500 mid-text line-clamp1"
-                >
-                  {product.name}
-                </h3>
-                <p className="text-gray mini-text mt-2">
-                  {product.listings}
-                </p>
-
-                <Button
-                  text="View Products"
-                  bg="primary"
-                  version="v3"
-                  className='mt-10'
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleNavigate();
-                  }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <CardLayout
+          items={popularProducts}
+          cardType="product"
+          imageHeight="h-150"
+          cols="6"
+          mdCols="3"
+          smCols="2"
+          gap="12"
+          className="mt-20"
+          onCardClick={handleNavigate}
+          onButtonClick={handleNavigate}
+        />
       </div>
     </Container>
   );

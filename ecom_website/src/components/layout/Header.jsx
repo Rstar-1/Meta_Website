@@ -188,7 +188,7 @@ const Header = () => {
         <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
           <div className="flex items-center gap-8">
             <NavLink to="/" className="flex items-center" style={{ textDecoration: 'none' }}>
-              <img 
+              <Image 
                 src={logoImg} 
                 alt="SOBO Marketing Solution Logo" 
                 style={{ 
