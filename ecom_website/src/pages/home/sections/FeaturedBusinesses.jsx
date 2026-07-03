@@ -1,4 +1,4 @@
-import featuredBusinesses from '../../../data/homeFeaturedBusinesses.json';
+import featuredBusinesses from '../../../data/client.json';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 

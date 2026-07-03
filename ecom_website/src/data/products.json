@@ -11,25 +11,70 @@
     "inStock": true,
     "sku": "HP-88A",
     "brand": "HP",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_hp_88a.png",
-    "tags": ["hp", "toner", "cartridge", "laserjet", "printer"],
+    "tags": [
+      "hp",
+      "toner",
+      "cartridge",
+      "laserjet",
+      "printer"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 245,
     "specs": [
-      { "label": "Cartridge Type", "value": "Toner Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "HP 88A (CC388A)" },
-      { "label": "Compatibility", "value": "HP LaserJet P1007, P1008, P1106, P1108, M1136, M1213nf, M1216nfh, M126nw" },
-      { "label": "Page Yield", "value": "Up to 1500 pages (at 5% coverage)" },
-      { "label": "Technology", "value": "Laser Toner" },
-      { "label": "Warranty", "value": "6 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Laser Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Toner Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "HP 88A (CC388A)"
+      },
+      {
+        "label": "Compatibility",
+        "value": "HP LaserJet P1007, P1008, P1106, P1108, M1136, M1213nf, M1216nfh, M126nw"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 1500 pages (at 5% coverage)"
+      },
+      {
+        "label": "Technology",
+        "value": "Laser Toner"
+      },
+      {
+        "label": "Warranty",
+        "value": "6 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Laser Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_hp_88a.png",
+      "/src/assets/printer_brother_tn2321.png",
+      "/src/assets/printer_samsung_d111s.png"
     ]
   },
   {
@@ -44,25 +89,70 @@
     "inStock": true,
     "sku": "CAN-74S",
     "brand": "Canon",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_canon_74s.png",
-    "tags": ["canon", "ink", "cartridge", "pixma", "black"],
+    "tags": [
+      "canon",
+      "ink",
+      "cartridge",
+      "pixma",
+      "black"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.5,
     "reviewCount": 182,
     "specs": [
-      { "label": "Cartridge Type", "value": "Ink Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "Canon PG-74S" },
-      { "label": "Compatibility", "value": "Canon PIXMA iP2870, iP2872, MG2570, MG2577S, MG3070S, TS207, TS307" },
-      { "label": "Page Yield", "value": "Up to 180 pages" },
-      { "label": "Technology", "value": "Inkjet" },
-      { "label": "Warranty", "value": "6 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Inkjet Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Ink Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "Canon PG-74S"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Canon PIXMA iP2870, iP2872, MG2570, MG2577S, MG3070S, TS207, TS307"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 180 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Inkjet"
+      },
+      {
+        "label": "Warranty",
+        "value": "6 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Inkjet Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_canon_74s.png",
+      "/src/assets/printer_canon_746.png",
+      "/src/assets/printer_epson_003.png"
     ]
   },
   {
@@ -77,25 +167,70 @@
     "inStock": true,
     "sku": "CAN-746",
     "brand": "Canon",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_canon_746.png",
-    "tags": ["canon", "ink", "color", "cartridge", "photo"],
+    "tags": [
+      "canon",
+      "ink",
+      "color",
+      "cartridge",
+      "photo"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 198,
     "specs": [
-      { "label": "Cartridge Type", "value": "Ink Cartridge" },
-      { "label": "Color", "value": "Tri-Color" },
-      { "label": "Model", "value": "Canon CL-746" },
-      { "label": "Compatibility", "value": "Canon PIXMA iP2870, iP2872, MG2570, MG2577S, MG3070S, TS207, TS307" },
-      { "label": "Page Yield", "value": "Up to 180 pages" },
-      { "label": "Technology", "value": "Inkjet" },
-      { "label": "Warranty", "value": "6 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Inkjet Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Ink Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Tri-Color"
+      },
+      {
+        "label": "Model",
+        "value": "Canon CL-746"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Canon PIXMA iP2870, iP2872, MG2570, MG2577S, MG3070S, TS207, TS307"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 180 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Inkjet"
+      },
+      {
+        "label": "Warranty",
+        "value": "6 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Inkjet Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_canon_746.png",
+      "/src/assets/printer_canon_74s.png",
+      "/src/assets/printer_epson_003.png"
     ]
   },
   {
@@ -110,25 +245,69 @@
     "inStock": true,
     "sku": "EPS-003",
     "brand": "Epson",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_epson_003.png",
-    "tags": ["epson", "ink bottle", "ecotank", "black"],
+    "tags": [
+      "epson",
+      "ink bottle",
+      "ecotank",
+      "black"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.9,
     "reviewCount": 512,
     "specs": [
-      { "label": "Cartridge Type", "value": "Ink Bottle" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "Epson 003 (C13T00V198)" },
-      { "label": "Compatibility", "value": "Epson EcoTank L1110, L3100, L3101, L3110, L3115, L3116, L3150, L3151, L3152, L3156, L3210, L3211, L3215, L3216, L3250, L3251, L3252, L3256, L5190, L5290" },
-      { "label": "Page Yield", "value": "Up to 4500 pages" },
-      { "label": "Technology", "value": "Inkjet Dye-based" },
-      { "label": "Warranty", "value": "12 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Bottle" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For EcoTank Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Ink Bottle"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "Epson 003 (C13T00V198)"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Epson EcoTank L1110, L3100, L3101, L3110, L3115, L3116, L3150, L3151, L3152, L3156, L3210, L3211, L3215, L3216, L3250, L3251, L3252, L3256, L5190, L5290"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 4500 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Inkjet Dye-based"
+      },
+      {
+        "label": "Warranty",
+        "value": "12 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Bottle"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For EcoTank Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_epson_003.png",
+      "/src/assets/printer_canon_74s.png",
+      "/src/assets/printer_canon_746.png"
     ]
   },
   {
@@ -143,25 +322,69 @@
     "inStock": true,
     "sku": "BRO-TN2321",
     "brand": "Brother",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_brother_tn2321.png",
-    "tags": ["brother", "toner", "laser", "black"],
+    "tags": [
+      "brother",
+      "toner",
+      "laser",
+      "black"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 310,
     "specs": [
-      { "label": "Cartridge Type", "value": "Toner Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "Brother TN2321" },
-      { "label": "Compatibility", "value": "Brother HL-L2321D, HL-L2361DN, HL-L2366DW, DCP-L2520D, DCP-L2541DW, MFC-L2701D, MFC-L2701DW" },
-      { "label": "Page Yield", "value": "Up to 2600 pages" },
-      { "label": "Technology", "value": "Laser Toner" },
-      { "label": "Warranty", "value": "12 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Laser Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Toner Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "Brother TN2321"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Brother HL-L2321D, HL-L2361DN, HL-L2366DW, DCP-L2520D, DCP-L2541DW, MFC-L2701D, MFC-L2701DW"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 2600 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Laser Toner"
+      },
+      {
+        "label": "Warranty",
+        "value": "12 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Laser Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_brother_tn2321.png",
+      "/src/assets/printer_hp_88a.png",
+      "/src/assets/printer_samsung_d111s.png"
     ]
   },
   {
@@ -176,25 +399,69 @@
     "inStock": true,
     "sku": "SAM-D111S",
     "brand": "Samsung",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_samsung_d111s.png",
-    "tags": ["samsung", "toner", "xpress", "laser"],
+    "tags": [
+      "samsung",
+      "toner",
+      "xpress",
+      "laser"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.4,
     "reviewCount": 142,
     "specs": [
-      { "label": "Cartridge Type", "value": "Toner Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "Samsung MLT-D111S" },
-      { "label": "Compatibility", "value": "Samsung Xpress M2020, M2020W, M2021, M2021W, M2070, M2070W, M2070F, M2070FW, M2071, M2071W, M2071FH" },
-      { "label": "Page Yield", "value": "Up to 1000 pages" },
-      { "label": "Technology", "value": "Laser Toner" },
-      { "label": "Warranty", "value": "6 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Laser Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Toner Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "Samsung MLT-D111S"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Samsung Xpress M2020, M2020W, M2021, M2021W, M2070, M2070W, M2070F, M2070FW, M2071, M2071W, M2071FH"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 1000 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Laser Toner"
+      },
+      {
+        "label": "Warranty",
+        "value": "6 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Laser Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_samsung_d111s.png",
+      "/src/assets/printer_hp_88a.png",
+      "/src/assets/printer_brother_tn2321.png"
     ]
   },
   {
@@ -209,25 +476,69 @@
     "inStock": true,
     "sku": "HP-12A",
     "brand": "HP",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_hp_88a.png",
-    "tags": ["hp", "toner", "laser", "black"],
+    "tags": [
+      "hp",
+      "toner",
+      "laser",
+      "black"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 412,
     "specs": [
-      { "label": "Cartridge Type", "value": "Toner Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "HP 12A (Q2612A)" },
-      { "label": "Compatibility", "value": "HP LaserJet 1010, 1012, 1015, 1018, 1020, 1022, 3015, 3020, 3030, 3050, 3052, 3055, M1005 MFP, M1319f MFP" },
-      { "label": "Page Yield", "value": "Up to 2000 pages" },
-      { "label": "Technology", "value": "Laser Toner" },
-      { "label": "Warranty", "value": "6 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Laser Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Toner Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "HP 12A (Q2612A)"
+      },
+      {
+        "label": "Compatibility",
+        "value": "HP LaserJet 1010, 1012, 1015, 1018, 1020, 1022, 3015, 3020, 3030, 3050, 3052, 3055, M1005 MFP, M1319f MFP"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 2000 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Laser Toner"
+      },
+      {
+        "label": "Warranty",
+        "value": "6 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Laser Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_hp_88a.png",
+      "/src/assets/printer_brother_tn2321.png",
+      "/src/assets/printer_samsung_d111s.png"
     ]
   },
   {
@@ -242,25 +553,70 @@
     "inStock": true,
     "sku": "CAN-337",
     "brand": "Canon",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_canon_74s.png",
-    "tags": ["canon", "toner", "cartridge", "black"],
+    "tags": [
+      "canon",
+      "toner",
+      "cartridge",
+      "black"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 220,
     "specs": [
-      { "label": "Cartridge Type", "value": "Toner Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "Canon Cartridge 337" },
-      { "label": "Compatibility", "value": "Canon ImageCLASS MF211, MF212w, MF215, MF217w, MF221d, MF226dn, MF229dw, MF232w, MF235, MF237w, MF241d, MF244dw, MF246dn, MF249dw" },
-      { "label": "Page Yield", "value": "Up to 2400 pages" },
-      { "label": "Technology", "value": "Laser Toner" },
-      { "label": "Warranty", "value": "6 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Laser Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Toner Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "Canon Cartridge 337"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Canon ImageCLASS MF211, MF212w, MF215, MF217w, MF221d, MF226dn, MF229dw, MF232w, MF235, MF237w, MF241d, MF244dw, MF246dn, MF249dw"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 2400 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Laser Toner"
+      },
+      {
+        "label": "Warranty",
+        "value": "6 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Laser Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_canon_74s.png",
+      "/src/assets/printer_hp_88a.png",
+      "/src/assets/printer_brother_tn2321.png",
+      "/src/assets/printer_samsung_d111s.png"
     ]
   },
   {
@@ -275,25 +631,69 @@
     "inStock": true,
     "sku": "BRO-TN3467",
     "brand": "Brother",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_brother_tn2321.png",
-    "tags": ["brother", "toner", "laser", "black"],
+    "tags": [
+      "brother",
+      "toner",
+      "laser",
+      "black"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 165,
     "specs": [
-      { "label": "Cartridge Type", "value": "Toner Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "Brother TN-3467" },
-      { "label": "Compatibility", "value": "Brother HL-L5000D, HL-L5100DN, HL-L6200DW, HL-L6400DW, DCP-L5500DN, DCP-L5600DN, MFC-L5700DN, MFC-L5900DW, MFC-L6700DW, MFC-L6900DW" },
-      { "label": "Page Yield", "value": "Up to 12000 pages" },
-      { "label": "Technology", "value": "Laser Toner" },
-      { "label": "Warranty", "value": "12 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Laser Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Toner Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "Brother TN-3467"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Brother HL-L5000D, HL-L5100DN, HL-L6200DW, HL-L6400DW, DCP-L5500DN, DCP-L5600DN, MFC-L5700DN, MFC-L5900DW, MFC-L6700DW, MFC-L6900DW"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 12000 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Laser Toner"
+      },
+      {
+        "label": "Warranty",
+        "value": "12 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Laser Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_brother_tn2321.png",
+      "/src/assets/printer_hp_88a.png",
+      "/src/assets/printer_samsung_d111s.png"
     ]
   },
   {
@@ -308,25 +708,69 @@
     "inStock": true,
     "sku": "HP-78A",
     "brand": "HP",
-    "category": "Printer Cartridges",
+    "category": "cat-7",
     "image": "/src/assets/printer_hp_88a.png",
-    "tags": ["hp", "toner", "laser", "black"],
+    "tags": [
+      "hp",
+      "toner",
+      "laser",
+      "black"
+    ],
     "type": "printer",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 201,
     "specs": [
-      { "label": "Cartridge Type", "value": "Toner Cartridge" },
-      { "label": "Color", "value": "Black" },
-      { "label": "Model", "value": "HP 78A (CE278A)" },
-      { "label": "Compatibility", "value": "HP LaserJet Pro P1566, P1606dn, M1536dnf MFP" },
-      { "label": "Page Yield", "value": "Up to 2100 pages" },
-      { "label": "Technology", "value": "Laser Toner" },
-      { "label": "Warranty", "value": "6 Months" },
-      { "label": "Condition", "value": "New" },
-      { "label": "Pack Type", "value": "Box" },
-      { "label": "Supply Type", "value": "Wholesale / Bulk" },
-      { "label": "Usage/Application", "value": "For Laser Printers" }
+      {
+        "label": "Cartridge Type",
+        "value": "Toner Cartridge"
+      },
+      {
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Model",
+        "value": "HP 78A (CE278A)"
+      },
+      {
+        "label": "Compatibility",
+        "value": "HP LaserJet Pro P1566, P1606dn, M1536dnf MFP"
+      },
+      {
+        "label": "Page Yield",
+        "value": "Up to 2100 pages"
+      },
+      {
+        "label": "Technology",
+        "value": "Laser Toner"
+      },
+      {
+        "label": "Warranty",
+        "value": "6 Months"
+      },
+      {
+        "label": "Condition",
+        "value": "New"
+      },
+      {
+        "label": "Pack Type",
+        "value": "Box"
+      },
+      {
+        "label": "Supply Type",
+        "value": "Wholesale / Bulk"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "For Laser Printers"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "/src/assets/printer_hp_88a.png",
+      "/src/assets/printer_brother_tn2321.png",
+      "/src/assets/printer_samsung_d111s.png"
     ]
   },
   {
@@ -341,19 +785,45 @@
     "inStock": true,
     "sku": "STL-304-SHT",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_304_sheets.png",
-    "tags": ["steel", "ss304", "sheets", "industrial"],
+    "tags": [
+      "steel",
+      "ss304",
+      "sheets",
+      "industrial"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 312,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel 304" },
-      { "label": "Grade", "value": "SS 304" },
-      { "label": "Thickness", "value": "0.5mm - 10mm" },
-      { "label": "Finish", "value": "2B, BA, No.4, Mirror" },
-      { "label": "Usage", "value": "Construction, Food Processing, Chemical Storage" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel 304"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304"
+      },
+      {
+        "label": "Thickness",
+        "value": "0.5mm - 10mm"
+      },
+      {
+        "label": "Finish",
+        "value": "2B, BA, No.4, Mirror"
+      },
+      {
+        "label": "Usage",
+        "value": "Construction, Food Processing, Chemical Storage"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_304_sheets.png",
+      "/src/assets/ss_plates.png",
+      "/src/assets/ss_coils.png"
     ]
   },
   {
@@ -368,19 +838,45 @@
     "inStock": true,
     "sku": "STL-304-PIP",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_304_pipes.png",
-    "tags": ["steel", "ss304", "pipes", "industrial"],
+    "tags": [
+      "steel",
+      "ss304",
+      "pipes",
+      "industrial"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 260,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel 304" },
-      { "label": "Grade", "value": "SS 304" },
-      { "label": "Size", "value": "1/2 inch - 24 inch" },
-      { "label": "Schedule", "value": "SCH 10, SCH 40, SCH 80" },
-      { "label": "Usage", "value": "Water, Oil, Gas Piping, Architectural Balustrades" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel 304"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304"
+      },
+      {
+        "label": "Size",
+        "value": "1/2 inch - 24 inch"
+      },
+      {
+        "label": "Schedule",
+        "value": "SCH 10, SCH 40, SCH 80"
+      },
+      {
+        "label": "Usage",
+        "value": "Water, Oil, Gas Piping, Architectural Balustrades"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_304_pipes.png",
+      "/src/assets/ss_316_rods.png",
+      "/src/assets/ss_angle_bars.png"
     ]
   },
   {
@@ -395,19 +891,44 @@
     "inStock": true,
     "sku": "STL-COIL",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_coils.png",
-    "tags": ["steel", "coils", "raw material"],
+    "tags": [
+      "steel",
+      "coils",
+      "raw material"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 145,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel" },
-      { "label": "Grade", "value": "SS 304 / 316" },
-      { "label": "Width", "value": "100mm - 1250mm" },
-      { "label": "Surface Finish", "value": "Cold Rolled (CR)" },
-      { "label": "Packaging", "value": "Eye to Sky, Eye to Wall Export Standard" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304 / 316"
+      },
+      {
+        "label": "Width",
+        "value": "100mm - 1250mm"
+      },
+      {
+        "label": "Surface Finish",
+        "value": "Cold Rolled (CR)"
+      },
+      {
+        "label": "Packaging",
+        "value": "Eye to Sky, Eye to Wall Export Standard"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_coils.png",
+      "/src/assets/ss_304_sheets.png",
+      "/src/assets/ss_plates.png"
     ]
   },
   {
@@ -422,19 +943,45 @@
     "inStock": true,
     "sku": "STL-316-ROD",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_316_rods.png",
-    "tags": ["steel", "ss316", "rods", "round bar"],
+    "tags": [
+      "steel",
+      "ss316",
+      "rods",
+      "round bar"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.9,
     "reviewCount": 180,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel 316" },
-      { "label": "Grade", "value": "SS 316 / 316L" },
-      { "label": "Diameter", "value": "5mm - 300mm" },
-      { "label": "Shape", "value": "Round Bar" },
-      { "label": "Usage", "value": "Marine fittings, chemical processing machinery, aerospace parts" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel 316"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 316 / 316L"
+      },
+      {
+        "label": "Diameter",
+        "value": "5mm - 300mm"
+      },
+      {
+        "label": "Shape",
+        "value": "Round Bar"
+      },
+      {
+        "label": "Usage",
+        "value": "Marine fittings, chemical processing machinery, aerospace parts"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_316_rods.png",
+      "/src/assets/ss_304_pipes.png",
+      "/src/assets/ss_angle_bars.png"
     ]
   },
   {
@@ -449,19 +996,44 @@
     "inStock": true,
     "sku": "STL-PLT",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_plates.png",
-    "tags": ["steel", "plates", "industrial"],
+    "tags": [
+      "steel",
+      "plates",
+      "industrial"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 95,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel" },
-      { "label": "Grade", "value": "SS 304, 316L" },
-      { "label": "Thickness", "value": "6mm - 100mm" },
-      { "label": "Finish", "value": "HR No.1" },
-      { "label": "Standard", "value": "ASTM A240" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304, 316L"
+      },
+      {
+        "label": "Thickness",
+        "value": "6mm - 100mm"
+      },
+      {
+        "label": "Finish",
+        "value": "HR No.1"
+      },
+      {
+        "label": "Standard",
+        "value": "ASTM A240"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_plates.png",
+      "/src/assets/ss_304_sheets.png",
+      "/src/assets/ss_coils.png"
     ]
   },
   {
@@ -476,19 +1048,43 @@
     "inStock": true,
     "sku": "STL-KTN",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_kitchen.png",
-    "tags": ["steel", "kitchen", "equipment"],
+    "tags": [
+      "steel",
+      "kitchen",
+      "equipment"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.5,
     "reviewCount": 78,
     "specs": [
-      { "label": "Material", "value": "Food-grade Stainless Steel" },
-      { "label": "Grade", "value": "SS 304 / 202" },
-      { "label": "Application", "value": "Commercial kitchen tables, sinks, racks, counters" },
-      { "label": "Corrosion Resistance", "value": "High" },
-      { "label": "Maintenance", "value": "Low maintenance" }
+      {
+        "label": "Material",
+        "value": "Food-grade Stainless Steel"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304 / 202"
+      },
+      {
+        "label": "Application",
+        "value": "Commercial kitchen tables, sinks, racks, counters"
+      },
+      {
+        "label": "Corrosion Resistance",
+        "value": "High"
+      },
+      {
+        "label": "Maintenance",
+        "value": "Low maintenance"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_kitchen.png",
+      "/src/assets/ss_plates.png"
     ]
   },
   {
@@ -503,19 +1099,44 @@
     "inStock": true,
     "sku": "STL-FLG",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_flanges.png",
-    "tags": ["steel", "flanges", "piping"],
+    "tags": [
+      "steel",
+      "flanges",
+      "piping"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 112,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel Flanges" },
-      { "label": "Grade", "value": "SS 304 / 316" },
-      { "label": "Pressure Class", "value": "150# to 2500#" },
-      { "label": "Standard", "value": "ANSI B16.5, DIN, JIS" },
-      { "label": "Sizes", "value": "1/2 inch to 48 inch" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel Flanges"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304 / 316"
+      },
+      {
+        "label": "Pressure Class",
+        "value": "150# to 2500#"
+      },
+      {
+        "label": "Standard",
+        "value": "ANSI B16.5, DIN, JIS"
+      },
+      {
+        "label": "Sizes",
+        "value": "1/2 inch to 48 inch"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_flanges.png",
+      "/src/assets/ss_fasteners.png",
+      "/src/assets/ss_wire_mesh.png"
     ]
   },
   {
@@ -530,19 +1151,44 @@
     "inStock": true,
     "sku": "STL-ANG",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_angle_bars.png",
-    "tags": ["steel", "angle", "bar"],
+    "tags": [
+      "steel",
+      "angle",
+      "bar"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 88,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel Angle" },
-      { "label": "Grade", "value": "SS 304 / 316" },
-      { "label": "Size", "value": "20x20mm to 100x100mm" },
-      { "label": "Thickness", "value": "3mm to 10mm" },
-      { "label": "Standard", "value": "ASTM A276" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel Angle"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304 / 316"
+      },
+      {
+        "label": "Size",
+        "value": "20x20mm to 100x100mm"
+      },
+      {
+        "label": "Thickness",
+        "value": "3mm to 10mm"
+      },
+      {
+        "label": "Standard",
+        "value": "ASTM A276"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_angle_bars.png",
+      "/src/assets/ss_304_pipes.png",
+      "/src/assets/ss_316_rods.png"
     ]
   },
   {
@@ -557,19 +1203,44 @@
     "inStock": true,
     "sku": "STL-MSH",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_wire_mesh.png",
-    "tags": ["steel", "mesh", "wire"],
+    "tags": [
+      "steel",
+      "mesh",
+      "wire"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 104,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel Wire" },
-      { "label": "Grade", "value": "SS 304 / 316" },
-      { "label": "Mesh Count", "value": "1 mesh to 500 mesh" },
-      { "label": "Wire Diameter", "value": "0.02mm to 2mm" },
-      { "label": "Weaving Pattern", "value": "Plain, Twill, Dutch" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel Wire"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304 / 316"
+      },
+      {
+        "label": "Mesh Count",
+        "value": "1 mesh to 500 mesh"
+      },
+      {
+        "label": "Wire Diameter",
+        "value": "0.02mm to 2mm"
+      },
+      {
+        "label": "Weaving Pattern",
+        "value": "Plain, Twill, Dutch"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_wire_mesh.png",
+      "/src/assets/ss_fasteners.png",
+      "/src/assets/ss_flanges.png"
     ]
   },
   {
@@ -584,19 +1255,45 @@
     "inStock": true,
     "sku": "STL-FST",
     "brand": "Wadhumal Steel",
-    "category": "Steel Products",
+    "category": "cat-1",
     "image": "/src/assets/ss_fasteners.png",
-    "tags": ["steel", "fasteners", "bolts", "nuts"],
+    "tags": [
+      "steel",
+      "fasteners",
+      "bolts",
+      "nuts"
+    ],
     "type": "steel",
     "popular": true,
     "rating": 4.9,
     "reviewCount": 320,
     "specs": [
-      { "label": "Material", "value": "Stainless Steel Fasteners" },
-      { "label": "Grade", "value": "SS 304 (A2-70) / SS 316 (A4-80)" },
-      { "label": "Thread Type", "value": "Metric (M3 - M48), Imperial" },
-      { "label": "Types", "value": "Hex Bolts, Allen Cap Screws, Nuts, Lock Washers" },
-      { "label": "Standard", "value": "DIN 933, DIN 934, ISO 4017" }
+      {
+        "label": "Material",
+        "value": "Stainless Steel Fasteners"
+      },
+      {
+        "label": "Grade",
+        "value": "SS 304 (A2-70) / SS 316 (A4-80)"
+      },
+      {
+        "label": "Thread Type",
+        "value": "Metric (M3 - M48), Imperial"
+      },
+      {
+        "label": "Types",
+        "value": "Hex Bolts, Allen Cap Screws, Nuts, Lock Washers"
+      },
+      {
+        "label": "Standard",
+        "value": "DIN 933, DIN 934, ISO 4017"
+      }
+    ],
+    "client": "biz-1",
+    "images": [
+      "/src/assets/ss_fasteners.png",
+      "/src/assets/ss_flanges.png",
+      "/src/assets/ss_wire_mesh.png"
     ]
   },
   {
@@ -612,17 +1309,36 @@
     "inStock": true,
     "sku": "GEN-AC-01",
     "brand": "Generic",
-    "category": "Appliances",
+    "category": "cat-4",
     "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
-    "tags": ["ac", "cooling", "appliances"],
+    "tags": [
+      "ac",
+      "cooling",
+      "appliances"
+    ],
     "type": "general",
     "popular": true,
     "rating": 4.5,
     "reviewCount": 880,
     "specs": [
-      { "label": "Capacity", "value": "1.5 Ton" },
-      { "label": "Energy Rating", "value": "5 Star Inverter" },
-      { "label": "Cooling Technology", "value": "Fast Cooling & Dehumidification" }
+      {
+        "label": "Capacity",
+        "value": "1.5 Ton"
+      },
+      {
+        "label": "Energy Rating",
+        "value": "5 Star Inverter"
+      },
+      {
+        "label": "Cooling Technology",
+        "value": "Fast Cooling & Dehumidification"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop"
     ]
   },
   {
@@ -638,17 +1354,35 @@
     "inStock": true,
     "sku": "GEN-WP-02",
     "brand": "Generic",
-    "category": "Appliances",
+    "category": "cat-4",
     "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-    "tags": ["water", "purifier", "appliances"],
+    "tags": [
+      "water",
+      "purifier",
+      "appliances"
+    ],
     "type": "general",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 654,
     "specs": [
-      { "label": "Purification Stages", "value": "7 Stages RO+UV+UF+MTDS" },
-      { "label": "Storage Capacity", "value": "8 Litres" },
-      { "label": "Installation Type", "value": "Wall Mounted / Countertop" }
+      {
+        "label": "Purification Stages",
+        "value": "7 Stages RO+UV+UF+MTDS"
+      },
+      {
+        "label": "Storage Capacity",
+        "value": "8 Litres"
+      },
+      {
+        "label": "Installation Type",
+        "value": "Wall Mounted / Countertop"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=400&auto=format&fit=crop"
     ]
   },
   {
@@ -664,17 +1398,35 @@
     "inStock": true,
     "sku": "GEN-SP-03",
     "brand": "Generic",
-    "category": "Energy Products",
+    "category": "cat-4",
     "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-    "tags": ["solar", "panels", "energy"],
+    "tags": [
+      "solar",
+      "panels",
+      "energy"
+    ],
     "type": "general",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 310,
     "specs": [
-      { "label": "Panel Type", "value": "Monocrystalline Perc" },
-      { "label": "Max Power output", "value": "400W" },
-      { "label": "Warranty", "value": "25 Years Performance Warranty" }
+      {
+        "label": "Panel Type",
+        "value": "Monocrystalline Perc"
+      },
+      {
+        "label": "Max Power output",
+        "value": "400W"
+      },
+      {
+        "label": "Warranty",
+        "value": "25 Years Performance Warranty"
+      }
+    ],
+    "client": "biz-4",
+    "images": [
+      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=400&auto=format&fit=crop"
     ]
   },
   {
@@ -690,17 +1442,35 @@
     "inStock": true,
     "sku": "GEN-GN-04",
     "brand": "Generic",
-    "category": "Power Equipment",
+    "category": "cat-3",
     "image": "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop",
-    "tags": ["generator", "power", "backup"],
+    "tags": [
+      "generator",
+      "power",
+      "backup"
+    ],
     "type": "general",
     "popular": true,
     "rating": 4.4,
     "reviewCount": 118,
     "specs": [
-      { "label": "Power Capacity", "value": "3 kVA" },
-      { "label": "Fuel Type", "value": "Petrol / CNG / Diesel" },
-      { "label": "Starter Type", "value": "Key Start & Recoil" }
+      {
+        "label": "Power Capacity",
+        "value": "3 kVA"
+      },
+      {
+        "label": "Fuel Type",
+        "value": "Petrol / CNG / Diesel"
+      },
+      {
+        "label": "Starter Type",
+        "value": "Key Start & Recoil"
+      }
+    ],
+    "client": "biz-3",
+    "images": [
+      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop"
     ]
   },
   {
@@ -716,17 +1486,35 @@
     "inStock": true,
     "sku": "GEN-OC-05",
     "brand": "Generic",
-    "category": "Furniture",
+    "category": "cat-12",
     "image": "https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop",
-    "tags": ["chair", "office", "furniture"],
+    "tags": [
+      "chair",
+      "office",
+      "furniture"
+    ],
     "type": "general",
     "popular": true,
     "rating": 4.3,
     "reviewCount": 940,
     "specs": [
-      { "label": "Seat Material", "value": "High Density Moulded Foam with Breathable Mesh" },
-      { "label": "Adjustments", "value": "Height, Armrest, 135-degree Reclination" },
-      { "label": "Base", "value": "Heavy-Duty Chrome Metal Base with Nylon Casters" }
+      {
+        "label": "Seat Material",
+        "value": "High Density Moulded Foam with Breathable Mesh"
+      },
+      {
+        "label": "Adjustments",
+        "value": "Height, Armrest, 135-degree Reclination"
+      },
+      {
+        "label": "Base",
+        "value": "Heavy-Duty Chrome Metal Base with Nylon Casters"
+      }
+    ],
+    "client": "biz-5",
+    "images": [
+      "https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?q=80&w=400&auto=format&fit=crop"
     ]
   },
   {
@@ -742,17 +1530,35 @@
     "inStock": true,
     "sku": "GEN-CC-06",
     "brand": "Generic",
-    "category": "Security Equipment",
+    "category": "cat-6",
     "image": "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop",
-    "tags": ["cctv", "camera", "security"],
+    "tags": [
+      "cctv",
+      "camera",
+      "security"
+    ],
     "type": "general",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 720,
     "specs": [
-      { "label": "Resolution", "value": "1080p Full HD (2MP)" },
-      { "label": "Connectivity", "value": "Wireless Wi-Fi (2.4GHz) & Ethernet" },
-      { "label": "Storage Support", "value": "MicroSD Card (up to 256GB) & Cloud Storage" }
+      {
+        "label": "Resolution",
+        "value": "1080p Full HD (2MP)"
+      },
+      {
+        "label": "Connectivity",
+        "value": "Wireless Wi-Fi (2.4GHz) & Ethernet"
+      },
+      {
+        "label": "Storage Support",
+        "value": "MicroSD Card (up to 256GB) & Cloud Storage"
+      }
+    ],
+    "client": "biz-3",
+    "images": [
+      "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop"
     ]
   }
 ]

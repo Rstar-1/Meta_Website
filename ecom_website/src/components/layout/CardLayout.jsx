@@ -71,6 +71,18 @@ const CardLayout = ({
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
                             )}
+                            {item.supplier && (
+                                <p
+                                    className="text-gray mini-text mt-4 font-500"
+                                    style={{
+                                        color: '#64748b',
+                                        fontSize: '0.8rem',
+                                        marginTop: '4px',
+                                    }}
+                                >
+                                    Supplier: <span style={{ color: '#2563eb' }}>{item.supplier}</span>
+                                </p>
+                            )}
                         </div>
                     </div>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import products from '../../data/products.json';
+import categories from '../../data/category.json';
 import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
 
@@ -48,22 +49,52 @@ const imageMap = {
 const Products = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [selectedCat, setSelectedCat] = useState(location.state?.category || 'All');
+  
+  const getInitialCategory = () => {
+    if (location.state?.category) return location.state.category;
+    const queryParams = new URLSearchParams(location.search);
+    return queryParams.get('category') || 'All';
+  };
+
+  const [selectedCat, setSelectedCat] = useState(getInitialCategory());
   const [search, setSearch] = useState('');
+
+  const printerCatName = categories.find(c => c.id === 'cat-7')?.name || 'Printer Cartridges';
+  const steelCatName = categories.find(c => c.id === 'cat-1')?.name || 'Steel Products';
 
   useEffect(() => {
     if (location.state?.category) {
       setSelectedCat(location.state.category);
+    } else {
+      const queryParams = new URLSearchParams(location.search);
+      const queryCat = queryParams.get('category');
+      if (queryCat) {
+        setSelectedCat(queryCat);
+      }
     }
-  }, [location.state?.category]);
+  }, [location.state?.category, location.search]);
+
+  const getCatId = (nameOrId) => {
+    if (!nameOrId || nameOrId === 'All') return 'All';
+    if (categories.some(c => c.id === nameOrId)) return nameOrId;
+    const found = categories.find(c => c.name === nameOrId);
+    if (found) return found.id;
+    if (nameOrId === 'Printer Cartridges') return 'cat-7';
+    if (nameOrId === 'Steel Products') return 'cat-1';
+    return nameOrId;
+  };
 
   const filteredProducts = products.filter((p) => {
-    const matchesCat = selectedCat === 'All' || p.category === selectedCat;
+    const targetCatId = getCatId(selectedCat);
+    const matchesCat = targetCatId === 'All' || p.category === targetCatId;
     const matchesSearch =
       p.name.toLowerCase().includes(search.toLowerCase()) ||
       p.description.toLowerCase().includes(search.toLowerCase());
     return matchesCat && matchesSearch;
-  });
+  }).map((p) => ({
+    ...p,
+    supplier: p.client || (p.type === 'printer' ? 'biz-4' : 'biz-1')
+  }));
 
   const handleProductClick = (id) => {
     navigate(`/product-detail/${id}`);
@@ -85,7 +116,7 @@ const Products = () => {
           </div>
 
           <div className="flex items-center gap-10">
-            {['All', 'Printer Cartridges', 'Steel Products'].map((cat) => (
+            {['All', printerCatName, steelCatName].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCat(cat)}
@@ -106,11 +137,11 @@ const Products = () => {
         {/* Section Header matching exact requested UI */}
         <div className="flex justify-between items-center mb-20">
           <h2 className="title-text text-dark font-600">
-            {selectedCat === 'Printer Cartridges'
-              ? 'Popular Printer Cartridges'
-              : selectedCat === 'Steel Products'
-                ? 'Popular Steel Products'
-                : 'Popular Printer Cartridges'}
+            {selectedCat === printerCatName || selectedCat === 'Printer Cartridges'
+              ? `Popular ${printerCatName}`
+              : selectedCat === steelCatName || selectedCat === 'Steel Products'
+                ? `Popular ${steelCatName}`
+                : `Popular ${printerCatName}`}
           </h2>
           <p
             className="text-primary font-500 cursor-pointer small-text hover:underline"

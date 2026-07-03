@@ -64,7 +64,9 @@ const ProductsMenu = ({ onItemClick }) => (
       if (items.length === 0) return null;
       return (
         <div key={idx} className="p-18">
-          <p className="text-gray uppercase small-text font-500">{cat}</p>
+          <p className="text-gray uppercase small-text font-500">
+            {categoriesData.find((c) => c.id === cat)?.name || cat}
+          </p>
           <div className="grid grid-cols-1 gap-8 mt-12">
             {items.map((product) => (
               <div

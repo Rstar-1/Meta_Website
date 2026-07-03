@@ -8,8 +8,14 @@ const ProductSteel = () => {
     const navigate = useNavigate();
     const steelProducts = products.filter(p => p.type === 'steel' && p.popular);
 
-    const handleNavigate = () => {
-        navigate('/product-detail');
+    const handleViewAll = () => {
+        navigate('/products?category=cat-1');
+    };
+
+    const handleProductClick = (item) => {
+        if (item && item.id) {
+            navigate(`/product-detail/${item.id}`);
+        }
     };
 
 
@@ -18,7 +24,7 @@ const ProductSteel = () => {
             <div className="w-full py-30">
                 <div className="flex justify-between items-center">
                     <h2 className="title-text text-dark font-600">Popular Stainless Steel Products</h2>
-                    <p className="text-primary font-500 cursor-pointer small-text" onClick={handleNavigate}>
+                    <p className="text-primary font-500 cursor-pointer small-text" onClick={handleViewAll}>
                         View All Products &gt;
                     </p>
                 </div>
@@ -32,8 +38,8 @@ const ProductSteel = () => {
                     smCols="2"
                     gap="12"
                     className="mt-20"
-                    onCardClick={handleNavigate}
-                    onButtonClick={handleNavigate}
+                    onCardClick={handleProductClick}
+                    onButtonClick={handleProductClick}
                 />
             </div>
         </Container>

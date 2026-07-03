@@ -1,0 +1,57 @@
+[
+  {
+    "id": "biz-1",
+    "name": "Apex Industrial Steel",
+    "category": "Steel Products",
+    "rating": 4.8,
+    "reviews": "245",
+    "location": "Mumbai, India",
+    "phone": "+91 22 5555 1234",
+    "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=500&auto=format&fit=crop",
+    "logo": "AS"
+  },
+  {
+    "id": "biz-2",
+    "name": "Polymer Flow Piping",
+    "category": "PVC Products",
+    "rating": 4.6,
+    "reviews": "180",
+    "location": "Gujarat, India",
+    "phone": "+91 79 5555 5678",
+    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=500&auto=format&fit=crop",
+    "logo": "PF"
+  },
+  {
+    "id": "biz-3",
+    "name": "Matrix CNC Systems",
+    "category": "Industrial Machinery",
+    "rating": 4.7,
+    "reviews": "92",
+    "location": "Pune, India",
+    "phone": "+91 20 5555 9012",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop",
+    "logo": "MC"
+  },
+  {
+    "id": "biz-4",
+    "name": "VoltLink Controls",
+    "category": "Electrical & Electronics",
+    "rating": 4.5,
+    "reviews": "114",
+    "location": "Bangalore, India",
+    "phone": "+91 80 5555 3456",
+    "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=500&auto=format&fit=crop",
+    "logo": "VL"
+  },
+  {
+    "id": "biz-5",
+    "name": "EcoWrap Packaging",
+    "category": "Packaging Solutions",
+    "rating": 4.4,
+    "reviews": "158",
+    "location": "Delhi, India",
+    "phone": "+91 11 5555 7890",
+    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=500&auto=format&fit=crop",
+    "logo": "EP"
+  }
+]
