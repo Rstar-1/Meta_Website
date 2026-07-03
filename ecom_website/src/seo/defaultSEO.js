@@ -1,21 +1,22 @@
 const defaultSEO = {
-  siteName: 'EcoStore',
-  title: 'EcoStore | High-Quality Premium Products',
-  description: 'Shop premium, sustainable and high-quality products at EcoStore. Discover eco-friendly alternatives for your everyday needs.',
-  keywords: 'ecommerce, sustainable, eco-friendly, premium products, online shopping, green store',
-  siteUrl: 'https://ecom-website.example.com',
-  image: '/images/default-share.jpg',
+  siteName: 'SOBO Marketing Solution',
+  title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
+  description: 'Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution.',
+  keywords: 'Industrial Supplies, Printer Cartridges, Stainless Steel, SOBO Marketing, B2B India, B2B e-commerce',
+  siteUrl: 'https://sobo-marketing.com',
+  image: '/src/assets/sobo_logo.png',
   robots: 'index, follow',
   organization: {
-    name: 'EcoStore Ltd.',
-    url: 'https://ecom-website.example.com',
-    logo: 'https://ecom-website.example.com/logo.png',
-    phone: '+1-555-0199',
-    email: 'support@ecostore.com',
+    name: 'SOBO Marketing Solution',
+    url: 'https://sobo-marketing.com',
+    logo: 'https://sobo-marketing.com/src/assets/sobo_logo.png',
+    phone: '+91-9876543210',
+    email: 'info@sobomarketing.com',
     socials: [
-      'https://facebook.com/ecostore',
-      'https://twitter.com/ecostore',
-      'https://instagram.com/ecostore'
+      'https://facebook.com/sobomarketing',
+      'https://twitter.com/sobomarketing',
+      'https://instagram.com/sobomarketing',
+      'https://linkedin.com/company/sobomarketing'
     ]
   }
 };

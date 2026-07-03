@@ -1,6 +1,6 @@
 export const generateMeta = (pageMeta = {}, defaultMeta = {}) => {
   const siteName = defaultMeta.siteName || 'E-Commerce Store';
-  const siteUrl = defaultMeta.siteUrl || 'https://example.com';
+  const siteUrl = (typeof window !== 'undefined' ? window.location.origin : '') || defaultMeta.siteUrl || 'https://sobo-marketing.com';
   
   // Resolve title
   const title = pageMeta.title 

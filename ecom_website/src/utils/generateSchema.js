@@ -175,5 +175,18 @@ export const generateSchema = {
       },
       'description': post.description || ''
     };
+  },
+
+  siteNavigation: (navItems = []) => {
+    return {
+      '@context': 'https://schema.org',
+      '@graph': navItems.map((item) => ({
+        '@context': 'https://schema.org',
+        '@type': 'SiteNavigationElement',
+        '@id': item.url,
+        'name': item.name,
+        'url': item.url
+      }))
+    };
   }
 };

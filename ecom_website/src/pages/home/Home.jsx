@@ -13,9 +13,18 @@ import Review from './sections/Review';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import WebsiteSchema from '../../components/seo/WebsiteSchema';
 import OrganizationSchema from '../../components/seo/OrganizationSchema';
+import SiteNavigationSchema from '../../components/seo/SiteNavigationSchema';
 
 const Home = () => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com';
+  const navItems = [
+    { name: 'Home', url: `${siteUrl}/home` },
+    { name: 'Products', url: `${siteUrl}/products` },
+    { name: 'About Us', url: `${siteUrl}/about` },
+    { name: 'Blog', url: `${siteUrl}/blog` },
+    { name: 'Contact Us', url: `${siteUrl}/contact` }
+  ];
+
   return (
     <>
       <SeoHelmet
@@ -28,6 +37,7 @@ const Home = () => {
       />
       <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
       <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/src/assets/sobo_logo.png' }} />
+      <SiteNavigationSchema navItems={navItems} />
 
       <Hero />
       <BrowseCategory />
