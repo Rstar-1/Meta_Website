@@ -10,10 +10,25 @@ import BusinessPromo from './sections/BusinessPromo';
 import LatestArticles from './sections/LatestArticles';
 import TopCity from './sections/TopCity';
 import Review from './sections/Review';
+import SeoHelmet from '../../components/seo/SeoHelmet';
+import WebsiteSchema from '../../components/seo/WebsiteSchema';
+import OrganizationSchema from '../../components/seo/OrganizationSchema';
 
 const Home = () => {
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
   return (
     <>
+      <SeoHelmet
+        title="SOBO Marketing Solution | Industrial B2B E-Commerce"
+        description="Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution."
+        keywords={['Industrial Supplies', 'Printer Cartridges', 'Stainless Steel', 'SOBO Marketing', 'B2B India']}
+        image={siteUrl + '/src/assets/sobo_logo.png'}
+        path="/home"
+        type="website"
+      />
+      <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
+      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/src/assets/sobo_logo.png' }} />
+
       <Hero />
       <BrowseCategory />
       <PopularProducts />

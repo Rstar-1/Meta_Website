@@ -4,6 +4,8 @@ import products from '../../data/products.json';
 import categories from '../../data/category.json';
 import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
+import SeoHelmet from '../../components/seo/SeoHelmet';
+import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
 
 // Import local product images for reliable rendering
 import printerHp88a from '../../assets/printer_hp_88a.png';
@@ -100,8 +102,22 @@ const Products = () => {
     navigate(`/product-detail/${id}`);
   };
 
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
+
   return (
     <Container className="bg-white">
+      <SeoHelmet
+        title="Industrial Products & Supplies Catalog | SOBO Marketing Solution"
+        description="Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products."
+        keywords={['Product Catalog', 'Toner Cartridges Shop', 'SS Steel Sheets', 'B2B Supplies']}
+        image={siteUrl + '/src/assets/sobo_logo.png'}
+        path="/products"
+        type="product"
+      />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteUrl + '/home' },
+        { name: 'Products', url: siteUrl + '/products' }
+      ]} />
       <div className="w-full py-30">
         {/* Top Search & Filter Bar */}
         <div className="flex justify-between items-center flex-wrap gap-12 mb-30 p-16 bg-white border-ec rounded-10">
