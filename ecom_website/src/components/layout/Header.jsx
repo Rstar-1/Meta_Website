@@ -6,6 +6,7 @@ import Image from "../common/Image";
 import headerData from "../../data/header.json";
 import logoImg from "../../assets/sobo_logo.png";
 import productsData from "../../data/products.json";
+import categoriesData from "../../data/category.json";
 
 const ProductsMenu = ({ onItemClick }) => (
   <>
@@ -85,7 +86,7 @@ const ProductsMenu = ({ onItemClick }) => (
 );
 
 const IndustryMenu = ({ onItemClick }) => {
-  const categories = [...new Set(productsData.filter((p) => p.type !== "general").map((p) => p.category))];
+  const categories = categoriesData.slice(0, 5).map((c) => c.name);
   return (
     <>
       <style>{`

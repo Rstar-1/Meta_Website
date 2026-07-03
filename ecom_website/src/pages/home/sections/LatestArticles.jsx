@@ -1,9 +1,9 @@
-import articles from '../../../data/homeArticles.json';
+import blogsData from '../../../data/blogs.json';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const LatestArticles = ({ onArticleClick }) => {
-
+  const articles = (blogsData || []).filter(item => item.isHome);
 
   return (
     <Container className="bg-forth">

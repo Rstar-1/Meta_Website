@@ -13,11 +13,22 @@ const BrowseCategory = ({ onSelectCategory }) => {
     }
   };
 
+  // Limit homepage categories to 7: first 6 actual categories + 1 custom "More" category
+  const displayedCategories = [
+    ...categories.slice(0, 6),
+    {
+      id: "cat-more",
+      name: "More",
+      icon: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=150&h=150&q=80",
+      color: "#f3f4f6"
+    }
+  ];
+
   return (
     <Container className='bg-forth'>
       <div className="w-full py-30">
         <div className='grid-cols-7 md-grid-cols-4 sm-grid-cols-2 gap-12'>
-          {categories.map((cat) => (
+          {displayedCategories.map((cat) => (
             <div
               key={cat.id}
               className="p-20 bg-white rounded-10 cursor-pointer text-center"

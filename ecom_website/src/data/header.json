@@ -52,13 +52,13 @@
     "bannerLinkText": "View Partners",
     "sections": [
       {
-        "title": "Automotive Sector",
+        "title": "Product Categories",
         "items": [
-          "Robotic Welding",
-          "Stamping Presses",
-          "Chassis Assembly",
-          "Paint Automation",
-          "Drivetrain Testing"
+          "Steel Products",
+          "PVC Products",
+          "Industrial Machinery",
+          "Electrical & Electronics",
+          "Packaging Solutions"
         ]
       }
     ]

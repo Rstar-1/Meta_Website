@@ -7,15 +7,6 @@ import Icon from "../../../components/common/Icon";
 import Image from "../../../components/common/Image";
 import blogsData from "../../../data/blogs.json";
 
-const CATEGORIES = [
-    { name: "All", count: 24 },
-    { name: "Digital Marketing", count: 8 },
-    { name: "SEO", count: 6 },
-    { name: "Social Media", count: 5 },
-    { name: "Content Marketing", count: 3 },
-    { name: "Analytics", count: 2 }
-];
-
 const BlogList = memo(() => {
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState("All");
@@ -23,6 +14,24 @@ const BlogList = memo(() => {
     const [activePage, setActivePage] = useState(1);
     const [newsletterEmail, setNewsletterEmail] = useState("");
     const [isSubscribed, setIsSubscribed] = useState(false);
+
+    // Compute categories dynamically based on blogsData
+    const categoriesList = useMemo(() => {
+        const counts = {};
+        let total = 0;
+        (blogsData || []).forEach((blog) => {
+            if (blog.category) {
+                counts[blog.category] = (counts[blog.category] || 0) + 1;
+                total++;
+            }
+        });
+        const list = Object.keys(counts).map((name) => ({
+            name,
+            count: counts[name],
+        }));
+        list.sort((a, b) => b.count - a.count);
+        return [{ name: "All", count: total }, ...list];
+    }, []);
 
     // Filter and search logic
     const filteredBlogs = useMemo(() => {
@@ -261,7 +270,7 @@ const BlogList = memo(() => {
                             <div className="bg-white rounded-10 p-20 mb-20">
                                 <h3 className="mid-text font-600 text-dark pb-12">Categories</h3>
                                 <div className="flex flex-column gap-6">
-                                    {CATEGORIES.map((cat) => {
+                                    {categoriesList.map((cat) => {
                                         const isActive = selectedCategory === cat.name;
                                         return (
                                             <div
