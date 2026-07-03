@@ -36,10 +36,6 @@
         {
           "label": "Departments",
           "path": "/category"
-        },
-        {
-          "label": "Partners",
-          "path": "/brands"
         }
       ]
     },

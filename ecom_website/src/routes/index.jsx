@@ -9,7 +9,6 @@ import Loader from '../components/common/Loader'
 const Home = lazy(() => import('../pages/home/Home'))
 const Products = lazy(() => import('../pages/products/Products'))
 const ProductDetail = lazy(() => import('../pages/products/ProductDetail'))
-const Brands = lazy(() => import('../pages/brands/Brands'))
 const Blogs = lazy(() => import('../pages/blog/Blogs'))
 const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
 const Enquiry = lazy(() => import('../pages/enquiry/Enquiry'))
@@ -27,7 +26,6 @@ function AppRoutes() {
           <Route path="products" element={<Products />} />
           <Route path="product-detail" element={<ProductDetail />} />
           <Route path="product-detail/:id" element={<ProductDetail />} />
-          <Route path="brands" element={<Brands />} />
           <Route path="blog" element={<Blogs />} />
           <Route path="blog-detail" element={<BlogDetail />} />
           <Route path="blog-detail/:id" element={<BlogDetail />} />

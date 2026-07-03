@@ -28,20 +28,6 @@ export const categoryMetaTemplate = (category, baseUrl = 'https://ecom-website.e
   };
 };
 
-export const brandMetaTemplate = (brand, baseUrl = 'https://ecom-website.example.com') => {
-  if (!brand) return {};
-  const brandSlug = brand.slug || slugify(brand.name);
-  return {
-    title: `${brand.name} Sustainable Brand`,
-    description: brand.description || `View all premium sustainable products created by ${brand.name}.`,
-    keywords: `${brand.name}, brand products, organic brand`,
-    image: brand.logo || '/images/default-share.jpg',
-    canonical: `${baseUrl}/brands/${brandSlug}`,
-    type: 'website',
-    path: `/brands/${brandSlug}`
-  };
-};
-
 export const blogMetaTemplate = (post, baseUrl = 'https://ecom-website.example.com') => {
   if (!post) return {};
   const postSlug = post.slug || slugify(post.title);

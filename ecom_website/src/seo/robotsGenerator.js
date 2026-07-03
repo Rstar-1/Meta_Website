@@ -1,9 +1,3 @@
-/**
- * Generates the contents of a standard robots.txt file.
- * 
- * @param {string} baseUrl - Domain name.
- * @returns {string} The formatted robots.txt content.
- */
 export const generateRobots = (baseUrl = 'https://ecom-website.example.com') => {
   return `# https://www.robotstxt.org/robotstxt.html
 User-agent: *

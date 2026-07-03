@@ -25,12 +25,6 @@ export const routeMeta = {
     keywords: 'product categories, kitchen care, personal care, green home',
     path: '/category'
   },
-  '/brands': {
-    title: 'Eco-Friendly Brands',
-    description: 'Discover the certified green and organic brands we work with to deliver high-quality products.',
-    keywords: 'green brands, partner brands, certified eco partners',
-    path: '/brands'
-  },
   '/blog': {
     title: 'EcoStore Blog - Sustainable Living Tips',
     description: 'Read the latest tips on zero-waste living, sustainability guides, and eco-friendly practices.',

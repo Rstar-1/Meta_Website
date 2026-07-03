@@ -1,15 +1,4 @@
-/**
- * Dynamically builds a standard-compliant sitemap.xml structure.
- * 
- * @param {Array} routes - Static page routes (e.g. ['/', '/about']).
- * @param {Array} products - List of product items.
- * @param {Array} categories - List of category items.
- * @param {Array} brands - List of brand items.
- * @param {Array} blogs - List of blog items.
- * @param {string} baseUrl - Domain name.
- * @returns {string} The formatted sitemap.xml string.
- */
-export const generateSitemap = (routes = [], products = [], categories = [], brands = [], blogs = [], baseUrl = 'https://ecom-website.example.com') => {
+export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = 'https://ecom-website.example.com') => {
   const urls = [];
   const addUrl = (loc, changefreq = 'daily', priority = '0.8') => {
     urls.push(`  <url>
@@ -35,11 +24,6 @@ export const generateSitemap = (routes = [], products = [], categories = [], bra
   // Add Category routes
   categories.forEach(c => {
     addUrl(`/category/${c.slug}`, 'weekly', '0.6');
-  });
-
-  // Add Brand routes
-  brands.forEach(b => {
-    addUrl(`/brands/${b.slug}`, 'weekly', '0.6');
   });
 
   // Add Blog routes
