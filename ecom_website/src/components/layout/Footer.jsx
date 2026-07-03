@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import Container from '../common/Container'
 import Image from '../common/Image'
 import footerData from '../../data/footer.json'
@@ -86,12 +86,12 @@ const Footer = () => {
                 <ul className="list-none" style={{ padding: 0, margin: 0 }}>
                   {col.links.map((link, linkIdx) => (
                     <li key={linkIdx} className="mb-12">
-                      <a
+                      <Link
+                        to={link.path}
                         className="footer-link cursor-pointer small-text"
-                        onClick={() => navigate(link.path)}
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

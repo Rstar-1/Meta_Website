@@ -1,33 +1,29 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import products from '../../data/products.json'
-import ProductSchema from '../../components/seo/ProductSchema'
-import SeoHelmet from '../../components/seo/SeoHelmet'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import products from '../../data/products.json';
+import ProductLayout from '../../components/layout/ProductLayout';
 
 // Import product images from assets
-import printerHp88a from '../../assets/printer_hp_88a.png'
-import printerCanon74s from '../../assets/printer_canon_74s.png'
-import printerCanon746 from '../../assets/printer_canon_746.png'
-import printerEpson003 from '../../assets/printer_epson_003.png'
-import printerBrotherTn2321 from '../../assets/printer_brother_tn2321.png'
-import printerSamsungD111s from '../../assets/printer_samsung_d111s.png'
-import ss304Sheets from '../../assets/ss_304_sheets.png'
-import ss304Pipes from '../../assets/ss_304_pipes.png'
-import ssCoils from '../../assets/ss_coils.png'
-import ss316Rods from '../../assets/ss_316_rods.png'
-import ssPlates from '../../assets/ss_plates.png'
-import ssKitchen from '../../assets/ss_kitchen.png'
-import ssFlanges from '../../assets/ss_flanges.png'
-import ssAngleBars from '../../assets/ss_angle_bars.png'
-import ssWireMesh from '../../assets/ss_wire_mesh.png'
-import ssFasteners from '../../assets/ss_fasteners.png'
+import printerHp88a from '../../assets/printer_hp_88a.png';
+import printerCanon74s from '../../assets/printer_canon_74s.png';
+import printerCanon746 from '../../assets/printer_canon_746.png';
+import printerEpson003 from '../../assets/printer_epson_003.png';
+import printerBrotherTn2321 from '../../assets/printer_brother_tn2321.png';
+import printerSamsungD111s from '../../assets/printer_samsung_d111s.png';
+import ss304Sheets from '../../assets/ss_304_sheets.png';
+import ss304Pipes from '../../assets/ss_304_pipes.png';
+import ssCoils from '../../assets/ss_coils.png';
+import ss316Rods from '../../assets/ss_316_rods.png';
+import ssPlates from '../../assets/ss_plates.png';
+import ssKitchen from '../../assets/ss_kitchen.png';
+import ssFlanges from '../../assets/ss_flanges.png';
+import ssAngleBars from '../../assets/ss_angle_bars.png';
+import ssWireMesh from '../../assets/ss_wire_mesh.png';
+import ssFasteners from '../../assets/ss_fasteners.png';
 
 // Import section components
-import {
-  ProductOverview,
-  ProductReviews
-} from './sections'
-import PopularProducts from '../home/sections/PopularProducts'
+import { ProductReviews } from './sections';
+import PopularProducts from '../home/sections/PopularProducts';
 
 const assetMap = {
   '/src/assets/printer_hp_88a.png': printerHp88a,
@@ -55,8 +51,8 @@ const resolveImage = (path) => {
 };
 
 const ProductDetail = () => {
-  const { id } = useParams()
-  const foundProduct = products.find(p => p.id === id || p.slug === id)
+  const { id } = useParams();
+  const foundProduct = products.find(p => p.id === id || p.slug === id);
 
   // Default product data matching the requested UI image
   const productData = {
@@ -68,6 +64,7 @@ const ProductDetail = () => {
     priceSubtext: 'Prices are inclusive of all taxes',
     isBestseller: true,
     description: foundProduct ? foundProduct.description : 'HP 88A Toner Cartridge (Black) delivers professional quality prints with crisp text and sharp images. Designed for reliability and high performance, it ensures consistent results and long lasting prints.',
+    category: foundProduct ? foundProduct.category : 'Printer Cartridges',
     specs: foundProduct && foundProduct.specs ? foundProduct.specs : [
       { label: 'Cartridge Type', value: 'Toner Cartridge' },
       { label: 'Color', value: 'Black' },
@@ -81,7 +78,7 @@ const ProductDetail = () => {
       { label: 'Supply Type', value: 'Wholesale / Bulk' },
       { label: 'Usage/Application', value: 'For Laser Printers' }
     ]
-  }
+  };
 
   // Thumbnails gallery list
   const galleryImages = foundProduct && foundProduct.images
@@ -92,45 +89,24 @@ const ProductDetail = () => {
         printerCanon746,
         printerEpson003,
         printerBrotherTn2321
-      ]
+      ];
 
-  const [activeImage, setActiveImage] = useState(foundProduct ? resolveImage(foundProduct.image) : printerHp88a)
-  const [isWishlist, setIsWishlist] = useState(false)
-
-  useEffect(() => {
-    if (foundProduct) {
-      setActiveImage(resolveImage(foundProduct.image))
-    }
-  }, [id, foundProduct])
-
+  const keywords = foundProduct && foundProduct.tags
+    ? foundProduct.tags
+    : ['HP 88A', 'Toner Cartridge', 'Printer Ink', 'PrintMax Solutions'];
 
   return (
     <>
-      <SeoHelmet
-        title={productData.title}
-        description={productData.description}
-        keywords={['HP 88A', 'Toner Cartridge', 'Printer Ink', 'PrintMax Solutions']}
-        image={activeImage}
-        path="/product-detail"
-        type="product"
+      <ProductLayout
+        productData={productData}
+        galleryImages={galleryImages}
+        foundProduct={foundProduct}
+        seoKeywords={keywords}
       />
-      <ProductSchema product={foundProduct || { name: productData.title, description: productData.description, price: '1250', sku: 'HP-88A' }} />
-
-      <div className='py-50'>
-        <ProductOverview
-          title={productData.title}
-          productData={productData}
-          galleryImages={galleryImages}
-          activeImage={activeImage}
-          setActiveImage={setActiveImage}
-          isWishlist={isWishlist}
-          setIsWishlist={setIsWishlist}
-        />
-      </div>
       <PopularProducts />
       <ProductReviews />
     </>
-  )
-}
+  );
+};
 
-export default ProductDetail
+export default ProductDetail;

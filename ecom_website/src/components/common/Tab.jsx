@@ -9,15 +9,15 @@ const TabItem = ({ name, count, icon, isActive, onClick }) => {
             onMouseLeave={() => setHovered(false)}
             onClick={onClick}
             className={`px-20 py-9 cursor-pointer flex items-center gap-8 ${isActive
-                ? "bg-white text-secondary font-600"
+                ? "bg-white text-primary font-600"
                 : `rounded-5 ${hovered ? "bg-forth text-dark font-500" : "text-gray font-500"}`
                 }`}
-            style={isActive ? { borderBottom: "2px solid var(--secondary)" } : {}}
+            style={isActive ? { borderBottom: "2px solid var(--primary)" } : {}}
         >
             {icon && <span className="flex items-center justify-center">{icon}</span>}
             <p className="small-text">{name}</p>
             {count !== undefined && count !== null && (
-                <p className={`px-9 py-3 rounded-20 mini-text ${isActive ? "bg-secondary text-white font-600" : "bg-tertiary text-gray"
+                <p className={`px-9 py-3 rounded-20 mini-text ${isActive ? "bg-primary text-white font-600" : "bg-tertiary text-gray"
                     }`}>
                     {count}
                 </p>

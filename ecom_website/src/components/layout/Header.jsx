@@ -14,7 +14,6 @@ const ProductsMenu = ({ onItemClick }) => (
       .mega-menu-item {
         padding: 10px 0px;
         cursor: pointer;
-        border-radius: 5px;
         transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         width: 100%;
         display: flex;
@@ -26,10 +25,10 @@ const ProductsMenu = ({ onItemClick }) => (
         transform: translateX(3px);
       }
       .mega-menu-item:hover p {
-        color: var(--warning) !important;
+        color: var(--primary) !important;
       }
       .mega-menu-link:hover {
-        color: var(--warning) !important;
+        color: var(--primary) !important;
       }
       .arrow-icon {
         font-size: 0.8rem;
@@ -42,7 +41,7 @@ const ProductsMenu = ({ onItemClick }) => (
       .mega-menu-item:hover .arrow-icon {
         opacity: 1;
         transform: translateX(0);
-        color: var(--warning) !important;
+        color: var(--primary) !important;
       }
     `}</style>
     <div className="bg-tertiary p-18">
@@ -95,7 +94,6 @@ const IndustryMenu = ({ onItemClick }) => {
         .mega-menu-item {
           padding: 10px 0px;
           cursor: pointer;
-          border-radius: 5px;
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
           width: 100%;
           display: flex;
@@ -107,10 +105,10 @@ const IndustryMenu = ({ onItemClick }) => {
           transform: translateX(3px);
         }
         .mega-menu-item:hover p {
-          color: var(--warning) !important;
+          color: var(--primary) !important;
         }
         .mega-menu-link:hover {
-          color: var(--warning) !important;
+          color: var(--primary) !important;
         }
         .arrow-icon {
           font-size: 0.8rem;
@@ -123,7 +121,7 @@ const IndustryMenu = ({ onItemClick }) => {
         .mega-menu-item:hover .arrow-icon {
           opacity: 1;
           transform: translateX(0);
-          color: var(--warning) !important;
+          color: var(--primary) !important;
         }
       `}</style>
       <div className="bg-tertiary p-18">
@@ -188,18 +186,18 @@ const Header = () => {
 
   return (
     <>
-      <Container>
+      <Container className="navbar">
         <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
           <div className="flex items-center gap-8">
             <NavLink to="/" className="flex items-center" style={{ textDecoration: 'none' }}>
-              <Image 
-                src={logoImg} 
-                alt="SOBO Marketing Solution Logo" 
-                style={{ 
-                  maxHeight: '42px', 
-                  width: 'auto', 
-                  objectFit: 'contain' 
-                }} 
+              <Image
+                src={logoImg}
+                alt="SOBO Marketing Solution Logo"
+                style={{
+                  maxHeight: '42px',
+                  width: 'auto',
+                  objectFit: 'contain'
+                }}
               />
             </NavLink>
 
@@ -217,23 +215,20 @@ const Header = () => {
                   {!item?.hasMegaMenu ? (
                     <NavLink
                       to={item?.href}
-                      className={({ isActive }) =>
-                        `small-text font-500 px-20 py-6 cursor-pointer ${isActive ? "text-warning" : "text-dark hover:text-warning"
-                        }`
-                      }
+                      className="small-text font-500 px-20 py-6 cursor-pointer text-dark"
                       style={{ textDecoration: "none" }}
                     >
                       {item?.label}
                     </NavLink>
                   ) : (
-                    <p className="small-text text-dark font-500 px-20 py-6 cursor-pointer hover:text-warning mb-0" style={{ margin: 0 }}>
+                    <p className="small-text text-dark font-500 px-20 py-6 cursor-pointer">
                       {item?.label}
                     </p>
                   )}
 
                   {item?.hasMegaMenu && activeMenu === item?.label && (
                     <div
-                      className="absolute z-50 bg-white border rounded-5 shadow-lg"
+                      className="absolute z-50 bg-white border-ec"
                       style={{
                         top: "65px",
                         left: "50%",
@@ -263,7 +258,7 @@ const Header = () => {
               <Button
                 text="Talk to Engineer"
                 version="v2"
-                bg="warning"
+                bg="primary"
                 onClick={() => navigate("/connect")}
               />
             </div>
@@ -273,7 +268,7 @@ const Header = () => {
               className="hidden md-block sm-block cursor-pointer bg-transparent border-0 text-dark p-10 hover:text-warning"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               style={{ fontSize: "1.6rem", border: "none" }}
-              onMouseEnter={(e) => e.currentTarget.style.color = "var(--warning)"}
+              onMouseEnter={(e) => e.currentTarget.style.color = "var(--primary)"}
               onMouseLeave={(e) => e.currentTarget.style.color = "var(--dark)"}
             >
               {isMobileOpen ? "✕" : "☰"}

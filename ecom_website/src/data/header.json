@@ -1,6 +1,6 @@
 {
   "navLinks": [
-    { "href": "/", "label": "Home" },
+    { "href": "/home", "label": "Home" },
     { "href": "/about", "label": "About Us" },
     { "href": "/blog", "label": "Blogs" },
     {
