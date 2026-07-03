@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import categories from '../../../data/homeCategories.json';
+import categories from '../../../data/category.json';
 import Container from '../../../components/common/Container';
 
 const BrowseCategory = ({ onSelectCategory }) => {
@@ -24,16 +24,23 @@ const BrowseCategory = ({ onSelectCategory }) => {
               onClick={() => handleCategoryClick(cat.name)}
             >
               <div
-                className="mb-12 rounded-full mx-auto flex items-center justify-center"
+                className="mb-12 rounded-full mx-auto flex items-center justify-center overflow-hidden"
                 style={{
                   backgroundColor: cat.color || '#f3f4f6',
                   width: '70px',
                   height: '70px',
-                  fontSize: '32px',
                   transition: 'transform 0.25s ease',
                 }}
               >
-                {cat.icon}
+                {cat.icon && (cat.icon.startsWith('/') || cat.icon.startsWith('http')) ? (
+                  <img
+                    src={cat.icon}
+                    alt={cat.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                ) : (
+                  <span style={{ fontSize: '32px' }}>{cat.icon}</span>
+                )}
               </div>
               <span className="text-dark font-600 small-text text-center">{cat.name}</span>
             </div>

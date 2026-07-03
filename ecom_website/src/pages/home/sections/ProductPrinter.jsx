@@ -1,15 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import printerProducts from '../../../data/homePrinterProducts.json';
+import products from '../../../data/products.json';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const ProductPrinter = () => {
   const navigate = useNavigate();
+  const printerProducts = products.filter(p => p.type === 'printer' && p.popular);
 
   const handleNavigate = () => {
     navigate('/product-detail');
   };
+
 
   return (
     <Container className="bg-white">

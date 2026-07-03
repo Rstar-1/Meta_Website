@@ -58,8 +58,9 @@ const ProductsMenu = ({ onItemClick }) => (
         {headerData.productsMenu.bannerLinkText} →
       </p>
     </div>
-    {[...new Set(productsData.map((p) => p.category))].map((cat, idx) => {
-      const items = productsData.filter((p) => p.category === cat);
+    {[...new Set(productsData.filter((p) => p.type !== "general").map((p) => p.category))].map((cat, idx) => {
+      const items = productsData.filter((p) => p.category === cat && p.type !== "general" && p.popular).slice(0, 5);
+      if (items.length === 0) return null;
       return (
         <div key={idx} className="p-18">
           <p className="text-gray uppercase small-text font-500">{cat}</p>
@@ -84,7 +85,7 @@ const ProductsMenu = ({ onItemClick }) => (
 );
 
 const IndustryMenu = ({ onItemClick }) => {
-  const categories = [...new Set(productsData.map((p) => p.category))];
+  const categories = [...new Set(productsData.filter((p) => p.type !== "general").map((p) => p.category))];
   return (
     <>
       <style>{`

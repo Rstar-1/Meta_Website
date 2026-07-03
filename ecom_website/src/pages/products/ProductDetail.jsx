@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import products from '../../data/products.json'
 import ProductSchema from '../../components/seo/ProductSchema'
@@ -26,13 +26,13 @@ const ProductDetail = () => {
   const productData = {
     title: foundProduct ? foundProduct.name : 'HP 88A Toner Cartridge (Black)',
     brand: foundProduct ? foundProduct.brand : 'PrintMax Solutions',
-    rating: foundProduct ? parseFloat(foundProduct.aggregateRating?.ratingValue || 4.6) : 4.6,
-    reviewCount: foundProduct ? (foundProduct.aggregateRating?.reviewCount || 245) : 245,
-    price: foundProduct ? `₹ ${foundProduct.price} / Piece` : '₹ 1,250 / Piece',
+    rating: foundProduct ? (foundProduct.rating || 4.6) : 4.6,
+    reviewCount: foundProduct ? (foundProduct.reviewCount || 245) : 245,
+    price: foundProduct ? foundProduct.priceDisplay : '₹ 1,250 / Piece',
     priceSubtext: 'Prices are inclusive of all taxes',
     isBestseller: true,
     description: foundProduct ? foundProduct.description : 'HP 88A Toner Cartridge (Black) delivers professional quality prints with crisp text and sharp images. Designed for reliability and high performance, it ensures consistent results and long lasting prints.',
-    specs: [
+    specs: foundProduct && foundProduct.specs ? foundProduct.specs : [
       { label: 'Cartridge Type', value: 'Toner Cartridge' },
       { label: 'Color', value: 'Black' },
       { label: 'Model', value: 'HP 88A (CC388A)' },
@@ -48,7 +48,14 @@ const ProductDetail = () => {
   }
 
   // Thumbnails gallery list
-  const galleryImages = [
+  const galleryImages = foundProduct ? [
+    foundProduct.image,
+    printerHp88a,
+    printerCanon74s,
+    printerCanon746,
+    printerEpson003,
+    printerBrotherTn2321
+  ].filter(Boolean) : [
     printerHp88a,
     printerCanon74s,
     printerCanon746,
@@ -56,8 +63,15 @@ const ProductDetail = () => {
     printerBrotherTn2321
   ]
 
-  const [activeImage, setActiveImage] = useState(printerHp88a)
+  const [activeImage, setActiveImage] = useState(foundProduct ? foundProduct.image : printerHp88a)
   const [isWishlist, setIsWishlist] = useState(false)
+
+  useEffect(() => {
+    if (foundProduct) {
+      setActiveImage(foundProduct.image)
+    }
+  }, [id, foundProduct])
+
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { useState, forwardRef } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 
 export function Image({
   src,
@@ -12,32 +12,44 @@ export function Image({
   style,
   ...props
 }) {
-  const [prevSrc, setPrevSrc] = useState(src);
   const [imgSrc, setImgSrc] = useState(src);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef(null);
 
-  if (src !== prevSrc) {
-    setPrevSrc(src);
+  useEffect(() => {
     setImgSrc(src);
-  }
+    setIsLoaded(false);
+  }, [src]);
 
-  const imgStyle = {
-    aspectRatio: aspectRatio,
-    objectFit: aspectRatio ? "cover" : undefined,
-    ...style,
-  };
+  useEffect(() => {
+    if (imgRef.current?.complete) {
+      setIsLoaded(true);
+    }
+  }, [imgSrc]);
 
   return (
     <img
+      ref={imgRef}
       src={imgSrc || fallback}
       alt={alt}
       loading={loading}
       width={width}
       height={height}
       className={className}
-      style={imgStyle}
+      style={{
+        aspectRatio,
+        objectFit: aspectRatio ? "cover" : undefined,
+        transition: "opacity 0.3s ease-in-out, filter 0.3s ease-in-out",
+        opacity: isLoaded ? 1 : 0.6,
+        filter: isLoaded ? "none" : "blur(4px)",
+        ...style,
+      }}
+      onLoad={() => setIsLoaded(true)}
       onError={() => {
         if (imgSrc !== fallback) {
           setImgSrc(fallback);
+        } else {
+          setIsLoaded(true);
         }
       }}
       {...props}
@@ -56,29 +68,20 @@ export const ImageDiv = forwardRef(({
   innerRef,
   ...props
 }, ref) => {
-  const [prevImage, setPrevImage] = useState(image);
   const [bgImage, setBgImage] = useState(image);
 
-  if (image !== prevImage) {
-    setPrevImage(image);
+  useEffect(() => {
     setBgImage(image);
-  }
+  }, [image]);
 
   return (
-    <div
-      ref={ref}
-      className={`relative overflow-hidden ${className}`}
-      {...props}
-    >
+    <div ref={ref} className={`relative overflow-hidden ${className}`} {...props}>
       <div
         ref={innerRef}
         className={innerClassName}
         style={{
           position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
+          inset: 0,
           zIndex: 0,
           backgroundImage: `url(${bgImage || fallback})`,
           backgroundSize: "cover",
@@ -87,25 +90,18 @@ export const ImageDiv = forwardRef(({
         }}
         onError={() => setBgImage(fallback)}
       />
-
       {overlay && (
         <div
           className={overlayClass}
           style={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
+            inset: 0,
             zIndex: 10,
             backgroundColor: "rgba(0, 0, 0, 0.4)",
           }}
         />
       )}
-
-      <div className="relative z-20 h-full">
-        {children}
-      </div>
+      <div className="relative z-20 h-full">{children}</div>
     </div>
   );
 });

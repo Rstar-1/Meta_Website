@@ -1,15 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import steelProducts from '../../../data/homeSteelProducts.json';
+import products from '../../../data/products.json';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const ProductSteel = () => {
     const navigate = useNavigate();
+    const steelProducts = products.filter(p => p.type === 'steel' && p.popular);
 
     const handleNavigate = () => {
         navigate('/product-detail');
     };
+
 
     return (
         <Container className="bg-white">

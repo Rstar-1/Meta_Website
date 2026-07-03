@@ -4,6 +4,8 @@ import Button from '../../../components/common/Button'
 import Icon from '../../../components/common/Icon'
 import Container from '../../../components/common/Container'
 import Image from '../../../components/common/Image'
+import Tab from '../../../components/common/Tab'
+
 
 // Inline GetBestPriceForm Component
 const GetBestPriceForm = () => {
@@ -426,22 +428,14 @@ const ProductOverview = ({
             <div className='bg-white border border-ec p-20 rounded-5 mt-12'>
 
               {/* Tab Header */}
-              <div className='flex gap-20 bordb pb-12 overflow-x-auto mb-20'>
-                {tabList.map(tab => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`small-text font-600 cursor-pointer border-0 bg-transparent pb-8 transition-color ${activeTab === tab.id ? 'text-primary' : 'text-gray'
-                      }`}
-                    style={{
-                      borderBottom: activeTab === tab.id ? '2px solid var(--primary)' : '2px solid transparent',
-                      marginBottom: '-13px'
-                    }}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
+              <div className="mb-20">
+                <Tab
+                  tabs={tabList.map(tab => ({ name: tab.label, value: tab.id }))}
+                  activeTab={activeTab}
+                  onChange={setActiveTab}
+                />
               </div>
+
 
               {/* Tab Content */}
               {activeTab === 'description' && (
