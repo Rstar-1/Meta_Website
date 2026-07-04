@@ -2,7 +2,6 @@ import React from 'react'
 import Banner from '../../components/layout/Banner'
 import DetailSection from './sections/DetailSection'
 import Timeline from './sections/Timeline'
-import BlogList from '../blog/sections/BlogList'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import OrganizationSchema from '../../components/seo/OrganizationSchema'
 
@@ -26,7 +25,6 @@ const About = () => {
       />
       <DetailSection />
       <Timeline />
-      <BlogList />
     </>
   )
 }

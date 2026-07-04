@@ -786,11 +786,11 @@ const BlogLayout = ({
                 {popularPosts.length > 0 && (
                   <div className="bg-white rounded-10 p-20 mb-20 border-ec">
                     <h3 className="mid-text font-600 text-dark pb-12 border-bottom">Popular Posts</h3>
-                    <div className="flex flex-column gap-16 mt-15">
+                    <div className="grid-cols-1 gap-12 mt-15">
                       {popularPosts.map((popPost) => (
                         <div
                           key={popPost.id}
-                          className="popular-item flex items-center gap-12 cursor-pointer"
+                          className="flex items-center gap-12 cursor-pointer"
                           onClick={() => navigate(`/blog-detail/${popPost.id}`)}
                         >
                           <Image
@@ -800,17 +800,17 @@ const BlogLayout = ({
                             style={{ width: '60px', height: '60px', objectFit: 'cover' }}
                           />
                           <div>
-                            <h4 className="headmini-text font-500 text-dark line-clamp2 leading-tight">
+                            <h4 className="mid-text font-500 text-dark line-clamp2">
                               {popPost.title}
                             </h4>
-                            <span className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
+                            <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
                               {popPost.datePublished
                                 ? new Date(popPost.datePublished).toLocaleDateString('en-US', {
                                   year: 'numeric',
                                   month: 'short',
                                 })
                                 : 'May 2024'}
-                            </span>
+                            </p>
                           </div>
                         </div>
                       ))}

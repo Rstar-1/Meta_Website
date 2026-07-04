@@ -11,6 +11,7 @@ const Fields = ({
     otpCount,
     border,
     position = "x",
+    outline = true,
     ...props
 }) => {
     const [error, setError] = useState("");
@@ -33,11 +34,13 @@ const Fields = ({
         return !isNaN(parsed.getTime()) ? parsed.getFullYear() : new Date().getFullYear();
     });
 
-    const clsInput = `${border ? "border-forth" : "border-0"
-        } h-input rounded-5 text-gray w-full mini-text`;
+    const clsInput = `${
+        outline && !error && !isFocused ? "border-ec" : border ? "border-forth" : "border-0"
+    } h-input rounded-5 text-gray w-full mini-text`;
 
-    const clsBox = `${border ? "border-forth" : "border-0"
-        } relative w-full bg-white rounded-5`;
+    const clsBox = `${
+        outline ? "border-ec" : border ? "border-forth" : "border-0"
+    } relative w-full bg-white rounded-5`;
 
     useEffect(() => {
         if (!isOpen) return;
@@ -101,7 +104,7 @@ const Fields = ({
         padding: "10px 0px",
         textIndent: "12px",
         borderRadius: "8px",
-        border: `1px solid ${error ? "var(--danger)" : isFocused ? "var(--secondary)" : "var(--forth)"}`,
+        border: `1px solid ${error ? "var(--danger)" : isFocused ? "var(--secondary)" : outline ? "#ececec" : "var(--forth)"}`,
         fontSize: "13px",
         outline: "none",
         width: "100%",

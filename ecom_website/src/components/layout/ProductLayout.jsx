@@ -8,104 +8,76 @@ import Tab from '../common/Tab';
 import SeoHelmet from '../seo/SeoHelmet';
 import ProductSchema from '../seo/ProductSchema';
 import Banner from './Banner';
+import FormBuilder from '../common/FormBuilder';
 
 // Inline GetBestPriceForm Component
 const GetBestPriceForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    mobile: '',
-    email: '',
-    quantity: '',
-    requirement: ''
-  });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const fields = [
+    {
+      name: 'name',
+      type: 'text',
+      placeholder: 'Enter Your Name',
+      validation: { required: true }
+    },
+    {
+      name: 'mobile',
+      type: 'tel',
+      placeholder: 'Enter Mobile Number',
+      validation: { required: true }
+    },
+    {
+      name: 'quantity',
+      type: 'select',
+      border: true,
+      defaultValue: '',
+      options: [
+        { label: '1 - 5 Pieces', value: '1-5' },
+        { label: '6 - 20 Pieces', value: '6-20' },
+        { label: '21 - 50 Pieces', value: '21-50' },
+        { label: '50+ Pieces (Bulk)', value: '50+' }
+      ]
+    },
+    {
+      name: 'requirement',
+      type: 'textarea',
+      placeholder: 'Your Requirement'
+    }
+  ];
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleFormSubmit = (data) => {
     setFormSubmitted(true);
     setTimeout(() => setFormSubmitted(false), 4000);
-    setFormData({ name: '', mobile: '', email: '', quantity: '', requirement: '' });
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', marginBottom: '20px' }}>
-      <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', margin: '0 0 4px 0' }}>Get Best Price</h3>
-      <p style={{ fontSize: '12px', color: '#64748b', margin: '0 0 16px 0' }}>Fill the form and get quotes from verified suppliers</p>
+    <div className='border-ec p-15 rounded-5'>
+      <h3 className='title-text text-dark font-600'>Get Best Price</h3>
+      <p className='mini-text mini-text text-gray mt-4'>Fill the form and get quotes from verified suppliers</p>
 
       {formSubmitted ? (
-        <div style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', color: '#166534', padding: '16px', borderRadius: '8px', textAlign: 'center', fontSize: '13px' }}>
+        <div className='mt-8 p-10 text-center bg-forth'>
           <div style={{ fontSize: '24px', marginBottom: '4px' }}>✅</div>
-          <strong>Thank you!</strong>
-          <p style={{ margin: '4px 0 0 0' }}>Your requirement has been sent to verified suppliers.</p>
+          <h4 className='text-dark mid-text font-600'>Thank you!</h4>
+          <p className='mt-5 mini-text text-gray'>Your requirement has been sent to verified suppliers.</p>
         </div>
       ) : (
-        <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Your Name"
-            required
-            value={formData.name}
-            onChange={handleInputChange}
-            style={{ width: '100%', padding: '10px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }}
+        <div className="mt-10">
+          <FormBuilder
+            fields={fields}
+            onSubmit={handleFormSubmit}
+            submitType="json"
+            submitText="Submit Requirement"
+            buttonVersion="v3"
+            buttonBg="primary"
+            buttonClassName="mt-14 w-full"
+            buttonStyle={{ padding: '12px', fontSize: '14px', fontWeight: 700 }}
           />
-          <input
-            type="tel"
-            name="mobile"
-            placeholder="Enter Mobile Number"
-            required
-            value={formData.mobile}
-            onChange={handleInputChange}
-            style={{ width: '100%', padding: '10px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }}
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Email Address"
-            required
-            value={formData.email}
-            onChange={handleInputChange}
-            style={{ width: '100%', padding: '10px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }}
-          />
-          <select
-            name="quantity"
-            value={formData.quantity}
-            onChange={handleInputChange}
-            style={{ width: '100%', padding: '10px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', outline: 'none', backgroundColor: '#ffffff', boxSizing: 'border-box', color: formData.quantity ? '#0f172a' : '#94a3b8' }}
-          >
-            <option value="" disabled>Select Quantity</option>
-            <option value="1-5">1 - 5 Pieces</option>
-            <option value="6-20">6 - 20 Pieces</option>
-            <option value="21-50">21 - 50 Pieces</option>
-            <option value="50+">50+ Pieces (Bulk)</option>
-          </select>
-          <textarea
-            name="requirement"
-            rows="3"
-            placeholder="Your Requirement"
-            value={formData.requirement}
-            onChange={handleInputChange}
-            style={{ width: '100%', padding: '10px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit', resize: 'vertical' }}
-          ></textarea>
-
-          <button
-            type="submit"
-            style={{ width: '100%', backgroundColor: '#2563eb', color: '#ffffff', border: 'none', padding: '12px', borderRadius: '6px', fontSize: '14px', fontWeight: 700, cursor: 'pointer', transition: 'backgroundColor 0.2s', marginTop: '4px' }}
-            onMouseOver={e => e.target.style.backgroundColor = '#1d4ed8'}
-            onMouseOut={e => e.target.style.backgroundColor = '#2563eb'}
-          >
-            Submit Requirement
-          </button>
-
-          <div style={{ textAlign: 'center', fontSize: '11px', color: '#64748b', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', marginTop: '4px' }}>
+          <div style={{ textAlign: 'center', fontSize: '11px', color: '#64748b', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', marginTop: '14px' }}>
             <span>🛡️</span> 100% Secure &amp; Confidential
           </div>
-        </form>
+        </div>
       )}
     </div>
   );
@@ -116,57 +88,48 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', marginBottom: '20px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-        <div style={{ width: '40px', height: '40px', borderRadius: '8px', backgroundColor: '#eff6ff', border: '1px solid #bfdbfe', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#2563eb', fontSize: '18px' }}>
+    <div className='border-ec p-15 rounded-5'>
+      <div className='flex items-center gap-10'>
+        <p className='bg-light-secondary icon-lg text-primary rounded-5 font-600 para-text'>
           {brand.charAt(0)}
-        </div>
+        </p>
         <div>
-          <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <p className='text-dark mid-text font-600'>
             {brand}
-          </div>
-          <div style={{ fontSize: '11px', color: '#0284c7', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '3px' }}>
-            <span>✔</span> Verified Supplier
-          </div>
+          </p>
+          <p className='text-secondary mini-text font-600 flex-items-center gap-3'>
+            ✔ Verified Supplier
+          </p>
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', marginBottom: '8px' }}>
-        <span style={{ fontWeight: 700, color: '#0f172a' }}>4.6</span>
-        <span style={{ color: '#f59e0b' }}>★★★★★</span>
-        <span style={{ color: '#64748b' }}>(245)</span>
+      <div className='flex items-center gap-8 mt-6'>
+        <p className='mini-text text-dark font-600'>4.6</p>
+        <p className='small-text text-warning'>★★★★★</p>
+        <p className='mini-text text-gray'>(245)</p>
       </div>
 
-      <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '16px' }}>
-        Supplier of Printer Cartridges
+      <p className='text-gray mini-text mt-5'>Supplier of Printer Cartridges</p>
+
+      <div className='grid-cols-1 gap-9 bordh py-6'>
+        <p className='text-gray mini-text font-500'>📍 Delhi, India</p>
+        <p className='text-gray mini-text font-500'>🕒 Years in Business: 8+</p>
+        <p className='text-gray mini-text font-500'>📋 GST No: 07AABCPMT234A1ZS</p>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '12px', color: '#334155', borderTop: '1px solid #f1f5f9', paddingTop: '12px', marginBottom: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>📍</span> Delhi, India
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>🕒</span> Years in Business: 8+
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>📋</span> GST No: 07AABCPMT234A1ZS
-        </div>
-      </div>
-
-      <button
+      <Button
         onClick={() => navigate('/brands')}
-        style={{ width: '100%', backgroundColor: '#ffffff', color: '#2563eb', border: '1px solid #bfdbfe', padding: '10px', borderRadius: '6px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s', marginBottom: '12px' }}
-        onMouseOver={e => { e.target.style.backgroundColor = '#eff6ff'; }}
-        onMouseOut={e => { e.target.style.backgroundColor = '#ffffff'; }}
+        version="v3"
+        bg="secondary"
+        className="font-600 mt-8"
       >
         View Supplier Profile
-      </button>
+      </Button>
 
-      <div style={{ textAlign: 'center' }}>
-        <Link to="/products" style={{ fontSize: '12px', color: '#2563eb', fontWeight: 600, textDecoration: 'none' }}>
-          More Products by this Supplier
-        </Link>
-      </div>
+      <Link to="/products" className='text-secondary mini-text mt-8'>
+        More Products by this Supplier
+      </Link>
+
     </div>
   );
 };
@@ -174,21 +137,13 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
 // Inline TrustAssurance Component
 const TrustAssurance = () => {
   return (
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', marginBottom: '20px' }}>
-      <h4 style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', margin: '0 0 12px 0' }}>Trust &amp; Assurance</h4>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px', color: '#334155' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ color: '#16a34a', fontWeight: 700 }}>✓</span> Verified Supplier
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ color: '#16a34a', fontWeight: 700 }}>✓</span> 100% Original Products
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ color: '#16a34a', fontWeight: 700 }}>✓</span> GST Invoice Available
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ color: '#16a34a', fontWeight: 700 }}>✓</span> Easy Returns
-        </div>
+    <div className='border-ec p-15 rounded-5'>
+      <h4 className='mid-text font-500 text-dark'>Trust &amp; Assurance</h4>
+      <div className='grid-cols-1 gap-6 mt-8'>
+        <p className='text-gray mini-text font-500'>✓ Verified Supplier</p>
+        <p className='text-gray mini-text font-500'>✓ 100% Original Products</p>
+        <p className='text-gray mini-text font-500'>✓ GST Invoice Available</p>
+        <p className='text-gray mini-text font-500'>✓ Easy Returns</p>
       </div>
     </div>
   );
@@ -205,9 +160,9 @@ const ShareProduct = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
-      <h4 style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', margin: '0 0 14px 0' }}>Share this product</h4>
-      <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+    <div className='border-ec p-15 rounded-5'>
+      <h4 className='mid-text font-500 text-dark'>Share this product</h4>
+      <div className='flex items-center gap-12 mt-8'>
         <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }} title="Share on WhatsApp">
           <Icon name="WhatsAppShare" width="18" height="18" fill="#ffffff" />
         </a>
@@ -220,9 +175,15 @@ const ShareProduct = () => {
         <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#0A66C2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }} title="Share on LinkedIn">
           <Icon name="LinkedIn" width="18" height="18" fill="#ffffff" />
         </a>
-        <button onClick={handleCopyLink} style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#f1f5f9', border: '1px solid #cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }} title="Copy Link">
-          {copiedLink ? <span style={{ fontSize: '12px' }}>✓</span> : <Icon name="Link" width="18" height="18" stroke="#475569" strokeWidth="2" />}
-        </button>
+        <Button
+          onClick={handleCopyLink}
+          version="v2"
+          className="flex items-center justify-center cursor-pointer"
+          style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#f1f5f9', border: '1px solid #cbd5e1', padding: 0 }}
+          title="Copy Link"
+        >
+          {copiedLink ? <span style={{ fontSize: '12px', color: '#475569' }}>✓</span> : <Icon name="Link" width="18" height="18" stroke="#475569" strokeWidth="2" />}
+        </Button>
       </div>
     </div>
   );
@@ -309,7 +270,7 @@ const ProductLayout = ({
 
       <Container>
         <div className="py-50">
-          <div className='flex gap-12'>
+          <div className='flex items-start gap-12'>
             {/* Left Column - 75% width */}
             <div className='w-75'>
               {/* Product Overview Section */}
@@ -514,7 +475,7 @@ const ProductLayout = ({
             </div>
 
             {/* Right Column - 25% width */}
-            <div className='w-25'>
+            <div className='w-25 grid-cols-1 gap-12'>
               <GetBestPriceForm />
               <SupplierCard brand={productData.brand} />
               <TrustAssurance />

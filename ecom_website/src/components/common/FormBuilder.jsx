@@ -2,7 +2,17 @@ import React, { useMemo, useState } from "react";
 import Fields from "./Fields";
 import Button from "./Button";
 
-const FormBuilder = ({ fields = [], onSubmit, submitType = "formdata", col = "1" }) => {
+const FormBuilder = ({
+    fields = [],
+    onSubmit,
+    submitType = "formdata",
+    col = "1",
+    submitText = "Save Changes",
+    buttonVersion = "v1",
+    buttonBg = "primary",
+    buttonClassName = "",
+    buttonStyle = {}
+}) => {
     const getDefaultValue = (field) => {
         if (field.defaultValue !== undefined) return field.defaultValue;
         if (field.type === "range-datepicker") return { fromDate: "", toDate: "" };
@@ -80,12 +90,14 @@ const FormBuilder = ({ fields = [], onSubmit, submitType = "formdata", col = "1"
                 ))}
             </div>
 
-            <div className="flex justify-center mt-20">
+            <div className={buttonClassName || "flex justify-center mt-20"}>
                 <Button
                     type="submit"
-                    version="v1"
+                    version={buttonVersion}
+                    bg={buttonBg}
+                    style={buttonStyle}
                 >
-                    Save Changes
+                    {submitText}
                 </Button>
             </div>
         </form>

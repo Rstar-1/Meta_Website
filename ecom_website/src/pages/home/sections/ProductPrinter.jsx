@@ -30,7 +30,7 @@ const ProductPrinter = () => {
         </div>
 
         <CardLayout
-          items={printerProducts?.slice(0, 4)}
+          items={printerProducts?.slice(0, 8)}
           cardType="product"
           imageHeight="h-250 sm-h-150"
           cols="4"

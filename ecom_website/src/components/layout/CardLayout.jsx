@@ -11,6 +11,9 @@ const CardLayout = ({
     imageHeight,
     onCardClick,
     onButtonClick,
+    onAddToCart,
+    showAddToCart = true,
+    showViewProducts = true,
     cols = '4',
     mdCols = '2',
     smCols = '1',
@@ -87,30 +90,59 @@ const CardLayout = ({
                         </div>
                     </div>
 
-                    {/* Blue View Products Button at Bottom */}
-                    <div className="mt-16">
-                        <Button
-                            text="View Products"
-                            bg="primary"
-                            version="v3"
-                            className="w-full font-500 py-10"
-                            style={{
-                                backgroundColor: '#2563eb',
-                                color: '#ffffff',
-                                borderRadius: '8px',
-                                fontWeight: '500',
-                                fontSize: '0.95rem',
-                                padding: '10px 0',
-                            }}
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                if (onButtonClick) {
-                                    onButtonClick(item);
-                                } else if (onCardClick) {
-                                    onCardClick(item);
-                                }
-                            }}
-                        />
+                    {/* Action Buttons at Bottom */}
+                    <div className="flex gap-10 mt-16 w-full">
+                        {showAddToCart && (
+                            <Button
+                                text="Add to Cart"
+                                variant="outline"
+                                bg="primary"
+                                version="v3"
+                                icon="Cart"
+                                className={showViewProducts ? "flex-1" : "w-full"}
+                                style={{
+                                    borderColor: '#2563eb',
+                                    color: '#2563eb',
+                                    borderRadius: '8px',
+                                    fontWeight: '500',
+                                    fontSize: '0.95rem',
+                                    padding: '10px 0',
+                                }}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (onAddToCart) {
+                                        onAddToCart(item);
+                                    } else {
+                                        alert(`${item.name} added to cart!`);
+                                    }
+                                }}
+                            />
+                        )}
+                        {showViewProducts && (
+                            <Button
+                                text="View Products"
+                                bg="primary"
+                                variant="filled"
+                                version="v3"
+                                className={showAddToCart ? "flex-1" : "w-full"}
+                                style={{
+                                    backgroundColor: '#2563eb',
+                                    color: '#ffffff',
+                                    borderRadius: '8px',
+                                    fontWeight: '500',
+                                    fontSize: '0.95rem',
+                                    padding: '10px 0',
+                                }}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (onButtonClick) {
+                                        onButtonClick(item);
+                                    } else if (onCardClick) {
+                                        onCardClick(item);
+                                    }
+                                }}
+                            />
+                        )}
                     </div>
                 </div>
             );
@@ -305,11 +337,11 @@ const CardLayout = ({
                 }
             `}</style>
 
-        <div className={combinedClassName} {...props}>
-            {items && (renderItem || cardType)
-                ? items.map((item, index) => (renderItem ? renderItem(item, index) : renderDefaultCard(item, index)))
-                : children}
-        </div>
+            <div className={combinedClassName} {...props}>
+                {items && (renderItem || cardType)
+                    ? items.map((item, index) => (renderItem ? renderItem(item, index) : renderDefaultCard(item, index)))
+                    : children}
+            </div>
         </>
     );
 };

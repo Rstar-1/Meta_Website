@@ -27061,7 +27061,7 @@ p {
 }
 
 .h-select {
-  height: 33px !important;
+  height: 40px !important;
   background: var(--white);
 }
 
@@ -27075,6 +27075,7 @@ p {
 
 input:focus {
   outline: 0px !important;
+  border: 1px solid var(--primary) !important;
 }
 
 .h-100 {

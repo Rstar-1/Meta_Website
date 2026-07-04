@@ -38,6 +38,7 @@ const PopularProducts = () => {
           smCols="2"
           gap="12"
           className="mt-20"
+          showViewProducts={false}
           onCardClick={handleProductClick}
           onButtonClick={handleProductClick}
         />

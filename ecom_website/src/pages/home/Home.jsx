@@ -41,9 +41,9 @@ const Home = () => {
 
       <Hero />
       <BrowseCategory />
-      <PopularProducts />
       <ProductPrinter />
       <ProductSteel />
+      <PopularProducts />
       <WhyChoose />
       <TopCity />
       <FeaturedBusinesses />

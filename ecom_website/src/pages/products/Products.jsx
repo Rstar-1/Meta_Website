@@ -51,7 +51,7 @@ const imageMap = {
 const Products = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const getInitialCategory = () => {
     if (location.state?.category) return location.state.category;
     const queryParams = new URLSearchParams(location.search);
@@ -175,7 +175,7 @@ const Products = () => {
           items={filteredProducts}
           cardType="product"
           imageMap={imageMap}
-          imageHeight="h-200"
+          imageHeight="h-250"
           cols="4"
           mdCols="2"
           smCols="1"

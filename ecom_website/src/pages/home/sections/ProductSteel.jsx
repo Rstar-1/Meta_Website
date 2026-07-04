@@ -30,7 +30,7 @@ const ProductSteel = () => {
                 </div>
 
                 <CardLayout
-                    items={steelProducts?.slice(0, 4)}
+                    items={steelProducts?.slice(0, 8)}
                     cardType="product"
                     imageHeight="h-250 sm-h-150"
                     cols="4"
