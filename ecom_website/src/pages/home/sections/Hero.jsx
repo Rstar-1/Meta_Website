@@ -45,8 +45,37 @@ const Hero = ({ onSearch }) => {
   ];
 
   return (
-    <Container className='h-500 sm-h-700 py-40 flex items-center' style={{ background: `linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54)), url(${background})`, backgroundPosition: 'right', backgroundSize: 'cover' }}>
-      <div className="w-full">
+    <Container
+      className='h-500 sm-h-700 py-40 flex items-center relative overflow-hidden'
+    >
+      {/* Background Image for LCP Optimization */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: 'none'
+        }}
+      >
+        <img
+          src={background}
+          alt="Hero Background"
+          loading="eager"
+          fetchPriority="high"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'right' }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54))',
+            zIndex: 1
+          }}
+        />
+      </div>
+
+      <div className="w-full relative z-10">
         <h1 className="large-text text-white font-700 uppercase">
           India's No. 1<br />
           Local Business Discovery Platform

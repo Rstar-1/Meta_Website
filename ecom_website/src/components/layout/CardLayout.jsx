@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../common/Button';
 import Image from '../common/Image';
 import Icon from '../common/Icon';
+import { addToCart } from '../../utils/cartHelper';
 
 const CardLayout = ({
     items,
@@ -39,7 +40,8 @@ const CardLayout = ({
                             <Image
                                 src={imgSrc}
                                 alt={item.name}
-                                loading="lazy"
+                                loading={index < 2 ? "eager" : "lazy"}
+                                fetchPriority={index < 2 ? "high" : undefined}
                                 className={`w-full object-cover flex ${imageHeight || 'h-200'}`}
                             />
                         </div>
@@ -113,6 +115,7 @@ const CardLayout = ({
                                     if (onAddToCart) {
                                         onAddToCart(item);
                                     } else {
+                                        addToCart(item);
                                         alert(`${item.name} added to cart!`);
                                     }
                                 }}
@@ -160,7 +163,8 @@ const CardLayout = ({
                             <Image
                                 src={item.image}
                                 alt={item.name}
-                                loading="lazy"
+                                loading={index < 2 ? "eager" : "lazy"}
+                                fetchPriority={index < 2 ? "high" : undefined}
                                 className={`w-full object-cover rounded-5 flex ${imageHeight || 'h-150'}`}
                             />
                             {item.logo && (
@@ -217,7 +221,8 @@ const CardLayout = ({
                             <Image
                                 src={item.image}
                                 alt={item.title}
-                                loading="lazy"
+                                loading={index < 2 ? "eager" : "lazy"}
+                                fetchPriority={index < 2 ? "high" : undefined}
                                 className={`w-full object-cover ${imageHeight || 'h-200'}`}
                             />
                         </div>

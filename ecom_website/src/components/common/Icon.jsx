@@ -39,7 +39,6 @@ const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, 
                     <line x1="12" y1="22.08" x2="12" y2="12"></line>
                 </svg>
             );
-        case "Github":
         case "GitHub":
             return (
                 <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>

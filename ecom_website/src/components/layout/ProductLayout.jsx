@@ -10,11 +10,38 @@ import ProductSchema from '../seo/ProductSchema';
 import Banner from './Banner';
 import FormBuilder from '../common/FormBuilder';
 
-// Inline GetBestPriceForm Component
-const GetBestPriceForm = () => {
+export const GetBestPriceForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const fields = [
+  const fields = isCart ? [
+    {
+      name: 'name',
+      type: 'text',
+      placeholder: 'Enter your full name',
+      validation: { required: true }
+    },
+    {
+      name: 'mobile',
+      type: 'tel',
+      placeholder: 'Enter your mobile number',
+      validation: { required: true }
+    },
+    {
+      name: 'city',
+      type: 'select',
+      border: true,
+      defaultValue: '',
+      options: [
+        { label: 'Select your city', value: '' },
+        { label: 'Delhi', value: 'Delhi' },
+        { label: 'Mumbai', value: 'Mumbai' },
+        { label: 'Bangalore', value: 'Bangalore' },
+        { label: 'Chennai', value: 'Chennai' },
+        { label: 'Hyderabad', value: 'Hyderabad' }
+      ],
+      validation: { required: true }
+    }
+  ] : [
     {
       name: 'name',
       type: 'text',
@@ -48,19 +75,24 @@ const GetBestPriceForm = () => {
 
   const handleFormSubmit = (data) => {
     setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 4000);
+    setTimeout(() => {
+      setFormSubmitted(false);
+      if (isCart && onClearCart) {
+        onClearCart();
+      }
+    }, 4000);
   };
 
   return (
-    <div className='border-ec p-15 rounded-5'>
-      <h3 className='title-text text-dark font-600'>Get Best Price</h3>
-      <p className='mini-text mini-text text-gray mt-4'>Fill the form and get quotes from verified suppliers</p>
+    <div className='border-ec p-15 rounded-5 bg-white'>
+      <h3 className='title-text text-dark font-600'>{isCart ? 'Request a Quote' : 'Get Best Price'}</h3>
+      <p className='mini-text text-gray mt-4'>Fill the form and get quotes from verified suppliers</p>
 
       {formSubmitted ? (
         <div className='mt-8 p-10 text-center bg-forth'>
           <div style={{ fontSize: '24px', marginBottom: '4px' }}>✅</div>
           <h4 className='text-dark mid-text font-600'>Thank you!</h4>
-          <p className='mt-5 mini-text text-gray'>Your requirement has been sent to verified suppliers.</p>
+          <p className='mt-5 mini-text text-gray'>{isCart ? 'Your enquiry has been submitted. Our team will contact you shortly.' : 'Your requirement has been sent to verified suppliers.'}</p>
         </div>
       ) : (
         <div className="mt-10">
@@ -68,15 +100,21 @@ const GetBestPriceForm = () => {
             fields={fields}
             onSubmit={handleFormSubmit}
             submitType="json"
-            submitText="Submit Requirement"
+            submitText={isCart ? "Submit Enquiry" : "Submit Requirement"}
             buttonVersion="v3"
             buttonBg="primary"
             buttonClassName="mt-14 w-full"
-            buttonStyle={{ padding: '12px', fontSize: '14px', fontWeight: 700 }}
-          />
-          <div style={{ textAlign: 'center', fontSize: '11px', color: '#64748b', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', marginTop: '14px' }}>
-            <span>🛡️</span> 100% Secure &amp; Confidential
-          </div>
+            buttonStyle={{ backgroundColor: '#2563eb', padding: '12px', fontSize: '14px', fontWeight: 700 }}
+          >
+            {isCart && (
+              <div className="bg-forth p-12 rounded-5 flex items-center justify-between mt-10">
+                <p className="small-text font-500 text-dark">🛍️ Items in Enquiry</p>
+                <p className="mini-text text-primary" >{cartCount} Items</p>
+              </div>
+            )}
+          </FormBuilder>
+
+          <p className='font-400 mini-text text-center mt-12 text-gray'>🛡️ 100% Secure &amp; Confidential</p>
         </div>
       )}
     </div>
@@ -271,16 +309,17 @@ const ProductLayout = ({
       <Container>
         <div className="py-50">
           <div className='flex items-start gap-12'>
-            {/* Left Column - 75% width */}
-            <div className='w-75'>
+            <div className='w-75 pr-15 sm-pr-1'>
               {/* Product Overview Section */}
               <div className='grid-cols-2 gap-12'>
-                <div>
+                <div className='pr-10 sm-pr-1'>
                   <div className='relative'>
                     <Image
                       src={activeImage}
                       alt={productData.title}
-                      className='w-full h-400 object-cover border-ec rounded-5'
+                      className='w-full h-400 object-cover border-ec rounded-5 flex'
+                      loading="eager"
+                      fetchPriority="high"
                     />
                   </div>
                   <div className='grid-cols-4 gap-9 mt-12'>
@@ -297,12 +336,12 @@ const ProductLayout = ({
                   </div>
                 </div>
 
-                <div>
+                <div className='pl-10 sm-pl-1'>
                   <h2 className='title-text text-dark font-600'>
                     {productData.title}
                   </h2>
 
-                  <p className='text-gray mini-text font-400 mb-20 mt-5'>
+                  <p className='text-gray mini-text font-400 mb-12 mt-5'>
                     {productData.brand}
                   </p>
 
@@ -377,7 +416,7 @@ const ProductLayout = ({
               </div>
 
               {/* Product Tabs Section */}
-              <div className='bg-white border border-ec p-20 rounded-5 mt-12'>
+              <div className='bg-white mt-12 p-15 border-ec rounded-5'>
                 {/* Tab Header */}
                 <div className="mb-20">
                   <Tab
@@ -474,8 +513,7 @@ const ProductLayout = ({
               </div>
             </div>
 
-            {/* Right Column - 25% width */}
-            <div className='w-25 grid-cols-1 gap-12'>
+            <div className='w-25 grid-cols-1 gap-12 pl-15 sm-pl-1'>
               <GetBestPriceForm />
               <SupplierCard brand={productData.brand} />
               <TrustAssurance />

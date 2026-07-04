@@ -144,7 +144,8 @@ const Table = ({
     itemName = "items",
     loading = false,
     collapsible = false,
-    maxVisibleColumns = 5
+    maxVisibleColumns = 5,
+    minWidth = "1100px"
 }) => {
     const [expandedRowId, setExpandedRowId] = useState(null);
 
@@ -231,7 +232,7 @@ const Table = ({
             )}
 
             <div className="table-w rounded-5 mt-12 bordl bordr" style={{ overflowX: "auto" }}>
-                <table className="w-full" style={{ borderCollapse: "collapse", minWidth: "1100px" }}>
+                <table className="w-full" style={{ borderCollapse: "collapse", minWidth }}>
                     <thead>
                         <tr>
                             {displayHeaders.map((col, idx) => (

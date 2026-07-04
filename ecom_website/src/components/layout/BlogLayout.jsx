@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../common/Container';
-import Fade from '../common/Fade';
 import Icon from '../common/Icon';
 import Image from '../common/Image';
+import Fields from '../common/Fields';
 import Banner from './Banner';
 import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
@@ -144,7 +144,6 @@ const BlogLayout = ({
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [activePage, setActivePage] = useState(1);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -331,9 +330,19 @@ const BlogLayout = ({
           line-height: 1.6;
           color: var(--dark);
         }
-        .author-bio-box {
+         .author-bio-box {
           border: 1px solid #e5e7eb;
           background: #f8fafc;
+        }
+        .sticky-sidebar {
+          position: sticky;
+          top: 20px;
+          align-self: start;
+        }
+        @media (max-width: 640px) {
+          .sticky-sidebar {
+            position: static !important;
+          }
         }
       `}</style>
 
@@ -347,58 +356,17 @@ const BlogLayout = ({
         />
       ) : (
         post && (
-          <div
-            className="w-full text-white py-60 px-10 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #021B44 0%, #00102A 100%)' }}
-          >
-            <Container>
-              <div>
-                {/* Breadcrumbs */}
-                <div className="flex items-center gap-8 text-white opacity-70 mb-15 small-text flex-wrap">
-                  <span className="cursor-pointer hover:underline" onClick={() => navigate('/')}>
-                    Home
-                  </span>
-                  <span>&gt;</span>
-                  <span className="cursor-pointer hover:underline" onClick={() => navigate('/blog')}>
-                    Blog
-                  </span>
-                  <span>&gt;</span>
-                  <span className="line-clamp1 font-400">{post.title}</span>
-                </div>
-
-                {/* Category Pill Tag */}
-                <span
-                  className="px-12 py-4 rounded-50 text-white font-600 mini-text uppercase tracking-wider inline-block mb-15"
-                  style={{ backgroundColor: '#2563eb' }}
-                >
-                  {post.category}
-                </span>
-
-                {/* Post Title */}
-                <h1 className="large-text font-700 text-white leading-tight mb-20">{post.title}</h1>
-
-                {/* Metadata: Author, Date, Read Time */}
-                <div className="flex items-center gap-12 sm-grid-cols-1 flex-wrap">
-                  <div className="flex items-center gap-10">
-                    <Image
-                      src={
-                        post.authorAvatar ||
-                        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
-                      }
-                      alt={post.authorName}
-                      className="rounded-full"
-                      style={{ width: '36px', height: '36px', objectFit: 'cover' }}
-                    />
-                    <span className="small-text font-500 text-white">By {post.authorName}</span>
-                  </div>
-                  <span className="hidden sm-hidden md-block text-white opacity-50">•</span>
-                  <span className="small-text opacity-80">{formattedDate}</span>
-                  <span className="hidden sm-hidden md-block text-white opacity-50">•</span>
-                  <span className="small-text opacity-80">{post.readTime || '5 min read'}</span>
-                </div>
-              </div>
-            </Container>
-          </div>
+          <Banner
+            style={{ background: "linear-gradient(135deg, #021B44 0%, #00102A 100%)" }}
+            img="https://metatechnical.org/images/banners/blog.png"
+            title={post.category}
+            desc={post.title}
+            breadcrumbs={[
+              { label: 'Home', path: '/' },
+              { label: 'Blog', path: '/blog' },
+              { label: post.title }
+            ]}
+          />
         )
       )}
 
@@ -446,7 +414,7 @@ const BlogLayout = ({
             )}
 
             {/* Left/Center Column - Main Content */}
-            <div className={`${type === 'detail' ? 'w-65' : 'w-70'} md-w-70 sm-w-full`}>
+            <div className='w-75 md-w-70 sm-w-full'>
               {type === 'list' ? (
                 <>
                   <div className="flex items-center justify-between sm-grid-cols-1 gap-12 mb-25">
@@ -466,111 +434,71 @@ const BlogLayout = ({
                           : 'May 20, 2024';
 
                         return (
-                          <Fade key={blog.id} direction="up" distance={40} delay={100 + idx * 100}>
-                            <article className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-20">
-                              {/* Card Image */}
-                              <div
-                                className="w-40 sm-w-full overflow-hidden cursor-pointer"
-                                onClick={() => navigate(`/blog-detail/${blog.id}`)}
-                              >
-                                <Image
-                                  src={blog.image}
-                                  alt={blog.title}
-                                  className="w-full h-250 object-cover flex"
-                                  loading="lazy"
-                                />
+                          <article key={blog.id} className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-20">
+                            {/* Card Image */}
+                            <div
+                              className="w-40 sm-w-full overflow-hidden cursor-pointer"
+                              onClick={() => navigate(`/blog-detail/${blog.id}`)}
+                            >
+                              <Image
+                                src={blog.image}
+                                alt={blog.title}
+                                className="w-full h-250 object-cover flex"
+                                loading={idx < 2 ? "eager" : "lazy"}
+                                fetchPriority={idx < 2 ? "high" : undefined}
+                              />
+                            </div>
+
+                            {/* Card Content */}
+                            <div className="w-60 sm-w-full p-20 sm-p-20 flex flex-column justify-between">
+                              <div>
+                                <p
+                                  className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
+                                  onClick={() => {
+                                    setSelectedCategory(blog.category);
+                                    setActivePage(1);
+                                  }}
+                                >
+                                  {blog.category}
+                                </p>
+                                <h3
+                                  className="title-text font-600 text-dark cursor-pointer pt-5 line-clamp2"
+                                  onClick={() => navigate(`/blog-detail/${blog.id}`)}
+                                >
+                                  {blog.title}
+                                </h3>
+                                <p className="small-text text-gray font-400 line-clamp2 my-10">{blog.summary}</p>
                               </div>
 
-                              {/* Card Content */}
-                              <div className="w-60 sm-w-full p-20 sm-p-20 flex flex-column justify-between">
-                                <div>
-                                  <p
-                                    className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
-                                    onClick={() => {
-                                      setSelectedCategory(blog.category);
-                                      setActivePage(1);
-                                    }}
-                                  >
-                                    {blog.category}
-                                  </p>
-                                  <h3
-                                    className="title-text font-600 text-dark cursor-pointer pt-5 line-clamp2"
-                                    onClick={() => navigate(`/blog-detail/${blog.id}`)}
-                                  >
-                                    {blog.title}
-                                  </h3>
-                                  <p className="small-text text-gray font-400 line-clamp2 my-10">{blog.summary}</p>
+                              {/* Card Footer */}
+                              <div className="flex items-center justify-between pt-8 bordh">
+                                <div className="flex items-center gap-10">
+                                  <Image
+                                    src={
+                                      blog.authorAvatar ||
+                                      'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60'
+                                    }
+                                    alt={blog.authorName}
+                                    className="rounded-full"
+                                    style={{ width: '32px', height: '32px', objectFit: 'cover' }}
+                                  />
+                                  <span className="small-text font-500 text-dark">By {blog.authorName}</span>
                                 </div>
-
-                                {/* Card Footer */}
-                                <div className="flex items-center justify-between pt-8 bordh">
-                                  <div className="flex items-center gap-10">
-                                    <Image
-                                      src={
-                                        blog.authorAvatar ||
-                                        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60'
-                                      }
-                                      alt={blog.authorName}
-                                      className="rounded-full"
-                                      style={{ width: '32px', height: '32px', objectFit: 'cover' }}
-                                    />
-                                    <span className="small-text font-500 text-dark">By {blog.authorName}</span>
-                                  </div>
-                                  <div className="flex items-center gap-8 mini-text text-gray">
-                                    <span>{itemFormattedDate}</span>
-                                    <span className="font-600" style={{ fontSize: '6px' }}>
-                                      •
-                                    </span>
-                                    <span>{blog.readTime || '5 min read'}</span>
-                                  </div>
+                                <div className="flex items-center gap-8 mini-text text-gray">
+                                  <span>{itemFormattedDate}</span>
+                                  <span className="font-600" style={{ fontSize: '6px' }}>
+                                    •
+                                  </span>
+                                  <span>{blog.readTime || '5 min read'}</span>
                                 </div>
                               </div>
-                            </article>
-                          </Fade>
+                            </div>
+                          </article>
                         );
                       })}
-
-                      {/* Pagination */}
-                      <div className="flex items-center gap-8 mt-40">
-                        <button
-                          className={`p-10 px-15 rounded-5 border cursor-pointer font-500 ${activePage === 1 ? 'bg-primary text-white border-primary font-600' : 'bg-white border-gray text-dark cat-item-hover'
-                            }`}
-                          onClick={() => setActivePage(1)}
-                        >
-                          1
-                        </button>
-                        <button
-                          className={`p-10 px-15 rounded-5 border cursor-pointer font-500 ${activePage === 2 ? 'bg-primary text-white border-primary font-600' : 'bg-white border-gray text-dark cat-item-hover'
-                            }`}
-                          onClick={() => setActivePage(2)}
-                        >
-                          2
-                        </button>
-                        <button
-                          className={`p-10 px-15 rounded-5 border cursor-pointer font-500 ${activePage === 3 ? 'bg-primary text-white border-primary font-600' : 'bg-white border-gray text-dark cat-item-hover'
-                            }`}
-                          onClick={() => setActivePage(3)}
-                        >
-                          3
-                        </button>
-                        <span className="text-gray font-600 px-5">...</span>
-                        <button
-                          className={`p-10 px-15 rounded-5 border cursor-pointer font-500 ${activePage === 10 ? 'bg-primary text-white border-primary font-600' : 'bg-white border-gray text-dark cat-item-hover'
-                            }`}
-                          onClick={() => setActivePage(10)}
-                        >
-                          10
-                        </button>
-                        <button
-                          className="p-10 px-15 rounded-5 border border-gray bg-white text-dark cursor-pointer font-500 cat-item-hover"
-                          onClick={() => setActivePage((prev) => (prev < 10 ? prev + 1 : 1))}
-                        >
-                          Next &gt;
-                        </button>
-                      </div>
                     </div>
                   ) : (
-                    <div className="bg-white rounded-10 p-50 text-center border border-gray text-gray">
+                    <div className="bg-white rounded-5 p-50 text-center border border-gray text-gray">
                       <h3 className="title-text font-700 text-dark mb-10">No articles found</h3>
                       <p className="para-text">Try refining your search terms or selecting another category.</p>
                     </div>
@@ -578,15 +506,37 @@ const BlogLayout = ({
                 </>
               ) : (
                 post && (
-                  <Fade direction="up" distance={30} delay={100}>
+                  <>
                     {/* Main Article Image */}
-                    <div className="overflow-hidden rounded-10 mb-35">
+                    <div className="overflow-hidden rounded-5 mb-35">
                       <Image
                         src={post.image}
                         alt={post.title}
                         className="w-full object-cover flex"
                         style={{ maxHeight: '420px', borderRadius: '10px' }}
+                        loading="eager"
+                        fetchPriority="high"
                       />
+                    </div>
+
+                    {/* Metadata: Author, Date, Read Time */}
+                    <div className="flex items-center gap-12 sm-grid-cols-1 flex-wrap mb-25 pb-15 bordb">
+                      <div className="flex items-center gap-10">
+                        <Image
+                          src={
+                            post.authorAvatar ||
+                            'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
+                          }
+                          alt={post.authorName}
+                          className="rounded-full"
+                          style={{ width: '32px', height: '32px', objectFit: 'cover' }}
+                        />
+                        <span className="small-text font-600 text-dark">By {post.authorName}</span>
+                      </div>
+                      <span className="text-gray opacity-50">•</span>
+                      <span className="small-text text-gray">{formattedDate}</span>
+                      <span className="text-gray opacity-50">•</span>
+                      <span className="small-text text-gray">{post.readTime || '5 min read'}</span>
                     </div>
 
                     {/* Mobile Social Share Row */}
@@ -709,28 +659,25 @@ const BlogLayout = ({
                         </div>
                       </div>
                     </div>
-                  </Fade>
+                  </>
                 )
               )}
             </div>
 
             {/* Right Column - Sidebar Widgets */}
-            <div className="w-30 md-w-30 sm-w-full">
-              <Fade direction="up" distance={30} delay={200}>
+            <div className="w-25 md-w-30 sm-w-full sticky-sidebar">
+              <>
                 {/* Search Widget */}
                 {type === 'list' && (
-                  <div className="bg-white rounded-10 p-20 mb-20 border-ec">
-                    <h3 className="mid-text font-600 text-dark pb-12 border-bottom">Search</h3>
-                    <div className="relative mt-15">
-                      <input
+                  <div className="bg-white rounded-5 p-15 mb-12">
+                    <div className="relative">
+                      <Fields
                         type="text"
                         placeholder="Search articles..."
-                        className="h-input w-full pr-40 border-0"
                         value={searchQuery}
-                        onChange={(e) => {
-                          setSearchQuery(e.target.value);
-                          setActivePage(1);
-                        }}
+                        onChange={(val) => setSearchQuery(val)}
+                        outline={true}
+                        style={{ paddingRight: '40px' }}
                       />
                       <Icon
                         name="Search"
@@ -745,8 +692,8 @@ const BlogLayout = ({
 
                 {/* Table of Contents Widget */}
                 {type === 'detail' && content?.sections && (
-                  <div className="bg-white rounded-10 p-20 mb-20 border-ec">
-                    <h3 className="mid-text font-600 text-dark pb-12 border-bottom">Table of Contents</h3>
+                  <div className="bg-white rounded-5 p-15 mb-12">
+                    <h3 className="mid-text font-500 text-dark pb-12 bordb">Table of Contents</h3>
                     <div className="flex flex-column gap-12 mt-15">
                       {content.sections.map((sec) => (
                         <div key={sec.id} className="toc-item font-500 small-text">
@@ -761,21 +708,18 @@ const BlogLayout = ({
 
                 {/* Categories Widget */}
                 {type === 'list' && categoriesList.length > 0 && (
-                  <div className="bg-white rounded-10 p-20 mb-20 border-ec">
-                    <h3 className="mid-text font-600 text-dark pb-12 border-bottom">Categories</h3>
-                    <div className="flex flex-column gap-8 mt-15">
+                  <div className="bg-white rounded-5 p-15 mb-12">
+                    <h3 className="mid-text font-500 text-dark pb-8 bordb">Categories</h3>
+                    <div className="grid-cols-1 gap-8 mt-8">
                       {categoriesList.map((cat, idx) => (
                         <div
                           key={idx}
-                          className={`flex justify-between items-center p-10 rounded-5 cursor-pointer font-500 small-text cat-item-hover ${selectedCategory === cat.name ? 'bg-tertiary text-primary font-600' : 'text-dark'
+                          className={`flex justify-between items-center py-9 px-12 rounded-5 cursor-pointer cat-item-hover ${selectedCategory === cat.name ? 'bg-tertiary text-primary font-600' : 'text-dark'
                             }`}
-                          onClick={() => {
-                            setSelectedCategory(cat.name);
-                            setActivePage(1);
-                          }}
+                          onClick={() => setSelectedCategory(cat.name)}
                         >
-                          <span>{cat.name}</span>
-                          <span className="text-gray small-text">({cat.count})</span>
+                          <p className="text-dark font-500 small-text">{cat.name}</p>
+                          <p className="text-gray font-500 mini-text">({cat.count})</p>
                         </div>
                       ))}
                     </div>
@@ -784,9 +728,9 @@ const BlogLayout = ({
 
                 {/* Sidebar Popular Posts Widget */}
                 {popularPosts.length > 0 && (
-                  <div className="bg-white rounded-10 p-20 mb-20 border-ec">
-                    <h3 className="mid-text font-600 text-dark pb-12 border-bottom">Popular Posts</h3>
-                    <div className="grid-cols-1 gap-12 mt-15">
+                  <div className="bg-white rounded-5 p-15 mb-12">
+                    <h3 className="mid-text font-500 text-dark pb-8 bordb">Popular Posts</h3>
+                    <div className="grid-cols-1 gap-12 mt-12">
                       {popularPosts.map((popPost) => (
                         <div
                           key={popPost.id}
@@ -796,10 +740,10 @@ const BlogLayout = ({
                           <Image
                             src={popPost.image}
                             alt={popPost.title}
-                            className="rounded-5 flex"
-                            style={{ width: '60px', height: '60px', objectFit: 'cover' }}
+                            className="rounded-5 flex w-30"
+                            style={{ height: '80px' }}
                           />
-                          <div>
+                          <div className='w-70'>
                             <h4 className="mid-text font-500 text-dark line-clamp2">
                               {popPost.title}
                             </h4>
@@ -819,7 +763,7 @@ const BlogLayout = ({
                 )}
 
                 {/* Sidebar Newsletter Subscribe Widget */}
-                <div className="bg-dark text-white rounded-10 p-20 mb-20 relative overflow-hidden">
+                <div className="bg-dark text-white rounded-5 p-20 relative overflow-hidden">
                   <Icon
                     name="Send"
                     width="42"
@@ -835,7 +779,7 @@ const BlogLayout = ({
                   />
 
                   <h3 className="mid-text font-600 text-white mb-6">Subscribe to Our Newsletter</h3>
-                  <p className="mini-text text-white opacity-80 mb-15 leading-tight">
+                  <p className="mini-text text-white opacity-80 mb-15">
                     Get the latest marketing insights and strategies straight to your inbox.
                   </p>
 
@@ -863,11 +807,8 @@ const BlogLayout = ({
                       </button>
                     </form>
                   )}
-                  <p className="mini-text text-white opacity-60 mt-12" style={{ margin: 0 }}>
-                    No spam, unsubscribe anytime.
-                  </p>
                 </div>
-              </Fade>
+              </>
             </div>
           </div>
         </Container>

@@ -26,7 +26,7 @@ const Button = ({
       case "v1":
         return `px-20 py-9 para-text rounded-5 ${borderClass}`;
       case "v2":
-        return `px-20 py-10 mini-text rounded-5 ${borderClass}`;
+        return `px-18 py-8 mini-text rounded-5 ${borderClass}`;
       case "v3":
         return `w-full py-10 mini-text rounded-5 ${borderClass}`;
       default:

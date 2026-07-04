@@ -1,8 +1,9 @@
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Container from "../common/Container";
 import Button from "../common/Button";
 import Image from "../common/Image";
+import Icon from "../common/Icon";
 import headerData from "../../data/header.json";
 import logoImg from "../../assets/sobo_logo.png";
 import productsData from "../../data/products.json";
@@ -172,6 +173,19 @@ const Header = () => {
   const navigate = useNavigate();
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const updateCount = () => {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      setCartCount(cart.length);
+    };
+    updateCount();
+    window.addEventListener('cart-updated', updateCount);
+    return () => {
+      window.removeEventListener('cart-updated', updateCount);
+    };
+  }, []);
 
   const handleItemClick = (productId, categoryName) => {
     setActiveMenu(null);
@@ -253,7 +267,32 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-20">
+          <div className="flex items-center gap-12">
+            {/* Cart Link with Badge */}
+            <NavLink
+              to="/cart"
+              className="relative flex items-center justify-center cursor-pointer text-dark hover:text-primary transition-all"
+              style={{ padding: '8px', textDecoration: 'none' }}
+              title="View Cart"
+            >
+              <Icon name="Cart" width="22" height="22" stroke="var(--dark)" />
+              {cartCount > 0 && (
+                <span
+                  className="absolute bg-danger text-white rounded-full flex items-center justify-center font-700"
+                  style={{
+                    top: '-2px',
+                    right: '-2px',
+                    fontSize: '10px',
+                    width: '16px',
+                    height: '16px',
+                    minWidth: '16px'
+                  }}
+                >
+                  {cartCount}
+                </span>
+              )}
+            </NavLink>
+
             <div className="sm-hidden md-hidden">
               <Button
                 text="Talk to Engineer"
@@ -294,6 +333,14 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
+            <NavLink
+              to="/cart"
+              onClick={() => setIsMobileOpen(false)}
+              className="small-text font-600 text-dark hover:text-warning decoration-none py-6 block"
+              style={{ textDecoration: "none" }}
+            >
+              Cart ({cartCount})
+            </NavLink>
             <Button
               text="Talk to Engineer"
               version="v2"

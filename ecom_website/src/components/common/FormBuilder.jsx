@@ -11,7 +11,8 @@ const FormBuilder = ({
     buttonVersion = "v1",
     buttonBg = "primary",
     buttonClassName = "",
-    buttonStyle = {}
+    buttonStyle = {},
+    children
 }) => {
     const getDefaultValue = (field) => {
         if (field.defaultValue !== undefined) return field.defaultValue;
@@ -89,6 +90,8 @@ const FormBuilder = ({
                     />
                 ))}
             </div>
+
+            {children}
 
             <div className={buttonClassName || "flex justify-center mt-20"}>
                 <Button

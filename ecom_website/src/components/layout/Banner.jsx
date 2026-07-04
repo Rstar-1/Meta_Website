@@ -39,7 +39,27 @@ const Banner = ({ title, img, desc, style, breadcrumbs, productData }) => {
                         )}
                         {!productData && breadcrumbs && (
                             <div className="mb-20">
-                                {breadcrumbs}
+                                {Array.isArray(breadcrumbs) ? (
+                                    <nav className="flex items-center gap-12 w-full text-white opacity-95 flex-wrap small-text">
+                                        {breadcrumbs.map((item, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {idx > 0 && <span className="opacity-60">&gt;</span>}
+                                                {item.path ? (
+                                                    <NavLink
+                                                        to={item.path}
+                                                        className="text-white no-underline opacity-80 hover:opacity-100 transition-opacity"
+                                                    >
+                                                        {item.label}
+                                                    </NavLink>
+                                                ) : (
+                                                    <span className="text-white font-semibold line-clamp1">{item.label}</span>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </nav>
+                                ) : (
+                                    breadcrumbs
+                                )}
                             </div>
                         )}
                         <div className="flex items-center gap-9">

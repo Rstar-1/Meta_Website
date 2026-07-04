@@ -12,6 +12,8 @@ const Fields = ({
     border,
     position = "x",
     outline = true,
+    style,
+    className,
     ...props
 }) => {
     const [error, setError] = useState("");
@@ -117,7 +119,7 @@ const Fields = ({
         onChange: handleChange,
         onFocus: () => setIsFocused(true),
         onBlur: () => setIsFocused(false),
-        style: getInputStyle(),
+        style: { ...getInputStyle(), ...style },
         ...props,
     };
 
@@ -166,7 +168,7 @@ const Fields = ({
                 <input
                     type={typeMap[type]}
                     {...commonProps}
-                    className={clsInput}
+                    className={`${clsInput} ${className || ""}`}
                 />
             );
         }
@@ -178,7 +180,7 @@ const Fields = ({
                         <input
                             type={showPassword ? "text" : "password"}
                             {...commonProps}
-                            className={`${clsInput} pr-12`}
+                            className={`${clsInput} pr-12 ${className || ""}`}
                         />
                         <div
 
