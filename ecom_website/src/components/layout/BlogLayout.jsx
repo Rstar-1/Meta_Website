@@ -9,132 +9,6 @@ import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
 import LatestArticles from '../../pages/home/sections/LatestArticles';
 
-// Helper to get detailed mock content for each blog post to build a rich, premium reading experience
-const getBlogContent = (postId, post) => {
-  if (postId === 'post-1') {
-    return {
-      intro: [
-        "In today's competitive digital landscape, having a solid marketing strategy is more important than ever. Whether you're a startup or an established business, the right digital marketing tactics can help you reach your target audience, build brand awareness, and drive revenue.",
-        "Here are 5 proven digital marketing strategies to grow your business in 2024."
-      ],
-      sections: [
-        {
-          id: "seo",
-          title: "1. Search Engine Optimization (SEO)",
-          text: "SEO remains one of the most effective ways to drive organic traffic to your website. Optimize your content with relevant keywords, improve site speed, build quality backlinks, and ensure your website is mobile-friendly."
-        },
-        {
-          id: "content",
-          title: "2. Content Marketing",
-          text: "High-quality content builds trust and establishes your brand as an authority. Create blog posts, guides, videos, and infographics that educate your audience and solve their problems."
-        },
-        {
-          id: "social",
-          title: "3. Social Media Marketing",
-          text: "Leverage platforms like Facebook, Instagram, LinkedIn, and Twitter to connect with your audience. Share valuable content, engage with followers, and run targeted ad campaigns."
-        },
-        {
-          id: "email",
-          title: "4. Email Marketing",
-          text: "Email marketing offers one of the highest ROI. Build an email list and send personalized campaigns, newsletters, and offers to nurture leads and retain customers."
-        },
-        {
-          id: "ppc",
-          title: "5. Pay-Per-Click (PPC) Advertising",
-          text: "PPC campaigns on Google Ads, Bing, and social media platforms can help you reach a highly targeted audience and generate instant traffic."
-        }
-      ],
-      quote: "Success in digital marketing comes from combining the right strategies, analyzing results, and continuously optimizing for better performance.",
-      outro: "The digital marketing landscape is constantly evolving, but these strategies will help you stay ahead of the competition and achieve sustainable growth in 2024 and beyond."
-    };
-  }
-
-  if (postId === 'post-2') {
-    return {
-      intro: [
-        "On-page SEO forms the foundation of all successful search engine visibility. If search engines can't crawl, understand, and value your content, off-page strategies won't save you.",
-        "This checklist outlines the exact step-by-step process to optimize your website for maximum visibility and organic rankings."
-      ],
-      sections: [
-        {
-          id: "titles",
-          title: "1. Title Tags & Meta Descriptions",
-          text: "Your title tag is the single most important on-page SEO element. Keep it under 60 characters, place your target keyword near the front, and make it highly click-worthy."
-        },
-        {
-          id: "headings",
-          title: "2. Heading Structure (H1-H6)",
-          text: "Use a single H1 tag for your page title containing your primary keyword. Organize subtopics using H2 and H3 tags to create a logical content hierarchy for readers and search engines."
-        },
-        {
-          id: "images",
-          title: "3. Image Optimization",
-          text: "Always use descriptive file names (e.g. on-page-seo-checklist.jpg) and write descriptive alt text containing your secondary keywords for accessibility and image search."
-        },
-        {
-          id: "internal",
-          title: "4. Internal Linking",
-          text: "Link to relevant internal pages to distribute link equity and help search engines understand page relationships. Use descriptive anchor text."
-        },
-        {
-          id: "speed",
-          title: "5. Page Loading Speed",
-          text: "Optimize page loading times by compressing images, minifying code, and leveraging browser caching to improve search rankings and user retention."
-        }
-      ],
-      quote: "Creating high-value content that matches search intent is the single most important factor for long-term SEO success.",
-      outro: "By following this checklist, you will ensure that search engines can easily find, understand, and rank your content for your target keywords."
-    };
-  }
-
-  // Fallback content for other post IDs
-  return {
-    intro: [
-      post?.summary || "In today's digital world, success depends on having a clear, data-driven approach to marketing.",
-      post?.description || "In this article, we outline key considerations, strategies, and methodologies to optimize your channels and reach your business goals."
-    ],
-    sections: [
-      {
-        id: "strategy",
-        title: "1. Establish Core Goals",
-        text: "Before building any campaigns, define clear, measurable objectives that align with your broader business strategy."
-      },
-      {
-        id: "audience",
-        title: "2. Analyze Target Audiences",
-        text: "Understand your prospects' pain points, demographics, and favorite channels to tailormake your marketing messages."
-      },
-      {
-        id: "channels",
-        title: "3. Choose Key Channels",
-        text: "Focus your energy and budget on the platforms where your target audience is most active and receptive to your messages."
-      },
-      {
-        id: "execution",
-        title: "4. Execute and Iterate",
-        text: "Launch your campaigns and monitor metrics closely to make data-driven adjustments and optimization choices."
-      }
-    ],
-    quote: "A strategy is only as good as its execution and the responsiveness of your team to real-time marketing data.",
-    outro: "Consistency, quality content, and regular analysis are the core pillars of any successful campaign in today's digital landscape."
-  };
-};
-
-const getAuthorBio = (authorName) => {
-  switch (authorName) {
-    case "John Smith":
-      return "John is a digital marketing strategist with over 8 years of experience helping businesses grow online. He specializes in SEO, content marketing, and data-driven strategies.";
-    case "Sarah Johnson":
-      return "Sarah is an SEO consultant and writer with a passion for helping brands rank higher. She has worked with Fortune 500 companies to optimize their search presence.";
-    case "Michael Brown":
-      return "Michael is a social media strategist specializing in community building and organic brand growth. He teaches businesses how to drive actual sales through social channels.";
-    case "Emily Davis":
-      return "Emily is an analytics specialist and marketing auditor. She helps organizations set up proper attribution modeling and optimize their marketing spend.";
-    default:
-      return "A seasoned marketing specialist and consultant who focuses on data-driven growth strategies, high-quality content production, and conversion optimization.";
-  }
-};
-
 const BlogLayout = ({
   type = 'list', // 'list' or 'detail'
   blogsData = [],
@@ -163,8 +37,12 @@ const BlogLayout = ({
     }
   };
 
+  const shareUrl = useMemo(() => {
+    return post?.shareLink || (typeof window !== 'undefined' ? window.location.origin + `/blog-detail/${post?.id}` : '');
+  }, [post]);
+
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(shareUrl);
     alert('Link copied to clipboard!');
   };
 
@@ -219,14 +97,14 @@ const BlogLayout = ({
   // Detail post computations
   const content = useMemo(() => {
     if (type === 'detail' && post) {
-      return getBlogContent(post.id, post);
+      return post.content || null;
     }
     return null;
   }, [type, post]);
 
   const authorBio = useMemo(() => {
     if (post) {
-      return getAuthorBio(post.authorName);
+      return post.authorBio || '';
     }
     return '';
   }, [post]);
@@ -318,11 +196,7 @@ const BlogLayout = ({
           color: var(--primary) !important;
         }
         .blockquote-container {
-          background-color: #f8fafc;
           border-left: 4px solid var(--primary);
-          padding: 20px 25px;
-          margin: 30px 0px;
-          border-radius: 0px 8px 8px 0px;
         }
         .blockquote-text {
           font-style: italic;
@@ -379,7 +253,7 @@ const BlogLayout = ({
                 <div className="sticky flex flex-column items-center gap-12" style={{ top: '100px' }}>
                   <span className="mini-text text-gray uppercase font-600 tracking-wider mb-5">Share</span>
                   <a
-                    href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                    href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="share-btn"
@@ -387,7 +261,7 @@ const BlogLayout = ({
                     <Icon name="Facebook" width="18" height="18" fill="currentColor" />
                   </a>
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(
                       post.title
                     )}`}
                     target="_blank"
@@ -398,7 +272,7 @@ const BlogLayout = ({
                   </a>
                   <a
                     href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-                      window.location.href
+                      shareUrl
                     )}&title=${encodeURIComponent(post.title)}`}
                     target="_blank"
                     rel="noreferrer"
@@ -546,7 +420,7 @@ const BlogLayout = ({
                         <Icon name="CopyLink" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" />
                       </button>
                       <a
-                        href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                        href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
                         target="_blank"
                         rel="noreferrer"
                         className="share-btn"
@@ -554,7 +428,7 @@ const BlogLayout = ({
                         <Icon name="Facebook" width="16" height="16" fill="currentColor" />
                       </a>
                       <a
-                        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(
+                        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(
                           post.title
                         )}`}
                         target="_blank"
@@ -568,56 +442,42 @@ const BlogLayout = ({
                     {/* Article Body */}
                     <div className="blog-body-text">
                       {content?.intro.map((p, idx) => (
-                        <p key={idx} className="para-text text-dark font-400">
+                        <p key={idx} className="small-text text-gray font-500">
                           {p}
                         </p>
                       ))}
 
                       {content?.sections.map((section) => (
-                        <section key={section.id} id={section.id} className="pt-10">
-                          <h3 className="mid-text font-600 text-dark pt-10">{section.title}</h3>
-                          <p className="para-text text-dark font-400">{section.text}</p>
+                        <section key={section.id} id={section.id} className="my-20">
+                          <h3 className="headmini-text font-600 text-dark">{section.title}</h3>
+                          <p className="small-text text-gray font-400">{section.text}</p>
                         </section>
                       ))}
 
                       {content?.quote && (
-                        <div className="blockquote-container">
-                          <div className="blockquote-text relative">
-                            <span
-                              className="absolute text-primary"
-                              style={{
-                                fontSize: '4.5rem',
-                                fontFamily: 'serif',
-                                opacity: 0.15,
-                                top: '-35px',
-                                left: '-15px',
-                                lineHeight: 1,
-                              }}
-                            >
-                              “
-                            </span>
-                            {content.quote}
-                          </div>
+                        <div className="blockquote-container p-16 mt-10">
+                          <p className="small-text text-gray font-400">{content.quote}</p>
+                          {content?.outro && <p className="small-text text-gray font-400">{content.outro}</p>}
                         </div>
                       )}
 
-                      {content?.outro && <p className="para-text text-dark font-400">{content.outro}</p>}
+
                     </div>
 
                     {/* Tags */}
                     {tags.length > 0 && (
-                      <div className="flex items-center gap-8 flex-wrap py-20 bordb">
-                        <span className="small-text font-600 text-dark">Tags:</span>
+                      <div className="flex items-center gap-8 flex-wrap py-20">
+                        <p className="small-text font-600 text-dark">Tags:</p>
                         {tags.map((t, idx) => (
-                          <span key={idx} className="px-12 py-5 rounded-5 bg-light-primary text-primary font-500 mini-text">
+                          <p key={idx} className="px-12 py-5 rounded-5 bg-light-success text-success font-500 mini-text">
                             {t}
-                          </span>
+                          </p>
                         ))}
                       </div>
                     )}
 
                     {/* Author Bio Box */}
-                    <div className="rounded-5 mt-18 p-20 flex gap-20 sm-grid-cols-1 items-start border-ec">
+                    <div className="rounded-10 mt-18 w-80 p-20 flex gap-12 sm-grid-cols-1 items-start border-ec">
                       <div className='w-15 sm-w-full'>
                         <Image
                           src={
@@ -625,38 +485,18 @@ const BlogLayout = ({
                             'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
                           }
                           alt={post.authorName}
-                          className="rounded-full flex"
-                          style={{ width: '80px', height: '80px', objectFit: 'cover' }}
+                          className="rounded-full flex mx-auto"
+                          style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />
                       </div>
                       <div className="w-85 sm-w-full">
                         <h4 className="mid-text font-600 text-dark">{post.authorName}</h4>
                         <p className="mini-text text-primary font-500 uppercase tracking-wide mb-8">
-                          Digital Marketing Expert
+                          {post.authorRole || 'Digital Marketing Expert'}
                         </p>
                         <p className="small-text text-gray font-400" style={{ margin: 0 }}>
                           {authorBio}
                         </p>
-                        <div className="flex gap-10 mt-12">
-                          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                            <Icon
-                              name="LinkedIn"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              className="text-gray hover:text-primary transition-all"
-                            />
-                          </a>
-                          <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                            <Icon
-                              name="Twitter"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              className="text-gray hover:text-primary transition-all"
-                            />
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </>
@@ -692,13 +532,13 @@ const BlogLayout = ({
 
                 {/* Table of Contents Widget */}
                 {type === 'detail' && content?.sections && (
-                  <div className="bg-white rounded-5 p-15 mb-12">
-                    <h3 className="mid-text font-500 text-dark pb-12 bordb">Table of Contents</h3>
-                    <div className="flex flex-column gap-12 mt-15">
+                  <div className="bg-white rounded-5 p-20 mb-12">
+                    <h3 className="headmini-text font-500 text-dark pb-8 bordb">Table of Contents</h3>
+                    <div className="grid-cols-1 gap-12 mt-15">
                       {content.sections.map((sec) => (
-                        <div key={sec.id} className="toc-item font-500 small-text">
-                          <a href={`#${sec.id}`} className="toc-link block py-2">
-                            {sec.title}
+                        <div key={sec.id} className="toc-item">
+                          <a href={`#${sec.id}`} className="toc-link">
+                            <p className='mini-text text-gray font-400'>{sec.title}</p>
                           </a>
                         </div>
                       ))}
@@ -709,7 +549,7 @@ const BlogLayout = ({
                 {/* Categories Widget */}
                 {type === 'list' && categoriesList.length > 0 && (
                   <div className="bg-white rounded-5 p-15 mb-12">
-                    <h3 className="mid-text font-500 text-dark pb-8 bordb">Categories</h3>
+                    <h3 className="headmini-text font-500 text-dark pb-8 bordb">Categories</h3>
                     <div className="grid-cols-1 gap-8 mt-8">
                       {categoriesList.map((cat, idx) => (
                         <div
@@ -729,7 +569,7 @@ const BlogLayout = ({
                 {/* Sidebar Popular Posts Widget */}
                 {popularPosts.length > 0 && (
                   <div className="bg-white rounded-5 p-15 mb-12">
-                    <h3 className="mid-text font-500 text-dark pb-8 bordb">Popular Posts</h3>
+                    <h3 className="headmini-text font-500 text-dark pb-8 bordb">Popular Posts</h3>
                     <div className="grid-cols-1 gap-12 mt-12">
                       {popularPosts.map((popPost) => (
                         <div
@@ -744,7 +584,7 @@ const BlogLayout = ({
                             style={{ height: '80px' }}
                           />
                           <div className='w-70'>
-                            <h4 className="mid-text font-500 text-dark line-clamp2">
+                            <h4 className="headmini-text font-500 text-dark line-clamp2">
                               {popPost.title}
                             </h4>
                             <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
@@ -763,7 +603,7 @@ const BlogLayout = ({
                 )}
 
                 {/* Sidebar Newsletter Subscribe Widget */}
-                <div className="bg-dark text-white rounded-5 p-20 relative overflow-hidden">
+                <div className="bg-dark text-white rounded-10 p-20 relative overflow-hidden">
                   <Icon
                     name="Send"
                     width="42"
@@ -778,8 +618,8 @@ const BlogLayout = ({
                     }}
                   />
 
-                  <h3 className="mid-text font-600 text-white mb-6">Subscribe to Our Newsletter</h3>
-                  <p className="mini-text text-white opacity-80 mb-15">
+                  <h3 className="mid-text font-600 text-white">Subscribe to Our Newsletter</h3>
+                  <p className="mini-text text-white mt-5 mb-15">
                     Get the latest marketing insights and strategies straight to your inbox.
                   </p>
 
@@ -792,7 +632,7 @@ const BlogLayout = ({
                       <input
                         type="email"
                         placeholder="Enter your email"
-                        className="h-input bg-white p-10 border-0 flex-1"
+                        className="h-input bg-white p-10 border-0"
                         style={{ outline: 'none', fontSize: '13px', width: '100%' }}
                         value={newsletterEmail}
                         onChange={(e) => setNewsletterEmail(e.target.value)}
@@ -800,8 +640,7 @@ const BlogLayout = ({
                       />
                       <button
                         type="submit"
-                        className="bg-primary text-white font-600 px-15 border-0 cursor-pointer hover:opacity-90"
-                        style={{ fontSize: '13px' }}
+                        className="bg-primary text-white font-600 px-15 border-0 cursor-pointer mini-text"
                       >
                         Subscribe
                       </button>
@@ -814,7 +653,6 @@ const BlogLayout = ({
         </Container>
       </div>
 
-      {/* --- Latest Articles Section (At Bottom, Details View Only) --- */}
       {type === 'detail' && <LatestArticles />}
     </>
   );

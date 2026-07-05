@@ -4,6 +4,9 @@ import DetailSection from './sections/DetailSection'
 import Timeline from './sections/Timeline'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import OrganizationSchema from '../../components/seo/OrganizationSchema'
+import LatestArticles from '../home/sections/LatestArticles'
+import BusinessPromo from '../home/sections/BusinessPromo'
+import Review from '../home/sections/Review'
 
 const About = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
@@ -22,9 +25,16 @@ const About = () => {
         title="About Us"
         img="https://html.ditsolution.net/industry/indastre1/assets/images/slider/banner.jpg"
         desc="Solutions Industrial Market Values for Funding"
+        breadcrumbs={[
+          { label: 'Home', path: '/' },
+          { label: 'About Us' }
+        ]}
       />
-      <DetailSection />
       <Timeline />
+      <DetailSection />
+      <LatestArticles />
+      <BusinessPromo />
+      <Review />
     </>
   )
 }

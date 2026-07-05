@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
+import { addToCart } from '../../utils/cartHelper';
 import Icon from '../common/Icon';
 import Container from '../common/Container';
 import Image from '../common/Image';
@@ -9,6 +10,7 @@ import SeoHelmet from '../seo/SeoHelmet';
 import ProductSchema from '../seo/ProductSchema';
 import Banner from './Banner';
 import FormBuilder from '../common/FormBuilder';
+import Fields from '../common/Fields';
 
 export const GetBestPriceForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -164,9 +166,9 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
         View Supplier Profile
       </Button>
 
-      <Link to="/products" className='text-secondary mini-text mt-8'>
+      <p onClick={() => navigate('/products')} className='text-secondary cursor-pointer text-center mini-text mt-8'>
         More Products by this Supplier
-      </Link>
+      </p>
 
     </div>
   );
@@ -257,7 +259,6 @@ const features = [
 const tabList = [
   { id: 'description', label: 'Product Description' },
   { id: 'specifications', label: 'Specifications' },
-  { id: 'compatibility', label: 'Compatibility' },
   { id: 'shipping', label: 'Shipping & Delivery' }
 ];
 
@@ -270,6 +271,7 @@ const ProductLayout = ({
   const navigate = useNavigate();
   const [activeImage, setActiveImage] = useState(galleryImages?.[0] || '');
   const [activeTab, setActiveTab] = useState('description');
+  const [quantity, setQuantity] = useState(1);
 
   const productType = foundProduct?.type || 'general';
   const defaultFeatures = productType === 'printer'
@@ -354,68 +356,85 @@ const ProductLayout = ({
                     <p className='text-gray mini-text font-400'>({productData.reviewCount} Reviews)</p>
                   </div>
 
-                  <div className='flex items-center gap-4 mb-6'>
+                  <div className='flex items-center gap-4 mb-9'>
                     <Icon name="Verified" width="18" height="18" fill="#0284c7" />
                     <p className='mini-text text-info font-500'>Verified Supplier</p>
                   </div>
 
                   {/* Price Block */}
-                  <div className='mb-16 pb-12 bordb'>
-                    <h4 className='title-text text-dark font-600 text-2xl'>
+                  <div className='pb-12'>
+                    <h4 className='title-text text-dark font-600'>
                       {productData.price}
                     </h4>
-                    <p className='text-gray mini-text font-400 mt-2'>
+                    <p className='text-gray mini-text font-400 mt-6'>
                       {productData.priceSubtext}
                     </p>
 
+                    <div className='flex items-center gap-12 mt-10'>
+                      <p className='small-text text-dark font-500'>Quantity:</p>
+                      <Fields
+                        type="quantity"
+                        value={quantity}
+                        onChange={setQuantity}
+                      />
+                    </div>
 
-                    <p className='small-text text-gray mt-16'>
+                    <p className='mini-text text-gray mt-12'>
                       {productData.description}
                     </p>
+
+                    <div className='grid-cols-2 gap-12 mt-12'>
+                      {features?.map((item, index) => (
+                        <div key={index} className='flex items-center gap-12 bg-forth p-12 rounded-5'>
+                          <div className='icon-lg flex items-center justify-center rounded-5 bg-light-warning'>
+                            <p className='headpara-text flex'>
+                              {item.icon}
+                            </p>
+                          </div>
+                          <div>
+                            <h3 className='headmini-text font-600 text-dark'>{item.title}</h3>
+                            <p className='mini-text font-400 text-gray'>{item.subtitle}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Primary Action Buttons */}
-                  <div className='grid-cols-2 gap-12 mt-14'>
+                  <div className='grid-cols-2 gap-12 mt-8'>
                     <Button
-                      text="Get Best Quote"
+                      text="Add to Cart"
                       bg="primary"
                       version="v3"
-                      onClick={() => navigate('/enquiry')}
+                      onClick={() => {
+                        const targetProduct = foundProduct || {
+                          id: productData.sku || 'general-product',
+                          name: productData.title,
+                          price: productData.price,
+                          image: galleryImages?.[0] || '',
+                          ...productData
+                        };
+                        addToCart(targetProduct, quantity);
+                        navigate('/cart');
+                      }}
                       className="font-600"
                     />
 
                     <Button
                       version="v3"
-                      bg="white"
-                      onClick={() => window.open(`https://wa.me/?text=Hi%20I%20am%20interested%20in%20${encodeURIComponent(productData.title)}`, '_blank')}
-                      style={{ border: '1.5px solid #22c55e', color: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+                      bg="success"
+                      variant="outline"
+                      icon="WhatsApp"
+                      iconWidth="20"
+                      iconHeight="20"
                       className="font-600"
+                      onClick={() => window.open(`https://wa.me/?text=Hi%20I%20am%20interested%20in%20${encodeURIComponent(productData.title)}`, '_blank')}
                     >
-                      <Icon name="WhatsApp" width="20" height="20" fill="#16a34a" />
                       Chat on WhatsApp
                     </Button>
                   </div>
                 </div>
               </div>
 
-              {/* Feature Highlights Section */}
-              <div className='grid-cols-4 gap-12 bg-forth p-20 rounded-5 mt-12'>
-                {features.map((item, index) => (
-                  <div key={index} className='flex items-center gap-12'>
-                    <div className='icon-lg flex items-center justify-center rounded-5 bg-light-warning'>
-                      <p className='headpara-text flex'>
-                        {item.icon}
-                      </p>
-                    </div>
-                    <div>
-                      <p className='small-text font-600 text-dark'>{item.title}</p>
-                      <p className='mini-text text-gray'>{item.subtitle}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Product Tabs Section */}
               <div className='bg-white mt-12 p-15 border-ec rounded-5'>
                 {/* Tab Header */}
                 <div className="mb-20">
@@ -473,28 +492,7 @@ const ProductLayout = ({
                   </div>
                 )}
 
-                {activeTab === 'compatibility' && (
-                  <div className='small-text text-dark'>
-                    <p className='font-600 mb-10'>Usage &amp; Compatibility:</p>
-                    <ul className='pl-20 m-0 flex flex-column gap-6 text-gray mini-text'>
-                      {foundProduct?.compatibility ? (
-                        Array.isArray(foundProduct.compatibility) ? (
-                          foundProduct.compatibility.map((item, idx) => (
-                            <li key={idx}>{item}</li>
-                          ))
-                        ) : (
-                          <li>{foundProduct.compatibility}</li>
-                        )
-                      ) : productData.specs?.find(s => s.label === 'Compatibility' || s.label === 'Usage' || s.label === 'Usage/Application') ? (
-                        (productData.specs.find(s => s.label === 'Compatibility' || s.label === 'Usage' || s.label === 'Usage/Application').value).split(',').map((model, index) => (
-                          <li key={index}>{model.trim()}</li>
-                        ))
-                      ) : (
-                        <li>Suitable for standard industrial and commercial use.</li>
-                      )}
-                    </ul>
-                  </div>
-                )}
+
 
                 {activeTab === 'shipping' && (
                   <div className='small-text text-dark'>

@@ -11,7 +11,6 @@ const Products = lazy(() => import('../pages/products/Products'))
 const ProductDetail = lazy(() => import('../pages/products/ProductDetail'))
 const Blogs = lazy(() => import('../pages/blog/Blogs'))
 const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
-const Enquiry = lazy(() => import('../pages/enquiry/Enquiry'))
 const Contact = lazy(() => import('../pages/contact/Contact'))
 const About = lazy(() => import('../pages/about/About'))
 const Cart = lazy(() => import('../pages/cart/Cart'))
@@ -30,7 +29,6 @@ function AppRoutes() {
           <Route path="blog" element={<Blogs />} />
           <Route path="blog-detail" element={<BlogDetail />} />
           <Route path="blog-detail/:id" element={<BlogDetail />} />
-          <Route path="enquiry" element={<Enquiry />} />
           <Route path="connect" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="cart" element={<Cart />} />

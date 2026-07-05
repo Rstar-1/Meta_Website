@@ -6,6 +6,9 @@ import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
+import Fields from '../../components/common/Fields';
+import Icon from '../../components/common/Icon';
+import Banner from '../../components/layout/Banner';
 
 // Import local product images for reliable rendering
 import printerHp88a from '../../assets/printer_hp_88a.png';
@@ -52,30 +55,6 @@ const Products = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const getInitialCategory = () => {
-    if (location.state?.category) return location.state.category;
-    const queryParams = new URLSearchParams(location.search);
-    return queryParams.get('category') || 'All';
-  };
-
-  const [selectedCat, setSelectedCat] = useState(getInitialCategory());
-  const [search, setSearch] = useState('');
-
-  const printerCatName = categories.find(c => c.id === 'cat-7')?.name || 'Printer Cartridges';
-  const steelCatName = categories.find(c => c.id === 'cat-1')?.name || 'Steel Products';
-
-  useEffect(() => {
-    if (location.state?.category) {
-      setSelectedCat(location.state.category);
-    } else {
-      const queryParams = new URLSearchParams(location.search);
-      const queryCat = queryParams.get('category');
-      if (queryCat) {
-        setSelectedCat(queryCat);
-      }
-    }
-  }, [location.state?.category, location.search]);
-
   const getCatId = (nameOrId) => {
     if (!nameOrId || nameOrId === 'All') return 'All';
     if (categories.some(c => c.id === nameOrId)) return nameOrId;
@@ -86,13 +65,85 @@ const Products = () => {
     return nameOrId;
   };
 
+  const getInitialCategories = () => {
+    let initial = [];
+    if (location.state?.category) {
+      initial = [location.state.category];
+    } else {
+      const queryParams = new URLSearchParams(location.search);
+      const cat = queryParams.get('category');
+      if (cat) {
+        initial = [cat];
+      }
+    }
+    return initial.map(c => getCatId(c)).filter(c => c !== 'All');
+  };
+
+  const getInitialSearch = () => {
+    if (location.state?.search) return location.state.search;
+    const queryParams = new URLSearchParams(location.search);
+    return queryParams.get('search') || '';
+  };
+
+  const getInitialCity = () => {
+    if (location.state?.city) return location.state.city;
+    const queryParams = new URLSearchParams(location.search);
+    return queryParams.get('city') || '';
+  };
+
+  const [selectedCats, setSelectedCats] = useState(getInitialCategories());
+  const [search, setSearch] = useState(getInitialSearch());
+  const [selectedCity, setSelectedCity] = useState(getInitialCity());
+
+  useEffect(() => {
+    // 1. Resolve Category
+    if (location.state?.category) {
+      const catId = getCatId(location.state.category);
+      if (catId && catId !== 'All') {
+        setSelectedCats([catId]);
+      } else {
+        setSelectedCats([]);
+      }
+    } else {
+      const queryParams = new URLSearchParams(location.search);
+      const queryCat = queryParams.get('category');
+      if (queryCat) {
+        const catId = getCatId(queryCat);
+        if (catId && catId !== 'All') {
+          setSelectedCats([catId]);
+        } else {
+          setSelectedCats([]);
+        }
+      } else {
+        setSelectedCats([]);
+      }
+    }
+
+    // 2. Resolve Search Query
+    if (location.state?.hasOwnProperty('search')) {
+      setSearch(location.state.search || '');
+    } else {
+      const queryParams = new URLSearchParams(location.search);
+      setSearch(queryParams.get('search') || '');
+    }
+
+    // 3. Resolve City
+    if (location.state?.hasOwnProperty('city')) {
+      setSelectedCity(location.state.city || '');
+    } else {
+      const queryParams = new URLSearchParams(location.search);
+      setSelectedCity(queryParams.get('city') || '');
+    }
+  }, [location.state, location.search]);
+
   const filteredProducts = products.filter((p) => {
-    const targetCatId = getCatId(selectedCat);
-    const matchesCat = targetCatId === 'All' || p.category === targetCatId;
+    const matchesCat = selectedCats.length === 0 || selectedCats.includes(p.category);
     const matchesSearch =
       p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.description.toLowerCase().includes(search.toLowerCase());
-    return matchesCat && matchesSearch;
+      p.description.toLowerCase().includes(search.toLowerCase()) ||
+      (p.tags && p.tags.some(t => t.toLowerCase().includes(search.toLowerCase())));
+    const matchesCity = !selectedCity || selectedCity === 'All' || p.city === selectedCity;
+    return matchesCat && matchesSearch && matchesCity;
   }).map((p) => ({
     ...p,
     supplier: p.client || (p.type === 'printer' ? 'biz-4' : 'biz-1')
@@ -102,10 +153,40 @@ const Products = () => {
     navigate(`/product-detail/${id}`);
   };
 
+  const getPageHeader = () => {
+    const cityPrefix = selectedCity ? `In ${selectedCity}: ` : '';
+    if (selectedCats.length === 1) {
+      const catId = selectedCats[0];
+      const catName = categories.find(c => c.id === catId)?.name || 'Products';
+      let desc = `Discover our comprehensive range of premium ${catName.toLowerCase()} and industrial solutions.`;
+      if (catId === 'cat-2') {
+        desc = "Discover Ashmita Enterprises' comprehensive range of premium PVC strip curtains, printed rolls, sheets, rolls, films, mounting brackets, and clear sheets.";
+      } else if (catId === 'cat-1') {
+        desc = "Discover our comprehensive range of premium stainless steel sheets, pipes, coils, rods, plates, and kitchen equipment.";
+      } else if (catId === 'cat-7') {
+        desc = "Discover our comprehensive range of professional toner cartridges, ink bottles, and printing solutions.";
+      }
+      return {
+        title: `${cityPrefix}Explore Our ${catName}`,
+        desc
+      };
+    }
+    return {
+      title: `${cityPrefix}Explore Our Products`,
+      desc: "Discover our comprehensive range of high-quality industrial products, steel piping, printing consumables, and office equipment."
+    };
+  };
+
+  const headerInfo = getPageHeader();
+  const categoryOptions = categories.map(c => ({
+    label: c.name,
+    value: c.id
+  }));
+
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
 
   return (
-    <Container className="bg-white">
+    <>
       <SeoHelmet
         title="Industrial Products & Supplies Catalog | SOBO Marketing Solution"
         description="Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products."
@@ -114,83 +195,117 @@ const Products = () => {
         path="/products"
         type="product"
       />
-      <BreadcrumbSchema items={[
-        { name: 'Home', url: siteUrl + '/home' },
-        { name: 'Products', url: siteUrl + '/products' }
-      ]} />
-      <div className="w-full py-30">
-        {/* Top Search & Filter Bar */}
-        <div className="flex justify-between items-center flex-wrap gap-12 mb-30 p-16 bg-white border-ec rounded-10">
-          <div className="flex items-center gap-12 flex-1 min-w-250">
-            <input
-              type="text"
-              placeholder="Search printer cartridges, steel products..."
-              className="w-full p-10 border-ec rounded-5 outline-none font-400 text-dark small-text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+      <Banner
+        title="Products Catalog"
+        img="https://html.ditsolution.net/industry/indastre1/assets/images/slider/banner.jpg"
+        desc="Our Products"
+        breadcrumbs={[
+          { label: "Home", path: "/home" },
+          { label: "Products" },
+        ]}
+      />
+      <Container className="bg-white">
+        <BreadcrumbSchema items={[
+          { name: 'Home', url: siteUrl + '/home' },
+          { name: 'Products', url: siteUrl + '/products' }
+        ]} />
+
+        <div className="w-full py-30 flex gap-12">
+          {/* Left Sidebar Filter */}
+          <div className="sm-w-full w-20">
+            <div className="bg-white border-ec p-18 rounded-5">
+              <div className="flex items-center justify-between pb-10 bordb">
+                <h3 className="mid-text text-dark font-500">
+                  Filter By
+                </h3>
+                {(selectedCats.length > 0 || selectedCity) && (
+                  <p
+                    onClick={() => {
+                      setSelectedCats([]);
+                      setSelectedCity('');
+                    }}
+                    className="mini-text text-danger font-500 cursor-pointer"
+                  >
+                    Reset
+                  </p>
+                )}
+              </div>
+              <div className='mt-10'>
+                <p className="small-text text-dark font-500 mb-6">Category</p>
+                <Fields
+                  type="checkbox"
+                  options={categoryOptions}
+                  value={selectedCats}
+                  onChange={(newSelected) => setSelectedCats(newSelected)}
+                  position="y"
+                />
+              </div>
+              <div className='mt-20 pt-10' style={{ borderTop: '1px solid #ececec' }}>
+                <p className="small-text text-dark font-500 mb-6">Location (City)</p>
+                <select
+                  value={selectedCity}
+                  onChange={(e) => setSelectedCity(e.target.value)}
+                  className="w-full h-select bg-forth border-0 rounded-5 px-8 mini-text text-gray"
+                >
+                  <option value="">All Cities</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Main Content */}
+          <div className="w-80">
+            {/* Header Info */}
+            <div className="mb-15">
+              <h1 className="head-text text-dark font-600 pb-8">{headerInfo.title}</h1>
+              <p className="small-text text-gray font-400">{headerInfo.desc}</p>
+            </div>
+
+            <div className="relative w-40 mb-12">
+              <Fields
+                type="text"
+                placeholder="Search products by name or description..."
+                value={search}
+                onChange={(val) => setSearch(val)}
+                outline={true}
+              />
+              <Icon
+                name="Search"
+                width="18"
+                height="18"
+                className="absolute top-0 right-0 m-11 text-gray"
+                strokeWidth="2"
+              />
+            </div>
+
+            {/* Product Cards Grid */}
+            <CardLayout
+              items={filteredProducts}
+              cardType="product"
+              imageMap={imageMap}
+              imageHeight="h-250"
+              cols="4"
+              mdCols="2"
+              smCols="1"
+              gap="12"
+              onCardClick={(product) => handleProductClick(product.id)}
+              onButtonClick={(product) => handleProductClick(product.id)}
             />
-          </div>
 
-          <div className="flex items-center gap-10">
-            {['All', printerCatName, steelCatName].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCat(cat)}
-                className={`px-16 py-8 rounded-5 cursor-pointer border-0 font-500 small-text transition-all ${selectedCat === cat
-                  ? 'bg-primary text-white'
-                  : 'bg-white text-dark border-ec hover:bg-gray-100'
-                  }`}
-                style={{
-                  border: selectedCat === cat ? 'none' : '1px solid #e5e7eb',
-                }}
-              >
-                {cat}
-              </button>
-            ))}
+            {filteredProducts.length === 0 && (
+              <div className="text-center py-50 text-gray">
+                <p className="mid-text font-500">No products found matching your search.</p>
+              </div>
+            )}
           </div>
         </div>
-
-        {/* Section Header matching exact requested UI */}
-        <div className="flex justify-between items-center mb-20">
-          <h2 className="title-text text-dark font-600">
-            {selectedCat === printerCatName || selectedCat === 'Printer Cartridges'
-              ? `Popular ${printerCatName}`
-              : selectedCat === steelCatName || selectedCat === 'Steel Products'
-                ? `Popular ${steelCatName}`
-                : `Popular ${printerCatName}`}
-          </h2>
-          <p
-            className="text-primary font-500 cursor-pointer small-text hover:underline"
-            onClick={() => {
-              setSelectedCat('All');
-              setSearch('');
-            }}
-          >
-            View All Products &gt;
-          </p>
-        </div>
-
-        {/* Product Cards Grid matching exact requested UI */}
-        <CardLayout
-          items={filteredProducts}
-          cardType="product"
-          imageMap={imageMap}
-          imageHeight="h-250"
-          cols="4"
-          mdCols="2"
-          smCols="1"
-          gap="12"
-          onCardClick={(product) => handleProductClick(product.id)}
-          onButtonClick={(product) => handleProductClick(product.id)}
-        />
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-50 text-gray">
-            <p className="mid-text font-500">No products found matching your search.</p>
-          </div>
-        )}
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 

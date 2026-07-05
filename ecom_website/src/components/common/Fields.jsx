@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Icon from "./Icon";
 
 const Fields = ({
     type = "input",
@@ -14,6 +15,8 @@ const Fields = ({
     outline = true,
     style,
     className,
+    icon,
+    iconPosition = "right",
     ...props
 }) => {
     const [error, setError] = useState("");
@@ -36,13 +39,11 @@ const Fields = ({
         return !isNaN(parsed.getTime()) ? parsed.getFullYear() : new Date().getFullYear();
     });
 
-    const clsInput = `${
-        outline && !error && !isFocused ? "border-ec" : border ? "border-forth" : "border-0"
-    } h-input rounded-5 text-gray w-full mini-text`;
+    const clsInput = `${outline && !error && !isFocused ? "border-ec" : border ? "border-forth" : "border-0"
+        } h-input rounded-5 text-gray w-full mini-text`;
 
-    const clsBox = `${
-        outline ? "border-ec" : border ? "border-forth" : "border-0"
-    } relative w-full bg-white rounded-5`;
+    const clsBox = `${outline ? "border-ec" : border ? "border-forth" : "border-0"
+        } relative w-full bg-white rounded-5`;
 
     useEffect(() => {
         if (!isOpen) return;
@@ -164,6 +165,35 @@ const Fields = ({
 
     const renderField = () => {
         if (inputTypes.includes(type)) {
+            if (icon) {
+                const isLeft = iconPosition === "left";
+                return (
+                    <div className="relative w-full flex items-center">
+                        {isLeft && (
+                            <div className="absolute left-12 text-gray flex items-center pointer-events-none">
+                                <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
+                            </div>
+                        )}
+                        <input
+                            type={typeMap[type]}
+                            {...commonProps}
+                            style={{
+                                ...getInputStyle(),
+                                paddingLeft: isLeft ? "36px" : "12px",
+                                paddingRight: !isLeft ? "36px" : "12px",
+                                textIndent: isLeft ? "0px" : "12px",
+                                ...style
+                            }}
+                            className={`${clsInput} ${className || ""}`}
+                        />
+                        {!isLeft && (
+                            <div className="absolute right-12 text-gray flex items-center pointer-events-none">
+                                <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
+                            </div>
+                        )}
+                    </div>
+                );
+            }
             return (
                 <input
                     type={typeMap[type]}
@@ -556,7 +586,7 @@ const Fields = ({
                                 checked={isChecked}
                                 onChange={(e) => onChange?.(e.target.checked)}
                                 className="cursor-pointer"
-                                style={{ width: "18px", height: "18px", accentColor: "#6366f1" }}
+                                style={{ width: "18px", height: "18px", accentColor: "var(--primary)" }}
                             />
                         </div>
                     );
@@ -564,7 +594,7 @@ const Fields = ({
 
                 const selectedValues = Array.isArray(value) ? value : (value ? [value] : []);
                 return (
-                    <div className={position === "y" ? "grid-cols-1 gap-12 py-4" : "flex items-center gap-12 py-4"}>
+                    <div className={position === "y" ? "grid grid-cols-1 gap-12 py-4" : "flex items-center gap-12 py-4"}>
                         {options.map((opt) => {
                             const optLabel = getOptLabel(opt);
                             const optVal = getOptValue(opt);
@@ -573,7 +603,7 @@ const Fields = ({
                             return (
                                 <label
                                     key={optVal}
-                                    className="flex items-center gap-8 cursor-pointer mini-text text-gray"
+                                    className="flex items-center gap-8 cursor-pointer small-text text-gray"
                                     style={{ userSelect: "none" }}
                                 >
                                     <input
@@ -585,8 +615,6 @@ const Fields = ({
                                                 : [...selectedValues, optVal];
                                             onChange?.(nextValues);
                                         }}
-                                        className="cursor-pointer"
-                                        style={{ width: "18px", height: "18px", accentColor: "#6366f1" }}
                                     />
                                     <span>{optLabel}</span>
                                 </label>
@@ -1038,7 +1066,7 @@ const Fields = ({
                         <button
                             type="button"
                             onClick={() => onChange?.(Math.max(1, Number(quantityValue) - 1))}
-                            className="center-div text-white rounded-5 bg-secondary cursor-pointer border-0"
+                            className="center-div text-white rounded-5 bg-primary cursor-pointer border-0"
                             style={{
                                 transition: "background-color 0.15s ease",
                                 flexShrink: 0,
@@ -1064,7 +1092,7 @@ const Fields = ({
                         <button
                             type="button"
                             onClick={() => onChange?.(Number(quantityValue) + 1)}
-                            className="center-div text-white rounded-5 bg-secondary cursor-pointer border-0"
+                            className="center-div text-white rounded-5 bg-primary cursor-pointer border-0"
                             style={{
                                 transition: "background-color 0.15s ease",
                                 flexShrink: 0,

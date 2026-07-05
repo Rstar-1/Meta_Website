@@ -3,7 +3,7 @@
     "id": "printer-1",
     "name": "HP 88A Toner Cartridge",
     "slug": "hp-88a-toner-cartridge",
-    "description": "Professional quality black toner cartridge for HP LaserJet printers. Ensures crisp, sharp text and smooth grayscale images. Designed for reliability and high performance, it ensures consistent results and long lasting prints.",
+    "description": "Professional quality black toner cartridge for HP LaserJet printers. Ensures crisp, sharp text and smooth grayscale images. Designed for reliability and high performance, it ensures consistent results and long lasting prints. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "1,250",
     "priceDisplay": "₹ 1,250 / Piece",
     "subtitle": "Starting from",
@@ -22,8 +22,38 @@
     ],
     "type": "printer",
     "popular": true,
-    "rating": 4.8,
+    "rating": 4.6,
     "reviewCount": 245,
+    "reviews": [
+      {
+        "name": "Rakesh Sharma",
+        "verified": true,
+        "date": "May 10, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Vikram Joshi",
+        "verified": true,
+        "date": "Jul 22, 2024",
+        "rating": 4,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Karan Patel",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Rahul Sharma",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 4,
+        "comment": "Easy to install and print output is very dark and clean. Value for money."
+      }
+    ],
     "specs": [
       {
         "label": "Cartridge Type",
@@ -75,13 +105,14 @@
       "/src/assets/printer_hp_88a.png",
       "/src/assets/printer_brother_tn2321.png",
       "/src/assets/printer_samsung_d111s.png"
-    ]
+    ],
+    "city": "Delhi"
   },
   {
     "id": "printer-2",
     "name": "Canon 74S Black Ink Cartridge",
     "slug": "canon-74s-black-ink-cartridge",
-    "description": "High yield genuine black ink cartridge for Canon PIXMA series. Produces fade-resistant document text and sharp prints.",
+    "description": "High yield genuine black ink cartridge for Canon PIXMA series. Produces fade-resistant document text and sharp prints. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "840",
     "priceDisplay": "₹ 840 / Piece",
     "subtitle": "Starting from",
@@ -153,13 +184,51 @@
       "/src/assets/printer_canon_74s.png",
       "/src/assets/printer_canon_746.png",
       "/src/assets/printer_epson_003.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Rajesh Sharma",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
+      },
+      {
+        "name": "Vijay Joshi",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 4,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Anjali Joshi",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
+      },
+      {
+        "name": "Vijay Singh",
+        "verified": false,
+        "date": "Aug 30, 2024",
+        "rating": 5,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      },
+      {
+        "name": "Rakesh Singh",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 4,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      }
+    ],
+    "city": "Mumbai"
   },
   {
     "id": "printer-3",
     "name": "Canon 746 Color Ink Cartridge",
     "slug": "canon-746-color-ink-cartridge",
-    "description": "Vibrant tri-color ink cartridge for high quality photo and document printing with long lasting color fidelity.",
+    "description": "Vibrant tri-color ink cartridge for high quality photo and document printing with long lasting color fidelity. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "980",
     "priceDisplay": "₹ 980 / Piece",
     "subtitle": "Starting from",
@@ -231,13 +300,37 @@
       "/src/assets/printer_canon_746.png",
       "/src/assets/printer_canon_74s.png",
       "/src/assets/printer_epson_003.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Rajesh Patel",
+        "verified": false,
+        "date": "Mar 10, 2024",
+        "rating": 4,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      },
+      {
+        "name": "Rakesh Verma",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Rohan Joshi",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
+      }
+    ],
+    "city": "Bangalore"
   },
   {
     "id": "printer-4",
     "name": "Epson 003 Ink Bottle (Black)",
     "slug": "epson-003-ink-bottle-black",
-    "description": "Ultra high capacity black ink bottle for Epson EcoTank printers. Eco-friendly refilling with smudge-free output.",
+    "description": "Ultra high capacity black ink bottle for Epson EcoTank printers. Eco-friendly refilling with smudge-free output. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "320",
     "priceDisplay": "₹ 320 / Piece",
     "subtitle": "Starting from",
@@ -308,13 +401,51 @@
       "/src/assets/printer_epson_003.png",
       "/src/assets/printer_canon_74s.png",
       "/src/assets/printer_canon_746.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Rahul Verma",
+        "verified": false,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Neha Singh",
+        "verified": false,
+        "date": "Mar 10, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Rahul Kumar",
+        "verified": false,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Priya Mehta",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      },
+      {
+        "name": "Neha Joshi",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Easy to install and print output is very dark and clean. Value for money."
+      }
+    ],
+    "city": "Chennai"
   },
   {
     "id": "printer-5",
     "name": "Brother TN2321 Toner Cartridge",
     "slug": "brother-tn2321-toner-cartridge",
-    "description": "High capacity monochrome toner cartridge delivering crisp laser prints for heavy duty office printing.",
+    "description": "High capacity monochrome toner cartridge delivering crisp laser prints for heavy duty office printing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "1,180",
     "priceDisplay": "₹ 1,180 / Piece",
     "subtitle": "Starting from",
@@ -385,13 +516,37 @@
       "/src/assets/printer_brother_tn2321.png",
       "/src/assets/printer_hp_88a.png",
       "/src/assets/printer_samsung_d111s.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Rohan Kumar",
+        "verified": true,
+        "date": "Mar 10, 2024",
+        "rating": 5,
+        "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
+      },
+      {
+        "name": "Priya Singh",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 4,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Deepak Nair",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      }
+    ],
+    "city": "Hyderabad"
   },
   {
     "id": "printer-6",
     "name": "Samsung MLT-D111S Toner Cartridge",
     "slug": "samsung-mlt-d111s-toner-cartridge",
-    "description": "Reliable Samsung original laser toner cartridge for Xpress series printers. Standard yield with reliable performance.",
+    "description": "Reliable Samsung original laser toner cartridge for Xpress series printers. Standard yield with reliable performance. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "1,250",
     "priceDisplay": "₹ 1,250 / Piece",
     "subtitle": "Starting from",
@@ -462,13 +617,44 @@
       "/src/assets/printer_samsung_d111s.png",
       "/src/assets/printer_hp_88a.png",
       "/src/assets/printer_brother_tn2321.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Deepak Bose",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 4,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Karan Das",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 4,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Vijay Reddy",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 4,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Karan Reddy",
+        "verified": true,
+        "date": "Mar 10, 2024",
+        "rating": 5,
+        "comment": "Easy to install and print output is very dark and clean. Value for money."
+      }
+    ],
+    "city": "Delhi"
   },
   {
     "id": "printer-7",
     "name": "HP 12A Toner Cartridge",
     "slug": "hp-12a-toner-cartridge",
-    "description": "Original black toner cartridge delivering consistent, high quality text prints for classic LaserJet models.",
+    "description": "Original black toner cartridge delivering consistent, high quality text prints for classic LaserJet models. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "1,450",
     "priceDisplay": "₹ 1,450 / Piece",
     "subtitle": "Starting from",
@@ -539,13 +725,37 @@
       "/src/assets/printer_hp_88a.png",
       "/src/assets/printer_brother_tn2321.png",
       "/src/assets/printer_samsung_d111s.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Priya Nair",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      },
+      {
+        "name": "Karan Singh",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      },
+      {
+        "name": "Vikram Gupta",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 4,
+        "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
+      }
+    ],
+    "city": "Mumbai"
   },
   {
     "id": "printer-8",
     "name": "Canon 337 Toner Cartridge",
     "slug": "canon-337-toner-cartridge",
-    "description": "All-in-one black toner cartridge designed for seamless compatibility and high speed printing with Canon multi-function printers.",
+    "description": "All-in-one black toner cartridge designed for seamless compatibility and high speed printing with Canon multi-function printers. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "1,290",
     "priceDisplay": "₹ 1,290 / Piece",
     "subtitle": "Starting from",
@@ -617,13 +827,44 @@
       "/src/assets/printer_hp_88a.png",
       "/src/assets/printer_brother_tn2321.png",
       "/src/assets/printer_samsung_d111s.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Vijay Bose",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 5,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Vikram Gupta",
+        "verified": false,
+        "date": "Jul 22, 2024",
+        "rating": 5,
+        "comment": "Easy to install and print output is very dark and clean. Value for money."
+      },
+      {
+        "name": "Deepak Verma",
+        "verified": false,
+        "date": "Mar 10, 2024",
+        "rating": 4,
+        "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
+      },
+      {
+        "name": "Rahul Reddy",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Easy to install and print output is very dark and clean. Value for money."
+      }
+    ],
+    "city": "Bangalore"
   },
   {
     "id": "printer-9",
     "name": "Brother TN3467 Toner",
     "slug": "brother-tn3467-toner",
-    "description": "Super high-yield black toner cartridge engineered for heavy duty industrial and office multi-function printers.",
+    "description": "Super high-yield black toner cartridge engineered for heavy duty industrial and office multi-function printers. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "1,980",
     "priceDisplay": "₹ 1,980 / Piece",
     "subtitle": "Starting from",
@@ -694,13 +935,44 @@
       "/src/assets/printer_brother_tn2321.png",
       "/src/assets/printer_hp_88a.png",
       "/src/assets/printer_samsung_d111s.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Sunita Rathore",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Sanjay Mehta",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 4,
+        "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
+      },
+      {
+        "name": "Vikram Bose",
+        "verified": false,
+        "date": "Aug 30, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Anjali Kumar",
+        "verified": true,
+        "date": "Mar 10, 2024",
+        "rating": 5,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      }
+    ],
+    "city": "Chennai"
   },
   {
     "id": "printer-10",
     "name": "HP 78A Toner Cartridge",
     "slug": "hp-78a-toner-cartridge",
-    "description": "Reliable, high yield black toner cartridge designed for quick and crisp daily business documentation.",
+    "description": "Reliable, high yield black toner cartridge designed for quick and crisp daily business documentation. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "1,320",
     "priceDisplay": "₹ 1,320 / Piece",
     "subtitle": "Starting from",
@@ -771,13 +1043,37 @@
       "/src/assets/printer_hp_88a.png",
       "/src/assets/printer_brother_tn2321.png",
       "/src/assets/printer_samsung_d111s.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Neha Nair",
+        "verified": false,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      },
+      {
+        "name": "Sanjay Singh",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Easy to install and print output is very dark and clean. Value for money."
+      },
+      {
+        "name": "Rahul Patel",
+        "verified": false,
+        "date": "May 12, 2024",
+        "rating": 4,
+        "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
+      }
+    ],
+    "city": "Hyderabad"
   },
   {
     "id": "steel-1",
     "name": "SS 304 Sheets",
     "slug": "ss-304-sheets",
-    "description": "Premium industrial grade stainless steel 304 sheets. Excellent corrosion resistance and durability for manufacturing.",
+    "description": "Premium industrial grade stainless steel 304 sheets. Excellent corrosion resistance and durability for manufacturing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "190",
     "priceDisplay": "₹ 190 / Kg",
     "subtitle": "Starting from",
@@ -824,13 +1120,51 @@
       "/src/assets/ss_304_sheets.png",
       "/src/assets/ss_plates.png",
       "/src/assets/ss_coils.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Rakesh Singh",
+        "verified": false,
+        "date": "Mar 10, 2024",
+        "rating": 5,
+        "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
+      },
+      {
+        "name": "Sanjay Sharma",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 4,
+        "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
+      },
+      {
+        "name": "Sunita Verma",
+        "verified": false,
+        "date": "Jul 22, 2024",
+        "rating": 5,
+        "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
+      },
+      {
+        "name": "Priya Mehta",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      },
+      {
+        "name": "Rohan Rathore",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      }
+    ],
+    "city": "Delhi"
   },
   {
     "id": "steel-2",
     "name": "SS 304 Pipes",
     "slug": "ss-304-pipes",
-    "description": "Seamless and welded stainless steel 304 pipes for structural, plumbing, and industrial fluid transport applications.",
+    "description": "Seamless and welded stainless steel 304 pipes for structural, plumbing, and industrial fluid transport applications. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "210",
     "priceDisplay": "₹ 210 / Kg",
     "subtitle": "Starting from",
@@ -877,13 +1211,37 @@
       "/src/assets/ss_304_pipes.png",
       "/src/assets/ss_316_rods.png",
       "/src/assets/ss_angle_bars.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Vikram Das",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Sunita Khanna",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 4,
+        "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
+      },
+      {
+        "name": "Sunita Kumar",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Highly recommended for industrial applications. Resistance to corrosion is top notch."
+      }
+    ],
+    "city": "Mumbai"
   },
   {
     "id": "steel-3",
     "name": "SS Coils",
     "slug": "ss-coils",
-    "description": "Cold rolled stainless steel coils engineered for deep drawing and precision press manufacturing.",
+    "description": "Cold rolled stainless steel coils engineered for deep drawing and precision press manufacturing. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "185",
     "priceDisplay": "₹ 185 / Kg",
     "subtitle": "Starting from",
@@ -929,13 +1287,37 @@
       "/src/assets/ss_coils.png",
       "/src/assets/ss_304_sheets.png",
       "/src/assets/ss_plates.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Vikram Mehta",
+        "verified": true,
+        "date": "Jul 22, 2024",
+        "rating": 4,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      },
+      {
+        "name": "Rakesh Kumar",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 4,
+        "comment": "Highly recommended for industrial applications. Resistance to corrosion is top notch."
+      },
+      {
+        "name": "Sunita Rathore",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
+      }
+    ],
+    "city": "Bangalore"
   },
   {
     "id": "steel-4",
     "name": "SS 316 Rods",
     "slug": "ss-316-rods",
-    "description": "Marine grade stainless steel 316 round rods offering superior resistance to chemical environments and chloride corrosion.",
+    "description": "Marine grade stainless steel 316 round rods offering superior resistance to chemical environments and chloride corrosion. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "250",
     "priceDisplay": "₹ 250 / Kg",
     "subtitle": "Starting from",
@@ -982,13 +1364,37 @@
       "/src/assets/ss_316_rods.png",
       "/src/assets/ss_304_pipes.png",
       "/src/assets/ss_angle_bars.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Priya Sen",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Anjali Singh",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 5,
+        "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
+      },
+      {
+        "name": "Karan Mehta",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      }
+    ],
+    "city": "Chennai"
   },
   {
     "id": "steel-5",
     "name": "SS Plates",
     "slug": "ss-plates",
-    "description": "Heavy-duty hot rolled stainless steel plates. Ideal for tanks, pressure vessels, and structural applications.",
+    "description": "Heavy-duty hot rolled stainless steel plates. Ideal for tanks, pressure vessels, and structural applications. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "200",
     "priceDisplay": "₹ 200 / Kg",
     "subtitle": "Starting from",
@@ -1034,13 +1440,44 @@
       "/src/assets/ss_plates.png",
       "/src/assets/ss_304_sheets.png",
       "/src/assets/ss_coils.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Amit Reddy",
+        "verified": false,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Rahul Singh",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Sunita Rathore",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      },
+      {
+        "name": "Karan Das",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      }
+    ],
+    "city": "Hyderabad"
   },
   {
     "id": "steel-6",
     "name": "SS Kitchen Equipment",
     "slug": "ss-kitchen-equipment",
-    "description": "Food-grade stainless steel fabrication for commercial and domestic kitchens. Easy to clean, hygienic, and highly durable.",
+    "description": "Food-grade stainless steel fabrication for commercial and domestic kitchens. Easy to clean, hygienic, and highly durable. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "1,500",
     "priceDisplay": "₹ 1,500 / Piece",
     "subtitle": "Starting from",
@@ -1085,13 +1522,44 @@
     "images": [
       "/src/assets/ss_kitchen.png",
       "/src/assets/ss_plates.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Sunita Reddy",
+        "verified": false,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Amit Gupta",
+        "verified": false,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Highly recommended for industrial applications. Resistance to corrosion is top notch."
+      },
+      {
+        "name": "Anjali Nair",
+        "verified": false,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
+      },
+      {
+        "name": "Rajesh Mehta",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      }
+    ],
+    "city": "Delhi"
   },
   {
     "id": "steel-7",
     "name": "SS Flanges",
     "slug": "ss-flanges",
-    "description": "High-pressure stainless steel flanges including slip-on, weld-neck, blind, and socket-weld options.",
+    "description": "High-pressure stainless steel flanges including slip-on, weld-neck, blind, and socket-weld options. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "320",
     "priceDisplay": "₹ 320 / Piece",
     "subtitle": "Starting from",
@@ -1137,13 +1605,44 @@
       "/src/assets/ss_flanges.png",
       "/src/assets/ss_fasteners.png",
       "/src/assets/ss_wire_mesh.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Anjali Mehta",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 4,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Karan Das",
+        "verified": true,
+        "date": "Mar 10, 2024",
+        "rating": 5,
+        "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
+      },
+      {
+        "name": "Rajesh Kumar",
+        "verified": false,
+        "date": "Mar 10, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      },
+      {
+        "name": "Vikram Patel",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      }
+    ],
+    "city": "Mumbai"
   },
   {
     "id": "steel-8",
     "name": "SS Angle Bars",
     "slug": "ss-angle-bars",
-    "description": "Structural stainless steel equal and unequal angle bars for frames, supports, and industrial construction.",
+    "description": "Structural stainless steel equal and unequal angle bars for frames, supports, and industrial construction. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "225",
     "priceDisplay": "₹ 225 / Kg",
     "subtitle": "Starting from",
@@ -1189,13 +1688,44 @@
       "/src/assets/ss_angle_bars.png",
       "/src/assets/ss_304_pipes.png",
       "/src/assets/ss_316_rods.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Rahul Nair",
+        "verified": false,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      },
+      {
+        "name": "Sunita Mehta",
+        "verified": true,
+        "date": "Jul 22, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      },
+      {
+        "name": "Rakesh Nair",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
+      },
+      {
+        "name": "Rahul Gupta",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
+      }
+    ],
+    "city": "Bangalore"
   },
   {
     "id": "steel-9",
     "name": "SS Wire Mesh",
     "slug": "ss-wire-mesh",
-    "description": "Woven stainless steel wire mesh for filtration, sieving, screen decoration, and security guards.",
+    "description": "Woven stainless steel wire mesh for filtration, sieving, screen decoration, and security guards. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "450",
     "priceDisplay": "₹ 450 / Roll",
     "subtitle": "Starting from",
@@ -1241,13 +1771,44 @@
       "/src/assets/ss_wire_mesh.png",
       "/src/assets/ss_fasteners.png",
       "/src/assets/ss_flanges.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Karan Rathore",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Rakesh Sen",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 4,
+        "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
+      },
+      {
+        "name": "Anjali Kumar",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 4,
+        "comment": "Highly recommended for industrial applications. Resistance to corrosion is top notch."
+      },
+      {
+        "name": "Priya Sharma",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 5,
+        "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
+      }
+    ],
+    "city": "Chennai"
   },
   {
     "id": "steel-10",
     "name": "SS Fasteners",
     "slug": "ss-fasteners",
-    "description": "Corrosion-resistant stainless steel bolts, nuts, washers, screws, and studs for industrial assembly.",
+    "description": "Corrosion-resistant stainless steel bolts, nuts, washers, screws, and studs for industrial assembly. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "15",
     "priceDisplay": "₹ 15 / Piece",
     "subtitle": "Starting from",
@@ -1294,13 +1855,37 @@
       "/src/assets/ss_fasteners.png",
       "/src/assets/ss_flanges.png",
       "/src/assets/ss_wire_mesh.png"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Vijay Sharma",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
+      },
+      {
+        "name": "Vikram Khanna",
+        "verified": true,
+        "date": "Jul 22, 2024",
+        "rating": 5,
+        "comment": "Premium steel quality. Ideal for our construction project requirements."
+      },
+      {
+        "name": "Rohan Gupta",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
+      }
+    ],
+    "city": "Hyderabad"
   },
   {
     "id": "prod-1",
     "name": "Air Conditioners",
     "slug": "air-conditioners",
-    "description": "High efficiency split and window air conditioners for optimal cooling and energy savings.",
+    "description": "High efficiency split and window air conditioners for optimal cooling and energy savings. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "32,000",
     "priceDisplay": "₹ 32,000 / Unit",
     "subtitle": "Starting from",
@@ -1339,13 +1924,37 @@
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Rajesh Kumar",
+        "verified": false,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Good packaging and durable construction. Highly recommended."
+      },
+      {
+        "name": "Rohan Reddy",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Does the job perfectly. No issues faced during usage."
+      },
+      {
+        "name": "Amit Sen",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      }
+    ],
+    "city": "Delhi"
   },
   {
     "id": "prod-2",
     "name": "Water Purifiers",
     "slug": "water-purifiers",
-    "description": "Multi-stage RO, UV, and UF purification systems for safe, clean, and sweet tasting drinking water.",
+    "description": "Multi-stage RO, UV, and UF purification systems for safe, clean, and sweet tasting drinking water. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "8,500",
     "priceDisplay": "₹ 8,500 / Unit",
     "subtitle": "Starting from",
@@ -1383,13 +1992,51 @@
     "images": [
       "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=400&auto=format&fit=crop"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Priya Khanna",
+        "verified": false,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      },
+      {
+        "name": "Vikram Reddy",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      },
+      {
+        "name": "Karan Patel",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Decent performance and sturdy build. Delivery was prompt."
+      },
+      {
+        "name": "Sanjay Kumar",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Good packaging and durable construction. Highly recommended."
+      },
+      {
+        "name": "Rakesh Reddy",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      }
+    ],
+    "city": "Mumbai"
   },
   {
     "id": "prod-3",
     "name": "Solar Panels",
     "slug": "solar-panels",
-    "description": "High efficiency monocrystalline solar panels for residential, commercial, and industrial green power generation.",
+    "description": "High efficiency monocrystalline solar panels for residential, commercial, and industrial green power generation. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "15,000",
     "priceDisplay": "₹ 15,000 / Panel",
     "subtitle": "Starting from",
@@ -1427,13 +2074,51 @@
     "images": [
       "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=400&auto=format&fit=crop"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Anjali Rathore",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 4,
+        "comment": "Good quality product, meets all the specifications mentioned."
+      },
+      {
+        "name": "Sanjay Sen",
+        "verified": false,
+        "date": "Feb 20, 2024",
+        "rating": 4,
+        "comment": "Does the job perfectly. No issues faced during usage."
+      },
+      {
+        "name": "Amit Rathore",
+        "verified": true,
+        "date": "Feb 20, 2024",
+        "rating": 4,
+        "comment": "Good packaging and durable construction. Highly recommended."
+      },
+      {
+        "name": "Priya Bose",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 4,
+        "comment": "Good quality product, meets all the specifications mentioned."
+      },
+      {
+        "name": "Sunita Das",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 4,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      }
+    ],
+    "city": "Bangalore"
   },
   {
     "id": "prod-4",
     "name": "Generators",
     "slug": "generators",
-    "description": "Silent diesel and petrol generators offering reliable backup power solutions for homes and offices.",
+    "description": "Silent diesel and petrol generators offering reliable backup power solutions for homes and offices. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": "45,000",
     "priceDisplay": "₹ 45,000 / Unit",
     "subtitle": "Starting from",
@@ -1471,13 +2156,37 @@
     "images": [
       "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Vikram Patel",
+        "verified": true,
+        "date": "Jul 22, 2024",
+        "rating": 5,
+        "comment": "Good packaging and durable construction. Highly recommended."
+      },
+      {
+        "name": "Sunita Sharma",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 4,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      },
+      {
+        "name": "Priya Mehta",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Does the job perfectly. No issues faced during usage."
+      }
+    ],
+    "city": "Chennai"
   },
   {
     "id": "prod-5",
     "name": "Office Chairs",
     "slug": "office-chairs",
-    "description": "Ergonomically designed high-back mesh chairs offering supreme comfort and lumber support for long working hours.",
+    "description": "Ergonomically designed high-back mesh chairs offering supreme comfort and lumber support for long working hours. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": "4,500",
     "priceDisplay": "₹ 4,500 / Piece",
     "subtitle": "Starting from",
@@ -1515,13 +2224,44 @@
     "images": [
       "https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?q=80&w=400&auto=format&fit=crop"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Sanjay Rathore",
+        "verified": false,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Does the job perfectly. No issues faced during usage."
+      },
+      {
+        "name": "Neha Bose",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Does the job perfectly. No issues faced during usage."
+      },
+      {
+        "name": "Neha Khanna",
+        "verified": false,
+        "date": "Jan 15, 2024",
+        "rating": 4,
+        "comment": "Good quality product, meets all the specifications mentioned."
+      },
+      {
+        "name": "Sunita Verma",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Good quality product, meets all the specifications mentioned."
+      }
+    ],
+    "city": "Hyderabad"
   },
   {
     "id": "prod-6",
     "name": "CCTV Cameras",
     "slug": "cctv-cameras",
-    "description": "HD smart Wi-Fi security dome and bullet cameras with night vision and two-way audio talkback.",
+    "description": "HD smart Wi-Fi security dome and bullet cameras with night vision and two-way audio talkback. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": "1,800",
     "priceDisplay": "₹ 1,800 / Piece",
     "subtitle": "Starting from",
@@ -1559,6 +2299,1064 @@
     "images": [
       "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop"
-    ]
+    ],
+    "reviews": [
+      {
+        "name": "Amit Nair",
+        "verified": true,
+        "date": "May 12, 2024",
+        "rating": 5,
+        "comment": "Good packaging and durable construction. Highly recommended."
+      },
+      {
+        "name": "Suresh Verma",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 5,
+        "comment": "Does the job perfectly. No issues faced during usage."
+      },
+      {
+        "name": "Rahul Kumar",
+        "verified": false,
+        "date": "Feb 20, 2024",
+        "rating": 5,
+        "comment": "Good quality product, meets all the specifications mentioned."
+      },
+      {
+        "name": "Vikram Sen",
+        "verified": true,
+        "date": "Aug 30, 2024",
+        "rating": 4,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      },
+      {
+        "name": "Sunita Bose",
+        "verified": true,
+        "date": "Jan 15, 2024",
+        "rating": 5,
+        "comment": "Satisfactory purchase. Value for money and great customer support."
+      }
+    ],
+    "city": "Delhi"
+  },
+  {
+    "id": "prod-7",
+    "name": "Industrial PVC Conduit Pipe",
+    "slug": "industrial-pvc-conduit-pipe",
+    "description": "High grade rigid PVC conduit pipes for electrical and industrial piping applications. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "180",
+    "priceDisplay": "₹ 180 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "PVC-CP-01",
+    "brand": "Finolex",
+    "category": "cat-2",
+    "image": "https://images.unsplash.com/photo-1542013936-693-8848e574047a?q=80&w=400&auto=format&fit=crop",
+    "tags": [
+      "pvc",
+      "pipe",
+      "conduit",
+      "industrial"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Rigid PVC"
+      },
+      {
+        "label": "Diameter",
+        "value": "4 inches"
+      },
+      {
+        "label": "Length",
+        "value": "6 meters"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1542013936-693-8848e574047a?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542013936-693-8848e574047a?q=80&w=400&auto=format&fit=crop"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Mumbai"
+  },
+  {
+    "id": "prod-8",
+    "name": "PVC Elbow 90 Degree Bend",
+    "slug": "pvc-elbow-90-degree-bend",
+    "description": "Heavy duty PVC 90 degree elbow connector for industrial pipeline fittings. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "45",
+    "priceDisplay": "₹ 45 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "PVC-EL-02",
+    "brand": "Supreme",
+    "category": "cat-2",
+    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "pvc",
+      "elbow",
+      "fitting",
+      "bend"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Angle",
+        "value": "90 Degrees"
+      },
+      {
+        "label": "Size",
+        "value": "2 inches"
+      },
+      {
+        "label": "Connection",
+        "value": "Slip / Socket"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Bangalore"
+  },
+  {
+    "id": "prod-9",
+    "name": "Heavy Duty Hydraulic Press Machine",
+    "slug": "heavy-duty-hydraulic-press-machine",
+    "description": "High capacity hydraulic pressing machine for manufacturing and heavy sheet metal molding. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "4,50,000",
+    "priceDisplay": "₹ 4,50,000 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "IND-HP-01",
+    "brand": "ForceTech",
+    "category": "cat-3",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "machinery",
+      "hydraulic",
+      "press",
+      "industrial"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Capacity",
+        "value": "50 Tons"
+      },
+      {
+        "label": "Stroke Length",
+        "value": "200 mm"
+      },
+      {
+        "label": "Motor Power",
+        "value": "5 HP"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Chennai"
+  },
+  {
+    "id": "prod-10",
+    "name": "Corrugated Shipping Box",
+    "slug": "corrugated-shipping-box",
+    "description": "Extra strong 3-ply corrugated cardboard boxes for secure shipping and storage. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "35",
+    "priceDisplay": "₹ 35 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "PKG-CB-01",
+    "brand": "PackShield",
+    "category": "cat-5",
+    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "packaging",
+      "box",
+      "corrugated",
+      "carton"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Layer",
+        "value": "3-Ply"
+      },
+      {
+        "label": "Dimensions",
+        "value": "12 x 12 x 12 inches"
+      },
+      {
+        "label": "Load Capacity",
+        "value": "15 kg"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Hyderabad"
+  },
+  {
+    "id": "prod-11",
+    "name": "Industrial Stretch Wrap Film",
+    "slug": "industrial-stretch-wrap-film",
+    "description": "Highly stretchable plastic wrap film for pallet wrapping and securing cartons. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "320",
+    "priceDisplay": "₹ 320 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "PKG-SW-02",
+    "brand": "StretchMax",
+    "category": "cat-5",
+    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "packaging",
+      "wrap",
+      "film",
+      "stretch"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Width",
+        "value": "500 mm"
+      },
+      {
+        "label": "Thickness",
+        "value": "23 Microns"
+      },
+      {
+        "label": "Length",
+        "value": "300 meters"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Delhi"
+  },
+  {
+    "id": "prod-12",
+    "name": "Industrial Safety Helmet",
+    "slug": "industrial-safety-helmet",
+    "description": "Impact-resistant HDPE industrial safety helmet with adjustable chin strap. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "240",
+    "priceDisplay": "₹ 240 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "SAF-SH-01",
+    "brand": "Karam",
+    "category": "cat-6",
+    "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "safety",
+      "helmet",
+      "construction",
+      "hdpe"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "HDPE (High Density Polyethylene)"
+      },
+      {
+        "label": "Suspension",
+        "value": "4-Point Textile"
+      },
+      {
+        "label": "Standard",
+        "value": "IS 2925 Certified"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Mumbai"
+  },
+  {
+    "id": "prod-13",
+    "name": "Dry Erase Aluminum Framed Whiteboard",
+    "slug": "dry-erase-aluminum-framed-whiteboard",
+    "description": "Smooth magnetic surface dry-erase writing board with anodized aluminum border. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "1,200",
+    "priceDisplay": "₹ 1,200 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "OFF-WB-01",
+    "brand": "Alkos",
+    "category": "cat-8",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "office",
+      "whiteboard",
+      "writing",
+      "board"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Size",
+        "value": "3 x 4 feet"
+      },
+      {
+        "label": "Frame",
+        "value": "Aluminum"
+      },
+      {
+        "label": "Surface",
+        "value": "Magnetic Dry-Erase"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Bangalore"
+  },
+  {
+    "id": "prod-14",
+    "name": "Premium Ballpoint Pen Pack",
+    "slug": "premium-ballpoint-pen-pack",
+    "description": "Bulk box of fine-tip blue ink ballpoint pens for daily office usage. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "250",
+    "priceDisplay": "₹ 250 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "OFF-BP-02",
+    "brand": "Reynolds",
+    "category": "cat-8",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "office",
+      "supplies",
+      "pen",
+      "stationery"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Ink Color",
+        "value": "Blue"
+      },
+      {
+        "label": "Tip Size",
+        "value": "0.7 mm"
+      },
+      {
+        "label": "Pack Qty",
+        "value": "50 Units"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Chennai"
+  },
+  {
+    "id": "prod-15",
+    "name": "Professional Wrench Socket Set",
+    "slug": "professional-wrench-socket-set",
+    "description": "Chrome vanadium steel wrench and sockets combination toolset in a hard carrying case. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "2,800",
+    "priceDisplay": "₹ 2,800 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "HRD-WS-01",
+    "brand": "Taparia",
+    "category": "cat-9",
+    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "tools",
+      "wrench",
+      "socket",
+      "hardware"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Chrome Vanadium"
+      },
+      {
+        "label": "Pieces in Set",
+        "value": "46 Pieces"
+      },
+      {
+        "label": "Drive Size",
+        "value": "1/4 inch"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Hyderabad"
+  },
+  {
+    "id": "prod-16",
+    "name": "Claw Hammer with Fiberglass Handle",
+    "slug": "claw-hammer-with-fiberglass-handle",
+    "description": "Polished high carbon steel head claw hammer with shock-absorbing rubber grip. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "450",
+    "priceDisplay": "₹ 450 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "HRD-CH-02",
+    "brand": "Stanley",
+    "category": "cat-9",
+    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "tools",
+      "hammer",
+      "hardware",
+      "claw"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Weight",
+        "value": "16 oz (450g)"
+      },
+      {
+        "label": "Handle Material",
+        "value": "Fiberglass"
+      },
+      {
+        "label": "Head Material",
+        "value": "Carbon Steel"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Delhi"
+  },
+  {
+    "id": "prod-17",
+    "name": "Stainless Steel Self-Tapping Screws",
+    "slug": "stainless-steel-self-tapping-screws",
+    "description": "High tensile self-tapping cross recessed philips head wood screws. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "350",
+    "priceDisplay": "₹ 350 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "FAS-SC-01",
+    "brand": "Screwtite",
+    "category": "cat-10",
+    "image": "/src/assets/ss_fasteners.png",
+    "tags": [
+      "fasteners",
+      "screws",
+      "stainless",
+      "hardware"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Stainless Steel 304"
+      },
+      {
+        "label": "Thread Size",
+        "value": "M4"
+      },
+      {
+        "label": "Length",
+        "value": "25 mm"
+      }
+    ],
+    "images": [
+      "/src/assets/ss_fasteners.png",
+      "/src/assets/ss_fasteners.png"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Mumbai"
+  },
+  {
+    "id": "prod-18",
+    "name": "High Tensile Hex Head Bolts and Nuts",
+    "slug": "high-tensile-hex-head-bolts-and-nuts",
+    "description": "Zinc-plated high strength grade 8.8 hex head bolts with matching nuts. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "600",
+    "priceDisplay": "₹ 600 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "FAS-HB-02",
+    "brand": "Bolttight",
+    "category": "cat-10",
+    "image": "/src/assets/ss_fasteners.png",
+    "tags": [
+      "fasteners",
+      "bolts",
+      "nuts",
+      "hex"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Thread Diameter",
+        "value": "M10"
+      },
+      {
+        "label": "Length",
+        "value": "50 mm"
+      },
+      {
+        "label": "Grade",
+        "value": "8.8 High Tensile"
+      }
+    ],
+    "images": [
+      "/src/assets/ss_fasteners.png",
+      "/src/assets/ss_fasteners.png"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Bangalore"
+  },
+  {
+    "id": "prod-19",
+    "name": "Cast Iron Centrifugal Water Pump",
+    "slug": "cast-iron-centrifugal-water-pump",
+    "description": "Cast iron centrifugal motor pump for agricultural and domestic water boosting. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "6,500",
+    "priceDisplay": "₹ 6,500 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "PMP-CP-01",
+    "brand": "Kirloskar",
+    "category": "cat-11",
+    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "pump",
+      "centrifugal",
+      "water",
+      "industrial"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Power",
+        "value": "1.0 HP"
+      },
+      {
+        "label": "Max Flow Rate",
+        "value": "3000 L/hour"
+      },
+      {
+        "label": "Head Range",
+        "value": "15-25 meters"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Chennai"
+  },
+  {
+    "id": "prod-20",
+    "name": "Submersible Sewage Pump",
+    "slug": "submersible-sewage-pump",
+    "description": "Heavy duty stainless steel submersible slurry pump for wastewater and sewage disposal. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "14,800",
+    "priceDisplay": "₹ 14,800 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "PMP-SP-02",
+    "brand": "Crompton",
+    "category": "cat-11",
+    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "pump",
+      "submersible",
+      "sewage",
+      "slurry"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Power",
+        "value": "2.0 HP"
+      },
+      {
+        "label": "Discharge Connection",
+        "value": "2 inches"
+      },
+      {
+        "label": "Solid Handling",
+        "value": "Up to 25 mm"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Hyderabad"
+  },
+  {
+    "id": "prod-21",
+    "name": "Ergonomic Mesh Office Chair",
+    "slug": "ergonomic-mesh-office-chair",
+    "description": "High-back desk chair with lumbar support, adjustable armrests, and nylon wheels. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "5,500",
+    "priceDisplay": "₹ 5,500 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "FNT-EC-01",
+    "brand": "Featherlite",
+    "category": "cat-12",
+    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "furniture",
+      "chair",
+      "office",
+      "ergonomic"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Base Material",
+        "value": "Nylon / Steel"
+      },
+      {
+        "label": "Support Type",
+        "value": "Lumbar support mesh"
+      },
+      {
+        "label": "Load Capacity",
+        "value": "120 kg"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Delhi"
+  },
+  {
+    "id": "prod-22",
+    "name": "Deep Groove Radial Ball Bearing",
+    "slug": "deep-groove-radial-ball-bearing",
+    "description": "High precision double rubber shielded radial deep groove ball bearing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "120",
+    "priceDisplay": "₹ 120 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "BRG-BB-01",
+    "brand": "SKF",
+    "category": "cat-13",
+    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "bearing",
+      "ball-bearing",
+      "radial",
+      "groove"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Inner Diameter",
+        "value": "20 mm"
+      },
+      {
+        "label": "Outer Diameter",
+        "value": "47 mm"
+      },
+      {
+        "label": "Width",
+        "value": "14 mm"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Mumbai"
+  },
+  {
+    "id": "prod-23",
+    "name": "Flexible Aluminum Jaw Shaft Coupling",
+    "slug": "flexible-aluminum-jaw-shaft-coupling",
+    "description": "Aluminum flexible jaw coupling for electric motors and encoder connections. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
+    "price": "380",
+    "priceDisplay": "₹ 380 / Piece",
+    "subtitle": "Starting from",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "BRG-JC-02",
+    "brand": "Rotex",
+    "category": "cat-13",
+    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
+    "tags": [
+      "coupling",
+      "shaft",
+      "flexible",
+      "jaw"
+    ],
+    "type": "general",
+    "popular": false,
+    "rating": 4.5,
+    "reviewCount": 45,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminum Alloy"
+      },
+      {
+        "label": "Bore Diameter",
+        "value": "10 mm to 14 mm"
+      },
+      {
+        "label": "Torque Rating",
+        "value": "15 Nm"
+      }
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Kumar",
+        "verified": true,
+        "date": "May 15, 2024",
+        "rating": 5,
+        "comment": "Excellent quality and sturdy build. Exceeded expectations."
+      },
+      {
+        "name": "Rohan Mehta",
+        "verified": true,
+        "date": "Jun 2, 2024",
+        "rating": 4,
+        "comment": "Good value for money. Very reliable performance so far."
+      }
+    ],
+    "city": "Bangalore"
   }
 ]

@@ -6,36 +6,30 @@ const Timeline = () => {
     const historyData = [
         {
             id: 1,
-            year: "Since 1990",
-            title: "Since Founding",
-            desc: "Started as a small engineering firm focusing on local industrial solutions.",
+            year: "Step 01",
+            title: "Multi-Channel Promotion",
+            desc: "We deploy strategic SEO and targeted advertising campaigns for any product category, driving high-intent B2B traffic.",
         },
         {
             id: 2,
-            year: "Since 2012",
-            title: "Regional Expansion",
-            desc: "Expanded operations to cover major industrial zones across the country.",
+            year: "Step 02",
+            title: "High-Converting Catalog",
+            desc: "We design and run optimized e-commerce platforms featuring smooth search, shopping carts, and city-based filtering.",
         },
         {
             id: 3,
-            year: "Since 2023",
-            title: "First History",
-            desc: "Reached a milestone of 100+ successful projects in the manufacturing sector.",
-        },
-        {
-            id: 4,
-            year: "Since 2025",
-            title: "Digital Integration",
-            desc: "Integrated AI and IoT solutions into our core industrial service offerings.",
+            year: "Step 03",
+            title: "Fulfillment & Insights",
+            desc: "We manage bulk order processing and supply chain logistics, backed by deep web analytics to continuously grow your sales.",
         },
     ];
 
     return (
         <Container>
-            <Fade direction="none" className="py-80 w-full" threshold={0.2}>
+            <Fade direction="none" className="py-60 w-full" threshold={0.2}>
                 {(isVisible) => (
                     <>
-                        <p className="headpara-text text-warning font-500 text-center capitalize">
+                        <p className="para-text text-warning font-500 text-center capitalize">
                             What We Offer
                         </p>
                         <h2 className="head-text text-dark font-600 capitalize text-center pt-10">
@@ -51,7 +45,7 @@ const Timeline = () => {
                                     transform: isVisible ? "scaleX(1)" : "scaleX(0)"
                                 }}
                             />
-                            <div className="grid-cols-4 gap-4 relative">
+                            <div className="grid-cols-3 gap-4 relative">
                                 {historyData?.map((item, index) => (
                                     <div key={item.id} className="timeline-item">
                                         <p
@@ -65,7 +59,7 @@ const Timeline = () => {
                                             }}
                                         ></p>
                                         <div
-                                            className="py-10 timeline-content"
+                                            className="px-18 py-12 timeline-content"
                                             style={{
                                                 transition: "transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.5s",
                                                 transform: isVisible ? "translateY(0)" : "translateY(25px)",

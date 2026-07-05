@@ -104,7 +104,13 @@ const ProductDetail = () => {
         seoKeywords={keywords}
       />
       <PopularProducts />
-      <ProductReviews />
+      <ProductReviews
+        rating={foundProduct?.rating}
+        reviewCount={foundProduct?.reviewCount}
+        reviews={foundProduct?.reviews}
+        productName={foundProduct?.name}
+        galleryImages={galleryImages}
+      />
     </>
   );
 };

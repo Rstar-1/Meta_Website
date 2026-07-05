@@ -31,12 +31,7 @@ export const routeMeta = {
     keywords: 'eco blog, zero waste lifestyle, sustainable living articles',
     path: '/blog'
   },
-  '/enquiry': {
-    title: 'Bulk & Corporate Enquiries',
-    description: 'Get in touch for wholesale, customized branding, or bulk orders of our eco-friendly products.',
-    keywords: 'wholesale eco products, bulk inquiries, corporate gifting',
-    path: '/enquiry'
-  },
+
   '/contact': {
     title: 'Contact Us',
     description: 'Have questions or need assistance? Reach out to EcoStore support via contact form, email, or phone.',

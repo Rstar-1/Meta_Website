@@ -6,11 +6,13 @@ import Icon from '../../components/common/Icon';
 import Image from '../../components/common/Image';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import CardLayout from '../../components/layout/CardLayout';
+import Banner from '../../components/layout/Banner';
 import { GetBestPriceForm } from '../../components/layout/ProductLayout';
-import { getCart, removeFromCart, clearCart } from '../../utils/cartHelper';
+import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
 import productsData from '../../data/products.json';
 import categoriesData from '../../data/category.json';
 import Table from '../../components/common/Table';
+import Fields from '../../components/common/Fields';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -70,45 +72,53 @@ const Cart = () => {
     {
       header: 'Item',
       accessor: 'name',
-      style: { width: '45%' },
-      render: (row) => (
-        <div className="flex items-center gap-12">
-          <Image
-            src={row.image}
-            alt={row.name}
-            style={{
-              width: '60px',
-              height: '60px',
-              objectFit: 'cover',
-              borderRadius: '6px',
-              border: '1px solid #ececec'
-            }}
-          />
-          <div>
-            <p className="small-text font-600 text-dark line-clamp2 cursor-pointer hover:text-primary mb-2" onClick={() => navigate(`/product-detail/${row.id}`)}>
-              {row.name}
-            </p>
-            <p className="mini-text text-gray m-0">
-              {row.brand || 'Verified Seller'}
-            </p>
-          </div>
-        </div>
-      )
+      ui: 'profile',
+      subKey: 'brand',
+      imgStyle: {
+        width: '60px',
+        height: '60px',
+        objectFit: 'cover',
+        borderRadius: '6px',
+        border: '1px solid #ececec'
+      },
+      style: { width: '35%' }
     },
     {
       header: 'Category',
       accessor: 'category',
-      ui: 'badge',
-      style: { width: '25%' }
+      style: { width: '20%' },
+      render: (row) => {
+        const catName = getCategoryName(row.category);
+        const colorClass = getCategoryColor(catName);
+        return (
+          <span className={`mini-text capitalize px-10 py-4 rounded-20 font-500 inline-flex ${colorClass}`}>
+            {catName}
+          </span>
+        );
+      }
     },
     {
       header: 'Price',
       accessor: 'price',
-      style: { width: '20%' },
+      style: { width: '15%' },
       render: (row) => (
         <div>
           <p className="small-text font-600 text-dark m-0">₹{row.price}</p>
           <p className="mini-text text-gray m-0">On Request</p>
+        </div>
+      )
+    },
+    {
+      header: 'Quantity',
+      accessor: 'quantity',
+      style: { width: '20%' },
+      render: (row) => (
+        <div className="flex justify-start">
+          <Fields
+            type="quantity"
+            value={row.quantity || 1}
+            onChange={(newVal) => updateCartQuantity(row.id, newVal)}
+          />
         </div>
       )
     },
@@ -122,12 +132,11 @@ const Cart = () => {
           <Button
             variant="outline"
             bg="danger"
-            className="border-ec flex items-center justify-center rounded-full hover:bg-light-danger hover:text-danger cursor-pointer transition-all"
-            style={{ width: '32px', height: '32px', padding: 0, minWidth: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             onClick={() => removeFromCart(row.id)}
             title="Remove Item"
+            version='v2'
           >
-            <Icon name="Trash" width="15" height="15" stroke="var(--danger)" />
+            <Icon name="Trash" width="15" height="15" stroke="#c21b1b" />
           </Button>
         </div>
       )
@@ -141,6 +150,15 @@ const Cart = () => {
         description="Review your selected items and submit your requirement to get the best quotes from verified suppliers."
         path="/cart"
         type="website"
+      />
+
+      <Banner
+        title="Cart"
+        desc="Shopping Cart"
+        breadcrumbs={[
+          { label: "Home", path: "/home" },
+          { label: "Cart" },
+        ]}
       />
 
       <Container className="bg-white">
@@ -157,9 +175,9 @@ const Cart = () => {
                       onClick={clearCart}
                       variant="outline"
                       bg="danger"
-                      version='v2'
+                      version='v0'
                     >
-                      Clear Cart
+                      Clear All
                     </Button>
                   )}
                 </div>
@@ -189,7 +207,7 @@ const Cart = () => {
 
                     {/* Summary row */}
                     <div className="flex justify-between items-center p-15">
-                      <span className="small-text text-dark font-600">Total Items ({cartItems.length})</span>
+                      <span className="small-text text-dark font-600">Total Items ({cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)})</span>
                       <span className="small-text font-600">Total Price: <span className="text-primary font-700">On Request</span></span>
                     </div>
                   </div>
@@ -208,7 +226,7 @@ const Cart = () => {
             <div className="w-25 md-w-full pl-12 sm-pl-1">
               <GetBestPriceForm
                 isCart={true}
-                cartCount={cartItems.length}
+                cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
                 onClearCart={clearCart}
               />
             </div>

@@ -141,6 +141,20 @@ const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, 
                     <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
             );
+        case "ChevronDown":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            );
+        case "Info":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            );
         case "Filter":
             return (
                 <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
@@ -310,10 +324,16 @@ const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, 
                 </svg>
             );
         case "Verified":
-        case "Check":
             return (
                 <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} fill={fill || "#0284c7"} className={`flex ${className}`} {...props}>
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+            );
+        case "Check":
+        case "Checkmark":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
+                    <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
             );
         case "WhatsApp":

@@ -1,7 +1,8 @@
 import React from 'react'
 import ContactForm from '../../components/forms/ContactForm'
 import Banner from '../../components/layout/Banner'
-import BlogList from '../blog/sections/BlogList'
+import BlogLayout from '../../components/layout/BlogLayout'
+import blogsData from '../../data/blogs.json'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema'
 
@@ -30,7 +31,7 @@ const Contact = () => {
         desc="Solutions Industrial Market Values for Funding"
       />
       <ContactForm />
-      <BlogList />
+      <BlogLayout type="list" blogsData={blogsData} />
     </>
   )
 }

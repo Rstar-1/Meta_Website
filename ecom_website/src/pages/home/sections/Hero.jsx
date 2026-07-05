@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 import background from '../../../assets/background.png';
 import Icon from '../../../components/common/Icon';
+import Fields from '../../../components/common/Fields';
+import categoriesData from '../../../data/category.json';
+
 const Hero = ({ onSearch }) => {
+  const navigate = useNavigate();
   const [category, setCategory] = useState('All');
   const [query, setQuery] = useState('');
   const [location, setLocation] = useState('Delhi');
@@ -13,6 +18,9 @@ const Hero = ({ onSearch }) => {
     if (onSearch) {
       onSearch({ category, query, location });
     }
+    navigate(`/products?category=${category}&search=${query}&city=${location}`, {
+      state: { category, search: query, city: location }
+    });
   };
 
   const popularSearches = [
@@ -101,42 +109,47 @@ const Hero = ({ onSearch }) => {
 
           <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
             <Icon name="Grid" width="20" height="20" stroke="var(--primary)" />
-            <select className='h-input border-0 bg-forth w-full'
+            <Fields
+              type="select"
+              options={[
+                { label: 'All Categories', value: 'All' },
+                ...categoriesData.map(c => ({ label: c.name, value: c.id }))
+              ]}
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option value="All">All Categories</option>
-              <option value="Doctors">Doctors</option>
-              <option value="Restaurants">Restaurants</option>
-              <option value="Home Services">Home Services</option>
-              <option value="Electronics">Electronics</option>
-            </select>
+              onChange={setCategory}
+              outline={false}
+              className="w-full"
+            />
           </div>
 
           <div className="flex items-center gap-12 w-45 md-w-full sm-w-full">
             <Icon name="Search" width="20" height="20" stroke="var(--primary)" />
-            <input
+            <Fields
               type="text"
-              className="h-input border-0 bg-forth w-full"
               placeholder="What are you looking for?"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={setQuery}
+              outline={false}
+              className="w-full"
             />
           </div>
 
           <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
             <Icon name="MapPin" width="20" height="20" stroke="var(--primary)" />
-            <select
-              className="h-input border-0 bg-forth w-full"
+            <Fields
+              type="select"
+              options={[
+                { label: 'Delhi', value: 'Delhi' },
+                { label: 'Mumbai', value: 'Mumbai' },
+                { label: 'Bangalore', value: 'Bangalore' },
+                { label: 'Chennai', value: 'Chennai' },
+                { label: 'Hyderabad', value: 'Hyderabad' }
+              ]}
               value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            >
-              <option value="Delhi">Delhi</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Bangalore">Bangalore</option>
-              <option value="Chennai">Chennai</option>
-              <option value="Hyderabad">Hyderabad</option>
-            </select>
+              onChange={setLocation}
+              outline={false}
+              className="w-full"
+            />
           </div>
 
           <div className="w-15 md-w-full sm-w-full">
@@ -156,7 +169,14 @@ const Hero = ({ onSearch }) => {
           {popularSearches.map((tag, index) => (
             <p
               key={index}
-              className='bg-transparent small-text text-white px-20 py-4 rounded-10 border-white'
+              className='bg-transparent small-text text-white px-20 py-4 rounded-10 border-white cursor-pointer hover-bg-primary transition-all'
+              style={{ cursor: 'pointer' }}
+              onClick={() => {
+                setQuery(tag);
+                navigate(`/products?search=${tag}&city=${location}`, {
+                  state: { category: 'All', search: tag, city: location }
+                });
+              }}
             >
               {tag}
             </p>

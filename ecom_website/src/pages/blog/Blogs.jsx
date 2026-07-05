@@ -1,5 +1,6 @@
 import React, { memo } from "react";
-import BlogList from "./sections/BlogList";
+import BlogLayout from "../../components/layout/BlogLayout";
+import blogsData from "../../data/blogs.json";
 import SeoHelmet from "../../components/seo/SeoHelmet";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema";
 
@@ -19,8 +20,7 @@ const Blogs = memo(() => {
                 { name: 'Home', url: siteUrl + '/home' },
                 { name: 'Blog', url: siteUrl + '/blog' }
             ]} />
-            {/* --- Main Content Area --- */}
-            <BlogList />
+            <BlogLayout type="list" blogsData={blogsData} />
         </>
     );
 });

@@ -2,8 +2,7 @@ import React from 'react';
 import Hero from './sections/Hero';
 import BrowseCategory from './sections/BrowseCategory';
 import PopularProducts from './sections/PopularProducts';
-import ProductSteel from './sections/ProductSteel';
-import ProductPrinter from './sections/ProductPrinter';
+import LatestProducts from './sections/LatestProducts';
 import WhyChoose from './sections/WhyChoose';
 import FeaturedBusinesses from './sections/FeaturedBusinesses';
 import BusinessPromo from './sections/BusinessPromo';
@@ -41,8 +40,7 @@ const Home = () => {
 
       <Hero />
       <BrowseCategory />
-      <ProductPrinter />
-      <ProductSteel />
+      <LatestProducts />
       <PopularProducts />
       <WhyChoose />
       <TopCity />
