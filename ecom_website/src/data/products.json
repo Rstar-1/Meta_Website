@@ -3736,7 +3736,7 @@
     "sku": "PVC-BV-02",
     "brand": "Astral",
     "category": "cat-2",
-    "image": "https://images.unsplash.com/photo-1542013936-693-8848e574047a?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/pvc_ball_valve.png",
     "tags": [
       "pvc",
       "valve",
@@ -3762,7 +3762,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1542013936-693-8848e574047a?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/pvc_ball_valve.png"
     ],
     "reviews": [
       {

@@ -30,6 +30,7 @@ import ssAngleBars from '../../assets/ss_angle_bars.png';
 import ssWireMesh from '../../assets/ss_wire_mesh.png';
 import ssFasteners from '../../assets/ss_fasteners.png';
 import pvcConduitPipe from '../../assets/pvc_conduit_pipe.png';
+import pvcBallValve from '../../assets/pvc_ball_valve.png';
 
 const imageMap = {
   'printer-1': printerHp88a,
@@ -53,6 +54,7 @@ const imageMap = {
   'steel-9': ssWireMesh,
   'steel-10': ssFasteners,
   'prod-7': pvcConduitPipe,
+  'prod-31': pvcBallValve,
 };
 
 const Products = () => {

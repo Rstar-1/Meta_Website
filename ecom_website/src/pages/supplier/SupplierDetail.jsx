@@ -32,6 +32,7 @@ import ssAngleBars from '../../assets/ss_angle_bars.png';
 import ssWireMesh from '../../assets/ss_wire_mesh.png';
 import ssFasteners from '../../assets/ss_fasteners.png';
 import pvcConduitPipe from '../../assets/pvc_conduit_pipe.png';
+import pvcBallValve from '../../assets/pvc_ball_valve.png';
 
 const imageMap = {
   'printer-1': printerHp88a,
@@ -55,6 +56,7 @@ const imageMap = {
   'steel-9': ssWireMesh,
   'steel-10': ssFasteners,
   'prod-7': pvcConduitPipe,
+  'prod-31': pvcBallValve,
 };
 
 const SupplierDetail = () => {
@@ -153,8 +155,8 @@ const SupplierDetail = () => {
       />
 
       <Container>
-        <div className="flex gap-12 items-start w-full py-40">
-          <div className="grid-cols-1 w-25 gap-12 sticky-top">
+        <div className="flex sm-grid-cols-1 gap-12 items-start w-full py-40">
+          <div className="grid-cols-1 w-25 sm-w-full gap-12 sticky-top">
             <div className="bg-white border-ec p-18 rounded-5">
               <div className="flex items-center gap-12 bordb pb-12">
                 <div
@@ -211,7 +213,7 @@ const SupplierDetail = () => {
               </div>
             </div>
           </div>
-          <div className="w-75">
+          <div className="w-75 sm-w-full">
             <Tab
               tabs={[
                 { value: 'catalog', name: 'Products Catalog', count: finalProducts.length },

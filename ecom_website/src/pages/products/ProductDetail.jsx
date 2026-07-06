@@ -20,6 +20,8 @@ import ssFlanges from '../../assets/ss_flanges.png';
 import ssAngleBars from '../../assets/ss_angle_bars.png';
 import ssWireMesh from '../../assets/ss_wire_mesh.png';
 import ssFasteners from '../../assets/ss_fasteners.png';
+import pvcConduitPipe from '../../assets/pvc_conduit_pipe.png';
+import pvcBallValve from '../../assets/pvc_ball_valve.png';
 
 // Import section components
 import { ProductReviews } from './sections';
@@ -40,7 +42,9 @@ const assetMap = {
   '/src/assets/ss_flanges.png': ssFlanges,
   '/src/assets/ss_angle_bars.png': ssAngleBars,
   '/src/assets/ss_wire_mesh.png': ssWireMesh,
-  '/src/assets/ss_fasteners.png': ssFasteners
+  '/src/assets/ss_fasteners.png': ssFasteners,
+  '/src/assets/pvc_conduit_pipe.png': pvcConduitPipe,
+  '/src/assets/pvc_ball_valve.png': pvcBallValve,
 };
 
 const resolveImage = (path) => {
