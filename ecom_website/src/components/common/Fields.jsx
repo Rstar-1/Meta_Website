@@ -17,9 +17,12 @@ const Fields = ({
     className,
     icon,
     iconPosition = "right",
+    error: propError,
     ...props
 }) => {
-    const [error, setError] = useState("");
+    const [localError, setLocalError] = useState("");
+    const error = propError !== undefined ? propError : localError;
+    const setError = (val) => setLocalError(val);
     const [isFocused, setIsFocused] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
     const [isOpen, setIsOpen] = useState(false);

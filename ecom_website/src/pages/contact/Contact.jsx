@@ -1,11 +1,11 @@
 import React from 'react'
-import ContactForm from '../../components/forms/ContactForm'
 import Banner from '../../components/layout/Banner'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema'
 import LatestArticles from '../home/sections/LatestArticles'
 import BusinessPromo from '../home/sections/BusinessPromo'
 import Review from '../home/sections/Review'
+import Details from './sections/Details'
 
 const Contact = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
@@ -35,7 +35,7 @@ const Contact = () => {
           { label: "Connect" },
         ]}
       />
-      <ContactForm />
+      <Details />
       <LatestArticles />
       <BusinessPromo />
       <Review />

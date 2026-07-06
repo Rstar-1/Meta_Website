@@ -31,7 +31,7 @@ const TopCity = () => {
             }
           }}
           className="mt-20"
-          onCardClick={() => navigate('/products')}
+          onCardClick={(item) => navigate('/products', { state: { city: item.name } })}
         />
       </div>
     </Container>

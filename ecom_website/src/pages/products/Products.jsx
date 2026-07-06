@@ -274,6 +274,10 @@ const Products = () => {
               { label: 'Bangalore', value: 'Bangalore' },
               { label: 'Chennai', value: 'Chennai' },
               { label: 'Hyderabad', value: 'Hyderabad' },
+              { label: 'Kolkata', value: 'Kolkata' },
+              { label: 'Ahmedabad', value: 'Ahmedabad' },
+              { label: 'Surat', value: 'Surat' },
+              { label: 'Jaipur', value: 'Jaipur' },
             ]}
             value={selectedCities}
             onChange={(newSelected) => setSelectedCities(newSelected)}

@@ -67,13 +67,13 @@ const CardLayout = ({
                                 {item.name}
                             </h3>
                             <p
-                                className="text-gray mini-text line-clamp2 font-400"
+                                className="text-gray mini-text line-clamp2 font-400 mt-3"
                             >
                                 {item.description}
                             </p>
                             {(item.priceDisplay || item.price) && (
                                 <p
-                                    className="text-dark mini-text font-400 mt-6"
+                                    className="text-dark mini-text font-400 mt-7"
                                 >
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
@@ -85,7 +85,7 @@ const CardLayout = ({
                     <div className="flex gap-10 mt-10 w-full">
                         {showAddToCart && (
                             <Button
-                                text="Quick Add"
+                                text="Quick Buy"
                                 variant="outline"
                                 bg="primary"
                                 version="v3"
@@ -104,7 +104,7 @@ const CardLayout = ({
                         )}
                         {showViewProducts && (
                             <Button
-                                text="View Products"
+                                text="Explore"
                                 bg="primary"
                                 variant="filled"
                                 version="v3"

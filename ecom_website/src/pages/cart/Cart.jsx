@@ -7,7 +7,7 @@ import Image from '../../components/common/Image';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import CardLayout from '../../components/layout/CardLayout';
 import Banner from '../../components/layout/Banner';
-import { GetBestPriceForm } from '../../components/layout/ProductLayout';
+import ProductEnquiryForm from '../../components/forms/ProductEnquiryForm';
 import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
 import productsData from '../../data/products.json';
 import categoriesData from '../../data/category.json';
@@ -296,7 +296,7 @@ const Cart = () => {
 
             {/* Right Column - Submit Enquiry Form */}
             <div className="w-25 md-w-full sm-w-full pl-12 sm-pl-1">
-              <GetBestPriceForm
+              <ProductEnquiryForm
                 isCart={true}
                 cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
                 onClearCart={clearCart}

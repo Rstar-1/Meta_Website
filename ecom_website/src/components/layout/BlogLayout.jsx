@@ -8,6 +8,7 @@ import Banner from './Banner';
 import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
 import LatestArticles from '../../pages/home/sections/LatestArticles';
+import NewsletterForm from '../forms/NewsletterForm';
 
 const BlogLayout = ({
   type = 'list', // 'list' or 'detail'
@@ -18,24 +19,10 @@ const BlogLayout = ({
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
   // Scroll to top on type or post change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [type, post?.id]);
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (newsletterEmail.trim()) {
-      setIsSubscribed(true);
-      setNewsletterEmail('');
-      setTimeout(() => {
-        setIsSubscribed(false);
-      }, 5000);
-    }
-  };
 
   const shareUrl = useMemo(() => {
     return post?.shareLink || (typeof window !== 'undefined' ? window.location.origin + `/blog-detail/${post?.id}` : '');
@@ -606,50 +593,7 @@ const BlogLayout = ({
                 )}
 
                 {/* Sidebar Newsletter Subscribe Widget */}
-                <div className="bg-dark text-white rounded-10 p-20 relative overflow-hidden">
-                  <Icon
-                    name="Send"
-                    width="42"
-                    height="42"
-                    className="absolute text-white"
-                    strokeWidth="1.5"
-                    style={{
-                      color: 'rgba(255, 255, 255, 0.05)',
-                      right: '15px',
-                      top: '15px',
-                      pointerEvents: 'none',
-                    }}
-                  />
-
-                  <h3 className="mid-text font-600 text-white">Subscribe to Our Newsletter</h3>
-                  <p className="mini-text text-white mt-5 mb-15">
-                    Get the latest marketing insights and strategies straight to your inbox.
-                  </p>
-
-                  {isSubscribed ? (
-                    <div className="p-10 bg-light-success text-success rounded-5 font-600 small-text text-center">
-                      ✓ Subscribed successfully!
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubscribe} className="flex bg-white rounded-5 overflow-hidden">
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="h-input bg-white p-10 border-0"
-                        style={{ outline: 'none', fontSize: '13px', width: '100%' }}
-                        value={newsletterEmail}
-                        onChange={(e) => setNewsletterEmail(e.target.value)}
-                        required
-                      />
-                      <button
-                        type="submit"
-                        className="bg-primary text-white font-600 px-15 border-0 cursor-pointer mini-text"
-                      >
-                        Subscribe
-                      </button>
-                    </form>
-                  )}
-                </div>
+                <NewsletterForm variant="card" />
               </>
             </div>
           </div>

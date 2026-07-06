@@ -32,15 +32,63 @@ const FormBuilder = ({
     }, [fields]);
 
     const [form, setForm] = useState(initialValues);
+    const [errors, setErrors] = useState({});
+
+    const validateField = (field, val) => {
+        const validation = field.validation || {};
+        if (validation.required && (val === null || val === undefined || (typeof val === 'string' && val.trim() === '') || (Array.isArray(val) && val.length === 0))) {
+            return "This field is required";
+        }
+        if (validation.minLength && typeof val === 'string' && val.length < validation.minLength) {
+            return `Minimum ${validation.minLength} characters`;
+        }
+        if (field.type === "email" || field.name === "email" || validation.email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (val && !regex.test(val)) {
+                return "Invalid Email Address";
+            }
+        }
+        if (field.type === "tel" || field.name === "mobile" || validation.mobile) {
+            const regex = /^[6-9]\d{9}$/;
+            if (val && !regex.test(val)) {
+                return "Enter a valid 10-digit mobile number";
+            }
+        }
+        return "";
+    };
 
     const handleChange = (name, value) => {
         setForm((prev) => ({
             ...prev,
             [name]: value,
         }));
+        const field = fields.find((f) => f.name === name);
+        if (field) {
+            const err = validateField(field, value);
+            setErrors((prev) => ({
+                ...prev,
+                [name]: err,
+            }));
+        }
     };
 
     const handleSubmit = () => {
+        const newErrors = {};
+        let isValid = true;
+
+        fields.forEach((field) => {
+            const err = validateField(field, form[field.name]);
+            if (err) {
+                newErrors[field.name] = err;
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            setErrors(newErrors);
+            return;
+        }
+
         if (submitType === "json") {
             onSubmit?.(form);
             return;
@@ -86,6 +134,7 @@ const FormBuilder = ({
                         key={field.name}
                         {...field}
                         value={form[field.name]}
+                        error={errors[field.name]}
                         onChange={(value) => handleChange(field.name, value)}
                     />
                 ))}

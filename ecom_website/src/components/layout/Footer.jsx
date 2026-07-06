@@ -6,6 +6,7 @@ import Icon from '../common/Icon'
 import footerData from '../../data/footer.json'
 import logoImg from '../../assets/sobo_logo.png'
 import productsData from '../../data/products.json'
+import NewsletterForm from '../forms/NewsletterForm'
 
 const Footer = () => {
   const navigate = useNavigate()
@@ -28,7 +29,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer ref={footerRef} className="bg-dark w-full py-50" style={{ backgroundColor: '#0f1623' }}>
+    <footer ref={footerRef} className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
       <Container>
         <div>
           <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 items-start gap-12">
@@ -56,7 +57,7 @@ const Footer = () => {
                   }}
                 />
               </div>
-              <p className="small-text font-300 mt-8 text-white">
+              <p className="small-text font-200 mt-4 text-white">
                 {footerData.brand.description}
               </p>
               <div className="flex gap-12 mt-30">
@@ -98,8 +99,8 @@ const Footer = () => {
                 transitionDelay: "150ms"
               }}
             >
-              <h3 className="text-white mid-text mb-20 font-600">Popular Products</h3>
-              <ul className="list-none" style={{ padding: 0, margin: 0 }}>
+              <h3 className="text-white mid-text mb-12 font-600">Popular Products</h3>
+              <ul className="list-none m-1 p-1">
                 {popularProducts.map((prod) => (
                   <li key={prod.id} className="mb-12">
                     <span
@@ -124,8 +125,8 @@ const Footer = () => {
                   transitionDelay: "300ms"
                 }}
               >
-                <h3 className="text-white mid-text mb-20 font-600">{footerData.columns[1].title}</h3>
-                <ul className="list-none" style={{ padding: 0, margin: 0 }}>
+                <h3 className="text-white mid-text mb-12 font-600">{footerData.columns[1].title}</h3>
+                <ul className="list-none m-1 p-1">
                   {footerData.columns[1].links.map((link, linkIdx) => (
                     <li key={linkIdx} className="mb-12">
                       <span
@@ -150,25 +151,15 @@ const Footer = () => {
                 transitionDelay: "450ms"
               }}
             >
-              <h3 className="text-white mid-text mb-20 font-600">{footerData.newsletter.title}</h3>
+              <h3 className="text-white mid-text mb-12 font-600">{footerData.newsletter.title}</h3>
               <p className="small-text" style={{ color: "rgba(255, 255, 255, 0.6)" }}>
                 {footerData.newsletter.description}
               </p>
-              <form className="flex gap-8 mt-15" onSubmit={(e) => { e.preventDefault(); alert('Subscribed!') }}>
-                <input
-                  type="email"
-                  placeholder={footerData.newsletter.placeholder}
-                  className="newsletter-input rounded-5 px-12 py-8 text-white"
-                  style={{ flex: 1, outline: 'none' }}
-                  required
-                />
-                <button
-                  type="submit"
-                  className="newsletter-btn bg-primary text-white border-0 px-14 py-8 rounded-5 font-600 cursor-pointer"
-                >
-                  {footerData.newsletter.buttonText}
-                </button>
-              </form>
+              <NewsletterForm
+                variant="footer"
+                placeholder={footerData.newsletter.placeholder}
+                buttonText={footerData.newsletter.buttonText}
+              />
             </div>
 
           </div>

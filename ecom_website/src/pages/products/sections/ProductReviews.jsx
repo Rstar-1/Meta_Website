@@ -99,7 +99,7 @@ const ProductReviews = ({
             ].map((row, idx) => (
               <div key={idx} className="flex items-center gap-12 small-text">
 
-                <div className="rounded-5 overflow-hidden" style={{ flex: 1, height: '22px', backgroundColor: 'var(--forth)' }}>
+                <div className="rounded-5 overflow-hidden" style={{ flex: 1, height: '18px', backgroundColor: 'var(--forth)' }}>
                   <div
                     style={{
                       width: `${row.pct}%`,
@@ -111,10 +111,10 @@ const ProductReviews = ({
 
                 {/* Info labels on the right */}
                 <div className="flex items-center gap-6" style={{ width: '120px', justifyContent: 'flex-start' }}>
-                  <span className="font-700 text-dark">{row.label}</span>
-                  <span className="text-gray" style={{ fontSize: '12px' }}>
+                  <p className="font-500 text-dark mini-text">{row.label}</p>
+                  <p className="text-gray font-400 mini-text">
                     {counts[row.label.charAt(0)]} reviews
-                  </span>
+                  </p>
                 </div>
 
               </div>
@@ -142,11 +142,6 @@ const ProductReviews = ({
           {actualReviews.map((rev, index) => {
             const avatarBg = ['#E0F2FE', '#FEE2E2', '#FEF3C7', '#D1FAE5', '#EDE9FE'][index % 5];
             const avatarColor = ['#0369A1', '#B91C1C', '#B45309', '#047857', '#6D28D9'][index % 5];
-
-            // Render thumbnails for the first review using actual gallery/product images
-            const thumbnails = index === 0 && galleryImages && galleryImages.length > 0
-              ? galleryImages.slice(0, 4)
-              : [];
 
             return (
               <div key={index} className="border-ec p-20 rounded-5 bg-white">
