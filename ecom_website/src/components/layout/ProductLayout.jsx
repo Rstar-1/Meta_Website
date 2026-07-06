@@ -11,6 +11,7 @@ import ProductSchema from '../seo/ProductSchema';
 import Banner from './Banner';
 import FormBuilder from '../common/FormBuilder';
 import Fields from '../common/Fields';
+import clientData from '../../data/client.json';
 
 export const GetBestPriceForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -127,15 +128,29 @@ export const GetBestPriceForm = ({ isCart = false, cartCount = 0, onClearCart })
 const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
   const navigate = useNavigate();
 
+  // Lookup client in client.json
+  const matchedClient = clientData.find(
+    (c) => c.name?.toLowerCase() === brand?.toLowerCase() ||
+           c.id?.toLowerCase() === brand?.toLowerCase()
+  );
+
+  const nameDisplay = matchedClient?.name || brand;
+  const rating = matchedClient?.rating || 4.6;
+  const reviews = matchedClient?.reviews || 245;
+  const location = matchedClient?.location || "Delhi, India";
+  const yearsInBusiness = matchedClient?.yearsInBusiness || "8+";
+  const gstin = matchedClient?.gstin || "07AABCPMT234A1ZS";
+  const category = matchedClient?.category || "Industrial Products";
+
   return (
     <div className='border-ec p-15 rounded-5'>
       <div className='flex items-center gap-10'>
         <p className='bg-light-secondary icon-lg text-primary rounded-5 font-600 para-text'>
-          {brand.charAt(0)}
+          {nameDisplay.charAt(0)}
         </p>
         <div>
           <p className='text-dark mid-text font-600'>
-            {brand}
+            {nameDisplay}
           </p>
           <p className='text-secondary mini-text font-600 flex-items-center gap-3'>
             ✔ Verified Supplier
@@ -144,21 +159,21 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
       </div>
 
       <div className='flex items-center gap-8 mt-6'>
-        <p className='mini-text text-dark font-600'>4.6</p>
+        <p className='mini-text text-dark font-600'>{rating}</p>
         <p className='small-text text-warning'>★★★★★</p>
-        <p className='mini-text text-gray'>(245)</p>
+        <p className='mini-text text-gray'>({reviews})</p>
       </div>
 
-      <p className='text-gray mini-text mt-5'>Supplier of Printer Cartridges</p>
+      <p className='text-gray mini-text mt-5'>Supplier of {category}</p>
 
       <div className='grid-cols-1 gap-9 bordh py-6'>
-        <p className='text-gray mini-text font-500'>📍 Delhi, India</p>
-        <p className='text-gray mini-text font-500'>🕒 Years in Business: 8+</p>
-        <p className='text-gray mini-text font-500'>📋 GST No: 07AABCPMT234A1ZS</p>
+        <p className='text-gray mini-text font-500'>📍 {location}</p>
+        <p className='text-gray mini-text font-500'>🕒 Years in Business: {yearsInBusiness}</p>
+        <p className='text-gray mini-text font-500'>📋 GST No: {gstin}</p>
       </div>
 
       <Button
-        onClick={() => navigate('/brands')}
+        onClick={() => navigate(`/supplier/${brand}`)}
         version="v3"
         bg="secondary"
         className="font-600 mt-8"
@@ -166,7 +181,7 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
         View Supplier Profile
       </Button>
 
-      <p onClick={() => navigate('/products')} className='text-secondary cursor-pointer text-center mini-text mt-8'>
+      <p onClick={() => navigate(`/supplier/${brand}`)} className='text-secondary cursor-pointer text-center mini-text mt-8'>
         More Products by this Supplier
       </p>
 

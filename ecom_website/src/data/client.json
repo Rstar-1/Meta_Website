@@ -8,7 +8,15 @@
     "location": "Mumbai, India",
     "phone": "+91 22 5555 1234",
     "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=500&auto=format&fit=crop",
-    "logo": "AS"
+    "logo": "AS",
+    "legalName": "Apex Industrial Steel Private Limited",
+    "gstin": "27AABCA1234A1Z5",
+    "established": "Established 2012 (14+ Years)",
+    "yearsInBusiness": "14+",
+    "paymentTerms": "Net 30 for Corporate Accounts",
+    "moq": "Bulk MOQ of ₹10,000 INR applies",
+    "trustScore": "99% Excellent",
+    "about": "Apex Industrial Steel is a premier manufacturer and distributor of high-grade steel products, specializing in SS sheets, pipes, and heavy construction steel solutions. Operating standard B2B logistics across India."
   },
   {
     "id": "biz-2",
@@ -19,7 +27,15 @@
     "location": "Gujarat, India",
     "phone": "+91 79 5555 5678",
     "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=500&auto=format&fit=crop",
-    "logo": "PF"
+    "logo": "PF",
+    "legalName": "Polymer Flow Piping Solutions Ltd.",
+    "gstin": "24AAACP4567A2Z9",
+    "established": "Established 2015 (11+ Years)",
+    "yearsInBusiness": "11+",
+    "paymentTerms": "Net 15 / Net 30 for Wholesale Dealers",
+    "moq": "Bulk MOQ of ₹8,000 INR applies",
+    "trustScore": "97% Excellent",
+    "about": "Polymer Flow Piping is an industry leader in PVC and HDPE conduit pipe manufacturing. Serving large industrial construction contracts with certified standard products."
   },
   {
     "id": "biz-3",
@@ -30,7 +46,15 @@
     "location": "Pune, India",
     "phone": "+91 20 5555 9012",
     "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500&auto=format&fit=crop",
-    "logo": "MC"
+    "logo": "MC",
+    "legalName": "Matrix CNC Machinery Private Limited",
+    "gstin": "27AAACM7890B1Z3",
+    "established": "Established 2010 (16+ Years)",
+    "yearsInBusiness": "16+",
+    "paymentTerms": "LC / Advance Payment for Machinery Orders",
+    "moq": "Bulk MOQ of 1 Unit applies",
+    "trustScore": "98% Excellent",
+    "about": "Matrix CNC Systems specializes in engineering precision CNC machines, lathe tools, and heavy workshop equipment. Complete post-sale technical setup and warranty support are guaranteed."
   },
   {
     "id": "biz-4",
@@ -41,7 +65,15 @@
     "location": "Bangalore, India",
     "phone": "+91 80 5555 3456",
     "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=500&auto=format&fit=crop",
-    "logo": "VL"
+    "logo": "VL",
+    "legalName": "VoltLink Controls & Switchgears Ltd.",
+    "gstin": "29AAACV2345C1Z1",
+    "established": "Established 2016 (10+ Years)",
+    "yearsInBusiness": "10+",
+    "paymentTerms": "Net 30 Days from Invoice Date",
+    "moq": "Bulk MOQ of ₹7,500 INR applies",
+    "trustScore": "96% Very Good",
+    "about": "VoltLink Controls manufactures high-efficiency switchgears, industrial panels, and smart relay systems for infrastructure projects."
   },
   {
     "id": "biz-5",
@@ -52,6 +84,14 @@
     "location": "Delhi, India",
     "phone": "+91 11 5555 7890",
     "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=500&auto=format&fit=crop",
-    "logo": "EP"
+    "logo": "EP",
+    "legalName": "EcoWrap Packaging Industries Private Limited",
+    "gstin": "07AAACE9012D1Z0",
+    "established": "Established 2018 (8+ Years)",
+    "yearsInBusiness": "8+",
+    "paymentTerms": "Net 15 / Net 30 for Corporate Accounts",
+    "moq": "Bulk MOQ of ₹5,000 INR applies",
+    "trustScore": "98% Excellent",
+    "about": "EcoWrap Packaging is a certified distributor of premium quality packaging materials, offering custom bulk carton prints, eco-friendly filler, and shipping wraps."
   }
 ]

@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Container from '../common/Container'
 import Image from '../common/Image'
 import Icon from '../common/Icon'
 import footerData from '../../data/footer.json'
 import logoImg from '../../assets/sobo_logo.png'
+import productsData from '../../data/products.json'
 
 const Footer = () => {
   const navigate = useNavigate()
   const [isVisible, setIsVisible] = useState(false)
   const footerRef = useRef(null)
+  const popularProducts = productsData.filter(p => p.popular).slice(0, 4)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,11 +31,11 @@ const Footer = () => {
     <footer ref={footerRef} className="bg-dark w-full py-50" style={{ backgroundColor: '#0f1623' }}>
       <Container>
         <div>
-          <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
+          <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 items-start gap-12">
 
             {/* Column 1: Brand Info */}
             <div
-              className="flex flex-column"
+              className="grid-cols-1 pr-10 sm-pr-1"
               style={{
                 transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
                 transform: isVisible ? "translateY(0)" : "translateY(40px)",
@@ -86,42 +88,66 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Dynamic Columns 2 & 3 */}
-            {footerData.columns.map((col, idx) => (
-              <div
-                key={idx}
-                className="flex flex-column"
-                style={{
-                  transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
-                  transform: isVisible ? "translateY(0)" : "translateY(40px)",
-                  opacity: isVisible ? 1 : 0,
-                  transitionDelay: `${(idx + 1) * 150}ms`
-                }}
-              >
-                <h3 className="text-white mid-text mb-20 font-600">{col.title}</h3>
-                <ul className="list-none" style={{ padding: 0, margin: 0 }}>
-                  {col.links.map((link, linkIdx) => (
-                    <li key={linkIdx} className="mb-12">
-                      <Link
-                        to={link.path}
-                        className="footer-link cursor-pointer small-text"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-
-            {/* Column 4: Newsletter */}
+            {/* Column 2: Popular Products */}
             <div
-              className="flex flex-column"
+              className="grid-cols-1 pr-10 sm-pr-1"
               style={{
                 transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
                 transform: isVisible ? "translateY(0)" : "translateY(40px)",
                 opacity: isVisible ? 1 : 0,
-                transitionDelay: `${(footerData.columns.length + 1) * 150}ms`
+                transitionDelay: "150ms"
+              }}
+            >
+              <h3 className="text-white mid-text mb-20 font-600">Popular Products</h3>
+              <ul className="list-none" style={{ padding: 0, margin: 0 }}>
+                {popularProducts.map((prod) => (
+                  <li key={prod.id} className="mb-12">
+                    <span
+                      onClick={() => navigate(`/product-detail/${prod.id}`)}
+                      className="footer-link cursor-pointer small-text"
+                    >
+                      {prod.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Commissioning Support */}
+            {footerData.columns[1] && (
+              <div
+                className="grid-cols-1 pr-10 sm-pr-1"
+                style={{
+                  transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
+                  transform: isVisible ? "translateY(0)" : "translateY(40px)",
+                  opacity: isVisible ? 1 : 0,
+                  transitionDelay: "300ms"
+                }}
+              >
+                <h3 className="text-white mid-text mb-20 font-600">{footerData.columns[1].title}</h3>
+                <ul className="list-none" style={{ padding: 0, margin: 0 }}>
+                  {footerData.columns[1].links.map((link, linkIdx) => (
+                    <li key={linkIdx} className="mb-12">
+                      <span
+                        onClick={() => navigate(link.path)}
+                        className="footer-link cursor-pointer small-text"
+                      >
+                        {link.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Column 4: Newsletter */}
+            <div
+              className="grid-cols-1 pr-10 sm-pr-1"
+              style={{
+                transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
+                transform: isVisible ? "translateY(0)" : "translateY(40px)",
+                opacity: isVisible ? 1 : 0,
+                transitionDelay: "450ms"
               }}
             >
               <h3 className="text-white mid-text mb-20 font-600">{footerData.newsletter.title}</h3>

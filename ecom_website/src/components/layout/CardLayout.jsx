@@ -62,18 +62,18 @@ const CardLayout = ({
                         {/* Product Metadata */}
                         <div className="mt-12">
                             <h3
-                                className="text-dark mid-text font-600 line-clamp1"
+                                className="text-dark mid-text font-500 line-clamp1"
                             >
                                 {item.name}
                             </h3>
                             <p
-                                className="text-gray mini-text line-clamp2"
+                                className="text-gray mini-text line-clamp2 font-400"
                             >
                                 {item.description}
                             </p>
                             {(item.priceDisplay || item.price) && (
                                 <p
-                                    className="text-dark mini-text font-500 mt-4"
+                                    className="text-dark mini-text font-400 mt-6"
                                 >
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
@@ -244,8 +244,8 @@ const CardLayout = ({
                     }}
                     onClick={() => onCardClick && onCardClick(item)}
                 >
-                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12">
-                        <p className="text-primary small-text font-600">{paddedIndex}</p>
+                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12 flex items-center justify-center">
+                        <Icon name="MapPin" width="15" height="15" stroke="var(--primary)" strokeWidth="2.5" />
                     </div>
 
                     <div className="relative w-full">

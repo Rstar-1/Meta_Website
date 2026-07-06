@@ -204,9 +204,9 @@ const Cart = () => {
                 {cartItems.length === 0 ? (
                   <div className="text-center py-40 grid-cols-1 gap-8 bg-forth rounded-5 mt-10">
                     <Icon name="Cart" width='28' height='28' color="var(--primary)" className='mx-auto' />
-                    <h4 className="title-text font-500 capitalize text-dark">Your cart is empty</h4>
+                    <h4 className="mid-text font-500 capitalize text-dark mt-8">Your cart is empty</h4>
                     <p className="small-text font-400 text-gray">Browse our product catalog to add products and get quotes.</p>
-                    <div className='mt-3'>
+                    <div className='mt-12'>
                       <Button
                         text="Browse Products"
                         onClick={() => navigate('/products')}
