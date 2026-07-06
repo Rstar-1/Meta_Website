@@ -9,6 +9,8 @@ import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
 import Fields from '../../components/common/Fields';
 import Icon from '../../components/common/Icon';
 import Banner from '../../components/layout/Banner';
+import Modal from '../../components/common/Modal';
+import Button from '../../components/common/Button';
 
 // Import local product images for reliable rendering
 import printerHp88a from '../../assets/printer_hp_88a.png';
@@ -27,6 +29,7 @@ import ssFlanges from '../../assets/ss_flanges.png';
 import ssAngleBars from '../../assets/ss_angle_bars.png';
 import ssWireMesh from '../../assets/ss_wire_mesh.png';
 import ssFasteners from '../../assets/ss_fasteners.png';
+import pvcConduitPipe from '../../assets/pvc_conduit_pipe.png';
 
 const imageMap = {
   'printer-1': printerHp88a,
@@ -49,6 +52,7 @@ const imageMap = {
   'steel-8': ssAngleBars,
   'steel-9': ssWireMesh,
   'steel-10': ssFasteners,
+  'prod-7': pvcConduitPipe,
 };
 
 const Products = () => {
@@ -85,15 +89,34 @@ const Products = () => {
     return queryParams.get('search') || '';
   };
 
-  const getInitialCity = () => {
-    if (location.state?.city) return location.state.city;
+  const getInitialCities = () => {
+    if (location.state?.city) return [location.state.city];
     const queryParams = new URLSearchParams(location.search);
-    return queryParams.get('city') || '';
+    const city = queryParams.get('city');
+    return city ? [city] : [];
   };
+
+  const maxProductPrice = React.useMemo(() => {
+    const highest = Math.max(...products.map(p => p.price || 0));
+    return (highest || 250000) + 20;
+  }, []);
 
   const [selectedCats, setSelectedCats] = useState(getInitialCategories());
   const [search, setSearch] = useState(getInitialSearch());
-  const [selectedCity, setSelectedCity] = useState(getInitialCity());
+  const [selectedCities, setSelectedCities] = useState(getInitialCities());
+  const [priceRange, setPriceRange] = useState(maxProductPrice);
+  const [showAllCategories, setShowAllCategories] = useState(false);
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const [modalSize, setModalSize] = useState("sm");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setModalSize(window.innerWidth < 768 ? "full" : "sm");
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     // 1. Resolve Category
@@ -129,10 +152,12 @@ const Products = () => {
 
     // 3. Resolve City
     if (location.state?.hasOwnProperty('city')) {
-      setSelectedCity(location.state.city || '');
+      const city = location.state.city;
+      setSelectedCities(city ? [city] : []);
     } else {
       const queryParams = new URLSearchParams(location.search);
-      setSelectedCity(queryParams.get('city') || '');
+      const city = queryParams.get('city');
+      setSelectedCities(city ? [city] : []);
     }
   }, [location.state, location.search]);
 
@@ -142,8 +167,11 @@ const Products = () => {
       p.name.toLowerCase().includes(search.toLowerCase()) ||
       p.description.toLowerCase().includes(search.toLowerCase()) ||
       (p.tags && p.tags.some(t => t.toLowerCase().includes(search.toLowerCase())));
-    const matchesCity = !selectedCity || selectedCity === 'All' || p.city === selectedCity;
-    return matchesCat && matchesSearch && matchesCity;
+    const matchesCity = selectedCities.length === 0 || selectedCities.includes(p.city);
+
+    const matchesPrice = (p.price || 0) <= priceRange;
+
+    return matchesCat && matchesSearch && matchesCity && matchesPrice;
   }).map((p) => ({
     ...p,
     supplier: p.client || (p.type === 'printer' ? 'biz-4' : 'biz-1')
@@ -154,7 +182,7 @@ const Products = () => {
   };
 
   const getPageHeader = () => {
-    const cityPrefix = selectedCity ? `In ${selectedCity}: ` : '';
+    const cityPrefix = selectedCities.length > 0 ? `In ${selectedCities.join(', ')}: ` : '';
     if (selectedCats.length === 1) {
       const catId = selectedCats[0];
       const catName = categories.find(c => c.id === catId)?.name || 'Products';
@@ -183,6 +211,77 @@ const Products = () => {
     value: c.id
   }));
 
+  const renderFilters = () => {
+    return (
+      <div className="bg-white border-ec p-12 rounded-10">
+        <div className="flex items-center justify-between">
+          <h3 className="headmini-text text-dark font-600">
+            Filter By
+          </h3>
+          {(selectedCats.length > 0 || selectedCities.length > 0 || priceRange < maxProductPrice) && (
+            <p
+              onClick={() => {
+                setSelectedCats([]);
+                setSelectedCities([]);
+                setPriceRange(maxProductPrice);
+                setShowAllCategories(false);
+              }}
+              className="mini-text text-danger font-500 cursor-pointer"
+            >
+              Reset
+            </p>
+          )}
+        </div>
+        <div className='mt-10 border-ec p-10 rounded-5'>
+          <h4 className="headmini-text text-dark font-500 pb-6 mb-6 bordb">Price Range</h4>
+          <Fields
+            type="slider"
+            min={0}
+            max={maxProductPrice}
+            step={maxProductPrice / 100}
+            value={priceRange}
+            onChange={(newVal) => setPriceRange(newVal)}
+          />
+        </div>
+        <div className='mt-10 border-ec p-10 rounded-5'>
+          <h4 className="headmini-text text-dark font-500 pb-6 mb-6 bordb">Category</h4>
+          <Fields
+            type="checkbox"
+            options={showAllCategories ? categoryOptions : categoryOptions.slice(0, 5)}
+            value={selectedCats}
+            onChange={(newSelected) => setSelectedCats(newSelected)}
+            position="y"
+          />
+          {categoryOptions.length > 5 && (
+            <p
+              onClick={() => setShowAllCategories(!showAllCategories)}
+              className="mini-text text-primary font-600 mt-8 cursor-pointer hover-text-secondary"
+              style={{ userSelect: 'none' }}
+            >
+              {showAllCategories ? "Show Less" : `+${categoryOptions.length - 5} More`}
+            </p>
+          )}
+        </div>
+        <div className='mt-10 border-ec p-10 rounded-5'>
+          <h4 className="headmini-text text-dark font-500 pb-6 mb-6 bordb">Location</h4>
+          <Fields
+            type="checkbox"
+            options={[
+              { label: 'Delhi', value: 'Delhi' },
+              { label: 'Mumbai', value: 'Mumbai' },
+              { label: 'Bangalore', value: 'Bangalore' },
+              { label: 'Chennai', value: 'Chennai' },
+              { label: 'Hyderabad', value: 'Hyderabad' },
+            ]}
+            value={selectedCities}
+            onChange={(newSelected) => setSelectedCities(newSelected)}
+            position="y"
+          />
+        </div>
+      </div>
+    );
+  };
+
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
 
   return (
@@ -210,76 +309,65 @@ const Products = () => {
           { name: 'Products', url: siteUrl + '/products' }
         ]} />
 
-        <div className="w-full py-30 flex gap-12">
+        <style>{`
+          .sidebar-filters {
+            position: sticky !important;
+            top: 20px !important;
+            align-self: start !important;
+            z-index: 100;
+          }
+          .mobile-filter-trigger {
+            display: none !important;
+          }
+          @media (max-width: 912px) {
+            .sidebar-filters {
+              display: none !important;
+            }
+            .mobile-filter-trigger {
+              display: block !important;
+            }
+          }
+        `}</style>
+
+        <div className="w-full py-30 flex md-flex-column sm-flex-column gap-12">
           {/* Left Sidebar Filter */}
-          <div className="sm-w-full w-20">
-            <div className="bg-white border-ec p-18 rounded-5">
-              <div className="flex items-center justify-between pb-10 bordb">
-                <h3 className="mid-text text-dark font-500">
-                  Filter By
-                </h3>
-                {(selectedCats.length > 0 || selectedCity) && (
-                  <p
-                    onClick={() => {
-                      setSelectedCats([]);
-                      setSelectedCity('');
-                    }}
-                    className="mini-text text-danger font-500 cursor-pointer"
-                  >
-                    Reset
-                  </p>
-                )}
-              </div>
-              <div className='mt-10'>
-                <p className="small-text text-dark font-500 mb-6">Category</p>
-                <Fields
-                  type="checkbox"
-                  options={categoryOptions}
-                  value={selectedCats}
-                  onChange={(newSelected) => setSelectedCats(newSelected)}
-                  position="y"
-                />
-              </div>
-              <div className='mt-20 pt-10' style={{ borderTop: '1px solid #ececec' }}>
-                <p className="small-text text-dark font-500 mb-6">Location (City)</p>
-                <select
-                  value={selectedCity}
-                  onChange={(e) => setSelectedCity(e.target.value)}
-                  className="w-full h-select bg-forth border-0 rounded-5 px-8 mini-text text-gray"
-                >
-                  <option value="">All Cities</option>
-                  <option value="Delhi">Delhi</option>
-                  <option value="Mumbai">Mumbai</option>
-                  <option value="Bangalore">Bangalore</option>
-                  <option value="Chennai">Chennai</option>
-                  <option value="Hyderabad">Hyderabad</option>
-                </select>
-              </div>
-            </div>
+          <div className="w-20 md-w-full sm-w-full sidebar-filters">
+            {renderFilters()}
           </div>
 
-          {/* Right Main Content */}
-          <div className="w-80">
-            {/* Header Info */}
+          <div className="w-80 md-w-full sm-w-full">
             <div className="mb-15">
-              <h1 className="head-text text-dark font-600 pb-8">{headerInfo.title}</h1>
+              <h2 className="title-text text-dark font-600 pb-4">{headerInfo.title}</h2>
               <p className="small-text text-gray font-400">{headerInfo.desc}</p>
             </div>
 
-            <div className="relative w-40 mb-12">
-              <Fields
-                type="text"
-                placeholder="Search products by name or description..."
-                value={search}
-                onChange={(val) => setSearch(val)}
-                outline={true}
-              />
-              <Icon
-                name="Search"
-                width="18"
-                height="18"
-                className="absolute top-0 right-0 m-11 text-gray"
-                strokeWidth="2"
+            <div className="flex sm-flex-column gap-12 items-center mb-12 w-40 md-w-full sm-w-full">
+              <div className="relative flex-grow w-full">
+                <Fields
+                  type="text"
+                  placeholder="Search products by name or description..."
+                  value={search}
+                  onChange={(val) => setSearch(val)}
+                  outline={true}
+                />
+                <Icon
+                  name="Search"
+                  width="18"
+                  height="18"
+                  className="absolute top-0 right-0 m-11 text-gray"
+                  strokeWidth="2"
+                />
+              </div>
+            </div>
+            <div className="hidden sm-flex justify-end mb-10">
+              <Button
+                text="Filters"
+                bg="primary"
+                onClick={() => setIsFilterModalOpen(true)}
+                icon="Filter"
+                iconWidth="13"
+                iconHeight="13"
+                version="v2"
               />
             </div>
 
@@ -288,7 +376,7 @@ const Products = () => {
               items={filteredProducts}
               cardType="product"
               imageMap={imageMap}
-              imageHeight="h-250"
+              imageHeight="h-200 sm-h-250"
               cols="4"
               mdCols="2"
               smCols="1"
@@ -305,6 +393,26 @@ const Products = () => {
           </div>
         </div>
       </Container>
+
+      <Modal
+        isOpen={isFilterModalOpen}
+        onClose={() => setIsFilterModalOpen(false)}
+        title="Filter Options"
+        size={modalSize}
+        type="sidebar"
+        placement="left"
+        footer={
+          <Button
+            text="Apply Filters"
+            bg="primary"
+            onClick={() => setIsFilterModalOpen(false)}
+            version='v2'
+            className="w-full"
+          />
+        }
+      >
+        {renderFilters()}
+      </Modal>
     </>
   );
 };

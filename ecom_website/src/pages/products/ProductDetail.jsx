@@ -23,7 +23,6 @@ import ssFasteners from '../../assets/ss_fasteners.png';
 
 // Import section components
 import { ProductReviews } from './sections';
-import PopularProducts from '../home/sections/PopularProducts';
 
 const assetMap = {
   '/src/assets/printer_hp_88a.png': printerHp88a,
@@ -84,12 +83,12 @@ const ProductDetail = () => {
   const galleryImages = foundProduct && foundProduct.images
     ? foundProduct.images.map(resolveImage)
     : [
-        printerHp88a,
-        printerCanon74s,
-        printerCanon746,
-        printerEpson003,
-        printerBrotherTn2321
-      ];
+      printerHp88a,
+      printerCanon74s,
+      printerCanon746,
+      printerEpson003,
+      printerBrotherTn2321
+    ];
 
   const keywords = foundProduct && foundProduct.tags
     ? foundProduct.tags
@@ -103,7 +102,6 @@ const ProductDetail = () => {
         foundProduct={foundProduct}
         seoKeywords={keywords}
       />
-      <PopularProducts />
       <ProductReviews
         rating={foundProduct?.rating}
         reviewCount={foundProduct?.reviewCount}

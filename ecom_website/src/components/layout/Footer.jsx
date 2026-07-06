@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import Container from '../common/Container'
 import Image from '../common/Image'
+import Icon from '../common/Icon'
 import footerData from '../../data/footer.json'
 import logoImg from '../../assets/sobo_logo.png'
 
@@ -62,9 +63,24 @@ const Footer = () => {
                     key={idx}
                     href={social.url}
                     className="social-link center-div rounded-full"
-                    style={{ width: '36px', height: '36px', backgroundColor: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)' }}
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                      color: '#ffffff',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--primary)';
+                      e.currentTarget.style.transform = 'scale(1.1)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
                   >
-                    {social.icon}
+                    <Icon name={social.iconName} width="16" height="16" stroke="currentColor" strokeWidth="2.5" />
                   </a>
                 ))}
               </div>

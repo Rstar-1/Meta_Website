@@ -30,6 +30,8 @@ const CardLayout = ({
     className = '',
     children,
     isSlider = false,
+    sliderBreakpoints,
+    sliderSlidesPerView = 1.2,
     ...props
 }) => {
     const navigate = useNavigate();
@@ -71,7 +73,7 @@ const CardLayout = ({
                             </p>
                             {(item.priceDisplay || item.price) && (
                                 <p
-                                    className="text-dark small-text font-500 mt-4"
+                                    className="text-dark mini-text font-500 mt-4"
                                 >
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
@@ -390,13 +392,13 @@ const CardLayout = ({
                     <Swiper
                         modules={[Navigation, Autoplay]}
                         spaceBetween={12}
-                        slidesPerView={1.2}
+                        slidesPerView={sliderSlidesPerView}
                         navigation={{
                             prevEl: `.prev-${sliderId}`,
                             nextEl: `.next-${sliderId}`,
                         }}
                         autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-                        breakpoints={{
+                        breakpoints={sliderBreakpoints || {
                             640: {
                                 slidesPerView: 1.2,
                             },

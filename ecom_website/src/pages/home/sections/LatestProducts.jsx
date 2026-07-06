@@ -1,15 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import products from '../../../data/products.json';
+import categories from '../../../data/category.json';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const LatestProducts = () => {
   const navigate = useNavigate();
-
-  // Filter products by type and popularity
-  const printerProducts = products.filter(p => p.type === 'printer' && p.popular);
-  const steelProducts = products.filter(p => p.type === 'steel' && p.popular);
 
   const handleProductClick = (item) => {
     if (item && item.id) {
@@ -17,53 +14,57 @@ const LatestProducts = () => {
     }
   };
 
+  const targetCategoryIds = ['cat-7', 'cat-2', 'cat-1', 'cat-10', 'cat-5'];
+
   return (
     <>
-      <Container className="bg-white">
-        <div className="w-full pt-30 pb-15">
-          <div className="flex justify-between items-center mb-10">
-            <h2 className="title-text text-dark font-600">Popular Printer Cartridges</h2>
-            <p
-              className="text-primary font-500 cursor-pointer small-text"
-              onClick={() => navigate('/products?category=cat-7')}
-            >
-              View All Products &gt;
-            </p>
-          </div>
+      {targetCategoryIds.map((catId) => {
+        const category = categories.find(c => c.id === catId);
+        if (!category) return null;
 
-          <CardLayout
-            items={printerProducts}
-            cardType="product"
-            imageHeight="h-250 sm-h-150"
-            isSlider={true}
-            onCardClick={handleProductClick}
-            onButtonClick={handleProductClick}
-          />
-        </div>
-      </Container>
+        // Filter products belonging to this category
+        const categoryProducts = products.filter(p => p.category === category.id);
 
-      <Container className="bg-white">
-        <div className="w-full pt-15 pb-30">
-          <div className="flex justify-between items-center mb-10">
-            <h2 className="title-text text-dark font-600">Popular Stainless Steel Products</h2>
-            <p
-              className="text-primary font-500 cursor-pointer small-text"
-              onClick={() => navigate('/products?category=cat-1')}
-            >
-              View All Products &gt;
-            </p>
-          </div>
+        // Only render the category section if it has products
+        if (categoryProducts.length === 0) return null;
 
-          <CardLayout
-            items={steelProducts}
-            cardType="product"
-            imageHeight="h-250 sm-h-150"
-            isSlider={true}
-            onCardClick={handleProductClick}
-            onButtonClick={handleProductClick}
-          />
-        </div>
-      </Container>
+        return (
+          <Container key={category.id} className="bg-white">
+            <div className="w-full pt-30 pb-15">
+              <div className="flex justify-between items-center mb-10">
+                <h2 className="title-text text-dark font-600">{category.name}</h2>
+                <p
+                  className="text-primary font-500 cursor-pointer small-text"
+                  onClick={() => navigate(`/products?category=${category.id}`)}
+                >
+                  View All ➔
+                </p>
+              </div>
+
+              <CardLayout
+                items={categoryProducts}
+                cardType="product"
+                imageHeight="h-250"
+                isSlider={true}
+                sliderSlidesPerView={1.2}
+                sliderBreakpoints={{
+                  640: {
+                    slidesPerView: 2.2,
+                  },
+                  768: {
+                    slidesPerView: 3.7,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                  }
+                }}
+                onCardClick={handleProductClick}
+                onButtonClick={handleProductClick}
+              />
+            </div>
+          </Container>
+        );
+      })}
     </>
   );
 };

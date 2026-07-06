@@ -142,6 +142,7 @@ const Cart = () => {
       )
     }
   ];
+  const totalPrice = cartItems.reduce((acc, item) => acc + (Number(item.price) || 0) * (item.quantity || 1), 0);
 
   return (
     <>
@@ -162,11 +163,29 @@ const Cart = () => {
       />
 
       <Container className="bg-white">
+        <style>{`
+          .cart-mobile-cards {
+            display: none;
+          }
+          .cart-desktop-table {
+            display: block;
+          }
+          @media (max-width: 768px) {
+            .cart-mobile-cards {
+              display: flex;
+              flex-direction: column;
+            }
+            .cart-desktop-table {
+              display: none;
+            }
+          }
+        `}</style>
+
         <div className="py-30 w-full">
 
-          <div className="flex gap-12 items-start w-full">
+          <div className="flex sm-grid-cols-1 gap-12 items-start w-full">
             {/* Left Column - Selected Items */}
-            <div id="cart-items-section" className="w-75 md-w-full pr-12 sm-pr-1 grid-cols-1 gap-12">
+            <div id="cart-items-section" className="w-75 md-w-full sm-w-full pr-12 sm-pr-1 grid-cols-1 gap-12">
               <div>
                 <div className="flex justify-between items-center">
                   <h3 className="mid-text text-dark font-600">Selected Items ({cartItems.length})</h3>
@@ -198,17 +217,70 @@ const Cart = () => {
                   </div>
                 ) : (
                   <div>
-                    <Table
-                      data={cartItems}
-                      columns={columns}
-                      showControls={false}
-                      minWidth="100%"
-                    />
+                    <div className="cart-desktop-table">
+                      <Table
+                        data={cartItems}
+                        columns={columns}
+                        showControls={false}
+                        minWidth="100%"
+                      />
+                    </div>
+
+                    <div className="cart-mobile-cards gap-12 mt-10">
+                      {cartItems.map((item) => {
+                        const catName = getCategoryName(item.category);
+                        const colorClass = getCategoryColor(catName);
+                        return (
+                          <div key={item.id} className="bg-white border-ec p-10 rounded-5 flex gap-12 items-start relative">
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="object-cover rounded-5 flex"
+                              style={{ width: "80px", height: "80px", flexShrink: 0 }}
+                            />
+                            <div className="flex-grow pr-30">
+                              <h4 className="small-text font-600 text-dark line-clamp-1 w-85" style={{ margin: 0 }}>
+                                {item.name}
+                              </h4>
+                              <div className="flex items-center gap-6 mt-6">
+                                <span className={`mini-text capitalize px-8 py-2 rounded-20 font-500 inline-flex ${colorClass}`}>
+                                  {catName}
+                                </span>
+                              </div>
+                              <div className="flex gap-12 items-center mt-10">
+                                <div>
+                                  <p className="small-text font-700 text-dark m-0">₹{item.price}</p>
+                                  <p className="mini-text text-gray m-0" style={{ fontSize: "1rem" }}>On Request</p>
+                                </div>
+                                <div>
+                                  <Fields
+                                    type="quantity"
+                                    value={item.quantity || 1}
+                                    onChange={(newVal) => updateCartQuantity(item.id, newVal)}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="absolute top-0 right-0 m-8">
+                              <Button
+                                variant="outline"
+                                bg="danger"
+                                onClick={() => removeFromCart(item.id)}
+                                title="Remove Item"
+                                version='v2'
+                              >
+                                <Icon name="Trash" width="16" height="16" stroke="#c21b1b" />
+                              </Button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
 
                     {/* Summary row */}
                     <div className="flex justify-between items-center p-15">
-                      <span className="small-text text-dark font-600">Total Items ({cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)})</span>
-                      <span className="small-text font-600">Total Price: <span className="text-primary font-700">On Request</span></span>
+                      <p className="small-text text-dark font-500">Total Items ({cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)})</p>
+                      <p className="small-text font-500">Total Price: <span className="text-primary font-700">₹{totalPrice.toLocaleString('en-IN')}</span></p>
                     </div>
                   </div>
                 )}
@@ -223,7 +295,7 @@ const Cart = () => {
             </div>
 
             {/* Right Column - Submit Enquiry Form */}
-            <div className="w-25 md-w-full pl-12 sm-pl-1">
+            <div className="w-25 md-w-full sm-w-full pl-12 sm-pl-1">
               <GetBestPriceForm
                 isCart={true}
                 cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}

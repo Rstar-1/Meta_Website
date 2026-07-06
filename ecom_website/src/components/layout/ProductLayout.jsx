@@ -310,10 +310,10 @@ const ProductLayout = ({
 
       <Container>
         <div className="py-50">
-          <div className='flex items-start gap-12'>
-            <div className='w-75 pr-15 sm-pr-1'>
+          <div className='flex sm-grid-cols-1 items-start gap-12'>
+            <div className='w-75 sm-w-full pr-15 sm-pr-1'>
               {/* Product Overview Section */}
-              <div className='grid-cols-2 gap-12'>
+              <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
                 <div className='pr-10 sm-pr-1'>
                   <div className='relative'>
                     <Image
@@ -447,7 +447,7 @@ const ProductLayout = ({
 
                 {/* Tab Content */}
                 {activeTab === 'description' && (
-                  <div className='grid-cols-2 gap-12 items-start'>
+                  <div className='grid-cols-2 sm-grid-cols-1 gap-12 items-start'>
                     <div className='bg-tertiary p-16 rounded-5'>
                       <h4 className='mid-text font-600 text-dark mb-12'>Specifications Overview</h4>
                       <div className='flex flex-column gap-8'>
@@ -511,7 +511,7 @@ const ProductLayout = ({
               </div>
             </div>
 
-            <div className='w-25 grid-cols-1 gap-12 pl-15 sm-pl-1'>
+            <div className='w-25 sm-w-full grid-cols-1 gap-12 pl-15 sm-pl-1'>
               <GetBestPriceForm />
               <SupplierCard brand={productData.brand} />
               <TrustAssurance />

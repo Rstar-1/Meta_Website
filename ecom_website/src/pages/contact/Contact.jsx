@@ -1,10 +1,11 @@
 import React from 'react'
 import ContactForm from '../../components/forms/ContactForm'
 import Banner from '../../components/layout/Banner'
-import BlogLayout from '../../components/layout/BlogLayout'
-import blogsData from '../../data/blogs.json'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema'
+import LatestArticles from '../home/sections/LatestArticles'
+import BusinessPromo from '../home/sections/BusinessPromo'
+import Review from '../home/sections/Review'
 
 const Contact = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
@@ -18,20 +19,26 @@ const Contact = () => {
         path="/connect"
         type="contact"
       />
-      <LocalBusinessSchema bizData={{ 
-        name: 'SOBO Marketing Solution', 
-        url: siteUrl, 
-        image: siteUrl + '/src/assets/sobo_logo.png', 
-        phone: '+91-XXXXXXXXXX', 
-        address: { street: 'Industrial Area', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' } 
+      <LocalBusinessSchema bizData={{
+        name: 'SOBO Marketing Solution',
+        url: siteUrl,
+        image: siteUrl + '/src/assets/sobo_logo.png',
+        phone: '+91-XXXXXXXXXX',
+        address: { street: 'Industrial Area', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' }
       }} />
       <Banner
         title="Connect With Us"
         img="https://html.ditsolution.net/industry/indastre1/assets/images/slider/banner.jpg"
         desc="Solutions Industrial Market Values for Funding"
+        breadcrumbs={[
+          { label: "Home", path: "/home" },
+          { label: "Connect" },
+        ]}
       />
       <ContactForm />
-      <BlogLayout type="list" blogsData={blogsData} />
+      <LatestArticles />
+      <BusinessPromo />
+      <Review />
     </>
   )
 }

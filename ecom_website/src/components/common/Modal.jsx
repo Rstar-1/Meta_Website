@@ -65,9 +65,9 @@ const Modal = ({
         : {};
 
     const cardClass = isSidebar
-        ? `bg-tertiary relative z-999 b-shadow border-ec p-0 overflow-auto ${placement === "right" ? "animate-sidebar-right" : "animate-sidebar-left"
+        ? `bg-white relative z-999 b-shadow border-ec p-0 overflow-auto ${placement === "right" ? "animate-sidebar-right" : "animate-sidebar-left"
         }`
-        : "bg-tertiary relative z-999 rounded-10 b-shadow border-ec p-0 overflow-auto animate-modal-scale";
+        : "bg-white relative z-999 rounded-10 b-shadow border-ec p-0 overflow-auto animate-modal-scale";
 
 
     return (

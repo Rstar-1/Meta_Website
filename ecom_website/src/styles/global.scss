@@ -30,7 +30,7 @@
 }
 
 .footer-link:hover {
-  color: var(--primary) !important;
+  color: var(--white) !important;
 }
 
 .social-link {
@@ -38,9 +38,6 @@
 }
 
 .social-link:hover {
-  background: var(--primary) !important;
-  color: var(--white) !important;
-  border-color: var(--primary) !important;
   transform: translateY(-2px) !important;
 }
 

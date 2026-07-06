@@ -55,8 +55,8 @@ const ProductsMenu = ({ onItemClick }) => (
       <p className="small-text text-gray font-400 mt-6">
         {headerData.productsMenu.bannerDesc}
       </p>
-      <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link" onClick={() => onItemClick()}>
-        {headerData.productsMenu.bannerLinkText} →
+      <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link flex items-center gap-4" onClick={() => onItemClick()}>
+        {headerData.productsMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
       </p>
     </div>
     {[...new Set(productsData.filter((p) => p.type !== "general").map((p) => p.category))].map((cat, idx) => {
@@ -64,10 +64,10 @@ const ProductsMenu = ({ onItemClick }) => (
       if (items.length === 0) return null;
       return (
         <div key={idx} className="p-18">
-          <p className="text-gray uppercase small-text font-500">
+          <p className="text-gray uppercase mini-text font-500">
             {categoriesData.find((c) => c.id === cat)?.name || cat}
           </p>
-          <div className="grid grid-cols-1 gap-8 mt-12">
+          <div className="grid grid-cols-1 gap-8 mt-8">
             {items.map((product) => (
               <div
                 key={product.id}
@@ -77,7 +77,9 @@ const ProductsMenu = ({ onItemClick }) => (
                 <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>
                   {product.name}
                 </p>
-                <span className="arrow-icon">➔</span>
+                <span className="arrow-icon">
+                  <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
+                </span>
               </div>
             ))}
           </div>
@@ -135,8 +137,8 @@ const IndustryMenu = ({ onItemClick }) => {
         <p className="small-text text-gray font-400 mt-6">
           {headerData.industryMenu.bannerDesc}
         </p>
-        <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link" onClick={() => onItemClick()}>
-          {headerData.industryMenu.bannerLinkText} →
+        <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link flex items-center gap-4" onClick={() => onItemClick()}>
+          {headerData.industryMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
         </p>
       </div>
       <div className="p-18">
@@ -149,7 +151,9 @@ const IndustryMenu = ({ onItemClick }) => {
               onClick={() => onItemClick(null, cat)}
             >
               <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>{cat}</p>
-              <span className="arrow-icon">➔</span>
+              <span className="arrow-icon">
+                <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
+              </span>
             </div>
           ))}
         </div>
@@ -173,6 +177,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
@@ -251,7 +256,7 @@ const Header = () => {
                       }}
                     >
                       <div
-                        className={`${item?.cols} items-start`}
+                        className={`grid ${item?.cols} items-start`}
                         style={{ width: item?.width, maxWidth: "100%" }}
                       >
                         <MegaMenuContent
@@ -267,7 +272,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-12">
+          <div className="flex items-center gap-12 sm-gap-1">
             {/* Cart Link with Badge */}
             <NavLink
               to="/cart"
@@ -303,53 +308,90 @@ const Header = () => {
             </div>
 
             {/* Hamburger Menu Toggle Button for Mobile/Tablet Devices */}
-            <button
-              className="hidden md-block sm-block cursor-pointer bg-transparent border-0 text-dark p-10 hover:text-warning"
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              style={{ fontSize: "1.6rem", border: "none" }}
-              onMouseEnter={(e) => e.currentTarget.style.color = "var(--primary)"}
-              onMouseLeave={(e) => e.currentTarget.style.color = "var(--dark)"}
-            >
-              {isMobileOpen ? "✕" : "☰"}
-            </button>
+            <Button
+              className="hidden md-block sm-block cursor-pointer"
+              onClick={() => {
+                setIsMobileOpen(!isMobileOpen);
+                setOpenMobileMenu(null);
+              }}
+              style={{ border: "none", color: "var(--dark)" }}
+              icon={isMobileOpen ? "Close" : "Menu"}
+              iconWidth="24"
+              iconHeight="24"
+              iconStrokeWidth="2"
+              bg="forth"
+            />
           </div>
         </div>
       </Container>
 
       {isMobileOpen && (
         <div
-          className="mobile-drawer bg-white border-bottom py-20 px-30"
-          style={{ borderBottom: "1px solid var(--tertiary)" }}
+          className="mobile-drawer bg-forth px-24 py-20"
         >
-          <div className="flex flex-column gap-15">
-            {headerData.navLinks.map((item, i) => (
-              <NavLink
-                key={i}
-                to={item.href || "/products"}
-                onClick={() => setIsMobileOpen(false)}
-                className="small-text font-600 text-dark hover:text-warning decoration-none py-6 block"
-                style={{ textDecoration: "none" }}
-              >
-                {item.label}
-              </NavLink>
-            ))}
-            <NavLink
-              to="/cart"
-              onClick={() => setIsMobileOpen(false)}
-              className="small-text font-600 text-dark hover:text-warning decoration-none py-6 block"
-              style={{ textDecoration: "none" }}
-            >
-              Cart ({cartCount})
-            </NavLink>
+          <div className="grid-cols-1">
+            {headerData.navLinks.map((item, i) => {
+              const isExpanded = openMobileMenu === item.label;
+              const hasMega = item.hasMegaMenu;
+              return (
+                <div key={i} className="bordb py-12">
+                  {hasMega ? (
+                    <>
+                      <div
+                        className="flex items-center justify-between cursor-pointer"
+                        onClick={() => setOpenMobileMenu(isExpanded ? null : item.label)}
+                      >
+                        <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
+                          {item.label}
+                        </p>
+                        <span
+                          className="text-dark flex items-center justify-center"
+                          style={{
+                            transition: "transform 0.2s ease",
+                            transform: isExpanded ? "rotate(90deg)" : "none",
+                            display: "inline-block"
+                          }}
+                        >
+                          <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />
+                        </span>
+                      </div>
+                      {isExpanded && (
+                        <div className="mt-12 bg-white rounded-5 border-ec grid grid-cols-1 gap-16 overflow-hidden">
+                          <MegaMenuContent
+                            label={item.label}
+                            onItemClick={(productId, categoryName) => {
+                              setIsMobileOpen(false);
+                              setOpenMobileMenu(null);
+                              handleItemClick(productId, categoryName);
+                            }}
+                            navigate={navigate}
+                          />
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <NavLink
+                      to={item.href || "/products"}
+                      onClick={() => setIsMobileOpen(false)}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
+                        {item.label}
+                      </p>
+                    </NavLink>
+                  )}
+                </div>
+              );
+            })}
             <Button
               text="Talk to Engineer"
-              version="v2"
-              bg="warning"
+              version="v3"
+              bg="primary"
               onClick={() => {
                 setIsMobileOpen(false);
                 navigate("/connect");
               }}
-              style={{ width: "100%", marginTop: "10px" }}
+              className="mt-3"
             />
           </div>
         </div>

@@ -603,7 +603,7 @@ const Fields = ({
                             return (
                                 <label
                                     key={optVal}
-                                    className="flex items-center gap-8 cursor-pointer small-text text-gray"
+                                    className="flex items-center gap-8 cursor-pointer mini-text text-gray"
                                     style={{ userSelect: "none" }}
                                 >
                                     <input
@@ -1190,6 +1190,95 @@ const Fields = ({
                                 />
                             );
                         })}
+                    </div>
+                );
+            }
+
+            case "slider":
+            case "range": {
+                const min = props.min !== undefined ? props.min : 0;
+                const max = props.max !== undefined ? props.max : 100000;
+                const step = props.step !== undefined ? props.step : 100;
+                const val = typeof value === "number" ? value : Number(value) || max;
+                const percentage = ((val - min) / (max - min)) * 100;
+                const trackBg = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${percentage}%, #f1f5f9 ${percentage}%, #f1f5f9 100%)`;
+
+                return (
+                    <div className="py-4 w-full">
+                        <style>{`
+                            .custom-slider-input {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 100%;
+                                height: 6px;
+                                border-radius: 9999px;
+                                outline: none;
+                                transition: background 0.1s ease;
+                            }
+                            .custom-slider-input::-webkit-slider-runnable-track {
+                                width: 100%;
+                                height: 6px;
+                                cursor: pointer;
+                                border-radius: 9999px;
+                                background: transparent;
+                            }
+                            .custom-slider-input::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 50%;
+                                background: var(--primary);
+                                border: 2.5px solid #ffffff;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+                                cursor: pointer;
+                                margin-top: -5px;
+                                transition: transform 0.1s ease, background-color 0.1s ease;
+                            }
+                            .custom-slider-input::-webkit-slider-thumb:hover {
+                                transform: scale(1.2);
+                            }
+                            .custom-slider-input::-webkit-slider-thumb:active {
+                                transform: scale(0.95);
+                            }
+                            .custom-slider-input::-moz-range-track {
+                                width: 100%;
+                                height: 6px;
+                                cursor: pointer;
+                                border-radius: 9999px;
+                                background: transparent;
+                            }
+                            .custom-slider-input::-moz-range-thumb {
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 50%;
+                                background: var(--primary);
+                                border: 2.5px solid #ffffff;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+                                cursor: pointer;
+                                transition: transform 0.1s ease;
+                            }
+                            .custom-slider-input::-moz-range-thumb:hover {
+                                transform: scale(1.2);
+                            }
+                        `}</style>
+                        <div className="flex justify-between items-center mb-6">
+                            <span className="mini-text text-gray font-400">₹{min}</span>
+                            <span className="mini-text text-primary font-600">Up to ₹{val.toLocaleString()}</span>
+                            <span className="mini-text text-gray font-400">₹{max.toLocaleString()}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min={min}
+                            max={max}
+                            step={step}
+                            value={val}
+                            onChange={(e) => onChange?.(Number(e.target.value))}
+                            className="custom-slider-input"
+                            style={{
+                                background: trackBg,
+                            }}
+                        />
                     </div>
                 );
             }

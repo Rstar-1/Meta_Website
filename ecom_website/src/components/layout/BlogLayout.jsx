@@ -227,6 +227,10 @@ const BlogLayout = ({
           img="https://metatechnical.org/images/banners/blog.png"
           title="Latest Articles"
           desc="Insights, strategies, and tips to help your business grow with smart marketing."
+          breadcrumbs={[
+            { label: 'Home', path: '/home' },
+            { label: 'Blog' }
+          ]}
         />
       ) : (
         post && (
@@ -236,7 +240,7 @@ const BlogLayout = ({
             title={post.category}
             desc={post.title}
             breadcrumbs={[
-              { label: 'Home', path: '/' },
+              { label: 'Home', path: '/home' },
               { label: 'Blog', path: '/blog' },
               { label: post.title }
             ]}
@@ -244,7 +248,7 @@ const BlogLayout = ({
         )
       )}
 
-      <div className="bg-forth py-50">
+      <div className="bg-forth py-50 sm-py-36">
         <Container version="v2">
           <div className="flex gap-12 sm-grid-cols-1">
             {/* Far Left: Sticky Social Share Widget (Desktop Only, Details View Only) */}
@@ -291,7 +295,7 @@ const BlogLayout = ({
             <div className='w-75 md-w-70 sm-w-full'>
               {type === 'list' ? (
                 <>
-                  <div className="flex items-center justify-between sm-grid-cols-1 gap-12 mb-25">
+                  <div className="flex items-center justify-between sm-grid-cols-1 gap-12 mb-25 sm-mb-15">
                     <h2 className="title-text font-600 text-dark">Latest Articles</h2>
                   </div>
 
@@ -324,46 +328,47 @@ const BlogLayout = ({
                             </div>
 
                             {/* Card Content */}
-                            <div className="w-60 sm-w-full p-20 sm-p-20 flex flex-column justify-between">
-                              <div>
-                                <p
-                                  className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
-                                  onClick={() => {
-                                    setSelectedCategory(blog.category);
-                                    setActivePage(1);
-                                  }}
-                                >
-                                  {blog.category}
-                                </p>
-                                <h3
-                                  className="title-text font-600 text-dark cursor-pointer pt-5 line-clamp2"
-                                  onClick={() => navigate(`/blog-detail/${blog.id}`)}
-                                >
-                                  {blog.title}
-                                </h3>
-                                <p className="small-text text-gray font-400 line-clamp2 my-10">{blog.summary}</p>
-                              </div>
-
-                              {/* Card Footer */}
-                              <div className="flex items-center justify-between pt-8 bordh">
-                                <div className="flex items-center gap-10">
-                                  <Image
-                                    src={
-                                      blog.authorAvatar ||
-                                      'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60'
-                                    }
-                                    alt={blog.authorName}
-                                    className="rounded-full"
-                                    style={{ width: '32px', height: '32px', objectFit: 'cover' }}
-                                  />
-                                  <span className="small-text font-500 text-dark">By {blog.authorName}</span>
+                            <div className="w-60 sm-w-full">
+                              <div className='p-20 sm-p-12'>
+                                <div>
+                                  <p
+                                    className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
+                                    onClick={() => {
+                                      setSelectedCategory(blog.category);
+                                      setActivePage(1);
+                                    }}
+                                  >
+                                    {blog.category}
+                                  </p>
+                                  <h3
+                                    className="title-text font-600 text-dark cursor-pointer pt-5 line-clamp2"
+                                    onClick={() => navigate(`/blog-detail/${blog.id}`)}
+                                  >
+                                    {blog.title}
+                                  </h3>
+                                  <p className="small-text text-gray font-400 line-clamp2 sm-my-5 my-10">{blog.summary}</p>
                                 </div>
-                                <div className="flex items-center gap-8 mini-text text-gray">
-                                  <span>{itemFormattedDate}</span>
-                                  <span className="font-600" style={{ fontSize: '6px' }}>
-                                    •
-                                  </span>
-                                  <span>{blog.readTime || '5 min read'}</span>
+
+                                <div className="flex sm-grid-cols-1 sm-gap-12 items-center justify-between pt-8 bordh">
+                                  <div className="flex items-center gap-10">
+                                    <Image
+                                      src={
+                                        blog.authorAvatar ||
+                                        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60'
+                                      }
+                                      alt={blog.authorName}
+                                      className="rounded-full"
+                                      style={{ width: '32px', height: '32px', objectFit: 'cover' }}
+                                    />
+                                    <span className="small-text font-500 text-dark">By {blog.authorName}</span>
+                                  </div>
+                                  <div className="flex items-center gap-8 mini-text text-gray">
+                                    <span>{itemFormattedDate}</span>
+                                    <span className="font-600" style={{ fontSize: '6px' }}>
+                                      •
+                                    </span>
+                                    <span>{blog.readTime || '5 min read'}</span>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -394,7 +399,7 @@ const BlogLayout = ({
                     </div>
 
                     {/* Metadata: Author, Date, Read Time */}
-                    <div className="flex items-center gap-12 sm-grid-cols-1 flex-wrap mb-25 pb-15 bordb">
+                    <div className="flex items-center gap-12 mb-25 sm-mb-1 pb-15 bordb">
                       <div className="flex items-center gap-10">
                         <Image
                           src={
@@ -405,16 +410,14 @@ const BlogLayout = ({
                           className="rounded-full"
                           style={{ width: '32px', height: '32px', objectFit: 'cover' }}
                         />
-                        <span className="small-text font-600 text-dark">By {post.authorName}</span>
+                        <p className="mini-text font-600 text-dark">By {post.authorName} </p>
                       </div>
-                      <span className="text-gray opacity-50">•</span>
-                      <span className="small-text text-gray">{formattedDate}</span>
-                      <span className="text-gray opacity-50">•</span>
-                      <span className="small-text text-gray">{post.readTime || '5 min read'}</span>
+                      <p className="mini-text text-gray">• {formattedDate} •</p>
+                      <p className="mini-text text-gray"> {post.readTime || '5 min read'}</p>
                     </div>
 
                     {/* Mobile Social Share Row */}
-                    <div className="hidden sm-flex md-flex gap-10 items-center mb-25 bg-white p-12 rounded-5 border-ec">
+                    <div className="hidden sm-flex md-flex gap-10 items-center mb-25 sm-mb-14 bg-white p-12 rounded-5 border-ec">
                       <span className="small-text font-600 text-dark">Share:</span>
                       <button onClick={copyToClipboard} className="share-btn" title="Copy link">
                         <Icon name="CopyLink" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -442,7 +445,7 @@ const BlogLayout = ({
                     {/* Article Body */}
                     <div className="blog-body-text">
                       {content?.intro.map((p, idx) => (
-                        <p key={idx} className="small-text text-gray font-500">
+                        <p key={idx} className="small-text text-gray font-400">
                           {p}
                         </p>
                       ))}
@@ -450,7 +453,7 @@ const BlogLayout = ({
                       {content?.sections.map((section) => (
                         <section key={section.id} id={section.id} className="my-20">
                           <h3 className="headmini-text font-600 text-dark">{section.title}</h3>
-                          <p className="small-text text-gray font-400">{section.text}</p>
+                          <p className="small-text text-gray font-400 mt-4">{section.text}</p>
                         </section>
                       ))}
 

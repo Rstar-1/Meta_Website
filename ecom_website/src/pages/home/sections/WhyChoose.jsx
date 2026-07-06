@@ -32,7 +32,7 @@ const WhyChoose = () => {
 
   return (
     <Container>
-      <div className="w-full p-30 sm-p-15 my-20 bg-forth rounded-5">
+      <div className="w-full p-30 sm-p-20 my-20 bg-forth rounded-5">
         <h2 className="title-text text-dark font-600">Why Choose Us ?</h2>
         <p className="text-gray small-text mt-1">
           Genuine & reliable business listings
@@ -41,7 +41,7 @@ const WhyChoose = () => {
           {points.map((point) => (
             <div
               key={point.id}
-              className="flex items-center gap-12"
+              className="flex items-center gap-12 sm-mb-5"
             >
               <div className='w-20'>
                 <div

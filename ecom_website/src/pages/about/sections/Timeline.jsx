@@ -26,16 +26,57 @@ const Timeline = () => {
 
     return (
         <Container>
-            <Fade direction="none" className="py-60 w-full" threshold={0.2}>
+            <Fade direction="none" className="py-60 sm-py-40 w-full" threshold={0.2}>
                 {(isVisible) => (
                     <>
+                        <style>{`
+                          .timeline-container {
+                            position: relative;
+                          }
+                          
+                          @media (max-width: 912px) {
+                            .timeline-line {
+                              display: block !important;
+                              width: 3px !important;
+                              height: auto !important;
+                              position: absolute !important;
+                              left: 12px !important;
+                              top: 24px !important;
+                              bottom: 0px !important;
+                              transform-origin: top center !important;
+                              transform: scaleY(${isVisible ? 1 : 0}) !important;
+                              transition: transform 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+                            }
+                            .timeline-grid {
+                              display: flex !important;
+                              flex-direction: column !important;
+                              gap: 30px !important;
+                              position: relative !important;
+                              padding-left: 35px !important;
+                            }
+                            .timeline-item {
+                              position: relative !important;
+                            }
+                            .timeline-dot {
+                              position: absolute !important;
+                              left: -26px !important;
+                              top: 24px !important;
+                              margin-top: 0 !important;
+                              margin-left: 0 !important;
+                            }
+                            .timeline-content {
+                              padding: 0 !important;
+                            }
+                          }
+                        `}</style>
+
                         <p className="para-text text-warning font-500 text-center capitalize">
                             What We Offer
                         </p>
                         <h2 className="head-text text-dark font-600 capitalize text-center pt-10">
                             Service Expertise Your Business
                         </h2>
-                        <div className="mt-40">
+                        <div className="mt-40 relative timeline-container">
                             <hr
                                 className="bg-warning border-0 timeline-line"
                                 style={{
@@ -45,7 +86,7 @@ const Timeline = () => {
                                     transform: isVisible ? "scaleX(1)" : "scaleX(0)"
                                 }}
                             />
-                            <div className="grid-cols-3 gap-4 relative">
+                            <div className="grid-cols-3 gap-4 relative timeline-grid">
                                 {historyData?.map((item, index) => (
                                     <div key={item.id} className="timeline-item">
                                         <p

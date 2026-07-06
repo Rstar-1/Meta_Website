@@ -202,6 +202,17 @@ const Table = ({
 
     return (
         <>
+            <style>{`
+                @media (max-width: 768px) {
+                    .responsive-table-el {
+                        min-width: max-content !important;
+                    }
+                    .responsive-table-el th,
+                    .responsive-table-el td {
+                        white-space: nowrap !important;
+                    }
+                }
+            `}</style>
             {(title || (showControls && onSearchChange)) && (
                 <div className="flex items-center">
                     {title && (
@@ -232,7 +243,7 @@ const Table = ({
             )}
 
             <div className="table-w rounded-5 mt-12 bordl bordr" style={{ overflowX: "auto" }}>
-                <table className="w-full" style={{ borderCollapse: "collapse", minWidth }}>
+                <table className="w-full responsive-table-el" style={{ borderCollapse: "collapse", minWidth }}>
                     <thead>
                         <tr>
                             {displayHeaders.map((col, idx) => (

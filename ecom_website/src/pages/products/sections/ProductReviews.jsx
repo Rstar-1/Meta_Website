@@ -73,10 +73,10 @@ const ProductReviews = ({
   ];
 
   return (
-    <Container className="bg-white">
+    <Container className="bg-forth">
       <div className="py-40 w-full">
-        <div className="flex gap-12 mb-15 border-ec rounded-5 p-20">
-          <div className="w-15 flex items-center justify-center">
+        <div className="flex sm-grid-cols-1 gap-12 mb-15 border-ec rounded-5 p-20 bg-white">
+          <div className="w-15 sm-w-full flex items-center justify-center">
             <div className='text-center'>
               <h2 className="large-text text-primary font-600">
                 {displayRating.toFixed(1)}
@@ -89,7 +89,7 @@ const ProductReviews = ({
               </p>
             </div>
           </div>
-          <div className="grid-cols-1 gap-12 w-85">
+          <div className="grid-cols-1 gap-12 w-85 sm-w-full">
             {[
               { label: '5.0', pct: dist["5"] },
               { label: '4.0', pct: dist["4"] },
@@ -126,8 +126,7 @@ const ProductReviews = ({
           {aspects.map((aspect, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-8 rounded-5 py-6 px-14 border-ec"
-              style={{ fontSize: '14px', fontWeight: '500' }}
+              className="flex items-center gap-8 rounded-5 py-6 px-14 border-ec bg-white"
             >
               <p className='small-text font-500' style={{ color: getAspectScoreColor(aspect.score), fontWeight: '700' }}>
                 {aspect.score}
@@ -150,12 +149,11 @@ const ProductReviews = ({
               : [];
 
             return (
-              <div key={index} className="border-ec p-20 rounded-5">
+              <div key={index} className="border-ec p-20 rounded-5 bg-white">
 
                 {/* Header row */}
                 <div className="flex justify-between items-start gap-12">
                   <div className="flex items-center gap-12">
-                    {/* User initial avatar */}
                     <div
                       className="rounded-full flex items-center justify-center font-700"
                       style={{
@@ -169,20 +167,20 @@ const ProductReviews = ({
                       {rev.name ? rev.name.charAt(0).toUpperCase() : 'U'}
                     </div>
                     <div>
-                      <h2 className="mid-text font-700 text-dark leading-5">{rev.name}</h2>
+                      <h2 className="headmini-text font-600 text-dark leading-5">{rev.name}</h2>
                       <p className="mini-text text-gray mt-2">{rev.date || '4 months ago'}</p>
                     </div>
                   </div>
 
                   {/* Rating value and stars */}
                   <div className="flex items-center gap-8">
-                    <h3 className="mid-text font-700 text-dark">{rev.rating.toFixed(1)}</h3>
+                    <h3 className="headmini-text font-500 text-dark">{rev.rating.toFixed(1)}</h3>
                     <StarRating rating={rev.rating} size={15} color="var(--warning)" />
                   </div>
                 </div>
 
                 {/* Comment body */}
-                <p className="small-text text-gray font-400 mt-15">
+                <p className="mini-text text-gray font-400 mt-15">
                   {rev.comment}
                 </p>
 

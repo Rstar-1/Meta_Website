@@ -22,7 +22,7 @@ const LatestArticles = ({ onArticleClick }) => {
         <div className="flex justify-between items-center mb-24">
           <h2 className="title-text text-dark font-600">Latest from Justdial</h2>
           <p onClick={() => navigate('/blog')} className="text-primary font-500 cursor-pointer small-text">
-            View All Articles ➔
+            View All ➔
           </p>
         </div>
 
@@ -30,10 +30,19 @@ const LatestArticles = ({ onArticleClick }) => {
         <CardLayout
           items={articles}
           cardType="article"
-          cols="4"
-          mdCols="2"
-          smCols="1"
-          gap="12"
+          isSlider={true}
+          sliderSlidesPerView={1.2}
+          sliderBreakpoints={{
+            640: {
+              slidesPerView: 2.2,
+            },
+            768: {
+              slidesPerView: 3.7,
+            },
+            1024: {
+              slidesPerView: 4,
+            }
+          }}
           onCardClick={handleCardClick}
         />
       </div>

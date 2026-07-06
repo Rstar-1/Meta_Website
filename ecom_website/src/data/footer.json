@@ -6,17 +6,17 @@
     "socials": [
       {
         "platform": "facebook",
-        "icon": "f",
-        "url": "#"
-      },
-      {
-        "platform": "twitter",
-        "icon": "t",
+        "iconName": "Facebook",
         "url": "#"
       },
       {
         "platform": "instagram",
-        "icon": "i",
+        "iconName": "Instagram",
+        "url": "#"
+      },
+      {
+        "platform": "whatsapp",
+        "iconName": "WhatsApp",
         "url": "#"
       }
     ]
@@ -27,15 +27,23 @@
       "links": [
         {
           "label": "Home",
-          "path": "/"
+          "path": "/home"
         },
         {
-          "label": "Systems Catalog",
+          "label": "About Us",
+          "path": "/about"
+        },
+        {
+          "label": "Products",
           "path": "/products"
         },
         {
-          "label": "Departments",
-          "path": "/category"
+          "label": "Blogs",
+          "path": "/blog"
+        },
+        {
+          "label": "Connect",
+          "path": "/connect"
         }
       ]
     },

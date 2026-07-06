@@ -78,8 +78,8 @@ const DetailSection = () => {
 
     return (
         <Container className="bg-forth">
-            <div className="py-60 w-full">
-                <div className="grid-cols-4 items-start gap-12">
+            <div className="py-60 sm-py-40 w-full">
+                <div className="grid-cols-4 sm-grid-cols-1 md-grid-cols-2 items-start gap-12 sm-px-12">
                     {sectionsData.map((section, idx) => (
                         <div key={idx} className="info-col">
                             <Fade direction="left" delay={section.delay}>

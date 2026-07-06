@@ -19,8 +19,19 @@ const FeaturedBusinesses = ({ onCallBusiness }) => {
         <CardLayout
           items={featuredBusinesses}
           cardType="business"
-          cols="5"
-          gap="12"
+          isSlider={true}
+          sliderSlidesPerView={1.2}
+          sliderBreakpoints={{
+            640: {
+              slidesPerView: 2.2,
+            },
+            768: {
+              slidesPerView: 4.2,
+            },
+            1024: {
+              slidesPerView: 5,
+            }
+          }}
           className="mt-20"
           onButtonClick={onCallBusiness}
         />

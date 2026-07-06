@@ -56,7 +56,6 @@ const Hero = ({ onSearch }) => {
     <Container
       className='h-500 sm-h-700 py-40 flex items-center relative overflow-hidden'
     >
-      {/* Background Image for LCP Optimization */}
       <div
         style={{
           position: 'absolute',
@@ -89,10 +88,9 @@ const Hero = ({ onSearch }) => {
           Local Business Discovery Platform
         </h1>
 
-        {/* Badges Row */}
-        <div className="flex sm-flex-wrap items-center gap-12 mt-30">
+        <div className="flex sm-flex-wrap items-center gap-12 mt-22 sm-mt-12">
           {badges.map((badge) => (
-            <div key={badge.id} className="flex items-center gap-12 mr-18">
+            <div key={badge.id} className="flex items-center gap-12 mr-18 sm-mr-10">
               <div className="icon-lg bg-white rounded-5">
                 {badge.icon}
               </div>
@@ -104,72 +102,71 @@ const Hero = ({ onSearch }) => {
           ))}
         </div>
 
-        {/* Search Form */}
-        <form className="flex md-grid-cols-1 sm-grid-cols-1 items-center gap-12 mt-15 bg-white py-12 px-16 sm-px-1 rounded-10 w-70 md-w-full sm-w-full" onSubmit={handleSearchSubmit}>
+        <form className="mt-25 bg-white w-70 md-w-full sm-w-full rounded-10" onSubmit={handleSearchSubmit}>
+          <div className='flex md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-12 sm-py-15 px-16 sm-px-16'>
+            <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
+              <Icon name="Grid" width="20" height="20" stroke="var(--primary)" />
+              <Fields
+                type="select"
+                options={[
+                  { label: 'All Categories', value: 'All' },
+                  ...categoriesData.map(c => ({ label: c.name, value: c.id }))
+                ]}
+                value={category}
+                onChange={setCategory}
+                variant='outline'
+                className="w-full"
+              />
+            </div>
 
-          <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
-            <Icon name="Grid" width="20" height="20" stroke="var(--primary)" />
-            <Fields
-              type="select"
-              options={[
-                { label: 'All Categories', value: 'All' },
-                ...categoriesData.map(c => ({ label: c.name, value: c.id }))
-              ]}
-              value={category}
-              onChange={setCategory}
-              outline={false}
-              className="w-full"
-            />
-          </div>
+            <div className="flex items-center gap-12 w-45 md-w-full sm-w-full">
+              <Icon name="Search" width="20" height="20" stroke="var(--primary)" />
+              <Fields
+                type="text"
+                placeholder="What are you looking for?"
+                value={query}
+                onChange={setQuery}
+                variant='outline'
+                className="w-full"
+              />
+            </div>
 
-          <div className="flex items-center gap-12 w-45 md-w-full sm-w-full">
-            <Icon name="Search" width="20" height="20" stroke="var(--primary)" />
-            <Fields
-              type="text"
-              placeholder="What are you looking for?"
-              value={query}
-              onChange={setQuery}
-              outline={false}
-              className="w-full"
-            />
-          </div>
+            <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
+              <Icon name="MapPin" width="20" height="20" stroke="var(--primary)" />
+              <Fields
+                type="select"
+                options={[
+                  { label: 'Delhi', value: 'Delhi' },
+                  { label: 'Mumbai', value: 'Mumbai' },
+                  { label: 'Bangalore', value: 'Bangalore' },
+                  { label: 'Chennai', value: 'Chennai' },
+                  { label: 'Hyderabad', value: 'Hyderabad' }
+                ]}
+                value={location}
+                onChange={setLocation}
+                variant='outline'
+                className="w-full"
+              />
+            </div>
 
-          <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
-            <Icon name="MapPin" width="20" height="20" stroke="var(--primary)" />
-            <Fields
-              type="select"
-              options={[
-                { label: 'Delhi', value: 'Delhi' },
-                { label: 'Mumbai', value: 'Mumbai' },
-                { label: 'Bangalore', value: 'Bangalore' },
-                { label: 'Chennai', value: 'Chennai' },
-                { label: 'Hyderabad', value: 'Hyderabad' }
-              ]}
-              value={location}
-              onChange={setLocation}
-              outline={false}
-              className="w-full"
-            />
-          </div>
-
-          <div className="w-15 md-w-full sm-w-full">
-            <Button
-              type="submit"
-              text="Apply Filters"
-              bg="primary"
-              version='v3'
-              className="w-full"
-            />
+            <div className="w-15 md-w-full sm-w-full">
+              <Button
+                type="submit"
+                text="Apply Filters"
+                bg="primary"
+                version='v3'
+                className="w-full"
+              />
+            </div>
           </div>
         </form>
 
-        {/* Popular Searches */}
-        <div className="flex sm-flex-wrap items-center gap-12 mt-26">
+        <div className="flex sm-flex-wrap items-center gap-12 mt-26 sm-mt-18">
           <p className="para-text text-white font-500">Popular Searches:</p>
           {popularSearches.map((tag, index) => (
             <p
               key={index}
-              className='bg-transparent small-text text-white px-20 py-4 rounded-10 border-white cursor-pointer hover-bg-primary transition-all'
+              className='bg-transparent mini-text text-white px-20 py-4 rounded-5 cursor-pointer'
               style={{ cursor: 'pointer' }}
               onClick={() => {
                 setQuery(tag);

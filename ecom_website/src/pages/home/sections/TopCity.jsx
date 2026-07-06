@@ -15,12 +15,21 @@ const TopCity = () => {
 
         {/* --- Grid Layout of Cities (Top 4) using CardLayout --- */}
         <CardLayout
-          items={topCities?.slice(0, 4)}
+          items={topCities}
           cardType="city"
-          cols="4"
-          mdCols="2"
-          smCols="1"
-          gap="12"
+          isSlider={true}
+          sliderSlidesPerView={1.4}
+          sliderBreakpoints={{
+            640: {
+              slidesPerView: 2.2,
+            },
+            768: {
+              slidesPerView: 4.2,
+            },
+            1024: {
+              slidesPerView: 4.5,
+            }
+          }}
           className="mt-20"
           onCardClick={() => navigate('/products')}
         />

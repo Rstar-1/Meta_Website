@@ -5,28 +5,28 @@ import Container from '../../../components/common/Container';
 const BrowseCategory = ({ onSelectCategory }) => {
   const navigate = useNavigate();
 
-  const handleCategoryClick = (name) => {
+  const handleCategoryClick = (cat) => {
     if (onSelectCategory) {
-      onSelectCategory(name);
+      onSelectCategory(cat.name);
     } else {
-      navigate('/products');
+      navigate(`/products?category=${cat.id}`, { state: { category: cat.id } });
     }
   };
 
   // Limit homepage categories to 7: first 6 actual categories + 1 custom "More" category
   const displayedCategories = [
-    ...categories.slice(0, 7)
+    ...categories.slice(0, 6)
   ];
 
   return (
     <Container className='bg-forth'>
       <div className="w-full py-30">
-        <div className='grid-cols-7 md-grid-cols-4 sm-grid-cols-2 gap-12'>
+        <div className='grid-cols-6 md-grid-cols-4 sm-grid-cols-2 gap-12'>
           {displayedCategories.map((cat) => (
             <div
               key={cat.id}
               className="px-10 py-20 bg-white rounded-10 cursor-pointer text-center"
-              onClick={() => handleCategoryClick(cat.name)}
+              onClick={() => handleCategoryClick(cat)}
             >
               <div className='relative'>
                 <img
