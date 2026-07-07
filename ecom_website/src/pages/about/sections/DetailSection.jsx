@@ -78,34 +78,47 @@ const DetailSection = () => {
 
     return (
         <Container className="bg-forth">
-            <div className="py-60 sm-py-40 w-full">
-                <div className="grid-cols-4 sm-grid-cols-1 md-grid-cols-2 items-start gap-12 sm-px-12">
-                    {sectionsData.map((section, idx) => (
-                        <div key={idx} className="info-col">
-                            <Fade direction="left" delay={section.delay}>
-                                <h2 className="title-text text-dark font-600 uppercase">
-                                    {section.title}
-                                </h2>
-                                <hr
-                                    className="border-0 bg-warning mx-1 mt-8 col-hr"
-                                    style={{ width: "80px", height: "5px" }}
-                                />
-                            </Fade>
-                            {section.points.map((item, i) => (
-                                <Fade
-                                    key={i}
-                                    direction="up"
-                                    delay={section.delay + 150 + i * 80}
-                                    className="flex items-center p-8 bordb w-max info-item"
+            <Fade direction="none" className="py-60 sm-py-40 w-full" threshold={0.15}>
+                {(isVisible) => (
+                    <div className="grid-cols-4 sm-grid-cols-1 md-grid-cols-2 items-start gap-12 sm-px-12">
+                        {sectionsData.map((section, idx) => (
+                            <div key={idx} className="info-col">
+                                <div
+                                    style={{
+                                        opacity: isVisible ? 1 : 0,
+                                        transform: isVisible ? "translateX(0)" : "translateX(-30px)",
+                                        transition: "opacity 800ms cubic-bezier(0.215, 0.61, 0.355, 1), transform 800ms cubic-bezier(0.215, 0.61, 0.355, 1)",
+                                        transitionDelay: `${section.delay}ms`,
+                                    }}
                                 >
-                                    <p style={iconCircle}>{section.icon}</p>
-                                    <p className="text-gray font-400 small-text">{item}</p>
-                                </Fade>
-                            ))}
-                        </div>
-                    ))}
-                </div>
-            </div>
+                                    <h2 className="title-text text-dark font-600 uppercase">
+                                        {section.title}
+                                    </h2>
+                                    <hr
+                                        className="border-0 bg-warning mx-1 mt-8 col-hr"
+                                        style={{ width: "80px", height: "5px" }}
+                                    />
+                                </div>
+                                {section.points.map((item, i) => (
+                                    <div
+                                        key={i}
+                                        className="flex items-center p-8 bordb w-max info-item"
+                                        style={{
+                                            opacity: isVisible ? 1 : 0,
+                                            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+                                            transition: "opacity 800ms cubic-bezier(0.215, 0.61, 0.355, 1), transform 800ms cubic-bezier(0.215, 0.61, 0.355, 1)",
+                                            transitionDelay: `${section.delay + 150 + i * 80}ms`,
+                                        }}
+                                    >
+                                        <p style={iconCircle}>{section.icon}</p>
+                                        <p className="text-gray font-400 small-text">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </Fade>
         </Container>
     );
 };
