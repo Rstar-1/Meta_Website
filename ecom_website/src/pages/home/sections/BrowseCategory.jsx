@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import categories from '../../../data/category.json';
 import Container from '../../../components/common/Container';
+import { resolveImagePath } from '../../../utils/imageResolver';
 
 const BrowseCategory = ({ onSelectCategory }) => {
   const navigate = useNavigate();
@@ -30,8 +31,10 @@ const BrowseCategory = ({ onSelectCategory }) => {
             >
               <div className='relative'>
                 <img
-                  src={cat.icon}
+                  src={resolveImagePath(cat.icon)}
                   alt={cat.name}
+                  width="80"
+                  height="80"
                   className="flex object-cover rounded-full mx-auto"
                   style={{ width: '80px', height: '80px' }}
                 />

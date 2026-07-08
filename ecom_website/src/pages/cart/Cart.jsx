@@ -9,6 +9,7 @@ import CardLayout from '../../components/layout/CardLayout';
 import Banner from '../../components/layout/Banner';
 import ProductEnquiryForm from '../../components/forms/ProductEnquiryForm';
 import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
+import { resolveProductImage, resolveImagePath } from '../../utils/imageResolver';
 import productsData from '../../data/products.json';
 import categoriesData from '../../data/category.json';
 import Table from '../../components/common/Table';
@@ -233,8 +234,10 @@ const Cart = () => {
                         return (
                           <div key={item.id} className="bg-white border-ec p-10 rounded-5 flex gap-12 items-start relative">
                             <img
-                              src={item.image}
+                              src={resolveProductImage(item)}
                               alt={item.name}
+                              width="80"
+                              height="80"
                               className="object-cover rounded-5 flex"
                               style={{ width: "80px", height: "80px", flexShrink: 0 }}
                             />

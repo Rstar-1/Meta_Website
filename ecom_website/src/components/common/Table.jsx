@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Pagination from "./Pagination";
 import Icon from "./Icon";
+import { resolveImagePath } from "../../utils/imageResolver";
 
 // Helper function to render cell content based on column definition
 const renderCellContent = (col, row, rowIdx) => {
@@ -14,7 +15,7 @@ const renderCellContent = (col, row, rowIdx) => {
         if (col.ui === "profile") {
             const name = row[col.accessor] || row["username"] || row["name"] || "";
             const subText = row[col.subKey || "sub"] || row[col.emailKey || "email"] || row["email"] || row["sub"] || "";
-            const imgUrl = row[col.imageKey || "image"] || row["image"] || row["avatar"] || "";
+            const imgUrl = resolveImagePath(row[col.imageKey || "image"] || row["image"] || row["avatar"] || "");
             const favColor = row[col.colorKey || "favoriteColor"] || "#6366f1";
             const initial = name ? name.charAt(0).toUpperCase() : "?";
             const imgStyle = { width: "40px", height: "40px", flexShrink: 0, ...col.imgStyle, ...col.imageStyle };

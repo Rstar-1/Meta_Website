@@ -30,12 +30,12 @@ const Home = () => {
         title="SOBO Marketing Solution | Industrial B2B E-Commerce"
         description="Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution."
         keywords={['Industrial Supplies', 'Printer Cartridges', 'Stainless Steel', 'SOBO Marketing', 'B2B India']}
-        image={siteUrl + '/src/assets/sobo_logo.png'}
+        image={siteUrl + '/sobo_logo.png'}
         path="/home"
         type="website"
       />
       <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
-      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/src/assets/sobo_logo.png' }} />
+      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.png' }} />
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero />

@@ -7,6 +7,7 @@ import Icon from '../common/Icon';
 import { addToCart } from '../../utils/cartHelper';
 import { useNavigate } from 'react-router-dom';
 import { showToast } from '../common/Tooltip';
+import { resolveProductImage } from '../../utils/imageResolver';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -40,7 +41,7 @@ const CardLayout = ({
 
     const renderDefaultCard = (item, index) => {
         if (cardType === 'product') {
-            const imgSrc = (imageMap && imageMap[item.id]) || item.image;
+            const imgSrc = (imageMap && imageMap[item.id]) || resolveProductImage(item);
             return (
                 <div
                     key={item.id || index}
@@ -56,6 +57,8 @@ const CardLayout = ({
                                 loading={index < 2 ? "eager" : "lazy"}
                                 fetchPriority={index < 2 ? "high" : undefined}
                                 className={`w-full object-cover flex ${imageHeight || 'h-200'}`}
+                                width="300"
+                                height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : '200'}
                             />
                         </div>
 
@@ -147,6 +150,8 @@ const CardLayout = ({
                                 loading={index < 2 ? "eager" : "lazy"}
                                 fetchPriority={index < 2 ? "high" : undefined}
                                 className={`w-full object-cover rounded-5 flex ${imageHeight || 'h-150'}`}
+                                width="350"
+                                height="150"
                             />
                             {item.logo && (
                                 <div className="absolute bottom-0 left-0 mb-15 ml-10 border-white flex items-center justify-center rounded-full icon-lg bg-primary z-10">
@@ -205,6 +210,8 @@ const CardLayout = ({
                                 loading={index < 2 ? "eager" : "lazy"}
                                 fetchPriority={index < 2 ? "high" : undefined}
                                 className={`w-full object-cover ${imageHeight || 'h-200'}`}
+                                width="400"
+                                height="200"
                             />
                         </div>
 

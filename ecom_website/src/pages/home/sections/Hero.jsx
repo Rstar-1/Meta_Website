@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
-import background from '../../../assets/background.png';
+const background = "/background.png";
 import Icon from '../../../components/common/Icon';
 import Fields from '../../../components/common/Fields';
 import categoriesData from '../../../data/category.json';
@@ -69,6 +69,8 @@ const Hero = ({ onSearch }) => {
           alt="Hero Background"
           loading="eager"
           fetchPriority="high"
+          width="1920"
+          height="500"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'right' }}
         />

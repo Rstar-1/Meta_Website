@@ -5,11 +5,9 @@ import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
 import headerData from "../../data/header.json";
-import logoImg from "../../assets/sobo_logo.png";
-import productsData from "../../data/products.json";
-import categoriesData from "../../data/category.json";
+const logoImg = "/sobo_logo.png";
 
-const ProductsMenu = ({ onItemClick }) => (
+const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
   <>
     <style>{`
       .mega-menu-item {
@@ -59,13 +57,13 @@ const ProductsMenu = ({ onItemClick }) => (
         {headerData.productsMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
       </p>
     </div>
-    {[...new Set(productsData.filter((p) => p.type !== "general").map((p) => p.category))].map((cat, idx) => {
-      const items = productsData.filter((p) => p.category === cat && p.type !== "general" && p.popular).slice(0, 5);
+    {[...new Set((productsData || []).filter((p) => p.type !== "general").map((p) => p.category))].map((cat, idx) => {
+      const items = (productsData || []).filter((p) => p.category === cat && p.type !== "general" && p.popular).slice(0, 5);
       if (items.length === 0) return null;
       return (
         <div key={idx} className="p-18">
           <p className="text-gray uppercase mini-text font-500">
-            {categoriesData.find((c) => c.id === cat)?.name || cat}
+            {(categoriesData || []).find((c) => c.id === cat)?.name || cat}
           </p>
           <div className="grid grid-cols-1 gap-8 mt-8">
             {items.map((product) => (
@@ -89,8 +87,8 @@ const ProductsMenu = ({ onItemClick }) => (
   </>
 );
 
-const IndustryMenu = ({ onItemClick }) => {
-  const categories = categoriesData.slice(0, 5).map((c) => c.name);
+const IndustryMenu = ({ onItemClick, categoriesData }) => {
+  const categories = (categoriesData || []).slice(0, 5).map((c) => c.name);
   return (
     <>
       <style>{`
@@ -162,12 +160,12 @@ const IndustryMenu = ({ onItemClick }) => {
   );
 };
 
-const MegaMenuContent = memo(({ label, onItemClick, navigate }) => {
+const MegaMenuContent = memo(({ label, onItemClick, navigate, productsData, categoriesData }) => {
   switch (label) {
     case "Products":
-      return <ProductsMenu onItemClick={onItemClick} navigate={navigate} />;
+      return <ProductsMenu onItemClick={onItemClick} navigate={navigate} productsData={productsData} categoriesData={categoriesData} />;
     case "Industry":
-      return <IndustryMenu onItemClick={onItemClick} navigate={navigate} />;
+      return <IndustryMenu onItemClick={onItemClick} navigate={navigate} categoriesData={categoriesData} />;
     default:
       return null;
   }
@@ -179,6 +177,8 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const [cartCount, setCartCount] = useState(0);
+  const [menuData, setMenuData] = useState({ products: [], categories: [] });
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const updateCount = () => {
@@ -191,6 +191,25 @@ const Header = () => {
       window.removeEventListener('cart-updated', updateCount);
     };
   }, []);
+
+  useEffect(() => {
+    if ((activeMenu || isMobileOpen) && menuData.products.length === 0) {
+      setIsLoading(true);
+      Promise.all([
+        import("../../data/products.json"),
+        import("../../data/category.json")
+      ]).then(([prodMod, catMod]) => {
+        setMenuData({
+          products: prodMod.default,
+          categories: catMod.default
+        });
+        setIsLoading(false);
+      }).catch((err) => {
+        console.error("Failed to load mega menu data:", err);
+        setIsLoading(false);
+      });
+    }
+  }, [activeMenu, isMobileOpen, menuData.products.length]);
 
   const handleItemClick = (productId, categoryName) => {
     setActiveMenu(null);
@@ -255,16 +274,24 @@ const Header = () => {
                         maxWidth: "90vw",
                       }}
                     >
-                      <div
-                        className={`grid ${item?.cols} items-start`}
-                        style={{ width: item?.width, maxWidth: "100%" }}
-                      >
-                        <MegaMenuContent
-                          label={item?.label}
-                          onItemClick={handleItemClick}
-                          navigate={navigate}
-                        />
-                      </div>
+                      {!isLoading && menuData.products.length > 0 ? (
+                        <div
+                          className={`grid ${item?.cols} items-start`}
+                          style={{ width: item?.width, maxWidth: "100%" }}
+                        >
+                          <MegaMenuContent
+                            label={item?.label}
+                            onItemClick={handleItemClick}
+                            navigate={navigate}
+                            productsData={menuData.products}
+                            categoriesData={menuData.categories}
+                          />
+                        </div>
+                      ) : (
+                        <div className="p-20 text-center small-text text-gray" style={{ width: "200px" }}>
+                          Loading Menu...
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -357,15 +384,23 @@ const Header = () => {
                       </div>
                       {isExpanded && (
                         <div className="mt-12 bg-white rounded-5 border-ec grid grid-cols-1 gap-16 overflow-hidden">
-                          <MegaMenuContent
-                            label={item.label}
-                            onItemClick={(productId, categoryName) => {
-                              setIsMobileOpen(false);
-                              setOpenMobileMenu(null);
-                              handleItemClick(productId, categoryName);
-                            }}
-                            navigate={navigate}
-                          />
+                          {!isLoading && menuData.products.length > 0 ? (
+                            <MegaMenuContent
+                              label={item.label}
+                              onItemClick={(productId, categoryName) => {
+                                setIsMobileOpen(false);
+                                setOpenMobileMenu(null);
+                                handleItemClick(productId, categoryName);
+                              }}
+                              navigate={navigate}
+                              productsData={menuData.products}
+                              categoriesData={menuData.categories}
+                            />
+                          ) : (
+                            <div className="p-15 text-center small-text text-gray">
+                              Loading...
+                            </div>
+                          )}
                         </div>
                       )}
                     </>
