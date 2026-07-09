@@ -1,53 +1,48 @@
 {
-  "overallRating": "4.6",
+  "overallRating": "4.9",
   "ratingScale": "5",
-  "totalReviews": "25,000+",
+  "totalReviews": "10,000+",
   "userReviews": [
     {
       "id": "rev-1",
-      "name": "Rahul Sharma",
+      "name": "David Miller",
       "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
       "rating": 5,
       "time": "2 days ago",
-      "text": "Very helpful platform! Found the best service provider nearby. Highly recommend!"
+      "text": "The pediatric specialists are outstanding. They treated my son with so much kindness and patience. Medula is highly recommended!"
     },
     {
       "id": "rev-2",
-      "name": "Priya Mehta",
+      "name": "Sarah Jenkins",
       "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
       "rating": 5,
       "time": "1 week ago",
-      "text": "Amazing experience. Easy to use and reliable listings. Saved me a lot of time."
+      "text": "Therapy sessions here have completely changed my outlook on mental wellness. Compassionate, professional, and completely private."
     },
     {
       "id": "rev-3",
-      "name": "Ankit Verma",
+      "name": "Marcus Vance",
       "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
       "rating": 5,
       "time": "2 weeks ago",
-      "text": "Great platform for local business discovery. Customer support is also very responsive."
+      "text": "A world-class dental suite. The root canal procedure was completely pain-free, and the staff walked me through every single step."
     }
   ],
   "platforms": [
     {
       "name": "Google",
-      "rating": "4.6/5",
-      "reviews": "12,500 reviews"
+      "rating": "4.9/5",
+      "reviews": "8,200 reviews"
     },
     {
       "name": "Trustpilot",
-      "rating": "4.5/5",
-      "reviews": "6,200 reviews"
-    },
-    {
-      "name": "Justdial",
-      "rating": "4.6/5",
-      "reviews": "4,800 reviews"
+      "rating": "4.8/5",
+      "reviews": "1,500 reviews"
     },
     {
       "name": "Facebook",
-      "rating": "4.7/5",
-      "reviews": "1,500 reviews"
+      "rating": "4.9/5",
+      "reviews": "300 reviews"
     }
   ]
 }

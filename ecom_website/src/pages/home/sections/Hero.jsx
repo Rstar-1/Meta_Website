@@ -1,189 +1,187 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
-const background = "/background.png";
 import Icon from '../../../components/common/Icon';
-import Fields from '../../../components/common/Fields';
-import categoriesData from '../../../data/category.json';
 import Image from '../../../components/common/Image';
+import doctorImg from '../../../assets/doctor.png';
 
-const Hero = ({ onSearch }) => {
+const Hero = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState('All');
-  const [query, setQuery] = useState('');
-  const [location, setLocation] = useState('Delhi');
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    if (onSearch) {
-      onSearch({ category, query, location });
-    }
-    navigate(`/products?category=${category}&search=${query}&city=${location}`, {
-      state: { category, search: query, city: location }
-    });
-  };
-
-  const popularSearches = [
-    'AC Repair',
-    'Home Services',
-    'Doctors',
-    'Packers And Movers',
-    'Salons',
-  ];
-
-  const badges = [
-    {
-      id: 1,
-      icon: <Icon name="Shield" width="16" height="16" stroke="var(--primary)" />,
-      title: 'Trusted by',
-      subtitle: 'Millions'
-    },
-    {
-      id: 2,
-      icon: <Icon name="Network" width="16" height="16" stroke="var(--primary)" />,
-      title: 'Huge Network of',
-      subtitle: 'Businesses'
-    },
-    {
-      id: 3,
-      icon: <Icon name="Grow" width="16" height="16" stroke="var(--primary)" />,
-      title: 'Find. Connect.',
-      subtitle: 'Grow.'
-    }
-  ];
 
   return (
-    <Container
-      className='h-500 sm-h-700 py-40 flex items-center relative overflow-hidden'
-    >
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          zIndex: 0,
-          pointerEvents: 'none'
-        }}
-      >
-        <Image
-          src={background}
-          alt="Hero Background"
-          loading="eager"
-          fetchPriority="high"
-          width="1920"
-          height="500"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: 'right' }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54))',
-            zIndex: 1
-          }}
-        />
-      </div>
+    <div style={{ backgroundColor: '#f0f7ff', overflow: 'hidden', position: 'relative' }}>
+      <style>{`
+        .hero-container {
+          min-height: 550px;
+          display: flex;
+          align-items: center;
+          position: relative;
+        }
+        .hero-left {
+          width: 55%;
+          z-index: 10;
+        }
+        .hero-right {
+          width: 45%;
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 100%;
+        }
+        .hero-circle-bg {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          width: 380px;
+          height: 380px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #1e74db 0%, #6b63ff 100%);
+          opacity: 0.15;
+          z-index: 1;
+        }
+        .hero-doctor-img {
+          position: relative;
+          z-index: 2;
+          max-height: 420px;
+          width: 380px;
+          object-fit: cover;
+          border-radius: 24px;
+          box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+        }
+        .welcome-tag {
+          background-color: #fee2e2;
+          color: #ef4444;
+          font-weight: 700;
+          font-size: 0.7rem;
+          letter-spacing: 0.05em;
+          padding: 6px 12px;
+          border-radius: 20px;
+          display: inline-block;
+          margin-bottom: 15px;
+        }
+        .avatar-group {
+          display: flex;
+          align-items: center;
+        }
+        .avatar-item {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 2px solid white;
+          background-color: #e2e8f0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.65rem;
+          font-weight: 700;
+          color: #475569;
+          margin-left: -8px;
+        }
+        .avatar-item:first-child {
+          margin-left: 0;
+        }
+        .stat-card {
+          border-left: 3px solid #1e74db;
+          padding-left: 15px;
+        }
+        @media (max-width: 768px) {
+          .hero-container {
+            flex-direction: column;
+            padding-top: 40px;
+            padding-bottom: 40px;
+          }
+          .hero-left, .hero-right {
+            width: 100%;
+          }
+          .hero-right {
+            justify-content: center;
+            margin-top: 30px;
+          }
+          .hero-doctor-img {
+            max-height: 320px;
+          }
+          .hero-circle-bg {
+            width: 280px;
+            height: 280px;
+            right: 50%;
+            transform: translateX(50%);
+          }
+        }
+      `}</style>
 
-      <div className="w-full relative z-10">
-        <h1 className="large-text text-white font-700 uppercase">
-          India's No. 1<br />
-          Local Business Discovery Platform
-        </h1>
+      <Container className="hero-container">
+        {/* Left Side Info */}
+        <div className="hero-left text-left">
+          <span className="welcome-tag">🩺 WELCOME TO MEDULA CLINIC</span>
+          
+          <h1 className="large-text text-dark font-700 mt-10" style={{ lineHeight: '1.15' }}>
+            YOUR <span style={{ color: '#1e74db' }}>HEALTH</span><br />
+            OUR PRIORITY
+          </h1>
+          
+          <p className="para-text text-gray mt-15 max-w-450">
+            The best medical clinic with professional doctors and high-tech equipment to treat and monitor you.
+          </p>
 
-        <div className="flex sm-flex-wrap items-center gap-12 mt-22 sm-mt-12">
-          {badges.map((badge) => (
-            <div key={badge.id} className="flex items-center gap-12 mr-18 sm-mr-10">
-              <div className="icon-lg bg-white rounded-5">
-                {badge.icon}
+          <div className="flex items-center gap-24 mt-30 sm-flex-wrap">
+            <Button
+              text="Get Started"
+              bg="primary"
+              version="v3"
+              onClick={() => navigate('/connect')}
+              style={{ padding: '12px 28px' }}
+            />
+            
+            <div className="flex items-center gap-8">
+              <div className="avatar-group">
+                <div className="avatar-item" style={{ backgroundColor: '#e0f2fe', color: '#0369a1' }}>JS</div>
+                <div className="avatar-item" style={{ backgroundColor: '#f0fdf4', color: '#15803d' }}>AM</div>
+                <div className="avatar-item" style={{ backgroundColor: '#faf5ff', color: '#7e22ce' }}>RK</div>
+                <div className="avatar-item" style={{ backgroundColor: '#fef2f2', color: '#b91c1c' }}>+</div>
               </div>
-              <div className="block">
-                <p className="text-white small-text font-500">{badge.title}</p>
-                <p className="text-white mini-text">{badge.subtitle}</p>
+              <div>
+                <p className="small-text font-700 text-dark leading-none">10K+</p>
+                <p className="mini-text text-gray mt-2 leading-none">Happy Patients</p>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <form className="mt-25 bg-white w-70 md-w-full sm-w-full rounded-10" onSubmit={handleSearchSubmit}>
-          <div className='flex md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-12 sm-py-15 px-16 sm-px-16'>
-            <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
-              <Icon name="Grid" width="20" height="20" stroke="var(--primary)" />
-              <Fields
-                type="select"
-                options={[
-                  { label: 'All Categories', value: 'All' },
-                  ...categoriesData.map(c => ({ label: c.name, value: c.id }))
-                ]}
-                value={category}
-                onChange={setCategory}
-                variant='outline'
-                className="w-full"
-              />
-            </div>
-
-            <div className="flex items-center gap-12 w-45 md-w-full sm-w-full">
-              <Icon name="Search" width="20" height="20" stroke="var(--primary)" />
-              <Fields
-                type="text"
-                placeholder="What are you looking for?"
-                value={query}
-                onChange={setQuery}
-                variant='outline'
-                className="w-full"
-              />
-            </div>
-
-            <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
-              <Icon name="MapPin" width="20" height="20" stroke="var(--primary)" />
-              <Fields
-                type="select"
-                options={[
-                  { label: 'Delhi', value: 'Delhi' },
-                  { label: 'Mumbai', value: 'Mumbai' },
-                  { label: 'Bangalore', value: 'Bangalore' },
-                  { label: 'Chennai', value: 'Chennai' },
-                  { label: 'Hyderabad', value: 'Hyderabad' }
-                ]}
-                value={location}
-                onChange={setLocation}
-                variant='outline'
-                className="w-full"
-              />
-            </div>
-
-            <div className="w-15 md-w-full sm-w-full">
-              <Button
-                type="submit"
-                text="Apply Filters"
-                bg="primary"
-                version='v3'
-                className="w-full"
-              />
             </div>
           </div>
-        </form>
-
-        <div className="flex sm-flex-wrap items-center gap-12 mt-26 sm-mt-18">
-          <p className="para-text text-white font-500">Popular Searches:</p>
-          {popularSearches.map((tag, index) => (
-            <p
-              key={index}
-              className='bg-transparent mini-text text-white px-20 py-4 rounded-5 cursor-pointer'
-              style={{ cursor: 'pointer' }}
-              onClick={() => {
-                setQuery(tag);
-                navigate(`/products?search=${tag}&city=${location}`, {
-                  state: { category: 'All', search: tag, city: location }
-                });
-              }}
-            >
-              {tag}
-            </p>
-          ))}
         </div>
+
+        {/* Right Side Doctor Image */}
+        <div className="hero-right">
+          <div className="hero-circle-bg" />
+          <Image
+            src={doctorImg}
+            alt="Doctor"
+            className="hero-doctor-img"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+      </Container>
+
+      {/* Stats Bottom Bar */}
+      <div className="bg-white py-30" style={{ borderTop: '1px solid #e2e8f0' }}>
+        <Container>
+          <div className="grid grid-cols-3 sm-grid-cols-1 gap-24">
+            <div className="stat-card text-left">
+              <h3 className="large-text font-700 text-primary leading-none">500+</h3>
+              <p className="small-text text-gray mt-4">Specialist Doctors</p>
+            </div>
+            <div className="stat-card text-left">
+              <h3 className="large-text font-700 text-primary leading-none">2M+</h3>
+              <p className="small-text text-gray mt-4">Happy Patients</p>
+            </div>
+            <div className="stat-card text-left">
+              <h3 className="large-text font-700 text-primary leading-none">100+</h3>
+              <p className="small-text text-gray mt-4">Diagnostic Rooms</p>
+            </div>
+          </div>
+        </Container>
       </div>
-    </Container>
+    </div>
   );
 };
 

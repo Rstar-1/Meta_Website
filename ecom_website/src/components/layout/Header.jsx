@@ -300,34 +300,9 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-12 sm-gap-1">
-            {/* Cart Link with Badge */}
-            <NavLink
-              to="/cart"
-              className="relative flex items-center justify-center cursor-pointer text-dark hover:text-primary transition-all"
-              style={{ padding: '8px', textDecoration: 'none' }}
-              title="View Cart"
-            >
-              <Icon name="Cart" width="22" height="22" stroke="var(--dark)" />
-              {cartCount > 0 && (
-                <span
-                  className="absolute bg-danger text-white rounded-full flex items-center justify-center font-700"
-                  style={{
-                    top: '-2px',
-                    right: '-2px',
-                    fontSize: '10px',
-                    width: '16px',
-                    height: '16px',
-                    minWidth: '16px'
-                  }}
-                >
-                  {cartCount}
-                </span>
-              )}
-            </NavLink>
-
             <div className="sm-hidden md-hidden">
               <Button
-                text="Talk to Engineer"
+                text="Get Appointment"
                 version="v2"
                 bg="primary"
                 onClick={() => navigate("/connect")}
@@ -419,7 +394,7 @@ const Header = () => {
               );
             })}
             <Button
-              text="Talk to Engineer"
+              text="Get Appointment"
               version="v3"
               bg="primary"
               onClick={() => {

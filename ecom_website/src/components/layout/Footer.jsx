@@ -98,32 +98,45 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Column 2: Popular Products */}
-            <div
-              className="grid-cols-1 pr-10 sm-pr-1"
-              style={{
-                transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
-                transform: isVisible ? "translateY(0)" : "translateY(40px)",
-                opacity: isVisible ? 1 : 0,
-                transitionDelay: "150ms"
-              }}
-            >
-              <h3 className="text-white mid-text mb-12 font-600">Popular Products</h3>
-              <ul className="list-none m-1 p-1">
-                {popularProducts.map((prod) => (
-                  <li key={prod.id} className="mb-12">
-                    <span
-                      onClick={() => navigate(`/product-detail/${prod.id}`)}
-                      className="footer-link cursor-pointer small-text"
-                    >
-                      {prod.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Column 2: Quick Links */}
+            {footerData.columns[0] && (
+              <div
+                className="grid-cols-1 pr-10 sm-pr-1"
+                style={{
+                  transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
+                  transform: isVisible ? "translateY(0)" : "translateY(40px)",
+                  opacity: isVisible ? 1 : 0,
+                  transitionDelay: "150ms"
+                }}
+              >
+                <h3 className="text-white mid-text mb-12 font-600">{footerData.columns[0].title}</h3>
+                <ul className="list-none m-1 p-1">
+                  {footerData.columns[0].links.map((link, linkIdx) => (
+                    <li key={linkIdx} className="mb-12">
+                      <span
+                        onClick={() => {
+                          if (link.path.startsWith('#') || link.path.includes('#')) {
+                            const hash = link.path.split('#')[1];
+                            navigate('/home');
+                            setTimeout(() => {
+                              const el = document.getElementById(hash);
+                              if (el) el.scrollIntoView({ behavior: 'smooth' });
+                            }, 100);
+                          } else {
+                            navigate(link.path);
+                          }
+                        }}
+                        className="footer-link cursor-pointer small-text"
+                      >
+                        {link.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            {/* Column 3: Commissioning Support */}
+            {/* Column 3: Our Services */}
             {footerData.columns[1] && (
               <div
                 className="grid-cols-1 pr-10 sm-pr-1"
@@ -139,7 +152,18 @@ const Footer = () => {
                   {footerData.columns[1].links.map((link, linkIdx) => (
                     <li key={linkIdx} className="mb-12">
                       <span
-                        onClick={() => navigate(link.path)}
+                        onClick={() => {
+                          if (link.path.startsWith('#') || link.path.includes('#')) {
+                            const hash = link.path.split('#')[1];
+                            navigate('/home');
+                            setTimeout(() => {
+                              const el = document.getElementById(hash);
+                              if (el) el.scrollIntoView({ behavior: 'smooth' });
+                            }, 100);
+                          } else {
+                            navigate(link.path);
+                          }
+                        }}
                         className="footer-link cursor-pointer small-text"
                       >
                         {link.label}

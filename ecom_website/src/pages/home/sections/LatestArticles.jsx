@@ -20,7 +20,7 @@ const LatestArticles = ({ onArticleClick }) => {
     <Container className="bg-forth">
       <div className="w-full pt-30 pb-20">
         <div className="flex justify-between items-center mb-24">
-          <h2 className="title-text text-dark font-600">Latest from Justdial</h2>
+          <h2 className="title-text text-dark font-600">Our Medical Blog</h2>
           <p onClick={() => navigate('/blog')} className="text-primary font-500 cursor-pointer small-text">
             View All ➔
           </p>

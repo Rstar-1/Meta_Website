@@ -17,34 +17,34 @@ const TopCity = lazy(() => import('./sections/TopCity'));
 const Review = lazy(() => import('./sections/Review'));
 
 const Home = () => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://medula-clinic.com';
   const navItems = [
     { name: 'Home', url: `${siteUrl}/home` },
-    { name: 'Products', url: `${siteUrl}/products` },
+    { name: 'Services', url: `${siteUrl}/home#services` },
+    { name: 'Portfolio', url: `${siteUrl}/home#portfolio` },
     { name: 'About Us', url: `${siteUrl}/about` },
     { name: 'Blog', url: `${siteUrl}/blog` },
-    { name: 'Contact Us', url: `${siteUrl}/contact` }
+    { name: 'Contact', url: `${siteUrl}/connect` }
   ];
 
   return (
     <>
       <SeoHelmet
-        title="SOBO Marketing Solution | Industrial B2B E-Commerce"
-        description="Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution."
-        keywords={['Industrial Supplies', 'Printer Cartridges', 'Stainless Steel', 'SOBO Marketing', 'B2B India']}
+        title="Medula Medical Clinic | Professional Healthcare & Diagnostic Services"
+        description="Welcome to Medula Medical Clinic. We offer specialized pediatric care, dental services, mental health counseling, and top-tier clinical diagnostic imaging."
+        keywords={['Medical Clinic', 'Healthcare Services', 'Pediatrics', 'Dental Care', 'Mental Health', 'Medula Clinic']}
         image={siteUrl + '/sobo_logo.png'}
         path="/home"
         type="website"
       />
-      <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
-      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.png' }} />
+      <WebsiteSchema siteData={{ name: 'Medula Medical Clinic', url: siteUrl }} />
+      <OrganizationSchema orgData={{ name: 'Medula Medical Clinic', url: siteUrl, logo: siteUrl + '/sobo_logo.png' }} />
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero />
       <Suspense fallback={null}>
         <BrowseCategory />
         <LatestProducts />
-        <PopularProducts />
         <WhyChoose />
         <TopCity />
         <FeaturedBusinesses />

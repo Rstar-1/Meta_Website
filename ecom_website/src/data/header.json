@@ -1,66 +1,10 @@
 {
   "navLinks": [
     { "href": "/home", "label": "Home" },
+    { "href": "/home#services", "label": "Services" },
+    { "href": "/home#portfolio", "label": "Portfolio" },
     { "href": "/about", "label": "About Us" },
-    { "href": "/blog", "label": "Blogs" },
-    {
-      "label": "Products",
-      "hasMegaMenu": true,
-      "width": "960px",
-      "cols": "grid-cols-3"
-    },
-    {
-      "label": "Industry",
-      "hasMegaMenu": true,
-      "width": "650px",
-      "cols": "grid-cols-2"
-    },
-    { "href": "/connect", "label": "Connect" }
-  ],
-  "productsMenu": {
-    "bannerImage": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
-    "bannerTitle": "Industrial Telemetry",
-    "bannerDesc": "See how Metatech powers modern automated assembly lines globally.",
-    "bannerLinkText": "Read Case Studies",
-    "sections": [
-      {
-        "title": "Systems Catalog",
-        "items": [
-          "Robotics & Automation",
-          "Heavy Machinery",
-          "Precision Tooling",
-          "Hydraulic Power Systems",
-          "CNC Armatures"
-        ]
-      },
-      {
-        "title": "Services & Commissioning",
-        "items": [
-          "On-site Calibration",
-          "Custom Integration",
-          "CAD Modeling",
-          "PLC Configuration",
-          "Firmware Updates"
-        ]
-      }
-    ]
-  },
-  "industryMenu": {
-    "bannerImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-    "bannerTitle": "OEM Integration",
-    "bannerDesc": "Certified standard-setting built with industry leaders.",
-    "bannerLinkText": "View Partners",
-    "sections": [
-      {
-        "title": "Product Categories",
-        "items": [
-          "Steel Products",
-          "PVC Products",
-          "Industrial Machinery",
-          "Electrical & Electronics",
-          "Packaging Solutions"
-        ]
-      }
-    ]
-  }
+    { "href": "/blog", "label": "Blog" },
+    { "href": "/connect", "label": "Contact" }
+  ]
 }

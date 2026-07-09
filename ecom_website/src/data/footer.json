@@ -1,8 +1,8 @@
 {
   "brand": {
-    "logo": "⚙️",
-    "name": "Metatech",
-    "description": "ISO 9001:2015 certified engineering and automated manufacturing solutions for global B2B operations and assembly.",
+    "logo": "🩺",
+    "name": "Medula",
+    "description": "Premium medical clinic and healthcare center dedicated to providing professional medical services, treatment, and consultation.",
     "socials": [
       {
         "platform": "facebook",
@@ -34,56 +34,60 @@
           "path": "/about"
         },
         {
-          "label": "Products",
-          "path": "/products"
+          "label": "Services",
+          "path": "/home#services"
+        },
+        {
+          "label": "Portfolio",
+          "path": "/home#portfolio"
         },
         {
           "label": "Blogs",
           "path": "/blog"
         },
         {
-          "label": "Connect",
+          "label": "Contact",
           "path": "/connect"
         }
       ]
     },
     {
-      "title": "Commissioning Support",
+      "title": "Our Services",
       "links": [
         {
-          "label": "About Group",
-          "path": "/about"
+          "label": "Pediatric Care",
+          "path": "/home#services"
         },
         {
-          "label": "Contact Desk",
-          "path": "/contact"
+          "label": "Mental Health",
+          "path": "/home#services"
         },
         {
-          "label": "Engineering Insights",
-          "path": "/blog"
+          "label": "Dental Care",
+          "path": "/home#services"
         },
         {
-          "label": "RFQ Portal",
-          "path": "/contact"
+          "label": "Eye Care",
+          "path": "/home#services"
         }
       ]
     }
   ],
   "newsletter": {
-    "title": "Technical Updates",
-    "description": "Get automation updates, engineering journals, and catalog releases.",
-    "placeholder": "Corporate email...",
+    "title": "Subscribe Newsletter",
+    "description": "Stay updated with our latest healthcare articles, diagnostic tips, and clinic news.",
+    "placeholder": "Enter your email...",
     "buttonText": "Subscribe"
   },
   "bottom": {
-    "copyright": "© 2026 Metatech Industries. All rights reserved. Registered ISO-9001 Facility.",
+    "copyright": "© 2026 Medula Medical Clinic. All rights reserved.",
     "links": [
       {
-        "label": "Security Statement",
+        "label": "Privacy Policy",
         "url": "#"
       },
       {
-        "label": "Terms of Machinery Commissioning",
+        "label": "Terms of Service",
         "url": "#"
       }
     ]

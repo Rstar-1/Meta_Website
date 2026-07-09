@@ -71,10 +71,10 @@ const Review = () => {
 
             <div className='w-20 md-w-full sm-w-full px-10'>
               <h3 className="title-text font-700 text-dark">
-                What Our Users Say
+                What Our Patients Say
               </h3>
               <p className="small-text text-gray mt-3">
-                Real reviews from real users
+                Real reviews from real patients
               </p>
             </div>
 
