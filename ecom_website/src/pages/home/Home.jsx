@@ -7,7 +7,6 @@ import SiteNavigationSchema from '../../components/seo/SiteNavigationSchema';
 
 // Lazy load below-the-fold sections to optimize TBT and initial load time
 const BrowseCategory = lazy(() => import('./sections/BrowseCategory'));
-const PopularProducts = lazy(() => import('./sections/PopularProducts'));
 const LatestProducts = lazy(() => import('./sections/LatestProducts'));
 const WhyChoose = lazy(() => import('./sections/WhyChoose'));
 const FeaturedBusinesses = lazy(() => import('./sections/FeaturedBusinesses'));

@@ -7,14 +7,10 @@ import Loader from '../components/common/Loader'
 
 // 📦 Lazy Pages
 const Home = lazy(() => import('../pages/home/Home'))
-const Products = lazy(() => import('../pages/products/Products'))
-const ProductDetail = lazy(() => import('../pages/products/ProductDetail'))
 const Blogs = lazy(() => import('../pages/blog/Blogs'))
 const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
 const Contact = lazy(() => import('../pages/contact/Contact'))
 const About = lazy(() => import('../pages/about/About'))
-const Cart = lazy(() => import('../pages/cart/Cart'))
-const SupplierDetail = lazy(() => import('../pages/supplier/SupplierDetail'))
 
 
 function AppRoutes() {
