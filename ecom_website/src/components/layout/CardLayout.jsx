@@ -47,90 +47,36 @@ const CardLayout = ({
             return (
                 <div
                     key={item.id || index}
-                    className="bg-white border-ec rounded-10 p-12 cursor-pointer transition-all flex flex-column justify-between"
+                    className="cursor-pointer text-left"
                     onClick={() => onCardClick && onCardClick(item)}
+                    style={{ background: 'none', border: 'none', padding: 0 }}
                 >
-                    <div>
-                        {/* Product Image Container */}
-                        <div className="overflow-hidden rounded-5">
-                            <Image
-                                src={imgSrc}
-                                alt={item.name}
-                                loading={index < eagerCount ? "eager" : "lazy"}
-                                fetchPriority={index < eagerCount ? "high" : undefined}
-                                className={`w-full object-cover flex ${imageHeight || 'h-200'}`}
-                                width="300"
-                                height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : '200'}
-                            />
-                        </div>
-
-                        {/* Product Metadata */}
-                        <div className="mt-12">
-                            <h3
-                                className="text-dark mid-text font-500 line-clamp1"
-                            >
-                                {item.name}
-                            </h3>
-                            <p
-                                className="text-gray mini-text line-clamp2 font-400 mt-3"
-                            >
-                                {item.description}
-                            </p>
-                            {(item.priceDisplay || item.price) && (
-                                <p
-                                    className="text-dark mini-text font-400 mt-7"
-                                >
-                                    {item.priceDisplay || `₹ ${item.price} / Piece`}
-                                </p>
-                            )}
-                        </div>
+                    {/* Product Image Container */}
+                    <div
+                        className="relative overflow-hidden rounded-5 flex items-center justify-center bg-forth"
+                        style={{
+                            aspectRatio: '1/1'
+                        }}
+                    >
+                        <Image
+                            src={imgSrc}
+                            alt={item.name}
+                            loading={index < eagerCount ? "eager" : "lazy"}
+                            fetchPriority={index < eagerCount ? "high" : undefined}
+                            className="w-full h-300 object-contain flex"
+                            style={{ mixBlendMode: 'multiply' }}
+                        />
                     </div>
 
-                    {/* Action Buttons at Bottom */}
-                    <div className="flex gap-10 mt-10 w-full">
-                        {showAddToCart && (
-                            <Button
-                                text="Quick Buy"
-                                variant="outline"
-                                bg="primary"
-                                version="v3"
-                                icon="Cart"
-                                className={showViewProducts ? "flex-1" : "w-full"}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (onAddToCart) {
-                                        onAddToCart(item);
-                                    } else {
-                                        addToCart(item);
-                                        showToast(`${item.name} added to cart!`);
-                                    }
-                                }}
-                            />
-                        )}
-                        {showViewProducts && (
-                            <Button
-                                text="Explore"
-                                bg="primary"
-                                variant="filled"
-                                version="v3"
-                                className={showAddToCart ? "flex-1" : "w-full"}
-                                style={{
-                                    backgroundColor: '#2563eb',
-                                    color: '#ffffff',
-                                    borderRadius: '8px',
-                                    fontWeight: '500',
-                                    fontSize: '0.95rem',
-                                    padding: '10px 0',
-                                }}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (onButtonClick) {
-                                        onButtonClick(item);
-                                    } else if (onCardClick) {
-                                        onCardClick(item);
-                                    }
-                                }}
-                            />
+                    {/* Product Metadata */}
+                    <div className="mt-12">
+                        <h3 className="text-dark font-500 headmini-text line-clamp1">
+                            {item.name}
+                        </h3>
+                        {(item.priceDisplay || item.price) && (
+                            <p className="text-gray mini-text font-400 mt-2">
+                                {item.priceDisplay || `₹ ${item.price} / Piece`}
+                            </p>
                         )}
                     </div>
                 </div>
@@ -141,7 +87,7 @@ const CardLayout = ({
             return (
                 <div
                     key={item.id || index}
-                    className="bg-white border-ec rounded-5 overflow-hidden p-10 cursor-pointer flex flex-column justify-between"
+                    className="bg-white border-ec rounded-5 overflow-hidden p-10 cursor-pointer justify-between"
                     onClick={() => onCardClick && onCardClick(item)}
                 >
                     <div>
@@ -200,7 +146,7 @@ const CardLayout = ({
             return (
                 <article
                     key={item.id || index}
-                    className="bg-white rounded-5 overflow-hidden cursor-pointer flex flex-column justify-between"
+                    className="bg-white rounded-5 overflow-hidden cursor-pointer justify-between"
                     onClick={() => onCardClick && onCardClick(item)}
                 >
                     <div>
@@ -228,9 +174,9 @@ const CardLayout = ({
                             <h3 className="text-dark font-600 mid-text line-clamp1">
                                 {item.title}
                             </h3>
-                             <p className="text-primary font-500 mini-text mt-3">
-                                 {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
-                             </p>
+                            <p className="text-primary font-500 mini-text mt-3">
+                                {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
+                            </p>
                             <p className="text-gray small-text line-clamp2 mt-7">
                                 {item.description}
                             </p>
@@ -241,78 +187,87 @@ const CardLayout = ({
         }
 
         if (cardType === 'city') {
-            const paddedIndex = String(index + 1).padStart(2, '0');
+            const stateMap = {
+                'Delhi': 'National Capital Region',
+                'Mumbai': 'Maharashtra',
+                'Bangalore': 'Karnataka',
+                'Chennai': 'Tamil Nadu',
+                'Kolkata': 'West Bengal',
+                'Ahmedabad': 'Gujarat',
+                'Surat': 'Gujarat',
+                'Jaipur': 'Rajasthan'
+            };
+            const bizCount = item.businesses ? item.businesses.split(' ')[0] : '0';
+            const catCount = item.categories ? item.categories.split(' ')[0] : '0';
+            const stateName = stateMap[item.name] || 'India';
+
             return (
                 <div
                     key={item.id || index}
-                    className="city-card relative overflow-hidden rounded-10 cursor-pointer h-350 flex items-end"
+                    className="city-card bg-white rounded-15 overflow-hidden cursor-pointer"
                     onClick={() => onCardClick && onCardClick(item)}
                 >
-                    {/* Lazy-loaded background image */}
-                    <Image
-                        src={item.image}
-                        alt={item.name}
-                        loading={index < eagerCount ? "eager" : "lazy"}
-                        fetchPriority={index < eagerCount ? "high" : undefined}
-                        className="absolute inset-0 w-full h-full object-cover z-0"
-                        width="300"
-                        height="350"
-                    />
-                    {/* Overlay */}
-                    <div
-                        className="absolute inset-0 z-1"
-                        style={{
-                            backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%)'
-                        }}
-                    />
+                    {/* Top Image Container */}
+                    <div className="relative w-full h-200 overflow-hidden">
+                        <Image
+                            src={item.image}
+                            alt={item.name}
+                            loading={index < eagerCount ? "eager" : "lazy"}
+                            fetchPriority={index < eagerCount ? "high" : undefined}
+                            className="w-full h-200 object-cover"
+                        />
 
-                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12 flex items-center justify-center z-10" style={{ zIndex: 10 }}>
-                        <Icon name="MapPin" width="15" height="15" stroke="var(--primary)" strokeWidth="2.5" />
+                        {/* Top-Left Pin Circular Icon */}
+                        <div
+                            className="absolute top-0 left-0 bg-white rounded-full z-10 icon-lg m-6"
+                        >
+                            <Icon name="MapPin" width="14" height="14" stroke="#6366f1" strokeWidth="2.5" />
+                        </div>
+
+                        {/* Top-Right Badge */}
+                        {item.tag && (
+                            <div
+                                className="absolute top-0 right-0 px-10 py-5 rounded-20 flex items-center gap-4 z-10 m-6"
+                                style={{
+                                    backgroundColor: item.tagType === 'most-searched' ? '#eab308' : '#22c55e',
+                                }}
+                            >
+                                {item.tagType === 'most-searched' ? (
+                                    <Icon name="Star" width="10" height="10" fill="var(--white)" stroke="var(--white)" />
+                                ) : (
+                                    <Icon name="Trending" width="10" height="10" stroke="var(--white)" strokeWidth="3" />
+                                )}
+                                <p className='mini-text text-white'>{item.tag.toUpperCase()}</p>
+                            </div>
+                        )}
                     </div>
 
-                    <div className="relative w-full z-10" style={{ zIndex: 10 }}>
-                        <div className="p-20">
-                            <div className="flex items-center gap-8 mb-6">
-                                <Icon name="MapPin" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                <h4 className="mid-text text-white font-600">{item.name}</h4>
+                    <div className="py-5">
+                        <div className='px-6'>
+                            <h3 className="text-dark font-500 headmini-text">{item.name}</h3>
+                            <div className="flex items-center gap-4 mt-4">
+                                <Icon name="MapPin" width="12" height="12" stroke="currentColor" strokeWidth="2" />
+                                <p className='text-gray mini-text'>{stateName}</p>
                             </div>
+                        </div>
 
-                            {/* Stats List */}
-                            <div className="grid-cols-1 gap-6 mb-16">
-                                <div className="flex items-center gap-8 text-white opacity-95">
-                                    <Icon name="Building" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                    <span className="small-text font-400">{item.businesses}</span>
-                                </div>
-                                <div className="flex items-center gap-8 text-white opacity-95">
-                                    <Icon name="Grid" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                    <span className="small-text font-400">{item.categories}</span>
+                        <div className="grid-cols-2 gap-4 mt-8 bordb">
+                            <div
+                                className="flex items-center gap-8 rounded-8 p-5 bg-forth"
+                            >
+                                <Icon name="Building" width="13" height="13" strokeWidth="2.5" />
+                                <div>
+                                    <p className="mini-text text-dark font-600">{bizCount}</p>
+                                    <p className="text-gray font-400 mini-text">Businesses</p>
                                 </div>
                             </div>
-
-                            <div className="flex items-center justify-between w-full">
-                                {/* Dynamic Tag Badge */}
-                                {item.tag ? (
-                                    <div
-                                        className="px-12 py-5 rounded-20 w-max flex items-center gap-6"
-                                        style={{
-                                            backgroundColor: item.tagType === 'most-searched' ? '#eab308' : '#22c55e',
-                                            color: item.tagType === 'most-searched' ? '#000000' : '#ffffff',
-                                        }}
-                                    >
-                                        {item.tagType === 'most-searched' ? (
-                                            <Icon name="Star" width="12" height="12" fill="currentColor" stroke="none" className="flex" />
-                                        ) : (
-                                            <Icon name="Trending" width="12" height="12" stroke="currentColor" strokeWidth="3" className="flex" />
-                                        )}
-                                        <span className="mini-text font-600 uppercase tracking-wider">
-                                            {item.tag}
-                                        </span>
-                                    </div>
-                                ) : null}
-
-                                {/* Circular Right Action Button */}
-                                <div className="icon-lg bg-white rounded-full">
-                                    <Icon name="ArrowRight" width="16" height="16" stroke="var(--primary)" strokeWidth="3.5" />
+                            <div
+                                className="flex items-center gap-8 rounded-8 p-5 bg-forth"
+                            >
+                                <Icon name="Grid" width="13" height="13" strokeWidth="2.5" />
+                                <div>
+                                    <p className="mini-text text-dark font-600">{catCount}</p>
+                                    <p className="text-gray font-400 mini-text">Categories</p>
                                 </div>
                             </div>
                         </div>
@@ -332,7 +287,12 @@ const CardLayout = ({
                 }
                 .city-card:hover {
                     transform: translateY(-6px);
-                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                    }
+                .city-card img {
+                    transition: transform 0.5s ease;
+                }
+                .city-card:hover img {
+                    transform: scale(1.05);
                 }
                 
                 .custom-swiper-prev,

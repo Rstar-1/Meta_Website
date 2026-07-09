@@ -1895,7 +1895,7 @@
     "sku": "GEN-AC-01",
     "brand": "Generic",
     "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smart_watch.png",
     "tags": [
       "ac",
       "cooling",
@@ -1921,9 +1921,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smart_watch.png",
+      "/src/assets/smart_watch.png",
+      "/src/assets/smart_watch.png"
     ],
     "reviews": [
       {
@@ -1964,7 +1964,7 @@
     "sku": "GEN-WP-02",
     "brand": "Generic",
     "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smart_watch.png",
     "tags": [
       "water",
       "purifier",
@@ -1990,8 +1990,8 @@
     ],
     "client": "biz-4",
     "images": [
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smart_watch.png",
+      "/src/assets/smart_watch.png"
     ],
     "reviews": [
       {
@@ -2046,7 +2046,7 @@
     "sku": "GEN-SP-03",
     "brand": "Generic",
     "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smart_watch.png",
     "tags": [
       "solar",
       "panels",
@@ -2072,8 +2072,8 @@
     ],
     "client": "biz-4",
     "images": [
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smart_watch.png",
+      "/src/assets/smart_watch.png"
     ],
     "reviews": [
       {
@@ -2128,7 +2128,7 @@
     "sku": "GEN-GN-04",
     "brand": "Generic",
     "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "generator",
       "power",
@@ -2154,8 +2154,8 @@
     ],
     "client": "biz-3",
     "images": [
-      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png",
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -2196,7 +2196,7 @@
     "sku": "GEN-OC-05",
     "brand": "Generic",
     "category": "cat-12",
-    "image": "https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "chair",
       "office",
@@ -2222,8 +2222,8 @@
     ],
     "client": "biz-5",
     "images": [
-      "https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png",
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -2271,7 +2271,7 @@
     "sku": "GEN-CC-06",
     "brand": "Generic",
     "category": "cat-6",
-    "image": "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "cctv",
       "camera",
@@ -2297,8 +2297,8 @@
     ],
     "client": "biz-3",
     "images": [
-      "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png",
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -2412,7 +2412,7 @@
     "sku": "PVC-EL-02",
     "brand": "Supreme",
     "category": "cat-2",
-    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pvc",
       "elbow",
@@ -2438,8 +2438,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/electric_kettle.png",
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -2472,7 +2472,7 @@
     "sku": "IND-HP-01",
     "brand": "ForceTech",
     "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "machinery",
       "hydraulic",
@@ -2498,8 +2498,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/laptop.png",
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -2532,7 +2532,7 @@
     "sku": "PKG-CB-01",
     "brand": "PackShield",
     "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/exercise_bike.png",
     "tags": [
       "packaging",
       "box",
@@ -2558,8 +2558,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/exercise_bike.png",
+      "/src/assets/exercise_bike.png"
     ],
     "reviews": [
       {
@@ -2592,7 +2592,7 @@
     "sku": "PKG-SW-02",
     "brand": "StretchMax",
     "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/exercise_bike.png",
     "tags": [
       "packaging",
       "wrap",
@@ -2618,8 +2618,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/exercise_bike.png",
+      "/src/assets/exercise_bike.png"
     ],
     "reviews": [
       {
@@ -2652,7 +2652,7 @@
     "sku": "SAF-SH-01",
     "brand": "Karam",
     "category": "cat-6",
-    "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "safety",
       "helmet",
@@ -2678,8 +2678,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/smartphone.png",
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -2712,7 +2712,7 @@
     "sku": "OFF-WB-01",
     "brand": "Alkos",
     "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "office",
       "whiteboard",
@@ -2738,8 +2738,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/laptop.png",
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -2772,7 +2772,7 @@
     "sku": "OFF-BP-02",
     "brand": "Reynolds",
     "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "office",
       "supplies",
@@ -2798,8 +2798,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/laptop.png",
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -2832,7 +2832,7 @@
     "sku": "HRD-WS-01",
     "brand": "Taparia",
     "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "tools",
       "wrench",
@@ -2858,8 +2858,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/vr_headset.png",
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -2892,7 +2892,7 @@
     "sku": "HRD-CH-02",
     "brand": "Stanley",
     "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "tools",
       "hammer",
@@ -2918,8 +2918,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/vr_headset.png",
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -3072,7 +3072,7 @@
     "sku": "PMP-CP-01",
     "brand": "Kirloskar",
     "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pump",
       "centrifugal",
@@ -3098,8 +3098,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/electric_kettle.png",
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -3132,7 +3132,7 @@
     "sku": "PMP-SP-02",
     "brand": "Crompton",
     "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pump",
       "submersible",
@@ -3158,8 +3158,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/electric_kettle.png",
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -3192,7 +3192,7 @@
     "sku": "FNT-EC-01",
     "brand": "Featherlite",
     "category": "cat-12",
-    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "furniture",
       "chair",
@@ -3218,8 +3218,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/laptop.png",
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -3252,7 +3252,7 @@
     "sku": "BRG-BB-01",
     "brand": "SKF",
     "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "bearing",
       "ball-bearing",
@@ -3278,8 +3278,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/smartphone.png",
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -3312,7 +3312,7 @@
     "sku": "BRG-JC-02",
     "brand": "Rotex",
     "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "coupling",
       "shaft",
@@ -3338,8 +3338,8 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80"
+      "/src/assets/smartphone.png",
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -3372,7 +3372,7 @@
     "sku": "ST-AB-505",
     "brand": "Tata Steel",
     "category": "cat-1",
-    "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "steel",
       "angle bar",
@@ -3398,7 +3398,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -3424,7 +3424,7 @@
     "sku": "ST-GP-02",
     "brand": "Jindal",
     "category": "cat-1",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "steel",
       "pipe",
@@ -3450,7 +3450,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -3476,7 +3476,7 @@
     "sku": "SS-HB-316",
     "brand": "LPS",
     "category": "cat-1",
-    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "steel",
       "bolt",
@@ -3502,7 +3502,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -3528,7 +3528,7 @@
     "sku": "MS-PL-10M",
     "brand": "SAIL",
     "category": "cat-1",
-    "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "steel",
       "plate",
@@ -3554,7 +3554,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -3580,7 +3580,7 @@
     "sku": "PVC-SC-200",
     "brand": "Extruflex",
     "category": "cat-2",
-    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pvc",
       "curtain",
@@ -3606,7 +3606,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -3632,7 +3632,7 @@
     "sku": "PVC-FH-12",
     "brand": "Finolex",
     "category": "cat-2",
-    "image": "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pvc",
       "hose",
@@ -3658,7 +3658,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -3788,7 +3788,7 @@
     "sku": "IM-CNC-30",
     "brand": "Metatech",
     "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "machinery",
       "cnc",
@@ -3814,7 +3814,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -3840,7 +3840,7 @@
     "sku": "IM-ST-SA",
     "brand": "Packman",
     "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "machinery",
       "strapping",
@@ -3866,7 +3866,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -3892,7 +3892,7 @@
     "sku": "IM-LM-500",
     "brand": "Bharat Tools",
     "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "machinery",
       "lathe",
@@ -3918,7 +3918,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -3944,7 +3944,7 @@
     "sku": "IM-CB-300",
     "brand": "Laxmi Ind",
     "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "machinery",
       "conveyor",
@@ -3970,7 +3970,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -3996,7 +3996,7 @@
     "sku": "EL-MO-3P5HP",
     "brand": "Crompton",
     "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smart_watch.png",
     "tags": [
       "electrical",
       "motor",
@@ -4022,7 +4022,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smart_watch.png"
     ],
     "reviews": [
       {
@@ -4048,7 +4048,7 @@
     "sku": "EL-VF-050",
     "brand": "Schneider",
     "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smart_watch.png",
     "tags": [
       "electrical",
       "vfd",
@@ -4074,7 +4074,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smart_watch.png"
     ],
     "reviews": [
       {
@@ -4100,7 +4100,7 @@
     "sku": "EL-MM-PRO",
     "brand": "Fluke",
     "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smart_watch.png",
     "tags": [
       "electronics",
       "multimeter",
@@ -4126,7 +4126,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smart_watch.png"
     ],
     "reviews": [
       {
@@ -4152,7 +4152,7 @@
     "sku": "EL-MCB-32",
     "brand": "Havells",
     "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smart_watch.png",
     "tags": [
       "electrical",
       "mcb",
@@ -4178,7 +4178,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smart_watch.png"
     ],
     "reviews": [
       {
@@ -4204,7 +4204,7 @@
     "sku": "PK-SW-500",
     "brand": "Polypack",
     "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/exercise_bike.png",
     "tags": [
       "packaging",
       "stretch wrap",
@@ -4230,7 +4230,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/exercise_bike.png"
     ],
     "reviews": [
       {
@@ -4256,7 +4256,7 @@
     "sku": "PK-CB-5P50",
     "brand": "Boxmaker",
     "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/exercise_bike.png",
     "tags": [
       "packaging",
       "carton",
@@ -4282,7 +4282,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/exercise_bike.png"
     ],
     "reviews": [
       {
@@ -4308,7 +4308,7 @@
     "sku": "PK-BW-100",
     "brand": "ShieldPack",
     "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/exercise_bike.png",
     "tags": [
       "packaging",
       "bubble wrap",
@@ -4334,7 +4334,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/exercise_bike.png"
     ],
     "reviews": [
       {
@@ -4360,7 +4360,7 @@
     "sku": "PK-PP-STRIP",
     "brand": "Packman",
     "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/exercise_bike.png",
     "tags": [
       "packaging",
       "strap",
@@ -4386,7 +4386,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/exercise_bike.png"
     ],
     "reviews": [
       {
@@ -4412,7 +4412,7 @@
     "sku": "SF-VS-NG",
     "brand": "Karam",
     "category": "cat-6",
-    "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "safety",
       "vest",
@@ -4438,7 +4438,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -4464,7 +4464,7 @@
     "sku": "SF-HL-HDPE",
     "brand": "Karam",
     "category": "cat-6",
-    "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "safety",
       "helmet",
@@ -4490,7 +4490,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -4516,7 +4516,7 @@
     "sku": "SF-SH-STEEL",
     "brand": "Hillson",
     "category": "cat-6",
-    "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "safety",
       "shoes",
@@ -4542,7 +4542,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -4568,7 +4568,7 @@
     "sku": "SF-GG-CHEM",
     "brand": "3M",
     "category": "cat-6",
-    "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "safety",
       "goggles",
@@ -4594,7 +4594,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -4620,7 +4620,7 @@
     "sku": "PR-TON-NPG59",
     "brand": "Canon",
     "category": "cat-7",
-    "image": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/printer_hp_88a.png",
     "tags": [
       "printer",
       "copier",
@@ -4646,7 +4646,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/printer_hp_88a.png"
     ],
     "reviews": [
       {
@@ -4828,7 +4828,7 @@
     "sku": "OS-PA-A475",
     "brand": "JK Paper",
     "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "office",
       "paper",
@@ -4854,7 +4854,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -4880,7 +4880,7 @@
     "sku": "OS-WB-34",
     "brand": "Pragati",
     "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "office",
       "whiteboard",
@@ -4906,7 +4906,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -4932,7 +4932,7 @@
     "sku": "OS-DO-MESH",
     "brand": "Solo",
     "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "office",
       "organizer",
@@ -4958,7 +4958,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -4984,7 +4984,7 @@
     "sku": "OS-PS-10C",
     "brand": "GBC",
     "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "office",
       "shredder",
@@ -5010,7 +5010,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -5036,7 +5036,7 @@
     "sku": "HW-SW-120",
     "brand": "Stanley",
     "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "tools",
       "socket set",
@@ -5062,7 +5062,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -5088,7 +5088,7 @@
     "sku": "HW-HM-CLAW",
     "brand": "Taparia",
     "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "tools",
       "hammer",
@@ -5114,7 +5114,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -5140,7 +5140,7 @@
     "sku": "HW-SD-321",
     "brand": "Bosch",
     "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "tools",
       "screwdriver",
@@ -5166,7 +5166,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -5192,7 +5192,7 @@
     "sku": "HW-SP-12",
     "brand": "Taparia",
     "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/vr_headset.png",
     "tags": [
       "tools",
       "spanner",
@@ -5218,7 +5218,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/vr_headset.png"
     ],
     "reviews": [
       {
@@ -5452,7 +5452,7 @@
     "sku": "IP-CP-1HP",
     "brand": "Kirloskar",
     "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pumps",
       "centrifugal",
@@ -5478,7 +5478,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -5504,7 +5504,7 @@
     "sku": "IP-SP-SUB",
     "brand": "Crompton",
     "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pumps",
       "submersible",
@@ -5530,7 +5530,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -5556,7 +5556,7 @@
     "sku": "IP-VP-ROTARY",
     "brand": "Metatech",
     "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pumps",
       "vacuum",
@@ -5582,7 +5582,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -5608,7 +5608,7 @@
     "sku": "IP-DP-DOSING",
     "brand": "Seko",
     "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/electric_kettle.png",
     "tags": [
       "pumps",
       "metering",
@@ -5634,7 +5634,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/electric_kettle.png"
     ],
     "reviews": [
       {
@@ -5660,7 +5660,7 @@
     "sku": "FN-EC-MESH",
     "brand": "Godrej Interio",
     "category": "cat-12",
-    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "furniture",
       "chair",
@@ -5686,7 +5686,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -5712,7 +5712,7 @@
     "sku": "FN-WT-IND",
     "brand": "Bharat Tools",
     "category": "cat-12",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "furniture",
       "workbench",
@@ -5738,7 +5738,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -5764,7 +5764,7 @@
     "sku": "FN-FC-STEEL",
     "brand": "Godrej Interio",
     "category": "cat-12",
-    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "furniture",
       "cabinet",
@@ -5790,7 +5790,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -5816,7 +5816,7 @@
     "sku": "FN-ST-DRAFT",
     "brand": "Solo",
     "category": "cat-12",
-    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/laptop.png",
     "tags": [
       "furniture",
       "stool",
@@ -5842,7 +5842,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/laptop.png"
     ],
     "reviews": [
       {
@@ -5868,7 +5868,7 @@
     "sku": "BC-BR-6204ZZ",
     "brand": "SKF",
     "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "bearings",
       "ball bearing",
@@ -5894,7 +5894,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -5920,7 +5920,7 @@
     "sku": "BC-BR-UCP205",
     "brand": "FAG",
     "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "bearings",
       "pillow block",
@@ -5946,7 +5946,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -5972,7 +5972,7 @@
     "sku": "BC-CP-L095",
     "brand": "Lovejoy",
     "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "couplings",
       "flexible coupling",
@@ -5998,7 +5998,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {
@@ -6024,7 +6024,7 @@
     "sku": "BC-CP-TAPER",
     "brand": "Fenner",
     "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
+    "image": "/src/assets/smartphone.png",
     "tags": [
       "couplings",
       "taper lock",
@@ -6050,7 +6050,7 @@
       }
     ],
     "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
+      "/src/assets/smartphone.png"
     ],
     "reviews": [
       {

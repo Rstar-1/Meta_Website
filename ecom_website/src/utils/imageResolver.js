@@ -17,6 +17,12 @@ import ssWireMesh from '../assets/ss_wire_mesh.png';
 import ssFasteners from '../assets/ss_fasteners.png';
 import pvcConduitPipe from '../assets/pvc_conduit_pipe.png';
 import pvcBallValve from '../assets/pvc_ball_valve.png';
+import vrHeadset from '../assets/vr_headset.png';
+import electricKettle from '../assets/electric_kettle.png';
+import laptop from '../assets/laptop.png';
+import exerciseBike from '../assets/exercise_bike.png';
+import smartWatch from '../assets/smart_watch.png';
+import smartphone from '../assets/smartphone.png';
 
 const assetMap = {
   '/src/assets/printer_hp_88a.png': printerHp88a,
@@ -37,6 +43,12 @@ const assetMap = {
   '/src/assets/ss_fasteners.png': ssFasteners,
   '/src/assets/pvc_conduit_pipe.png': pvcConduitPipe,
   '/src/assets/pvc_ball_valve.png': pvcBallValve,
+  '/src/assets/vr_headset.png': vrHeadset,
+  '/src/assets/electric_kettle.png': electricKettle,
+  '/src/assets/laptop.png': laptop,
+  '/src/assets/exercise_bike.png': exerciseBike,
+  '/src/assets/smart_watch.png': smartWatch,
+  '/src/assets/smartphone.png': smartphone,
 };
 
 const idMap = {

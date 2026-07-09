@@ -1,56 +1,56 @@
 [
   {
     "id": "cat-1",
-    "name": "Steel Products",
-    "icon": "/src/assets/ss_304_pipes.png",
+    "name": "VR Headsets",
+    "icon": "/src/assets/vr_headset.png",
     "color": "#e8f0fe"
   },
   {
     "id": "cat-2",
-    "name": "PVC Products",
-    "icon": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=150&h=150&q=80",
+    "name": "Electric Kettles",
+    "icon": "/src/assets/electric_kettle.png",
     "color": "#d1fae5"
   },
   {
     "id": "cat-3",
-    "name": "Industrial Machinery",
-    "icon": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=150&h=150&q=80",
+    "name": "Laptops",
+    "icon": "/src/assets/laptop.png",
     "color": "#fef3c7"
   },
   {
     "id": "cat-4",
-    "name": "Electrical & Electronics",
-    "icon": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=150&h=150&q=80",
+    "name": "Smart Watches",
+    "icon": "/src/assets/smart_watch.png",
     "color": "#fde8e8"
   },
   {
     "id": "cat-5",
-    "name": "Packaging Solutions",
-    "icon": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=150&h=150&q=80",
+    "name": "Exercise Bikes",
+    "icon": "/src/assets/exercise_bike.png",
     "color": "#f3e8ff"
   },
   {
     "id": "cat-6",
-    "name": "Safety Equipment",
-    "icon": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=150&h=150&q=80",
+    "name": "Smartphones",
+    "icon": "/src/assets/smartphone.png",
     "color": "#ffedd5"
   },
   {
     "id": "cat-7",
     "name": "Printers & Copiers",
-    "icon": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=150&h=150&q=80",
+    "icon": "/src/assets/printer_hp_88a.png",
     "color": "#fce7f3"
   },
   {
     "id": "cat-8",
     "name": "Office Supplies",
-    "icon": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=150&h=150&q=80",
+    "icon": "/src/assets/printer_hp_88a.png",
     "color": "#dbeafe"
   },
   {
     "id": "cat-9",
     "name": "Hardware Tools",
-    "icon": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=150&h=150&q=80",
+    "icon": "/src/assets/ss_fasteners.png",
     "color": "#e2e8f0"
   },
   {
@@ -62,19 +62,19 @@
   {
     "id": "cat-11",
     "name": "Industrial Pumps",
-    "icon": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=150&h=150&q=80",
+    "icon": "/src/assets/pvc_ball_valve.png",
     "color": "#ccfbf1"
   },
   {
     "id": "cat-12",
     "name": "Office & Industrial Furniture",
-    "icon": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=150&h=150&q=80",
+    "icon": "/src/assets/printer_hp_88a.png",
     "color": "#ffedd5"
   },
   {
     "id": "cat-13",
     "name": "Bearings & Couplings",
-    "icon": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=150&h=150&q=80",
+    "icon": "/src/assets/ss_fasteners.png",
     "color": "#e0f2fe"
   }
 ]

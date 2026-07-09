@@ -15,33 +15,44 @@ const BrowseCategory = ({ onSelectCategory }) => {
     }
   };
 
-  // Limit homepage categories to 7: first 6 actual categories + 1 custom "More" category
-  const displayedCategories = [
-    ...categories.slice(0, 6)
-  ];
-
   return (
-    <Container className='bg-forth'>
-      <div className="w-full py-30">
-        <div className='grid-cols-6 md-grid-cols-4 sm-grid-cols-2 gap-12'>
-          {displayedCategories.map((cat) => (
+    <Container className="bg-white">
+      <div className="w-full py-40">
+        <div className="flex justify-between items-center mb-20">
+          <h2 className="title-text text-dark font-600">Browse by Category</h2>
+          <p
+            className="text-primary font-500 cursor-pointer small-text"
+            onClick={() => navigate('/products')}
+          >
+            View All ➔
+          </p>
+        </div>
+
+        <div className="grid-cols-6 md-grid-cols-3 sm-grid-cols-2 gap-12">
+          {categories?.slice(0, 6)?.map((cat) => (
             <div
               key={cat.id}
-              className="px-10 py-20 bg-white rounded-10 cursor-pointer text-center"
+              className="cursor-pointer text-center group"
               onClick={() => handleCategoryClick(cat)}
             >
-              <div className='relative'>
+              <div
+                className="relative rounded-5 flex items-center justify-center overflow-hidden"
+                style={{
+                  backgroundColor: cat.color || '#f3f4f6',
+                  aspectRatio: '4/3'
+                }}
+              >
                 <Image
                   src={resolveImagePath(cat.icon)}
                   alt={cat.name}
-                  width="80"
-                  height="80"
                   loading="lazy"
-                  className="flex object-cover rounded-full mx-auto"
-                  style={{ width: '80px', height: '80px' }}
+                  className="w-full h-150 object-contain flex"
+                  style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
-              <p className="text-gray font-500 mini-text text-center mt-18">{cat.name}</p>
+              <p className="text-dark font-400 mini-text mt-12">
+                {cat.name}
+              </p>
             </div>
           ))}
         </div>
