@@ -43,7 +43,7 @@ const PopularProducts = () => {
               slidesPerView: 3.7,
             },
             1024: {
-              slidesPerView: 5.7,
+              slidesPerView: 5.4,
             }
           }}
           className="mt-20"
