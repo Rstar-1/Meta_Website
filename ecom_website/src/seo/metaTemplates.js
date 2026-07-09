@@ -1,6 +1,6 @@
 import { slugify } from '../utils/slugify';
 
-export const productMetaTemplate = (product, baseUrl = 'https://ecom-website.example.com') => {
+export const productMetaTemplate = (product, baseUrl = 'https://sobo-marketing.com') => {
   if (!product) return {};
   const productSlug = product.slug || slugify(product.name);
   return {
@@ -14,7 +14,7 @@ export const productMetaTemplate = (product, baseUrl = 'https://ecom-website.exa
   };
 };
 
-export const categoryMetaTemplate = (category, baseUrl = 'https://ecom-website.example.com') => {
+export const categoryMetaTemplate = (category, baseUrl = 'https://sobo-marketing.com') => {
   if (!category) return {};
   const categorySlug = category.slug || slugify(category.name);
   return {
@@ -28,7 +28,7 @@ export const categoryMetaTemplate = (category, baseUrl = 'https://ecom-website.e
   };
 };
 
-export const blogMetaTemplate = (post, baseUrl = 'https://ecom-website.example.com') => {
+export const blogMetaTemplate = (post, baseUrl = 'https://sobo-marketing.com') => {
   if (!post) return {};
   const postSlug = post.slug || slugify(post.title);
   return {

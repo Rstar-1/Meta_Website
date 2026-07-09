@@ -18,7 +18,7 @@ const LatestProducts = () => {
 
   return (
     <>
-      {targetCategoryIds.map((catId) => {
+      {targetCategoryIds.map((catId, catIndex) => {
         const category = categories.find(c => c.id === catId);
         if (!category) return null;
 
@@ -46,6 +46,7 @@ const LatestProducts = () => {
                 cardType="product"
                 imageHeight="h-250"
                 isSlider={true}
+                eagerCount={catIndex === 0 ? 2 : 0}
                 sliderSlidesPerView={1.2}
                 sliderBreakpoints={{
                   640: {

@@ -1,4 +1,4 @@
-export const generateRobots = (baseUrl = 'https://ecom-website.example.com') => {
+export const generateRobots = (baseUrl = 'https://sobo-marketing.com') => {
   return `# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /

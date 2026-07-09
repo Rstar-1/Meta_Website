@@ -2,40 +2,52 @@ import defaultSEO from './defaultSEO';
 
 export const routeMeta = {
   '/': {
-    title: 'Home',
+    title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
     description: defaultSEO.description,
     keywords: defaultSEO.keywords,
     path: '/'
   },
+  '/home': {
+    title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
+    description: defaultSEO.description,
+    keywords: defaultSEO.keywords,
+    path: '/home'
+  },
   '/about': {
-    title: 'About Us - Our Story & Values',
-    description: 'Learn about EcoStore, our commitment to sustainability, environmental impact, and our premium product selection.',
-    keywords: 'about ecostore, our mission, green values, eco team',
+    title: 'About Us | SOBO Marketing Solution',
+    description: 'Learn about SOBO Marketing Solution, our journey, values, and how we deliver top-tier industrial products.',
+    keywords: 'About SOBO, B2B Supplier India, Industrial Partner, SOBO Marketing',
     path: '/about'
   },
   '/products': {
-    title: 'Shop All Products',
-    description: 'Explore our full range of premium eco-friendly items. Fast shipping, easy returns, and sustainable packaging.',
-    keywords: 'shop eco-friendly, sustainable products list, green inventory',
+    title: 'Industrial Products & Supplies Catalog | SOBO Marketing Solution',
+    description: 'Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products.',
+    keywords: 'Product Catalog, Toner Cartridges Shop, SS Steel Sheets, B2B Supplies, SOBO Marketing',
     path: '/products'
   },
   '/category': {
-    title: 'Product Categories',
-    description: 'Browse sustainable solutions curated by category. Find eco-friendly alternatives for home, kitchen, and personal care.',
-    keywords: 'product categories, kitchen care, personal care, green home',
+    title: 'Product Categories | SOBO Marketing Solution',
+    description: 'Browse industrial and commercial products by category. Find premium stainless steel, PVC strip curtains, and printing consumables.',
+    keywords: 'product categories, stainless steel, PVC strip curtains, toner cartridges, B2B categories',
     path: '/category'
   },
   '/blog': {
-    title: 'EcoStore Blog - Sustainable Living Tips',
-    description: 'Read the latest tips on zero-waste living, sustainability guides, and eco-friendly practices.',
-    keywords: 'eco blog, zero waste lifestyle, sustainable living articles',
+    title: 'SOBO Marketing Blog - Industrial & Marketing Insights',
+    description: 'Read the latest guides and tips on B2B marketing, industrial supply chain standards, and digital growth strategies.',
+    keywords: 'B2B marketing, industrial supplies blog, supply chain insights, digital marketing tips',
     path: '/blog'
   },
-
   '/contact': {
-    title: 'Contact Us',
-    description: 'Have questions or need assistance? Reach out to EcoStore support via contact form, email, or phone.',
-    keywords: 'contact ecostore, customer support, customer care',
+    title: 'Contact Us | SOBO Marketing Solution',
+    description: 'Have questions or need assistance with your B2B order? Reach out to SOBO Marketing Solution support.',
+    keywords: 'contact SOBO, B2B customer support, get quote, industrial supplier contact',
     path: '/contact'
+  },
+  '/connect': {
+    title: 'Contact Us | SOBO Marketing Solution',
+    description: 'Have questions or need assistance with your B2B order? Reach out to SOBO Marketing Solution support.',
+    keywords: 'contact SOBO, B2B customer support, get quote, industrial supplier contact',
+    path: '/connect'
   }
 };
+

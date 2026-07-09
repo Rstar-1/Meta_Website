@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../common/Container";
-import { NavLink } from "react-router-dom";
+import Breadcrumb from "../common/Breadcrumb";
 
 const Banner = ({ title, img, desc, style, breadcrumbs, productData }) => {
     return (
@@ -38,47 +38,20 @@ const Banner = ({ title, img, desc, style, breadcrumbs, productData }) => {
 
                 {productData && (
                     <div className="mt-15">
-                        <nav className="flex items-center gap-10 w-full text-white opacity-85 flex-wrap small-text">
-                            <NavLink
-                                to="/home"
-                                className="text-white no-underline opacity-70 hover:opacity-100 transition-opacity"
-                            >
-                                Home
-                            </NavLink>
-                            <span className="opacity-40">&gt;</span>
-                            <NavLink
-                                to="/products"
-                                className="text-white no-underline opacity-70 hover:opacity-100 transition-opacity"
-                            >
-                                {productData.category || 'Printer Cartridges'}
-                            </NavLink>
-                            <span className="opacity-40">&gt;</span>
-                            <span className="opacity-70">{productData.brand}</span>
-                            <span className="opacity-40">&gt;</span>
-                            <span className="text-white font-600">{productData.title}</span>
-                        </nav>
+                        <Breadcrumb
+                            items={[
+                                { label: 'Home', path: '/home' },
+                                { label: productData.category || 'Printer Cartridges', path: '/products' },
+                                { label: productData.brand },
+                                { label: productData.title }
+                            ]}
+                        />
                     </div>
                 )}
                 {!productData && breadcrumbs && (
                     <div className="mt-15">
                         {Array.isArray(breadcrumbs) ? (
-                            <nav className="flex items-center gap-10 w-full text-white opacity-85 flex-wrap small-text">
-                                {breadcrumbs.map((item, idx) => (
-                                    <React.Fragment key={idx}>
-                                        {idx > 0 && <span className="opacity-40">&gt;</span>}
-                                        {item.path ? (
-                                            <NavLink
-                                                to={item.path}
-                                                className="text-white small-text"
-                                            >
-                                                {item.label}
-                                            </NavLink>
-                                        ) : (
-                                            <p className="text-white font-500 small-text">{item.label}</p>
-                                        )}
-                                    </React.Fragment>
-                                ))}
-                            </nav>
+                            <Breadcrumb items={breadcrumbs} />
                         ) : (
                             breadcrumbs
                         )}

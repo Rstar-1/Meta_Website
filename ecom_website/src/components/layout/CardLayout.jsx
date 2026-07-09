@@ -8,6 +8,7 @@ import { addToCart } from '../../utils/cartHelper';
 import { useNavigate } from 'react-router-dom';
 import { showToast } from '../common/Tooltip';
 import { resolveProductImage } from '../../utils/imageResolver';
+import { formatDate } from '../../utils/formatDate';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -33,6 +34,7 @@ const CardLayout = ({
     isSlider = false,
     sliderBreakpoints,
     sliderSlidesPerView = 1.2,
+    eagerCount = 0,
     ...props
 }) => {
     const navigate = useNavigate();
@@ -54,8 +56,8 @@ const CardLayout = ({
                             <Image
                                 src={imgSrc}
                                 alt={item.name}
-                                loading={index < 2 ? "eager" : "lazy"}
-                                fetchPriority={index < 2 ? "high" : undefined}
+                                loading={index < eagerCount ? "eager" : "lazy"}
+                                fetchPriority={index < eagerCount ? "high" : undefined}
                                 className={`w-full object-cover flex ${imageHeight || 'h-200'}`}
                                 width="300"
                                 height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : '200'}
@@ -147,8 +149,8 @@ const CardLayout = ({
                             <Image
                                 src={item.image}
                                 alt={item.name}
-                                loading={index < 2 ? "eager" : "lazy"}
-                                fetchPriority={index < 2 ? "high" : undefined}
+                                loading={index < eagerCount ? "eager" : "lazy"}
+                                fetchPriority={index < eagerCount ? "high" : undefined}
                                 className={`w-full object-cover rounded-5 flex ${imageHeight || 'h-150'}`}
                                 width="350"
                                 height="150"
@@ -207,8 +209,8 @@ const CardLayout = ({
                             <Image
                                 src={item.image}
                                 alt={item.title}
-                                loading={index < 2 ? "eager" : "lazy"}
-                                fetchPriority={index < 2 ? "high" : undefined}
+                                loading={index < eagerCount ? "eager" : "lazy"}
+                                fetchPriority={index < eagerCount ? "high" : undefined}
                                 className={`w-full object-cover ${imageHeight || 'h-200'}`}
                                 width="400"
                                 height="200"
@@ -226,9 +228,9 @@ const CardLayout = ({
                             <h3 className="text-dark font-600 mid-text line-clamp1">
                                 {item.title}
                             </h3>
-                            <p className="text-primary font-500 mini-text mt-3">
-                                {item.date} • {item.readTime}
-                            </p>
+                             <p className="text-primary font-500 mini-text mt-3">
+                                 {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
+                             </p>
                             <p className="text-gray small-text line-clamp2 mt-7">
                                 {item.description}
                             </p>
@@ -244,18 +246,31 @@ const CardLayout = ({
                 <div
                     key={item.id || index}
                     className="city-card relative overflow-hidden rounded-10 cursor-pointer h-350 flex items-end"
-                    style={{
-                        backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%), url(${item.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
                     onClick={() => onCardClick && onCardClick(item)}
                 >
-                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12 flex items-center justify-center">
+                    {/* Lazy-loaded background image */}
+                    <Image
+                        src={item.image}
+                        alt={item.name}
+                        loading={index < eagerCount ? "eager" : "lazy"}
+                        fetchPriority={index < eagerCount ? "high" : undefined}
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        width="300"
+                        height="350"
+                    />
+                    {/* Overlay */}
+                    <div
+                        className="absolute inset-0 z-1"
+                        style={{
+                            backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%)'
+                        }}
+                    />
+
+                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12 flex items-center justify-center z-10" style={{ zIndex: 10 }}>
                         <Icon name="MapPin" width="15" height="15" stroke="var(--primary)" strokeWidth="2.5" />
                     </div>
 
-                    <div className="relative w-full">
+                    <div className="relative w-full z-10" style={{ zIndex: 10 }}>
                         <div className="p-20">
                             <div className="flex items-center gap-8 mb-6">
                                 <Icon name="MapPin" width="14" height="14" strokeWidth="2.5" className="text-white" />

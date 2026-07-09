@@ -6,6 +6,7 @@ const background = "/background.png";
 import Icon from '../../../components/common/Icon';
 import Fields from '../../../components/common/Fields';
 import categoriesData from '../../../data/category.json';
+import Image from '../../../components/common/Image';
 
 const Hero = ({ onSearch }) => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const Hero = ({ onSearch }) => {
           pointerEvents: 'none'
         }}
       >
-        <img
+        <Image
           src={background}
           alt="Hero Background"
           loading="eager"

@@ -236,7 +236,7 @@ const Cart = () => {
                         const colorClass = getCategoryColor(catName);
                         return (
                           <div key={item.id} className="bg-white border-ec p-10 rounded-5 flex gap-12 items-start relative">
-                            <img
+                            <Image
                               src={resolveProductImage(item)}
                               alt={item.name}
                               width="80"

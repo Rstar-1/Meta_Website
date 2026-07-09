@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Pagination from "./Pagination";
 import Icon from "./Icon";
 import { resolveImagePath } from "../../utils/imageResolver";
+import Image from "./Image";
 
 // Helper function to render cell content based on column definition
 const renderCellContent = (col, row, rowIdx) => {
@@ -22,7 +23,7 @@ const renderCellContent = (col, row, rowIdx) => {
             return (
                 <div className="flex items-center gap-12">
                     {imgUrl ? (
-                        <img src={imgUrl} alt={name} className="common-img rounded-5 object-cover border-tertiary" style={imgStyle} />
+                        <Image src={imgUrl} alt={name} className="common-img rounded-5 object-cover border-tertiary" style={imgStyle} />
                     ) : (
                         <div style={{ background: favColor, width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0 }} className="center-div">
                             <p className="small-text text-white" style={{ margin: 0, fontWeight: 600 }}>{initial}</p>

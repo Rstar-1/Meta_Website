@@ -5,9 +5,9 @@ export const generateSchema = {
     return {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      'name': orgData.name || 'E-Commerce Store',
-      'url': orgData.url || 'https://example.com',
-      'logo': orgData.logo || 'https://example.com/logo.png',
+      'name': orgData.name || 'SOBO Marketing Solution',
+      'url': orgData.url || 'https://sobo-marketing.com',
+      'logo': orgData.logo || 'https://sobo-marketing.com/sobo_logo.png',
       'contactPoint': orgData.contact ? {
         '@type': 'ContactPoint',
         'telephone': orgData.contact.phone || '',
@@ -22,11 +22,11 @@ export const generateSchema = {
     return {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      'name': siteData.name || 'E-Commerce Store',
-      'url': siteData.url || 'https://example.com',
+      'name': siteData.name || 'SOBO Marketing Solution',
+      'url': siteData.url || 'https://sobo-marketing.com',
       'potentialAction': {
         '@type': 'SearchAction',
-        'target': `${siteData.url || 'https://example.com'}/search?q={search_term_string}`,
+        'target': `${siteData.url || 'https://sobo-marketing.com'}/search?q={search_term_string}`,
         'query-input': 'required name=search_term_string'
       }
     };
@@ -37,10 +37,10 @@ export const generateSchema = {
     return {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      'name': bizData.name || 'E-Commerce Store',
-      'image': bizData.image || 'https://example.com/logo.png',
-      '@id': bizData.url || 'https://example.com',
-      'url': bizData.url || 'https://example.com',
+      'name': bizData.name || 'SOBO Marketing Solution',
+      'image': bizData.image || 'https://sobo-marketing.com/sobo_logo.png',
+      '@id': bizData.url || 'https://sobo-marketing.com',
+      'url': bizData.url || 'https://sobo-marketing.com',
       'telephone': bizData.phone || '',
       'address': {
         '@type': 'PostalAddress',
@@ -67,7 +67,7 @@ export const generateSchema = {
   product: (product = {}, reviews = []) => {
     const offers = {
       '@type': 'Offer',
-      'priceCurrency': product.priceCurrency || 'USD',
+      'priceCurrency': product.priceCurrency || 'INR',
       'price': product.price || '0.00',
       'priceValidUntil': product.priceValidUntil || '2030-12-31',
       'availability': product.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
@@ -167,10 +167,10 @@ export const generateSchema = {
       },
       'publisher': {
         '@type': 'Organization',
-        'name': post.publisherName || 'E-Commerce Store',
+        'name': post.publisherName || 'SOBO Marketing Solution',
         'logo': {
           '@type': 'ImageObject',
-          'url': post.publisherLogo || 'https://example.com/logo.png'
+          'url': post.publisherLogo || 'https://sobo-marketing.com/sobo_logo.png'
         }
       },
       'description': post.description || ''
