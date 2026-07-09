@@ -207,7 +207,6 @@ const CardLayout = ({
                     className="city-card bg-white rounded-15 overflow-hidden cursor-pointer"
                     onClick={() => onCardClick && onCardClick(item)}
                 >
-                    {/* Top Image Container */}
                     <div className="relative w-full h-200 overflow-hidden">
                         <Image
                             src={item.image}
@@ -287,12 +286,6 @@ const CardLayout = ({
                 }
                 .city-card:hover {
                     transform: translateY(-6px);
-                    }
-                .city-card img {
-                    transition: transform 0.5s ease;
-                }
-                .city-card:hover img {
-                    transform: scale(1.05);
                 }
                 
                 .custom-swiper-prev,
