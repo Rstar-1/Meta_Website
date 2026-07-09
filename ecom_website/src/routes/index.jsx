@@ -7,6 +7,8 @@ import Loader from '../components/common/Loader'
 
 // 📦 Lazy Pages
 const Home = lazy(() => import('../pages/home/Home'))
+const Services = lazy(() => import('../pages/services/Services'))
+const Portfolio = lazy(() => import('../pages/portfolio/Portfolio'))
 const Blogs = lazy(() => import('../pages/blog/Blogs'))
 const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
 const Contact = lazy(() => import('../pages/contact/Contact'))
@@ -20,6 +22,8 @@ function AppRoutes() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/home" replace />} />
           <Route path="home" element={<Home />} />
+          <Route path="services" element={<Services />} />
+          <Route path="portfolio" element={<Portfolio />} />
           <Route path="products" element={<Navigate to="/home" replace />} />
           <Route path="product-detail" element={<Navigate to="/home" replace />} />
           <Route path="product-detail/:id" element={<Navigate to="/home" replace />} />

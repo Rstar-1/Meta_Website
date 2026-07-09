@@ -35,11 +35,11 @@
         },
         {
           "label": "Services",
-          "path": "/home#services"
+          "path": "/services"
         },
         {
           "label": "Portfolio",
-          "path": "/home#portfolio"
+          "path": "/portfolio"
         },
         {
           "label": "Blogs",
@@ -56,19 +56,19 @@
       "links": [
         {
           "label": "Pediatric Care",
-          "path": "/home#services"
+          "path": "/services"
         },
         {
           "label": "Mental Health",
-          "path": "/home#services"
+          "path": "/services"
         },
         {
           "label": "Dental Care",
-          "path": "/home#services"
+          "path": "/services"
         },
         {
           "label": "Eye Care",
-          "path": "/home#services"
+          "path": "/services"
         }
       ]
     }

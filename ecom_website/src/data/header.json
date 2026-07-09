@@ -1,8 +1,8 @@
 {
   "navLinks": [
     { "href": "/home", "label": "Home" },
-    { "href": "/home#services", "label": "Services" },
-    { "href": "/home#portfolio", "label": "Portfolio" },
+    { "href": "/services", "label": "Services" },
+    { "href": "/portfolio", "label": "Portfolio" },
     { "href": "/about", "label": "About Us" },
     { "href": "/blog", "label": "Blog" },
     { "href": "/connect", "label": "Contact" }

@@ -11,7 +11,6 @@ const Footer = () => {
   const navigate = useNavigate()
   const [isVisible, setIsVisible] = useState(false)
   const footerRef = useRef(null)
-  const [popularProducts, setPopularProducts] = useState([])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,16 +25,6 @@ const Footer = () => {
     if (footerRef.current) observer.observe(footerRef.current)
     return () => observer.disconnect()
   }, [])
-
-  useEffect(() => {
-    if (isVisible) {
-      import('../../data/products.json').then((m) => {
-        setPopularProducts(m.default.filter(p => p.popular).slice(0, 4))
-      }).catch((err) => {
-        console.error("Failed to load products for footer:", err);
-      })
-    }
-  }, [isVisible])
 
   return (
     <footer ref={footerRef} className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
