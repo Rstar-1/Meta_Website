@@ -58,8 +58,8 @@ const Brands = () => {
     }, []);
 
     return (
-        <div style={{ backgroundColor: '#fafafa', color: '#1e293b', padding: '100px 0 60px' }}>
-            
+        <div>
+
             {/* Section Header */}
             <Container version="v1">
                 <Fade version="v2" direction="up" distance={30}>
@@ -79,12 +79,6 @@ const Brands = () => {
             <div ref={containerRef} className="marquee-container">
                 {/* Injecting CSS directly via React style tag */}
                 <style>{`
-                    html, body {
-                      overflow-x: hidden;
-                      width: 100%;
-                      margin: 0;
-                      padding: 0;
-                    }
 
                     .marquee-container {
                       display: flex;
