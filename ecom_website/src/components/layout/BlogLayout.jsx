@@ -10,6 +10,9 @@ import BlogSchema from '../seo/BlogSchema';
 import LatestArticles from '../../pages/home/sections/LatestArticles';
 import NewsletterForm from '../forms/NewsletterForm';
 
+import { formatDate } from '../../utils/formatDate';
+import { blogMetaTemplate } from '../../seo/metaTemplates';
+
 const BlogLayout = ({
   type = 'list', // 'list' or 'detail'
   blogsData = [],
@@ -61,7 +64,7 @@ const BlogLayout = ({
     let result = blogsList;
     if (selectedCategory && selectedCategory !== "All") {
       result = result.filter(
-        (blog) => blog.category?.toLowerCase() === selectedCategory.toLowerCase()
+         (blog) => blog.category?.toLowerCase() === selectedCategory.toLowerCase()
       );
     }
     if (searchQuery.trim()) {
@@ -101,14 +104,9 @@ const BlogLayout = ({
   }, [post?.keywords]);
 
   const formattedDate = useMemo(() => {
-    return post?.datePublished
-      ? new Date(post.datePublished).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
-      : 'May 20, 2024';
+    return formatDate(post?.datePublished, 'human') || 'May 20, 2024';
   }, [post?.datePublished]);
+
 
   const getCategoryColor = (category) => {
     switch (category) {
@@ -127,17 +125,22 @@ const BlogLayout = ({
     }
   };
 
+  const blogMeta = useMemo(() => {
+    return post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com') : {};
+  }, [post]);
+
   return (
     <>
       {type === 'detail' && post && (
         <>
           <SeoHelmet
-            title={post.title}
-            description={post.summary}
-            keywords={post.keywords}
-            image={post.image}
-            path={`/blog/${post.slug}`}
-            type="article"
+            title={blogMeta.title}
+            description={blogMeta.description}
+            keywords={blogMeta.keywords}
+            image={blogMeta.image}
+            path={blogMeta.path}
+            canonical={blogMeta.canonical}
+            type={blogMeta.type}
           />
           <BlogSchema post={post} />
         </>
@@ -290,13 +293,7 @@ const BlogLayout = ({
                     <div className="grid-cols-1 gap-12">
                       {filteredBlogs.map((blog, idx) => {
                         const categoryColorClass = getCategoryColor(blog.category);
-                        const itemFormattedDate = blog.datePublished
-                          ? new Date(blog.datePublished).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                          })
-                          : 'May 20, 2024';
+                        const itemFormattedDate = formatDate(blog.datePublished, 'human') || 'May 20, 2024';
 
                         return (
                           <article key={blog.id} className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-20">
@@ -578,12 +575,7 @@ const BlogLayout = ({
                               {popPost.title}
                             </h4>
                             <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
-                              {popPost.datePublished
-                                ? new Date(popPost.datePublished).toLocaleDateString('en-US', {
-                                  year: 'numeric',
-                                  month: 'short',
-                                })
-                                : 'May 2024'}
+                              {formatDate(popPost.datePublished, 'short') || 'May 2024'}
                             </p>
                           </div>
                         </div>

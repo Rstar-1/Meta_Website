@@ -1,21 +1,20 @@
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import Hero from './sections/Hero';
-import BrowseCategory from './sections/BrowseCategory';
-import LatestProducts from './sections/LatestProducts';
-
-// Lazy load below-the-fold sections to speed up LCP and FCP
-const PopularProducts = lazy(() => import('./sections/PopularProducts'));
-const WhyChoose = lazy(() => import('./sections/WhyChoose'));
-const TopCity = lazy(() => import('./sections/TopCity'));
-const FeaturedBusinesses = lazy(() => import('./sections/FeaturedBusinesses'));
-const LatestArticles = lazy(() => import('./sections/LatestArticles'));
-const BusinessPromo = lazy(() => import('./sections/BusinessPromo'));
-const Review = lazy(() => import('./sections/Review'));
-
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import WebsiteSchema from '../../components/seo/WebsiteSchema';
 import OrganizationSchema from '../../components/seo/OrganizationSchema';
 import SiteNavigationSchema from '../../components/seo/SiteNavigationSchema';
+
+// Lazy load below-the-fold sections to optimize TBT and initial load time
+const BrowseCategory = lazy(() => import('./sections/BrowseCategory'));
+const PopularProducts = lazy(() => import('./sections/PopularProducts'));
+const LatestProducts = lazy(() => import('./sections/LatestProducts'));
+const WhyChoose = lazy(() => import('./sections/WhyChoose'));
+const FeaturedBusinesses = lazy(() => import('./sections/FeaturedBusinesses'));
+const BusinessPromo = lazy(() => import('./sections/BusinessPromo'));
+const LatestArticles = lazy(() => import('./sections/LatestArticles'));
+const TopCity = lazy(() => import('./sections/TopCity'));
+const Review = lazy(() => import('./sections/Review'));
 
 const Home = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com';
@@ -42,9 +41,9 @@ const Home = () => {
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero />
-      <BrowseCategory />
-      <LatestProducts />
       <Suspense fallback={null}>
+        <BrowseCategory />
+        <LatestProducts />
         <PopularProducts />
         <WhyChoose />
         <TopCity />

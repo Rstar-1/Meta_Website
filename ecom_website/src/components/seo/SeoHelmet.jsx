@@ -1,11 +1,52 @@
 import React, { useEffect } from 'react'
 import { generateMeta } from '../../utils/generateMeta'
 import defaultSEO from '../../seo/defaultSEO'
+import { routeMeta } from '../../seo/seoConfig'
 
-const SeoHelmet = ({ title, description, keywords, image, path, type, robots, canonical }) => {
+const SeoHelmet = ({
+  title,
+  description,
+  keywords,
+  image,
+  path,
+  type,
+  robots,
+  canonical,
+  themeColor,
+  author,
+  referrer,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  twitterSite
+}) => {
+  const currentPath = path || (typeof window !== 'undefined' ? window.location.pathname : '');
+  const config = routeMeta[currentPath] || routeMeta[currentPath.replace(/\/$/, '')] || {};
+
+  const resolvedTitle = title || config.title;
+  const resolvedDescription = description || config.description;
+  const resolvedKeywords = keywords || config.keywords;
+  const resolvedPath = path || config.path;
+
   useEffect(() => {
     const metaData = generateMeta(
-      { title, description, keywords, image, path, type, robots, canonical },
+      {
+        title: resolvedTitle,
+        description: resolvedDescription,
+        keywords: resolvedKeywords,
+        image,
+        path: resolvedPath,
+        type,
+        robots,
+        canonical,
+        themeColor,
+        author,
+        referrer,
+        imageAlt,
+        imageWidth,
+        imageHeight,
+        twitterSite
+      },
       defaultSEO
     );
 
@@ -45,9 +86,26 @@ const SeoHelmet = ({ title, description, keywords, image, path, type, robots, ca
     metaData.linkTags.forEach(link => {
       updateLinkTag(link.rel, link.href);
     });
-  }, [title, description, keywords, image, path, type, robots, canonical]);
+  }, [
+    resolvedTitle,
+    resolvedDescription,
+    resolvedKeywords,
+    image,
+    resolvedPath,
+    type,
+    robots,
+    canonical,
+    themeColor,
+    author,
+    referrer,
+    imageAlt,
+    imageWidth,
+    imageHeight,
+    twitterSite
+  ]);
 
   return null; // Render-less component (side-effects only)
 }
 
 export default SeoHelmet;
+

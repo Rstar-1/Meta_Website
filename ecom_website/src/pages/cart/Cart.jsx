@@ -92,7 +92,10 @@ const Cart = () => {
         const catName = getCategoryName(row.category);
         const colorClass = getCategoryColor(catName);
         return (
-          <span className={`mini-text capitalize px-10 py-4 rounded-20 font-500 inline-flex ${colorClass}`}>
+          <span
+            className={`mini-text capitalize px-10 py-4 rounded-20 font-500 inline-flex ${colorClass}`}
+            style={{ whiteSpace: 'nowrap' }}
+          >
             {catName}
           </span>
         );
@@ -233,7 +236,7 @@ const Cart = () => {
                         const colorClass = getCategoryColor(catName);
                         return (
                           <div key={item.id} className="bg-white border-ec p-10 rounded-5 flex gap-12 items-start relative">
-                            <img
+                            <Image
                               src={resolveProductImage(item)}
                               alt={item.name}
                               width="80"
@@ -246,7 +249,10 @@ const Cart = () => {
                                 {item.name}
                               </h4>
                               <div className="flex items-center gap-6 mt-6">
-                                <span className={`mini-text capitalize px-8 py-2 rounded-20 font-500 inline-flex ${colorClass}`}>
+                                <span
+                                  className={`mini-text capitalize px-8 py-2 rounded-20 font-500 inline-flex ${colorClass}`}
+                                  style={{ whiteSpace: 'nowrap' }}
+                                >
                                   {catName}
                                 </span>
                               </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import { addToCart } from '../../utils/cartHelper';
@@ -8,7 +8,9 @@ import Image from '../common/Image';
 import Tab from '../common/Tab';
 import SeoHelmet from '../seo/SeoHelmet';
 import ProductSchema from '../seo/ProductSchema';
+import { productMetaTemplate } from '../../seo/metaTemplates';
 import Banner from './Banner';
+
 import FormBuilder from '../common/FormBuilder';
 import Fields from '../common/Fields';
 import clientData from '../../data/client.json';
@@ -197,17 +199,43 @@ const ProductLayout = ({
     }
   }, [galleryImages]);
 
+  const productMeta = useMemo(() => {
+    const productObj = foundProduct || {
+      name: productData.title,
+      description: productData.description,
+      tags: seoKeywords,
+      image: activeImage
+    };
+    return productMetaTemplate(productObj, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com');
+  }, [foundProduct, productData, seoKeywords, activeImage]);
+
   return (
     <>
       <SeoHelmet
-        title={productData.title}
-        description={productData.description}
-        keywords={seoKeywords}
-        image={activeImage}
-        path="/product-detail"
-        type="product"
+        title={productMeta.title}
+        description={productMeta.description}
+        keywords={productMeta.keywords}
+        image={productMeta.image}
+        path={productMeta.path}
+        canonical={productMeta.canonical}
+        type={productMeta.type}
       />
-      <ProductSchema product={foundProduct || { name: productData.title, description: productData.description, price: '1250', sku: 'HP-88A' }} />
+
+      <ProductSchema
+        product={
+          foundProduct || {
+            name: productData.title,
+            description: productData.description,
+            price: productData.price ? String(productData.price).replace(/[^0-9.]/g, '') : '0.00',
+            sku: productData.specs?.find(s => s.label === 'Model' || s.label === 'SKU')?.value || 'GENERIC-SKU',
+            brand: productData.brand || 'Generic',
+            images: galleryImages,
+            priceCurrency: 'INR',
+            inStock: true
+          }
+        }
+        reviews={foundProduct?.reviews || []}
+      />
 
       <Banner
         title={productData.category || 'Product Detail'}

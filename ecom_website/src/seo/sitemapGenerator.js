@@ -1,4 +1,4 @@
-export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = 'https://ecom-website.example.com') => {
+export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = 'https://sobo-marketing.com') => {
   const urls = [];
   const addUrl = (loc, changefreq = 'daily', priority = '0.8') => {
     urls.push(`  <url>

@@ -9,6 +9,7 @@ import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
 import Fields from '../../components/common/Fields';
 import Icon from '../../components/common/Icon';
 import Banner from '../../components/layout/Banner';
+import { categoryMetaTemplate } from '../../seo/metaTemplates';
 import Modal from '../../components/common/Modal';
 import Button from '../../components/common/Button';
 
@@ -245,15 +246,35 @@ const Products = () => {
 
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
 
+  const seoMeta = React.useMemo(() => {
+    if (selectedCats.length === 1) {
+      const catId = selectedCats[0];
+      const catObj = categories.find(c => c.id === catId);
+      if (catObj) {
+        return categoryMetaTemplate(catObj, siteUrl);
+      }
+    }
+    return {
+      title: "Industrial Products & Supplies Catalog | SOBO Marketing Solution",
+      description: "Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products.",
+      keywords: ['Product Catalog', 'Toner Cartridges Shop', 'SS Steel Sheets', 'B2B Supplies'],
+      image: siteUrl + '/sobo_logo.png',
+      path: "/products",
+      type: "product",
+      canonical: `${siteUrl}/products`
+    };
+  }, [selectedCats, siteUrl]);
+
   return (
     <>
       <SeoHelmet
-        title="Industrial Products & Supplies Catalog | SOBO Marketing Solution"
-        description="Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products."
-        keywords={['Product Catalog', 'Toner Cartridges Shop', 'SS Steel Sheets', 'B2B Supplies']}
-        image={siteUrl + '/sobo_logo.webp'}
-        path="/products"
-        type="product"
+        title={seoMeta.title}
+        description={seoMeta.description}
+        keywords={seoMeta.keywords}
+        image={seoMeta.image}
+        path={seoMeta.path}
+        canonical={seoMeta.canonical}
+        type={seoMeta.type}
       />
       <Banner
         title="Products Catalog"
