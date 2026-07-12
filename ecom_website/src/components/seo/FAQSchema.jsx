@@ -1,6 +1,6 @@
 import React from 'react'
 import { generateSchema } from '../../utils/generateSchema'
-import logoImg from '../../assets/sobo_logo.png'
+import logoImg from '../../assets/sobo_logo.webp'
 
 const FAQSchema = ({ faqs = [], logo = logoImg }) => {
   const schema = generateSchema.faq(faqs, logo);

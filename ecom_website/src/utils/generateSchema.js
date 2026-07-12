@@ -7,7 +7,7 @@ export const generateSchema = {
       '@type': 'Organization',
       'name': orgData.name || 'E-Commerce Store',
       'url': orgData.url || 'https://example.com',
-      'logo': orgData.logo || 'https://example.com/logo.png',
+      'logo': orgData.logo || 'https://example.com/logo.webp',
       'contactPoint': orgData.contact ? {
         '@type': 'ContactPoint',
         'telephone': orgData.contact.phone || '',
@@ -38,7 +38,7 @@ export const generateSchema = {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       'name': bizData.name || 'E-Commerce Store',
-      'image': bizData.image || 'https://example.com/logo.png',
+      'image': bizData.image || 'https://example.com/logo.webp',
       '@id': bizData.url || 'https://example.com',
       'url': bizData.url || 'https://example.com',
       'telephone': bizData.phone || '',
@@ -129,7 +129,7 @@ export const generateSchema = {
     };
   },
 
-  faq: (faqs = [], logo = '/sobo_logo.png') => {
+  faq: (faqs = [], logo = '/sobo_logo.webp') => {
     return {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -170,7 +170,7 @@ export const generateSchema = {
         'name': post.publisherName || 'E-Commerce Store',
         'logo': {
           '@type': 'ImageObject',
-          'url': post.publisherLogo || 'https://example.com/logo.png'
+          'url': post.publisherLogo || 'https://example.com/logo.webp'
         }
       },
       'description': post.description || ''

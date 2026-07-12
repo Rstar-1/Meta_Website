@@ -12,7 +12,7 @@
     "sku": "HP-88A",
     "brand": "HP",
     "category": "cat-7",
-    "image": "/src/assets/printer_hp_88a.png",
+    "image": "/src/assets/printer_hp_88a.webp",
     "tags": [
       "hp",
       "toner",
@@ -102,9 +102,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_hp_88a.png",
-      "/src/assets/printer_brother_tn2321.png",
-      "/src/assets/printer_samsung_d111s.png"
+      "/src/assets/printer_hp_88a.webp",
+      "/src/assets/printer_brother_tn2321.webp",
+      "/src/assets/printer_samsung_d111s.webp"
     ],
     "city": "Delhi"
   },
@@ -121,7 +121,7 @@
     "sku": "CAN-74S",
     "brand": "Canon",
     "category": "cat-7",
-    "image": "/src/assets/printer_canon_74s.png",
+    "image": "/src/assets/printer_canon_74s.webp",
     "tags": [
       "canon",
       "ink",
@@ -181,9 +181,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_canon_74s.png",
-      "/src/assets/printer_canon_746.png",
-      "/src/assets/printer_epson_003.png"
+      "/src/assets/printer_canon_74s.webp",
+      "/src/assets/printer_canon_746.webp",
+      "/src/assets/printer_epson_003.webp"
     ],
     "reviews": [
       {
@@ -237,7 +237,7 @@
     "sku": "CAN-746",
     "brand": "Canon",
     "category": "cat-7",
-    "image": "/src/assets/printer_canon_746.png",
+    "image": "/src/assets/printer_canon_746.webp",
     "tags": [
       "canon",
       "ink",
@@ -297,9 +297,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_canon_746.png",
-      "/src/assets/printer_canon_74s.png",
-      "/src/assets/printer_epson_003.png"
+      "/src/assets/printer_canon_746.webp",
+      "/src/assets/printer_canon_74s.webp",
+      "/src/assets/printer_epson_003.webp"
     ],
     "reviews": [
       {
@@ -339,7 +339,7 @@
     "sku": "EPS-003",
     "brand": "Epson",
     "category": "cat-7",
-    "image": "/src/assets/printer_epson_003.png",
+    "image": "/src/assets/printer_epson_003.webp",
     "tags": [
       "epson",
       "ink bottle",
@@ -398,9 +398,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_epson_003.png",
-      "/src/assets/printer_canon_74s.png",
-      "/src/assets/printer_canon_746.png"
+      "/src/assets/printer_epson_003.webp",
+      "/src/assets/printer_canon_74s.webp",
+      "/src/assets/printer_canon_746.webp"
     ],
     "reviews": [
       {
@@ -454,7 +454,7 @@
     "sku": "BRO-TN2321",
     "brand": "Brother",
     "category": "cat-7",
-    "image": "/src/assets/printer_brother_tn2321.png",
+    "image": "/src/assets/printer_brother_tn2321.webp",
     "tags": [
       "brother",
       "toner",
@@ -513,9 +513,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_brother_tn2321.png",
-      "/src/assets/printer_hp_88a.png",
-      "/src/assets/printer_samsung_d111s.png"
+      "/src/assets/printer_brother_tn2321.webp",
+      "/src/assets/printer_hp_88a.webp",
+      "/src/assets/printer_samsung_d111s.webp"
     ],
     "reviews": [
       {
@@ -555,7 +555,7 @@
     "sku": "SAM-D111S",
     "brand": "Samsung",
     "category": "cat-7",
-    "image": "/src/assets/printer_samsung_d111s.png",
+    "image": "/src/assets/printer_samsung_d111s.webp",
     "tags": [
       "samsung",
       "toner",
@@ -614,9 +614,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_samsung_d111s.png",
-      "/src/assets/printer_hp_88a.png",
-      "/src/assets/printer_brother_tn2321.png"
+      "/src/assets/printer_samsung_d111s.webp",
+      "/src/assets/printer_hp_88a.webp",
+      "/src/assets/printer_brother_tn2321.webp"
     ],
     "reviews": [
       {
@@ -663,7 +663,7 @@
     "sku": "HP-12A",
     "brand": "HP",
     "category": "cat-7",
-    "image": "/src/assets/printer_hp_88a.png",
+    "image": "/src/assets/printer_hp_88a.webp",
     "tags": [
       "hp",
       "toner",
@@ -722,9 +722,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_hp_88a.png",
-      "/src/assets/printer_brother_tn2321.png",
-      "/src/assets/printer_samsung_d111s.png"
+      "/src/assets/printer_hp_88a.webp",
+      "/src/assets/printer_brother_tn2321.webp",
+      "/src/assets/printer_samsung_d111s.webp"
     ],
     "reviews": [
       {
@@ -764,7 +764,7 @@
     "sku": "CAN-337",
     "brand": "Canon",
     "category": "cat-7",
-    "image": "/src/assets/printer_canon_74s.png",
+    "image": "/src/assets/printer_canon_74s.webp",
     "tags": [
       "canon",
       "toner",
@@ -823,10 +823,10 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_canon_74s.png",
-      "/src/assets/printer_hp_88a.png",
-      "/src/assets/printer_brother_tn2321.png",
-      "/src/assets/printer_samsung_d111s.png"
+      "/src/assets/printer_canon_74s.webp",
+      "/src/assets/printer_hp_88a.webp",
+      "/src/assets/printer_brother_tn2321.webp",
+      "/src/assets/printer_samsung_d111s.webp"
     ],
     "reviews": [
       {
@@ -873,7 +873,7 @@
     "sku": "BRO-TN3467",
     "brand": "Brother",
     "category": "cat-7",
-    "image": "/src/assets/printer_brother_tn2321.png",
+    "image": "/src/assets/printer_brother_tn2321.webp",
     "tags": [
       "brother",
       "toner",
@@ -932,9 +932,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_brother_tn2321.png",
-      "/src/assets/printer_hp_88a.png",
-      "/src/assets/printer_samsung_d111s.png"
+      "/src/assets/printer_brother_tn2321.webp",
+      "/src/assets/printer_hp_88a.webp",
+      "/src/assets/printer_samsung_d111s.webp"
     ],
     "reviews": [
       {
@@ -981,7 +981,7 @@
     "sku": "HP-78A",
     "brand": "HP",
     "category": "cat-7",
-    "image": "/src/assets/printer_hp_88a.png",
+    "image": "/src/assets/printer_hp_88a.webp",
     "tags": [
       "hp",
       "toner",
@@ -1040,9 +1040,9 @@
     ],
     "client": "biz-4",
     "images": [
-      "/src/assets/printer_hp_88a.png",
-      "/src/assets/printer_brother_tn2321.png",
-      "/src/assets/printer_samsung_d111s.png"
+      "/src/assets/printer_hp_88a.webp",
+      "/src/assets/printer_brother_tn2321.webp",
+      "/src/assets/printer_samsung_d111s.webp"
     ],
     "reviews": [
       {
@@ -1082,7 +1082,7 @@
     "sku": "STL-304-SHT",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_304_sheets.png",
+    "image": "/src/assets/ss_304_sheets.webp",
     "tags": [
       "steel",
       "ss304",
@@ -1117,9 +1117,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_304_sheets.png",
-      "/src/assets/ss_plates.png",
-      "/src/assets/ss_coils.png"
+      "/src/assets/ss_304_sheets.webp",
+      "/src/assets/ss_plates.webp",
+      "/src/assets/ss_coils.webp"
     ],
     "reviews": [
       {
@@ -1173,7 +1173,7 @@
     "sku": "STL-304-PIP",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_304_pipes.png",
+    "image": "/src/assets/ss_304_pipes.webp",
     "tags": [
       "steel",
       "ss304",
@@ -1208,9 +1208,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_304_pipes.png",
-      "/src/assets/ss_316_rods.png",
-      "/src/assets/ss_angle_bars.png"
+      "/src/assets/ss_304_pipes.webp",
+      "/src/assets/ss_316_rods.webp",
+      "/src/assets/ss_angle_bars.webp"
     ],
     "reviews": [
       {
@@ -1250,7 +1250,7 @@
     "sku": "STL-COIL",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_coils.png",
+    "image": "/src/assets/ss_coils.webp",
     "tags": [
       "steel",
       "coils",
@@ -1284,9 +1284,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_coils.png",
-      "/src/assets/ss_304_sheets.png",
-      "/src/assets/ss_plates.png"
+      "/src/assets/ss_coils.webp",
+      "/src/assets/ss_304_sheets.webp",
+      "/src/assets/ss_plates.webp"
     ],
     "reviews": [
       {
@@ -1326,7 +1326,7 @@
     "sku": "STL-316-ROD",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_316_rods.png",
+    "image": "/src/assets/ss_316_rods.webp",
     "tags": [
       "steel",
       "ss316",
@@ -1361,9 +1361,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_316_rods.png",
-      "/src/assets/ss_304_pipes.png",
-      "/src/assets/ss_angle_bars.png"
+      "/src/assets/ss_316_rods.webp",
+      "/src/assets/ss_304_pipes.webp",
+      "/src/assets/ss_angle_bars.webp"
     ],
     "reviews": [
       {
@@ -1403,7 +1403,7 @@
     "sku": "STL-PLT",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_plates.png",
+    "image": "/src/assets/ss_plates.webp",
     "tags": [
       "steel",
       "plates",
@@ -1437,9 +1437,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_plates.png",
-      "/src/assets/ss_304_sheets.png",
-      "/src/assets/ss_coils.png"
+      "/src/assets/ss_plates.webp",
+      "/src/assets/ss_304_sheets.webp",
+      "/src/assets/ss_coils.webp"
     ],
     "reviews": [
       {
@@ -1486,7 +1486,7 @@
     "sku": "STL-KTN",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_kitchen.png",
+    "image": "/src/assets/ss_kitchen.webp",
     "tags": [
       "steel",
       "kitchen",
@@ -1520,8 +1520,8 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_kitchen.png",
-      "/src/assets/ss_plates.png"
+      "/src/assets/ss_kitchen.webp",
+      "/src/assets/ss_plates.webp"
     ],
     "reviews": [
       {
@@ -1568,7 +1568,7 @@
     "sku": "STL-FLG",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_flanges.png",
+    "image": "/src/assets/ss_flanges.webp",
     "tags": [
       "steel",
       "flanges",
@@ -1602,9 +1602,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_flanges.png",
-      "/src/assets/ss_fasteners.png",
-      "/src/assets/ss_wire_mesh.png"
+      "/src/assets/ss_flanges.webp",
+      "/src/assets/ss_fasteners.webp",
+      "/src/assets/ss_wire_mesh.webp"
     ],
     "reviews": [
       {
@@ -1651,7 +1651,7 @@
     "sku": "STL-ANG",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_angle_bars.png",
+    "image": "/src/assets/ss_angle_bars.webp",
     "tags": [
       "steel",
       "angle",
@@ -1685,9 +1685,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_angle_bars.png",
-      "/src/assets/ss_304_pipes.png",
-      "/src/assets/ss_316_rods.png"
+      "/src/assets/ss_angle_bars.webp",
+      "/src/assets/ss_304_pipes.webp",
+      "/src/assets/ss_316_rods.webp"
     ],
     "reviews": [
       {
@@ -1734,7 +1734,7 @@
     "sku": "STL-MSH",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_wire_mesh.png",
+    "image": "/src/assets/ss_wire_mesh.webp",
     "tags": [
       "steel",
       "mesh",
@@ -1768,9 +1768,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_wire_mesh.png",
-      "/src/assets/ss_fasteners.png",
-      "/src/assets/ss_flanges.png"
+      "/src/assets/ss_wire_mesh.webp",
+      "/src/assets/ss_fasteners.webp",
+      "/src/assets/ss_flanges.webp"
     ],
     "reviews": [
       {
@@ -1817,7 +1817,7 @@
     "sku": "STL-FST",
     "brand": "Wadhumal Steel",
     "category": "cat-1",
-    "image": "/src/assets/ss_fasteners.png",
+    "image": "/src/assets/ss_fasteners.webp",
     "tags": [
       "steel",
       "fasteners",
@@ -1852,9 +1852,9 @@
     ],
     "client": "biz-1",
     "images": [
-      "/src/assets/ss_fasteners.png",
-      "/src/assets/ss_flanges.png",
-      "/src/assets/ss_wire_mesh.png"
+      "/src/assets/ss_fasteners.webp",
+      "/src/assets/ss_flanges.webp",
+      "/src/assets/ss_wire_mesh.webp"
     ],
     "reviews": [
       {
@@ -2352,7 +2352,7 @@
     "sku": "PVC-CP-01",
     "brand": "Finolex",
     "category": "cat-2",
-    "image": "/src/assets/pvc_conduit_pipe.png",
+    "image": "/src/assets/pvc_conduit_pipe.webp",
     "tags": [
       "pvc",
       "pipe",
@@ -2378,8 +2378,8 @@
       }
     ],
     "images": [
-      "/src/assets/pvc_conduit_pipe.png",
-      "/src/assets/pvc_conduit_pipe.png"
+      "/src/assets/pvc_conduit_pipe.webp",
+      "/src/assets/pvc_conduit_pipe.webp"
     ],
     "reviews": [
       {
@@ -2952,7 +2952,7 @@
     "sku": "FAS-SC-01",
     "brand": "Screwtite",
     "category": "cat-10",
-    "image": "/src/assets/ss_fasteners.png",
+    "image": "/src/assets/ss_fasteners.webp",
     "tags": [
       "fasteners",
       "screws",
@@ -2978,8 +2978,8 @@
       }
     ],
     "images": [
-      "/src/assets/ss_fasteners.png",
-      "/src/assets/ss_fasteners.png"
+      "/src/assets/ss_fasteners.webp",
+      "/src/assets/ss_fasteners.webp"
     ],
     "reviews": [
       {
@@ -3012,7 +3012,7 @@
     "sku": "FAS-HB-02",
     "brand": "Bolttight",
     "category": "cat-10",
-    "image": "/src/assets/ss_fasteners.png",
+    "image": "/src/assets/ss_fasteners.webp",
     "tags": [
       "fasteners",
       "bolts",
@@ -3038,8 +3038,8 @@
       }
     ],
     "images": [
-      "/src/assets/ss_fasteners.png",
-      "/src/assets/ss_fasteners.png"
+      "/src/assets/ss_fasteners.webp",
+      "/src/assets/ss_fasteners.webp"
     ],
     "reviews": [
       {
@@ -3684,7 +3684,7 @@
     "sku": "PVC-EC-25",
     "brand": "Precision",
     "category": "cat-2",
-    "image": "/src/assets/pvc_conduit_pipe.png",
+    "image": "/src/assets/pvc_conduit_pipe.webp",
     "tags": [
       "pvc",
       "conduit",
@@ -3710,7 +3710,7 @@
       }
     ],
     "images": [
-      "/src/assets/pvc_conduit_pipe.png"
+      "/src/assets/pvc_conduit_pipe.webp"
     ],
     "reviews": [
       {
@@ -3736,7 +3736,7 @@
     "sku": "PVC-BV-02",
     "brand": "Astral",
     "category": "cat-2",
-    "image": "/src/assets/pvc_ball_valve.png",
+    "image": "/src/assets/pvc_ball_valve.webp",
     "tags": [
       "pvc",
       "valve",
@@ -3762,7 +3762,7 @@
       }
     ],
     "images": [
-      "/src/assets/pvc_ball_valve.png"
+      "/src/assets/pvc_ball_valve.webp"
     ],
     "reviews": [
       {
@@ -4672,7 +4672,7 @@
     "sku": "PR-TON-TN3448",
     "brand": "Brother",
     "category": "cat-7",
-    "image": "/src/assets/printer_brother_tn2321.png",
+    "image": "/src/assets/printer_brother_tn2321.webp",
     "tags": [
       "printer",
       "brother",
@@ -4698,7 +4698,7 @@
       }
     ],
     "images": [
-      "/src/assets/printer_brother_tn2321.png"
+      "/src/assets/printer_brother_tn2321.webp"
     ],
     "reviews": [
       {
@@ -4724,7 +4724,7 @@
     "sku": "PR-TON-HP12A",
     "brand": "HP",
     "category": "cat-7",
-    "image": "/src/assets/printer_hp_88a.png",
+    "image": "/src/assets/printer_hp_88a.webp",
     "tags": [
       "printer",
       "hp",
@@ -4750,7 +4750,7 @@
       }
     ],
     "images": [
-      "/src/assets/printer_hp_88a.png"
+      "/src/assets/printer_hp_88a.webp"
     ],
     "reviews": [
       {
@@ -4776,7 +4776,7 @@
     "sku": "PR-INK-L3110",
     "brand": "Epson",
     "category": "cat-7",
-    "image": "/src/assets/printer_epson_003.png",
+    "image": "/src/assets/printer_epson_003.webp",
     "tags": [
       "printer",
       "epson",
@@ -4802,7 +4802,7 @@
       }
     ],
     "images": [
-      "/src/assets/printer_epson_003.png"
+      "/src/assets/printer_epson_003.webp"
     ],
     "reviews": [
       {
@@ -5244,7 +5244,7 @@
     "sku": "FS-ST-P500",
     "brand": "Kundli",
     "category": "cat-10",
-    "image": "/src/assets/ss_fasteners.png",
+    "image": "/src/assets/ss_fasteners.webp",
     "tags": [
       "fasteners",
       "screws",
@@ -5270,7 +5270,7 @@
       }
     ],
     "images": [
-      "/src/assets/ss_fasteners.png"
+      "/src/assets/ss_fasteners.webp"
     ],
     "reviews": [
       {
@@ -5296,7 +5296,7 @@
     "sku": "FS-WA-M8SS",
     "brand": "Gripcon",
     "category": "cat-10",
-    "image": "/src/assets/ss_fasteners.png",
+    "image": "/src/assets/ss_fasteners.webp",
     "tags": [
       "fasteners",
       "washers",
@@ -5322,7 +5322,7 @@
       }
     ],
     "images": [
-      "/src/assets/ss_fasteners.png"
+      "/src/assets/ss_fasteners.webp"
     ],
     "reviews": [
       {
@@ -5348,7 +5348,7 @@
     "sku": "FS-AB-M10",
     "brand": "Hilti",
     "category": "cat-10",
-    "image": "/src/assets/ss_fasteners.png",
+    "image": "/src/assets/ss_fasteners.webp",
     "tags": [
       "fasteners",
       "anchor bolt",
@@ -5374,7 +5374,7 @@
       }
     ],
     "images": [
-      "/src/assets/ss_fasteners.png"
+      "/src/assets/ss_fasteners.webp"
     ],
     "reviews": [
       {
@@ -5400,7 +5400,7 @@
     "sku": "FS-TR-M12",
     "brand": "Gripcon",
     "category": "cat-10",
-    "image": "/src/assets/ss_fasteners.png",
+    "image": "/src/assets/ss_fasteners.webp",
     "tags": [
       "fasteners",
       "threaded rod",
@@ -5426,7 +5426,7 @@
       }
     ],
     "images": [
-      "/src/assets/ss_fasteners.png"
+      "/src/assets/ss_fasteners.webp"
     ],
     "reviews": [
       {

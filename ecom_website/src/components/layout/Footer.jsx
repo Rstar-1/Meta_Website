@@ -4,7 +4,7 @@ import Container from '../common/Container'
 import Image from '../common/Image'
 import Icon from '../common/Icon'
 import footerData from '../../data/footer.json'
-const logoImg = "/sobo_logo.png";
+const logoImg = "/sobo_logo.webp";
 import NewsletterForm from '../forms/NewsletterForm'
 
 const Footer = () => {

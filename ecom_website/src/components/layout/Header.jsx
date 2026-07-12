@@ -5,7 +5,7 @@ import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
 import headerData from "../../data/header.json";
-const logoImg = "/sobo_logo.png";
+const logoImg = "/sobo_logo.webp";
 
 const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
   <>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
-const background = "/background.png";
+const background = "/background.webp";
 import Icon from '../../../components/common/Icon';
 import Fields from '../../../components/common/Fields';
 import categoriesData from '../../../data/category.json';

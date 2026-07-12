@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Hero from './sections/Hero';
 import BrowseCategory from './sections/BrowseCategory';
-import PopularProducts from './sections/PopularProducts';
 import LatestProducts from './sections/LatestProducts';
-import WhyChoose from './sections/WhyChoose';
-import FeaturedBusinesses from './sections/FeaturedBusinesses';
-import BusinessPromo from './sections/BusinessPromo';
-import LatestArticles from './sections/LatestArticles';
-import TopCity from './sections/TopCity';
-import Review from './sections/Review';
+
+// Lazy load below-the-fold sections to speed up LCP and FCP
+const PopularProducts = lazy(() => import('./sections/PopularProducts'));
+const WhyChoose = lazy(() => import('./sections/WhyChoose'));
+const TopCity = lazy(() => import('./sections/TopCity'));
+const FeaturedBusinesses = lazy(() => import('./sections/FeaturedBusinesses'));
+const LatestArticles = lazy(() => import('./sections/LatestArticles'));
+const BusinessPromo = lazy(() => import('./sections/BusinessPromo'));
+const Review = lazy(() => import('./sections/Review'));
+
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import WebsiteSchema from '../../components/seo/WebsiteSchema';
 import OrganizationSchema from '../../components/seo/OrganizationSchema';
@@ -30,24 +33,26 @@ const Home = () => {
         title="SOBO Marketing Solution | Industrial B2B E-Commerce"
         description="Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution."
         keywords={['Industrial Supplies', 'Printer Cartridges', 'Stainless Steel', 'SOBO Marketing', 'B2B India']}
-        image={siteUrl + '/sobo_logo.png'}
+        image={siteUrl + '/sobo_logo.webp'}
         path="/home"
         type="website"
       />
       <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
-      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.png' }} />
+      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero />
       <BrowseCategory />
       <LatestProducts />
-      <PopularProducts />
-      <WhyChoose />
-      <TopCity />
-      <FeaturedBusinesses />
-      <LatestArticles />
-      <BusinessPromo />
-      <Review />
+      <Suspense fallback={null}>
+        <PopularProducts />
+        <WhyChoose />
+        <TopCity />
+        <FeaturedBusinesses />
+        <LatestArticles />
+        <BusinessPromo />
+        <Review />
+      </Suspense>
     </>
   );
 };

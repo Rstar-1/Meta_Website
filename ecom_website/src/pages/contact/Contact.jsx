@@ -15,14 +15,14 @@ const Contact = () => {
         title="Connect With Us | SOBO Marketing Solution"
         description="Get in touch with SOBO Marketing Solution for wholesale inquiries, product support, and partnership opportunities."
         keywords={['Contact SOBO', 'Wholesale Inquiry', 'Supplier Support']}
-        image={siteUrl + '/sobo_logo.png'}
+        image={siteUrl + '/sobo_logo.webp'}
         path="/connect"
         type="contact"
       />
       <LocalBusinessSchema bizData={{
         name: 'SOBO Marketing Solution',
         url: siteUrl,
-        image: siteUrl + '/sobo_logo.png',
+        image: siteUrl + '/sobo_logo.webp',
         phone: '+91-XXXXXXXXXX',
         address: { street: 'Industrial Area', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' }
       }} />

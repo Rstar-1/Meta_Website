@@ -15,7 +15,7 @@ const Blogs = memo(() => {
                 title="B2B Industry Insights & Blogs | SOBO Marketing Solution"
                 description="Read our latest articles on industrial trends, office supply optimization, and manufacturing best practices."
                 keywords={['Industrial Blog', 'B2B Trends', 'Manufacturing Guide', 'Toner Cartridge Tips']}
-                image={siteUrl + '/sobo_logo.png'}
+                image={siteUrl + '/sobo_logo.webp'}
                 path="/blog"
                 type="blog"
             />

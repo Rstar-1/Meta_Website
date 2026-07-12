@@ -2,7 +2,7 @@
   {
     "id": "cat-1",
     "name": "Steel Products",
-    "icon": "/src/assets/ss_304_pipes.png",
+    "icon": "/src/assets/ss_304_pipes.webp",
     "color": "#e8f0fe"
   },
   {
@@ -56,7 +56,7 @@
   {
     "id": "cat-10",
     "name": "Fasteners & Screws",
-    "icon": "/src/assets/ss_fasteners.png",
+    "icon": "/src/assets/ss_fasteners.webp",
     "color": "#fae8ff"
   },
   {

@@ -4,12 +4,12 @@ const defaultSEO = {
   description: 'Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution.',
   keywords: 'Industrial Supplies, Printer Cartridges, Stainless Steel, SOBO Marketing, B2B India, B2B e-commerce',
   siteUrl: 'https://sobo-marketing.com',
-  image: '/sobo_logo.png',
+  image: '/sobo_logo.webp',
   robots: 'index, follow',
   organization: {
     name: 'SOBO Marketing Solution',
     url: 'https://sobo-marketing.com',
-    logo: 'https://sobo-marketing.com/sobo_logo.png',
+    logo: 'https://sobo-marketing.com/sobo_logo.webp',
     phone: '+91-9876543210',
     email: 'info@sobomarketing.com',
     socials: [

@@ -251,7 +251,7 @@ const Products = () => {
         title="Industrial Products & Supplies Catalog | SOBO Marketing Solution"
         description="Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products."
         keywords={['Product Catalog', 'Toner Cartridges Shop', 'SS Steel Sheets', 'B2B Supplies']}
-        image={siteUrl + '/sobo_logo.png'}
+        image={siteUrl + '/sobo_logo.webp'}
         path="/products"
         type="product"
       />

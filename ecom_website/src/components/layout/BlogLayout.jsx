@@ -211,7 +211,7 @@ const BlogLayout = ({
       {type === 'list' ? (
         <Banner
           style={{ background: "linear-gradient(135deg, #021B44 0%, #00102A 100%)" }}
-          img="https://metatechnical.org/images/banners/blog.png"
+          img="https://metatechnical.org/images/banners/blog.webp"
           title="Latest Articles"
           desc="Insights, strategies, and tips to help your business grow with smart marketing."
           breadcrumbs={[
@@ -223,7 +223,7 @@ const BlogLayout = ({
         post && (
           <Banner
             style={{ background: "linear-gradient(135deg, #021B44 0%, #00102A 100%)" }}
-            img="https://metatechnical.org/images/banners/blog.png"
+            img="https://metatechnical.org/images/banners/blog.webp"
             title={post.category}
             desc={post.title}
             breadcrumbs={[

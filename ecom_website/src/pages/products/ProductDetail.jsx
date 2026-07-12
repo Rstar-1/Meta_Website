@@ -41,11 +41,11 @@ const ProductDetail = () => {
   const galleryImages = foundProduct && foundProduct.images
     ? foundProduct.images.map(resolveImagePath)
     : [
-      resolveImagePath('/src/assets/printer_hp_88a.png'),
-      resolveImagePath('/src/assets/printer_canon_74s.png'),
-      resolveImagePath('/src/assets/printer_canon_746.png'),
-      resolveImagePath('/src/assets/printer_epson_003.png'),
-      resolveImagePath('/src/assets/printer_brother_tn2321.png')
+      resolveImagePath('/src/assets/printer_hp_88a.webp'),
+      resolveImagePath('/src/assets/printer_canon_74s.webp'),
+      resolveImagePath('/src/assets/printer_canon_746.webp'),
+      resolveImagePath('/src/assets/printer_epson_003.webp'),
+      resolveImagePath('/src/assets/printer_brother_tn2321.webp')
     ];
 
   const keywords = foundProduct && foundProduct.tags
