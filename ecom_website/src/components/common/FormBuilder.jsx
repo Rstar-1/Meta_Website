@@ -11,7 +11,6 @@ const FormBuilder = ({
     buttonVersion = "v1",
     buttonBg = "primary",
     buttonClassName = "",
-    buttonStyle = {},
     children
 }) => {
     const getDefaultValue = (field) => {
@@ -147,7 +146,6 @@ const FormBuilder = ({
                     type="submit"
                     version={buttonVersion}
                     bg={buttonBg}
-                    style={buttonStyle}
                 >
                     {submitText}
                 </Button>

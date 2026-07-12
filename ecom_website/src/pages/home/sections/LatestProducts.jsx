@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import products from '../../../data/products.json';
-import categories from '../../../data/category.json';
+import { products, categories } from '../../../utils/productsData';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
@@ -14,7 +13,7 @@ const LatestProducts = () => {
     }
   };
 
-  const targetCategoryIds = ['cat-7', 'cat-2', 'cat-1', 'cat-10', 'cat-5'];
+  const targetCategoryIds = ['cat-7', 'cat-2', 'cat-1', 'cat-10', 'cat-6', 'cat-12'];
 
   return (
     <>
@@ -30,7 +29,7 @@ const LatestProducts = () => {
 
         return (
           <Container key={category.id} className="bg-white">
-            <div className="w-full pt-30 pb-15">
+            <div className='py-30 w-full'>
               <div className="flex justify-between items-center mb-10">
                 <h2 className="title-text text-dark font-600">{category.name}</h2>
                 <p
@@ -46,19 +45,10 @@ const LatestProducts = () => {
                 cardType="product"
                 imageHeight="h-250"
                 isSlider={true}
+                cols="4"
+                mdCols="2"
+                smCols="1"
                 eagerCount={catIndex === 0 ? 2 : 0}
-                sliderSlidesPerView={1.2}
-                sliderBreakpoints={{
-                  640: {
-                    slidesPerView: 2.2,
-                  },
-                  768: {
-                    slidesPerView: 3.7,
-                  },
-                  1024: {
-                    slidesPerView: 4,
-                  }
-                }}
                 onCardClick={handleProductClick}
                 onButtonClick={handleProductClick}
               />

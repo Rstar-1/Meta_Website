@@ -5,7 +5,7 @@ import Button from '../../../components/common/Button';
 const background = "/background.webp";
 import Icon from '../../../components/common/Icon';
 import Fields from '../../../components/common/Fields';
-import categoriesData from '../../../data/category.json';
+import { categories as categoriesData } from '../../../utils/productsData';
 import Image from '../../../components/common/Image';
 
 const Hero = ({ onSearch }) => {

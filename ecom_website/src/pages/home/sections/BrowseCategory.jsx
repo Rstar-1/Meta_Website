@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import categories from '../../../data/category.json';
+import { categories } from '../../../utils/productsData';
 import Container from '../../../components/common/Container';
 import { resolveImagePath } from '../../../utils/imageResolver';
 import Image from '../../../components/common/Image';

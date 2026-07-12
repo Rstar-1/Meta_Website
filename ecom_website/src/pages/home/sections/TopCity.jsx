@@ -9,27 +9,17 @@ const TopCity = () => {
 
   return (
     <Container className="bg-white">
-
-      <div className="w-full py-50">
+      <div className='py-50 w-full'>
         <h2 className="title-text text-dark font-600">Top Cities</h2>
 
-        {/* --- Grid Layout of Cities (Top 4) using CardLayout --- */}
+        {/* --- Slider Layout of Cities using CardLayout --- */}
         <CardLayout
           items={topCities}
           cardType="city"
           isSlider={true}
-          sliderSlidesPerView={1.4}
-          sliderBreakpoints={{
-            640: {
-              slidesPerView: 2.2,
-            },
-            768: {
-              slidesPerView: 4.2,
-            },
-            1024: {
-              slidesPerView: 4.5,
-            }
-          }}
+          cols="4"
+          mdCols="2"
+          smCols="1"
           className="mt-20"
           onCardClick={(item) => navigate('/products', { state: { city: item.name } })}
         />

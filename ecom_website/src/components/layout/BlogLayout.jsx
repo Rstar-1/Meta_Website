@@ -64,7 +64,7 @@ const BlogLayout = ({
     let result = blogsList;
     if (selectedCategory && selectedCategory !== "All") {
       result = result.filter(
-         (blog) => blog.category?.toLowerCase() === selectedCategory.toLowerCase()
+        (blog) => blog.category?.toLowerCase() === selectedCategory.toLowerCase()
       );
     }
     if (searchQuery.trim()) {
@@ -282,7 +282,7 @@ const BlogLayout = ({
             )}
 
             {/* Left/Center Column - Main Content */}
-            <div className='w-75 md-w-70 sm-w-full'>
+            <div className='w-70 md-w-70 sm-w-full'>
               {type === 'list' ? (
                 <>
                   <div className="flex items-center justify-between sm-grid-cols-1 gap-12 mb-25 sm-mb-15">
@@ -492,7 +492,7 @@ const BlogLayout = ({
             </div>
 
             {/* Right Column - Sidebar Widgets */}
-            <div className="w-25 md-w-30 sm-w-full sticky-sidebar">
+            <div className="w-30 md-w-30 sm-w-full sticky-sidebar">
               <>
                 {/* Search Widget */}
                 {type === 'list' && (

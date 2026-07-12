@@ -124,8 +124,6 @@ const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
             submitText={isCart ? "Submit Enquiry" : "Submit Requirement"}
             buttonVersion="v3"
             buttonBg="primary"
-            buttonClassName="mt-14 w-full"
-            buttonStyle={{ backgroundColor: '#2563eb', padding: '12px', fontSize: '14px', fontWeight: 700 }}
           >
             {isCart && (
               <div className="bg-forth p-12 rounded-5 flex items-center justify-between mt-10">

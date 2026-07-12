@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import productsData from '../../data/products.json';
-import categoryData from '../../data/category.json';
+import { products as productsData, categories as categoryData } from '../../utils/productsData';
 import clientData from '../../data/client.json';
 import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
@@ -125,7 +124,7 @@ const SupplierDetail = () => {
                 </div>
                 <div>
                   <h2 className="text-dark mid-text font-500">{nameDisplay}</h2>
-                  <p className="mini-text text-secondary font-400">Verified Supplier</p>
+                  <p className="mini-text text-secondary font-500">Verified Supplier</p>
                 </div>
               </div>
 

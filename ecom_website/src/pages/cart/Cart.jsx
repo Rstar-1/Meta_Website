@@ -10,8 +10,7 @@ import Banner from '../../components/layout/Banner';
 import ProductEnquiryForm from '../../components/forms/ProductEnquiryForm';
 import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
 import { resolveProductImage, resolveImagePath } from '../../utils/imageResolver';
-import productsData from '../../data/products.json';
-import categoriesData from '../../data/category.json';
+import { products as productsData, categories as categoriesData } from '../../utils/productsData';
 import Table from '../../components/common/Table';
 import Fields from '../../components/common/Fields';
 

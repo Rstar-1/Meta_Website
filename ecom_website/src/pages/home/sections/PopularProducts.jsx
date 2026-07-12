@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import products from '../../../data/products.json';
+import { products } from '../../../utils/productsData';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
@@ -20,10 +20,8 @@ const PopularProducts = () => {
 
   return (
     <Container className='bg-white'>
-      <div className="w-full pt-40 pb-20">
-        <div
-          className="flex justify-between items-center"
-        >
+      <div className='py-40 w-full'>
+        <div className="flex justify-between items-center">
           <h2 className="title-text text-dark font-600">Popular Products</h2>
           <p className='text-primary font-500 cursor-pointer small-text' onClick={handleViewAll}>
             View All ➔</p>
@@ -34,18 +32,9 @@ const PopularProducts = () => {
           cardType="product"
           imageHeight="h-150"
           isSlider={true}
-          sliderSlidesPerView={1.2}
-          sliderBreakpoints={{
-            640: {
-              slidesPerView: 2.2,
-            },
-            768: {
-              slidesPerView: 3.7,
-            },
-            1024: {
-              slidesPerView: 5.4,
-            }
-          }}
+          cols="5"
+          mdCols="2"
+          smCols="1"
           className="mt-20"
           showViewProducts={false}
           onCardClick={handleProductClick}

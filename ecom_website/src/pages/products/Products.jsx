@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import products from '../../data/products.json';
-import categories from '../../data/category.json';
+import { products, categories } from '../../utils/productsData';
 import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
 import SeoHelmet from '../../components/seo/SeoHelmet';

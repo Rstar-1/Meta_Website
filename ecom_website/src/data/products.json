@@ -3,7 +3,6 @@
     "id": "printer-1",
     "name": "HP 88A Toner Cartridge",
     "slug": "hp-88a-toner-cartridge",
-    "description": "Professional quality black toner cartridge for HP LaserJet printers. Ensures crisp, sharp text and smooth grayscale images. Designed for reliability and high performance, it ensures consistent results and long lasting prints. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 1250,
     "priceDisplay": "₹ 1,250 / Piece",
     "subtitle": "Starting from",
@@ -13,47 +12,14 @@
     "brand": "HP",
     "category": "cat-7",
     "image": "/src/assets/printer_hp_88a.webp",
-    "tags": [
-      "hp",
-      "toner",
-      "cartridge",
-      "laserjet",
-      "printer"
-    ],
+    "tags": ["hp", "toner", "cartridge", "laserjet", "printer"],
     "type": "printer",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 245,
-    "reviews": [
-      {
-        "name": "Rakesh Sharma",
-        "verified": true,
-        "date": "May 10, 2024",
-        "rating": 5,
-        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
-      },
-      {
-        "name": "Vikram Joshi",
-        "verified": true,
-        "date": "Jul 22, 2024",
-        "rating": 4,
-        "comment": "Good packaging and quick shipping. The print quality is very professional."
-      },
-      {
-        "name": "Karan Patel",
-        "verified": true,
-        "date": "Jun 18, 2024",
-        "rating": 5,
-        "comment": "Good packaging and quick shipping. The print quality is very professional."
-      },
-      {
-        "name": "Rahul Sharma",
-        "verified": true,
-        "date": "Apr 5, 2024",
-        "rating": 4,
-        "comment": "Easy to install and print output is very dark and clean. Value for money."
-      }
-    ],
+    "client": "biz-4",
+    "city": "Delhi",
+    "description": "Professional quality black toner cartridge for HP LaserJet printers. Ensures crisp, sharp text and smooth grayscale images. Designed for reliability and high performance, it ensures consistent results and long lasting prints. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -100,19 +66,46 @@
         "value": "For Laser Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_hp_88a.webp",
       "/src/assets/printer_brother_tn2321.webp",
       "/src/assets/printer_samsung_d111s.webp"
     ],
-    "city": "Delhi"
+    "reviews": [
+      {
+        "name": "Rakesh Sharma",
+        "verified": true,
+        "date": "May 10, 2024",
+        "rating": 5,
+        "comment": "Excellent print quality and page yield. Original product with good packaging and fast delivery. Highly recommended!"
+      },
+      {
+        "name": "Vikram Joshi",
+        "verified": true,
+        "date": "Jul 22, 2024",
+        "rating": 4,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Karan Patel",
+        "verified": true,
+        "date": "Jun 18, 2024",
+        "rating": 5,
+        "comment": "Good packaging and quick shipping. The print quality is very professional."
+      },
+      {
+        "name": "Rahul Sharma",
+        "verified": true,
+        "date": "Apr 5, 2024",
+        "rating": 4,
+        "comment": "Easy to install and print output is very dark and clean. Value for money."
+      }
+    ]
   },
   {
     "id": "printer-2",
     "name": "Canon 74S Black Ink Cartridge",
     "slug": "canon-74s-black-ink-cartridge",
-    "description": "High yield genuine black ink cartridge for Canon PIXMA series. Produces fade-resistant document text and sharp prints. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 840,
     "priceDisplay": "₹ 840 / Piece",
     "subtitle": "Starting from",
@@ -122,17 +115,14 @@
     "brand": "Canon",
     "category": "cat-7",
     "image": "/src/assets/printer_canon_74s.webp",
-    "tags": [
-      "canon",
-      "ink",
-      "cartridge",
-      "pixma",
-      "black"
-    ],
+    "tags": ["canon", "ink", "cartridge", "pixma", "black"],
     "type": "printer",
     "popular": true,
     "rating": 4.5,
     "reviewCount": 182,
+    "client": "biz-4",
+    "city": "Mumbai",
+    "description": "High yield genuine black ink cartridge for Canon PIXMA series. Produces fade-resistant document text and sharp prints. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -179,7 +169,6 @@
         "value": "For Inkjet Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_canon_74s.webp",
       "/src/assets/printer_canon_746.webp",
@@ -221,14 +210,12 @@
         "rating": 4,
         "comment": "Good packaging and quick shipping. The print quality is very professional."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "printer-3",
     "name": "Canon 746 Color Ink Cartridge",
     "slug": "canon-746-color-ink-cartridge",
-    "description": "Vibrant tri-color ink cartridge for high quality photo and document printing with long lasting color fidelity. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": 980,
     "priceDisplay": "₹ 980 / Piece",
     "subtitle": "Starting from",
@@ -238,17 +225,14 @@
     "brand": "Canon",
     "category": "cat-7",
     "image": "/src/assets/printer_canon_746.webp",
-    "tags": [
-      "canon",
-      "ink",
-      "color",
-      "cartridge",
-      "photo"
-    ],
+    "tags": ["canon", "ink", "color", "cartridge", "photo"],
     "type": "printer",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 198,
+    "client": "biz-4",
+    "city": "Bangalore",
+    "description": "Vibrant tri-color ink cartridge for high quality photo and document printing with long lasting color fidelity. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -295,7 +279,6 @@
         "value": "For Inkjet Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_canon_746.webp",
       "/src/assets/printer_canon_74s.webp",
@@ -323,14 +306,12 @@
         "rating": 5,
         "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
       }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "printer-4",
     "name": "Epson 003 Ink Bottle (Black)",
     "slug": "epson-003-ink-bottle-black",
-    "description": "Ultra high capacity black ink bottle for Epson EcoTank printers. Eco-friendly refilling with smudge-free output. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 320,
     "priceDisplay": "₹ 320 / Piece",
     "subtitle": "Starting from",
@@ -340,16 +321,14 @@
     "brand": "Epson",
     "category": "cat-7",
     "image": "/src/assets/printer_epson_003.webp",
-    "tags": [
-      "epson",
-      "ink bottle",
-      "ecotank",
-      "black"
-    ],
+    "tags": ["epson", "ink bottle", "ecotank", "black"],
     "type": "printer",
     "popular": true,
     "rating": 4.9,
     "reviewCount": 512,
+    "client": "biz-4",
+    "city": "Chennai",
+    "description": "Ultra high capacity black ink bottle for Epson EcoTank printers. Eco-friendly refilling with smudge-free output. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -396,7 +375,6 @@
         "value": "For EcoTank Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_epson_003.webp",
       "/src/assets/printer_canon_74s.webp",
@@ -438,14 +416,12 @@
         "rating": 5,
         "comment": "Easy to install and print output is very dark and clean. Value for money."
       }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "printer-5",
     "name": "Brother TN2321 Toner Cartridge",
     "slug": "brother-tn2321-toner-cartridge",
-    "description": "High capacity monochrome toner cartridge delivering crisp laser prints for heavy duty office printing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 1180,
     "priceDisplay": "₹ 1,180 / Piece",
     "subtitle": "Starting from",
@@ -455,16 +431,14 @@
     "brand": "Brother",
     "category": "cat-7",
     "image": "/src/assets/printer_brother_tn2321.webp",
-    "tags": [
-      "brother",
-      "toner",
-      "laser",
-      "black"
-    ],
+    "tags": ["brother", "toner", "laser", "black"],
     "type": "printer",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 310,
+    "client": "biz-4",
+    "city": "Hyderabad",
+    "description": "High capacity monochrome toner cartridge delivering crisp laser prints for heavy duty office printing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -511,7 +485,6 @@
         "value": "For Laser Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_brother_tn2321.webp",
       "/src/assets/printer_hp_88a.webp",
@@ -539,14 +512,12 @@
         "rating": 5,
         "comment": "Good packaging and quick shipping. The print quality is very professional."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "printer-6",
     "name": "Samsung MLT-D111S Toner Cartridge",
     "slug": "samsung-mlt-d111s-toner-cartridge",
-    "description": "Reliable Samsung original laser toner cartridge for Xpress series printers. Standard yield with reliable performance. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": 1250,
     "priceDisplay": "₹ 1,250 / Piece",
     "subtitle": "Starting from",
@@ -556,16 +527,14 @@
     "brand": "Samsung",
     "category": "cat-7",
     "image": "/src/assets/printer_samsung_d111s.webp",
-    "tags": [
-      "samsung",
-      "toner",
-      "xpress",
-      "laser"
-    ],
+    "tags": ["samsung", "toner", "xpress", "laser"],
     "type": "printer",
     "popular": true,
     "rating": 4.4,
     "reviewCount": 142,
+    "client": "biz-4",
+    "city": "Delhi",
+    "description": "Reliable Samsung original laser toner cartridge for Xpress series printers. Standard yield with reliable performance. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -612,7 +581,6 @@
         "value": "For Laser Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_samsung_d111s.webp",
       "/src/assets/printer_hp_88a.webp",
@@ -647,14 +615,12 @@
         "rating": 5,
         "comment": "Easy to install and print output is very dark and clean. Value for money."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "printer-7",
     "name": "HP 12A Toner Cartridge",
     "slug": "hp-12a-toner-cartridge",
-    "description": "Original black toner cartridge delivering consistent, high quality text prints for classic LaserJet models. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 1450,
     "priceDisplay": "₹ 1,450 / Piece",
     "subtitle": "Starting from",
@@ -664,16 +630,14 @@
     "brand": "HP",
     "category": "cat-7",
     "image": "/src/assets/printer_hp_88a.webp",
-    "tags": [
-      "hp",
-      "toner",
-      "laser",
-      "black"
-    ],
+    "tags": ["hp", "toner", "laser", "black"],
     "type": "printer",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 412,
+    "client": "biz-4",
+    "city": "Mumbai",
+    "description": "Original black toner cartridge delivering consistent, high quality text prints for classic LaserJet models. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -720,7 +684,6 @@
         "value": "For Laser Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_hp_88a.webp",
       "/src/assets/printer_brother_tn2321.webp",
@@ -748,14 +711,12 @@
         "rating": 4,
         "comment": "Very cost-effective cartridge. Yields as many pages as advertised, will buy again."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "printer-8",
     "name": "Canon 337 Toner Cartridge",
     "slug": "canon-337-toner-cartridge",
-    "description": "All-in-one black toner cartridge designed for seamless compatibility and high speed printing with Canon multi-function printers. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 1290,
     "priceDisplay": "₹ 1,290 / Piece",
     "subtitle": "Starting from",
@@ -765,16 +726,14 @@
     "brand": "Canon",
     "category": "cat-7",
     "image": "/src/assets/printer_canon_74s.webp",
-    "tags": [
-      "canon",
-      "toner",
-      "cartridge",
-      "black"
-    ],
+    "tags": ["canon", "toner", "cartridge", "black"],
     "type": "printer",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 220,
+    "client": "biz-4",
+    "city": "Bangalore",
+    "description": "All-in-one black toner cartridge designed for seamless compatibility and high speed printing with Canon multi-function printers. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -821,7 +780,6 @@
         "value": "For Laser Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_canon_74s.webp",
       "/src/assets/printer_hp_88a.webp",
@@ -857,14 +815,12 @@
         "rating": 5,
         "comment": "Easy to install and print output is very dark and clean. Value for money."
       }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "printer-9",
     "name": "Brother TN3467 Toner",
     "slug": "brother-tn3467-toner",
-    "description": "Super high-yield black toner cartridge engineered for heavy duty industrial and office multi-function printers. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": 1980,
     "priceDisplay": "₹ 1,980 / Piece",
     "subtitle": "Starting from",
@@ -874,16 +830,14 @@
     "brand": "Brother",
     "category": "cat-7",
     "image": "/src/assets/printer_brother_tn2321.webp",
-    "tags": [
-      "brother",
-      "toner",
-      "laser",
-      "black"
-    ],
+    "tags": ["brother", "toner", "laser", "black"],
     "type": "printer",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 165,
+    "client": "biz-4",
+    "city": "Chennai",
+    "description": "Super high-yield black toner cartridge engineered for heavy duty industrial and office multi-function printers. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -930,7 +884,6 @@
         "value": "For Laser Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_brother_tn2321.webp",
       "/src/assets/printer_hp_88a.webp",
@@ -965,14 +918,12 @@
         "rating": 5,
         "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
       }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "printer-10",
     "name": "HP 78A Toner Cartridge",
     "slug": "hp-78a-toner-cartridge",
-    "description": "Reliable, high yield black toner cartridge designed for quick and crisp daily business documentation. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 1320,
     "priceDisplay": "₹ 1,320 / Piece",
     "subtitle": "Starting from",
@@ -982,16 +933,14 @@
     "brand": "HP",
     "category": "cat-7",
     "image": "/src/assets/printer_hp_88a.webp",
-    "tags": [
-      "hp",
-      "toner",
-      "laser",
-      "black"
-    ],
+    "tags": ["hp", "toner", "laser", "black"],
     "type": "printer",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 201,
+    "client": "biz-4",
+    "city": "Hyderabad",
+    "description": "Reliable, high yield black toner cartridge designed for quick and crisp daily business documentation. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Cartridge Type",
@@ -1038,7 +987,6 @@
         "value": "For Laser Printers"
       }
     ],
-    "client": "biz-4",
     "images": [
       "/src/assets/printer_hp_88a.webp",
       "/src/assets/printer_brother_tn2321.webp",
@@ -1066,14 +1014,12 @@
         "rating": 4,
         "comment": "Works perfectly with my laser printer. Crisp black text and no smudging."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "steel-1",
     "name": "SS 304 Sheets",
     "slug": "ss-304-sheets",
-    "description": "Premium industrial grade stainless steel 304 sheets. Excellent corrosion resistance and durability for manufacturing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 190,
     "priceDisplay": "₹ 190 / Kg",
     "subtitle": "Starting from",
@@ -1083,16 +1029,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_304_sheets.webp",
-    "tags": [
-      "steel",
-      "ss304",
-      "sheets",
-      "industrial"
-    ],
+    "tags": ["steel", "ss304", "sheets", "industrial"],
     "type": "steel",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 312,
+    "client": "biz-1",
+    "city": "Delhi",
+    "description": "Premium industrial grade stainless steel 304 sheets. Excellent corrosion resistance and durability for manufacturing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Material",
@@ -1115,7 +1059,6 @@
         "value": "Construction, Food Processing, Chemical Storage"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_304_sheets.webp",
       "/src/assets/ss_plates.webp",
@@ -1157,14 +1100,12 @@
         "rating": 5,
         "comment": "Premium steel quality. Ideal for our construction project requirements."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "steel-2",
     "name": "SS 304 Pipes",
     "slug": "ss-304-pipes",
-    "description": "Seamless and welded stainless steel 304 pipes for structural, plumbing, and industrial fluid transport applications. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": 210,
     "priceDisplay": "₹ 210 / Kg",
     "subtitle": "Starting from",
@@ -1174,16 +1115,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_304_pipes.webp",
-    "tags": [
-      "steel",
-      "ss304",
-      "pipes",
-      "industrial"
-    ],
+    "tags": ["steel", "ss304", "pipes", "industrial"],
     "type": "steel",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 260,
+    "client": "biz-1",
+    "city": "Mumbai",
+    "description": "Seamless and welded stainless steel 304 pipes for structural, plumbing, and industrial fluid transport applications. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "specs": [
       {
         "label": "Material",
@@ -1206,7 +1145,6 @@
         "value": "Water, Oil, Gas Piping, Architectural Balustrades"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_304_pipes.webp",
       "/src/assets/ss_316_rods.webp",
@@ -1234,14 +1172,12 @@
         "rating": 5,
         "comment": "Highly recommended for industrial applications. Resistance to corrosion is top notch."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "steel-3",
     "name": "SS Coils",
     "slug": "ss-coils",
-    "description": "Cold rolled stainless steel coils engineered for deep drawing and precision press manufacturing. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 185,
     "priceDisplay": "₹ 185 / Kg",
     "subtitle": "Starting from",
@@ -1251,15 +1187,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_coils.webp",
-    "tags": [
-      "steel",
-      "coils",
-      "raw material"
-    ],
+    "tags": ["steel", "coils", "raw material"],
     "type": "steel",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 145,
+    "client": "biz-1",
+    "city": "Bangalore",
+    "description": "Cold rolled stainless steel coils engineered for deep drawing and precision press manufacturing. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Material",
@@ -1282,7 +1217,6 @@
         "value": "Eye to Sky, Eye to Wall Export Standard"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_coils.webp",
       "/src/assets/ss_304_sheets.webp",
@@ -1310,14 +1244,12 @@
         "rating": 5,
         "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
       }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "steel-4",
     "name": "SS 316 Rods",
     "slug": "ss-316-rods",
-    "description": "Marine grade stainless steel 316 round rods offering superior resistance to chemical environments and chloride corrosion. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 250,
     "priceDisplay": "₹ 250 / Kg",
     "subtitle": "Starting from",
@@ -1327,16 +1259,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_316_rods.webp",
-    "tags": [
-      "steel",
-      "ss316",
-      "rods",
-      "round bar"
-    ],
+    "tags": ["steel", "ss316", "rods", "round bar"],
     "type": "steel",
     "popular": true,
     "rating": 4.9,
     "reviewCount": 180,
+    "client": "biz-1",
+    "city": "Chennai",
+    "description": "Marine grade stainless steel 316 round rods offering superior resistance to chemical environments and chloride corrosion. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Material",
@@ -1359,7 +1289,6 @@
         "value": "Marine fittings, chemical processing machinery, aerospace parts"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_316_rods.webp",
       "/src/assets/ss_304_pipes.webp",
@@ -1387,14 +1316,12 @@
         "rating": 5,
         "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
       }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "steel-5",
     "name": "SS Plates",
     "slug": "ss-plates",
-    "description": "Heavy-duty hot rolled stainless steel plates. Ideal for tanks, pressure vessels, and structural applications. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": 200,
     "priceDisplay": "₹ 200 / Kg",
     "subtitle": "Starting from",
@@ -1404,15 +1331,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_plates.webp",
-    "tags": [
-      "steel",
-      "plates",
-      "industrial"
-    ],
+    "tags": ["steel", "plates", "industrial"],
     "type": "steel",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 95,
+    "client": "biz-1",
+    "city": "Hyderabad",
+    "description": "Heavy-duty hot rolled stainless steel plates. Ideal for tanks, pressure vessels, and structural applications. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "specs": [
       {
         "label": "Material",
@@ -1435,7 +1361,6 @@
         "value": "ASTM A240"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_plates.webp",
       "/src/assets/ss_304_sheets.webp",
@@ -1470,14 +1395,12 @@
         "rating": 5,
         "comment": "Premium steel quality. Ideal for our construction project requirements."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "steel-6",
     "name": "SS Kitchen Equipment",
     "slug": "ss-kitchen-equipment",
-    "description": "Food-grade stainless steel fabrication for commercial and domestic kitchens. Easy to clean, hygienic, and highly durable. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 1500,
     "priceDisplay": "₹ 1,500 / Piece",
     "subtitle": "Starting from",
@@ -1487,15 +1410,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_kitchen.webp",
-    "tags": [
-      "steel",
-      "kitchen",
-      "equipment"
-    ],
+    "tags": ["steel", "kitchen", "equipment"],
     "type": "steel",
     "popular": true,
     "rating": 4.5,
     "reviewCount": 78,
+    "client": "biz-1",
+    "city": "Delhi",
+    "description": "Food-grade stainless steel fabrication for commercial and domestic kitchens. Easy to clean, hygienic, and highly durable. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Material",
@@ -1518,11 +1440,7 @@
         "value": "Low maintenance"
       }
     ],
-    "client": "biz-1",
-    "images": [
-      "/src/assets/ss_kitchen.webp",
-      "/src/assets/ss_plates.webp"
-    ],
+    "images": ["/src/assets/ss_kitchen.webp", "/src/assets/ss_plates.webp"],
     "reviews": [
       {
         "name": "Sunita Reddy",
@@ -1552,14 +1470,12 @@
         "rating": 5,
         "comment": "Premium steel quality. Ideal for our construction project requirements."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "steel-7",
     "name": "SS Flanges",
     "slug": "ss-flanges",
-    "description": "High-pressure stainless steel flanges including slip-on, weld-neck, blind, and socket-weld options. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 320,
     "priceDisplay": "₹ 320 / Piece",
     "subtitle": "Starting from",
@@ -1569,15 +1485,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_flanges.webp",
-    "tags": [
-      "steel",
-      "flanges",
-      "piping"
-    ],
+    "tags": ["steel", "flanges", "piping"],
     "type": "steel",
     "popular": true,
     "rating": 4.8,
     "reviewCount": 112,
+    "client": "biz-1",
+    "city": "Mumbai",
+    "description": "High-pressure stainless steel flanges including slip-on, weld-neck, blind, and socket-weld options. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Material",
@@ -1600,7 +1515,6 @@
         "value": "1/2 inch to 48 inch"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_flanges.webp",
       "/src/assets/ss_fasteners.webp",
@@ -1635,14 +1549,12 @@
         "rating": 5,
         "comment": "Excellent tensile strength. The delivery was fast and the piping is perfect."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "steel-8",
     "name": "SS Angle Bars",
     "slug": "ss-angle-bars",
-    "description": "Structural stainless steel equal and unequal angle bars for frames, supports, and industrial construction. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "price": 225,
     "priceDisplay": "₹ 225 / Kg",
     "subtitle": "Starting from",
@@ -1652,15 +1564,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_angle_bars.webp",
-    "tags": [
-      "steel",
-      "angle",
-      "bar"
-    ],
+    "tags": ["steel", "angle", "bar"],
     "type": "steel",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 88,
+    "client": "biz-1",
+    "city": "Bangalore",
+    "description": "Structural stainless steel equal and unequal angle bars for frames, supports, and industrial construction. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
     "specs": [
       {
         "label": "Material",
@@ -1683,7 +1594,6 @@
         "value": "ASTM A276"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_angle_bars.webp",
       "/src/assets/ss_304_pipes.webp",
@@ -1718,14 +1628,12 @@
         "rating": 5,
         "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
       }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "steel-9",
     "name": "SS Wire Mesh",
     "slug": "ss-wire-mesh",
-    "description": "Woven stainless steel wire mesh for filtration, sieving, screen decoration, and security guards. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 450,
     "priceDisplay": "₹ 450 / Roll",
     "subtitle": "Starting from",
@@ -1735,15 +1643,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_wire_mesh.webp",
-    "tags": [
-      "steel",
-      "mesh",
-      "wire"
-    ],
+    "tags": ["steel", "mesh", "wire"],
     "type": "steel",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 104,
+    "client": "biz-1",
+    "city": "Chennai",
+    "description": "Woven stainless steel wire mesh for filtration, sieving, screen decoration, and security guards. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Material",
@@ -1766,7 +1673,6 @@
         "value": "Plain, Twill, Dutch"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_wire_mesh.webp",
       "/src/assets/ss_fasteners.webp",
@@ -1801,14 +1707,12 @@
         "rating": 5,
         "comment": "Very satisfied with the purchase. The sheets have consistent thickness and superb finish."
       }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "steel-10",
     "name": "SS Fasteners",
     "slug": "ss-fasteners",
-    "description": "Corrosion-resistant stainless steel bolts, nuts, washers, screws, and studs for industrial assembly. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 15,
     "priceDisplay": "₹ 15 / Piece",
     "subtitle": "Starting from",
@@ -1818,16 +1722,14 @@
     "brand": "Wadhumal Steel",
     "category": "cat-1",
     "image": "/src/assets/ss_fasteners.webp",
-    "tags": [
-      "steel",
-      "fasteners",
-      "bolts",
-      "nuts"
-    ],
+    "tags": ["steel", "fasteners", "bolts", "nuts"],
     "type": "steel",
     "popular": true,
     "rating": 4.9,
     "reviewCount": 320,
+    "client": "biz-1",
+    "city": "Hyderabad",
+    "description": "Corrosion-resistant stainless steel bolts, nuts, washers, screws, and studs for industrial assembly. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Material",
@@ -1850,7 +1752,6 @@
         "value": "DIN 933, DIN 934, ISO 4017"
       }
     ],
-    "client": "biz-1",
     "images": [
       "/src/assets/ss_fasteners.webp",
       "/src/assets/ss_flanges.webp",
@@ -1878,315 +1779,12 @@
         "rating": 5,
         "comment": "High quality material, very durable. Excellent finish and exact dimensions as ordered."
       }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-1",
-    "name": "Air Conditioners",
-    "slug": "air-conditioners",
-    "description": "High efficiency split and window air conditioners for optimal cooling and energy savings. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
-    "price": 32000,
-    "priceDisplay": "₹ 32,000 / Unit",
-    "subtitle": "Starting from",
-    "listings": "1,234 Listings",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "GEN-AC-01",
-    "brand": "Generic",
-    "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "ac",
-      "cooling",
-      "appliances"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 880,
-    "specs": [
-      {
-        "label": "Capacity",
-        "value": "1.5 Ton"
-      },
-      {
-        "label": "Energy Rating",
-        "value": "5 Star Inverter"
-      },
-      {
-        "label": "Cooling Technology",
-        "value": "Fast Cooling & Dehumidification"
-      }
-    ],
-    "client": "biz-4",
-    "images": [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Rajesh Kumar",
-        "verified": false,
-        "date": "Jun 18, 2024",
-        "rating": 5,
-        "comment": "Good packaging and durable construction. Highly recommended."
-      },
-      {
-        "name": "Rohan Reddy",
-        "verified": true,
-        "date": "May 12, 2024",
-        "rating": 5,
-        "comment": "Does the job perfectly. No issues faced during usage."
-      },
-      {
-        "name": "Amit Sen",
-        "verified": true,
-        "date": "Feb 20, 2024",
-        "rating": 5,
-        "comment": "Satisfactory purchase. Value for money and great customer support."
-      }
-    ],
-    "city": "Delhi"
-  },
-  {
-    "id": "prod-2",
-    "name": "Water Purifiers",
-    "slug": "water-purifiers",
-    "description": "Multi-stage RO, UV, and UF purification systems for safe, clean, and sweet tasting drinking water. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
-    "price": 8500,
-    "priceDisplay": "₹ 8,500 / Unit",
-    "subtitle": "Starting from",
-    "listings": "857 Listings",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "GEN-WP-02",
-    "brand": "Generic",
-    "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "water",
-      "purifier",
-      "appliances"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 654,
-    "specs": [
-      {
-        "label": "Purification Stages",
-        "value": "7 Stages RO+UV+UF+MTDS"
-      },
-      {
-        "label": "Storage Capacity",
-        "value": "8 Litres"
-      },
-      {
-        "label": "Installation Type",
-        "value": "Wall Mounted / Countertop"
-      }
-    ],
-    "client": "biz-4",
-    "images": [
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1585837575652-267c041d77d4?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Priya Khanna",
-        "verified": false,
-        "date": "Jun 18, 2024",
-        "rating": 5,
-        "comment": "Satisfactory purchase. Value for money and great customer support."
-      },
-      {
-        "name": "Vikram Reddy",
-        "verified": true,
-        "date": "Apr 5, 2024",
-        "rating": 5,
-        "comment": "Satisfactory purchase. Value for money and great customer support."
-      },
-      {
-        "name": "Karan Patel",
-        "verified": true,
-        "date": "Jan 15, 2024",
-        "rating": 5,
-        "comment": "Decent performance and sturdy build. Delivery was prompt."
-      },
-      {
-        "name": "Sanjay Kumar",
-        "verified": true,
-        "date": "Apr 5, 2024",
-        "rating": 5,
-        "comment": "Good packaging and durable construction. Highly recommended."
-      },
-      {
-        "name": "Rakesh Reddy",
-        "verified": true,
-        "date": "Jan 15, 2024",
-        "rating": 5,
-        "comment": "Satisfactory purchase. Value for money and great customer support."
-      }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-3",
-    "name": "Solar Panels",
-    "slug": "solar-panels",
-    "description": "High efficiency monocrystalline solar panels for residential, commercial, and industrial green power generation. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 15000,
-    "priceDisplay": "₹ 15,000 / Panel",
-    "subtitle": "Starting from",
-    "listings": "678 Listings",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "GEN-SP-03",
-    "brand": "Generic",
-    "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "solar",
-      "panels",
-      "energy"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.8,
-    "reviewCount": 310,
-    "specs": [
-      {
-        "label": "Panel Type",
-        "value": "Monocrystalline Perc"
-      },
-      {
-        "label": "Max Power output",
-        "value": "400W"
-      },
-      {
-        "label": "Warranty",
-        "value": "25 Years Performance Warranty"
-      }
-    ],
-    "client": "biz-4",
-    "images": [
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Anjali Rathore",
-        "verified": true,
-        "date": "Apr 5, 2024",
-        "rating": 4,
-        "comment": "Good quality product, meets all the specifications mentioned."
-      },
-      {
-        "name": "Sanjay Sen",
-        "verified": false,
-        "date": "Feb 20, 2024",
-        "rating": 4,
-        "comment": "Does the job perfectly. No issues faced during usage."
-      },
-      {
-        "name": "Amit Rathore",
-        "verified": true,
-        "date": "Feb 20, 2024",
-        "rating": 4,
-        "comment": "Good packaging and durable construction. Highly recommended."
-      },
-      {
-        "name": "Priya Bose",
-        "verified": true,
-        "date": "Jan 15, 2024",
-        "rating": 4,
-        "comment": "Good quality product, meets all the specifications mentioned."
-      },
-      {
-        "name": "Sunita Das",
-        "verified": true,
-        "date": "Jan 15, 2024",
-        "rating": 4,
-        "comment": "Satisfactory purchase. Value for money and great customer support."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-4",
-    "name": "Generators",
-    "slug": "generators",
-    "description": "Silent diesel and petrol generators offering reliable backup power solutions for homes and offices. With rigorous quality control testing at every stage of production, this product guarantees optimal safety, long life, and excellent results in all standard applications.",
-    "price": 45000,
-    "priceDisplay": "₹ 45,000 / Unit",
-    "subtitle": "Starting from",
-    "listings": "543 Listings",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "GEN-GN-04",
-    "brand": "Generic",
-    "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "generator",
-      "power",
-      "backup"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.4,
-    "reviewCount": 118,
-    "specs": [
-      {
-        "label": "Power Capacity",
-        "value": "3 kVA"
-      },
-      {
-        "label": "Fuel Type",
-        "value": "Petrol / CNG / Diesel"
-      },
-      {
-        "label": "Starter Type",
-        "value": "Key Start & Recoil"
-      }
-    ],
-    "client": "biz-3",
-    "images": [
-      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Vikram Patel",
-        "verified": true,
-        "date": "Jul 22, 2024",
-        "rating": 5,
-        "comment": "Good packaging and durable construction. Highly recommended."
-      },
-      {
-        "name": "Sunita Sharma",
-        "verified": true,
-        "date": "May 12, 2024",
-        "rating": 4,
-        "comment": "Satisfactory purchase. Value for money and great customer support."
-      },
-      {
-        "name": "Priya Mehta",
-        "verified": true,
-        "date": "Apr 5, 2024",
-        "rating": 5,
-        "comment": "Does the job perfectly. No issues faced during usage."
-      }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "prod-5",
     "name": "Office Chairs",
     "slug": "office-chairs",
-    "description": "Ergonomically designed high-back mesh chairs offering supreme comfort and lumber support for long working hours. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "price": 4500,
     "priceDisplay": "₹ 4,500 / Piece",
     "subtitle": "Starting from",
@@ -2197,15 +1795,14 @@
     "brand": "Generic",
     "category": "cat-12",
     "image": "https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "chair",
-      "office",
-      "furniture"
-    ],
+    "tags": ["chair", "office", "furniture"],
     "type": "general",
     "popular": false,
     "rating": 4.3,
     "reviewCount": 940,
+    "client": "biz-5",
+    "city": "Hyderabad",
+    "description": "Ergonomically designed high-back mesh chairs offering supreme comfort and lumber support for long working hours. This premium grade product is manufactured using state-of-the-art technology and high-quality raw materials to ensure maximum durability, superior efficiency, and flawless performance under demanding industrial and commercial conditions.",
     "specs": [
       {
         "label": "Seat Material",
@@ -2220,7 +1817,6 @@
         "value": "Heavy-Duty Chrome Metal Base with Nylon Casters"
       }
     ],
-    "client": "biz-5",
     "images": [
       "https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?q=80&w=400&auto=format&fit=crop"
@@ -2254,14 +1850,12 @@
         "rating": 5,
         "comment": "Good quality product, meets all the specifications mentioned."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-6",
     "name": "CCTV Cameras",
     "slug": "cctv-cameras",
-    "description": "HD smart Wi-Fi security dome and bullet cameras with night vision and two-way audio talkback. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 1800,
     "priceDisplay": "₹ 1,800 / Piece",
     "subtitle": "Starting from",
@@ -2272,15 +1866,14 @@
     "brand": "Generic",
     "category": "cat-6",
     "image": "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "cctv",
-      "camera",
-      "security"
-    ],
+    "tags": ["cctv", "camera", "security"],
     "type": "general",
     "popular": false,
     "rating": 4.6,
     "reviewCount": 720,
+    "client": "biz-3",
+    "city": "Delhi",
+    "description": "HD smart Wi-Fi security dome and bullet cameras with night vision and two-way audio talkback. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Resolution",
@@ -2295,7 +1888,6 @@
         "value": "MicroSD Card (up to 256GB) & Cloud Storage"
       }
     ],
-    "client": "biz-3",
     "images": [
       "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=400&auto=format&fit=crop"
@@ -2336,14 +1928,12 @@
         "rating": 5,
         "comment": "Satisfactory purchase. Value for money and great customer support."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-7",
     "name": "Industrial PVC Conduit Pipe",
     "slug": "industrial-pvc-conduit-pipe",
-    "description": "High grade rigid PVC conduit pipes for electrical and industrial piping applications. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 180,
     "priceDisplay": "₹ 180 / Piece",
     "subtitle": "Starting from",
@@ -2353,16 +1943,13 @@
     "brand": "Finolex",
     "category": "cat-2",
     "image": "/src/assets/pvc_conduit_pipe.webp",
-    "tags": [
-      "pvc",
-      "pipe",
-      "conduit",
-      "industrial"
-    ],
+    "tags": ["pvc", "pipe", "conduit", "industrial"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 45,
+    "city": "Mumbai",
+    "description": "High grade rigid PVC conduit pipes for electrical and industrial piping applications. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Material",
@@ -2396,14 +1983,12 @@
         "rating": 4,
         "comment": "Good value for money. Very reliable performance so far."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "prod-8",
     "name": "PVC Elbow 90 Degree Bend",
     "slug": "pvc-elbow-90-degree-bend",
-    "description": "Heavy duty PVC 90 degree elbow connector for industrial pipeline fittings. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 45,
     "priceDisplay": "₹ 45 / Piece",
     "subtitle": "Starting from",
@@ -2413,16 +1998,13 @@
     "brand": "Supreme",
     "category": "cat-2",
     "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "pvc",
-      "elbow",
-      "fitting",
-      "bend"
-    ],
+    "tags": ["pvc", "elbow", "fitting", "bend"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 45,
+    "city": "Bangalore",
+    "description": "Heavy duty PVC 90 degree elbow connector for industrial pipeline fittings. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Angle",
@@ -2456,194 +2038,12 @@
         "rating": 4,
         "comment": "Good value for money. Very reliable performance so far."
       }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-9",
-    "name": "Heavy Duty Hydraulic Press Machine",
-    "slug": "heavy-duty-hydraulic-press-machine",
-    "description": "High capacity hydraulic pressing machine for manufacturing and heavy sheet metal molding. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 450000,
-    "priceDisplay": "₹ 4,50,000 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IND-HP-01",
-    "brand": "ForceTech",
-    "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "machinery",
-      "hydraulic",
-      "press",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Capacity",
-        "value": "50 Tons"
-      },
-      {
-        "label": "Stroke Length",
-        "value": "200 mm"
-      },
-      {
-        "label": "Motor Power",
-        "value": "5 HP"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Chennai"
-  },
-  {
-    "id": "prod-10",
-    "name": "Corrugated Shipping Box",
-    "slug": "corrugated-shipping-box",
-    "description": "Extra strong 3-ply corrugated cardboard boxes for secure shipping and storage. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 35,
-    "priceDisplay": "₹ 35 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PKG-CB-01",
-    "brand": "PackShield",
-    "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "packaging",
-      "box",
-      "corrugated",
-      "carton"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Layer",
-        "value": "3-Ply"
-      },
-      {
-        "label": "Dimensions",
-        "value": "12 x 12 x 12 inches"
-      },
-      {
-        "label": "Load Capacity",
-        "value": "15 kg"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-11",
-    "name": "Industrial Stretch Wrap Film",
-    "slug": "industrial-stretch-wrap-film",
-    "description": "Highly stretchable plastic wrap film for pallet wrapping and securing cartons. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 320,
-    "priceDisplay": "₹ 320 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PKG-SW-02",
-    "brand": "StretchMax",
-    "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "packaging",
-      "wrap",
-      "film",
-      "stretch"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Width",
-        "value": "500 mm"
-      },
-      {
-        "label": "Thickness",
-        "value": "23 Microns"
-      },
-      {
-        "label": "Length",
-        "value": "300 meters"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-12",
     "name": "Industrial Safety Helmet",
     "slug": "industrial-safety-helmet",
-    "description": "Impact-resistant HDPE industrial safety helmet with adjustable chin strap. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 240,
     "priceDisplay": "₹ 240 / Piece",
     "subtitle": "Starting from",
@@ -2653,16 +2053,13 @@
     "brand": "Karam",
     "category": "cat-6",
     "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "safety",
-      "helmet",
-      "construction",
-      "hdpe"
-    ],
+    "tags": ["safety", "helmet", "construction", "hdpe"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 45,
+    "city": "Mumbai",
+    "description": "Impact-resistant HDPE industrial safety helmet with adjustable chin strap. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Material",
@@ -2696,254 +2093,12 @@
         "rating": 4,
         "comment": "Good value for money. Very reliable performance so far."
       }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-13",
-    "name": "Dry Erase Aluminum Framed Whiteboard",
-    "slug": "dry-erase-aluminum-framed-whiteboard",
-    "description": "Smooth magnetic surface dry-erase writing board with anodized aluminum border. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 1200,
-    "priceDisplay": "₹ 1,200 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "OFF-WB-01",
-    "brand": "Alkos",
-    "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "office",
-      "whiteboard",
-      "writing",
-      "board"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Size",
-        "value": "3 x 4 feet"
-      },
-      {
-        "label": "Frame",
-        "value": "Aluminum"
-      },
-      {
-        "label": "Surface",
-        "value": "Magnetic Dry-Erase"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-14",
-    "name": "Premium Ballpoint Pen Pack",
-    "slug": "premium-ballpoint-pen-pack",
-    "description": "Bulk box of fine-tip blue ink ballpoint pens for daily office usage. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 250,
-    "priceDisplay": "₹ 250 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "OFF-BP-02",
-    "brand": "Reynolds",
-    "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "office",
-      "supplies",
-      "pen",
-      "stationery"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Ink Color",
-        "value": "Blue"
-      },
-      {
-        "label": "Tip Size",
-        "value": "0.7 mm"
-      },
-      {
-        "label": "Pack Qty",
-        "value": "50 Units"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Chennai"
-  },
-  {
-    "id": "prod-15",
-    "name": "Professional Wrench Socket Set",
-    "slug": "professional-wrench-socket-set",
-    "description": "Chrome vanadium steel wrench and sockets combination toolset in a hard carrying case. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 2800,
-    "priceDisplay": "₹ 2,800 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "HRD-WS-01",
-    "brand": "Taparia",
-    "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "tools",
-      "wrench",
-      "socket",
-      "hardware"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Chrome Vanadium"
-      },
-      {
-        "label": "Pieces in Set",
-        "value": "46 Pieces"
-      },
-      {
-        "label": "Drive Size",
-        "value": "1/4 inch"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-16",
-    "name": "Claw Hammer with Fiberglass Handle",
-    "slug": "claw-hammer-with-fiberglass-handle",
-    "description": "Polished high carbon steel head claw hammer with shock-absorbing rubber grip. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 450,
-    "priceDisplay": "₹ 450 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "HRD-CH-02",
-    "brand": "Stanley",
-    "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "tools",
-      "hammer",
-      "hardware",
-      "claw"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Weight",
-        "value": "16 oz (450g)"
-      },
-      {
-        "label": "Handle Material",
-        "value": "Fiberglass"
-      },
-      {
-        "label": "Head Material",
-        "value": "Carbon Steel"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-17",
     "name": "Stainless Steel Self-Tapping Screws",
     "slug": "stainless-steel-self-tapping-screws",
-    "description": "High tensile self-tapping cross recessed philips head wood screws. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 350,
     "priceDisplay": "₹ 350 / Piece",
     "subtitle": "Starting from",
@@ -2953,16 +2108,13 @@
     "brand": "Screwtite",
     "category": "cat-10",
     "image": "/src/assets/ss_fasteners.webp",
-    "tags": [
-      "fasteners",
-      "screws",
-      "stainless",
-      "hardware"
-    ],
+    "tags": ["fasteners", "screws", "stainless", "hardware"],
     "type": "general",
-    "popular": false,
+    "popular": true,
     "rating": 4.5,
     "reviewCount": 45,
+    "city": "Mumbai",
+    "description": "High tensile self-tapping cross recessed philips head wood screws. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Material",
@@ -2996,14 +2148,12 @@
         "rating": 4,
         "comment": "Good value for money. Very reliable performance so far."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "prod-18",
     "name": "High Tensile Hex Head Bolts and Nuts",
     "slug": "high-tensile-hex-head-bolts-and-nuts",
-    "description": "Zinc-plated high strength grade 8.8 hex head bolts with matching nuts. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 600,
     "priceDisplay": "₹ 600 / Piece",
     "subtitle": "Starting from",
@@ -3013,16 +2163,13 @@
     "brand": "Bolttight",
     "category": "cat-10",
     "image": "/src/assets/ss_fasteners.webp",
-    "tags": [
-      "fasteners",
-      "bolts",
-      "nuts",
-      "hex"
-    ],
+    "tags": ["fasteners", "bolts", "nuts", "hex"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 45,
+    "city": "Bangalore",
+    "description": "Zinc-plated high strength grade 8.8 hex head bolts with matching nuts. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Thread Diameter",
@@ -3056,134 +2203,12 @@
         "rating": 4,
         "comment": "Good value for money. Very reliable performance so far."
       }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-19",
-    "name": "Cast Iron Centrifugal Water Pump",
-    "slug": "cast-iron-centrifugal-water-pump",
-    "description": "Cast iron centrifugal motor pump for agricultural and domestic water boosting. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 6500,
-    "priceDisplay": "₹ 6,500 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PMP-CP-01",
-    "brand": "Kirloskar",
-    "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "pump",
-      "centrifugal",
-      "water",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Power",
-        "value": "1.0 HP"
-      },
-      {
-        "label": "Max Flow Rate",
-        "value": "3000 L/hour"
-      },
-      {
-        "label": "Head Range",
-        "value": "15-25 meters"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Chennai"
-  },
-  {
-    "id": "prod-20",
-    "name": "Submersible Sewage Pump",
-    "slug": "submersible-sewage-pump",
-    "description": "Heavy duty stainless steel submersible slurry pump for wastewater and sewage disposal. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 14800,
-    "priceDisplay": "₹ 14,800 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PMP-SP-02",
-    "brand": "Crompton",
-    "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "pump",
-      "submersible",
-      "sewage",
-      "slurry"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Power",
-        "value": "2.0 HP"
-      },
-      {
-        "label": "Discharge Connection",
-        "value": "2 inches"
-      },
-      {
-        "label": "Solid Handling",
-        "value": "Up to 25 mm"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-21",
     "name": "Ergonomic Mesh Office Chair",
     "slug": "ergonomic-mesh-office-chair",
-    "description": "High-back desk chair with lumbar support, adjustable armrests, and nylon wheels. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "price": 5500,
     "priceDisplay": "₹ 5,500 / Piece",
     "subtitle": "Starting from",
@@ -3193,16 +2218,13 @@
     "brand": "Featherlite",
     "category": "cat-12",
     "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "furniture",
-      "chair",
-      "office",
-      "ergonomic"
-    ],
+    "tags": ["furniture", "chair", "office", "ergonomic"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 45,
+    "city": "Delhi",
+    "description": "High-back desk chair with lumbar support, adjustable armrests, and nylon wheels. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
     "specs": [
       {
         "label": "Base Material",
@@ -3236,134 +2258,12 @@
         "rating": 4,
         "comment": "Good value for money. Very reliable performance so far."
       }
-    ],
-    "city": "Delhi"
-  },
-  {
-    "id": "prod-22",
-    "name": "Deep Groove Radial Ball Bearing",
-    "slug": "deep-groove-radial-ball-bearing",
-    "description": "High precision double rubber shielded radial deep groove ball bearing. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 120,
-    "priceDisplay": "₹ 120 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "BRG-BB-01",
-    "brand": "SKF",
-    "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "bearing",
-      "ball-bearing",
-      "radial",
-      "groove"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Inner Diameter",
-        "value": "20 mm"
-      },
-      {
-        "label": "Outer Diameter",
-        "value": "47 mm"
-      },
-      {
-        "label": "Width",
-        "value": "14 mm"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-23",
-    "name": "Flexible Aluminum Jaw Shaft Coupling",
-    "slug": "flexible-aluminum-jaw-shaft-coupling",
-    "description": "Aluminum flexible jaw coupling for electric motors and encoder connections. Designed in compliance with international quality benchmarks, it delivers outstanding reliability and consistency, making it a highly preferred choice for professionals looking for long-term value and hassle-free operation.",
-    "price": 380,
-    "priceDisplay": "₹ 380 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "BRG-JC-02",
-    "brand": "Rotex",
-    "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
-    "tags": [
-      "coupling",
-      "shaft",
-      "flexible",
-      "jaw"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Aluminum Alloy"
-      },
-      {
-        "label": "Bore Diameter",
-        "value": "10 mm to 14 mm"
-      },
-      {
-        "label": "Torque Rating",
-        "value": "15 Nm"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80",
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&h=400&q=80"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Kumar",
-        "verified": true,
-        "date": "May 15, 2024",
-        "rating": 5,
-        "comment": "Excellent quality and sturdy build. Exceeded expectations."
-      },
-      {
-        "name": "Rohan Mehta",
-        "verified": true,
-        "date": "Jun 2, 2024",
-        "rating": 4,
-        "comment": "Good value for money. Very reliable performance so far."
-      }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "prod-24",
     "name": "Steel Angle Bar 50x50x5mm",
     "slug": "steel-angle-bar-50x50x5mm",
-    "description": "Heavy duty hot rolled mild steel angle bars suitable for structural applications, industrial racks, and general fabrication projects. Offering excellent weldability, machinability, and load-bearing strength.",
     "price": 850,
     "priceDisplay": "₹ 850 / Piece",
     "subtitle": "Starting from",
@@ -3373,16 +2273,13 @@
     "brand": "Tata Steel",
     "category": "cat-1",
     "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "steel",
-      "angle bar",
-      "structural",
-      "industrial"
-    ],
+    "tags": ["steel", "angle bar", "structural", "industrial"],
     "type": "general",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 18,
+    "city": "Chennai",
+    "description": "Heavy duty hot rolled mild steel angle bars suitable for structural applications, industrial racks, and general fabrication projects. Offering excellent weldability, machinability, and load-bearing strength.",
     "specs": [
       {
         "label": "Material",
@@ -3408,14 +2305,12 @@
         "rating": 5,
         "comment": "High quality steel bars, perfect dimensions."
       }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "prod-25",
     "name": "Galvanized Steel Pipe 2 inch",
     "slug": "galvanized-steel-pipe-2-inch",
-    "description": "Corrosion-resistant galvanized iron pipes ideal for plumbing, industrial water supply, and outdoor structural frameworks. Durable zinc coating prevents rusting and extends lifespan.",
     "price": 1200,
     "priceDisplay": "₹ 1,200 / Piece",
     "subtitle": "Starting from",
@@ -3425,16 +2320,13 @@
     "brand": "Jindal",
     "category": "cat-1",
     "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "steel",
-      "pipe",
-      "galvanized",
-      "plumbing"
-    ],
+    "tags": ["steel", "pipe", "galvanized", "plumbing"],
     "type": "general",
     "popular": false,
     "rating": 4.7,
     "reviewCount": 32,
+    "city": "Delhi",
+    "description": "Corrosion-resistant galvanized iron pipes ideal for plumbing, industrial water supply, and outdoor structural frameworks. Durable zinc coating prevents rusting and extends lifespan.",
     "specs": [
       {
         "label": "Material",
@@ -3460,14 +2352,12 @@
         "rating": 4,
         "comment": "Excellent rust protection, well threaded."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-26",
     "name": "SS 316 Hex Bolt",
     "slug": "ss-316-hex-bolt",
-    "description": "Premium Stainless Steel 316 heavy-duty hexagonal head bolts. Engineered for marine and acidic environments, offering supreme resistance to pitting and crevice corrosion.",
     "price": 45,
     "priceDisplay": "₹ 45 / Piece",
     "subtitle": "Starting from",
@@ -3477,16 +2367,13 @@
     "brand": "LPS",
     "category": "cat-1",
     "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "steel",
-      "bolt",
-      "stainless steel",
-      "fastener"
-    ],
+    "tags": ["steel", "bolt", "stainless steel", "fastener"],
     "type": "general",
     "popular": false,
     "rating": 4.8,
     "reviewCount": 22,
+    "city": "Bangalore",
+    "description": "Premium Stainless Steel 316 heavy-duty hexagonal head bolts. Engineered for marine and acidic environments, offering supreme resistance to pitting and crevice corrosion.",
     "specs": [
       {
         "label": "Grade",
@@ -3512,14 +2399,12 @@
         "rating": 5,
         "comment": "Genuine SS 316 grade. Outstanding corrosion resistance."
       }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "prod-27",
     "name": "Mild Steel Plate 10mm",
     "slug": "mild-steel-plate-10mm",
-    "description": "High-tensile mild steel plates designed for industrial base plates, heavy structural construction, and engineering machinery fabrication. Clean cut, flat surface, and uniform thickness.",
     "price": 4500,
     "priceDisplay": "₹ 4,500 / Piece",
     "subtitle": "Starting from",
@@ -3529,16 +2414,13 @@
     "brand": "SAIL",
     "category": "cat-1",
     "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "steel",
-      "plate",
-      "mild steel",
-      "industrial"
-    ],
+    "tags": ["steel", "plate", "mild steel", "industrial"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 15,
+    "city": "Bangalore",
+    "description": "High-tensile mild steel plates designed for industrial base plates, heavy structural construction, and engineering machinery fabrication. Clean cut, flat surface, and uniform thickness.",
     "specs": [
       {
         "label": "Material",
@@ -3564,14 +2446,12 @@
         "rating": 5,
         "comment": "Precisely cut. Met our fabrication tolerances."
       }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "prod-28",
     "name": "Flexible PVC Strip Curtain Roll",
     "slug": "flexible-pvc-strip-curtain-roll",
-    "description": "Transparent standard temperature PVC strip curtain roll. Provides dust control, temperature retention, and noise reduction for industrial warehouses, cold storage rooms, and docks.",
     "price": 4200,
     "priceDisplay": "₹ 4,200 / Roll",
     "subtitle": "Starting from",
@@ -3581,16 +2461,13 @@
     "brand": "Extruflex",
     "category": "cat-2",
     "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "pvc",
-      "curtain",
-      "strip curtain",
-      "industrial"
-    ],
+    "tags": ["pvc", "curtain", "strip curtain", "industrial"],
     "type": "general",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 29,
+    "city": "Hyderabad",
+    "description": "Transparent standard temperature PVC strip curtain roll. Provides dust control, temperature retention, and noise reduction for industrial warehouses, cold storage rooms, and docks.",
     "specs": [
       {
         "label": "Material",
@@ -3616,14 +2493,12 @@
         "rating": 5,
         "comment": "Very clear visibility and easy to install."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-29",
     "name": "PVC Flexible Hose Pipe",
     "slug": "pvc-flexible-hose-pipe",
-    "description": "Reinforced braided PVC flexible hose for high-pressure pneumatic, agricultural, and industrial washing operations. Resistant to mild chemicals and kinks.",
     "price": 1850,
     "priceDisplay": "₹ 1,850 / Roll",
     "subtitle": "Starting from",
@@ -3633,16 +2508,13 @@
     "brand": "Finolex",
     "category": "cat-2",
     "image": "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "pvc",
-      "hose",
-      "flexible",
-      "agriculture"
-    ],
+    "tags": ["pvc", "hose", "flexible", "agriculture"],
     "type": "general",
     "popular": false,
     "rating": 4.4,
     "reviewCount": 17,
+    "city": "Hyderabad",
+    "description": "Reinforced braided PVC flexible hose for high-pressure pneumatic, agricultural, and industrial washing operations. Resistant to mild chemicals and kinks.",
     "specs": [
       {
         "label": "Internal Diameter",
@@ -3668,14 +2540,12 @@
         "rating": 4,
         "comment": "Strong braided hose. Good flexible build."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-30",
     "name": "PVC Electrical Conduit Fitting",
     "slug": "pvc-electrical-conduit-fitting",
-    "description": "Rigid heavy gauge PVC junction box and bend fittings for routing and protecting electrical wiring systems. Flame retardant and non-conductive.",
     "price": 15,
     "priceDisplay": "₹ 15 / Piece",
     "subtitle": "Starting from",
@@ -3685,16 +2555,13 @@
     "brand": "Precision",
     "category": "cat-2",
     "image": "/src/assets/pvc_conduit_pipe.webp",
-    "tags": [
-      "pvc",
-      "conduit",
-      "electrical",
-      "fitting"
-    ],
+    "tags": ["pvc", "conduit", "electrical", "fitting"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 50,
+    "city": "Bangalore",
+    "description": "Rigid heavy gauge PVC junction box and bend fittings for routing and protecting electrical wiring systems. Flame retardant and non-conductive.",
     "specs": [
       {
         "label": "Type",
@@ -3709,9 +2576,7 @@
         "value": "Yes"
       }
     ],
-    "images": [
-      "/src/assets/pvc_conduit_pipe.webp"
-    ],
+    "images": ["/src/assets/pvc_conduit_pipe.webp"],
     "reviews": [
       {
         "name": "Sanjay Sen",
@@ -3720,14 +2585,12 @@
         "rating": 5,
         "comment": "High impact resistance, fits perfectly."
       }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "prod-31",
     "name": "PVC Ball Valve 2 inch",
     "slug": "pvc-ball-valve-2-inch",
-    "description": "Durable PVC block ball valve with ergonomic handle for easy flow control in chemical processing, aquaculture, and irrigation networks. Highly corrosion-resistant.",
     "price": 450,
     "priceDisplay": "₹ 450 / Piece",
     "subtitle": "Starting from",
@@ -3737,16 +2600,13 @@
     "brand": "Astral",
     "category": "cat-2",
     "image": "/src/assets/pvc_ball_valve.webp",
-    "tags": [
-      "pvc",
-      "valve",
-      "ball valve",
-      "irrigation"
-    ],
+    "tags": ["pvc", "valve", "ball valve", "irrigation"],
     "type": "general",
     "popular": false,
     "rating": 4.6,
     "reviewCount": 14,
+    "city": "Bangalore",
+    "description": "Durable PVC block ball valve with ergonomic handle for easy flow control in chemical processing, aquaculture, and irrigation networks. Highly corrosion-resistant.",
     "specs": [
       {
         "label": "Size",
@@ -3761,9 +2621,7 @@
         "value": "PN16"
       }
     ],
-    "images": [
-      "/src/assets/pvc_ball_valve.webp"
-    ],
+    "images": ["/src/assets/pvc_ball_valve.webp"],
     "reviews": [
       {
         "name": "Vijay Dev",
@@ -3772,638 +2630,12 @@
         "rating": 4,
         "comment": "Very smooth turning action, absolutely leakproof."
       }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-32",
-    "name": "Benchtop CNC Milling Machine",
-    "slug": "benchtop-cnc-milling-machine",
-    "description": "Compact high-precision 3-axis CNC milling machine for small-batch prototyping, engraving, and machining plastic, wood, and soft metals. Features industrial controller software.",
-    "price": 145000,
-    "priceDisplay": "₹ 1,45,000 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IM-CNC-30",
-    "brand": "Metatech",
-    "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "machinery",
-      "cnc",
-      "milling",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.8,
-    "reviewCount": 9,
-    "specs": [
-      {
-        "label": "Working Area",
-        "value": "300 x 180 x 45 mm"
-      },
-      {
-        "label": "Spindle Speed",
-        "value": "10,000 RPM"
-      },
-      {
-        "label": "Axis Configuration",
-        "value": "3-Axis"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Pankaj Jain",
-        "verified": true,
-        "date": "May 10, 2024",
-        "rating": 5,
-        "comment": "Accurate machining, fantastic support for setup."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-33",
-    "name": "Semi-Automatic Strapping Machine",
-    "slug": "semi-automatic-strapping-machine",
-    "description": "Industrial heat-sealing strapping machine for securing cartons, boxes, and bundles with PP strap. Features high efficiency, adjustable tension, and quick operation.",
-    "price": 35000,
-    "priceDisplay": "₹ 35,000 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IM-ST-SA",
-    "brand": "Packman",
-    "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "machinery",
-      "strapping",
-      "packaging",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 16,
-    "specs": [
-      {
-        "label": "Strap Width",
-        "value": "6 - 15 mm"
-      },
-      {
-        "label": "Tension Range",
-        "value": "15 - 45 kg"
-      },
-      {
-        "label": "Power Supply",
-        "value": "220V AC"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Narendra Roy",
-        "verified": true,
-        "date": "Mar 22, 2024",
-        "rating": 4,
-        "comment": "Has sped up our dispatch department by 50%."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-34",
-    "name": "High-Precision Lathe Machine",
-    "slug": "high-precision-lathe-machine",
-    "description": "Heavy duty workshop lathe machine for metal turning, threading, facing, and boring operations. Rigid cast iron bed and high-torque gearhead.",
-    "price": 220000,
-    "priceDisplay": "₹ 2,20,000 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IM-LM-500",
-    "brand": "Bharat Tools",
-    "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "machinery",
-      "lathe",
-      "metalwork",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.7,
-    "reviewCount": 11,
-    "specs": [
-      {
-        "label": "Max Swing Over Bed",
-        "value": "350 mm"
-      },
-      {
-        "label": "Distance Between Centers",
-        "value": "500 mm"
-      },
-      {
-        "label": "Spindle Bore",
-        "value": "38 mm"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Anand Deshmukh",
-        "verified": true,
-        "date": "Jan 12, 2024",
-        "rating": 5,
-        "comment": "Robust casting, zero vibrations at high speed."
-      }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-35",
-    "name": "Industrial Conveyor Belt System",
-    "slug": "industrial-conveyor-belt-system",
-    "description": "Modular flatbed PVC conveyor belt system for transporting light to medium loads across assembly lines and packaging stations. Adjustable speed motor.",
-    "price": 85000,
-    "priceDisplay": "₹ 85,000 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IM-CB-300",
-    "brand": "Laxmi Ind",
-    "category": "cat-3",
-    "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "machinery",
-      "conveyor",
-      "assembly line",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 7,
-    "specs": [
-      {
-        "label": "Belt Width",
-        "value": "300 mm"
-      },
-      {
-        "label": "Overall Length",
-        "value": "3 meters"
-      },
-      {
-        "label": "Speed Control",
-        "value": "0 - 15 m/min"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Gopal Krishna",
-        "verified": true,
-        "date": "Apr 25, 2024",
-        "rating": 5,
-        "comment": "Very reliable, easy belt adjustment."
-      }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-36",
-    "name": "3-Phase AC Induction Motor",
-    "slug": "3-phase-ac-induction-motor",
-    "description": "Industrial grade 3-phase AC induction motor with cast iron body and high copper winding density. Certified energy efficient for industrial pumps, compressors, and fans.",
-    "price": 18500,
-    "priceDisplay": "₹ 18,500 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "EL-MO-3P5HP",
-    "brand": "Crompton",
-    "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "electrical",
-      "motor",
-      "3-phase",
-      "induction"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.8,
-    "reviewCount": 23,
-    "specs": [
-      {
-        "label": "Power Rating",
-        "value": "5 HP"
-      },
-      {
-        "label": "Voltage",
-        "value": "415V"
-      },
-      {
-        "label": "Speed",
-        "value": "1440 RPM"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Devendra Das",
-        "verified": true,
-        "date": "Apr 18, 2024",
-        "rating": 5,
-        "comment": "Rugged motor, low temperature rise during peak load."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-37",
-    "name": "Industrial VFD Controller 5HP",
-    "slug": "industrial-vfd-controller-5hp",
-    "description": "Variable Frequency Drive inverter for precision speed and torque control of 3-phase induction motors. Overcurrent and overload protection modules built-in.",
-    "price": 12800,
-    "priceDisplay": "₹ 12,800 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "EL-VF-050",
-    "brand": "Schneider",
-    "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "electrical",
-      "vfd",
-      "inverter",
-      "controller"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.7,
-    "reviewCount": 14,
-    "specs": [
-      {
-        "label": "Input Phase",
-        "value": "3-Phase"
-      },
-      {
-        "label": "Output Power",
-        "value": "3.7 kW / 5 HP"
-      },
-      {
-        "label": "Frequency Range",
-        "value": "0.1 - 400 Hz"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Rajat Verma",
-        "verified": true,
-        "date": "May 5, 2024",
-        "rating": 4,
-        "comment": "Easy programming and interface. Performs flawlessly."
-      }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-38",
-    "name": "Digital Multimeter Pro",
-    "slug": "digital-multimeter-pro",
-    "description": "Highly accurate digital multimeter for testing AC/DC voltage, current, resistance, capacitance, and temperature. Designed with overload protection and rubber holster.",
-    "price": 2450,
-    "priceDisplay": "₹ 2,450 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "EL-MM-PRO",
-    "brand": "Fluke",
-    "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "electronics",
-      "multimeter",
-      "tester",
-      "measurement"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.9,
-    "reviewCount": 38,
-    "specs": [
-      {
-        "label": "Display Count",
-        "value": "6000 Counts"
-      },
-      {
-        "label": "Safety Rating",
-        "value": "CAT III 600V"
-      },
-      {
-        "label": "Auto Ranging",
-        "value": "Yes"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Ranjan Lal",
-        "verified": true,
-        "date": "Feb 24, 2024",
-        "rating": 5,
-        "comment": "Industry standard tool. Incredible precision."
-      }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-39",
-    "name": "Miniature Circuit Breaker (MCB) 32A",
-    "slug": "miniature-circuit-breaker-mcb-32a",
-    "description": "Double Pole MCB designed to protect electrical circuits from damage caused by excess current from overload or short circuits. DIN rail mountable.",
-    "price": 320,
-    "priceDisplay": "₹ 320 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "EL-MCB-32",
-    "brand": "Havells",
-    "category": "cat-4",
-    "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "electrical",
-      "mcb",
-      "breaker",
-      "safety"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 88,
-    "specs": [
-      {
-        "label": "Pole Type",
-        "value": "Double Pole (DP)"
-      },
-      {
-        "label": "Rated Current",
-        "value": "32 Amps"
-      },
-      {
-        "label": "Breaking Capacity",
-        "value": "10 kA"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Kunal Ghosh",
-        "verified": true,
-        "date": "May 25, 2024",
-        "rating": 5,
-        "comment": "Genuine MCB, works perfectly in residential boards."
-      }
-    ],
-    "city": "Delhi"
-  },
-  {
-    "id": "prod-40",
-    "name": "Stretch Wrap Film Roll 500mm",
-    "slug": "stretch-wrap-film-roll-500mm",
-    "description": "Industrial strength LLDPE stretch film roll for pallet wrapping and packaging cartons securely. High puncture resistance and strong cling properties.",
-    "price": 720,
-    "priceDisplay": "₹ 720 / Roll",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PK-SW-500",
-    "brand": "Polypack",
-    "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "packaging",
-      "stretch wrap",
-      "film",
-      "pallet"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.7,
-    "reviewCount": 42,
-    "specs": [
-      {
-        "label": "Material",
-        "value": "LLDPE"
-      },
-      {
-        "label": "Width",
-        "value": "500 mm"
-      },
-      {
-        "label": "Length",
-        "value": "400 meters"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Punit Mehta",
-        "verified": true,
-        "date": "Feb 10, 2024",
-        "rating": 5,
-        "comment": "Extremely strong stretch, doesn't tear easily on sharp corners."
-      }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-41",
-    "name": "Heavy Duty Corrugated Box (Pack of 50)",
-    "slug": "heavy-duty-corrugated-box-pack-of-50",
-    "description": "Strong 5-ply kraft corrugated cardboard boxes designed for shipping, moving, and bulk storage. Excellent crushing strength and stackability.",
-    "price": 1500,
-    "priceDisplay": "₹ 1,500 / Pack",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PK-CB-5P50",
-    "brand": "Boxmaker",
-    "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "packaging",
-      "carton",
-      "box",
-      "corrugated"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 31,
-    "specs": [
-      {
-        "label": "Ply Count",
-        "value": "5-Ply"
-      },
-      {
-        "label": "Dimensions",
-        "value": "18 x 12 x 12 inches"
-      },
-      {
-        "label": "Pack Quantity",
-        "value": "50 Boxes"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Subodh Das",
-        "verified": true,
-        "date": "May 1, 2024",
-        "rating": 4,
-        "comment": "Sturdy boxes, perfect for warehouse shipments."
-      }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-42",
-    "name": "Bubble Wrap Roll 100 Meter",
-    "slug": "bubble-wrap-roll-100-meter",
-    "description": "Double layered protective bubble wrap roll for cushioning fragile glassware, electronic items, and instruments against shock and transport vibration.",
-    "price": 850,
-    "priceDisplay": "₹ 850 / Roll",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PK-BW-100",
-    "brand": "ShieldPack",
-    "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "packaging",
-      "bubble wrap",
-      "safety",
-      "cushioning"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 20,
-    "specs": [
-      {
-        "label": "Width",
-        "value": "1 meter"
-      },
-      {
-        "label": "Length",
-        "value": "100 meters"
-      },
-      {
-        "label": "Bubble Size",
-        "value": "10 mm"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Pooja Gupta",
-        "verified": true,
-        "date": "Mar 11, 2024",
-        "rating": 5,
-        "comment": "High quality bubble wrap. None of the bubbles were popped."
-      }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-43",
-    "name": "PP Strapping Band Roll",
-    "slug": "pp-strapping-band-roll",
-    "description": "High tension polypropylene (PP) strapping band roll for manual and semi-automatic cartoon strapping machines. Provides structural tightness to heavy consignments.",
-    "price": 680,
-    "priceDisplay": "₹ 680 / Roll",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "PK-PP-STRIP",
-    "brand": "Packman",
-    "category": "cat-5",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "packaging",
-      "strap",
-      "polypropylene",
-      "bundling"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.4,
-    "reviewCount": 15,
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Polypropylene (PP)"
-      },
-      {
-        "label": "Width",
-        "value": "12 mm"
-      },
-      {
-        "label": "Length",
-        "value": "1000 meters"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Rahul Roy",
-        "verified": true,
-        "date": "Apr 5, 2024",
-        "rating": 4,
-        "comment": "Consistent thickness, works well with our semi-automatic machine."
-      }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "prod-44",
     "name": "High-Visibility Safety Vest",
     "slug": "high-visibility-safety-vest",
-    "description": "Neon green safety vest with high reflectivity stripes. Essential for construction site workers, traffic controller staff, and surveyors in low light conditions.",
     "price": 120,
     "priceDisplay": "₹ 120 / Piece",
     "subtitle": "Starting from",
@@ -4413,16 +2645,13 @@
     "brand": "Karam",
     "category": "cat-6",
     "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "safety",
-      "vest",
-      "reflective",
-      "visibility"
-    ],
+    "tags": ["safety", "vest", "reflective", "visibility"],
     "type": "general",
     "popular": true,
     "rating": 4.7,
     "reviewCount": 65,
+    "city": "Hyderabad",
+    "description": "Neon green safety vest with high reflectivity stripes. Essential for construction site workers, traffic controller staff, and surveyors in low light conditions.",
     "specs": [
       {
         "label": "Material",
@@ -4448,14 +2677,12 @@
         "rating": 5,
         "comment": "Very lightweight, fits easily over jackets."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-45",
     "name": "Industrial Safety Helmet (Hard Hat)",
     "slug": "industrial-safety-helmet-hard-hat",
-    "description": "High impact resistant HDPE shell safety helmet with adjustable 4-point harness. Provides essential head protection on construction sites and manufacturing units.",
     "price": 240,
     "priceDisplay": "₹ 240 / Piece",
     "subtitle": "Starting from",
@@ -4465,16 +2692,13 @@
     "brand": "Karam",
     "category": "cat-6",
     "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "safety",
-      "helmet",
-      "hard hat",
-      "protection"
-    ],
+    "tags": ["safety", "helmet", "hard hat", "protection"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 40,
+    "city": "Hyderabad",
+    "description": "High impact resistant HDPE shell safety helmet with adjustable 4-point harness. Provides essential head protection on construction sites and manufacturing units.",
     "specs": [
       {
         "label": "Material",
@@ -4500,14 +2724,12 @@
         "rating": 4,
         "comment": "Sturdy helmet with comfortable inner padding."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-46",
     "name": "Steel Toe Safety Shoes Pro",
     "slug": "steel-toe-safety-shoes-pro",
-    "description": "Durable leather safety shoes featuring steel toe cap for crushing protection, slip resistant PU sole, and oil resistance. Essential protective wear.",
     "price": 1150,
     "priceDisplay": "₹ 1,150 / Pair",
     "subtitle": "Starting from",
@@ -4517,16 +2739,13 @@
     "brand": "Hillson",
     "category": "cat-6",
     "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "safety",
-      "shoes",
-      "steel toe",
-      "protective"
-    ],
+    "tags": ["safety", "shoes", "steel toe", "protective"],
     "type": "general",
     "popular": false,
     "rating": 4.6,
     "reviewCount": 30,
+    "city": "Delhi",
+    "description": "Durable leather safety shoes featuring steel toe cap for crushing protection, slip resistant PU sole, and oil resistance. Essential protective wear.",
     "specs": [
       {
         "label": "Material",
@@ -4552,14 +2771,12 @@
         "rating": 5,
         "comment": "Very comfortable, sole grip is fantastic."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-47",
     "name": "Chemical Resistant Safety Goggles",
     "slug": "chemical-resistant-safety-goggles",
-    "description": "Clear safety goggles with soft PVC frame, direct ventilation channels, and polycarbonate scratch-proof lens. Protects against chemical splashes and dust.",
     "price": 85,
     "priceDisplay": "₹ 85 / Piece",
     "subtitle": "Starting from",
@@ -4569,16 +2786,13 @@
     "brand": "3M",
     "category": "cat-6",
     "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "safety",
-      "goggles",
-      "chemical",
-      "eye protection"
-    ],
+    "tags": ["safety", "goggles", "chemical", "eye protection"],
     "type": "general",
     "popular": false,
     "rating": 4.4,
     "reviewCount": 22,
+    "city": "Mumbai",
+    "description": "Clear safety goggles with soft PVC frame, direct ventilation channels, and polycarbonate scratch-proof lens. Protects against chemical splashes and dust.",
     "specs": [
       {
         "label": "Lens Material",
@@ -4604,14 +2818,12 @@
         "rating": 4,
         "comment": "Fits over power spectacles comfortably. Good seal."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "prod-48",
     "name": "Canon NPG-59 Toner Cartridge",
     "slug": "canon-npg-59-toner-cartridge",
-    "description": "Original high-yield Canon black toner cartridge designed for imageRUNNER photocopiers. Delivers consistent quality text pages with crisp black output.",
     "price": 1980,
     "priceDisplay": "₹ 1,980 / Piece",
     "subtitle": "Starting from",
@@ -4621,16 +2833,13 @@
     "brand": "Canon",
     "category": "cat-7",
     "image": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "printer",
-      "copier",
-      "toner",
-      "cartridge"
-    ],
+    "tags": ["printer", "copier", "toner", "cartridge"],
     "type": "printer",
     "popular": false,
     "rating": 4.7,
     "reviewCount": 35,
+    "city": "Hyderabad",
+    "description": "Original high-yield Canon black toner cartridge designed for imageRUNNER photocopiers. Delivers consistent quality text pages with crisp black output.",
     "specs": [
       {
         "label": "Color",
@@ -4656,14 +2865,12 @@
         "rating": 5,
         "comment": "Perfect printing, original Canon product."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-49",
     "name": "Brother TN-3448 Black Toner",
     "slug": "brother-tn-3448-black-toner",
-    "description": "High-yield laser print cartridge compatible with Brother mono-laser printers. Guarantees smooth print textures and longevity of your print drum.",
     "price": 4600,
     "priceDisplay": "₹ 4,600 / Piece",
     "subtitle": "Starting from",
@@ -4673,16 +2880,13 @@
     "brand": "Brother",
     "category": "cat-7",
     "image": "/src/assets/printer_brother_tn2321.webp",
-    "tags": [
-      "printer",
-      "brother",
-      "toner",
-      "laserjet"
-    ],
+    "tags": ["printer", "brother", "toner", "laserjet"],
     "type": "printer",
     "popular": false,
     "rating": 4.6,
     "reviewCount": 12,
+    "city": "Mumbai",
+    "description": "High-yield laser print cartridge compatible with Brother mono-laser printers. Guarantees smooth print textures and longevity of your print drum.",
     "specs": [
       {
         "label": "Color",
@@ -4697,9 +2901,7 @@
         "value": "HL-L5000D, L5100DN, L6200DW"
       }
     ],
-    "images": [
-      "/src/assets/printer_brother_tn2321.webp"
-    ],
+    "images": ["/src/assets/printer_brother_tn2321.webp"],
     "reviews": [
       {
         "name": "Alok Nandi",
@@ -4708,14 +2910,12 @@
         "rating": 4,
         "comment": "A bit expensive but works incredibly well."
       }
-    ],
-    "city": "Mumbai"
+    ]
   },
   {
     "id": "prod-50",
     "name": "HP 12A Black LaserJet Toner",
     "slug": "hp-12a-black-laserjet-toner",
-    "description": "Legendary print reliability of HP LaserJet 12A Q2612A Black Toner. Delivers uniform high density and clean prints with every run.",
     "price": 2850,
     "priceDisplay": "₹ 2,850 / Piece",
     "subtitle": "Starting from",
@@ -4725,16 +2925,13 @@
     "brand": "HP",
     "category": "cat-7",
     "image": "/src/assets/printer_hp_88a.webp",
-    "tags": [
-      "printer",
-      "hp",
-      "toner",
-      "12a"
-    ],
+    "tags": ["printer", "hp", "toner", "12a"],
     "type": "printer",
     "popular": false,
     "rating": 4.8,
     "reviewCount": 110,
+    "city": "Delhi",
+    "description": "Legendary print reliability of HP LaserJet 12A Q2612A Black Toner. Delivers uniform high density and clean prints with every run.",
     "specs": [
       {
         "label": "Color",
@@ -4749,9 +2946,7 @@
         "value": "LaserJet 1010, 1020, 3050"
       }
     ],
-    "images": [
-      "/src/assets/printer_hp_88a.webp"
-    ],
+    "images": ["/src/assets/printer_hp_88a.webp"],
     "reviews": [
       {
         "name": "Nitin K",
@@ -4760,14 +2955,12 @@
         "rating": 5,
         "comment": "Classic HP quality, reliable print output."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-51",
     "name": "Epson L3110 Ink Bottle 4-Pack",
     "slug": "epson-l3110-ink-bottle-4-pack",
-    "description": "Complete set of Cyan, Magenta, Yellow, and Black dye inks designed for Epson EcoTank L-series printers. Splendid color gamut and easy refills.",
     "price": 1250,
     "priceDisplay": "₹ 1,250 / Pack",
     "subtitle": "Starting from",
@@ -4777,16 +2970,13 @@
     "brand": "Epson",
     "category": "cat-7",
     "image": "/src/assets/printer_epson_003.webp",
-    "tags": [
-      "printer",
-      "epson",
-      "ink",
-      "ecotank"
-    ],
+    "tags": ["printer", "epson", "ink", "ecotank"],
     "type": "printer",
     "popular": false,
     "rating": 4.7,
     "reviewCount": 45,
+    "city": "Mumbai",
+    "description": "Complete set of Cyan, Magenta, Yellow, and Black dye inks designed for Epson EcoTank L-series printers. Splendid color gamut and easy refills.",
     "specs": [
       {
         "label": "Ink Type",
@@ -4801,9 +2991,7 @@
         "value": "70ml per bottle"
       }
     ],
-    "images": [
-      "/src/assets/printer_epson_003.webp"
-    ],
+    "images": ["/src/assets/printer_epson_003.webp"],
     "reviews": [
       {
         "name": "Prateek Sen",
@@ -4812,430 +3000,12 @@
         "rating": 5,
         "comment": "Colors are very vivid. Great price for a full set."
       }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-52",
-    "name": "A4 Copier Paper 75GSM (Box of 5 Reams)",
-    "slug": "a4-copier-paper-75gsm-box-of-5-reams",
-    "description": "High-grade multipurpose office copier paper. Features excellent brightness, opacity, and smooth texture for jam-free printing on both laser and inkjet printers.",
-    "price": 1150,
-    "priceDisplay": "₹ 1,150 / Box",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "OS-PA-A475",
-    "brand": "JK Paper",
-    "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "office",
-      "paper",
-      "copier",
-      "stationery"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.7,
-    "reviewCount": 154,
-    "specs": [
-      {
-        "label": "Size",
-        "value": "A4 (210 x 297 mm)"
-      },
-      {
-        "label": "Paper Weight",
-        "value": "75 GSM"
-      },
-      {
-        "label": "Box Contents",
-        "value": "5 Reams (2500 Sheets)"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Rakesh Jha",
-        "verified": true,
-        "date": "Apr 15, 2024",
-        "rating": 5,
-        "comment": "Extremely white paper, no printer jams so far."
-      }
-    ],
-    "city": "Chennai"
-  },
-  {
-    "id": "prod-53",
-    "name": "Professional Whiteboard 3x4 Feet",
-    "slug": "professional-whiteboard-3x4-feet",
-    "description": "Scratch-resistant magnetic whiteboard with aluminium frame. Offers smooth writing experience and leaves zero ghosting marks after dry erasing.",
-    "price": 1850,
-    "priceDisplay": "₹ 1,850 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "OS-WB-34",
-    "brand": "Pragati",
-    "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "office",
-      "whiteboard",
-      "presentation",
-      "classroom"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 18,
-    "specs": [
-      {
-        "label": "Dimensions",
-        "value": "3 x 4 Feet"
-      },
-      {
-        "label": "Surface Type",
-        "value": "Magnetic Ceramic Coat"
-      },
-      {
-        "label": "Frame Material",
-        "value": "Aluminium"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Swati Rao",
-        "verified": true,
-        "date": "May 3, 2024",
-        "rating": 4,
-        "comment": "Very sturdy mounting brackets, easy to erase."
-      }
-    ],
-    "city": "Chennai"
-  },
-  {
-    "id": "prod-54",
-    "name": "Ergonomic Desk Organizer",
-    "slug": "ergonomic-desk-organizer",
-    "description": "Mesh metal desk organizer containing compartments for files, pens, calculators, and post-its. Keeps your office workspace tidy and clutter-free.",
-    "price": 450,
-    "priceDisplay": "₹ 450 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "OS-DO-MESH",
-    "brand": "Solo",
-    "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "office",
-      "organizer",
-      "mesh",
-      "desk"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.4,
-    "reviewCount": 33,
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Powder Coated Steel Mesh"
-      },
-      {
-        "label": "Compartments",
-        "value": "6 pockets + 1 drawer"
-      },
-      {
-        "label": "Color",
-        "value": "Matte Black"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Rohit Malhotra",
-        "verified": true,
-        "date": "Mar 17, 2024",
-        "rating": 4,
-        "comment": "Looks elegant on my desk. Built quality is robust."
-      }
-    ],
-    "city": "Delhi"
-  },
-  {
-    "id": "prod-55",
-    "name": "Heavy Duty Paper Shredder",
-    "slug": "heavy-duty-paper-shredder",
-    "description": "Cross-cut paper shredder capable of shredding up to 10 sheets of paper at once, including credit cards and staples. High security performance.",
-    "price": 6800,
-    "priceDisplay": "₹ 6,800 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "OS-PS-10C",
-    "brand": "GBC",
-    "category": "cat-8",
-    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "office",
-      "shredder",
-      "security",
-      "electronics"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 22,
-    "specs": [
-      {
-        "label": "Shred Type",
-        "value": "Cross Cut (4x35mm)"
-      },
-      {
-        "label": "Bin Capacity",
-        "value": "15 Liters"
-      },
-      {
-        "label": "Run Time",
-        "value": "6 min on / 30 min off"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Harish Gupta",
-        "verified": true,
-        "date": "Feb 18, 2024",
-        "rating": 5,
-        "comment": "Quiet machine, cuts sheets into tiny pieces. Highly secure."
-      }
-    ],
-    "city": "Chennai"
-  },
-  {
-    "id": "prod-56",
-    "name": "120-Piece Socket Wrench Set",
-    "slug": "120-piece-socket-wrench-set",
-    "description": "Complete mechanics tool set with chrome vanadium sockets, ratchet handles, extension bars, and torx screwdriver bits. Comes in a hard blow-molded carrying case.",
-    "price": 3800,
-    "priceDisplay": "₹ 3,800 / Set",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "HW-SW-120",
-    "brand": "Stanley",
-    "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "tools",
-      "socket set",
-      "wrench",
-      "hardware"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.8,
-    "reviewCount": 45,
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Chrome Vanadium Steel"
-      },
-      {
-        "label": "Piece Count",
-        "value": "120 Pieces"
-      },
-      {
-        "label": "Drive Size",
-        "value": "1/4\", 3/8\", and 1/2\""
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Maninder Singh",
-        "verified": true,
-        "date": "Apr 5, 2024",
-        "rating": 5,
-        "comment": "Excellent variety, sockets are extremely strong."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-57",
-    "name": "Heavy Duty Claw Hammer",
-    "slug": "heavy-duty-claw-hammer",
-    "description": "High quality drop-forged carbon steel claw hammer with shock-absorbing fiberglass handle. Perfect for framing, carpentry, and nail extraction.",
-    "price": 320,
-    "priceDisplay": "₹ 320 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "HW-HM-CLAW",
-    "brand": "Taparia",
-    "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "tools",
-      "hammer",
-      "carpentry",
-      "hardware"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 29,
-    "specs": [
-      {
-        "label": "Head Weight",
-        "value": "16 oz / 450 g"
-      },
-      {
-        "label": "Handle Material",
-        "value": "Fiberglass"
-      },
-      {
-        "label": "Head Material",
-        "value": "Carbon Steel"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Ganesh K",
-        "verified": true,
-        "date": "Mar 12, 2024",
-        "rating": 5,
-        "comment": "Very balanced grip, rubber handle absorbs vibrations perfectly."
-      }
-    ],
-    "city": "Mumbai"
-  },
-  {
-    "id": "prod-58",
-    "name": "Precision Screwdriver Kit 32-in-1",
-    "slug": "precision-screwdriver-kit-32-in-1",
-    "description": "Professional repair tool kit for iPhones, laptops, electronics, and watches. Contains magnetic steel bits, extension rod, and non-slip handle.",
-    "price": 580,
-    "priceDisplay": "₹ 580 / Set",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "HW-SD-321",
-    "brand": "Bosch",
-    "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "tools",
-      "screwdriver",
-      "precision",
-      "repair"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 88,
-    "specs": [
-      {
-        "label": "Bit Type",
-        "value": "CR-V Alloy Steel"
-      },
-      {
-        "label": "Bit Count",
-        "value": "30 Bits"
-      },
-      {
-        "label": "Magnetic Tip",
-        "value": "Yes"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Anand R",
-        "verified": true,
-        "date": "Feb 10, 2024",
-        "rating": 4,
-        "comment": "Bits are magnetic and very hard, handy box."
-      }
-    ],
-    "city": "Delhi"
-  },
-  {
-    "id": "prod-59",
-    "name": "Adjustable Spanner Wrench 12 inch",
-    "slug": "adjustable-spanner-wrench-12-inch",
-    "description": "Heavy duty forged carbon steel adjustable spanner wrench with chrome finish. Features laser etched metric scale for quick jaw opening adjustments.",
-    "price": 420,
-    "priceDisplay": "₹ 420 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "HW-SP-12",
-    "brand": "Taparia",
-    "category": "cat-9",
-    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "tools",
-      "spanner",
-      "wrench",
-      "plumbing"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 16,
-    "specs": [
-      {
-        "label": "Length",
-        "value": "12 inches / 300 mm"
-      },
-      {
-        "label": "Max Jaw Opening",
-        "value": "35 mm"
-      },
-      {
-        "label": "Finish",
-        "value": "Satin Chrome"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Karthik Raja",
-        "verified": true,
-        "date": "May 10, 2024",
-        "rating": 5,
-        "comment": "Spanner screw adjusts smoothly without loose play."
-      }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-60",
     "name": "Self-Tapping Screws (Pack of 500)",
     "slug": "self-tapping-screws-pack-of-500",
-    "description": "Premium zinc plated pan head self-tapping metal screws. Sharp threading cuts through sheet metal, wood, and plastic profiles without pilot holes.",
     "price": 350,
     "priceDisplay": "₹ 350 / Pack",
     "subtitle": "Starting from",
@@ -5245,16 +3015,13 @@
     "brand": "Kundli",
     "category": "cat-10",
     "image": "/src/assets/ss_fasteners.webp",
-    "tags": [
-      "fasteners",
-      "screws",
-      "self-tapping",
-      "hardware"
-    ],
+    "tags": ["fasteners", "screws", "self-tapping", "hardware"],
     "type": "general",
     "popular": true,
     "rating": 4.6,
     "reviewCount": 22,
+    "city": "Delhi",
+    "description": "Premium zinc plated pan head self-tapping metal screws. Sharp threading cuts through sheet metal, wood, and plastic profiles without pilot holes.",
     "specs": [
       {
         "label": "Material",
@@ -5269,9 +3036,7 @@
         "value": "500 Screws"
       }
     ],
-    "images": [
-      "/src/assets/ss_fasteners.webp"
-    ],
+    "images": ["/src/assets/ss_fasteners.webp"],
     "reviews": [
       {
         "name": "Manoj Kumar",
@@ -5280,14 +3045,12 @@
         "rating": 5,
         "comment": "Super sharp, directly drills into thin steel channels."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-61",
     "name": "Stainless Steel Washers M8 (Pack of 200)",
     "slug": "stainless-steel-washers-m8-pack-of-200",
-    "description": "High quality SS 304 flat washers for distributing load on threaded bolt assemblies. Resistant to rusting and weathering.",
     "price": 180,
     "priceDisplay": "₹ 180 / Pack",
     "subtitle": "Starting from",
@@ -5297,16 +3060,13 @@
     "brand": "Gripcon",
     "category": "cat-10",
     "image": "/src/assets/ss_fasteners.webp",
-    "tags": [
-      "fasteners",
-      "washers",
-      "stainless steel",
-      "m8"
-    ],
+    "tags": ["fasteners", "washers", "stainless steel", "m8"],
     "type": "general",
     "popular": false,
     "rating": 4.7,
     "reviewCount": 15,
+    "city": "Delhi",
+    "description": "High quality SS 304 flat washers for distributing load on threaded bolt assemblies. Resistant to rusting and weathering.",
     "specs": [
       {
         "label": "Size Compatibility",
@@ -5321,9 +3081,7 @@
         "value": "200 Washers"
       }
     ],
-    "images": [
-      "/src/assets/ss_fasteners.webp"
-    ],
+    "images": ["/src/assets/ss_fasteners.webp"],
     "reviews": [
       {
         "name": "Vivek Roy",
@@ -5332,14 +3090,12 @@
         "rating": 4,
         "comment": "Excellent flat washers, uniform thickness."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-62",
     "name": "Expansion Anchor Bolts M10 (Pack of 50)",
     "slug": "expansion-anchor-bolts-m10-pack-of-50",
-    "description": "Heavy duty zinc plated carbon steel sleeve expansion anchors. Ideal for anchoring structural brackets, railings, and heavy machinery to concrete walls.",
     "price": 950,
     "priceDisplay": "₹ 950 / Pack",
     "subtitle": "Starting from",
@@ -5349,16 +3105,13 @@
     "brand": "Hilti",
     "category": "cat-10",
     "image": "/src/assets/ss_fasteners.webp",
-    "tags": [
-      "fasteners",
-      "anchor bolt",
-      "concrete",
-      "structural"
-    ],
+    "tags": ["fasteners", "anchor bolt", "concrete", "structural"],
     "type": "general",
     "popular": false,
     "rating": 4.8,
     "reviewCount": 19,
+    "city": "Chennai",
+    "description": "Heavy duty zinc plated carbon steel sleeve expansion anchors. Ideal for anchoring structural brackets, railings, and heavy machinery to concrete walls.",
     "specs": [
       {
         "label": "Bolt Size",
@@ -5373,9 +3126,7 @@
         "value": "12 kN in Concrete"
       }
     ],
-    "images": [
-      "/src/assets/ss_fasteners.webp"
-    ],
+    "images": ["/src/assets/ss_fasteners.webp"],
     "reviews": [
       {
         "name": "Samir Sen",
@@ -5384,14 +3135,12 @@
         "rating": 5,
         "comment": "Extremely strong concrete anchors. Highly recommended."
       }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "prod-63",
     "name": "Threaded Rod Studs M12 (Pack of 10)",
     "slug": "threaded-rod-studs-m12-pack-of-10",
-    "description": "Stainless steel threaded rods ideal for hanging ceiling HVAC installations, pipe support brackets, and heavy industrial anchor applications.",
     "price": 1200,
     "priceDisplay": "₹ 1,200 / Pack",
     "subtitle": "Starting from",
@@ -5401,16 +3150,13 @@
     "brand": "Gripcon",
     "category": "cat-10",
     "image": "/src/assets/ss_fasteners.webp",
-    "tags": [
-      "fasteners",
-      "threaded rod",
-      "studs",
-      "stainless steel"
-    ],
+    "tags": ["fasteners", "threaded rod", "studs", "stainless steel"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 8,
+    "city": "Bangalore",
+    "description": "Stainless steel threaded rods ideal for hanging ceiling HVAC installations, pipe support brackets, and heavy industrial anchor applications.",
     "specs": [
       {
         "label": "Thread Size",
@@ -5425,9 +3171,7 @@
         "value": "SS 304"
       }
     ],
-    "images": [
-      "/src/assets/ss_fasteners.webp"
-    ],
+    "images": ["/src/assets/ss_fasteners.webp"],
     "reviews": [
       {
         "name": "Dev Das",
@@ -5436,222 +3180,12 @@
         "rating": 4,
         "comment": "Standard SS rods, threads are very neat."
       }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-64",
-    "name": "Centrifugal Water Pump 1HP",
-    "slug": "centrifugal-water-pump-1hp",
-    "description": "Self-priming monoblock centrifugal water pump featuring a powerful 1HP copper motor. Ideal for residential overhead tanks, small garden watering, and high pressure supply.",
-    "price": 4800,
-    "priceDisplay": "₹ 4,800 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IP-CP-1HP",
-    "brand": "Kirloskar",
-    "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "pumps",
-      "centrifugal",
-      "water pump",
-      "monoblock"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.7,
-    "reviewCount": 33,
-    "specs": [
-      {
-        "label": "Motor Power",
-        "value": "1.0 HP / 0.75 kW"
-      },
-      {
-        "label": "Flow Rate",
-        "value": "3000 Liters/hour"
-      },
-      {
-        "label": "Max Head Lift",
-        "value": "36 meters"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Lalit Mohan",
-        "verified": true,
-        "date": "Apr 28, 2024",
-        "rating": 5,
-        "comment": "Quiet pump, pumps water to my 4th floor tank very quickly."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-65",
-    "name": "Submersible Sewage Pump",
-    "slug": "submersible-sewage-pump",
-    "description": "Heavy duty cast iron submersible pump designed for handling dirty water, sewage, and septic tank drainage. Features semi-open impellers for solid passage.",
-    "price": 9500,
-    "priceDisplay": "₹ 9,500 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IP-SP-SUB",
-    "brand": "Crompton",
-    "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "pumps",
-      "submersible",
-      "sewage",
-      "wastewater"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 12,
-    "specs": [
-      {
-        "label": "Power",
-        "value": "1.5 HP"
-      },
-      {
-        "label": "Solid Passage Size",
-        "value": "25 mm"
-      },
-      {
-        "label": "Pump Body",
-        "value": "Cast Iron"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Suresh P",
-        "verified": true,
-        "date": "Feb 10, 2024",
-        "rating": 4,
-        "comment": "Drained my flooded basement in no time. Robust machinery."
-      }
-    ],
-    "city": "Bangalore"
-  },
-  {
-    "id": "prod-66",
-    "name": "Rotary Vane Vacuum Pump",
-    "slug": "rotary-vane-vacuum-pump",
-    "description": "Direct-drive dual-stage oil-sealed rotary vane vacuum pump. Designed for HVAC system evacuation, refrigeration service, and vacuum packaging systems.",
-    "price": 7200,
-    "priceDisplay": "₹ 7,200 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IP-VP-ROTARY",
-    "brand": "Metatech",
-    "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "pumps",
-      "vacuum",
-      "rotary vane",
-      "hvac"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 16,
-    "specs": [
-      {
-        "label": "Free Air Displacement",
-        "value": "4.5 CFM"
-      },
-      {
-        "label": "Ultimate Vacuum",
-        "value": "15 Micron"
-      },
-      {
-        "label": "Power",
-        "value": "0.33 HP"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Sunil K",
-        "verified": true,
-        "date": "Mar 19, 2024",
-        "rating": 5,
-        "comment": "Perfect for deep vacuuming AC systems, oil sight glass is clear."
-      }
-    ],
-    "city": "Delhi"
-  },
-  {
-    "id": "prod-67",
-    "name": "Diaphragm Metering Pump",
-    "slug": "diaphragm-metering-pump",
-    "description": "Electromagnetically driven diaphragm chemical dosing pump for accurate liquid metering in effluent water treatment plants and cooling tower chemical dosing.",
-    "price": 8900,
-    "priceDisplay": "₹ 8,900 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "IP-DP-DOSING",
-    "brand": "Seko",
-    "category": "cat-11",
-    "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "pumps",
-      "metering",
-      "dosing",
-      "chemical"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.4,
-    "reviewCount": 8,
-    "specs": [
-      {
-        "label": "Capacity",
-        "value": "5 Liters/hour"
-      },
-      {
-        "label": "Max Pressure",
-        "value": "7 Bar"
-      },
-      {
-        "label": "Wetted Material",
-        "value": "PVDF / PTFE"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Amit S",
-        "verified": true,
-        "date": "Jan 24, 2024",
-        "rating": 4,
-        "comment": "Precise chemical feeding. Excellent diaphragm life."
-      }
-    ],
-    "city": "Bangalore"
+    ]
   },
   {
     "id": "prod-68",
     "name": "Ergonomic Executive Mesh Chair",
     "slug": "ergonomic-executive-mesh-chair",
-    "description": "High-back office mesh chair with adjustable lumbar support, 3D armrests, multi-angle tilt lock, and high density memory foam seat. Promotes healthy posture during long working hours.",
     "price": 7500,
     "priceDisplay": "₹ 7,500 / Piece",
     "subtitle": "Starting from",
@@ -5661,16 +3195,13 @@
     "brand": "Godrej Interio",
     "category": "cat-12",
     "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "furniture",
-      "chair",
-      "ergonomic",
-      "office"
-    ],
+    "tags": ["furniture", "chair", "ergonomic", "office"],
     "type": "general",
     "popular": false,
     "rating": 4.8,
     "reviewCount": 46,
+    "city": "Hyderabad",
+    "description": "High-back office mesh chair with adjustable lumbar support, 3D armrests, multi-angle tilt lock, and high density memory foam seat. Promotes healthy posture during long working hours.",
     "specs": [
       {
         "label": "Color",
@@ -5696,14 +3227,12 @@
         "rating": 5,
         "comment": "Extremely comfortable chair. Lumbar support is very helpful."
       }
-    ],
-    "city": "Hyderabad"
+    ]
   },
   {
     "id": "prod-69",
     "name": "Heavy Duty Industrial Worktable",
     "slug": "heavy-duty-industrial-worktable",
-    "description": "Rigid mild steel frame workshop workbench with thick MDF top board. Features built-in drawers and pegboard for keeping tools organized.",
     "price": 14500,
     "priceDisplay": "₹ 14,500 / Piece",
     "subtitle": "Starting from",
@@ -5713,16 +3242,13 @@
     "brand": "Bharat Tools",
     "category": "cat-12",
     "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "furniture",
-      "workbench",
-      "industrial",
-      "table"
-    ],
+    "tags": ["furniture", "workbench", "industrial", "table"],
     "type": "general",
     "popular": false,
     "rating": 4.6,
     "reviewCount": 15,
+    "city": "Chennai",
+    "description": "Rigid mild steel frame workshop workbench with thick MDF top board. Features built-in drawers and pegboard for keeping tools organized.",
     "specs": [
       {
         "label": "Frame Material",
@@ -5748,14 +3274,12 @@
         "rating": 5,
         "comment": "Extremely stable table. MDF top is very dense and solid."
       }
-    ],
-    "city": "Chennai"
+    ]
   },
   {
     "id": "prod-70",
     "name": "4-Drawer Steel Filing Cabinet",
     "slug": "4-drawer-steel-filing-cabinet",
-    "description": "Anti-tilt vertical steel filing storage cabinet with central locking mechanism. Perfect for holding legal sized documents and office record folders.",
     "price": 5800,
     "priceDisplay": "₹ 5,800 / Piece",
     "subtitle": "Starting from",
@@ -5765,16 +3289,13 @@
     "brand": "Godrej Interio",
     "category": "cat-12",
     "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "furniture",
-      "cabinet",
-      "filing",
-      "steel"
-    ],
+    "tags": ["furniture", "cabinet", "filing", "steel"],
     "type": "general",
     "popular": false,
     "rating": 4.5,
     "reviewCount": 22,
+    "city": "Delhi",
+    "description": "Anti-tilt vertical steel filing storage cabinet with central locking mechanism. Perfect for holding legal sized documents and office record folders.",
     "specs": [
       {
         "label": "Material Thickness",
@@ -5800,14 +3321,12 @@
         "rating": 4,
         "comment": "Slides are very smooth, lock system functions smoothly."
       }
-    ],
-    "city": "Delhi"
+    ]
   },
   {
     "id": "prod-71",
     "name": "Adjustable Height Drafting Stool",
     "slug": "adjustable-height-drafting-stool",
-    "description": "Swivel drafting chair featuring a tall gas lift, adjustable foot ring, and heavy duty nylon casters. Ideal for laboratory benches and architects.",
     "price": 3200,
     "priceDisplay": "₹ 3,200 / Piece",
     "subtitle": "Starting from",
@@ -5817,16 +3336,13 @@
     "brand": "Solo",
     "category": "cat-12",
     "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "furniture",
-      "stool",
-      "drafting",
-      "adjustable"
-    ],
+    "tags": ["furniture", "stool", "drafting", "adjustable"],
     "type": "general",
-    "popular": false,
+    "popular": true,
     "rating": 4.4,
     "reviewCount": 9,
+    "city": "Hyderabad",
+    "description": "Swivel drafting chair featuring a tall gas lift, adjustable foot ring, and heavy duty nylon casters. Ideal for laboratory benches and architects.",
     "specs": [
       {
         "label": "Adjustable Height",
@@ -5852,215 +3368,6 @@
         "rating": 4,
         "comment": "Perfect height range, comfortable footring support."
       }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-72",
-    "name": "Deep Groove Ball Bearing 6204-ZZ",
-    "slug": "deep-groove-ball-bearing-6204-zz",
-    "description": "High quality chrome steel deep groove radial ball bearing shielded on both sides with metal dust plates. Pre-lubricated with high-speed grease for smooth operation.",
-    "price": 65,
-    "priceDisplay": "₹ 65 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "BC-BR-6204ZZ",
-    "brand": "SKF",
-    "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "bearings",
-      "ball bearing",
-      "radial",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.9,
-    "reviewCount": 78,
-    "specs": [
-      {
-        "label": "Bore Diameter",
-        "value": "20 mm"
-      },
-      {
-        "label": "Outer Diameter",
-        "value": "47 mm"
-      },
-      {
-        "label": "Width",
-        "value": "14 mm"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Jatin Patel",
-        "verified": true,
-        "date": "May 2, 2024",
-        "rating": 5,
-        "comment": "Excellent SKF bearing. Zero friction and noiseless run."
-      }
-    ],
-    "city": "Chennai"
-  },
-  {
-    "id": "prod-73",
-    "name": "Pillow Block Bearing UCP-205",
-    "slug": "pillow-block-bearing-ucp-205",
-    "description": "Self-aligning cast iron pillow block mounted bearing unit with grub screw locking. Designed for conveyor belts, industrial drives, and agricultural machinery.",
-    "price": 380,
-    "priceDisplay": "₹ 380 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "BC-BR-UCP205",
-    "brand": "FAG",
-    "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "bearings",
-      "pillow block",
-      "mounted bearing",
-      "industrial"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.6,
-    "reviewCount": 22,
-    "specs": [
-      {
-        "label": "Shaft Diameter",
-        "value": "25 mm"
-      },
-      {
-        "label": "Housing Material",
-        "value": "Cast Iron HT200"
-      },
-      {
-        "label": "Grease Nipple",
-        "value": "Yes"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Devendra S",
-        "verified": true,
-        "date": "Mar 15, 2024",
-        "rating": 4,
-        "comment": "Robust casting, self-aligning insert functions well."
-      }
-    ],
-    "city": "Delhi"
-  },
-  {
-    "id": "prod-74",
-    "name": "Flexible Jaw Coupling L-095",
-    "slug": "flexible-jaw-coupling-l-095",
-    "description": "Three-piece industrial lovejoy jaw coupling set with rubber spider insert. Absorbs motor shaft misalignment and dampens vibrations.",
-    "price": 450,
-    "priceDisplay": "₹ 450 / Set",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "BC-CP-L095",
-    "brand": "Lovejoy",
-    "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "couplings",
-      "flexible coupling",
-      "lovejoy",
-      "jaw coupling"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.7,
-    "reviewCount": 14,
-    "specs": [
-      {
-        "label": "Max Bore Capacity",
-        "value": "28 mm"
-      },
-      {
-        "label": "Nominal Torque",
-        "value": "22 Nm"
-      },
-      {
-        "label": "Insert Material",
-        "value": "NBR Rubber"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Suresh Rao",
-        "verified": true,
-        "date": "Jan 18, 2024",
-        "rating": 5,
-        "comment": "High torque resistance, rubber insert is very resilient."
-      }
-    ],
-    "city": "Hyderabad"
-  },
-  {
-    "id": "prod-75",
-    "name": "Taper Lock Pulley Coupling",
-    "slug": "taper-lock-pulley-coupling",
-    "description": "Precision machined cast iron taper lock bush coupling designed for mounting pulleys, sprockets, and coupling flanges to shafts quickly without keyway machining.",
-    "price": 620,
-    "priceDisplay": "₹ 620 / Piece",
-    "subtitle": "Starting from",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "BC-CP-TAPER",
-    "brand": "Fenner",
-    "category": "cat-13",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop",
-    "tags": [
-      "couplings",
-      "taper lock",
-      "pulley",
-      "transmission"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 11,
-    "specs": [
-      {
-        "label": "Bush Number",
-        "value": "1610"
-      },
-      {
-        "label": "Bore Size Range",
-        "value": "12 - 42 mm"
-      },
-      {
-        "label": "Material",
-        "value": "GG25 High Grade Cast Iron"
-      }
-    ],
-    "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop"
-    ],
-    "reviews": [
-      {
-        "name": "Madan Lal",
-        "verified": true,
-        "date": "May 5, 2024",
-        "rating": 4,
-        "comment": "Saves a lot of time on keyway cutting. Secure fit."
-      }
-    ],
-    "city": "Delhi"
+    ]
   }
 ]

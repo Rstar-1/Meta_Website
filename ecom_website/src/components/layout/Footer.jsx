@@ -1,61 +1,33 @@
-import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Container from '../common/Container'
 import Image from '../common/Image'
 import Icon from '../common/Icon'
 import footerData from '../../data/footer.json'
-const logoImg = "/sobo_logo.webp";
+import { products } from '../../utils/productsData'
 import NewsletterForm from '../forms/NewsletterForm'
+
+const logoImg = "/sobo_logo.webp";
 
 const Footer = () => {
   const navigate = useNavigate()
-  const [isVisible, setIsVisible] = useState(false)
-  const footerRef = useRef(null)
-  const [popularProducts, setPopularProducts] = useState([])
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { rootMargin: '0px 0px -5% 0px' }
-    )
-    if (footerRef.current) observer.observe(footerRef.current)
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (isVisible) {
-      import('../../data/products.json').then((m) => {
-        setPopularProducts(m.default.filter(p => p.popular).slice(0, 4))
-      }).catch((err) => {
-        console.error("Failed to load products for footer:", err);
-      })
-    }
-  }, [isVisible])
+  // Statically resolve popular products to prevent layout shifts (CLS) on scroll-load
+  const popularProducts = products.filter(p => p.popular).slice(0, 4)
 
   return (
-    <footer ref={footerRef} className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
+    <footer className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
       <Container>
         <div>
           <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 items-start gap-12">
 
             {/* Column 1: Brand Info */}
-            <div
-              className="grid-cols-1 pr-10 sm-pr-1"
-              style={{
-                transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
-                transform: isVisible ? "translateY(0)" : "translateY(40px)",
-                opacity: isVisible ? 1 : 0
-              }}
-            >
+            <div className="grid-cols-1 pr-10 sm-pr-1">
               <div className="mb-15 flex items-center">
                 <Image
                   src={logoImg}
                   alt="SOBO Marketing Solution Logo"
+                  width="168"
+                  height="55"
                   style={{
                     maxHeight: '55px',
                     width: 'auto',
@@ -99,15 +71,7 @@ const Footer = () => {
             </div>
 
             {/* Column 2: Popular Products */}
-            <div
-              className="grid-cols-1 pr-10 sm-pr-1"
-              style={{
-                transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
-                transform: isVisible ? "translateY(0)" : "translateY(40px)",
-                opacity: isVisible ? 1 : 0,
-                transitionDelay: "150ms"
-              }}
-            >
+            <div className="grid-cols-1 pr-10 sm-pr-1">
               <h3 className="text-white mid-text mb-12 font-600">Popular Products</h3>
               <ul className="list-none m-1 p-1">
                 {popularProducts.map((prod) => (
@@ -125,15 +89,7 @@ const Footer = () => {
 
             {/* Column 3: Commissioning Support */}
             {footerData.columns[1] && (
-              <div
-                className="grid-cols-1 pr-10 sm-pr-1"
-                style={{
-                  transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
-                  transform: isVisible ? "translateY(0)" : "translateY(40px)",
-                  opacity: isVisible ? 1 : 0,
-                  transitionDelay: "300ms"
-                }}
-              >
+              <div className="grid-cols-1 pr-10 sm-pr-1">
                 <h3 className="text-white mid-text mb-12 font-600">{footerData.columns[1].title}</h3>
                 <ul className="list-none m-1 p-1">
                   {footerData.columns[1].links.map((link, linkIdx) => (
@@ -151,15 +107,7 @@ const Footer = () => {
             )}
 
             {/* Column 4: Newsletter */}
-            <div
-              className="grid-cols-1 pr-10 sm-pr-1"
-              style={{
-                transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
-                transform: isVisible ? "translateY(0)" : "translateY(40px)",
-                opacity: isVisible ? 1 : 0,
-                transitionDelay: "450ms"
-              }}
-            >
+            <div className="grid-cols-1 pr-10 sm-pr-1">
               <h3 className="text-white mid-text mb-12 font-600">{footerData.newsletter.title}</h3>
               <p className="small-text" style={{ color: "rgba(255, 255, 255, 0.6)" }}>
                 {footerData.newsletter.description}
@@ -179,11 +127,7 @@ const Footer = () => {
             style={{
               borderTop: "1px solid rgba(255, 255, 255, 0.1)",
               gap: "15px",
-              color: "rgba(255, 255, 255, 0.5)",
-              transition: "transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s",
-              transform: isVisible ? "translateY(0)" : "translateY(30px)",
-              opacity: isVisible ? 1 : 0,
-              transitionDelay: "500ms"
+              color: "rgba(255, 255, 255, 0.5)"
             }}
           >
             <div className="small-text">{footerData.bottom.copyright}</div>

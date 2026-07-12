@@ -72,13 +72,13 @@ const CardLayout = ({
                                 {item.name}
                             </h3>
                             <p
-                                className="text-gray mini-text line-clamp2 font-400 mt-3"
+                                className="text-gray mini-text line-clamp2 font-400 mt-2"
                             >
                                 {item.description}
                             </p>
                             {(item.priceDisplay || item.price) && (
                                 <p
-                                    className="text-dark mini-text font-400 mt-7"
+                                    className="text-dark mini-text font-500 mt-5"
                                 >
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
@@ -114,14 +114,6 @@ const CardLayout = ({
                                 variant="filled"
                                 version="v3"
                                 className={showAddToCart ? "flex-1" : "w-full"}
-                                style={{
-                                    backgroundColor: '#2563eb',
-                                    color: '#ffffff',
-                                    borderRadius: '8px',
-                                    fontWeight: '500',
-                                    fontSize: '0.95rem',
-                                    padding: '10px 0',
-                                }}
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     if (onButtonClick) {
@@ -228,9 +220,9 @@ const CardLayout = ({
                             <h3 className="text-dark font-600 mid-text line-clamp1">
                                 {item.title}
                             </h3>
-                             <p className="text-primary font-500 mini-text mt-3">
-                                 {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
-                             </p>
+                            <p className="text-primary font-500 mini-text mt-3">
+                                {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
+                            </p>
                             <p className="text-gray small-text line-clamp2 mt-7">
                                 {item.description}
                             </p>

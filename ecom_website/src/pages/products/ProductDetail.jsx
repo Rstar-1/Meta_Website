@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import products from '../../data/products.json';
+import { products } from '../../utils/productsData';
 import ProductLayout from '../../components/layout/ProductLayout';
 import { resolveImagePath } from '../../utils/imageResolver';
 

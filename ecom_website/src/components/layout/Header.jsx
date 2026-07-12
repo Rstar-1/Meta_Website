@@ -5,6 +5,7 @@ import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
 import headerData from "../../data/header.json";
+import { products as productsData, categories as categoryData } from "../../utils/productsData";
 const logoImg = "/sobo_logo.webp";
 
 const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
@@ -177,8 +178,7 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const [cartCount, setCartCount] = useState(0);
-  const [menuData, setMenuData] = useState({ products: [], categories: [] });
-  const [isLoading, setIsLoading] = useState(false);
+  const [menuData] = useState({ products: productsData, categories: categoryData });
 
   useEffect(() => {
     const updateCount = () => {
@@ -191,25 +191,6 @@ const Header = () => {
       window.removeEventListener('cart-updated', updateCount);
     };
   }, []);
-
-  useEffect(() => {
-    if ((activeMenu || isMobileOpen) && menuData.products.length === 0) {
-      setIsLoading(true);
-      Promise.all([
-        import("../../data/products.json"),
-        import("../../data/category.json")
-      ]).then(([prodMod, catMod]) => {
-        setMenuData({
-          products: prodMod.default,
-          categories: catMod.default
-        });
-        setIsLoading(false);
-      }).catch((err) => {
-        console.error("Failed to load mega menu data:", err);
-        setIsLoading(false);
-      });
-    }
-  }, [activeMenu, isMobileOpen, menuData.products.length]);
 
   const handleItemClick = (productId, categoryName) => {
     setActiveMenu(null);
@@ -231,6 +212,8 @@ const Header = () => {
               <Image
                 src={logoImg}
                 alt="SOBO Marketing Solution Logo"
+                width="128"
+                height="42"
                 style={{
                   maxHeight: '42px',
                   width: 'auto',
@@ -274,7 +257,7 @@ const Header = () => {
                         maxWidth: "90vw",
                       }}
                     >
-                      {!isLoading && menuData.products.length > 0 ? (
+                      {menuData.products.length > 0 ? (
                         <div
                           className={`grid ${item?.cols} items-start`}
                           style={{ width: item?.width, maxWidth: "100%" }}
@@ -384,7 +367,7 @@ const Header = () => {
                       </div>
                       {isExpanded && (
                         <div className="mt-12 bg-white rounded-5 border-ec grid grid-cols-1 gap-16 overflow-hidden">
-                          {!isLoading && menuData.products.length > 0 ? (
+                          {menuData.products.length > 0 ? (
                             <MegaMenuContent
                               label={item.label}
                               onItemClick={(productId, categoryName) => {

@@ -26,7 +26,7 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
   // Lookup client in client.json
   const matchedClient = clientData.find(
     (c) => c.name?.toLowerCase() === brand?.toLowerCase() ||
-           c.id?.toLowerCase() === brand?.toLowerCase()
+      c.id?.toLowerCase() === brand?.toLowerCase()
   );
 
   const nameDisplay = matchedClient?.name || brand;
@@ -47,7 +47,7 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
           <p className='text-dark mid-text font-600'>
             {nameDisplay}
           </p>
-          <p className='text-secondary mini-text font-600 flex-items-center gap-3'>
+          <p className='text-secondary mini-text font-500 flex-items-center gap-3'>
             ✔ Verified Supplier
           </p>
         </div>
@@ -70,13 +70,13 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
       <Button
         onClick={() => navigate(`/supplier/${brand}`)}
         version="v3"
-        bg="secondary"
-        className="font-600 mt-8"
+        bg="primary"
+        className='mt-6'
       >
         View Supplier Profile
       </Button>
 
-      <p onClick={() => navigate(`/supplier/${brand}`)} className='text-secondary cursor-pointer text-center mini-text mt-8'>
+      <p onClick={() => navigate(`/supplier/${brand}`)} className='text-primary cursor-pointer text-center mini-text mt-8'>
         More Products by this Supplier
       </p>
 
@@ -352,7 +352,6 @@ const ProductLayout = ({
                         addToCart(targetProduct, quantity);
                         navigate('/cart');
                       }}
-                      className="font-600"
                     />
 
                     <Button
@@ -362,7 +361,6 @@ const ProductLayout = ({
                       icon="WhatsApp"
                       iconWidth="20"
                       iconHeight="20"
-                      className="font-600"
                       onClick={() => window.open(`https://wa.me/?text=Hi%20I%20am%20interested%20in%20${encodeURIComponent(productData.title)}`, '_blank')}
                     >
                       Chat on WhatsApp
