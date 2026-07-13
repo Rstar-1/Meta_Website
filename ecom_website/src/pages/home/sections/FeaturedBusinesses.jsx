@@ -95,16 +95,16 @@ const FeaturedBusinesses = () => {
                   />
                 </div>
                 <div className="py-10">
-                  <div className="flex gap-10 mb-12">
+                  <h3 className="text-dark font-500 mid-text line-clamp2 cursor-pointer">
+                    {item.title}
+                  </h3>
+                  <div className="flex gap-12 mt-6">
                     {item.tags.map((tag, i) => (
-                      <span key={i} className="bg-forth text-gray font-500 mini-text px-12 py-4 rounded-5">
+                      <span key={i} className="bg-forth text-gray font-400 mini-text px-12 py-4 rounded-5">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-dark font-600 mid-text line-clamp2 cursor-pointer">
-                    {item.title}
-                  </h3>
                 </div>
               </div>
             ))}

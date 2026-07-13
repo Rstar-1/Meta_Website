@@ -8,7 +8,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <Container className="relative z-10" style={{ backgroundImage: "url('https://demo.alhikmahsoft.com/template/stir/assets/images/shape-4.png')", backgroundRepeat: "no-repeat", backgroundSize: "contain", backgroundPosition: "center" }}>
+    <Container className="relative bg-tertiary" style={{ backgroundImage: "url('https://demo.alhikmahsoft.com/template/stir/assets/images/shape-4.png')", backgroundRepeat: "no-repeat", backgroundSize: "contain", backgroundPosition: "center" }}>
       <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-30">
         {/* Text Content */}
         <div className="">
