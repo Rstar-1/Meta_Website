@@ -32,47 +32,15 @@ const Review = () => {
   };
 
   return (
-
-
-    <Container >
-      <style>{`
-        .testimonial-img {
-          border-radius: 30px 30px 30px 0;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .nav-btn {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          border: 1px solid #dddddd;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #ffffff;
-          color: var(--dark);
-          transition: all 0.3s ease;
-          cursor: pointer;
-        }
-        .nav-btn:hover {
-          background: var(--dark);
-          color: #ffffff;
-          border-color: var(--dark);
-        }
-        .quote-slide {
-          animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
-      <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 gap-40 items-center">
+    <Container>
+      <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 gap-12 items-center">
         {/* Left Column - Content */}
         <div>
-          <span className="text-primary font-600 uppercase mini-text tracking-widest block mb-12">TESTIMONIALS</span>
+          <p className="text-primary font-500 uppercase mini-text">TESTIMONIALS</p>
+          <h4 className="text-dark font-600 head-text uppercase mt-5">What Our Clients Say</h4>
 
           {/* Stars */}
-          <div className="flex gap-4 mb-25">
+          <div className="flex gap-4 mt-8">
             {Array.from({ length: 5 }).map((_, i) => (
               <Icon
                 key={i}
@@ -87,12 +55,12 @@ const Review = () => {
           </div>
 
           {/* Testimonial Active Slide */}
-          <div className="quote-slide mb-40">
-            <p className="text-dark font-500 leading-relaxed italic mb-30" style={{ fontSize: '22px', borderLeft: '4px solid var(--primary)', paddingLeft: '20px' }}>
+          <div className="mt-22">
+            <p className="text-gray font-500 small-text px-14 py-9" style={{ borderLeft: '3px solid var(--primary)' }}>
               "{testimonials[activeIdx].text}"
             </p>
 
-            <div className="flex items-center gap-16">
+            <div className="flex items-center gap-12 mt-20">
               <Image
                 src={testimonials[activeIdx].avatar}
                 alt={testimonials[activeIdx].name}
@@ -100,18 +68,18 @@ const Review = () => {
                 style={{ width: '60px', height: '60px' }}
               />
               <div>
-                <h4 className="text-dark font-600 mb-2" style={{ fontSize: '18px' }}>{testimonials[activeIdx].name}</h4>
+                <h4 className="text-dark font-600 mid-text">{testimonials[activeIdx].name}</h4>
                 <p className="text-gray mini-text">{testimonials[activeIdx].role}</p>
               </div>
             </div>
           </div>
 
           {/* Nav Arrows */}
-          <div className="flex gap-16">
-            <button className="nav-btn" onClick={handlePrev} aria-label="Previous testimonial">
+          <div className="flex gap-12 mt-25">
+            <button className="icon-lg bg-transparent border-ec rounded-full cursor-pointer" onClick={handlePrev} aria-label="Previous testimonial">
               <Icon name="ChevronLeft" width="18" height="18" stroke="currentColor" strokeWidth="2.5" />
             </button>
-            <button className="nav-btn" onClick={handleNext} aria-label="Next testimonial">
+            <button className="icon-lg bg-transparent border-ec rounded-full cursor-pointer" onClick={handleNext} aria-label="Next testimonial">
               <Icon name="ChevronRight" width="18" height="18" stroke="currentColor" strokeWidth="2.5" />
             </button>
           </div>
@@ -122,8 +90,7 @@ const Review = () => {
           <Image
             src="https://demo.alhikmahsoft.com/template/stir/assets/images/testimonial-5.jpg"
             alt="Testimonials Meeting"
-            className="w-full object-cover testimonial-img"
-            style={{ height: '480px' }}
+            className="w-full object-cover h-450 flex"
           />
         </div>
       </div>
