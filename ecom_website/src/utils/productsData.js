@@ -1,4 +1,4 @@
-import products from '../data/products.json';
-import categories from '../data/category.json';
+const products = [];
+const categories = [];
 
 export { products, categories };

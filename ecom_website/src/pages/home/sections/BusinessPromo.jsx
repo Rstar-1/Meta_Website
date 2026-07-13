@@ -1,43 +1,34 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
+import Icon from '../../../components/common/Icon';
 import Button from '../../../components/common/Button';
 
-const BusinessPromo = ({ onRegisterBusiness }) => {
-  return (
-    <Container className='bg-forth'>
-      <div className="w-full py-30">
-        <div
-          className="flex sm-grid-cols-1 items-center justify-between p-40 md-p-30 sm-p-20 gap-12"
-          style={{
-            background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
-            borderRadius: '5px',
-            boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)'
-          }}
-        >
-          {/* Text Side */}
-          <div className="flex flex-column">
-            <h2
-              className="text-white font-700 head-text"
-            >
-              Grow <span style={{ color: 'var(--warning)' }}>Your Business</span> with Justdial
-            </h2>
-            <p
-              className="text-white small-text mt-7"
-            >
-              Get more visibility, connect with more customers and grow your business fast.
-            </p>
-          </div>
+const BusinessPromo = () => {
+  const navigate = useNavigate();
 
-          {/* Action Button Side */}
-          <Button
-            text="List Your Business"
-            bg="warning"
-            version="v2"
-            className="font-500 cursor-pointer"
-          />
+  return (
+    <Container className='bg-primary'>
+      <div className='w-full flex items-center justify-between py-25'>
+        <div className='w-80'>
+          <h2 className="text-white font-600 head-text mt-8">
+            Let’s Work Together
+          </h2>
+          <p className="text-white small-text mt-4">
+            We are digital agency that helps businesses develop immersive and engaging user experiences.
+          </p>
         </div>
-      </div>
-    </Container>
+
+        <Button
+          onClick={() => navigate('/connect')}
+          bg='white'
+          color='primary'
+          version='v2'
+          text='Explore More'
+          className='mt-16'
+        />
+      </div >
+    </Container >
   );
 };
 

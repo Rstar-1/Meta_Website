@@ -1,4 +1,4 @@
-export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = 'https://sobo-marketing.com') => {
+export const generateSitemap = (routes = [], blogs = [], baseUrl = 'https://sobo-marketing.com') => {
   const urls = [];
   const addUrl = (loc, changefreq = 'daily', priority = '0.8') => {
     urls.push(`  <url>
@@ -14,16 +14,6 @@ export const generateSitemap = (routes = [], products = [], categories = [], blo
     const priority = route === '/' ? '1.0' : '0.8';
     const changefreq = route === '/' ? 'daily' : 'weekly';
     addUrl(route, changefreq, priority);
-  });
-
-  // Add Product routes
-  products.forEach(p => {
-    addUrl(`/products/${p.slug}`, 'weekly', '0.7');
-  });
-
-  // Add Category routes
-  categories.forEach(c => {
-    addUrl(`/category/${c.slug}`, 'weekly', '0.6');
   });
 
   // Add Blog routes

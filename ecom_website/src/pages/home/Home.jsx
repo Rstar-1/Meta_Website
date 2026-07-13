@@ -6,8 +6,6 @@ import OrganizationSchema from '../../components/seo/OrganizationSchema';
 import SiteNavigationSchema from '../../components/seo/SiteNavigationSchema';
 
 import BrowseCategory from './sections/BrowseCategory';
-import PopularProducts from './sections/PopularProducts';
-import LatestProducts from './sections/LatestProducts';
 import WhyChoose from './sections/WhyChoose';
 import FeaturedBusinesses from './sections/FeaturedBusinesses';
 import BusinessPromo from './sections/BusinessPromo';
@@ -20,7 +18,6 @@ const Home = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com';
   const navItems = [
     { name: 'Home', url: `${siteUrl}/home` },
-    { name: 'Products', url: `${siteUrl}/products` },
     { name: 'About Us', url: `${siteUrl}/about` },
     { name: 'Blog', url: `${siteUrl}/blog` },
     { name: 'Contact Us', url: `${siteUrl}/contact` }
@@ -42,26 +39,24 @@ const Home = () => {
 
       <Hero />
       <BrowseCategory />
-      <LatestProducts />
-      <PopularProducts />
 
-      <LazySection placeholderHeight="350px">
+      <LazySection placeholderHeight="500px">
         <WhyChoose />
+      </LazySection>
+      <LazySection placeholderHeight="600px">
+        <FeaturedBusinesses />
       </LazySection>
       <LazySection placeholderHeight="400px">
         <TopCity />
       </LazySection>
       <LazySection placeholderHeight="400px">
-        <FeaturedBusinesses />
+        <Review />
       </LazySection>
-      <LazySection placeholderHeight="500px">
+      {/* <LazySection placeholderHeight="500px">
         <LatestArticles />
-      </LazySection>
+      </LazySection> */}
       <LazySection placeholderHeight="300px">
         <BusinessPromo />
-      </LazySection>
-      <LazySection placeholderHeight="400px">
-        <Review />
       </LazySection>
     </>
   );

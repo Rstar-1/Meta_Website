@@ -73,59 +73,6 @@ export const generateSchema = {
     };
   },
 
-  product: (product = {}, reviews = []) => {
-    const offers = {
-      "@type": "Offer",
-      priceCurrency: product.priceCurrency || "INR",
-      price: product.price || "0.00",
-      priceValidUntil: product.priceValidUntil || "2030-12-31",
-      availability: product.inStock
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
-      url: product.url || "",
-    };
-
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: product.name || "",
-      image: product.images || [],
-      description: product.description || "",
-      sku: product.sku || "",
-      mpn: product.mpn || "",
-      brand: {
-        "@type": "Brand",
-        name: product.brand || "Generic",
-      },
-      offers: offers,
-    };
-
-    if (product.aggregateRating) {
-      schema.aggregateRating = {
-        "@type": "AggregateRating",
-        ratingValue: product.aggregateRating.ratingValue || "5",
-        reviewCount: product.aggregateRating.reviewCount || "1",
-      };
-    }
-
-    if (reviews.length > 0) {
-      schema.review = reviews.map((r) => ({
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: r.author || "Anonymous",
-        },
-        datePublished: r.date || new Date().toISOString().split("T")[0],
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: r.rating || "5",
-        },
-        reviewBody: r.content || "",
-      }));
-    }
-
-    return schema;
-  },
 
   breadcrumb: (items = []) => {
     return {

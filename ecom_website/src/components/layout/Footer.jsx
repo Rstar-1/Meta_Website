@@ -3,7 +3,6 @@ import Container from '../common/Container'
 import Image from '../common/Image'
 import Icon from '../common/Icon'
 import footerData from '../../data/footer.json'
-import { products } from '../../utils/productsData'
 import NewsletterForm from '../forms/NewsletterForm'
 
 const logoImg = "/sobo_logo.webp";
@@ -11,8 +10,10 @@ const logoImg = "/sobo_logo.webp";
 const Footer = () => {
   const navigate = useNavigate()
 
-  // Statically resolve popular products to prevent layout shifts (CLS) on scroll-load
-  const popularProducts = products.filter(p => p.popular).slice(0, 4)
+  // Filter out any link pointing to '/products'
+  const quickLinks = (footerData.columns[0]?.links || []).filter(
+    link => link.path !== '/products'
+  );
 
   return (
     <footer className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
@@ -70,17 +71,17 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Column 2: Popular Products */}
+            {/* Column 2: Quick Links */}
             <div className="grid-cols-1 pr-10 sm-pr-1">
-              <h3 className="text-white mid-text mb-12 font-600">Popular Products</h3>
+              <h3 className="text-white mid-text mb-12 font-600">Quick Links</h3>
               <ul className="list-none m-1 p-1">
-                {popularProducts.map((prod) => (
-                  <li key={prod.id} className="mb-12">
+                {quickLinks.map((link, idx) => (
+                  <li key={idx} className="mb-12">
                     <span
-                      onClick={() => navigate(`/product-detail/${prod.id}`)}
+                      onClick={() => navigate(link.path)}
                       className="footer-link cursor-pointer small-text"
                     >
-                      {prod.name}
+                      {link.label}
                     </span>
                   </li>
                 ))}
