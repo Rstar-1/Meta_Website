@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '../../../components/common/Container';
-import Accordion from '../../../components/common/Accordion';
+import Image from '../../../components/common/Image';
 
 const LatestArticles = () => {
   const faqs = [
@@ -26,69 +26,129 @@ const LatestArticles = () => {
     }
   ];
 
+  const [activeId, setActiveId] = useState(1);
+
+  const toggleItem = (id) => {
+    setActiveId(activeId === id ? null : id);
+  };
+
   return (
     <Container>
-      <style>{`
-        @keyframes scrollMarqueeBlog {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .marquee-blog-container {
-          overflow: hidden;
-          white-space: nowrap;
-          width: 100%;
-          background: #ffffff;
-          padding: 30px 0;
-          border-top: 1px solid #eeeeee;
-          border-bottom: 1px solid #eeeeee;
-        }
-        .marquee-blog-content {
-          display: inline-block;
-          animation: scrollMarqueeBlog 20s linear infinite;
-        }
-        .marquee-blog-text {
-          font-size: 80px;
-          font-weight: 800;
-          color: transparent;
-          -webkit-text-stroke: 1px #dddddd;
-          margin-right: 50px;
-          text-transform: uppercase;
-        }
-        .blog-card {
-          border-radius: 24px;
-          overflow: hidden;
-          background: #ffffff;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-          transition: all 0.4s ease;
-        }
-        .blog-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
-        }
-        .blog-img-wrap {
-          position: relative;
-          overflow: hidden;
-          border-radius: 24px;
-        }
-        .blog-img {
-          transition: transform 0.6s ease;
-        }
-        .blog-card:hover .blog-img {
-          transform: scale(1.05);
-        }
-      `}</style>
+      <div className='py-80'>
+        <Image
+          src="https://demo.alhikmahsoft.com/template/stir/assets/images/faq-img.jpg"
+          alt="Digital Agency Team"
+          className="w-full object-cover h-250 flex rounded-5"
+        />
 
-      {/* FAQ Section */}
-      <div className="w-full py-60">
-        <div className="text-center mb-40">
-          <p className="text-primary font-500 uppercase small-text">FAQ</p>
-          <h2 className="text-dark font-600 head-text uppercase pt-8">
-            Frequently Asked Questions
-          </h2>
-        </div>
+        <div className='grid-cols-1 gap-4 mt-20'>
+          {faqs.map((item, idx) => {
+            const isOpen = activeId === item.id;
+            const numStr = String(idx + 1).padStart(2, '0');
 
-        <div>
-          <Accordion items={faqs} allowMultiple={false} />
+            return (
+              <div
+                key={item.id}
+                style={{
+                  borderBottom: '1px solid #e5e7eb',
+                  padding: '28px 0',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '24px',
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => toggleItem(item.id)}
+                >
+                  {/* Number Circle */}
+                  <div
+                    style={{
+                      width: '46px',
+                      height: '46px',
+                      borderRadius: '50%',
+                      border: '1px solid #d1d5db',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      fontSize: '15px',
+                      fontWeight: '500',
+                      color: 'var(--dark)',
+                      transition: 'border-color 0.3s ease',
+                    }}
+                  >
+                    {numStr}
+                  </div>
+
+                  {/* Question and Answer Content */}
+                  <div style={{ flex: 1, paddingTop: '10px' }}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        gap: '16px',
+                      }}
+                    >
+                      <h3
+                        className="text-dark"
+                        style={{
+                          fontSize: '18px',
+                          fontWeight: '600',
+                          lineHeight: '1.4',
+                          margin: 0,
+                        }}
+                      >
+                        {item.question}
+                      </h3>
+
+                      {/* Plus/Minus Sign */}
+                      <span
+                        style={{
+                          fontSize: isOpen ? '28px' : '22px',
+                          fontWeight: '400',
+                          lineHeight: '1',
+                          color: isOpen ? 'var(--warningtext)' : 'var(--dark)',
+                          userSelect: 'none',
+                          transition: 'color 0.2s ease',
+                          display: 'inline-block',
+                          transform: isOpen ? 'translateY(-2px)' : 'none',
+                        }}
+                      >
+                        {isOpen ? '−' : '+'}
+                      </span>
+                    </div>
+
+                    {/* Answer content (collapsible) */}
+                    <div
+                      style={{
+                        maxHeight: isOpen ? '200px' : '0px',
+                        opacity: isOpen ? 1 : 0,
+                        overflow: 'hidden',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      }}
+                    >
+                      <p
+                        className="text-gray"
+                        style={{
+                          fontSize: '15px',
+                          lineHeight: '26px',
+                          marginTop: '16px',
+                          marginBottom: 0,
+                          paddingRight: '40px',
+                        }}
+                      >
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </Container>

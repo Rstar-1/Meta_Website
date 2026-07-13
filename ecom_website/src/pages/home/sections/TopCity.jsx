@@ -64,11 +64,11 @@ const TopCity = () => {
         <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12 mt-40">
           {team.map((member) => (
             <div key={member.id}>
-              <div className="overflow-hidden h-300 team-card relative">
+              <div className="overflow-hidden h-350 team-card relative">
                 <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full object-cover h-300 flex"
+                  className="w-full object-cover h-350 flex"
                 />
                 <div
                   style={{
@@ -81,7 +81,7 @@ const TopCity = () => {
                     pointerEvents: 'none'
                   }}
                 />
-                <div className="flex items-center gap-8 absolute bottom-0 right-0 m-8">
+                <div className="flex items-center gap-8 absolute bottom-0 left-0 m-8">
                   <div className="icon-lg bg-white rounded-full">
                     <Icon name="Facebook" width="16" height="16" stroke="currentColor" />
                   </div>

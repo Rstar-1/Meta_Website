@@ -16,7 +16,7 @@ const Header = () => {
   );
 
   return (
-    <>
+    <div className="bg-white">
       <Container className="navbar">
         <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
           <div className="flex items-center gap-8">
@@ -25,9 +25,9 @@ const Header = () => {
                 src={logoImg}
                 alt="SOBO Marketing Solution Logo"
                 width="128"
-                height="42"
+                height="50"
                 style={{
-                  maxHeight: '42px',
+                  maxHeight: '50px',
                   width: 'auto',
                   objectFit: 'contain'
                 }}
@@ -109,7 +109,7 @@ const Header = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
