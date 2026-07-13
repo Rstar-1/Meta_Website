@@ -81,10 +81,16 @@ const FeaturedBusinesses = () => {
         </div>
       </div>
 
-      <Container>
-        <div className='w-full mt-50'>
+      <Container className='bg-tertiary'>
+        <div className='w-full py-60'>
+          <div className="text-center">
+            <p className="text-primary font-500 uppercase small-text">WHAT WE DO</p>
+            <h2 className="text-dark font-600 head-text uppercase pt-8">
+              Browse Our Categories
+            </h2>
+          </div>
           {/* Cases Grid */}
-          <div className="grid-cols-3 md-grid-cols-1 sm-grid-cols-1 gap-12">
+          <div className="grid-cols-3 md-grid-cols-1 sm-grid-cols-1 mt-35" style={{ gap: '30px' }}>
             {cases.map((item) => (
               <div key={item.id} className="">
                 <div className="">
@@ -100,9 +106,9 @@ const FeaturedBusinesses = () => {
                   </h3>
                   <div className="flex gap-12 mt-6">
                     {item.tags.map((tag, i) => (
-                      <span key={i} className="bg-forth text-gray font-400 mini-text px-12 py-4 rounded-5">
+                      <p key={i} className="bg-white text-gray font-400 mini-text px-12 py-4 rounded-5 border-ec">
                         {tag}
-                      </span>
+                      </p>
                     ))}
                   </div>
                 </div>

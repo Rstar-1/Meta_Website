@@ -9,14 +9,15 @@ const Hero = () => {
 
   return (
     <Container className="relative bg-tertiary" style={{ backgroundImage: "url('https://demo.alhikmahsoft.com/template/stir/assets/images/shape-4.png')", backgroundRepeat: "no-repeat", backgroundSize: "contain", backgroundPosition: "center" }}>
-      <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-30">
+      <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-50">
         {/* Text Content */}
-        <div className="">
-          <h1 className="text-dark font-600 large-text uppercase">
+        <div className="pr-15 sm-pr-1">
+          <p className="text-primary font-600 uppercase headpara-text">👋 WHAT WE DO</p>
+          <h1 className="text-dark font-600 large-text uppercase pt-12">
             Delivering Unique Solutions for Success
           </h1>
           <p className="text-gray font-400 para-text mt-12">
-            👋 Welcome to Stir, where innovation meets strategy & excellence is our standard. As a premier business agency, Business agencies are specialized entities...
+            Welcome to Stir, where innovation meets strategy & excellence is our standard. As a premier business agency, Business agencies are specialized entities...
           </p>
           <Button
             onClick={() => navigate('/connect')}
@@ -28,23 +29,25 @@ const Hero = () => {
         </div>
 
         {/* Visual Content */}
-        <div className="relative">
-          <Image
-            src="https://demo.alhikmahsoft.com/template/stir/assets/images/who-we-are-img-2.jpg"
-            alt="Digital Agency Team"
-            className="w-full object-cover h-500 flex rounded-10"
-          />
+        <div className="pl-15 sm-pl-1">
+          <div className='relative'>
+            <Image
+              src="https://unifato.com/finazze/assets/img/all-images/others/hero-h2-img2.png"
+              alt="Digital Agency Team"
+              className="w-full object-cover h-550 flex rounded-10"
+            />
 
-          {/* User Testimonial Overlay Card */}
-          <div className="absolute bottom-0 left-0 m-10" style={{ maxWidth: '50%' }}>
-            <div className='p-20 bg-white rounded-5'>
-              <div className="flex items-center gap-12">
-                <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-1.jpg" alt="User" />
-                <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-2.jpg" alt="User" />
-                <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-3.jpg" alt="User" />
+            {/* User Testimonial Overlay Card */}
+            <div className="absolute bottom-0 left-0 m-10" style={{ maxWidth: '55%' }}>
+              <div className='p-20 bg-white rounded-5'>
+                <div className="flex items-center gap-12">
+                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-1.jpg" alt="User" />
+                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-2.jpg" alt="User" />
+                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-3.jpg" alt="User" />
+                </div>
+                <h5 className="text-dark font-500 mid-text pt-12">Juan Manuel</h5>
+                <p className="text-gray font-400 small-text">"The depth of exploration and quality was great."</p>
               </div>
-              <h5 className="text-dark font-500 mid-text pt-12">Juan Manuel</h5>
-              <p className="text-gray font-400 small-text">"The depth of exploration and quality was great."</p>
             </div>
           </div>
         </div>

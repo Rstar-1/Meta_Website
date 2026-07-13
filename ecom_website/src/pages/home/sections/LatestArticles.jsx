@@ -1,28 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
-import Image from '../../../components/common/Image';
-import Icon from '../../../components/common/Icon';
 import Accordion from '../../../components/common/Accordion';
 
 const LatestArticles = () => {
-  const navigate = useNavigate();
-
-  const articles = [
-    {
-      id: 1,
-      image: "https://demo.alhikmahsoft.com/template/stir/assets/images/blog-3.jpg",
-      tags: ["Branding", "Development", "Marketing", "3 Min Read"],
-      title: "Improving user experience (UX) and user interface (UI) design on websites, apps,"
-    },
-    {
-      id: 2,
-      image: "https://demo.alhikmahsoft.com/template/stir/assets/images/blog-4.jpg",
-      tags: ["Branding", "Development", "Marketing", "3 Min Read"],
-      title: "Creating chatbot solutions for websites and social media platforms to automate customer,"
-    }
-  ];
-
   const faqs = [
     {
       id: 1,
@@ -47,7 +27,6 @@ const LatestArticles = () => {
   ];
 
   return (
-
     <Container>
       <style>{`
         @keyframes scrollMarqueeBlog {

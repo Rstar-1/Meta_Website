@@ -40,17 +40,17 @@ const Home = () => {
       <Hero />
       <BrowseCategory />
 
-      <LazySection placeholderHeight="500px">
-        <WhyChoose />
-      </LazySection>
       <LazySection placeholderHeight="600px">
         <FeaturedBusinesses />
       </LazySection>
       <LazySection placeholderHeight="500px">
-        <LatestArticles />
+        <WhyChoose />
       </LazySection>
       <LazySection placeholderHeight="400px">
         <TopCity />
+      </LazySection>
+      <LazySection placeholderHeight="500px">
+        <LatestArticles />
       </LazySection>
       <LazySection placeholderHeight="400px">
         <Review />

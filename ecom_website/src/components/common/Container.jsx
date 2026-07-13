@@ -2,7 +2,7 @@ import React from "react";
 
 const Container = ({
     children,
-    version = "v2",
+    version = "v1",
     className = "",
     style = {},
 }) => {

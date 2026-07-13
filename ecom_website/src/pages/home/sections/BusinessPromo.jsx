@@ -7,27 +7,29 @@ const BusinessPromo = () => {
   const navigate = useNavigate();
 
   return (
-    <Container className='bg-primary'>
-      <div className='w-full flex items-center justify-between py-25'>
-        <div className='w-80'>
-          <h2 className="text-white font-600 head-text mt-8">
-            Let’s Work Together
-          </h2>
-          <p className="text-white small-text mt-4">
-            We are digital agency that helps businesses develop immersive and engaging user experiences.
-          </p>
-        </div>
+    <div className='bg-primary'>
+      <Container>
+        <div className='w-full flex items-center justify-between py-30'>
+          <div className='w-80'>
+            <h2 className="text-white font-600 head-text mt-8">
+              Let’s Work Together
+            </h2>
+            <p className="text-white small-text mt-4">
+              We are digital agency that helps businesses develop immersive and engaging user experiences.
+            </p>
+          </div>
 
-        <Button
-          onClick={() => navigate('/connect')}
-          bg='white'
-          color='primary'
-          version='v2'
-          text='Explore More'
-          className='mt-16'
-        />
-      </div >
-    </Container >
+          <Button
+            onClick={() => navigate('/connect')}
+            bg='white'
+            color='primary'
+            version='v2'
+            text='Explore More'
+            className='mt-16'
+          />
+        </div >
+      </Container>
+    </div>
   );
 };
 

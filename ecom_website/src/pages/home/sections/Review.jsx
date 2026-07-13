@@ -36,7 +36,7 @@ const Review = () => {
       <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 gap-12 items-center">
         {/* Left Column - Content */}
         <div>
-          <p className="text-primary font-500 uppercase mini-text">TESTIMONIALS</p>
+          <p className="text-primary font-500 uppercase small-text">TESTIMONIALS</p>
           <h4 className="text-dark font-600 head-text uppercase mt-5">What Our Clients Say</h4>
 
           {/* Stars */}
@@ -56,7 +56,7 @@ const Review = () => {
 
           {/* Testimonial Active Slide */}
           <div className="mt-22">
-            <p className="text-gray font-500 small-text px-14 py-9" style={{ borderLeft: '3px solid var(--primary)' }}>
+            <p className="text-gray font-400 small-text px-14 py-10" style={{ borderLeft: '3px solid var(--primary)' }}>
               "{testimonials[activeIdx].text}"
             </p>
 
@@ -90,7 +90,7 @@ const Review = () => {
           <Image
             src="https://demo.alhikmahsoft.com/template/stir/assets/images/testimonial-5.jpg"
             alt="Testimonials Meeting"
-            className="w-full object-cover h-450 flex"
+            className="w-full object-cover h-500 flex"
           />
         </div>
       </div>

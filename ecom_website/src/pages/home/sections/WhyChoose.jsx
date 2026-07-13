@@ -11,7 +11,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <Container version='v0'>
+    <Container>
       <style>{`
         .skill-bar-container {
           margin-bottom: 25px;
@@ -31,7 +31,7 @@ const WhyChoose = () => {
           transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
-      <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 gap-12 items-center">
+      <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 gap-12 items-center py-60">
         {/* Left Column - Image */}
         <div className='relative'>
           <Image
