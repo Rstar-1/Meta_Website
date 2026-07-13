@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
-import Icon from '../../../components/common/Icon';
 
 const FeaturedBusinesses = () => {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
-
   const cases = [
     {
       id: 1,
@@ -75,7 +72,7 @@ const FeaturedBusinesses = () => {
         }
       `}</style>
 
-      <div className="marquee-cases-container mb-80">
+      <div className="marquee-cases-container">
         <div className="marquee-cases-content">
           <span className="marquee-cases-text">OUR LATEST CASES • </span>
           <span className="marquee-cases-text">OUR LATEST CASES • </span>
@@ -85,7 +82,7 @@ const FeaturedBusinesses = () => {
       </div>
 
       <Container>
-        <div>
+        <div className='w-full mt-50'>
           {/* Cases Grid */}
           <div className="grid-cols-3 md-grid-cols-1 sm-grid-cols-1 gap-12">
             {cases.map((item) => (

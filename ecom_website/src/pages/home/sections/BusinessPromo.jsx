@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
-import Icon from '../../../components/common/Icon';
 import Button from '../../../components/common/Button';
 
 const BusinessPromo = () => {

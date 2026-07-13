@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';
+import Accordion from '../../../components/common/Accordion';
 
 const LatestArticles = () => {
   const navigate = useNavigate();
@@ -22,8 +23,32 @@ const LatestArticles = () => {
     }
   ];
 
+  const faqs = [
+    {
+      id: 1,
+      question: "What services does SOBO Marketing Solution offer?",
+      answer: "We offer a wide range of services including branding design, website development, digital marketing, social media management, search engine optimization (SEO), and analytics performance tracking."
+    },
+    {
+      id: 2,
+      question: "How do you ensure high-quality delivery for B2B industrial clients?",
+      answer: "We leverage industry-specific market insights, custom branding strategies, and modern technologies to craft websites and campaigns that resonate with industrial B2B audiences and generate qualified leads."
+    },
+    {
+      id: 3,
+      question: "Can I customize the marketing packages for my brand?",
+      answer: "Yes, absolutely! We believe every business is unique. We offer tailor-made strategies and flexible pricing models to suit your specific growth objectives and budget requirements."
+    },
+    {
+      id: 4,
+      question: "How do I get started with a design or marketing workshop?",
+      answer: "You can easily get started by navigating to our Connect page or clicking the 'Explore More' / 'Let's Talk' button. Fill out the contact form, and our team will reach out within 24 hours to schedule a consultation."
+    }
+  ];
+
   return (
-    <section className="bg-white py-80 sm-py-60" style={{ fontFamily: "'Outfit', sans-serif" }}>
+
+    <Container>
       <style>{`
         @keyframes scrollMarqueeBlog {
           0% { transform: translateX(0); }
@@ -74,57 +99,20 @@ const LatestArticles = () => {
         }
       `}</style>
 
-      {/* Marquee Banner */}
-      <div className="marquee-blog-container mb-80">
-        <div className="marquee-blog-content">
-          <span className="marquee-blog-text">OUR LATEST ARTICLES • </span>
-          <span className="marquee-blog-text">OUR LATEST ARTICLES • </span>
-          <span className="marquee-blog-text">OUR LATEST ARTICLES • </span>
-          <span className="marquee-blog-text">OUR LATEST ARTICLES • </span>
+      {/* FAQ Section */}
+      <div className="w-full py-60">
+        <div className="text-center mb-40">
+          <p className="text-primary font-500 uppercase small-text">FAQ</p>
+          <h2 className="text-dark font-600 head-text uppercase pt-8">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div>
+          <Accordion items={faqs} allowMultiple={false} />
         </div>
       </div>
-
-      <Container version="v1">
-        <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 gap-40">
-          {articles.map((item) => (
-            <div key={item.id} className="blog-card flex flex-column gap-20 p-15 border border-ec">
-              <div className="blog-img-wrap">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full object-cover blog-img"
-                  style={{ height: '320px' }}
-                />
-              </div>
-              <div className="px-10 pb-10">
-                <div className="flex flex-wrap gap-8 mb-15">
-                  {item.tags.map((tag, i) => (
-                    <span key={i} className="bg-forth text-gray font-500 mini-text px-12 py-4 rounded-5">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 
-                  onClick={() => navigate('/blog')}
-                  className="text-dark font-600 leading-snug hover:text-primary transition-colors cursor-pointer mb-20" 
-                  style={{ fontSize: '20px' }}
-                >
-                  {item.title}
-                </h3>
-                <a
-                  href="/blog"
-                  className="flex items-center gap-8 font-600 text-dark hover:text-primary transition-all small-text"
-                  style={{ textDecoration: 'none' }}
-                >
-                  <span>Read Article</span>
-                  <Icon name="ArrowRight" width="14" height="14" stroke="currentColor" strokeWidth="2.5" />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
+    </Container>
   );
 };
 
