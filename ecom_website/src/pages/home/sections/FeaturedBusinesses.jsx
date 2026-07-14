@@ -81,7 +81,7 @@ const FeaturedBusinesses = () => {
         </div>
       </div>
 
-      <Container className='bg-tertiary'>
+      <Container>
         <div className='w-full py-60'>
           <div className="text-center">
             <p className="text-primary font-500 uppercase small-text">WHAT WE DO</p>
@@ -106,7 +106,7 @@ const FeaturedBusinesses = () => {
                   </h3>
                   <div className="flex gap-12 mt-6">
                     {item.tags.map((tag, i) => (
-                      <p key={i} className="bg-white text-gray font-400 mini-text px-12 py-4 rounded-5 border-ec">
+                      <p key={i} className="bg-forth text-gray font-400 mini-text px-12 py-4 rounded-5">
                         {tag}
                       </p>
                     ))}

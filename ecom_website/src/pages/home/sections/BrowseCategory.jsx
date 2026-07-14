@@ -68,7 +68,7 @@ const BrowseCategory = () => {
         }
       `}</style>
 
-      <div className='py-70'>
+      <div className='py-60'>
         <div className="text-center">
           <p className="text-primary font-500 uppercase small-text">WHAT WE DO</p>
           <h2 className="text-dark font-600 head-text uppercase pt-8">
@@ -78,7 +78,7 @@ const BrowseCategory = () => {
 
         <div className="grid-cols-3 md-grid-cols-2 sm-grid-cols-1 mt-40" style={{ gap: '30px' }}>
           {services.map((item) => (
-            <div key={item.id} className="service-card py-40 px-35 rounded-10">
+            <div key={item.id} className="service-card py-35 px-30 rounded-10">
               <div>
                 <div className="service-icon-bg">
                   <Image src={item.icon} alt={item.title} width='30px' height='30px' className="flex object-contain" />

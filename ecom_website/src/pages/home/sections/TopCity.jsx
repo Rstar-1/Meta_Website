@@ -32,7 +32,7 @@ const TopCity = () => {
   ];
 
   return (
-    <Container className='bg-forth'>
+    <Container>
       <style>{`
         .team-card {
           transition: all 0.4s ease;

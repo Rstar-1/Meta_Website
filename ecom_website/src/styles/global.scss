@@ -7,20 +7,6 @@
   color: var(--primary) !important;
 }
 
-.navbar .navhide {
-  position: absolute;
-  right: -50%;
-  width: 50% !important;
-  transition: all 0.3s ease-in 0s;
-}
-
-.navbar .navview {
-  position: absolute;
-  right: 0%;
-  width: 100% !important;
-  transition: all 0.3s ease-in 0s;
-}
-
 /* ======================= End-NavFoot ======================= */
 
 /* ======================= Footer Dark Theme Styles ======================= */

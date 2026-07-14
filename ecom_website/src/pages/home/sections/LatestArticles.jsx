@@ -33,7 +33,7 @@ const LatestArticles = () => {
   };
 
   return (
-    <Container>
+    <Container className='bg-forth'>
       <div className='py-80'>
         <Image
           src="https://demo.alhikmahsoft.com/template/stir/assets/images/faq-img.jpg"
