@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 
-const FeaturedBusinesses = () => {
+const CaseStudies = () => {
   const cases = [
     {
       id: 1,
@@ -29,13 +29,13 @@ const FeaturedBusinesses = () => {
       title: "Running targeted paid advertisements on social media platforms to reach specific,"
     },
     {
-      id: 1,
+      id: 5,
       image: "https://demo.alhikmahsoft.com/template/stir/assets/images/case-study-6.jpg",
       tags: ["Branding", "Development", "Marketing"],
       title: "Creating high-quality video content, including promotional videos, tutorials,"
     },
     {
-      id: 2,
+      id: 6,
       image: "https://demo.alhikmahsoft.com/template/stir/assets/images/case-study-8.jpg",
       tags: ["Branding", "Development", "Marketing"],
       title: "Optimizing online presence for local businesses, including local SEO strategies,"
@@ -54,8 +54,8 @@ const FeaturedBusinesses = () => {
           </div>
           {/* Cases Grid */}
           <div className="grid-cols-3 md-grid-cols-1 sm-grid-cols-1 mt-35" style={{ gap: '30px' }}>
-            {cases.map((item) => (
-              <div key={item.id} className="">
+            {cases.map((item, idx) => (
+              <div key={idx} className="">
                 <div className="">
                   <Image
                     src={item.image}
@@ -84,4 +84,4 @@ const FeaturedBusinesses = () => {
   );
 };
 
-export default FeaturedBusinesses;
+export default CaseStudies;

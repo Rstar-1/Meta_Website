@@ -3,7 +3,7 @@ import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';
 
-const Review = () => {
+const Reviews = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   const testimonials = [
@@ -98,4 +98,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default Reviews;

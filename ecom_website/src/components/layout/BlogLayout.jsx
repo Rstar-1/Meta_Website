@@ -7,7 +7,7 @@ import Fields from '../common/Fields';
 import Banner from './Banner';
 import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
-import LatestArticles from '../../pages/home/sections/LatestArticles';
+import FAQSection from '../../pages/home/sections/FAQSection';
 import NewsletterForm from '../forms/NewsletterForm';
 
 import { formatDate } from '../../utils/formatDate';
@@ -592,7 +592,7 @@ const BlogLayout = ({
         </Container>
       </div>
 
-      {type === 'detail' && <LatestArticles />}
+      {type === 'detail' && <FAQSection />}
     </>
   );
 };

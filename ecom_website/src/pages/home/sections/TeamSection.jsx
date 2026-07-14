@@ -3,7 +3,7 @@ import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';
 
-const TopCity = () => {
+const TeamSection = () => {
   const team = [
     {
       id: 1,
@@ -105,4 +105,4 @@ const TopCity = () => {
   );
 };
 
-export default TopCity;
+export default TeamSection;

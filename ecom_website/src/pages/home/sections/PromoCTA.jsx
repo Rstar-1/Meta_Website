@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 
-const BusinessPromo = () => {
+const PromoCTA = () => {
   const navigate = useNavigate();
 
   return (
@@ -33,4 +33,4 @@ const BusinessPromo = () => {
   );
 };
 
-export default BusinessPromo;
+export default PromoCTA;

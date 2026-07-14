@@ -3,7 +3,7 @@ import Container from '../../../components/common/Container';
 import Icon from '../../../components/common/Icon';
 import Image from '../../../components/common/Image';
 
-const BrowseCategory = () => {
+const BrowseServices = () => {
   const services = [
     {
       id: 1,
@@ -95,4 +95,4 @@ const BrowseCategory = () => {
   );
 };
 
-export default BrowseCategory;
+export default BrowseServices;

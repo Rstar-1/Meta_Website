@@ -4,9 +4,9 @@ import DetailSection from './sections/DetailSection'
 import Timeline from './sections/Timeline'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import OrganizationSchema from '../../components/seo/OrganizationSchema'
-import LatestArticles from '../home/sections/LatestArticles'
-import BusinessPromo from '../home/sections/BusinessPromo'
-import Review from '../home/sections/Review'
+import FAQSection from '../home/sections/FAQSection'
+import PromoCTA from '../home/sections/PromoCTA'
+import Reviews from '../home/sections/Reviews'
 
 const About = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
@@ -32,9 +32,9 @@ const About = () => {
       />
       <Timeline />
       <DetailSection />
-      <LatestArticles />
-      <BusinessPromo />
-      <Review />
+      <FAQSection />
+      <PromoCTA />
+      <Reviews />
     </>
   )
 }

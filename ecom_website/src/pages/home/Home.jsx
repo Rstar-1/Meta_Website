@@ -5,14 +5,14 @@ import WebsiteSchema from '../../components/seo/WebsiteSchema';
 import OrganizationSchema from '../../components/seo/OrganizationSchema';
 import SiteNavigationSchema from '../../components/seo/SiteNavigationSchema';
 
-import BrowseCategory from './sections/BrowseCategory';
+import BrowseServices from './sections/BrowseServices';
 import WhyChoose from './sections/WhyChoose';
-import FeaturedBusinesses from './sections/FeaturedBusinesses';
+import CaseStudies from './sections/CaseStudies';
 import Marquee from './sections/Marquee';
-import BusinessPromo from './sections/BusinessPromo';
-import LatestArticles from './sections/LatestArticles';
-import TopCity from './sections/TopCity';
-import Review from './sections/Review';
+import PromoCTA from './sections/PromoCTA';
+import FAQSection from './sections/FAQSection';
+import TeamSection from './sections/TeamSection';
+import Reviews from './sections/Reviews';
 import LazySection from '../../components/common/LazySection';
 
 const Home = () => {
@@ -42,25 +42,25 @@ const Home = () => {
       <LazySection placeholderHeight="140px">
         <Marquee text="OUR LATEST CASES • " />
       </LazySection>
-      <BrowseCategory />
+      <BrowseServices />
 
       <LazySection placeholderHeight="500px">
         <WhyChoose />
       </LazySection>
       <LazySection placeholderHeight="600px">
-        <FeaturedBusinesses />
+        <CaseStudies />
       </LazySection>
       <LazySection placeholderHeight="400px">
-        <TopCity />
+        <TeamSection />
       </LazySection>
       <LazySection placeholderHeight="500px">
-        <LatestArticles />
+        <FAQSection />
       </LazySection>
       <LazySection placeholderHeight="400px">
-        <Review />
+        <Reviews />
       </LazySection>
       <LazySection placeholderHeight="300px">
-        <BusinessPromo />
+        <PromoCTA />
       </LazySection>
     </>
   );

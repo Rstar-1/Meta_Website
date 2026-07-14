@@ -3,7 +3,7 @@ import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Accordion from '../../../components/common/Accordion';
 
-const LatestArticles = () => {
+const FAQSection = () => {
   const faqs = [
     {
       id: 1,
@@ -44,4 +44,4 @@ const LatestArticles = () => {
   );
 };
 
-export default LatestArticles;
+export default FAQSection;

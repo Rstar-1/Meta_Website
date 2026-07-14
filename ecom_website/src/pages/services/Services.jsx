@@ -1,8 +1,8 @@
 import React from 'react';
 import Banner from '../../components/layout/Banner';
-import BrowseCategory from '../home/sections/BrowseCategory';
+import BrowseServices from '../home/sections/BrowseServices';
 import WhyChoose from '../home/sections/WhyChoose';
-import BusinessPromo from '../home/sections/BusinessPromo';
+import PromoCTA from '../home/sections/PromoCTA';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 
 const Services = () => {
@@ -29,11 +29,11 @@ const Services = () => {
       />
       
       {/* Services Grid Section */}
-      <BrowseCategory />
+      <BrowseServices />
       
       {/* Additional value-adding sections */}
       <WhyChoose />
-      <BusinessPromo />
+      <PromoCTA />
     </>
   );
 };
