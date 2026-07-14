@@ -1,64 +1,73 @@
 {
   "navLinks": [
-    { "href": "/home", "label": "Home" },
-    { "href": "/about", "label": "About Us" },
-    { "href": "/blog", "label": "Blogs" },
     {
-      "label": "Products",
+      "href": "/home",
+      "label": "Home"
+    },
+    {
+      "href": "/about",
+      "label": "About Us"
+    },
+    {
+      "href": "/blog",
+      "label": "Blogs"
+    },
+    {
+      "label": "Projects",
       "hasMegaMenu": true,
       "width": "960px",
       "cols": "grid-cols-3"
     },
     {
-      "label": "Industry",
-      "hasMegaMenu": true,
-      "width": "650px",
-      "cols": "grid-cols-2"
+      "href": "/services",
+      "label": "Services"
     },
-    { "href": "/connect", "label": "Connect" }
+    {
+      "href": "/connect",
+      "label": "Connect"
+    }
   ],
-  "productsMenu": {
-    "bannerImage": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
-    "bannerTitle": "Industrial Telemetry",
-    "bannerDesc": "See how Metatech powers modern automated assembly lines globally.",
-    "bannerLinkText": "Read Case Studies",
+  "projectsMenu": {
+    "bannerImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+    "bannerTitle": "Featured Projects",
+    "bannerDesc": "Explore our successful B2B transformations and engineering projects.",
+    "bannerLinkText": "View All Projects",
     "sections": [
       {
-        "title": "Systems Catalog",
+        "title": "Web Developments",
         "items": [
-          "Robotics & Automation",
-          "Heavy Machinery",
-          "Precision Tooling",
-          "Hydraulic Power Systems",
-          "CNC Armatures"
+          "B2B Portal Integration",
+          "E-Commerce Suite",
+          "Enterprise CMS Solutions",
+          "SaaS Dashboard Design"
         ]
       },
       {
-        "title": "Services & Commissioning",
+        "title": "Marketing Campaigns",
         "items": [
-          "On-site Calibration",
-          "Custom Integration",
-          "CAD Modeling",
-          "PLC Configuration",
-          "Firmware Updates"
+          "SEO Optimization",
+          "Branding & Design",
+          "Social Campaigns",
+          "PPC Campaigns"
         ]
       }
     ]
   },
-  "industryMenu": {
-    "bannerImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-    "bannerTitle": "OEM Integration",
-    "bannerDesc": "Certified standard-setting built with industry leaders.",
-    "bannerLinkText": "View Partners",
+  "servicesMenu": {
+    "bannerImage": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
+    "bannerTitle": "Our Main Services",
+    "bannerDesc": "Full-spectrum digital marketing and B2B solutions to drive leads and sales.",
+    "bannerLinkText": "Go to Services Page",
     "sections": [
       {
-        "title": "Product Categories",
+        "title": "Core Offerings",
         "items": [
-          "Steel Products",
-          "PVC Products",
-          "Industrial Machinery",
-          "Electrical & Electronics",
-          "Packaging Solutions"
+          "Branding Design",
+          "Website Development",
+          "Digital Marketing",
+          "Social Media Management",
+          "Analytics & Performance",
+          "SEO Optimization"
         ]
       }
     ]

@@ -1,49 +1,115 @@
-import { useState } from "react";
+import { memo, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Container from "../common/Container";
 import Button from "../common/Button";
 import Image from "../common/Image";
+import Icon from "../common/Icon";
 import headerData from "../../data/header.json";
 
 const logoImg = "/sobo_logo.webp";
 
+const ProjectsMenu = ({ onItemClick }) => (
+  <>
+    <style>{`
+      .mega-menu-item {
+        padding: 10px 0px;
+        cursor: pointer;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .mega-menu-item:hover {
+        background-color: var(--tertiary) !important;
+        transform: translateX(3px);
+      }
+      .mega-menu-item:hover p {
+        color: var(--primary) !important;
+      }
+      .mega-menu-link:hover {
+        color: var(--primary) !important;
+      }
+      .arrow-icon {
+        font-size: 0.8rem;
+        color: var(--gray);
+        opacity: 0;
+        transform: translateX(-5px);
+        transition: all 0.2s ease;
+        padding-right: 15px;
+      }
+      .mega-menu-item:hover .arrow-icon {
+        opacity: 1;
+        transform: translateX(0);
+        color: var(--primary) !important;
+      }
+    `}</style>
+    <div className="bg-tertiary p-18">
+      <Image
+        src={headerData.projectsMenu.bannerImage}
+        alt="Projects"
+        className="flex w-full h-200 object-cover rounded-5"
+      />
+      <h4 className="mid-text text-dark font-500 pt-20">{headerData.projectsMenu.bannerTitle}</h4>
+      <p className="small-text text-gray font-400 mt-6">
+        {headerData.projectsMenu.bannerDesc}
+      </p>
+      <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link flex items-center gap-4" onClick={() => onItemClick()}>
+        {headerData.projectsMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
+      </p>
+    </div>
+    {headerData.projectsMenu.sections.map((section, idx) => (
+      <div key={idx} className="p-18">
+        <p className="text-gray uppercase mini-text font-500">
+          {section.title}
+        </p>
+        <div className="grid grid-cols-1 gap-8 mt-8">
+          {section.items.map((item, itemIdx) => (
+            <div
+              key={itemIdx}
+              className="mega-menu-item"
+              onClick={() => onItemClick()}
+            >
+              <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>
+                {item}
+              </p>
+              <span className="arrow-icon">
+                <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </>
+);
+
+const MegaMenuContent = memo(({ label, onItemClick }) => {
+  switch (label) {
+    case "Projects":
+      return <ProjectsMenu onItemClick={onItemClick} />;
+    default:
+      return null;
+  }
+});
+
 const Header = () => {
   const navigate = useNavigate();
+  const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(null);
 
-  const navLinks = [
-    { href: "/home", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { 
-      label: "Blogs", 
-      href: "/blog", 
-      submenu: [
-        { label: "All Blogs", href: "/blog" },
-        { label: "Design & Branding", href: "/blog" },
-        { label: "Development & Tech", href: "/blog" },
-        { label: "Marketing Strategy", href: "/blog" }
-      ] 
-    },
-    { href: "/services", label: "Services" },
-    { href: "/connect", label: "Connect" }
-  ];
-
-  const handleNavClick = (e, href) => {
-    if (href.includes('#')) {
-      const [path, hash] = href.split('#');
-      const currentPath = window.location.pathname;
-      if (currentPath === path || (currentPath === '/' && path === '/home')) {
-        e.preventDefault();
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+  const handleItemClick = (path) => {
+    setActiveMenu(null);
+    if (path) {
+      navigate(path);
+    } else {
+      navigate("/");
     }
   };
 
   return (
-    <div className="bg-white">
+    <>
       <Container className="navbar">
         <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
           <div className="flex items-center gap-8">
@@ -52,9 +118,9 @@ const Header = () => {
                 src={logoImg}
                 alt="SOBO Marketing Solution Logo"
                 width="128"
-                height="50"
+                height="42"
                 style={{
-                  maxHeight: '50px',
+                  maxHeight: '42px',
                   width: 'auto',
                   objectFit: 'contain'
                 }}
@@ -62,77 +128,49 @@ const Header = () => {
             </NavLink>
 
             <div className="flex sm-hidden md-hidden items-center h-full ml-40">
-              <style>{`
-                .nav-item-container {
-                  position: relative;
-                  display: flex;
-                  align-items: center;
-                  height: 65px;
-                }
-                .submenu-container {
-                  position: absolute;
-                  top: 100%;
-                  left: 50%;
-                  transform: translateX(-50%) translateY(10px);
-                  background: #ffffff;
-                  min-width: 180px;
-                  border-radius: 6px;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-                  border: 1px solid #eeeeee;
-                  padding: 10px 0;
-                  visibility: hidden;
-                  opacity: 0;
-                  transition: all 0.2s ease;
-                  z-index: 100;
-                  display: flex;
-                  flex-direction: column;
-                }
-                .nav-item-container:hover .submenu-container {
-                  visibility: visible;
-                  opacity: 1;
-                  transform: translateX(-50%) translateY(0);
-                }
-                .submenu-link {
-                  display: block;
-                  padding: 10px 20px;
-                  font-size: 14px;
-                  font-weight: 500;
-                  color: var(--dark) !important;
-                  text-decoration: none !important;
-                  transition: all 0.2s ease;
-                  white-space: nowrap;
-                  text-align: left;
-                }
-                .submenu-link:hover {
-                  background: var(--forth);
-                  color: var(--primary) !important;
-                }
-              `}</style>
-              {navLinks.map((item, i) => (
+              {headerData.navLinks?.map((item, i) => (
                 <div
                   key={i}
-                  className="nav-item-container"
+                  className="relative flex items-center"
+                  onMouseEnter={() =>
+                    item?.hasMegaMenu && setActiveMenu(item?.label)
+                  }
+                  onMouseLeave={() => setActiveMenu(null)}
+                  style={{ height: "65px", display: "flex", alignItems: "center" }}
                 >
-                  <NavLink
-                    to={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="small-text font-500 px-20 py-6 cursor-pointer text-dark"
-                    style={{ textDecoration: "none" }}
-                  >
-                    {item.label}
-                  </NavLink>
+                  {!item?.hasMegaMenu ? (
+                    <NavLink
+                      to={item?.href}
+                      className="small-text font-500 px-20 py-6 cursor-pointer text-dark"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {item?.label}
+                    </NavLink>
+                  ) : (
+                    <p className="small-text text-dark font-500 px-20 py-6 cursor-pointer">
+                      {item?.label}
+                    </p>
+                  )}
 
-                  {item.submenu && (
-                    <div className="submenu-container">
-                      {item.submenu.map((sub, idx) => (
-                        <NavLink
-                          key={idx}
-                          to={sub.href}
-                          className="submenu-link"
-                        >
-                          {sub.label}
-                        </NavLink>
-                      ))}
+                  {item?.hasMegaMenu && activeMenu === item?.label && (
+                    <div
+                      className="absolute z-50 bg-white border-ec"
+                      style={{
+                        top: "65px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        maxWidth: "90vw",
+                      }}
+                    >
+                      <div
+                        className={`grid ${item?.cols} items-start`}
+                        style={{ width: item?.width, maxWidth: "100%" }}
+                      >
+                        <MegaMenuContent
+                          label={item?.label}
+                          onItemClick={handleItemClick}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
@@ -141,6 +179,7 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-12 sm-gap-1">
+
             <div className="sm-hidden md-hidden">
               <Button
                 text="Talk to Engineer"
@@ -155,6 +194,7 @@ const Header = () => {
               className="hidden md-block sm-block cursor-pointer"
               onClick={() => {
                 setIsMobileOpen(!isMobileOpen);
+                setOpenMobileMenu(null);
               }}
               style={{ border: "none", color: "var(--dark)" }}
               icon={isMobileOpen ? "Close" : "Menu"}
@@ -170,43 +210,58 @@ const Header = () => {
       {isMobileOpen && (
         <div className="mobile-drawer bg-forth px-24 py-20">
           <div className="grid-cols-1">
-            {navLinks.map((item, i) => (
-              <div key={i} className="bordb py-12">
-                {item.submenu ? (
-                  <div>
-                    <p className="para-text font-500 text-dark mb-8" style={{ margin: 0 }}>
-                      {item.label}
-                    </p>
-                    <div className="pl-12 flex flex-column gap-8 mt-8">
-                      {item.submenu.map((sub, idx) => (
-                        <NavLink
-                          key={idx}
-                          to={sub.href}
-                          onClick={() => setIsMobileOpen(false)}
-                          style={{ textDecoration: "none" }}
-                          className="small-text font-400 text-gray"
+            {headerData.navLinks.map((item, i) => {
+              const isExpanded = openMobileMenu === item.label;
+              const hasMega = item.hasMegaMenu;
+              return (
+                <div key={i} className="bordb py-12">
+                  {hasMega ? (
+                    <>
+                      <div
+                        className="flex items-center justify-between cursor-pointer"
+                        onClick={() => setOpenMobileMenu(isExpanded ? null : item.label)}
+                      >
+                        <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
+                          {item.label}
+                        </p>
+                        <span
+                          className="text-dark flex items-center justify-center"
+                          style={{
+                            transition: "transform 0.2s ease",
+                            transform: isExpanded ? "rotate(90deg)" : "none",
+                            display: "inline-block"
+                          }}
                         >
-                          {sub.label}
-                        </NavLink>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <NavLink
-                    to={item.href}
-                    onClick={(e) => {
-                      setIsMobileOpen(false);
-                      handleNavClick(e, item.href);
-                    }}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
-                      {item.label}
-                    </p>
-                  </NavLink>
-                )}
-              </div>
-            ))}
+                          <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />
+                        </span>
+                      </div>
+                      {isExpanded && (
+                        <div className="mt-12 bg-white rounded-5 border-ec grid grid-cols-1 gap-16 overflow-hidden">
+                          <MegaMenuContent
+                            label={item.label}
+                            onItemClick={(path) => {
+                              setIsMobileOpen(false);
+                              setOpenMobileMenu(null);
+                              handleItemClick(path);
+                            }}
+                          />
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <NavLink
+                      to={item.href || "/products"}
+                      onClick={() => setIsMobileOpen(false)}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
+                        {item.label}
+                      </p>
+                    </NavLink>
+                  )}
+                </div>
+              );
+            })}
             <Button
               text="Talk to Engineer"
               version="v3"
@@ -220,7 +275,7 @@ const Header = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
