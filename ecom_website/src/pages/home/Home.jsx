@@ -53,11 +53,11 @@ const Home = () => {
       <LazySection placeholderHeight="400px">
         <TeamSection />
       </LazySection>
-      <LazySection placeholderHeight="500px">
-        <FAQSection />
-      </LazySection>
       <LazySection placeholderHeight="400px">
         <Reviews />
+      </LazySection>
+      <LazySection placeholderHeight="500px">
+        <FAQSection />
       </LazySection>
       <LazySection placeholderHeight="300px">
         <PromoCTA />
