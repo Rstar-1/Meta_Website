@@ -13,17 +13,17 @@ const Hero = () => {
         <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-50">
           {/* Text Content */}
           <div className="pr-15 sm-pr-1">
-            <p className="text-gray font-500 uppercase para-text">👋 Strategic Solutions</p>
+            <p className="text-gray font-500 uppercase para-text">🚀 GROW YOUR BRAND</p>
             <h1 className="text-dark font-600 large-text uppercase pt-12">
-              Navigate B2B To Markets Ease
+              Transforming Ideas Into Digital Success
             </h1>
             <p className="text-gray font-400 para-text mt-12">
-              Welcome to SOBO Marketing Solution, where innovation meets industrial commerce & excellence is our standard. We are dedicated to providing premier B2B solutions, high-quality printing cartridges, and durable stainless steel products to power your business growth.
+              Welcome to our premier digital agency. We design high-converting websites, launch high-yield Meta advertising campaigns, and optimize search engine visibility (SEO) to accelerate your business growth.
             </p>
             <Button
               onClick={() => navigate('/connect')}
               version='v2'
-              text='Explore More'
+              text='Get Started'
               icon='Management'
               className='mt-26'
             />
@@ -47,7 +47,7 @@ const Hero = () => {
                     <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-3.jpg" alt="User" />
                   </div>
                   <h5 className="text-dark font-500 mid-text pt-12">Juan Manuel</h5>
-                  <p className="text-gray font-400 small-text">"The depth of exploration and quality was great."</p>
+                  <p className="text-gray font-400 small-text">"Their Meta campaign strategy grew our sales by 150%!"</p>
                 </div>
               </div>
             </div>

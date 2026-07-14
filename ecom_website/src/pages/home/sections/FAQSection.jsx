@@ -7,23 +7,23 @@ const FAQSection = () => {
   const faqs = [
     {
       id: 1,
-      question: "What services does SOBO Marketing Solution offer?",
-      answer: "We offer a wide range of services including branding design, website development, digital marketing, social media management, search engine optimization (SEO), and analytics performance tracking."
+      question: "What services does your digital agency offer?",
+      answer: "We offer full-service digital solutions including custom website development, Meta/social media advertising campaigns, advanced search engine optimization (SEO), branding design, and growth analytics."
     },
     {
       id: 2,
-      question: "How do you ensure high-quality delivery for B2B industrial clients?",
-      answer: "We leverage industry-specific market insights, custom branding strategies, and modern technologies to craft websites and campaigns that resonate with industrial B2B audiences and generate qualified leads."
+      question: "How do you design and optimize campaigns for lead generation?",
+      answer: "We combine modern UX design, data-driven Meta campaigns, and targeted search optimization. Every project includes comprehensive keyword research and high-accuracy conversion tracking to maximize ROI."
     },
     {
       id: 3,
-      question: "Can I customize the marketing packages for my brand?",
-      answer: "Yes, absolutely! We believe every business is unique. We offer tailor-made strategies and flexible pricing models to suit your specific growth objectives and budget requirements."
+      question: "Can I customize the design and SEO packages?",
+      answer: "Yes, absolutely! We customize our website design, Meta advertising, and SEO strategy to match your specific industry, growth goals, and marketing budget."
     },
     {
       id: 4,
-      question: "How do I get started with a design or marketing workshop?",
-      answer: "You can easily get started by navigating to our Connect page or clicking the 'Explore More' / 'Let's Talk' button. Fill out the contact form, and our team will reach out within 24 hours to schedule a consultation."
+      question: "How do we get started on a project?",
+      answer: "Simply visit our Connect page or click 'Get Started'. Complete the quick inquiry form, and one of our digital strategists will contact you within 24 hours to set up a discovery call."
     }
   ];
 

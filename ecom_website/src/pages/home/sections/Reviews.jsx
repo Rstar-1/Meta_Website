@@ -9,7 +9,7 @@ const Reviews = () => {
   const testimonials = [
     {
       id: 1,
-      text: "Whether it's enhancing market visibility, improving operational efficiency, or implementing cutting-edge technologies, our agency offers a wide spectrum of services. From strategic consulting & digital transformation to marketing strategies & financial advisory...",
+      text: "Whether it's custom web development, ranking first on Google searches via SEO, or scaling Meta ad campaigns, this agency delivers exceptional results. They transformed our online presence and tripled our inbound leads.",
       name: "Brandi Rowe",
       role: "Marketing Lead at Technlogia",
       avatar: "https://demo.alhikmahsoft.com/template/stir/assets/images/testimonial-3.png"
