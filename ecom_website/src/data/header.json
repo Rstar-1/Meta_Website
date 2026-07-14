@@ -52,24 +52,5 @@
         ]
       }
     ]
-  },
-  "servicesMenu": {
-    "bannerImage": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
-    "bannerTitle": "Our Main Services",
-    "bannerDesc": "Full-spectrum digital marketing and B2B solutions to drive leads and sales.",
-    "bannerLinkText": "Go to Services Page",
-    "sections": [
-      {
-        "title": "Core Offerings",
-        "items": [
-          "Branding Design",
-          "Website Development",
-          "Digital Marketing",
-          "Social Media Management",
-          "Analytics & Performance",
-          "SEO Optimization"
-        ]
-      }
-    ]
   }
 }
