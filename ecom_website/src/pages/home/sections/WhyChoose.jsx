@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
-import Chart from '../../../components/common/Chart';
+import CardLayout from '../../../components/layout/CardLayout';
 
 const WhyChoose = () => {
   const skills = [
@@ -17,7 +17,7 @@ const WhyChoose = () => {
         {/* Left Column - Image */}
         <div className='relative pr-15 sm-pr-1'>
           <Image
-            src="https://demo.alhikmahsoft.com/template/stir/assets/images/who-we-are-img-2.jpg"
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
             alt="Brand Services"
             className="w-full object-cover h-500 rounded-5 flex"
           />
@@ -34,9 +34,16 @@ const WhyChoose = () => {
               We are a Digital agency working with brands building insightful strategy, creating unique designs and crafting value.
             </p>
 
-            {/* Progress Bars */}
+            {/* Progress Bars via CardLayout */}
             <div className='mt-20'>
-              <Chart items={skills} color="var(--primary)" />
+              <CardLayout
+                items={skills}
+                cardType="why-choose"
+                cols="1"
+                mdCols="1"
+                smCols="1"
+                gap="12"
+              />
             </div>
           </div>
         </div>

@@ -42,272 +42,162 @@ const CardLayout = ({
     const combinedClassName = `grid-cols-${cols} md-grid-cols-${mdCols} sm-grid-cols-${smCols} gap-${gap} ${className}`.trim();
 
     const renderDefaultCard = (item, index) => {
-        if (cardType === 'product') {
-            const imgSrc = (imageMap && imageMap[item.id]) || resolveProductImage(item);
+        if (cardType === 'case-study') {
+            const tags = item.keywords
+                ? item.keywords.split(',').map(k => k.trim()).slice(0, 3)
+                : (item.tags || [item.category]);
+
             return (
                 <div
                     key={item.id || index}
-                    className="bg-white border-ec rounded-10 p-12 cursor-pointer transition-all flex flex-column justify-between"
-                    onClick={() => onCardClick && onCardClick(item)}
+                    className="cursor-pointer"
+                    onClick={() => {
+                        if (onCardClick) {
+                            onCardClick(item);
+                        } else {
+                            navigate(`/blog-detail/${item.id}`);
+                        }
+                    }}
                 >
-                    <div>
-                        {/* Product Image Container */}
-                        <div className="overflow-hidden rounded-5">
-                            <Image
-                                src={imgSrc}
-                                alt={item.name}
-                                loading={index < eagerCount ? "eager" : "lazy"}
-                                fetchPriority={index < eagerCount ? "high" : undefined}
-                                className={`w-full object-cover flex ${imageHeight || 'h-200'}`}
-                                width="300"
-                                height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : '200'}
-                            />
-                        </div>
-
-                        {/* Product Metadata */}
-                        <div className="mt-12">
-                            <h3
-                                className="text-dark mid-text font-500 line-clamp1"
-                            >
-                                {item.name}
-                            </h3>
-                            <p
-                                className="text-gray mini-text line-clamp2 font-400 mt-2"
-                            >
-                                {item.description}
-                            </p>
-                            {(item.priceDisplay || item.price) && (
-                                <p
-                                    className="text-dark mini-text font-500 mt-5"
-                                >
-                                    {item.priceDisplay || `₹ ${item.price} / Piece`}
-                                </p>
-                            )}
-                        </div>
+                    <div className="overflow-hidden rounded-5">
+                        <Image
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full object-cover h-300 flex rounded-5 transition-all hover-scale"
+                            style={{ transition: 'transform 0.4s ease' }}
+                        />
                     </div>
-
-                    {/* Action Buttons at Bottom */}
-                    <div className="flex gap-10 mt-10 w-full">
-                        {showAddToCart && (
-                            <Button
-                                text="Quick Buy"
-                                variant="outline"
-                                bg="primary"
-                                version="v3"
-                                icon="Cart"
-                                className={showViewProducts ? "flex-1" : "w-full"}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (onAddToCart) {
-                                        onAddToCart(item);
-                                    } else {
-                                        addToCart(item);
-                                        showToast(`${item.name} added to cart!`);
-                                    }
-                                }}
-                            />
-                        )}
-                        {showViewProducts && (
-                            <Button
-                                text="Explore"
-                                bg="primary"
-                                variant="filled"
-                                version="v3"
-                                className={showAddToCart ? "flex-1" : "w-full"}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (onButtonClick) {
-                                        onButtonClick(item);
-                                    } else if (onCardClick) {
-                                        onCardClick(item);
-                                    }
-                                }}
-                            />
-                        )}
+                    <div className="py-10">
+                        <h3 className="text-dark font-500 mid-text line-clamp2 hover-text-primary transition-all">
+                            {item.title}
+                        </h3>
+                        <div className="flex flex-wrap gap-12 mt-6">
+                            {tags.map((tag, i) => (
+                                <p key={i} className="bg-forth text-gray font-400 mini-text px-12 py-2">
+                                    {tag}
+                                </p>
+                            ))}
+                        </div>
                     </div>
                 </div>
             );
         }
 
-        if (cardType === 'business') {
+        if (cardType === 'why-choose') {
             return (
-                <div
-                    key={item.id || index}
-                    className="bg-white border-ec rounded-5 overflow-hidden p-10 cursor-pointer flex flex-column justify-between"
-                    onClick={() => onCardClick && onCardClick(item)}
-                >
-                    <div>
-                        <div className="relative rounded-5 overflow-hidden">
-                            <Image
-                                src={item.image}
-                                alt={item.name}
-                                loading={index < eagerCount ? "eager" : "lazy"}
-                                fetchPriority={index < eagerCount ? "high" : undefined}
-                                className={`w-full object-cover rounded-5 flex ${imageHeight || 'h-150'}`}
-                                width="350"
-                                height="150"
-                            />
-                            {item.logo && (
-                                <div className="absolute bottom-0 left-0 mb-15 ml-10 border-white flex items-center justify-center rounded-full icon-lg bg-primary z-10">
-                                    <p className="text-white font-600 mini-text">{item.logo}</p>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="mt-5">
-                            <h3 className="text-dark font-600 mid-text">{item.name}</h3>
-                            <p className="text-gray mini-text mb-8">{item.category}</p>
-
-                            {/* Rating Row */}
-                            <div className="flex items-center gap-6 mb-8">
-                                <p className="text-white font-600 mini-text px-6 py-2 rounded-3 bg-success">
-                                    ★ {item.rating}
-                                </p>
-                                <p className="text-gray mini-text">({item.reviews} Reviews)</p>
-                            </div>
-
-                            <p className="mini-text text-gray">📍 {item.location}</p>
-                        </div>
+                <div key={item.id || index} className="w-full grid-cols-1 gap-12 mb-20 animate-fade-in">
+                    <div className="flex justify-between items-center">
+                        <p className="text-dark font-500 small-text">
+                            {item.label}
+                        </p>
                     </div>
-
-                    <Button
-                        text="Call Now"
-                        bg="primary"
-                        version="v3"
-                        className="w-full cursor-pointer font-600 mt-8"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            if (onButtonClick) {
-                                onButtonClick(item);
-                            } else if (onCardClick) {
-                                onCardClick(item);
-                            }
-                        }}
-                    />
-                </div>
-            );
-        }
-
-        if (cardType === 'article') {
-            return (
-                <article
-                    key={item.id || index}
-                    className="bg-white rounded-5 overflow-hidden cursor-pointer flex flex-column justify-between"
-                    onClick={() => onCardClick && onCardClick(item)}
-                >
-                    <div>
-                        {/* Image box */}
-                        <div className="overflow-hidden relative">
-                            <Image
-                                src={item.image}
-                                alt={item.title}
-                                loading={index < eagerCount ? "eager" : "lazy"}
-                                fetchPriority={index < eagerCount ? "high" : undefined}
-                                className={`w-full object-cover ${imageHeight || 'h-200'}`}
-                                width="400"
-                                height="200"
-                            />
-                        </div>
-
-                        {/* Details */}
-                        <div className="p-10">
-                            {item.tag && (
-                                <p className="px-12 py-5 rounded-5 font-600 mini-text mb-10 w-max bg-light-primary text-primary">
-                                    {item.tag}
-                                </p>
-                            )}
-
-                            <h3 className="text-dark font-600 mid-text line-clamp1">
-                                {item.title}
-                            </h3>
-                            <p className="text-primary font-500 mini-text mt-3">
-                                {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
-                            </p>
-                            <p className="text-gray small-text line-clamp2 mt-7">
-                                {item.description}
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            );
-        }
-
-        if (cardType === 'city') {
-            const paddedIndex = String(index + 1).padStart(2, '0');
-            return (
-                <div
-                    key={item.id || index}
-                    className="city-card relative overflow-hidden rounded-10 cursor-pointer h-350 flex items-end"
-                    onClick={() => onCardClick && onCardClick(item)}
-                >
-                    {/* Lazy-loaded background image */}
-                    <Image
-                        src={item.image}
-                        alt={item.name}
-                        loading={index < eagerCount ? "eager" : "lazy"}
-                        fetchPriority={index < eagerCount ? "high" : undefined}
-                        className="absolute inset-0 w-full h-full object-cover z-0"
-                        width="300"
-                        height="350"
-                    />
-                    {/* Overlay */}
                     <div
-                        className="absolute inset-0 z-1"
+                        className="relative w-full"
                         style={{
-                            backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%)'
+                            height: '6px',
+                            backgroundColor: '#e5e7eb',
+                            borderRadius: '10px',
+                            overflow: 'visible'
                         }}
-                    />
+                    >
+                        {/* Progress Fill */}
+                        <div
+                            className="absolute left-0 top-0 h-full transition-all duration-1000 ease-out"
+                            style={{
+                                width: `${item.percentage}%`,
+                                backgroundColor: 'var(--primary)',
+                                borderRadius: '10px'
+                            }}
+                        />
 
-                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12 flex items-center justify-center z-10" style={{ zIndex: 10 }}>
-                        <Icon name="MapPin" width="15" height="15" stroke="var(--primary)" strokeWidth="2.5" />
+                        {/* Circle Indicator Handle */}
+                        <div
+                            className="absolute transition-all duration-1000 ease-out"
+                            style={{
+                                left: `${item.percentage}%`,
+                                top: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                width: '18px',
+                                height: '18px',
+                                borderRadius: '50%',
+                                border: '3px solid var(--primary)',
+                                backgroundColor: '#ffffff',
+                                boxShadow: '0 2px 6px rgba(0,0,0,0.08)',
+                                zIndex: 2
+                            }}
+                        />
+
+                        {/* Floating Percentage Label */}
+                        <p
+                            className="absolute mini-text text-gray font-500"
+                            style={{
+                                left: `${item.percentage}%`,
+                                bottom: '16px',
+                                transform: 'translateX(-50%)',
+                                color: '#000000',
+                                whiteSpace: 'nowrap',
+                                zIndex: 2
+                            }}
+                        >
+                            {item.percentage}%
+                        </p>
                     </div>
+                </div>
+            );
+        }
 
-                    <div className="relative w-full z-10" style={{ zIndex: 10 }}>
-                        <div className="p-20">
-                            <div className="flex items-center gap-8 mb-6">
-                                <Icon name="MapPin" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                <h4 className="mid-text text-white font-600">{item.name}</h4>
+        if (cardType === 'team-member') {
+            return (
+                <div key={item.id || index}>
+                    <div className="overflow-hidden h-300 team-card relative">
+                        <Image
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full object-cover h-300 flex"
+                        />
+                        <div
+                            style={{
+                                position: 'absolute',
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                height: '40%',
+                                background: 'linear-gradient(to top, rgba(0, 0, 0, 0.99) 0%, rgba(0, 0, 0, 0) 100%)',
+                                pointerEvents: 'none'
+                            }}
+                        />
+                        <div className="flex items-center gap-8 absolute bottom-0 left-0 m-8">
+                            <div className="icon-lg bg-white rounded-full">
+                                <Icon name="Facebook" width="18" height="18" stroke="currentColor" />
                             </div>
-
-                            {/* Stats List */}
-                            <div className="grid-cols-1 gap-6 mb-16">
-                                <div className="flex items-center gap-8 text-white opacity-95">
-                                    <Icon name="Building" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                    <span className="small-text font-400">{item.businesses}</span>
-                                </div>
-                                <div className="flex items-center gap-8 text-white opacity-95">
-                                    <Icon name="Grid" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                    <span className="small-text font-400">{item.categories}</span>
-                                </div>
+                            <div className="icon-lg bg-white rounded-full">
+                                <Icon name="Instagram" width="18" height="18" stroke="currentColor" />
                             </div>
-
-                            <div className="flex items-center justify-between w-full">
-                                {/* Dynamic Tag Badge */}
-                                {item.tag ? (
-                                    <div
-                                        className="px-12 py-5 rounded-20 w-max flex items-center gap-6"
-                                        style={{
-                                            backgroundColor: item.tagType === 'most-searched' ? '#eab308' : '#22c55e',
-                                            color: item.tagType === 'most-searched' ? '#000000' : '#ffffff',
-                                        }}
-                                    >
-                                        {item.tagType === 'most-searched' ? (
-                                            <Icon name="Star" width="12" height="12" fill="currentColor" stroke="none" className="flex" />
-                                        ) : (
-                                            <Icon name="Trending" width="12" height="12" stroke="currentColor" strokeWidth="3" className="flex" />
-                                        )}
-                                        <span className="mini-text font-600 uppercase tracking-wider">
-                                            {item.tag}
-                                        </span>
-                                    </div>
-                                ) : null}
-
-                                {/* Circular Right Action Button */}
-                                <div className="icon-lg bg-white rounded-full">
-                                    <Icon name="ArrowRight" width="16" height="16" stroke="var(--primary)" strokeWidth="3.5" />
-                                </div>
+                            <div className="icon-lg bg-white rounded-full">
+                                <Icon name="WhatsApp" width="18" height="18" stroke="currentColor" />
                             </div>
                         </div>
+                    </div>
+                    <div className="mt-10">
+                        <h3 className="text-dark mid-text font-600">{item.name}</h3>
+                        <p className="text-gray mini-text font-400 uppercase">{item.role}</p>
+                    </div>
+                </div>
+            );
+        }
+
+        if (cardType === 'service') {
+            return (
+                <div key={item.id || index} className="service-card py-35 px-30 rounded-10">
+                    <div>
+                        <div className="service-icon-bg">
+                            <Image src={item.icon} alt={item.title} width='30px' height='30px' className="flex object-contain" />
+                        </div>
+                        <h3 className="text-dark title-text font-600 pt-20">{item.title}</h3>
+                        <p className="text-gray small-text line-clamp3 mt-16">{item.desc}</p>
+                        <p className="text-dark small-text font-600 mt-28 flex items-center gap-6">
+                            Read More <Icon name="ArrowRight" width="14" height="14" stroke="currentColor" strokeWidth="2.5" />
+                        </p>
                     </div>
                 </div>
             );
@@ -319,13 +209,52 @@ const CardLayout = ({
     return (
         <>
             <style>{`
-                .city-card {
-                    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                .service-card {
+                    background: var(--forth);
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    border: 1px solid transparent;
                 }
-                .city-card:hover {
-                    transform: translateY(-6px);
-                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                .service-card:hover {
+                    background: var(--white);
+                    border: 1px solid var(--primary);
+                    transform: translateY(-8px);
                 }
+                .service-icon-bg {
+                    width: 70px;
+                    height: 70px;
+                    background: #ffffff;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.4s ease;
+                }
+
+                .hover-scale:hover {
+                    transform: scale(1.05);
+                }
+                .hover-text-primary:hover {
+                    color: var(--primary) !important;
+                }
+                .team-card {
+                    transition: all 0.4s ease;
+                }
+                .team-card:hover {
+                    transform: translateY(-8px);
+                }
+                .team-social-icon {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #ffffff;
+                    color: var(--dark);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                }
+
                 
                 .custom-swiper-prev,
                 .custom-swiper-next {

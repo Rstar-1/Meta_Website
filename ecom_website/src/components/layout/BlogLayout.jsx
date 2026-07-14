@@ -239,7 +239,7 @@ const BlogLayout = ({
       )}
 
       <div className="bg-forth py-50 sm-py-36">
-        <Container version="v2">
+        <Container>
           <div className="flex gap-12 sm-grid-cols-1">
             {/* Far Left: Sticky Social Share Widget (Desktop Only, Details View Only) */}
             {type === 'detail' && post && (
