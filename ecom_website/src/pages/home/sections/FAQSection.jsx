@@ -28,7 +28,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <Container className='bg-forth'>
+    <Container style={{ backgroundColor: 'var(--forth)' }}>
       <div className='py-80'>
         <Image
           src="https://demo.alhikmahsoft.com/template/stir/assets/images/faq-img.jpg"

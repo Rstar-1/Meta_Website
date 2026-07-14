@@ -23,9 +23,11 @@ const Container = ({
     };
 
     return (
-        <div className={`${getContainerClass()} ${className}`} style={style} {...props}>
-            {children}
-        </div>
+        <section style={style} {...props}>
+            <div className={`${getContainerClass()} ${className}`}>
+                {children}
+            </div>
+        </section>
     );
 };
 

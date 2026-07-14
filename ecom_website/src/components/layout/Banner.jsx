@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../common/Container";
 import Breadcrumb from "../common/Breadcrumb";
 
-const Banner = ({ title, img, desc, style, breadcrumbs, productData }) => {
+const Banner = ({ title, desc, style, breadcrumbs, productData }) => {
     return (
         <Container className="relative"
             style={{
@@ -14,13 +14,7 @@ const Banner = ({ title, img, desc, style, breadcrumbs, productData }) => {
             <div className="w-full py-90">
                 <div className="flex items-center gap-8 mb-12">
                     <span
-                        className="bg-warning"
-                        style={{
-                            display: 'inline-block',
-                            width: '10px',
-                            height: '10px',
-                            flexShrink: 0
-                        }}
+                        className="bg-primary dot rounded-full"
                     />
                     <p
                         className="text-white uppercase font-500 small-text"
@@ -30,11 +24,10 @@ const Banner = ({ title, img, desc, style, breadcrumbs, productData }) => {
                 </div>
 
                 <h2
-                    className="text-white font-600 uppercase head-text"
+                    className="text-white font-600 uppercase head-text w-90 md-w-90 sm-w-full"
                 >
                     {desc}
                 </h2>
-
 
                 {productData && (
                     <div className="mt-15">

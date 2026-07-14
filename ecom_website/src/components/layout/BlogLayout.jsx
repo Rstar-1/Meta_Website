@@ -7,7 +7,7 @@ import Fields from '../common/Fields';
 import Banner from './Banner';
 import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
-import FAQSection from '../../pages/home/sections/FAQSection';
+import PromoCTA from '../../pages/home/sections/PromoCTA';
 import NewsletterForm from '../forms/NewsletterForm';
 
 import { formatDate } from '../../utils/formatDate';
@@ -525,7 +525,7 @@ const BlogLayout = ({
                       {content.sections.map((sec) => (
                         <div key={sec.id} className="toc-item">
                           <a href={`#${sec.id}`} className="toc-link">
-                            <p className='mini-text text-gray font-400'>{sec.title}</p>
+                            <p className='small-text text-gray font-400'>{sec.title}</p>
                           </a>
                         </div>
                       ))}
@@ -592,7 +592,7 @@ const BlogLayout = ({
         </Container>
       </div>
 
-      {type === 'detail' && <FAQSection />}
+      {type === 'detail' && <PromoCTA />}
     </>
   );
 };

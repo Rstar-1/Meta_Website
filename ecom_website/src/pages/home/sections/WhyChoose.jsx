@@ -12,7 +12,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <Container className='bg-forth'>
+    <Container style={{ backgroundColor: 'var(--forth)' }}>
       <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 gap-12 items-center py-60">
         {/* Left Column - Image */}
         <div className='relative pr-15 sm-pr-1'>

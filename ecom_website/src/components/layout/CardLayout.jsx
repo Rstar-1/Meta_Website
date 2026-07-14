@@ -188,13 +188,13 @@ const CardLayout = ({
 
         if (cardType === 'service') {
             return (
-                <div key={item.id || index} className="service-card py-35 px-30 rounded-10">
+                <div key={item.id || index} className="service-card py-38 px-30 rounded-10">
                     <div>
                         <div className="service-icon-bg">
                             <Image src={item.icon} alt={item.title} width='30px' height='30px' className="flex object-contain" />
                         </div>
                         <h3 className="text-dark title-text font-600 pt-20">{item.title}</h3>
-                        <p className="text-gray small-text line-clamp3 mt-16">{item.desc}</p>
+                        <p className="text-gray small-text line-clamp3 mt-12">{item.desc}</p>
                         <p className="text-dark small-text font-600 mt-28 flex items-center gap-6">
                             Read More <Icon name="ArrowRight" width="14" height="14" stroke="currentColor" strokeWidth="2.5" />
                         </p>

@@ -1,114 +1,82 @@
 import React from "react";
 import Container from "../../../components/common/Container";
-import Fade from "../../../components/common/Fade";
+import Image from "../../../components/common/Image";
+import Icon from "../../../components/common/Icon";
 
 const DetailSection = () => {
-    const colors = {
-        orange: "#ff5e14",
-        navy: "#001d3d",
-        text: "#555555",
-        border: "#eeeeee",
-        lightBg: "#f9f9f9",
-    };
-    const iconCircle = {
-        width: "35px",
-        height: "35px",
-        borderRadius: "50%",
-        backgroundColor: colors.lightBg,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        marginRight: "15px",
-        color: colors.orange,
-        fontSize: "18px",
-    };
+  const features = [
+    {
+      icon: "TrendingUp",
+      title: "Financial Solution",
+      description: "From startups established corporations, we offer tailored advice and services designed to navigate."
+    },
+    {
+      icon: "Settings",
+      title: "Financial Solution",
+      description: "From startups established corporations, we offer tailored advice and services designed to navigate."
+    }
+  ];
 
-    const sectionsData = [
-        {
-            title: "E-commerce Operations",
-            icon: "📈",
-            delay: 400,
-            points: [
-                "Dynamic catalog & category systems",
-                "Real-time inventory management",
-                "Custom B2B client portal solutions",
-                "Automated order processing pipelines",
-                "24/7 dedicated customer care desk",
-                "Multi-channel marketing coordination",
-            ],
-        },
-        {
-            title: "Digital Marketing & SEO",
-            icon: "🎯",
-            delay: 550,
-            points: [
-                "SEO optimization for all product lines",
-                "High-converting social ad campaigns",
-                "B2B lead generation & email marketing",
-                "Targeted search engine visibility",
-                "Google Analytics & performance audits",
-                "Content marketing and blog architecture",
-            ],
-        },
-        {
-            title: "Ecommerce Tech Stack",
-            icon: "💻",
-            delay: 700,
-            points: [
-                "Fast, responsive React single page app",
-                "Secure shopping cart & checkout flows",
-                "Centralized category & search filtering",
-                "Optimized database for new additions",
-                "Highly secure cloud infrastructure",
-            ],
-        }
-    ];
+  return (
+    <Container className="bg-white">
+      <div className="grid-cols-2 gap-12 items-center py-80 sm-py-40 w-full">
+        {/* Left Content Column */}
+        <div className="pr-15 sm-pr-1">
+          <p className="bg-light-primary text-primary small-text px-16 py-5 font-500 rounded-5 w-max">About Us</p>
+          <h2 className="head-text text-dark font-600 pt-16">
+            Know Your Trusted Partner in Business and Finance
+          </h2>
+          <p className="small-text text-gray font-400 mt-13">
+            We believe that every business deserves a strong financial foundation.
+            With decades of experience in the industry, our team is dedicated to providing
+            personalized, strategic financial solutions that help our clients thrive.
+          </p>
 
-    return (
-        <Container className="bg-forth">
-            <Fade direction="none" className="py-60 sm-py-40 w-full" threshold={0.15}>
-                {(isVisible) => (
-                    <div className="grid-cols-3 sm-grid-cols-1 md-grid-cols-2 items-start gap-12 sm-px-12">
-                        {sectionsData.map((section, idx) => (
-                            <div key={idx} className="info-col">
-                                <div
-                                    style={{
-                                        opacity: isVisible ? 1 : 0,
-                                        transform: isVisible ? "translateX(0)" : "translateX(-30px)",
-                                        transition: "opacity 800ms cubic-bezier(0.215, 0.61, 0.355, 1), transform 800ms cubic-bezier(0.215, 0.61, 0.355, 1)",
-                                        transitionDelay: `${section.delay}ms`,
-                                    }}
-                                >
-                                    <h2 className="title-text text-dark font-600 uppercase">
-                                        {section.title}
-                                    </h2>
-                                    <hr
-                                        className="border-0 bg-warning mx-1 mt-8 col-hr"
-                                        style={{ width: "80px", height: "5px" }}
-                                    />
-                                </div>
-                                {section.points.map((item, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex items-center p-8 bordb w-max info-item"
-                                        style={{
-                                            opacity: isVisible ? 1 : 0,
-                                            transform: isVisible ? "translateY(0)" : "translateY(30px)",
-                                            transition: "opacity 800ms cubic-bezier(0.215, 0.61, 0.355, 1), transform 800ms cubic-bezier(0.215, 0.61, 0.355, 1)",
-                                            transitionDelay: `${section.delay + 150 + i * 80}ms`,
-                                        }}
-                                    >
-                                        <p style={iconCircle}>{section.icon}</p>
-                                        <p className="text-gray font-400 small-text">{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </Fade>
-        </Container>
-    );
+          <div className="grid-cols-1 gap-12 mt-19">
+            {features.map((feature, idx) => (
+              <div key={idx} className="bg-tertiary p-18 rounded-5">
+                <div className="flex items-center gap-12">
+                  <div className="bg-primary flex items-center justify-center rounded-5" style={{ width: '50px', height: '50px' }}>
+                    <Icon name={feature.icon} width="18" height="18" strokeWidth="2" stroke="white" />
+                  </div>
+                  <div className="w-80 ml-4">
+                    <h4 className="mid-text text-dark font-600">{feature.title}</h4>
+                    <p className="small-text text-gray font-400">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Collage Column */}
+        <div className="pl-15 sm-pl-1">
+          <div className="grid-cols-2 gap-12">
+            <Image
+              className="w-full h-300 rounded-5 object-cover flex"
+              src="/about_detail_1.png"
+              alt="Analyzing financial documents"
+            />
+            <Image
+              className="w-full h-300 rounded-5 object-cover flex"
+              src="/about_detail_2.png"
+              alt="Business partners vertical profile"
+              style={{ filter: "grayscale(100%)" }}
+            />
+          </div>
+          <div className="mt-15">
+            <Image
+              className="w-full h-200 rounded-5 object-cover flex"
+              src="/about_detail_3.png"
+              alt="Businessman working on laptop"
+            />
+          </div>
+        </div>
+      </div>
+    </Container>
+  );
 };
 
 export default DetailSection;
