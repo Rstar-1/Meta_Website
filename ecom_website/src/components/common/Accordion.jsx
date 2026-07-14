@@ -115,7 +115,7 @@ const Accordion = ({
                                     }}
                                 >
                                     <p
-                                        className="font-400 small-text text-gray mt-4"
+                                        className="font-400 small-text text-gray mt-8"
                                     >
                                         {content}
                                     </p>

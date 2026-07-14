@@ -19,7 +19,7 @@ const DetailSection = () => {
 
   return (
     <Container className="bg-white">
-      <div className="grid-cols-2 gap-12 items-center py-80 sm-py-40 w-full">
+      <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center py-80 sm-py-40 w-full">
         {/* Left Content Column */}
         <div className="pr-15 sm-pr-1">
           <p className="bg-light-primary text-primary small-text px-16 py-5 font-500 rounded-5 w-max">About Us</p>
@@ -35,11 +35,11 @@ const DetailSection = () => {
           <div className="grid-cols-1 gap-12 mt-19">
             {features.map((feature, idx) => (
               <div key={idx} className="bg-tertiary p-18 rounded-5">
-                <div className="flex items-center gap-12">
+                <div className="flex sm-grid-cols-1 items-center gap-12">
                   <div className="bg-primary flex items-center justify-center rounded-5" style={{ width: '50px', height: '50px' }}>
                     <Icon name={feature.icon} width="18" height="18" strokeWidth="2" stroke="white" />
                   </div>
-                  <div className="w-80 ml-4">
+                  <div className="w-80 sm-w-full ml-4 sm-ml-1">
                     <h4 className="mid-text text-dark font-600">{feature.title}</h4>
                     <p className="small-text text-gray font-400">
                       {feature.description}
@@ -55,12 +55,12 @@ const DetailSection = () => {
         <div className="pl-15 sm-pl-1">
           <div className="grid-cols-2 gap-12">
             <Image
-              className="w-full h-300 rounded-5 object-cover flex"
+              className="w-full h-300 sm-h-150 rounded-5 object-cover flex"
               src="/about_detail_1.png"
               alt="Analyzing financial documents"
             />
             <Image
-              className="w-full h-300 rounded-5 object-cover flex"
+              className="w-full h-300 sm-h-150 rounded-5 object-cover flex"
               src="/about_detail_2.png"
               alt="Business partners vertical profile"
               style={{ filter: "grayscale(100%)" }}
@@ -68,7 +68,7 @@ const DetailSection = () => {
           </div>
           <div className="mt-15">
             <Image
-              className="w-full h-200 rounded-5 object-cover flex"
+              className="w-full h-200 sm-h-150 rounded-5 object-cover flex"
               src="/about_detail_3.png"
               alt="Businessman working on laptop"
             />
