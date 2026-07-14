@@ -61,26 +61,14 @@ const DetailSection = () => {
                 "Optimized database for new additions",
                 "Highly secure cloud infrastructure",
             ],
-        },
-        {
-            title: "Wholesale Fulfillment",
-            icon: "🚚",
-            delay: 850,
-            points: [
-                "Strict quality check for all products",
-                "Vetted manufacturers and distributors",
-                "100% genuine product guarantee",
-                "Optimized B2B shipping & bulk logistics",
-                "Eco-friendly packaging options",
-            ],
-        },
+        }
     ];
 
     return (
         <Container className="bg-forth">
             <Fade direction="none" className="py-60 sm-py-40 w-full" threshold={0.15}>
                 {(isVisible) => (
-                    <div className="grid-cols-4 sm-grid-cols-1 md-grid-cols-2 items-start gap-12 sm-px-12">
+                    <div className="grid-cols-3 sm-grid-cols-1 md-grid-cols-2 items-start gap-12 sm-px-12">
                         {sectionsData.map((section, idx) => (
                             <div key={idx} className="info-col">
                                 <div
