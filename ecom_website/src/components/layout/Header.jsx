@@ -50,11 +50,11 @@ const ProjectsMenu = ({ onItemClick }) => (
         alt="Projects"
         className="flex w-full h-200 object-cover rounded-5"
       />
-      <h4 className="mid-text text-dark font-500 pt-20">{headerData.projectsMenu.bannerTitle}</h4>
-      <p className="small-text text-gray font-400 mt-6">
+      <h4 className="mid-text text-dark font-500 pt-10">{headerData.projectsMenu.bannerTitle}</h4>
+      <p className="mini-text text-gray font-400 mt-2">
         {headerData.projectsMenu.bannerDesc}
       </p>
-      <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link flex items-center gap-4" onClick={() => onItemClick()}>
+      <p className="mini-text text-secondary font-500 mt-8 cursor-pointer mega-menu-link flex items-center gap-4" onClick={() => onItemClick()}>
         {headerData.projectsMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
       </p>
     </div>
@@ -154,7 +154,7 @@ const Header = () => {
 
                   {item?.hasMegaMenu && activeMenu === item?.label && (
                     <div
-                      className="absolute z-50 bg-white border-ec"
+                      className="absolute z-50 bg-white bordh"
                       style={{
                         top: "65px",
                         left: "50%",
@@ -201,6 +201,7 @@ const Header = () => {
               iconWidth="24"
               iconHeight="24"
               iconStrokeWidth="2"
+              version="v1"
               bg="forth"
             />
           </div>
@@ -236,7 +237,7 @@ const Header = () => {
                         </span>
                       </div>
                       {isExpanded && (
-                        <div className="mt-12 bg-white rounded-5 border-ec grid grid-cols-1 gap-16 overflow-hidden">
+                        <div className="mt-12 bg-white rounded-5 grid grid-cols-1 gap-12 overflow-hidden">
                           <MegaMenuContent
                             label={item.label}
                             onItemClick={(path) => {
