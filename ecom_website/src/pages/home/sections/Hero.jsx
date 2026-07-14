@@ -8,7 +8,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative" style={{ background: "url(https://www.primefaces.org/cdn/primereact/images/layout/pattern.png), radial-gradient(50% 50% at center top, #e9e7fd -50%, #fff)", backgroundRepeat: 'no-repeat' }}>
+    <div className="relative" style={{ background: "url(https://vibetech-html.vercel.app/assets/images/hero/hero-bg-sp-2.png)", backgroundRepeat: 'no-repeat' }}>
       <Container>
         <div className="grid-cols-2 md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-50">
           {/* Text Content */}
@@ -39,7 +39,7 @@ const Hero = () => {
               />
 
               {/* User Testimonial Overlay Card */}
-              <div className="absolute bottom-0 right-0 m-10" style={{ maxWidth: '55%' }}>
+              <div className="absolute bottom-0 right-0 m-10">
                 <div className='p-20 bg-white rounded-5'>
                   <div className="flex items-center gap-12">
                     <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-1.jpg" alt="User" />
