@@ -44,43 +44,6 @@ const FeaturedBusinesses = () => {
 
   return (
     <section>
-      <style>{`
-        @keyframes scrollMarqueeCases {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .marquee-cases-container {
-          overflow: hidden;
-          white-space: nowrap;
-          width: 100%;
-          background: #ffffff;
-          padding: 30px 0;
-          border-top: 1px solid #eeeeee;
-          border-bottom: 1px solid #eeeeee;
-        }
-        .marquee-cases-content {
-          display: inline-block;
-          animation: scrollMarqueeCases 20s linear infinite;
-        }
-        .marquee-cases-text {
-          font-size: 80px;
-          font-weight: 800;
-          color: transparent;
-          -webkit-text-stroke: 1px #dddddd;
-          margin-right: 50px;
-          text-transform: uppercase;
-        }
-      `}</style>
-
-      <div className="marquee-cases-container">
-        <div className="marquee-cases-content">
-          <span className="marquee-cases-text">OUR LATEST CASES • </span>
-          <span className="marquee-cases-text">OUR LATEST CASES • </span>
-          <span className="marquee-cases-text">OUR LATEST CASES • </span>
-          <span className="marquee-cases-text">OUR LATEST CASES • </span>
-        </div>
-      </div>
-
       <Container>
         <div className='w-full py-60'>
           <div className="text-center">

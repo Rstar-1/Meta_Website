@@ -5,6 +5,7 @@ const Container = ({
     version = "v1",
     className = "",
     style = {},
+    ...props
 }) => {
     const getContainerClass = () => {
         switch (version) {
@@ -22,7 +23,7 @@ const Container = ({
     };
 
     return (
-        <div className={`${getContainerClass()} ${className}`} style={style}>
+        <div className={`${getContainerClass()} ${className}`} style={style} {...props}>
             {children}
         </div>
     );

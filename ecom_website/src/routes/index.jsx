@@ -11,6 +11,7 @@ const Blogs = lazy(() => import('../pages/blog/Blogs'))
 const BlogDetail = lazy(() => import('../pages/blog/BlogDetail'))
 const Contact = lazy(() => import('../pages/contact/Contact'))
 const About = lazy(() => import('../pages/about/About'))
+const Services = lazy(() => import('../pages/services/Services'))
 
 
 function AppRoutes() {
@@ -21,6 +22,7 @@ function AppRoutes() {
           <Route index element={<Navigate to="/home" replace />} />
           <Route path="home" element={<Home />} />
           <Route path="products" element={<Navigate to="/home" replace />} />
+          <Route path="services" element={<Services />} />
           <Route path="blog" element={<Blogs />} />
           <Route path="blog-detail" element={<BlogDetail />} />
           <Route path="blog-detail/:id" element={<BlogDetail />} />
@@ -31,7 +33,7 @@ function AppRoutes() {
         <Route path="*" element={<h2 style={{ textAlign: 'center', padding: '100px 20px', fontFamily: 'Outfit, sans-serif' }}>404 - Page Not Found</h2>} />
       </Routes>
     </Suspense>
-  )
+  );
 }
 
 export default AppRoutes

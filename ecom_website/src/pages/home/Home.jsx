@@ -8,6 +8,7 @@ import SiteNavigationSchema from '../../components/seo/SiteNavigationSchema';
 import BrowseCategory from './sections/BrowseCategory';
 import WhyChoose from './sections/WhyChoose';
 import FeaturedBusinesses from './sections/FeaturedBusinesses';
+import Marquee from './sections/Marquee';
 import BusinessPromo from './sections/BusinessPromo';
 import LatestArticles from './sections/LatestArticles';
 import TopCity from './sections/TopCity';
@@ -38,13 +39,16 @@ const Home = () => {
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero />
+      <LazySection placeholderHeight="140px">
+        <Marquee text="OUR LATEST CASES • " />
+      </LazySection>
       <BrowseCategory />
 
-      <LazySection placeholderHeight="600px">
-        <FeaturedBusinesses />
-      </LazySection>
       <LazySection placeholderHeight="500px">
         <WhyChoose />
+      </LazySection>
+      <LazySection placeholderHeight="600px">
+        <FeaturedBusinesses />
       </LazySection>
       <LazySection placeholderHeight="400px">
         <TopCity />

@@ -64,11 +64,11 @@ const TopCity = () => {
         <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12 mt-40">
           {team.map((member) => (
             <div key={member.id}>
-              <div className="overflow-hidden h-350 team-card relative">
+              <div className="overflow-hidden h-300 team-card relative">
                 <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full object-cover h-350 flex"
+                  className="w-full object-cover h-300 flex"
                 />
                 <div
                   style={{
@@ -83,13 +83,13 @@ const TopCity = () => {
                 />
                 <div className="flex items-center gap-8 absolute bottom-0 left-0 m-8">
                   <div className="icon-lg bg-white rounded-full">
-                    <Icon name="Facebook" width="16" height="16" stroke="currentColor" />
+                    <Icon name="Facebook" width="18" height="18" stroke="currentColor" />
                   </div>
                   <div className="icon-lg bg-white rounded-full">
-                    <Icon name="Instagram" width="16" height="16" stroke="currentColor" />
+                    <Icon name="Instagram" width="18" height="18" stroke="currentColor" />
                   </div>
                   <div className="icon-lg bg-white rounded-full">
-                    <Icon name="WhatsApp" width="16" height="16" stroke="currentColor" />
+                    <Icon name="WhatsApp" width="18" height="18" stroke="currentColor" />
                   </div>
                 </div>
               </div>

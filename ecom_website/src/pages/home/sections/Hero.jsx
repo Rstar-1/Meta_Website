@@ -39,7 +39,7 @@ const Hero = () => {
               />
 
               {/* User Testimonial Overlay Card */}
-              <div className="absolute bottom-0 right-0 m-10">
+              <div className="absolute bottom-0 right-0 m-10" style={{ maxWidth: '55%' }}>
                 <div className='p-20 bg-white rounded-5'>
                   <div className="flex items-center gap-12">
                     <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-1.jpg" alt="User" />

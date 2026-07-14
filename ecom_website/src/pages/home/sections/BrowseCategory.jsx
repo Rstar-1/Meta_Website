@@ -44,7 +44,7 @@ const BrowseCategory = () => {
   ];
 
   return (
-    <Container>
+    <Container id="services">
       <style>{`
         .service-card {
           background: var(--forth);
