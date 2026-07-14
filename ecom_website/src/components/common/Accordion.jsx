@@ -53,7 +53,7 @@ const Accordion = ({
                             onClick={() => toggleItem(id)}
                         >
                             {/* Number Circle */}
-                            <div
+                            <p
                                 style={{
                                     width: '46px',
                                     height: '46px',
@@ -70,7 +70,7 @@ const Accordion = ({
                                 }}
                             >
                                 {numStr}
-                            </div>
+                            </p>
 
                             {/* Content Column */}
                             <div style={{ flex: 1, paddingTop: '10px' }}>
@@ -83,13 +83,7 @@ const Accordion = ({
                                     }}
                                 >
                                     <h3
-                                        className="text-dark"
-                                        style={{
-                                            fontSize: '18px',
-                                            fontWeight: '600',
-                                            lineHeight: '1.4',
-                                            margin: 0,
-                                        }}
+                                        className="text-dark mid-text font-500"
                                     >
                                         {title}
                                     </h3>
@@ -121,14 +115,7 @@ const Accordion = ({
                                     }}
                                 >
                                     <p
-                                        className="text-gray"
-                                        style={{
-                                            fontSize: '15px',
-                                            lineHeight: '26px',
-                                            marginTop: '16px',
-                                            marginBottom: 0,
-                                            paddingRight: '40px',
-                                        }}
+                                        className="font-400 small-text text-gray mt-4"
                                     >
                                         {content}
                                     </p>
@@ -138,7 +125,7 @@ const Accordion = ({
                     </div>
                 );
             })}
-        </div>
+        </div >
     );
 };
 

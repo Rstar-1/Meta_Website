@@ -1,8 +1,9 @@
 import React from 'react';
+import Container from '../../../components/common/Container';
 
 const Marquee = ({ text = "OUR LATEST CASES •" }) => {
   return (
-    <section>
+    <Container version='v0'>
       <style>{`
         @keyframes scrollMarqueeCases {
           0% { transform: translateX(0); }
@@ -39,7 +40,7 @@ const Marquee = ({ text = "OUR LATEST CASES •" }) => {
           <span className="marquee-cases-text">{text}</span>
         </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

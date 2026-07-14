@@ -33,8 +33,8 @@ const About = () => {
       <Timeline />
       <DetailSection />
       <FAQSection />
-      <PromoCTA />
       <Reviews />
+      <PromoCTA />
     </>
   )
 }
