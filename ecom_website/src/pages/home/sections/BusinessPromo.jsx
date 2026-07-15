@@ -37,15 +37,15 @@ const BusinessPromo = () => {
       <div className="w-full py-40">
         {/* Main Promo Banner */}
         <div
-          className="flex sm-flex-column items-center justify-between p-30 sm-p-20 gap-12 relative overflow-hidden rounded-5"
+          className="flex sm-flex-column items-center justify-between p-40 sm-p-20 gap-12 relative overflow-hidden rounded-5"
           style={{
             background: 'linear-gradient(135deg, #020712 0%, #081026 100%)'
           }}
         >
           {/* Left Text and CTA */}
-          <div className="w-60">
+          <div className="w-60 pr-12 sm-pr-1">
             <div
-              className="flex items-center gap-10 w-max p-10"
+              className="flex items-center gap-10 w-max px-16 py-10 rounded-20"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.14)"
               }}
@@ -55,10 +55,10 @@ const BusinessPromo = () => {
                 India's No.1 PVC Manufacturer
               </p>
             </div>
-            <h2 className="head-text text-primary font-700 uppercase pt-10">
+            <h2 className="head-text text-primary font-700 uppercase pt-16">
               We've Got You Covered!
             </h2>
-            <p className="small-text text-white font-400 mt-4" style={{ opacity: 0.80 }}>
+            <p className="para-text text-white font-300 mt-4" style={{ opacity: 0.70 }}>
               High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.
             </p>
 
@@ -74,11 +74,11 @@ const BusinessPromo = () => {
           </div>
 
           {/* Right Product Image & Badge */}
-          <div className="relative flex items-center justify-center w-40">
+          <div className="relative flex items-center justify-center w-40 pl-12 sm-pl-1">
             <Image
               src={pvcSheetsIndustrial}
               alt="Industrial PVC Rolls"
-              className="w-full h-200 object-cover rounded-5"
+              className="w-full h-250 object-cover rounded-5"
             />
             {/* Circle badge */}
             <div
@@ -121,7 +121,7 @@ const BusinessPromo = () => {
           ))}
         </div>
       </div>
-    </Container>
+    </Container >
   );
 };
 

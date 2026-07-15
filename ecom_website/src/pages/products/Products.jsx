@@ -293,9 +293,9 @@ const Products = () => {
         <style>{`
           .sidebar-filters {
             position: sticky !important;
-            top: 20px !important;
+            top: 80px !important;
             align-self: start !important;
-            z-index: 100;
+            z-index: 10;
           }
           .mobile-filter-trigger {
             display: none !important;
@@ -356,7 +356,7 @@ const Products = () => {
             <CardLayout
               items={filteredProducts}
               cardType="product"
-              imageHeight="h-200 sm-h-250"
+              imageHeight="h-300 sm-h-250"
               cols="3"
               mdCols="2"
               smCols="1"

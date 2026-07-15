@@ -43,7 +43,7 @@ const LatestProducts = () => {
               <CardLayout
                 items={categoryProducts}
                 cardType="product"
-                imageHeight="h-300"
+                imageHeight="h-350"
                 isSlider={true}
                 eagerCount={catIndex === 0 ? 2 : 0}
                 onCardClick={handleProductClick}

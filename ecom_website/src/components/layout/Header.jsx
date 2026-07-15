@@ -261,7 +261,7 @@ const Header = () => {
             <div className="sm-hidden md-hidden">
               <Button
                 text="Get Quote"
-                version="v2"
+                version="v0"
                 bg="primary"
                 onClick={() => navigate("/connect")}
               />

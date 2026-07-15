@@ -21,7 +21,7 @@ const PopularProducts = () => {
   return (
     <Container className='bg-white'>
       <div className='py-40 w-full'>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mb-10">
           <h2 className="title-text text-dark font-600">Popular Products</h2>
           <p className='text-primary font-500 cursor-pointer small-text' onClick={handleViewAll}>
             View All ➔</p>

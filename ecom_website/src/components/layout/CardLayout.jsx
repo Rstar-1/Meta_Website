@@ -67,7 +67,7 @@ const CardLayout = ({
                         {/* Product Metadata */}
                         <div className="mt-12">
                             <h3
-                                className="text-dark headmini-text font-500 line-clamp1"
+                                className="text-dark mid-text font-600 line-clamp1"
                             >
                                 {item.name}
                             </h3>
@@ -375,7 +375,7 @@ const CardLayout = ({
                                 slidesPerView: 3.5,
                             },
                             1024: {
-                                slidesPerView: 4,
+                                slidesPerView: 4.2,
                             }
                         }}
                         className="mySwiper"

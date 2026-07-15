@@ -9,7 +9,6 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 
 import pvcRollIndustrial from '../../../assets/pvc_roll_industrial.png';
 import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.png';
@@ -45,17 +44,17 @@ const Hero = () => {
 
   return (
     <Container style={{
-      background: "linear-gradient(135deg, #1b2539ff 0%, #081027ff 100%)",
+      background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)",
     }}>
       <div className='py-40'>
         <div className="grid-cols-2 gap-12 items-center w-full">
 
           {/* Left Column: Text & Features */}
-          <div className="w-full">
+          <div className="w-full pr-12 sm-pr-1">
 
             {/* Tag Badge */}
             <div
-              className="flex items-center gap-10 w-max p-10"
+              className="flex items-center gap-10 w-max px-16 py-10 rounded-20"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.14)"
               }}
@@ -73,7 +72,7 @@ const Hero = () => {
             </h1>
 
             {/* Subtext */}
-            <p className="small-text text-white mt-12">
+            <p className="para-text font-400 uppercase text-white mt-12" style={{ opacity: 0.60 }}>
               High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.
             </p>
 
@@ -121,11 +120,10 @@ const Hero = () => {
           </div>
 
           {/* Right Column: Swiper Slider */}
-          <div className="w-full">
+          <div className="w-full pl-12 sm-pl-1">
             <Swiper
               modules={[Autoplay, Pagination]}
               autoplay={{ delay: 3500, disableOnInteraction: false }}
-              pagination={{ clickable: true }}
               spaceBetween={20}
               slidesPerView={1}
               loop={true}
@@ -133,14 +131,14 @@ const Hero = () => {
             >
               {slides.map((slide, idx) => (
                 <SwiperSlide key={idx}>
-                  <div className="relative h-500">
+                  <div className="relative h-500 rounded-10 overflow-hidden">
                     <Image
                       src={slide.image}
                       alt={slide.title}
-                      className="w-full h-full object-cover flex rounded-5"
+                      className="w-full h-full object-cover flex"
                     />
                     <div className="absolute bottom-0 left-0 w-full px-20 py-30 z-10" style={{
-                      background: "linear-gradient(to top, rgba(2, 7, 18, 0.95) 0%, rgba(2, 7, 18, 0.5) 50%, transparent 100%)",
+                      background: "linear-gradient(to top, rgba(2, 7, 18, 0.95) 10%, rgba(2, 7, 18, 0.9) 50%, transparent 100%)",
 
                     }}>
                       <h3 className="mid-text font-600 text-white" style={{ margin: 0 }}>
