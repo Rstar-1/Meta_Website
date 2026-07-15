@@ -43,11 +43,8 @@ const LatestProducts = () => {
               <CardLayout
                 items={categoryProducts}
                 cardType="product"
-                imageHeight="h-200"
+                imageHeight="h-300"
                 isSlider={true}
-                cols="4"
-                mdCols="2"
-                smCols="1"
                 eagerCount={catIndex === 0 ? 2 : 0}
                 onCardClick={handleProductClick}
                 onButtonClick={handleProductClick}

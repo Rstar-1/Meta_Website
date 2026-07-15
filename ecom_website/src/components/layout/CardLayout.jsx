@@ -47,12 +47,12 @@ const CardLayout = ({
             return (
                 <div
                     key={item.id || index}
-                    className="bg-white border-ec rounded-10 p-12 cursor-pointer transition-all flex flex-column justify-between"
+                    className="cursor-pointer"
                     onClick={() => onCardClick && onCardClick(item)}
                 >
                     <div>
                         {/* Product Image Container */}
-                        <div className="overflow-hidden rounded-5">
+                        <div className="overflow-hidden rounded-5 bg-forth">
                             <Image
                                 src={imgSrc}
                                 alt={item.name}
@@ -67,63 +67,18 @@ const CardLayout = ({
                         {/* Product Metadata */}
                         <div className="mt-12">
                             <h3
-                                className="text-dark mid-text font-500 line-clamp1"
+                                className="text-dark headmini-text font-500 line-clamp1"
                             >
                                 {item.name}
                             </h3>
-                            <p
-                                className="text-gray mini-text line-clamp2 font-400 mt-2"
-                            >
-                                {item.description}
-                            </p>
                             {(item.priceDisplay || item.price) && (
                                 <p
-                                    className="text-dark mini-text font-500 mt-5"
+                                    className="text-gray mini-text font-400 mt-3"
                                 >
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
                             )}
                         </div>
-                    </div>
-
-                    {/* Action Buttons at Bottom */}
-                    <div className="flex gap-10 mt-10 w-full">
-                        {showAddToCart && (
-                            <Button
-                                text="Quick Buy"
-                                variant="outline"
-                                bg="primary"
-                                version="v3"
-                                icon="Cart"
-                                className={showViewProducts ? "flex-1" : "w-full"}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (onAddToCart) {
-                                        onAddToCart(item);
-                                    } else {
-                                        addToCart(item);
-                                        showToast(`${item.name} added to cart!`);
-                                    }
-                                }}
-                            />
-                        )}
-                        {showViewProducts && (
-                            <Button
-                                text="Explore"
-                                bg="primary"
-                                variant="filled"
-                                version="v3"
-                                className={showAddToCart ? "flex-1" : "w-full"}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (onButtonClick) {
-                                        onButtonClick(item);
-                                    } else if (onCardClick) {
-                                        onCardClick(item);
-                                    }
-                                }}
-                            />
-                        )}
                     </div>
                 </div>
             );
@@ -420,7 +375,7 @@ const CardLayout = ({
                                 slidesPerView: 3.5,
                             },
                             1024: {
-                                slidesPerView: 4.2,
+                                slidesPerView: 4,
                             }
                         }}
                         className="mySwiper"

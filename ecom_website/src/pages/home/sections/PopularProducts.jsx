@@ -30,11 +30,8 @@ const PopularProducts = () => {
         <CardLayout
           items={popularProducts}
           cardType="product"
-          imageHeight="h-150"
+          imageHeight="h-250"
           isSlider={true}
-          cols="5"
-          mdCols="2"
-          smCols="1"
           className="mt-20"
           showViewProducts={false}
           onCardClick={handleProductClick}

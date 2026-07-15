@@ -51,9 +51,6 @@ const Home = () => {
       <LazySection placeholderHeight="400px">
         <TopCity />
       </LazySection>
-      <LazySection placeholderHeight="400px">
-        <FeaturedBusinesses />
-      </LazySection>
       <LazySection placeholderHeight="500px">
         <LatestArticles />
       </LazySection>
