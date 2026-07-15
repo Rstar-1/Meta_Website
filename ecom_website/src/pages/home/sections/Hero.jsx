@@ -122,7 +122,7 @@ const Hero = () => {
           {/* Right Column: Swiper Slider */}
           <div className="w-full pl-12 sm-pl-1">
             <Swiper
-              modules={[Autoplay, Pagination]}
+              modules={[Autoplay]}
               autoplay={{ delay: 3500, disableOnInteraction: false }}
               spaceBetween={20}
               slidesPerView={1}
