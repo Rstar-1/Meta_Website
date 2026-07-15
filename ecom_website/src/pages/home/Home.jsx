@@ -57,11 +57,11 @@ const Home = () => {
       <LazySection placeholderHeight="500px">
         <LatestArticles />
       </LazySection>
+      {/* <LazySection placeholderHeight="400px">
+        <Review />
+      </LazySection> */}
       <LazySection placeholderHeight="300px">
         <BusinessPromo />
-      </LazySection>
-      <LazySection placeholderHeight="400px">
-        <Review />
       </LazySection>
     </>
   );

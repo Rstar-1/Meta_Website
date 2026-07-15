@@ -312,11 +312,11 @@ const Products = () => {
 
         <div className="w-full py-30 flex md-flex-column sm-flex-column gap-12">
           {/* Left Sidebar Filter */}
-          <div className="w-20 md-w-full sm-w-full sidebar-filters">
+          <div className="w-25 md-w-full sm-w-full sidebar-filters">
             {renderFilters()}
           </div>
 
-          <div className="w-80 md-w-full sm-w-full">
+          <div className="w-75 md-w-full sm-w-full">
             <div className="mb-15">
               <h2 className="title-text text-dark font-600 pb-4">{headerInfo.title}</h2>
               <p className="small-text text-gray font-400">{headerInfo.desc}</p>

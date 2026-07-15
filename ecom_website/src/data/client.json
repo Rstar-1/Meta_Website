@@ -93,5 +93,24 @@
     "moq": "Bulk MOQ of ₹5,000 INR applies",
     "trustScore": "98% Excellent",
     "about": "EcoWrap Packaging is a certified distributor of premium quality packaging materials, offering custom bulk carton prints, eco-friendly filler, and shipping wraps."
+  },
+  {
+    "id": "biz-6",
+    "name": "Ashmita Enterprises",
+    "category": "PVC Products",
+    "rating": 4.3,
+    "reviews": "54",
+    "location": "Mumbai, India",
+    "phone": "+91 7942562287",
+    "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=500&auto=format&fit=crop",
+    "logo": "AE",
+    "legalName": "Ashmita Enterprises",
+    "gstin": "27ABLPY9708M1ZK",
+    "established": "Established 2021 (5+ Years)",
+    "yearsInBusiness": "5+",
+    "paymentTerms": "Net 30 Days / RTGS / Bank Transfer",
+    "moq": "Bulk MOQ of ₹5,000 INR applies",
+    "trustScore": "92% Response Rate",
+    "about": "Ashmita Enterprises is a prominent importer and wholesaler of high-quality PVC strip curtains, PVC rolls, transparent clear sheets, and mounting brackets based in Mumbai, Maharashtra."
   }
 ]

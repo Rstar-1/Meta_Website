@@ -431,6 +431,40 @@ const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, 
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             );
+        case "Payment":
+        case "CreditCard":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+            );
+        case "Truck":
+        case "Shipping":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+            );
+        case "Returns":
+        case "Rotate":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+            );
+        case "Support":
+        case "Phone":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+            );
         case "Facebook":
             return (
                 <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>

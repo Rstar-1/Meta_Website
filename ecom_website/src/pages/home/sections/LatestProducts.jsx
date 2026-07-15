@@ -13,7 +13,7 @@ const LatestProducts = () => {
     }
   };
 
-  const targetCategoryIds = ['cat-7', 'cat-2', 'cat-1', 'cat-10', 'cat-6', 'cat-12'];
+  const targetCategoryIds = ['cat-pvc-sheet', 'cat-pvc-roll', 'cat-pvc-strip-curtains'];
 
   return (
     <>

@@ -1,187 +1,163 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
-const background = "/background.webp";
 import Icon from '../../../components/common/Icon';
-import Fields from '../../../components/common/Fields';
-import { categories as categoriesData } from '../../../utils/productsData';
 import Image from '../../../components/common/Image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 
-const Hero = ({ onSearch }) => {
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import pvcRollIndustrial from '../../../assets/pvc_roll_industrial.png';
+import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.png';
+import pvcCurtainIndustrial from '../../../assets/pvc_curtain_industrial.png';
+
+const Hero = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState('All');
-  const [query, setQuery] = useState('');
-  const [location, setLocation] = useState('Delhi');
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    if (onSearch) {
-      onSearch({ category, query, location });
-    }
-    navigate(`/products?category=${category}&search=${query}&city=${location}`, {
-      state: { category, search: query, city: location }
-    });
-  };
-
-  const popularSearches = [
-    'AC Repair',
-    'Home Services',
-    'Doctors',
-    'Packers And Movers',
-    'Salons',
+  const features = [
+    { title: "Premium Quality", desc: "100% Virgin Material", icon: "Shield" },
+    { title: "Wide Range", desc: "of Products", icon: "Grid" },
+    { title: "Custom Solutions", desc: "Made to Measure", icon: "Builder" },
+    { title: "Fast Delivery", desc: "Pan India", icon: "Location" }
   ];
 
-  const badges = [
+  const slides = [
     {
-      id: 1,
-      icon: <Icon name="Shield" width="16" height="16" stroke="var(--primary)" />,
-      title: 'Trusted by',
-      subtitle: 'Millions'
+      image: pvcRollIndustrial,
+      title: "Soft Transparent PVC Rolls",
+      desc: "High clarity, flexible grade"
     },
     {
-      id: 2,
-      icon: <Icon name="Network" width="16" height="16" stroke="var(--primary)" />,
-      title: 'Huge Network of',
-      subtitle: 'Businesses'
+      image: pvcSheetsIndustrial,
+      title: "Super Clear PVC Sheets",
+      desc: "Industrial grade transparent protection"
     },
     {
-      id: 3,
-      icon: <Icon name="Grow" width="16" height="16" stroke="var(--primary)" />,
-      title: 'Find. Connect.',
-      subtitle: 'Grow.'
+      image: pvcCurtainIndustrial,
+      title: "Polar Grade Strip Curtains",
+      desc: "Ideal for cold rooms and freezers"
     }
   ];
 
   return (
-    <Container
-      className='h-500 sm-h-700 py-40 flex items-center relative overflow-hidden'
-    >
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          zIndex: 0,
-          pointerEvents: 'none'
-        }}
-      >
-        <Image
-          src={background}
-          alt="Hero Background"
-          loading="eager"
-          fetchPriority="high"
-          width="1920"
-          height="500"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: 'right' }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.54))',
-            zIndex: 1
-          }}
-        />
-      </div>
+    <Container style={{
+      background: "linear-gradient(135deg, #020712 0%, #081026 100%)",
+    }}>
+      <div className='py-40'>
+        <div className="grid-cols-2 gap-12 items-center w-full">
 
-      <div className="w-full relative z-10">
-        <h1 className="large-text text-white font-700 uppercase">
-          India's No. 1<br />
-          Local Business Discovery Platform
-        </h1>
+          {/* Left Column: Text & Features */}
+          <div className="w-full">
 
-        <div className="flex sm-flex-wrap items-center gap-12 mt-22 sm-mt-12">
-          {badges.map((badge) => (
-            <div key={badge.id} className="flex items-center gap-12 mr-18 sm-mr-10">
-              <div className="icon-lg bg-white rounded-5">
-                {badge.icon}
-              </div>
-              <div className="block">
-                <p className="text-white small-text font-500">{badge.title}</p>
-                <p className="text-white mini-text">{badge.subtitle}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <form className="mt-25 bg-white w-70 md-w-full sm-w-full rounded-10" onSubmit={handleSearchSubmit}>
-          <div className='flex md-grid-cols-1 sm-grid-cols-1 items-center gap-12 py-12 sm-py-15 px-16 sm-px-16'>
-            <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
-              <Icon name="Grid" width="20" height="20" stroke="var(--primary)" />
-              <Fields
-                type="select"
-                options={[
-                  { label: 'All Categories', value: 'All' },
-                  ...categoriesData.map(c => ({ label: c.name, value: c.id }))
-                ]}
-                value={category}
-                onChange={setCategory}
-                variant='outline'
-                className="w-full"
-              />
+            {/* Tag Badge */}
+            <div
+              className="flex items-center gap-10 w-max p-10"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.14)"
+              }}
+            >
+              <Icon name="Shield" width="14" height="14" stroke="var(--primary)" />
+              <p className="mini-text text-white font-500 uppercase">
+                India's No.1 PVC Manufacturer
+              </p>
             </div>
 
-            <div className="flex items-center gap-12 w-45 md-w-full sm-w-full">
-              <Icon name="Search" width="20" height="20" stroke="var(--primary)" />
-              <Fields
-                type="text"
-                placeholder="What are you looking for?"
-                value={query}
-                onChange={setQuery}
-                variant='outline'
-                className="w-full"
-              />
+            {/* Title */}
+            <h1 className="large-text text-white font-600 uppercase pt-10">
+              Premium PVC<br />
+              <span className="text-primary font-800">For Every Industry</span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="small-text text-white mt-12">
+              High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.
+            </p>
+
+            {/* Features Grid */}
+            <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-30">
+              {features?.map((f, idx) => (
+                <div key={idx} className="flex items-center gap-12 mb-16">
+                  <div
+                    className="rounded-full flex items-center justify-center"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.19)",
+                      width: "40px",
+                      height: "40px",
+                      minWidth: "40px"
+                    }}
+                  >
+                    <Icon name={f.icon} width="18" height="18" stroke="var(--white)" />
+                  </div>
+                  <div>
+                    <h4 className="headmini-text font-500 text-white">{f.title}</h4>
+                    <p className="mini-text font-400 text-white" style={{ opacity: 0.60 }}>{f.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="flex items-center gap-12 w-20 md-w-full sm-w-full">
-              <Icon name="MapPin" width="20" height="20" stroke="var(--primary)" />
-              <Fields
-                type="select"
-                options={[
-                  { label: 'Delhi', value: 'Delhi' },
-                  { label: 'Mumbai', value: 'Mumbai' },
-                  { label: 'Bangalore', value: 'Bangalore' },
-                  { label: 'Chennai', value: 'Chennai' },
-                  { label: 'Hyderabad', value: 'Hyderabad' }
-                ]}
-                value={location}
-                onChange={setLocation}
-                variant='outline'
-                className="w-full"
-              />
-            </div>
-
-            <div className="w-15 md-w-full sm-w-full">
+            {/* CTA Buttons */}
+            <div className="flex items-center gap-12 mt-20">
               <Button
-                type="submit"
-                text="Apply Filters"
+                text="Shop Now"
+                version="v2"
                 bg="primary"
-                version='v3'
-                className="w-full"
+                onClick={() => navigate("/products")}
+              />
+              <Button
+                text="Request a Quote"
+                version="v2"
+                bg="transparent"
+                style={{ border: "1px solid rgba(255, 255, 255, 0.2)", color: "#ffffff" }}
+                onClick={() => navigate("/connect")}
+                icon="ArrowRight"
+                iconPosition="right"
               />
             </div>
           </div>
-        </form>
 
-        <div className="flex sm-flex-wrap items-center gap-12 mt-26 sm-mt-18">
-          <p className="para-text text-white font-500">Popular Searches:</p>
-          {popularSearches.map((tag, index) => (
-            <p
-              key={index}
-              className='bg-transparent mini-text text-white px-20 py-4 rounded-5 cursor-pointer'
-              style={{ cursor: 'pointer' }}
-              onClick={() => {
-                setQuery(tag);
-                navigate(`/products?search=${tag}&city=${location}`, {
-                  state: { category: 'All', search: tag, city: location }
-                });
-              }}
+          {/* Right Column: Swiper Slider */}
+          <div className="w-full">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 3500, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              spaceBetween={20}
+              slidesPerView={1}
+              loop={true}
+              className="w-full"
             >
-              {tag}
-            </p>
-          ))}
+              {slides.map((slide, idx) => (
+                <SwiperSlide key={idx}>
+                  <div className="relative h-500">
+                    <Image
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover flex rounded-5"
+                    />
+                    <div className="absolute bottom-0 left-0 w-full px-20 py-30 z-10" style={{
+                      background: "linear-gradient(to top, rgba(2, 7, 18, 0.95) 0%, rgba(2, 7, 18, 0.5) 50%, transparent 100%)",
+
+                    }}>
+                      <h3 className="mid-text font-600 text-white" style={{ margin: 0 }}>
+                        {slide.title}
+                      </h3>
+                      <p className="mini-text text-white font-400 mt-4" style={{ opacity: 0.80, margin: 0 }}>
+                        {slide.desc}
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
         </div>
+
       </div>
     </Container>
   );

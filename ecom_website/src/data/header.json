@@ -9,12 +9,6 @@
       "width": "960px",
       "cols": "grid-cols-3"
     },
-    {
-      "label": "Industry",
-      "hasMegaMenu": true,
-      "width": "650px",
-      "cols": "grid-cols-2"
-    },
     { "href": "/connect", "label": "Connect" }
   ],
   "productsMenu": {
@@ -41,24 +35,6 @@
           "CAD Modeling",
           "PLC Configuration",
           "Firmware Updates"
-        ]
-      }
-    ]
-  },
-  "industryMenu": {
-    "bannerImage": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-    "bannerTitle": "OEM Integration",
-    "bannerDesc": "Certified standard-setting built with industry leaders.",
-    "bannerLinkText": "View Partners",
-    "sections": [
-      {
-        "title": "Product Categories",
-        "items": [
-          "Steel Products",
-          "PVC Products",
-          "Industrial Machinery",
-          "Electrical & Electronics",
-          "Packaging Solutions"
         ]
       }
     ]

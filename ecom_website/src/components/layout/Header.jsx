@@ -6,6 +6,7 @@ import Image from "../common/Image";
 import Icon from "../common/Icon";
 import headerData from "../../data/header.json";
 import { products as productsData, categories as categoryData } from "../../utils/productsData";
+import Fields from "../common/Fields";
 const logoImg = "/sobo_logo.webp";
 
 const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
@@ -58,8 +59,8 @@ const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
         {headerData.productsMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
       </p>
     </div>
-    {[...new Set((productsData || []).filter((p) => p.type !== "general").map((p) => p.category))].map((cat, idx) => {
-      const items = (productsData || []).filter((p) => p.category === cat && p.type !== "general" && p.popular).slice(0, 5);
+    {['cat-pvc-sheet', 'cat-pvc-roll'].map((cat, idx) => {
+      const items = (productsData || []).filter((p) => p.category === cat).slice(0, 5);
       if (items.length === 0) return null;
       return (
         <div key={idx} className="p-18">
@@ -87,86 +88,10 @@ const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
     })}
   </>
 );
-
-const IndustryMenu = ({ onItemClick, categoriesData }) => {
-  const categories = (categoriesData || []).slice(0, 5).map((c) => c.name);
-  return (
-    <>
-      <style>{`
-        .mega-menu-item {
-          padding: 10px 0px;
-          cursor: pointer;
-          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-        .mega-menu-item:hover {
-          background-color: var(--tertiary) !important;
-          transform: translateX(3px);
-        }
-        .mega-menu-item:hover p {
-          color: var(--primary) !important;
-        }
-        .mega-menu-link:hover {
-          color: var(--primary) !important;
-        }
-        .arrow-icon {
-          font-size: 0.8rem;
-          color: var(--gray);
-          opacity: 0;
-          transform: translateX(-5px);
-          transition: all 0.2s ease;
-          padding-right: 15px;
-        }
-        .mega-menu-item:hover .arrow-icon {
-          opacity: 1;
-          transform: translateX(0);
-          color: var(--primary) !important;
-        }
-      `}</style>
-      <div className="bg-tertiary p-18">
-        <Image
-          src={headerData.industryMenu.bannerImage}
-          alt="Industry"
-          className="flex w-full h-200 object-cover rounded-5"
-        />
-        <h4 className="mid-text text-dark font-500 pt-20">{headerData.industryMenu.bannerTitle}</h4>
-        <p className="small-text text-gray font-400 mt-6">
-          {headerData.industryMenu.bannerDesc}
-        </p>
-        <p className="small-text text-secondary font-400 mt-6 cursor-pointer mega-menu-link flex items-center gap-4" onClick={() => onItemClick()}>
-          {headerData.industryMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
-        </p>
-      </div>
-      <div className="p-18">
-        <p className="text-gray uppercase small-text font-500">Product Categories</p>
-        <div className="grid grid-cols-1 gap-8 mt-12">
-          {categories.map((cat, index) => (
-            <div
-              key={index}
-              className="mega-menu-item"
-              onClick={() => onItemClick(null, cat)}
-            >
-              <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>{cat}</p>
-              <span className="arrow-icon">
-                <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-};
-
 const MegaMenuContent = memo(({ label, onItemClick, navigate, productsData, categoriesData }) => {
   switch (label) {
     case "Products":
       return <ProductsMenu onItemClick={onItemClick} navigate={navigate} productsData={productsData} categoriesData={categoriesData} />;
-    case "Industry":
-      return <IndustryMenu onItemClick={onItemClick} navigate={navigate} categoriesData={categoriesData} />;
     default:
       return null;
   }
@@ -179,6 +104,8 @@ const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [menuData] = useState({ products: productsData, categories: categoryData });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const updateCount = () => {
@@ -194,6 +121,7 @@ const Header = () => {
 
   const handleItemClick = (productId, categoryName) => {
     setActiveMenu(null);
+    setIsSearchOpen(false);
     if (productId) {
       navigate(`/product-detail/${productId}`);
     } else if (categoryName) {
@@ -204,7 +132,7 @@ const Header = () => {
   };
 
   return (
-    <>
+    <div style={{ backgroundColor: "#020712", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", position: "sticky", top: 0, zIndex: 100 }}>
       <Container className="navbar">
         <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
           <div className="flex items-center gap-8">
@@ -217,7 +145,8 @@ const Header = () => {
                 style={{
                   maxHeight: '42px',
                   width: 'auto',
-                  objectFit: 'contain'
+                  objectFit: 'contain',
+                  filter: 'brightness(0) invert(1)'
                 }}
               />
             </NavLink>
@@ -236,13 +165,13 @@ const Header = () => {
                   {!item?.hasMegaMenu ? (
                     <NavLink
                       to={item?.href}
-                      className="small-text font-500 px-20 py-6 cursor-pointer text-dark"
+                      className="small-text font-500 px-20 py-6 cursor-pointer text-white hover:text-primary transition-all"
                       style={{ textDecoration: "none" }}
                     >
                       {item?.label}
                     </NavLink>
                   ) : (
-                    <p className="small-text text-dark font-500 px-20 py-6 cursor-pointer">
+                    <p className="small-text text-white hover:text-primary font-500 px-20 py-6 cursor-pointer" style={{ margin: 0 }}>
                       {item?.label}
                     </p>
                   )}
@@ -280,17 +209,38 @@ const Header = () => {
                 </div>
               ))}
             </div>
+
           </div>
 
           <div className="flex items-center gap-12 sm-gap-1">
+            {/* Desktop Search Toggle Icon */}
+            <div 
+              className="relative flex items-center justify-center cursor-pointer text-white hover:text-primary transition-all p-8 sm-hidden md-hidden"
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              title="Search"
+            >
+              <Icon name="Search" width="22" height="22" stroke="#ffffff" />
+            </div>
+
+            {/* User Profile Link */}
+            <Icon
+              name="Users"
+              width="22"
+              height="22"
+              stroke="#ffffff"
+              className="cursor-pointer hover:text-primary transition-all mr-6 sm-hidden md-hidden"
+              onClick={() => navigate("/dashboard")}
+              title="User Dashboard"
+            />
+
             {/* Cart Link with Badge */}
             <NavLink
               to="/cart"
-              className="relative flex items-center justify-center cursor-pointer text-dark hover:text-primary transition-all"
+              className="relative flex items-center justify-center cursor-pointer text-white hover:text-primary transition-all"
               style={{ padding: '8px', textDecoration: 'none' }}
               title="View Cart"
             >
-              <Icon name="Cart" width="22" height="22" stroke="var(--dark)" />
+              <Icon name="Cart" width="22" height="22" stroke="#ffffff" />
               {cartCount > 0 && (
                 <span
                   className="absolute bg-danger text-white rounded-full flex items-center justify-center font-700"
@@ -310,7 +260,7 @@ const Header = () => {
 
             <div className="sm-hidden md-hidden">
               <Button
-                text="Talk to Engineer"
+                text="Get Quote"
                 version="v2"
                 bg="primary"
                 onClick={() => navigate("/connect")}
@@ -324,38 +274,67 @@ const Header = () => {
                 setIsMobileOpen(!isMobileOpen);
                 setOpenMobileMenu(null);
               }}
-              style={{ border: "none", color: "var(--dark)" }}
+              style={{ border: "none", color: "#ffffff" }}
               icon={isMobileOpen ? "Close" : "Menu"}
               iconWidth="24"
               iconHeight="24"
               iconStrokeWidth="2"
-              bg="forth"
+              bg="transparent"
             />
           </div>
         </div>
       </Container>
 
+      {/* Mobile Drawer */}
       {isMobileOpen && (
         <div
-          className="mobile-drawer bg-forth px-24 py-20"
+          className="mobile-drawer px-24 py-20"
+          style={{ backgroundColor: "#020712", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}
         >
           <div className="grid-cols-1">
+            {/* Mobile Search Bar */}
+            <div className="mb-20">
+              <Fields
+                type="text"
+                placeholder="Search products..."
+                icon="Search"
+                iconPosition="right"
+                value={searchQuery}
+                onChange={setSearchQuery}
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  color: "#ffffff",
+                  height: "36px",
+                  borderRadius: "6px",
+                  fontSize: "13px",
+                  width: "100%",
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    setIsMobileOpen(false);
+                    navigate(`/products?search=${searchQuery}`);
+                  }
+                }}
+              />
+            </div>
+
             {headerData.navLinks.map((item, i) => {
               const isExpanded = openMobileMenu === item.label;
               const hasMega = item.hasMegaMenu;
               return (
-                <div key={i} className="bordb py-12">
+                <div key={i} className="bordb py-12" style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}>
                   {hasMega ? (
                     <>
                       <div
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => setOpenMobileMenu(isExpanded ? null : item.label)}
                       >
-                        <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
+                        <p className="para-text font-500 text-white" style={{ margin: 0 }}>
                           {item.label}
                         </p>
                         <span
-                          className="text-dark flex items-center justify-center"
+                          className="text-white flex items-center justify-center"
                           style={{
                             transition: "transform 0.2s ease",
                             transform: isExpanded ? "rotate(90deg)" : "none",
@@ -393,7 +372,7 @@ const Header = () => {
                       onClick={() => setIsMobileOpen(false)}
                       style={{ textDecoration: "none" }}
                     >
-                      <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
+                      <p className="para-text font-500 text-white" style={{ margin: 0 }}>
                         {item.label}
                       </p>
                     </NavLink>
@@ -402,7 +381,7 @@ const Header = () => {
               );
             })}
             <Button
-              text="Talk to Engineer"
+              text="Get Quote"
               version="v3"
               bg="primary"
               onClick={() => {
@@ -414,7 +393,45 @@ const Header = () => {
           </div>
         </div>
       )}
-    </>
+
+      {/* Desktop Search Dropdown */}
+      {isSearchOpen && (
+        <div 
+          className="absolute bg-white p-12 shadow-md rounded-5 z-99 border-ec sm-hidden md-hidden" 
+          style={{ 
+            top: "65px", 
+            right: "220px", 
+            width: "300px" 
+          }}
+        >
+          <Fields
+            type="text"
+            placeholder="Search products..."
+            icon="Search"
+            iconPosition="right"
+            value={searchQuery}
+            onChange={setSearchQuery}
+            style={{
+              backgroundColor: "#ffffff",
+              border: "1px solid #ececec",
+              color: "#333333",
+              height: "36px",
+              borderRadius: "6px",
+              fontSize: "13px",
+              outline: "none",
+              width: "100%",
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setIsSearchOpen(false);
+                navigate(`/products?search=${searchQuery}`);
+              }
+            }}
+            autoFocus
+          />
+        </div>
+      )}
+    </div>
   );
 };
 

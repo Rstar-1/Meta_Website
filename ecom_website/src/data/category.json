@@ -1,38 +1,80 @@
 [
   {
-    "id": "cat-1",
-    "name": "Steel Products",
-    "icon": "/src/assets/ss_304_pipes.webp",
+    "id": "cat-pvc-strip-curtains",
+    "name": "PVC Strip Curtains",
+    "icon": "/src/assets/pvc_w-s-i-pvc-strip-curtain-roll_1.webp",
     "color": "#e8f0fe"
   },
   {
-    "id": "cat-2",
-    "name": "PVC Products",
-    "icon": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=150&h=150&q=80",
+    "id": "cat-pvc-sheet",
+    "name": "PVC Sheet",
+    "icon": "/src/assets/pvc_pvc-clear-sheet_1.webp",
     "color": "#d1fae5"
   },
   {
-    "id": "cat-6",
-    "name": "Safety Equipment",
-    "icon": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=150&h=150&q=80",
+    "id": "cat-pvc-roll",
+    "name": "PVC Roll",
+    "icon": "/src/assets/pvc_soft-pvc-roll_1.webp",
     "color": "#ffedd5"
   },
   {
-    "id": "cat-7",
-    "name": "Printers & Copiers",
-    "icon": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=150&h=150&q=80",
+    "id": "cat-pvc-color-film",
+    "name": "PVC Color Film",
+    "icon": "/src/assets/pvc_pvc-rainbow-clear-sheet_1.webp",
     "color": "#fce7f3"
   },
   {
-    "id": "cat-10",
-    "name": "Fasteners & Screws",
-    "icon": "/src/assets/ss_fasteners.webp",
+    "id": "cat-pvc-curtain",
+    "name": "Pvc Curtain",
+    "icon": "/src/assets/pvc_polar-pvc-strip-curtain_1.webp",
     "color": "#fae8ff"
   },
   {
-    "id": "cat-12",
-    "name": "Office & Industrial Furniture",
-    "icon": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=150&h=150&q=80",
+    "id": "cat-pvc-transparent-clear-film",
+    "name": "Pvc Transparent Clear Film",
+    "icon": "/src/assets/pvc_super-clear-pvc-sheet-roll_1.webp",
+    "color": "#e0f2fe"
+  },
+  {
+    "id": "cat-pvc-film-roll",
+    "name": "Pvc Film Roll",
+    "icon": "/src/assets/pvc_pvc-film_1.webp",
+    "color": "#fef3c7"
+  },
+  {
+    "id": "cat-stretch-ceiling",
+    "name": "Stretch Ceiling",
+    "icon": "/src/assets/placeholder.webp",
+    "color": "#ffe4e6"
+  },
+  {
+    "id": "cat-freezer-strip-curtain",
+    "name": "Freezer Strip Curtain",
+    "icon": "/src/assets/pvc_polar-pvc-strip-curtain_1.webp",
+    "color": "#ccfbf1"
+  },
+  {
+    "id": "cat-pvc-reinforced-sheet",
+    "name": "PVC REINFORCED SHEET",
+    "icon": "/src/assets/pvc_pvc-reinforced-sheet_1.webp",
+    "color": "#e0e7ff"
+  },
+  {
+    "id": "cat-pvc-strip-curtain",
+    "name": "Pvc Strip Curtain",
+    "icon": "/src/assets/pvc_flexible-transparent-pvc-strip_1.webp",
+    "color": "#f3e8ff"
+  },
+  {
+    "id": "cat-mounting-brackets",
+    "name": "Mounting Brackets",
+    "icon": "/src/assets/pvc_pvc-strip-curtains-hanger_1.webp",
     "color": "#ffedd5"
+  },
+  {
+    "id": "cat-plastic-curtain",
+    "name": "Plastic Curtain",
+    "icon": "/src/assets/pvc_pvc-ac-curtain_1.webp",
+    "color": "#d1fae5"
   }
 ]
