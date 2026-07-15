@@ -149,7 +149,7 @@ const features = [
   {
     icon: '🚚',
     bg: '#f0fdf4',
-    title: 'Timely Delivery',
+    title: 'Delivery',
     subtitle: 'Nationwide'
   },
   {
@@ -161,7 +161,7 @@ const features = [
   {
     icon: '💳',
     bg: '#fef2f2',
-    title: 'Secure Payments',
+    title: 'Payments',
     subtitle: 'Safe & Secure'
   }
 ];
@@ -247,7 +247,7 @@ const ProductLayout = ({
       <Container>
         <div className="py-50">
           <div className='flex sm-grid-cols-1 items-start gap-12'>
-            <div className='w-75 sm-w-full pr-15 sm-pr-1'>
+            <div className='w-75 sm-w-full pr-5 sm-pr-1'>
               {/* Product Overview Section */}
               <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
                 <div className='pr-10 sm-pr-1'>
@@ -445,7 +445,7 @@ const ProductLayout = ({
               </div>
             </div>
 
-            <div className='w-25 sm-w-full grid-cols-1 gap-12 pl-15 sm-pl-1'>
+            <div className='w-25 sm-w-full grid-cols-1 gap-12 pl-5 sm-pl-1'>
               <ProductEnquiryForm />
               <SupplierCard brand={productData.brand} />
               <TrustAssurance />

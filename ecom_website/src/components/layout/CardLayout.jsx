@@ -420,7 +420,7 @@ const CardLayout = ({
                                 slidesPerView: 3.5,
                             },
                             1024: {
-                                slidesPerView: 4.4,
+                                slidesPerView: 4.2,
                             }
                         }}
                         className="mySwiper"

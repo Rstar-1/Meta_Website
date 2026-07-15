@@ -357,7 +357,7 @@ const Products = () => {
               items={filteredProducts}
               cardType="product"
               imageHeight="h-200 sm-h-250"
-              cols="4"
+              cols="3"
               mdCols="2"
               smCols="1"
               gap="12"

@@ -43,7 +43,7 @@ const LatestProducts = () => {
               <CardLayout
                 items={categoryProducts}
                 cardType="product"
-                imageHeight="h-250"
+                imageHeight="h-200"
                 isSlider={true}
                 cols="4"
                 mdCols="2"
