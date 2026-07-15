@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <Container style={{
-      background: "linear-gradient(135deg, #020712 0%, #081026 100%)",
+      background: "linear-gradient(135deg, #1b2539ff 0%, #081027ff 100%)",
     }}>
       <div className='py-40'>
         <div className="grid-cols-2 gap-12 items-center w-full">

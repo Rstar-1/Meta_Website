@@ -214,7 +214,7 @@ const Header = () => {
 
           <div className="flex items-center gap-12 sm-gap-1">
             {/* Desktop Search Toggle Icon */}
-            <div 
+            <div
               className="relative flex items-center justify-center cursor-pointer text-white hover:text-primary transition-all p-8 sm-hidden md-hidden"
               onClick={() => setIsSearchOpen(!isSearchOpen)}
               title="Search"
@@ -243,7 +243,7 @@ const Header = () => {
               <Icon name="Cart" width="22" height="22" stroke="#ffffff" />
               {cartCount > 0 && (
                 <span
-                  className="absolute bg-danger text-white rounded-full flex items-center justify-center font-700"
+                  className="absolute bg-primary text-white rounded-full flex items-center justify-center font-400"
                   style={{
                     top: '-2px',
                     right: '-2px',
@@ -396,12 +396,12 @@ const Header = () => {
 
       {/* Desktop Search Dropdown */}
       {isSearchOpen && (
-        <div 
-          className="absolute bg-white p-12 shadow-md rounded-5 z-99 border-ec sm-hidden md-hidden" 
-          style={{ 
-            top: "65px", 
-            right: "220px", 
-            width: "300px" 
+        <div
+          className="absolute bg-white p-12 shadow-md rounded-5 z-99 border-ec sm-hidden md-hidden"
+          style={{
+            top: "65px",
+            right: "220px",
+            width: "300px"
           }}
         >
           <Fields

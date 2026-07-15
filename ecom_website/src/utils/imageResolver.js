@@ -1,3 +1,4 @@
+import placeholder from '../assets/placeholder.webp';
 // Import standard product images
 import printerHp88a from '../assets/printer_hp_88a.webp';
 import printerCanon74s from '../assets/printer_canon_74s.webp';
@@ -57,6 +58,7 @@ import pvc_welding_green_pvc_strip_curtains_roll_1 from '../assets/pvc_welding-g
 import pvc_yellow_anti_insect_pvc_strips_curtain_1 from '../assets/pvc_yellow-anti-insect-pvc-strips-curtain_1.webp';
 
 const assetMap = {
+  '/src/assets/placeholder.webp': placeholder,
   '/src/assets/printer_hp_88a.webp': printerHp88a,
   '/src/assets/printer_canon_74s.webp': printerCanon74s,
   '/src/assets/printer_canon_746.webp': printerCanon746,
