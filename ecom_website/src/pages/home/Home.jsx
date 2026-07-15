@@ -43,11 +43,11 @@ const Home = () => {
       <Hero />
       <BrowseCategory />
       <LatestProducts />
-      <PopularProducts />
 
       <LazySection placeholderHeight="350px">
         <WhyChoose />
       </LazySection>
+      <PopularProducts />
       <LazySection placeholderHeight="500px">
         <LatestArticles />
       </LazySection>
