@@ -3,7 +3,7 @@
 :root {
     --primary: #fb7d40 !important;
     --secondary: #1f5ac0 !important;
-    --tertiary: rgba(250, 250, 250, 0.671) !important;
+    --tertiary: #edf2f756 !important;
     --forth: #fafafa !important;
     --success: #1cb012bc !important;
     --successtext: #25771fbc !important;
@@ -330,7 +330,7 @@ input,
 
 .para-text {
     font-size: 18px !important;
-    line-height: 22px !important;
+    line-height: 29px !important;
     font-weight: 400 !important;
 
     @media (max-width: 640px) {
