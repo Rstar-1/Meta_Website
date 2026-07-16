@@ -171,26 +171,25 @@ const Fields = ({
             if (icon) {
                 const isLeft = iconPosition === "left";
                 return (
-                    <div className="relative w-full flex items-center">
+                    <div className="relative w-full flex items-center overflow-hidden">
                         {isLeft && (
-                            <div className="absolute left-12 text-gray flex items-center pointer-events-none">
+                            <div className="absolute left-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
                                 <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
                             </div>
                         )}
                         <input
                             type={typeMap[type]}
                             {...commonProps}
-                            style={{
+                            className={`${clsInput} ${className || ""}`} style={{
                                 ...getInputStyle(),
                                 paddingLeft: isLeft ? "36px" : "12px",
                                 paddingRight: !isLeft ? "36px" : "12px",
                                 textIndent: isLeft ? "0px" : "12px",
                                 ...style
                             }}
-                            className={`${clsInput} ${className || ""}`}
                         />
                         {!isLeft && (
-                            <div className="absolute right-12 text-gray flex items-center pointer-events-none">
+                            <div className="absolute right-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
                                 <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
                             </div>
                         )}

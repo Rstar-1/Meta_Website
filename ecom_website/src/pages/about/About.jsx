@@ -1,12 +1,11 @@
 import React from 'react'
 import Banner from '../../components/layout/Banner'
-import DetailSection from './sections/DetailSection'
-import Timeline from './sections/Timeline'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import OrganizationSchema from '../../components/seo/OrganizationSchema'
 import LatestArticles from '../home/sections/LatestArticles'
 import BusinessPromo from '../home/sections/BusinessPromo'
 import Review from '../home/sections/Review'
+import WhyChoose from '../home/sections/WhyChoose'
 
 const About = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
@@ -30,8 +29,7 @@ const About = () => {
           { label: 'About Us' }
         ]}
       />
-      <Timeline />
-      <DetailSection />
+      <WhyChoose />
       <LatestArticles />
       <BusinessPromo />
       <Review />

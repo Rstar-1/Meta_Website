@@ -22,11 +22,11 @@ const Button = ({
     const borderClass = variant === "outline" ? `border-${bg}` : "border-0";
     switch (version) {
       case "v0":
-        return `px-22 py-8 mini-text rounded-5 ${borderClass}`;
+        return `px-22 py-8 sm-px-12 sm-py-6 mini-text rounded-5 ${borderClass}`;
       case "v1":
-        return `px-20 py-9 para-text rounded-5 ${borderClass}`;
+        return `px-20 py-9  para-text rounded-5 ${borderClass}`;
       case "v2":
-        return `px-25 py-11 small-text rounded-5 ${borderClass}`;
+        return `px-25 py-11 sm-px-12 sm-py-6 small-text rounded-5 ${borderClass}`;
       case "v3":
         return `w-full py-10 sm-py-13 mini-text rounded-5 ${borderClass}`;
       default:

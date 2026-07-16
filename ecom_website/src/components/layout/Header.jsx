@@ -212,7 +212,7 @@ const Header = () => {
 
           </div>
 
-          <div className="flex items-center gap-12 sm-gap-1">
+          <div className="flex items-center gap-12 sm-gap-12">
             {/* Desktop Search Toggle Icon */}
             <div
               className="relative flex items-center justify-center cursor-pointer text-white hover:text-primary transition-all p-8 sm-hidden md-hidden"
@@ -279,6 +279,7 @@ const Header = () => {
               iconWidth="24"
               iconHeight="24"
               iconStrokeWidth="2"
+              version="v0"
               bg="transparent"
             />
           </div>

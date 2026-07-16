@@ -47,7 +47,7 @@ const Hero = () => {
       background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)",
     }}>
       <div className='py-40'>
-        <div className="grid-cols-2 gap-12 items-center w-full">
+        <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full overflow-hidden">
 
           {/* Left Column: Text & Features */}
           <div className="w-full pr-12 sm-pr-1">
@@ -120,7 +120,7 @@ const Hero = () => {
           </div>
 
           {/* Right Column: Swiper Slider */}
-          <div className="w-full pl-12 sm-pl-1">
+          <div className="w-full pl-12 sm-pl-1 sm-mt-10">
             <Swiper
               modules={[Autoplay]}
               autoplay={{ delay: 3500, disableOnInteraction: false }}
@@ -131,22 +131,21 @@ const Hero = () => {
             >
               {slides.map((slide, idx) => (
                 <SwiperSlide key={idx}>
-                  <div className="relative h-500 rounded-10 overflow-hidden">
+                  <div className="relative h-500 sm-h-300 rounded-5 overflow-hidden">
                     <Image
                       src={slide.image}
                       alt={slide.title}
                       className="w-full h-full object-cover flex"
                     />
-                    <div className="absolute bottom-0 left-0 w-full px-20 py-30 z-10" style={{
-                      background: "linear-gradient(to top, rgba(2, 7, 18, 0.95) 10%, rgba(2, 7, 18, 0.9) 50%, transparent 100%)",
-
-                    }}>
-                      <h3 className="mid-text font-600 text-white" style={{ margin: 0 }}>
-                        {slide.title}
-                      </h3>
-                      <p className="mini-text text-white font-400 mt-4" style={{ opacity: 0.80, margin: 0 }}>
-                        {slide.desc}
-                      </p>
+                    <div className="absolute bottom-0 left-0 z-10 m-10">
+                      <div className='bg-dark rounded-5 p-20'>
+                        <h3 className="mid-text font-500 text-white">
+                          {slide.title}
+                        </h3>
+                        <p className="mini-text text-white font-400" style={{ opacity: 0.80 }}>
+                          {slide.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>

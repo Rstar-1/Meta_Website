@@ -137,7 +137,7 @@ const Cart = () => {
             bg="danger"
             onClick={() => removeFromCart(row.id)}
             title="Remove Item"
-            version='v2'
+            version='v0'
           >
             <Icon name="Trash" width="15" height="15" stroke="#c21b1b" />
           </Button>
@@ -288,14 +288,14 @@ const Cart = () => {
                     {/* Summary row */}
                     <div className="flex justify-between items-center p-15">
                       <p className="small-text text-dark font-500">Total Items ({cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)})</p>
-                      <p className="small-text font-500">Total Price: <span className="text-primary font-700">₹{totalPrice.toLocaleString('en-IN')}</span></p>
+                      <p className="small-text font-500">Total Price: <span className="text-primary font-500">₹{totalPrice.toLocaleString('en-IN')}</span></p>
                     </div>
                   </div>
                 )}
               </div>
 
               <div className="rounded-5 bg-forth p-15">
-                <h4 className="mid-text font-600 text-primary mb-2">ℹ️ Note</h4>
+                <h4 className="mid-text font-600 text-dark mb-2">ℹ️ Note</h4>
                 <p className="mini-text text-gray m-0">
                   Prices shown are indicative. Final prices will be provided by suppliers based on your requirements.
                 </p>

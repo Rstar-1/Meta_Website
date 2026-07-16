@@ -64,9 +64,9 @@ const Review = () => {
   };
 
   return (
-    <Container >
+    <Container style={{ backgroundColor: "var(--forth)" }}>
       <div className="w-full py-40">
-        <div className="bg-white rounded-10">
+        <div className="rounded-10">
           <div className="flex md-flex-column sm-flex-column items-center gap-16">
 
             <div className='w-20 md-w-full sm-w-full px-10'>

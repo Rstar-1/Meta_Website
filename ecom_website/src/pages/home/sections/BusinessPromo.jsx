@@ -43,7 +43,7 @@ const BusinessPromo = () => {
           }}
         >
           {/* Left Text and CTA */}
-          <div className="w-60 pr-12 sm-pr-1">
+          <div className="w-60 sm-w-full pr-12 sm-pr-1">
             <div
               className="flex items-center gap-10 w-max px-16 py-10 rounded-20"
               style={{
@@ -74,7 +74,7 @@ const BusinessPromo = () => {
           </div>
 
           {/* Right Product Image & Badge */}
-          <div className="relative flex items-center justify-center w-40 pl-12 sm-pl-1">
+          <div className="relative flex items-center justify-center w-40 sm-w-full sm-mt-10 pl-12 sm-pl-1">
             <Image
               src={pvcSheetsIndustrial}
               alt="Industrial PVC Rolls"
@@ -100,7 +100,7 @@ const BusinessPromo = () => {
         </div>
 
         {/* Bottom Trust Badges */}
-        <div className="grid-cols-4 sm-grid-cols-2 md-grid-cols-2 gap-12 mt-20">
+        <div className="grid-cols-4 sm-grid-cols-1 md-grid-cols-2 gap-12 mt-20">
           {trustBadges.map((badge, idx) => (
             <div key={idx} className="flex items-center gap-12 rounded-5 border-ec p-14">
               <div

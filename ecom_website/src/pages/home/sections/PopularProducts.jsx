@@ -19,7 +19,7 @@ const PopularProducts = () => {
 
 
   return (
-    <Container className='bg-white'>
+    <Container style={{ background: 'var(--forth)' }}>
       <div className='py-40 w-full'>
         <div className="flex justify-between items-center mb-10">
           <h2 className="title-text text-dark font-600">Popular Products</h2>

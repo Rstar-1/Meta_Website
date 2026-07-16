@@ -255,7 +255,7 @@ const ProductLayout = ({
                     <Image
                       src={activeImage}
                       alt={productData.title}
-                      className='w-full h-400 object-cover border-ec rounded-5 flex'
+                      className='w-full h-450 object-cover border-ec rounded-5 flex'
                       loading="eager"
                       fetchPriority="high"
                     />
@@ -315,7 +315,7 @@ const ProductLayout = ({
                       />
                     </div>
 
-                    <p className='mini-text text-gray mt-12'>
+                    <p className='small-text text-gray mt-12'>
                       {productData.description}
                     </p>
 

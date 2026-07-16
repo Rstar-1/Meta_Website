@@ -17,7 +17,7 @@ const LatestArticles = ({ onArticleClick }) => {
   };
 
   return (
-    <Container className="bg-forth">
+    <Container>
       <div className='pt-30 pb-20'>
         <div className="flex justify-between items-center mb-24">
           <h2 className="title-text text-dark font-600">Latest from Justdial</h2>
