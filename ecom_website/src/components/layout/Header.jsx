@@ -88,14 +88,9 @@ const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
     })}
   </>
 );
-const MegaMenuContent = memo(({ label, onItemClick, navigate, productsData, categoriesData }) => {
-  switch (label) {
-    case "Products":
-      return <ProductsMenu onItemClick={onItemClick} navigate={navigate} productsData={productsData} categoriesData={categoriesData} />;
-    default:
-      return null;
-  }
-});
+const MegaMenuContent = memo(({ label, ...props }) =>
+  label === "Products" ? <ProductsMenu {...props} /> : null
+);
 
 const Header = () => {
   const navigate = useNavigate();
@@ -103,32 +98,24 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const [cartCount, setCartCount] = useState(0);
-  const [menuData] = useState({ products: productsData, categories: categoryData });
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
-    const updateCount = () => {
-      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-      setCartCount(cart.length);
-    };
+    const updateCount = () => setCartCount(JSON.parse(localStorage.getItem('cart') || '[]').length);
     updateCount();
     window.addEventListener('cart-updated', updateCount);
-    return () => {
-      window.removeEventListener('cart-updated', updateCount);
-    };
+    return () => window.removeEventListener('cart-updated', updateCount);
   }, []);
 
   const handleItemClick = (productId, categoryName) => {
     setActiveMenu(null);
     setIsSearchOpen(false);
-    if (productId) {
-      navigate(`/product-detail/${productId}`);
-    } else if (categoryName) {
-      navigate("/products", { state: { category: categoryName } });
-    } else {
-      navigate("/products");
-    }
+    productId
+      ? navigate(`/product-detail/${productId}`)
+      : categoryName
+      ? navigate("/products", { state: { category: categoryName } })
+      : navigate("/products");
   };
 
   return (
@@ -187,7 +174,7 @@ const Header = () => {
                         maxWidth: "90vw",
                       }}
                     >
-                      {menuData.products.length > 0 ? (
+                      {productsData.length > 0 ? (
                         <div
                           className={`grid ${item?.cols} items-start`}
                           style={{ width: item?.width, maxWidth: "100%" }}
@@ -196,8 +183,8 @@ const Header = () => {
                             label={item?.label}
                             onItemClick={handleItemClick}
                             navigate={navigate}
-                            productsData={menuData.products}
-                            categoriesData={menuData.categories}
+                            productsData={productsData}
+                            categoriesData={categoryData}
                           />
                         </div>
                       ) : (
@@ -348,7 +335,7 @@ const Header = () => {
                       </div>
                       {isExpanded && (
                         <div className="mt-12 bg-white rounded-5 border-ec grid grid-cols-1 gap-16 overflow-hidden">
-                          {menuData.products.length > 0 ? (
+                          {productsData.length > 0 ? (
                             <MegaMenuContent
                               label={item.label}
                               onItemClick={(productId, categoryName) => {
@@ -357,8 +344,8 @@ const Header = () => {
                                 handleItemClick(productId, categoryName);
                               }}
                               navigate={navigate}
-                              productsData={menuData.products}
-                              categoriesData={menuData.categories}
+                              productsData={productsData}
+                              categoriesData={categoryData}
                             />
                           ) : (
                             <div className="p-15 text-center small-text text-gray">

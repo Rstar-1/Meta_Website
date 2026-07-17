@@ -1,18 +1,20 @@
 import defaultSEO from './defaultSEO';
 
+const homeMeta = {
+  title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
+  description: defaultSEO.description,
+  keywords: defaultSEO.keywords,
+};
+
+const contactMeta = {
+  title: 'Contact Us | SOBO Marketing Solution',
+  description: 'Have questions or need assistance with your B2B order? Reach out to SOBO Marketing Solution support.',
+  keywords: 'contact SOBO, B2B customer support, get quote, industrial supplier contact',
+};
+
 export const routeMeta = {
-  '/': {
-    title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
-    description: defaultSEO.description,
-    keywords: defaultSEO.keywords,
-    path: '/'
-  },
-  '/home': {
-    title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
-    description: defaultSEO.description,
-    keywords: defaultSEO.keywords,
-    path: '/home'
-  },
+  '/': { ...homeMeta, path: '/' },
+  '/home': { ...homeMeta, path: '/home' },
   '/about': {
     title: 'About Us | SOBO Marketing Solution',
     description: 'Learn about SOBO Marketing Solution, our journey, values, and how we deliver top-tier industrial products.',
@@ -37,17 +39,6 @@ export const routeMeta = {
     keywords: 'B2B marketing, industrial supplies blog, supply chain insights, digital marketing tips',
     path: '/blog'
   },
-  '/contact': {
-    title: 'Contact Us | SOBO Marketing Solution',
-    description: 'Have questions or need assistance with your B2B order? Reach out to SOBO Marketing Solution support.',
-    keywords: 'contact SOBO, B2B customer support, get quote, industrial supplier contact',
-    path: '/contact'
-  },
-  '/connect': {
-    title: 'Contact Us | SOBO Marketing Solution',
-    description: 'Have questions or need assistance with your B2B order? Reach out to SOBO Marketing Solution support.',
-    keywords: 'contact SOBO, B2B customer support, get quote, industrial supplier contact',
-    path: '/connect'
-  }
+  '/contact': { ...contactMeta, path: '/contact' },
+  '/connect': { ...contactMeta, path: '/connect' }
 };
-

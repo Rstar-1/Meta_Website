@@ -42,39 +42,35 @@ const CardLayout = ({
     const combinedClassName = `grid-cols-${cols} md-grid-cols-${mdCols} sm-grid-cols-${smCols} gap-${gap} ${className}`.trim();
 
     const renderDefaultCard = (item, index) => {
+        const isEager = index < eagerCount;
+        const imgProps = {
+            loading: isEager ? "eager" : "lazy",
+            fetchPriority: isEager ? "high" : undefined
+        };
+
         if (cardType === 'product') {
-            const imgSrc = (imageMap && imageMap[item.id]) || resolveProductImage(item);
+            const imgSrc = imageMap?.[item.id] || resolveProductImage(item);
             return (
                 <div
                     key={item.id || index}
                     className="cursor-pointer"
-                    onClick={() => onCardClick && onCardClick(item)}
+                    onClick={() => onCardClick?.(item)}
                 >
                     <div>
-                        {/* Product Image Container */}
                         <div className="overflow-hidden rounded-5 bg-forth">
                             <Image
                                 src={imgSrc}
                                 alt={item.name}
-                                loading={index < eagerCount ? "eager" : "lazy"}
-                                fetchPriority={index < eagerCount ? "high" : undefined}
+                                {...imgProps}
                                 className={`w-full object-cover flex ${imageHeight || 'h-200'}`}
                                 width="300"
                                 height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : '200'}
                             />
                         </div>
-
-                        {/* Product Metadata */}
                         <div className="mt-12">
-                            <h3
-                                className="text-dark mid-text font-600 line-clamp1"
-                            >
-                                {item.name}
-                            </h3>
+                            <h3 className="text-dark mid-text font-600 line-clamp1">{item.name}</h3>
                             {(item.priceDisplay || item.price) && (
-                                <p
-                                    className="text-gray mini-text font-400 mt-3"
-                                >
+                                <p className="text-gray mini-text font-400 mt-3">
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
                             )}
@@ -89,15 +85,14 @@ const CardLayout = ({
                 <div
                     key={item.id || index}
                     className="bg-white border-ec rounded-5 overflow-hidden p-10 cursor-pointer flex flex-column justify-between"
-                    onClick={() => onCardClick && onCardClick(item)}
+                    onClick={() => onCardClick?.(item)}
                 >
                     <div>
                         <div className="relative rounded-5 overflow-hidden">
                             <Image
                                 src={item.image}
                                 alt={item.name}
-                                loading={index < eagerCount ? "eager" : "lazy"}
-                                fetchPriority={index < eagerCount ? "high" : undefined}
+                                {...imgProps}
                                 className={`w-full object-cover rounded-5 flex ${imageHeight || 'h-150'}`}
                                 width="350"
                                 height="150"
@@ -108,23 +103,16 @@ const CardLayout = ({
                                 </div>
                             )}
                         </div>
-
                         <div className="mt-5">
                             <h3 className="text-dark font-600 mid-text">{item.name}</h3>
                             <p className="text-gray mini-text mb-8">{item.category}</p>
-
-                            {/* Rating Row */}
                             <div className="flex items-center gap-6 mb-8">
-                                <p className="text-white font-600 mini-text px-6 py-2 rounded-3 bg-success">
-                                    ★ {item.rating}
-                                </p>
+                                <p className="text-white font-600 mini-text px-6 py-2 rounded-3 bg-success">★ {item.rating}</p>
                                 <p className="text-gray mini-text">({item.reviews} Reviews)</p>
                             </div>
-
                             <p className="mini-text text-gray">📍 {item.location}</p>
                         </div>
                     </div>
-
                     <Button
                         text="Call Now"
                         bg="primary"
@@ -132,11 +120,7 @@ const CardLayout = ({
                         className="w-full cursor-pointer font-600 mt-8"
                         onClick={(e) => {
                             e.stopPropagation();
-                            if (onButtonClick) {
-                                onButtonClick(item);
-                            } else if (onCardClick) {
-                                onCardClick(item);
-                            }
+                            onButtonClick ? onButtonClick(item) : onCardClick?.(item);
                         }}
                     />
                 </div>
@@ -148,39 +132,28 @@ const CardLayout = ({
                 <article
                     key={item.id || index}
                     className="bg-white rounded-5 overflow-hidden cursor-pointer flex flex-column justify-between"
-                    onClick={() => onCardClick && onCardClick(item)}
+                    onClick={() => onCardClick?.(item)}
                 >
                     <div>
-                        {/* Image box */}
                         <div className="overflow-hidden relative">
                             <Image
                                 src={item.image}
                                 alt={item.title}
-                                loading={index < eagerCount ? "eager" : "lazy"}
-                                fetchPriority={index < eagerCount ? "high" : undefined}
+                                {...imgProps}
                                 className={`w-full object-cover ${imageHeight || 'h-200'}`}
                                 width="400"
                                 height="200"
                             />
                         </div>
-
-                        {/* Details */}
                         <div className="py-10">
                             {item.tag && (
-                                <p className="px-12 py-4 rounded-5 font-400 mini-text mb-10 w-max bg-light-primary text-primary">
-                                    {item.tag}
-                                </p>
+                                <p className="px-12 py-4 rounded-5 font-400 mini-text mb-10 w-max bg-light-primary text-primary">{item.tag}</p>
                             )}
-
-                            <h3 className="text-dark font-600 mid-text line-clamp1">
-                                {item.title}
-                            </h3>
+                            <h3 className="text-dark font-600 mid-text line-clamp1">{item.title}</h3>
                             <p className="text-primary font-500 mini-text mt-3">
                                 {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
                             </p>
-                            <p className="text-gray small-text line-clamp2 mt-7">
-                                {item.description}
-                            </p>
+                            <p className="text-gray small-text line-clamp2 mt-7">{item.description}</p>
                         </div>
                     </div>
                 </article>

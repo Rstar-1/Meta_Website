@@ -23,19 +23,20 @@ export const GetBestPriceForm = ProductEnquiryForm;
 const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
   const navigate = useNavigate();
 
-  // Lookup client in client.json
   const matchedClient = clientData.find(
     (c) => c.name?.toLowerCase() === brand?.toLowerCase() ||
       c.id?.toLowerCase() === brand?.toLowerCase()
-  );
+  ) || {};
 
-  const nameDisplay = matchedClient?.name || brand;
-  const rating = matchedClient?.rating || 4.6;
-  const reviews = matchedClient?.reviews || 245;
-  const location = matchedClient?.location || "Delhi, India";
-  const yearsInBusiness = matchedClient?.yearsInBusiness || "8+";
-  const gstin = matchedClient?.gstin || "07AABCPMT234A1ZS";
-  const category = matchedClient?.category || "Industrial Products";
+  const {
+    name: nameDisplay = brand,
+    rating = 4.6,
+    reviews = 245,
+    location = "Delhi, India",
+    yearsInBusiness = "8+",
+    gstin = "07AABCPMT234A1ZS",
+    category = "Industrial Products"
+  } = matchedClient;
 
   return (
     <div className='border-ec p-15 rounded-5'>
@@ -44,12 +45,8 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
           {nameDisplay.charAt(0)}
         </p>
         <div>
-          <p className='text-dark mid-text font-600'>
-            {nameDisplay}
-          </p>
-          <p className='text-secondary mini-text font-500 flex-items-center gap-3'>
-            ✔ Verified Supplier
-          </p>
+          <p className='text-dark mid-text font-600'>{nameDisplay}</p>
+          <p className='text-secondary mini-text font-500 flex-items-center gap-3'>✔ Verified Supplier</p>
         </div>
       </div>
 
@@ -67,64 +64,63 @@ const SupplierCard = ({ brand = 'PrintMax Solutions' }) => {
         <p className='text-gray mini-text font-500'>📋 GST No: {gstin}</p>
       </div>
 
-      <Button
-        onClick={() => navigate(`/supplier/${brand}`)}
-        version="v3"
-        bg="primary"
-        className='mt-6'
-      >
+      <Button onClick={() => navigate(`/supplier/${brand}`)} version="v3" bg="primary" className='mt-6'>
         View Supplier Profile
       </Button>
 
       <p onClick={() => navigate(`/supplier/${brand}`)} className='text-primary cursor-pointer text-center mini-text mt-8'>
         More Products by this Supplier
       </p>
-
     </div>
   );
 };
 
 // Inline TrustAssurance Component
-const TrustAssurance = () => {
-  return (
-    <div className='border-ec p-15 rounded-5'>
-      <h4 className='mid-text font-500 text-dark'>Trust &amp; Assurance</h4>
-      <div className='grid-cols-1 gap-6 mt-8'>
-        <p className='text-gray mini-text font-500'>✓ Verified Supplier</p>
-        <p className='text-gray mini-text font-500'>✓ 100% Original Products</p>
-        <p className='text-gray mini-text font-500'>✓ GST Invoice Available</p>
-        <p className='text-gray mini-text font-500'>✓ Easy Returns</p>
-      </div>
+const TrustAssurance = () => (
+  <div className='border-ec p-15 rounded-5'>
+    <h4 className='mid-text font-500 text-dark'>Trust &amp; Assurance</h4>
+    <div className='grid-cols-1 gap-6 mt-8'>
+      {['Verified Supplier', '100% Original Products', 'GST Invoice Available', 'Easy Returns'].map((text, idx) => (
+        <p key={idx} className='text-gray mini-text font-500'>✓ {text}</p>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 // Inline ShareProduct Component
 const ShareProduct = () => {
   const [copiedLink, setCopiedLink] = useState(false);
+  const href = typeof window !== 'undefined' ? window.location.href : '';
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(href);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2000);
   };
+
+  const platforms = [
+    { name: 'WhatsAppShare', label: 'WhatsApp', bg: '#25D366', url: `https://api.whatsapp.com/send?text=${encodeURIComponent(href)}`, size: 18 },
+    { name: 'Facebook', label: 'Facebook', bg: '#1877F2', url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(href)}`, size: 18 },
+    { name: 'X', label: 'X', bg: '#000000', url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(href)}`, size: 16 },
+    { name: 'LinkedIn', label: 'LinkedIn', bg: '#0A66C2', url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(href)}`, size: 18 }
+  ];
 
   return (
     <div className='border-ec p-15 rounded-5'>
       <h4 className='mid-text font-500 text-dark'>Share this product</h4>
       <div className='flex items-center gap-12 mt-8'>
-        <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }} title="Share on WhatsApp">
-          <Icon name="WhatsAppShare" width="18" height="18" fill="#ffffff" />
-        </a>
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#1877F2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }} title="Share on Facebook">
-          <Icon name="Facebook" width="18" height="18" fill="#ffffff" />
-        </a>
-        <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#000000', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }} title="Share on X">
-          <Icon name="X" width="16" height="16" fill="#ffffff" />
-        </a>
-        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#0A66C2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }} title="Share on LinkedIn">
-          <Icon name="LinkedIn" width="18" height="18" fill="#ffffff" />
-        </a>
+        {platforms.map((p) => (
+          <a
+            key={p.name}
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: p.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }}
+            title={`Share on ${p.label}`}
+          >
+            <Icon name={p.name} width={p.size} height={p.size} fill="#ffffff" />
+          </a>
+        ))}
         <Button
           onClick={handleCopyLink}
           version="v2"
@@ -183,31 +179,22 @@ const ProductLayout = ({
   const [activeTab, setActiveTab] = useState('description');
   const [quantity, setQuantity] = useState(1);
 
-  const productType = foundProduct?.type || 'general';
-  const defaultFeatures = productType === 'printer'
-    ? ['Sharp & clear prints', 'Easy to install', 'High page yield', 'Reliable performance', 'Leak-proof technology', 'Value for money']
-    : productType === 'steel'
-      ? ['High tensile strength', 'Corrosion resistant', 'Durable & long lasting', 'Premium surface finish', 'Accurate dimensions', 'Grade certified']
-      : ['High Quality Assurance', 'Industry Standard Certified', 'Reliable Performance', 'Durable Construction', 'Tested & Verified', 'Value for Money'];
+  const defaultFeatures = {
+    printer: ['Sharp & clear prints', 'Easy to install', 'High page yield', 'Reliable performance', 'Leak-proof technology', 'Value for money'],
+    steel: ['High tensile strength', 'Corrosion resistant', 'Durable & long lasting', 'Premium surface finish', 'Accurate dimensions', 'Grade certified']
+  }[foundProduct?.type] || ['High Quality Assurance', 'Industry Standard Certified', 'Reliable Performance', 'Durable Construction', 'Tested & Verified', 'Value for Money'];
 
   const productFeatures = foundProduct?.keyFeatures || foundProduct?.features || defaultFeatures;
   const specsOverview = productData.specs?.slice(0, 5) || [];
 
   useEffect(() => {
-    if (galleryImages && galleryImages.length > 0) {
-      setActiveImage(galleryImages[0]);
-    }
+    if (galleryImages?.length > 0) setActiveImage(galleryImages[0]);
   }, [galleryImages]);
 
-  const productMeta = useMemo(() => {
-    const productObj = foundProduct || {
-      name: productData.title,
-      description: productData.description,
-      tags: seoKeywords,
-      image: activeImage
-    };
-    return productMetaTemplate(productObj, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com');
-  }, [foundProduct, productData, seoKeywords, activeImage]);
+  const productMeta = useMemo(() => productMetaTemplate(
+    foundProduct || { name: productData.title, description: productData.description, tags: seoKeywords, image: activeImage },
+    typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com'
+  ), [foundProduct, productData, seoKeywords, activeImage]);
 
   return (
     <>
@@ -226,8 +213,8 @@ const ProductLayout = ({
           foundProduct || {
             name: productData.title,
             description: productData.description,
-            price: productData.price ? String(productData.price).replace(/[^0-9.]/g, '') : '0.00',
-            sku: productData.specs?.find(s => s.label === 'Model' || s.label === 'SKU')?.value || 'GENERIC-SKU',
+            price: String(productData.price || '0.00').replace(/[^0-9.]/g, ''),
+            sku: productData.specs?.find(s => ['Model', 'SKU'].includes(s.label))?.value || 'GENERIC-SKU',
             brand: productData.brand || 'Generic',
             images: galleryImages,
             priceCurrency: 'INR',

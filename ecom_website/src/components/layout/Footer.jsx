@@ -16,6 +16,20 @@ const Footer = () => {
 
   return (
     <footer className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
+      <style>{`
+        .footer-social-link {
+          width: 36px;
+          height: 36px;
+          background-color: rgba(255, 255, 255, 0.08);
+          color: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+        }
+        .footer-social-link:hover {
+          background-color: var(--primary) !important;
+          transform: scale(1.1);
+        }
+      `}</style>
       <Container>
         <div>
           <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 items-start gap-12">
@@ -47,23 +61,7 @@ const Footer = () => {
                     key={idx}
                     href={social.url}
                     aria-label={`Visit our ${social.platform || social.iconName} page`}
-                    className="social-link center-div rounded-full"
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                      color: '#ffffff',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--primary)';
-                      e.currentTarget.style.transform = 'scale(1.1)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-                      e.currentTarget.style.transform = 'scale(1)';
-                    }}
+                    className="social-link center-div rounded-full footer-social-link"
                   >
                     <Icon name={social.iconName} width="16" height="16" stroke="currentColor" strokeWidth="2.5" />
                   </a>

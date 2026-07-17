@@ -140,24 +140,8 @@ const idMap = {
   'prod-31': pvcBallValve,
 };
 
-export const resolveProductImage = (product) => {
-  if (!product) return '';
-  // 1. Try mapping by product ID
-  if (product.id && idMap[product.id]) {
-    return idMap[product.id];
-  }
-  // 2. Try mapping by exact image path
-  if (product.image && assetMap[product.image]) {
-    return assetMap[product.image];
-  }
-  // 3. Fallback
-  return product.image || '';
-};
+export const resolveProductImage = (product) => 
+  product ? (idMap[product.id] || assetMap[product.image] || product.image || '') : '';
 
-export const resolveImagePath = (path) => {
-  if (!path) return '';
-  if (assetMap[path]) {
-    return assetMap[path];
-  }
-  return path;
-};
+export const resolveImagePath = (path) => 
+  path ? (assetMap[path] || path) : '';

@@ -14,7 +14,7 @@ import { formatDate } from '../../utils/formatDate';
 import { blogMetaTemplate } from '../../seo/metaTemplates';
 
 const BlogLayout = ({
-  type = 'list', // 'list' or 'detail'
+  type = 'list',
   blogsData = [],
   post = null,
   allBlogs = [],
@@ -22,112 +22,56 @@ const BlogLayout = ({
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  // Scroll to top on type or post change
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [type, post?.id]);
 
-  const shareUrl = useMemo(() => {
-    return post?.shareLink || (typeof window !== 'undefined' ? window.location.origin + `/blog-detail/${post?.id}` : '');
-  }, [post]);
+  const shareUrl = useMemo(() => post?.shareLink || (typeof window !== 'undefined' ? `${window.location.origin}/blog-detail/${post?.id}` : ''), [post]);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareUrl);
     alert('Link copied to clipboard!');
   };
 
-  // Combine blogs source
-  const blogsList = useMemo(() => {
-    return blogsData.length > 0 ? blogsData : (allBlogs.length > 0 ? allBlogs : []);
-  }, [blogsData, allBlogs]);
+  const blogsList = useMemo(() => blogsData.length ? blogsData : allBlogs, [blogsData, allBlogs]);
 
-  // Compute categories dynamically
   const categoriesList = useMemo(() => {
     const counts = {};
     let total = 0;
-    blogsList.forEach((blog) => {
-      if (blog.category) {
-        counts[blog.category] = (counts[blog.category] || 0) + 1;
-        total++;
-      }
-    });
-    const list = Object.keys(counts).map((name) => ({
-      name,
-      count: counts[name],
-    }));
-    list.sort((a, b) => b.count - a.count);
-    return [{ name: "All", count: total }, ...list];
+    blogsList.forEach(({ category }) => category && (counts[category] = (counts[category] || 0) + 1, total++));
+    return [
+      { name: "All", count: total },
+      ...Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count)
+    ];
   }, [blogsList]);
 
-  // Filter and search logic for list
   const filteredBlogs = useMemo(() => {
-    let result = blogsList;
-    if (selectedCategory && selectedCategory !== "All") {
-      result = result.filter(
-        (blog) => blog.category?.toLowerCase() === selectedCategory.toLowerCase()
-      );
-    }
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      result = result.filter(
-        (blog) =>
-          blog.title?.toLowerCase().includes(query) ||
-          blog.summary?.toLowerCase().includes(query) ||
-          blog.category?.toLowerCase().includes(query)
-      );
-    }
-    return result;
+    const query = searchQuery.trim().toLowerCase();
+    return blogsList.filter(blog => {
+      const matchCat = !selectedCategory || selectedCategory === "All" || blog.category?.toLowerCase() === selectedCategory.toLowerCase();
+      const matchQuery = !query || [blog.title, blog.summary, blog.category].some(field => field?.toLowerCase().includes(query));
+      return matchCat && matchQuery;
+    });
   }, [blogsList, selectedCategory, searchQuery]);
 
-  // Popular posts: first 3 posts
-  const popularPosts = useMemo(() => {
-    return blogsList.slice(0, 3);
-  }, [blogsList]);
+  const popularPosts = useMemo(() => blogsList.slice(0, 3), [blogsList]);
 
-  // Detail post computations
-  const content = useMemo(() => {
-    if (type === 'detail' && post) {
-      return post.content || null;
-    }
-    return null;
-  }, [type, post]);
-
-  const authorBio = useMemo(() => {
-    if (post) {
-      return post.authorBio || '';
-    }
-    return '';
-  }, [post]);
-
-  const tags = useMemo(() => {
-    return post?.keywords ? post.keywords.split(',').map((t) => t.trim()) : [];
-  }, [post?.keywords]);
-
-  const formattedDate = useMemo(() => {
-    return formatDate(post?.datePublished, 'human') || 'May 20, 2024';
-  }, [post?.datePublished]);
-
+  const content = useMemo(() => (type === 'detail' && post?.content) || null, [type, post]);
+  const authorBio = useMemo(() => post?.authorBio || '', [post]);
+  const tags = useMemo(() => post?.keywords?.split(',').map(t => t.trim()) || [], [post?.keywords]);
+  const formattedDate = useMemo(() => formatDate(post?.datePublished, 'human') || 'May 20, 2024', [post?.datePublished]);
 
   const getCategoryColor = (category) => {
-    switch (category) {
-      case "Digital Marketing":
-        return "text-primary";
-      case "SEO":
-        return "text-info";
-      case "Social Media":
-        return "text-warning";
-      case "Content Marketing":
-        return "text-warning";
-      case "Analytics":
-        return "text-primary";
-      default:
-        return "text-primary";
-    }
+    const colors = {
+      SEO: "text-info",
+      "Social Media": "text-warning",
+      "Content Marketing": "text-warning",
+    };
+    return colors[category] || "text-primary";
   };
 
-  const blogMeta = useMemo(() => {
-    return post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com') : {};
-  }, [post]);
+  const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com') : {}, [post]);
 
   return (
     <>
@@ -211,31 +155,21 @@ const BlogLayout = ({
       `}</style>
 
       {/* --- Page Banner / Hero --- */}
-      {type === 'list' ? (
+      {(type === 'list' || post) && (
         <Banner
           style={{ background: "linear-gradient(135deg, #021B44 0%, #00102A 100%)" }}
           img="https://metatechnical.org/images/banners/blog.webp"
-          title="Latest Articles"
-          desc="Insights, strategies, and tips to help your business grow with smart marketing."
-          breadcrumbs={[
+          title={type === 'list' ? "Latest Articles" : post.category}
+          desc={type === 'list' ? "Insights, strategies, and tips to help your business grow with smart marketing." : post.title}
+          breadcrumbs={type === 'list' ? [
             { label: 'Home', path: '/home' },
             { label: 'Blog' }
+          ] : [
+            { label: 'Home', path: '/home' },
+            { label: 'Blog', path: '/blog' },
+            { label: post.title }
           ]}
         />
-      ) : (
-        post && (
-          <Banner
-            style={{ background: "linear-gradient(135deg, #021B44 0%, #00102A 100%)" }}
-            img="https://metatechnical.org/images/banners/blog.webp"
-            title={post.category}
-            desc={post.title}
-            breadcrumbs={[
-              { label: 'Home', path: '/home' },
-              { label: 'Blog', path: '/blog' },
-              { label: post.title }
-            ]}
-          />
-        )
       )}
 
       <div className="bg-forth py-50 sm-py-36">
@@ -319,7 +253,7 @@ const BlogLayout = ({
                                     className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
                                     onClick={() => {
                                       setSelectedCategory(blog.category);
-                                      setActivePage(1);
+                                      if (typeof setActivePage !== 'undefined') setActivePage(1);
                                     }}
                                   >
                                     {blog.category}
