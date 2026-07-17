@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormBuilder from "./FormBuilder";
 import Button from "./Button";
+import Icon from "./Icon";
 
 const Modal = ({
     isOpen: controlledIsOpen,
@@ -20,36 +21,18 @@ const Modal = ({
     const isControlled = controlledIsOpen !== undefined;
     const isOpen = isControlled ? controlledIsOpen : localIsOpen;
 
-    const handleClose = () => {
-        if (isControlled) {
-            controlledOnClose?.();
-        } else {
-            setLocalIsOpen(false);
-        }
-    };
+    const handleClose = () => isControlled ? controlledOnClose?.() : setLocalIsOpen(false);
+    const handleOpen = () => !isControlled && setLocalIsOpen(true);
 
-    const handleOpen = () => {
-        if (!isControlled) {
-            setLocalIsOpen(true);
-        }
-    };
-
-    const getSizeStyle = () => {
-        switch (size) {
-            case "sm":
-                return { width: "30%" };
-            case "md":
-                return { width: "40%" };
-            case "lg":
-                return { width: "50%" };
-            case "xl":
-                return { width: "60%" };
-            case "full":
-                return { width: "80%" };
-            default:
-                return { width: "35%" };
-        }
-    };
+    const getSizeStyle = () => ({
+        width: {
+            sm: "30%",
+            md: "40%",
+            lg: "50%",
+            xl: "60%",
+            full: "80%"
+        }[size] || "35%"
+    });
 
     const isSidebar = type === "sidebar";
 
@@ -65,47 +48,20 @@ const Modal = ({
         : {};
 
     const cardClass = isSidebar
-        ? `bg-white relative z-999 b-shadow border-ec p-0 overflow-auto ${placement === "right" ? "animate-sidebar-right" : "animate-sidebar-left"
-        }`
+        ? `bg-white relative z-999 b-shadow border-ec p-0 overflow-auto ${placement === "right" ? "animate-sidebar-right" : "animate-sidebar-left"}`
         : "bg-white relative z-999 rounded-10 b-shadow border-ec p-0 overflow-auto animate-modal-scale";
-
 
     return (
         <>
             <style>{`
-                @keyframes modalFadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
-                @keyframes modalSlideInLeft {
-                    from { transform: translateX(-100%); }
-                    to { transform: translateX(0); }
-                }
-                @keyframes modalSlideInRight {
-                    from { transform: translateX(100%); }
-                    to { transform: translateX(0); }
-                }
-                @keyframes modalScaleIn {
-                    from { transform: scale(0.95); opacity: 0; }
-                    to { transform: scale(1); opacity: 1; }
-                }
-                
-                .animate-backdrop {
-                    animation: modalFadeIn 0.25s ease-out forwards;
-                }
-                
-                .animate-modal-scale {
-                    animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                }
-                
-                .animate-sidebar-left {
-                    animation: modalSlideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                }
-                
-                .animate-sidebar-right {
-                    animation: modalSlideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                }
-                
+                @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+                @keyframes modalSlideInLeft { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+                @keyframes modalSlideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+                @keyframes modalScaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+                .animate-backdrop { animation: modalFadeIn 0.25s ease-out forwards; }
+                .animate-modal-scale { animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+                .animate-sidebar-left { animation: modalSlideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+                .animate-sidebar-right { animation: modalSlideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
             `}</style>
 
             {trigger && React.cloneElement(trigger, {
@@ -116,10 +72,7 @@ const Modal = ({
             })}
 
             {isOpen && (
-                <div
-                    className={wrapperClass}
-                    style={wrapperStyle}
-                >
+                <div className={wrapperClass} style={wrapperStyle}>
                     <div
                         onClick={closeOnOverlayClick ? handleClose : undefined}
                         style={{
@@ -130,17 +83,10 @@ const Modal = ({
                         className="absolute top-0 left-0 w-full h-full animate-backdrop"
                     />
 
-                    <div
-                        className={cardClass}
-                        style={{ ...getSizeStyle() }}
-                    >
+                    <div className={cardClass} style={getSizeStyle()}>
                         {/* Modal Header */}
-                        <div
-                            className="flex items-center justify-between bordb px-14 py-10 sticky top-0 left-0 bg-white z-99"
-                        >
-                            <h3
-                                className="mid-text font-500 text-dark"
-                            >
+                        <div className="flex items-center justify-between bordb px-14 py-10 sticky top-0 left-0 bg-white z-99">
+                            <h3 className="mid-text font-500 text-dark">
                                 {title || "Modal Title"}
                             </h3>
                             <Button
@@ -151,18 +97,7 @@ const Modal = ({
                                 className="center-div cursor-pointer border-0"
                                 aria-label="Close modal"
                             >
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    width="20"
-                                    height="20"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    fill="none"
-                                    className="flex"
-                                >
-                                    <line x1="18" y1="6" x2="6" y2="18" />
-                                    <line x1="6" y1="6" x2="18" y2="18" />
-                                </svg>
+                                <Icon name="Close" width="20" height="20" />
                             </Button>
                         </div>
 
@@ -177,22 +112,11 @@ const Modal = ({
 
                             {/* Modal Footer */}
                             {footer !== null && (
-                                <div
-                                    className="flex items-center justify-center gap-4 bordh p-14"
-                                >
-                                    {footer && footer !== true ? (
-                                        footer
-                                    ) : (
-                                        <>
-                                            <Button
-                                                onClick={handleClose}
-                                                bg="secondary"
-                                                color="white"
-                                                version="v0"
-                                            >
-                                                Close
-                                            </Button>
-                                        </>
+                                <div className="flex items-center justify-center gap-4 bordh p-14">
+                                    {footer && footer !== true ? footer : (
+                                        <Button onClick={handleClose} bg="secondary" color="white" version="v0">
+                                            Close
+                                        </Button>
                                     )}
                                 </div>
                             )}
@@ -204,32 +128,11 @@ const Modal = ({
     );
 };
 
-export const CrudModal = ({
-    title,
-    fields,
-    onSubmit,
-    children,
-    size,
-    col,
-    ...props
-}) => {
-    return (
-        <Modal
-            title={title}
-            footer={null}
-            size={size}
-            {...props}
-        >
-            {children ? children : (
-                <FormBuilder
-                    fields={fields}
-                    onSubmit={onSubmit}
-                    col={col}
-                />
-            )}
-        </Modal>
-    );
-};
+export const CrudModal = ({ title, fields, onSubmit, children, size, col, ...props }) => (
+    <Modal title={title} footer={null} size={size} {...props}>
+        {children || <FormBuilder fields={fields} onSubmit={onSubmit} col={col} />}
+    </Modal>
+);
 
 export const DeleteModal = ({
     isOpen,
@@ -255,38 +158,18 @@ export const DeleteModal = ({
     };
 
     return (
-        <Modal
-            isOpen={isOpen}
-            onClose={onClose}
-            title={title}
-            size="sm"
-            footer={null}
-            {...props}
-        >
+        <Modal isOpen={isOpen} onClose={onClose} title={title} size="sm" footer={null} {...props}>
             <div className="text-center gap-12 py-16">
                 <div
                     className="flex items-center justify-center rounded-full bg-light-danger text-danger mb-12 mx-auto"
                     style={{ width: "65px", height: "65px" }}
                 >
-                    <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="3 6 5 6 21 6" />
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                        <line x1="10" y1="11" x2="10" y2="17" />
-                        <line x1="14" y1="11" x2="14" y2="17" />
-                    </svg>
+                    <Icon name="Delete" width="30" height="30" strokeWidth="2" />
                 </div>
                 <h4 className="title-text font-bold text-dark">{title}</h4>
-                <p className="mini-text text-gray mt-12">
-                    {message}
-                </p>
+                <p className="mini-text text-gray mt-12">{message}</p>
                 <div className="flex items-center gap-12 w-full mt-20 justify-center">
-                    <Button
-                        onClick={onClose}
-                        disabled={loading}
-                        bg="secondary"
-                        color="white"
-                        version="v1"
-                    >
+                    <Button onClick={onClose} disabled={loading} bg="secondary" color="white" version="v1">
                         Cancel
                     </Button>
                     <Button
@@ -307,9 +190,7 @@ export const DeleteModal = ({
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="2.5"
-                                    style={{
-                                        animation: "spin 1s linear infinite"
-                                    }}
+                                    style={{ animation: "spin 1s linear infinite" }}
                                 >
                                     <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" />
                                     <path d="M12 2a10 10 0 0 1 10 10" stroke="white" />
@@ -322,12 +203,7 @@ export const DeleteModal = ({
                     </Button>
                 </div>
             </div>
-
-            <style>{`
-                @keyframes spin {
-                    to { transform: rotate(360deg); }
-                }
-            `}</style>
+            <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
         </Modal>
     );
 };

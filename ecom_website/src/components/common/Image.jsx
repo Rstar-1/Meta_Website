@@ -22,9 +22,7 @@ export function Image({
   }, [src]);
 
   useEffect(() => {
-    if (imgRef.current?.complete) {
-      setIsLoaded(true);
-    }
+    if (imgRef.current?.complete) setIsLoaded(true);
   }, [imgSrc]);
 
   return (
@@ -45,13 +43,7 @@ export function Image({
         ...style,
       }}
       onLoad={() => setIsLoaded(true)}
-      onError={() => {
-        if (imgSrc !== fallback) {
-          setImgSrc(fallback);
-        } else {
-          setIsLoaded(true);
-        }
-      }}
+      onError={() => imgSrc !== fallback ? setImgSrc(fallback) : setIsLoaded(true)}
       {...props}
     />
   );
@@ -83,12 +75,8 @@ export const ImageDiv = forwardRef(({
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          backgroundImage: `url(${bgImage || fallback})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          background: `url(${bgImage || fallback}) center/cover no-repeat`,
         }}
-        onError={() => setBgImage(fallback)}
       />
       {overlay && (
         <div

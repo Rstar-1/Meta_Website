@@ -32,6 +32,22 @@ const Pagination = ({
     borderRadius: "4px"
   };
 
+  const renderNavButton = (targetPage, label, title, isDisabled) => (
+    <button
+      className="bg-white text-gray font-500"
+      style={{
+        ...btnStyle,
+        opacity: isDisabled ? 0.4 : 1,
+        cursor: isDisabled ? "not-allowed" : "pointer"
+      }}
+      disabled={isDisabled}
+      onClick={() => handlePageClick(targetPage)}
+      title={title}
+    >
+      {label}
+    </button>
+  );
+
   return (
     <div className="bg-tertiary mt-4 w-full rounded-5">
       <div className="flex items-center justify-between p-10">
@@ -39,44 +55,15 @@ const Pagination = ({
           Showing {startItem} to {endItem} of {totalItems} {itemName}
         </p>
         <div className="flex items-center gap-4">
-          <button
-            className="bg-white text-gray font-500"
-            style={{
-              ...btnStyle,
-              opacity: page === 1 ? 0.4 : 1,
-              cursor: page === 1 ? "not-allowed" : "pointer"
-            }}
-            disabled={page === 1}
-            onClick={() => handlePageClick(1)}
-            title="First Page"
-          >
-            &laquo;
-          </button>
-          <button
-            className="bg-white text-gray font-500"
-            style={{
-              ...btnStyle,
-              opacity: page === 1 ? 0.4 : 1,
-              cursor: page === 1 ? "not-allowed" : "pointer"
-            }}
-            disabled={page === 1}
-            onClick={() => handlePageClick(page - 1)}
-            title="Previous Page"
-          >
-            &lt;
-          </button>
-          {Array.from({ length: totalPages }).map((_, i) => {
-            const pNum = i + 1;
-            // Show current page, and a few neighboring pages
+          {renderNavButton(1, "«", "First Page", page === 1)}
+          {renderNavButton(page - 1, "<", "Previous Page", page === 1)}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pNum) => {
             if (totalPages > 5 && Math.abs(pNum - page) > 2) {
-              if (pNum === 1 || pNum === totalPages) {
-                return (
-                  <span key={pNum} className="text-gray px-4" style={{ fontSize: "0.775rem" }}>
-                    ...
-                  </span>
-                );
-              }
-              return null;
+              return pNum === 1 || pNum === totalPages ? (
+                <span key={pNum} className="text-gray px-4" style={{ fontSize: "0.775rem" }}>
+                  ...
+                </span>
+              ) : null;
             }
             const isActive = page === pNum;
             return (
@@ -95,32 +82,8 @@ const Pagination = ({
               </button>
             );
           })}
-          <button
-            className="bg-white text-gray font-500"
-            style={{
-              ...btnStyle,
-              opacity: page === totalPages ? 0.4 : 1,
-              cursor: page === totalPages ? "not-allowed" : "pointer"
-            }}
-            disabled={page === totalPages}
-            onClick={() => handlePageClick(page + 1)}
-            title="Next Page"
-          >
-            &gt;
-          </button>
-          <button
-            className="bg-white text-gray font-500"
-            style={{
-              ...btnStyle,
-              opacity: page === totalPages ? 0.4 : 1,
-              cursor: page === totalPages ? "not-allowed" : "pointer"
-            }}
-            disabled={page === totalPages}
-            onClick={() => handlePageClick(totalPages)}
-            title="Last Page"
-          >
-            &raquo;
-          </button>
+          {renderNavButton(page + 1, ">", "Next Page", page === totalPages)}
+          {renderNavButton(totalPages, "»", "Last Page", page === totalPages)}
         </div>
       </div>
     </div>

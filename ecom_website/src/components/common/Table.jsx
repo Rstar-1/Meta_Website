@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Pagination from "./Pagination";
 import Icon from "./Icon";
 import { resolveImagePath } from "../../utils/imageResolver";
@@ -13,112 +13,104 @@ const renderCellContent = (col, row, rowIdx) => {
     }
 
     if (col.ui && !React.isValidElement(cellValue)) {
-        if (col.ui === "profile") {
-            const name = row[col.accessor] || row["username"] || row["name"] || "";
-            const subText = row[col.subKey || "sub"] || row[col.emailKey || "email"] || row["email"] || row["sub"] || "";
-            const imgUrl = resolveImagePath(row[col.imageKey || "image"] || row["image"] || row["avatar"] || "");
-            const favColor = row[col.colorKey || "favoriteColor"] || "#6366f1";
-            const initial = name ? name.charAt(0).toUpperCase() : "?";
-            const imgStyle = { width: "40px", height: "40px", flexShrink: 0, ...col.imgStyle, ...col.imageStyle };
-            return (
-                <div className="flex items-center gap-12">
-                    {imgUrl ? (
-                        <Image src={imgUrl} alt={name} className="common-img rounded-5 object-cover border-tertiary" style={imgStyle} />
-                    ) : (
-                        <div style={{ background: favColor, width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0 }} className="center-div">
-                            <p className="small-text text-white" style={{ margin: 0, fontWeight: 600 }}>{initial}</p>
+        switch (col.ui) {
+            case "profile": {
+                const name = row[col.accessor] || row["username"] || row["name"] || "";
+                const subText = row[col.subKey || "sub"] || row[col.emailKey || "email"] || row["email"] || row["sub"] || "";
+                const imgUrl = resolveImagePath(row[col.imageKey || "image"] || row["image"] || row["avatar"] || "");
+                const favColor = row[col.colorKey || "favoriteColor"] || "#6366f1";
+                const imgStyle = { width: "40px", height: "40px", flexShrink: 0, ...col.imgStyle, ...col.imageStyle };
+                return (
+                    <div className="flex items-center gap-12">
+                        {imgUrl ? (
+                            <Image src={imgUrl} alt={name} className="common-img rounded-5 object-cover border-tertiary" style={imgStyle} />
+                        ) : (
+                            <div style={{ background: favColor, width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0 }} className="center-div">
+                                <p className="small-text text-white font-600" style={{ margin: 0 }}>
+                                    {name ? name.charAt(0).toUpperCase() : "?"}
+                                </p>
+                            </div>
+                        )}
+                        <div>
+                            <p className="text-dark small-text font-500" style={{ margin: 0 }}>{name}</p>
+                            {subText && <p className="text-gray mini-text font-500" style={{ margin: 0 }}>{subText}</p>}
                         </div>
-                    )}
-                    <div>
-                        <p className="text-dark small-text font-500" style={{ margin: 0 }}>{name}</p>
-                        {subText && <p className="text-gray mini-text font-500" style={{ margin: 0 }}>{subText}</p>}
                     </div>
-                </div>
-            );
-        } else if (col.ui === "arr-badge") {
-            const arr = Array.isArray(cellValue) ? cellValue : [];
-            return (
-                <div className="flex items-center gap-4 flex-wrap">
-                    {arr.map((val, idx) => (
-                        <p key={idx} className="bg-light-primary text-primary mini-text capitalize px-10 py-4 rounded-5 font-500" style={{ margin: 0 }}>
-                            {val}
-                        </p>
-                    ))}
-                </div>
-            );
-        } else if (col.ui === "status") {
-            const isActive = !!cellValue;
-            const statusColor = isActive ? "#10b981" : "#ef4444";
-            const textColorClass = isActive ? "text-success" : "text-danger";
-            const label = typeof cellValue === "string" ? cellValue : (isActive ? "Active" : "Inactive");
-            return (
-                <div className="flex items-center gap-6">
-                    <div style={{
-                        width: "6px", height: "6px", borderRadius: "50%",
-                        background: statusColor,
-                        boxShadow: `0 0 6px ${statusColor}`
-                    }}></div>
-                    <p className={`${textColorClass} small-text font-500`} style={{ margin: 0 }}>
-                        {label}
-                    </p>
-                </div>
-            );
-        } else if (col.ui === "badge") {
-            let badgeBg = "#f1f5f9";
-            let badgeColor = "#475569";
-            const valStr = String(cellValue || "").toLowerCase();
-            if (valStr === "admin") {
-                badgeBg = "#fee2e2";
-                badgeColor = "#991b1b";
-            } else if (valStr === "user" || valStr === "member" || valStr === "public") {
-                badgeBg = "#dcfce3";
-                badgeColor = "#166534";
-            } else {
-                badgeBg = "#eff6ff";
-                badgeColor = "#3b82f6";
+                );
             }
-            return (
-                <span style={{
-                    background: badgeBg,
-                    color: badgeColor,
-                    display: "inline-flex"
-                }} className="mini-text capitalize px-10 py-4 rounded-20 font-500">
-                    {cellValue || "-"}
-                </span>
-            );
-        } else if (col.ui === "icon-badge") {
-            const rawVal = col.accessor ? row[col.accessor] : "";
-            const valStr = String(rawVal || cellValue || "").toLowerCase();
-            const isPrivate = valStr === "private" || valStr === "protected" || valStr === "closed";
-            const isRating = col.accessor === "rating" || col.icon === "Star" || col.iconName === "Star";
-            const iconName = col.icon || col.iconName || (isRating ? "Star" : (isPrivate ? "Lock" : "Unlock"));
-            const badgeBg = col.badgeBg || (isRating ? "#fef3c7" : (isPrivate ? "#fee2e2" : "#eff6ff"));
-            const badgeColor = col.badgeColor || (isRating ? "#b45309" : (isPrivate ? "#991b1b" : "#3b82f6"));
-            return (
-                <span
-                    className="flex items-center gap-6 mini-text capitalize px-10 py-4 rounded-20 font-500"
-                    style={{
-                        display: "inline-flex",
-                        backgroundColor: badgeBg,
-                        color: badgeColor
-                    }}
-                >
-                    <Icon name={iconName} width="12" height="12" strokeWidth="2.5" />
-                    {cellValue}
-                </span>
-            );
-        } else if (col.ui === "text") {
-            return (
-                <p className="text-gray mini-text" style={{ margin: 0 }}>
-                    {cellValue || "-"}
-                </p>
-            );
-        } else if (col.ui === "desc") {
-            return (
-                <p className="text-gray line-clamp1 mini-text" title={cellValue || ""} style={{ margin: 0 }}>
-                    {cellValue || "-"}
-                </p>
-            );
+            case "arr-badge":
+                return (
+                    <div className="flex items-center gap-4 flex-wrap">
+                        {(Array.isArray(cellValue) ? cellValue : []).map((val, idx) => (
+                            <p key={idx} className="bg-light-primary text-primary mini-text capitalize px-10 py-4 rounded-5 font-500" style={{ margin: 0 }}>
+                                {val}
+                            </p>
+                        ))}
+                    </div>
+                );
+            case "status": {
+                const isActive = !!cellValue;
+                const statusColor = isActive ? "#10b981" : "#ef4444";
+                return (
+                    <div className="flex items-center gap-6">
+                        <div style={{
+                            width: "6px", height: "6px", borderRadius: "50%",
+                            background: statusColor,
+                            boxShadow: `0 0 6px ${statusColor}`
+                        }}></div>
+                        <p className={`${isActive ? "text-success" : "text-danger"} small-text font-500`} style={{ margin: 0 }}>
+                            {typeof cellValue === "string" ? cellValue : (isActive ? "Active" : "Inactive")}
+                        </p>
+                    </div>
+                );
+            }
+            case "badge": {
+                const valStr = String(cellValue || "").toLowerCase();
+                const badgeMap = {
+                    admin: { bg: "#fee2e2", color: "#991b1b" },
+                    user: { bg: "#dcfce3", color: "#166534" },
+                    member: { bg: "#dcfce3", color: "#166534" },
+                    public: { bg: "#dcfce3", color: "#166534" }
+                };
+                const { bg = "#eff6ff", color = "#3b82f6" } = badgeMap[valStr] || {};
+                return (
+                    <span
+                        style={{ background: valStr ? bg : "#f1f5f9", color: valStr ? color : "#475569", display: "inline-flex" }}
+                        className="mini-text capitalize px-10 py-4 rounded-20 font-500"
+                    >
+                        {cellValue || "-"}
+                    </span>
+                );
+            }
+            case "icon-badge": {
+                const valStr = String((col.accessor ? row[col.accessor] : "") || cellValue || "").toLowerCase();
+                const isPrivate = ["private", "protected", "closed"].includes(valStr);
+                const isRating = col.accessor === "rating" || col.icon === "Star" || col.iconName === "Star";
+                return (
+                    <span
+                        className="flex items-center gap-6 mini-text capitalize px-10 py-4 rounded-20 font-500"
+                        style={{
+                            display: "inline-flex",
+                            backgroundColor: col.badgeBg || (isRating ? "#fef3c7" : (isPrivate ? "#fee2e2" : "#eff6ff")),
+                            color: col.badgeColor || (isRating ? "#b45309" : (isPrivate ? "#991b1b" : "#3b82f6"))
+                        }}
+                    >
+                        <Icon name={col.icon || col.iconName || (isRating ? "Star" : (isPrivate ? "Lock" : "Unlock"))} width="12" height="12" strokeWidth="2.5" />
+                        {cellValue}
+                    </span>
+                );
+            }
+            case "text":
+            case "desc":
+                return (
+                    <p
+                        className={`text-gray mini-text ${col.ui === "desc" ? "line-clamp1" : ""}`}
+                        title={col.ui === "desc" ? (cellValue || "") : undefined}
+                        style={{ margin: 0 }}
+                    >
+                        {cellValue || "-"}
+                    </p>
+                );
         }
     }
 
@@ -161,46 +153,39 @@ const Table = ({
     const hasExplicitCollapsed = columns.some((col) => col.collapsed !== undefined);
     const shouldCollapse = collapsible || hasExplicitCollapsed || (columns.filter(c => c.accessor !== "checkbox" && c.accessor !== "actions").length > maxVisibleColumns && collapsible !== false);
 
-    let mainColumns = columns;
-    let collapsedColumns = [];
-
-    if (shouldCollapse) {
-        if (hasExplicitCollapsed) {
-            mainColumns = columns.filter((col) => col.collapsed !== true);
-            collapsedColumns = columns.filter((col) => col.collapsed === true);
-        } else {
-            const checkboxCol = columns.find((c) => c.accessor === "checkbox");
-            const actionsCol = columns.find((c) => c.accessor === "actions");
-            const dataCols = columns.filter((c) => c.accessor !== "checkbox" && c.accessor !== "actions");
-
-            const mainDataCols = dataCols.slice(0, maxVisibleColumns);
-            collapsedColumns = dataCols.slice(maxVisibleColumns);
-
-            mainColumns = [
-                ...(checkboxCol ? [checkboxCol] : []),
-                ...mainDataCols,
-                ...(actionsCol ? [actionsCol] : [])
-            ];
+    const [displayHeaders, collapsedColumns] = useMemo(() => {
+        let main = columns;
+        let collapsed = [];
+        if (shouldCollapse) {
+            if (hasExplicitCollapsed) {
+                main = columns.filter(c => !c.collapsed);
+                collapsed = columns.filter(c => c.collapsed);
+            } else {
+                const checkboxCol = columns.find((c) => c.accessor === "checkbox");
+                const actionsCol = columns.find((c) => c.accessor === "actions");
+                const dataCols = columns.filter((c) => c.accessor !== "checkbox" && c.accessor !== "actions");
+                main = [
+                    ...(checkboxCol ? [checkboxCol] : []),
+                    ...dataCols.slice(0, maxVisibleColumns),
+                    ...(actionsCol ? [actionsCol] : [])
+                ];
+                collapsed = dataCols.slice(maxVisibleColumns);
+            }
         }
-    }
+        if (collapsed.length > 0) {
+            const actionsIdx = main.findIndex(c => c.accessor === "actions");
+            const expandCol = { header: "Details", accessor: "_expand", style: { width: "70px" }, className: "text-center" };
+            main = [...main];
+            if (actionsIdx !== -1) {
+                main.splice(actionsIdx, 0, expandCol);
+            } else {
+                main.push(expandCol);
+            }
+        }
+        return [main, collapsed];
+    }, [columns, shouldCollapse, hasExplicitCollapsed, maxVisibleColumns]);
 
-    // Add expand toggle column if there are collapsed columns
     const hasCollapsedCols = collapsedColumns.length > 0;
-    let displayHeaders = [...mainColumns];
-    if (hasCollapsedCols) {
-        const actionsIdx = displayHeaders.findIndex(c => c.accessor === "actions");
-        const expandCol = {
-            header: "Details",
-            accessor: "_expand",
-            style: { width: "70px" },
-            className: "text-center"
-        };
-        if (actionsIdx !== -1) {
-            displayHeaders.splice(actionsIdx, 0, expandCol);
-        } else {
-            displayHeaders.push(expandCol);
-        }
-    }
 
     return (
         <>

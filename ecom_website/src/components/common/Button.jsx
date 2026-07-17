@@ -1,6 +1,13 @@
 import React from "react";
 import Icon from "./Icon";
 
+const VERSION_CLASSES = {
+  v0: "px-22 py-8 sm-px-12 sm-py-6 mini-text",
+  v1: "px-20 py-9 para-text",
+  v2: "px-25 py-11 sm-px-12 sm-py-6 small-text",
+  v3: "w-full py-10 sm-py-13 mini-text",
+};
+
 const Button = ({
   text = "",
   children,
@@ -12,52 +19,30 @@ const Button = ({
   onClick = () => { },
   type = "button",
   disabled = false,
-  variant = "filled", // "filled" | "outline"
-  icon = "", // Icon name, e.g. "Cart"
+  variant = "filled",
+  icon = "",
   iconWidth = "16",
   iconHeight = "16",
   iconStrokeWidth = "2.5",
+  iconPosition = "left",
 }) => {
-  const getButtonClass = () => {
-    const borderClass = variant === "outline" ? `border-${bg}` : "border-0";
-    switch (version) {
-      case "v0":
-        return `px-22 py-8 sm-px-12 sm-py-6 mini-text rounded-5 ${borderClass}`;
-      case "v1":
-        return `px-20 py-9  para-text rounded-5 ${borderClass}`;
-      case "v2":
-        return `px-25 py-11 sm-px-12 sm-py-6 small-text rounded-5 ${borderClass}`;
-      case "v3":
-        return `w-full py-10 sm-py-13 mini-text rounded-5 ${borderClass}`;
-      default:
-        return `w-full py-7 small-text rounded-5 ${borderClass}`;
-    }
-  };
-
+  const borderClass = variant === "outline" ? `border-${bg}` : "border-0";
   const bgClass = variant === "outline" ? "bg-transparent" : `bg-${bg}`;
   const textClass = variant === "outline" ? `text-${bg}` : `text-${color}`;
+  
+  const versionClass = VERSION_CLASSES[version] || "w-full py-7 small-text";
+  const buttonClass = `${versionClass} rounded-5 ${borderClass}`;
 
-  const renderIcon = () => {
-    if (!icon) return null;
-    const defaultStroke = variant === "outline" ? (style.color || "#2563eb") : (style.color || color);
-    return (
-      <Icon
-        name={icon}
-        width={iconWidth}
-        height={iconHeight}
-        strokeWidth={iconStrokeWidth}
-        stroke={defaultStroke}
-      />
-    );
-  };
+  const defaultStroke = variant === "outline" ? (style.color || "#2563eb") : (style.color || color);
 
-  const buttonContent = icon ? (
-    <span className="flex items-center justify-center gap-8 w-full">
-      {renderIcon()}
-      <span>{children || text}</span>
-    </span>
-  ) : (
-    children || text
+  const iconElement = icon && (
+    <Icon
+      name={icon}
+      width={iconWidth}
+      height={iconHeight}
+      strokeWidth={iconStrokeWidth}
+      stroke={defaultStroke}
+    />
   );
 
   return (
@@ -65,11 +50,20 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${getButtonClass()} ${bgClass} ${textClass} cursor-pointer ${disabled ? "opacity-50 cursor-not-allowed" : ""
-        } ${className}`}
+      className={`${buttonClass} ${bgClass} ${textClass} cursor-pointer ${
+        disabled ? "opacity-50 cursor-not-allowed" : ""
+      } ${className}`}
       style={style}
     >
-      {buttonContent}
+      {icon ? (
+        <span className="flex items-center justify-center gap-8 w-full">
+          {iconPosition !== "right" && iconElement}
+          <span>{children || text}</span>
+          {iconPosition === "right" && iconElement}
+        </span>
+      ) : (
+        children || text
+      )}
     </button>
   );
 };

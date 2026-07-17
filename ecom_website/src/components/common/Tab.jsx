@@ -1,41 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TabItem = ({ name, count, icon, isActive, onClick }) => {
-    const [hovered, setHovered] = useState(false);
-
-    return (
-        <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            onClick={onClick}
-            className={`px-20 py-9 cursor-pointer flex items-center gap-8 flex-shrink-0 ${isActive
-                ? "bg-white text-primary font-600"
-                : `rounded-5 ${hovered ? "bg-forth text-dark font-500" : "text-gray font-500"}`
-                }`}
-            style={{
-                flexShrink: 0,
-                ...(isActive ? { borderBottom: "2px solid var(--primary)" } : {})
-            }}
-        >
-            {icon && <span className="flex items-center justify-center">{icon}</span>}
-            <p className="small-text">{name}</p>
-            {count !== undefined && count !== null && (
-                <p className={`px-9 py-3 rounded-20 mini-text ${isActive ? "bg-primary text-white font-600" : "bg-tertiary text-gray"
-                    }`}>
-                    {count}
-                </p>
-            )}
-        </div>
-    );
-};
+const TabItem = ({ name, count, icon, isActive, onClick }) => (
+    <div
+        onClick={onClick}
+        className={`px-20 py-9 cursor-pointer flex items-center gap-8 flex-shrink-0 tab-item ${isActive ? "active" : "rounded-5"}`}
+    >
+        {icon && <span className="flex items-center justify-center">{icon}</span>}
+        <p className="small-text">{name}</p>
+        {count !== undefined && count !== null && (
+            <p className={`px-9 py-3 rounded-20 mini-text ${isActive ? "bg-primary text-white font-600" : "bg-tertiary text-gray"}`}>
+                {count}
+            </p>
+        )}
+    </div>
+);
 
 const Tab = ({ tabs, activeTab, onChange }) => {
     return (
         <>
             <style>{`
-                .tabs-container::-webkit-scrollbar {
-                    display: none;
-                }
+                .tabs-container::-webkit-scrollbar { display: none; }
+                .tab-item { color: var(--gray); font-weight: 500; transition: all 0.2s; }
+                .tab-item:not(.active):hover { background-color: var(--forth); color: var(--dark); }
+                .tab-item.active { background-color: #ffffff; color: var(--primary); font-weight: 600; border-bottom: 2px solid var(--primary); }
             `}</style>
             <div
                 className="flex bordb gap-8 tabs-container"
@@ -47,20 +34,18 @@ const Tab = ({ tabs, activeTab, onChange }) => {
                 }}
             >
                 {tabs.map((tab, idx) => {
-                    const isObject = typeof tab === "object" && tab !== null;
-                    const name = isObject ? (tab.name || tab.label) : tab;
-                    const count = isObject ? tab.count : null;
-                    const icon = isObject ? tab.icon : null;
-                    const value = isObject ? (tab.value || tab.name || tab.label) : tab;
+                    const isObj = typeof tab === "object" && tab !== null;
+                    const name = isObj ? (tab.name || tab.label) : tab;
+                    const value = isObj ? (tab.value || name) : tab;
 
                     return (
                         <TabItem
                             key={idx}
                             name={name}
-                            count={count}
-                            icon={icon}
+                            count={isObj ? tab.count : null}
+                            icon={isObj ? tab.icon : null}
                             isActive={activeTab === value}
-                            onClick={() => onChange && onChange(value)}
+                            onClick={() => onChange?.(value)}
                         />
                     );
                 })}

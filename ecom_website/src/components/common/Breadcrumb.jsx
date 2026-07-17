@@ -1,19 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Breadcrumb = ({ items = [], className = "" }) => {
-  if (!items || items.length === 0) return null;
-
-  return (
+const Breadcrumb = ({ items = [], className = "" }) => 
+  items?.length ? (
     <nav aria-label="breadcrumb" className={`flex items-center gap-10 w-full text-white flex-wrap small-text ${className}`}>
       {items.map((item, idx) => (
         <React.Fragment key={idx}>
           {idx > 0 && <span className="mx-4">&gt;</span>}
           {item.path ? (
-            <NavLink
-              to={item.path}
-              className="text-white"
-            >
+            <NavLink to={item.path} className="text-white">
               {item.label}
             </NavLink>
           ) : (
@@ -22,7 +17,6 @@ const Breadcrumb = ({ items = [], className = "" }) => {
         </React.Fragment>
       ))}
     </nav>
-  );
-};
+  ) : null;
 
 export default Breadcrumb;

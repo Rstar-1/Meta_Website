@@ -38,10 +38,6 @@ if (typeof document !== 'undefined') {
   }
 }
 
-/**
- * Generically triggers a premium toast notification on the screen.
- * Can be called from any regular JavaScript or React handler.
- */
 export const showToast = (message, type = 'success') => {
   if (typeof document === 'undefined') return;
 
@@ -69,12 +65,12 @@ export const showToast = (message, type = 'success') => {
   // Create toast element
   const toast = document.createElement('div');
   toast.className = 'toast-notification';
-  
+
   // Style according to type
   const isSuccess = type === 'success';
   const borderVal = isSuccess ? 'var(--primary)' : 'var(--danger)';
   const strokeColor = isSuccess ? 'var(--primary)' : 'var(--danger)';
-  
+
   Object.assign(toast.style, {
     backgroundColor: 'var(--dark)', // Dark premium background from theme.scss
     color: 'var(--white)', // White text from theme.scss
@@ -92,7 +88,7 @@ export const showToast = (message, type = 'success') => {
   });
 
   // Success/Error Icon SVG using CSS variable for stroke
-  const iconSvg = isSuccess 
+  const iconSvg = isSuccess
     ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${strokeColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`
     : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${strokeColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
 

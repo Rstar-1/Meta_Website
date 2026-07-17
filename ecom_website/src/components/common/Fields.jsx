@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Icon from "./Icon";
 
+const VERSION_CLASSES = {
+    v0: "w-full",
+    v1: "container mx-auto",
+    v2: "container2",
+    v3: "container3 mx-auto",
+};
+
 const Fields = ({
     type = "input",
     label,
@@ -28,7 +35,6 @@ const Fields = ({
     const [isOpen, setIsOpen] = useState(false);
     const otpRefs = React.useRef([]);
     const fileInputRef = React.useRef(null);
-
     const [showPassword, setShowPassword] = useState(false);
 
     const [datepickerM, setDatepickerM] = useState(() => {
@@ -36,6 +42,7 @@ const Fields = ({
         const parsed = dateVal ? new Date(dateVal) : new Date();
         return !isNaN(parsed.getTime()) ? parsed.getMonth() : new Date().getMonth();
     });
+
     const [datepickerY, setDatepickerY] = useState(() => {
         const dateVal = typeof value === "string" ? value : (value?.fromDate || value?.toDate);
         const parsed = dateVal ? new Date(dateVal) : new Date();
@@ -74,43 +81,28 @@ const Fields = ({
     };
 
     const validate = (val) => {
-        if (validation.required && !val) {
-            return "This field is required";
-        }
-
-        if (
-            validation.minLength &&
-            val?.length < validation.minLength
-        ) {
+        if (validation.required && !val) return "This field is required";
+        if (validation.minLength && val?.length < validation.minLength) {
             return `Minimum ${validation.minLength} characters`;
         }
-
-        if (validation.email) {
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!regex.test(val)) {
-                return "Invalid Email";
-            }
+        if (validation.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            return "Invalid Email";
         }
-
         return "";
     };
 
     const handleChange = (e) => {
-        const val =
-            e?.target?.type === "checkbox"
-                ? e.target.checked
-                : e?.target?.value;
-
+        const val = e?.target?.type === "checkbox" ? e.target.checked : e?.target?.value;
         setError(validate(val));
         onChange?.(val);
     };
 
-    // Styling configurations
     const getInputStyle = () => ({
         padding: "10px 0px",
         textIndent: "12px",
         borderRadius: "8px",
-        border: `1px solid ${error ? "var(--danger)" : isFocused ? "var(--secondary)" : outline ? "#ececec" : "var(--forth)"}`,
+        border: `1px solid ${error ? "var(--danger)" : isFocused ? "var(--secondary)" : outline ? "#ececec" : "var(--forth)"
+            }`,
         fontSize: "13px",
         outline: "none",
         width: "100%",
@@ -127,78 +119,79 @@ const Fields = ({
         ...props,
     };
 
-    const inputTypes = [
-        "text",
-        "input",
-        "number",
-        "email",
-        "tel",
-    ];
-
-    const typeMap = {
-        text: "text",
-        input: "text",
-        number: "number",
-        email: "email",
-        tel: "tel",
-    };
-
     const monthss = [
         "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
 
     const years = Array.from({ length: 30 }, (_, i) => new Date().getFullYear() - 15 + i);
-
     const pad = (n) => String(n).padStart(2, "0");
 
     const changeDatepickerMonth = (offset) => {
-        let newM = datepickerM + offset;
-        let newY = datepickerY;
-        if (newM < 0) {
-            newM = 11;
-            newY -= 1;
-        } else if (newM > 11) {
-            newM = 0;
-            newY += 1;
-        }
-        setDatepickerM(newM);
-        setDatepickerY(newY);
+        const date = new Date(datepickerY, datepickerM + offset, 1);
+        setDatepickerM(date.getMonth());
+        setDatepickerY(date.getFullYear());
     };
 
+    const renderCalendarHeader = () => (
+        <>
+            <div className="grid-cols-2 gap-3 mb-8">
+                <select
+                    value={datepickerM}
+                    onChange={(e) => setDatepickerM(Number(e.target.value))}
+                    className="mini-text border-0 rounded px-2 py-2"
+                >
+                    {monthss.map((mm, i) => (
+                        <option key={mm} value={i}>{mm}</option>
+                    ))}
+                </select>
+                <select
+                    value={datepickerY}
+                    onChange={(e) => setDatepickerY(Number(e.target.value))}
+                    className="mini-text border-0 rounded px-2 py-2"
+                >
+                    {years.map((yy) => (
+                        <option key={yy} value={yy}>{yy}</option>
+                    ))}
+                </select>
+            </div>
+            <div className="flex items-center justify-between mb-8">
+                <div className="small-text text-gray font-500 cursor-pointer" onClick={() => changeDatepickerMonth(-1)}>◀</div>
+                <p className="mini-text text-dark font-500">{monthss[datepickerM]} {datepickerY}</p>
+                <div className="small-text text-gray font-500 cursor-pointer" onClick={() => changeDatepickerMonth(1)}>▶</div>
+            </div>
+        </>
+    );
+
     const renderField = () => {
-        if (inputTypes.includes(type)) {
-            if (icon) {
-                const isLeft = iconPosition === "left";
-                return (
-                    <div className="relative w-full flex items-center overflow-hidden">
-                        {isLeft && (
-                            <div className="absolute left-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
-                                <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
-                            </div>
-                        )}
-                        <input
-                            type={typeMap[type]}
-                            {...commonProps}
-                            className={`${clsInput} ${className || ""}`} style={{
-                                ...getInputStyle(),
-                                paddingLeft: isLeft ? "36px" : "12px",
-                                paddingRight: !isLeft ? "36px" : "12px",
-                                textIndent: isLeft ? "0px" : "12px",
-                                ...style
-                            }}
-                        />
-                        {!isLeft && (
-                            <div className="absolute right-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
-                                <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
-                            </div>
-                        )}
-                    </div>
-                );
-            }
-            return (
+        const isInput = ["text", "input", "number", "email", "tel"].includes(type);
+        if (isInput) {
+            const inputType = type === "input" ? "text" : type;
+            const isLeft = iconPosition === "left";
+            return icon ? (
+                <div className="relative w-full flex items-center overflow-hidden">
+                    {isLeft && (
+                        <div className="absolute left-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
+                            <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
+                        </div>
+                    )}
+                    <input
+                        type={inputType}
+                        {...commonProps}
+                        className={`${clsInput} ${className || ""}`}
+                        style={{
+                            ...commonProps.style,
+                        }}
+                    />
+                    {!isLeft && (
+                        <div className="absolute right-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
+                            <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
+                        </div>
+                    )}
+                </div>
+            ) : (
                 <input
-                    type={typeMap[type]}
+                    type={inputType}
                     {...commonProps}
                     className={`${clsInput} ${className || ""}`}
                 />
@@ -206,7 +199,7 @@ const Fields = ({
         }
 
         switch (type) {
-            case "password": {
+            case "password":
                 return (
                     <div className="relative w-full flex items-center overflow-hidden rounded-5">
                         <input
@@ -215,7 +208,6 @@ const Fields = ({
                             className={`${clsInput} pr-12 ${className || ""}`}
                         />
                         <div
-
                             onClick={() => setShowPassword(!showPassword)}
                             className="absolute top-0 right-0 p-10 bg-white cursor-pointer text-gray"
                         >
@@ -233,23 +225,17 @@ const Fields = ({
                         </div>
                     </div>
                 );
-            }
 
             case "range-datepicker": {
                 const fromDate = value?.fromDate || "";
                 const toDate = value?.toDate || "";
-
                 const firstDayIndex = new Date(datepickerY, datepickerM, 1).getDay();
                 const adjustedIndex = firstDayIndex === 0 ? 6 : firstDayIndex - 1;
-
                 const totalDays = new Date(datepickerY, datepickerM + 1, 0).getDate();
-                const dayss = [];
-                for (let i = 0; i < adjustedIndex; i++) {
-                    dayss.push("");
-                }
-                for (let i = 1; i <= totalDays; i++) {
-                    dayss.push(i);
-                }
+                const dayss = [
+                    ...Array(adjustedIndex).fill(""),
+                    ...Array.from({ length: totalDays }, (_, i) => i + 1)
+                ];
 
                 return (
                     <div className={`dropdown-box ${clsBox}`} style={{ position: "relative" }}>
@@ -289,59 +275,12 @@ const Fields = ({
                         {isOpen && (
                             <div
                                 className="absolute z-10 mt-4 bg-white rounded-5 p-12 w-full text-center"
-                                style={{
-                                    top: "100%",
-                                    left: 0,
-                                }}
+                                style={{ top: "100%", left: 0 }}
                             >
-                                <div className="grid-cols-2 gap-3 mb-8">
-                                    <select
-                                        value={datepickerM}
-                                        onChange={(e) => setDatepickerM(Number(e.target.value))}
-                                        className="mini-text border-0 rounded px-2 py-2"
-                                    >
-                                        {monthss.map((mm, i) => (
-                                            <option key={mm} value={i}>
-                                                {mm}
-                                            </option>
-                                        ))}
-                                    </select>
-
-                                    <select
-                                        value={datepickerY}
-                                        onChange={(e) => setDatepickerY(Number(e.target.value))}
-                                        className="mini-text border-0 rounded px-2 py-2"
-                                    >
-                                        {years.map((yy) => (
-                                            <option key={yy} value={yy}>
-                                                {yy}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                                <div className="flex items-center justify-between mb-8">
-                                    <div
-                                        className="small-text text-gray font-500 cursor-pointer"
-                                        onClick={() => changeDatepickerMonth(-1)}
-                                    >
-                                        ◀
-                                    </div>
-                                    <p className="mini-text text-dark font-500">
-                                        {monthss[datepickerM]} {datepickerY}
-                                    </p>
-                                    <div
-                                        className="small-text text-gray font-500 cursor-pointer"
-                                        onClick={() => changeDatepickerMonth(1)}
-                                    >
-                                        ▶
-                                    </div>
-                                </div>
-                                <div className="grid-cols-7"
-                                >
+                                {renderCalendarHeader()}
+                                <div className="grid-cols-7">
                                     {["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map((d) => (
-                                        <p className="mini-text text-dark font-500" key={d}>
-                                            {d}
-                                        </p>
+                                        <p className="mini-text text-dark font-500" key={d}>{d}</p>
                                     ))}
 
                                     {dayss.map((d, i) => {
@@ -373,20 +312,16 @@ const Fields = ({
                                                 style={{
                                                     width: '100%',
                                                     height: '36px',
-                                                    background:
-                                                        isStart || isEnd
-                                                            ? "var(--secondary)"
-                                                            : isInRange
-                                                                ? "rgba(99, 102, 241, 0.15)"
-                                                                : d === ""
-                                                                    ? "transparent"
-                                                                    : "var(--white)",
-                                                    color:
-                                                        isStart || isEnd
-                                                            ? "var(--white)"
-                                                            : d
-                                                                ? "var(--gray)"
-                                                                : "transparent",
+                                                    background: isStart || isEnd
+                                                        ? "var(--secondary)"
+                                                        : isInRange
+                                                            ? "rgba(99, 102, 241, 0.15)"
+                                                            : "transparent",
+                                                    color: isStart || isEnd
+                                                        ? "var(--white)"
+                                                        : d
+                                                            ? "var(--gray)"
+                                                            : "transparent",
                                                     borderRadius: 2,
                                                 }}
                                             >
@@ -404,15 +339,10 @@ const Fields = ({
             case "datepicker": {
                 const firstDayIndex = new Date(datepickerY, datepickerM, 1).getDay();
                 const totalDays = new Date(datepickerY, datepickerM + 1, 0).getDate();
-                const dayss = [];
-                for (let i = 0; i < firstDayIndex; i++) {
-                    dayss.push("");
-                }
-                for (let i = 1; i <= totalDays; i++) {
-                    dayss.push(i);
-                }
-
-                const displayValue = value ? value : "mm/dd/yyyy";
+                const dayss = [
+                    ...Array(firstDayIndex).fill(""),
+                    ...Array.from({ length: totalDays }, (_, i) => i + 1)
+                ];
 
                 return (
                     <div className={`dropdown-box ${clsBox}`} style={{ position: "relative" }}>
@@ -429,9 +359,7 @@ const Fields = ({
                                 setIsOpen(!isOpen);
                             }}
                         >
-                            <p className="mini-text text-gray line-clamp1">
-                                {displayValue}
-                            </p>
+                            <p className="mini-text text-gray line-clamp1">{value || "mm/dd/yyyy"}</p>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cursor-pointer">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                                 <line x1="16" y1="2" x2="16" y2="6" />
@@ -443,59 +371,12 @@ const Fields = ({
                         {isOpen && (
                             <div
                                 className="absolute z-10 mt-4 bg-white rounded-5 p-12 w-full text-center"
-                                style={{
-                                    top: "100%",
-                                    left: 0,
-                                }}
+                                style={{ top: "100%", left: 0 }}
                             >
-                                <div className="grid-cols-2 gap-3 mb-8">
-                                    <select
-                                        value={datepickerM}
-                                        onChange={(e) => setDatepickerM(Number(e.target.value))}
-                                        className="mini-text border-0 rounded px-2 py-2"
-                                    >
-                                        {monthss.map((mm, i) => (
-                                            <option key={mm} value={i}>
-                                                {mm}
-                                            </option>
-                                        ))}
-                                    </select>
-
-                                    <select
-                                        value={datepickerY}
-                                        onChange={(e) => setDatepickerY(Number(e.target.value))}
-                                        className="mini-text border-0 rounded px-2 py-2"
-                                    >
-                                        {years.map((yy) => (
-                                            <option key={yy} value={yy}>
-                                                {yy}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                                <div className="flex items-center justify-between mb-8">
-                                    <div
-                                        className="small-text text-gray font-500 cursor-pointer"
-                                        onClick={() => changeDatepickerMonth(-1)}
-                                    >
-                                        ◀
-                                    </div>
-                                    <p className="mini-text text-dark font-500">
-                                        {monthss[datepickerM]} {datepickerY}
-                                    </p>
-                                    <div
-                                        className="small-text text-gray font-500 cursor-pointer"
-                                        onClick={() => changeDatepickerMonth(1)}
-                                    >
-                                        ▶
-                                    </div>
-                                </div>
-                                <div className="grid-cols-7 gap-4"
-                                >
+                                {renderCalendarHeader()}
+                                <div className="grid-cols-7 gap-4">
                                     {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((d) => (
-                                        <p className="mini-text text-dark font-500" key={d}>
-                                            {d}
-                                        </p>
+                                        <p className="mini-text text-dark font-500" key={d}>{d}</p>
                                     ))}
 
                                     {dayss.map((d, i) => {
@@ -514,18 +395,8 @@ const Fields = ({
                                                 style={{
                                                     width: '100%',
                                                     height: '36px',
-                                                    background:
-                                                        isSelected
-                                                            ? "var(--secondary)"
-                                                            : d === ""
-                                                                ? "transparent"
-                                                                : "var(--white)",
-                                                    color:
-                                                        isSelected
-                                                            ? "var(--white)"
-                                                            : d
-                                                                ? "var(--gray)"
-                                                                : "transparent",
+                                                    background: isSelected ? "var(--secondary)" : "transparent",
+                                                    color: isSelected ? "var(--white)" : d ? "var(--gray)" : "transparent",
                                                     borderRadius: 2,
                                                 }}
                                             >
@@ -543,28 +414,18 @@ const Fields = ({
             case "color": {
                 const hexValue = value || "#339af0";
                 return (
-                    <div
-                        className={`flex items-center gap-6 cursor-pointer ${clsBox} h-input`}
-                    >
+                    <div className={`flex items-center gap-6 cursor-pointer ${clsBox} h-input`}>
                         <span
                             className="rounded-full ml-10"
-                            style={{
-                                width: "20px",
-                                height: "20px",
-                                backgroundColor: hexValue,
-                            }}
+                            style={{ width: "20px", height: "20px", backgroundColor: hexValue }}
                         />
-                        <p className="mini-text text-gray uppercase font-500">
-                            {hexValue}
-                        </p>
+                        <p className="mini-text text-gray uppercase font-500">{hexValue}</p>
                         <input
                             type="color"
                             value={hexValue}
                             onChange={handleChange}
                             className="absolute top-0 left-0 w-full h-full cursor-pointer"
-                            style={{
-                                opacity: 0
-                            }}
+                            style={{ opacity: 0 }}
                         />
                     </div>
                 );
@@ -580,12 +441,11 @@ const Fields = ({
 
             case "checkbox": {
                 if (!options || options.length === 0) {
-                    const isChecked = !!value;
                     return (
                         <div className="flex items-center gap-8 py-4">
                             <input
                                 type="checkbox"
-                                checked={isChecked}
+                                checked={!!value}
                                 onChange={(e) => onChange?.(e.target.checked)}
                                 className="cursor-pointer"
                                 style={{ width: "18px", height: "18px", accentColor: "var(--primary)" }}
@@ -646,8 +506,6 @@ const Fields = ({
                         {options.map((opt) => {
                             const optLabel = getOptLabel(opt);
                             const optVal = getOptValue(opt);
-                            const isChecked = value === optVal;
-
                             return (
                                 <label
                                     key={optVal}
@@ -656,10 +514,8 @@ const Fields = ({
                                 >
                                     <input
                                         type="radio"
-                                        checked={isChecked}
-                                        onChange={() => {
-                                            onChange?.(optVal);
-                                        }}
+                                        checked={value === optVal}
+                                        onChange={() => onChange?.(optVal)}
                                         className="cursor-pointer"
                                         style={{ width: "18px", height: "18px", accentColor: "#6366f1" }}
                                     />
@@ -751,12 +607,8 @@ const Fields = ({
                 const hasFile = value && value.length > 0;
                 const fileName = hasFile ? value[0].name : "No file chosen";
                 return (
-                    <div
-                        className={`flex items-center justify-between px-12 cursor-pointer ${clsBox} h-select relative overflow-hidden`}
-                    >
-                        <span className="mini-text text-gray truncate pr-24">
-                            {fileName}
-                        </span>
+                    <div className={`flex items-center justify-between px-12 cursor-pointer ${clsBox} h-select relative overflow-hidden`}>
+                        <span className="mini-text text-gray truncate pr-24">{fileName}</span>
                         <div className="flex items-center gap-4 text-gray mini-text font-medium relative z-10">
                             {hasFile ? (
                                 <button
@@ -783,31 +635,13 @@ const Fields = ({
                                         e.currentTarget.style.backgroundColor = "transparent";
                                     }}
                                 >
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        width="16"
-                                        height="16"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
+                                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <line x1="18" y1="6" x2="6" y2="18" />
                                         <line x1="6" y1="6" x2="18" y2="18" />
                                     </svg>
                                 </button>
                             ) : (
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    width="16"
-                                    height="16"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    fill="none"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                     <polyline points="17 8 12 3 7 8" />
                                     <line x1="12" y1="3" x2="12" y2="15" />
@@ -826,28 +660,12 @@ const Fields = ({
             case "dragfile":
                 return (
                     <div
-                        onDragEnter={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setIsDragging(true);
-                        }}
-                        onDragOver={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setIsDragging(true);
-                        }}
-                        onDragLeave={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setIsDragging(false);
-                        }}
+                        onDragEnter={(e) => { e.preventDefault(); e.stopPropagation(); setIsDragging(true); }}
+                        onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); setIsDragging(true); }}
+                        onDragLeave={(e) => { e.preventDefault(); e.stopPropagation(); setIsDragging(false); }}
                         onDrop={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setIsDragging(false);
-                            if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-                                onChange?.([...e.dataTransfer.files]);
-                            }
+                            e.preventDefault(); e.stopPropagation(); setIsDragging(false);
+                            if (e.dataTransfer.files?.length) onChange?.([...e.dataTransfer.files]);
                         }}
                         onClick={() => fileInputRef.current?.click()}
                         className="text-center cursor-pointer"
@@ -869,9 +687,7 @@ const Fields = ({
                                 <polyline points="17 8 12 3 7 8" />
                                 <line x1="12" y1="3" x2="12" y2="15" />
                             </svg>
-                            <p className="small-text font-600" style={{ margin: "0 0 6px 0" }}>
-                                Drag & Drop Files here
-                            </p>
+                            <p className="small-text font-600" style={{ margin: "0 0 6px 0" }}>Drag & Drop Files here</p>
                             <p className="mini-text" style={{ margin: "0", color: "#6b7280" }}>
                                 or <span style={{ textDecoration: "underline", color: "#6366f1" }}>click to browse</span> from file manager
                             </p>
@@ -880,22 +696,14 @@ const Fields = ({
                             type="file"
                             ref={fileInputRef}
                             multiple
-                            onChange={(e) => {
-                                if (e.target.files && e.target.files.length > 0) {
-                                    onChange?.([...e.target.files]);
-                                }
-                            }}
+                            onChange={(e) => { if (e.target.files?.length) onChange?.([...e.target.files]); }}
                             style={{ display: "none" }}
                         />
                         {value && Array.isArray(value) && value.length > 0 && (
                             <div
                                 onClick={(e) => e.stopPropagation()}
                                 className="flex flex-column gap-8"
-                                style={{
-                                    marginTop: "16px",
-                                    textAlign: "left",
-                                    pointerEvents: "auto"
-                                }}
+                                style={{ marginTop: "16px", textAlign: "left", pointerEvents: "auto" }}
                             >
                                 <div className="font-600" style={{ fontSize: "12px", color: "#4b5563" }}>
                                     Selected Files ({value.length})
@@ -904,24 +712,15 @@ const Fields = ({
                                     <div
                                         key={index}
                                         className="flex items-center justify-between bg-white mini-text"
-                                        style={{
-                                            border: "1px solid #e5e7eb",
-                                            borderRadius: "8px",
-                                            padding: "8px 12px",
-                                            color: "#1f2937"
-                                        }}
+                                        style={{ border: "1px solid #e5e7eb", borderRadius: "8px", padding: "8px 12px", color: "#1f2937" }}
                                     >
                                         <div className="flex items-center gap-8" style={{ overflow: "hidden" }}>
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#6b7280", flexShrink: 0 }}>
                                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                                                 <polyline points="14 2 14 8 20 8" />
                                             </svg>
-                                            <span style={{ textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>
-                                                {file.name}
-                                            </span>
-                                            <span style={{ color: "#9ca3af", fontSize: "11px", flexShrink: 0 }}>
-                                                ({(file.size / 1024).toFixed(1)} KB)
-                                            </span>
+                                            <span style={{ textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>{file.name}</span>
+                                            <span style={{ color: "#9ca3af", fontSize: "11px", flexShrink: 0 }}>({(file.size / 1024).toFixed(1)} KB)</span>
                                         </div>
                                         <button
                                             type="button"
@@ -968,17 +767,13 @@ const Fields = ({
                     <div
                         className={`dropdown-box ${clsBox}`}
                         tabIndex={0}
-                        onBlur={
-                            !isMulti ? () => setTimeout(() => setIsOpen(false), 100) : undefined
-                        }
+                        onBlur={!isMulti ? () => setTimeout(() => setIsOpen(false), 100) : undefined}
                     >
                         <div
                             className="flex items-center justify-between px-8 cursor-pointer h-select rounded-5"
                             onClick={() => setIsOpen(!isOpen)}
                         >
-                            <p className="mini-text text-gray line-clamp1 capitalize">
-                                {showValue}
-                            </p>
+                            <p className="mini-text text-gray line-clamp1 capitalize">{showValue}</p>
 
                             {isMulti && value?.length ? (
                                 <svg
@@ -989,10 +784,7 @@ const Fields = ({
                                     strokeWidth="2"
                                     fill="none"
                                     className="cursor-pointer"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        onChange?.([]);
-                                    }}
+                                    onClick={(e) => { e.stopPropagation(); onChange?.([]); }}
                                 >
                                     <line x1="18" y1="6" x2="6" y2="18" />
                                     <line x1="6" y1="6" x2="18" y2="18" />
@@ -1005,10 +797,7 @@ const Fields = ({
                                     stroke="gray"
                                     strokeWidth="2"
                                     fill="none"
-                                    style={{
-                                        transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                                        transition: "0.2s",
-                                    }}
+                                    style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "0.2s" }}
                                 >
                                     <polyline points="6 9 12 15 18 9" />
                                 </svg>
@@ -1023,9 +812,7 @@ const Fields = ({
                                 {options.map((opt) => {
                                     const optVal = getOptValue(opt);
                                     const optLabel = getOptLabel(opt);
-                                    const isChecked = isMulti
-                                        ? (value || []).includes(optVal)
-                                        : value === optVal;
+                                    const isChecked = isMulti ? (value || []).includes(optVal) : value === optVal;
 
                                     return (
                                         <label
@@ -1069,10 +856,7 @@ const Fields = ({
                             type="button"
                             onClick={() => onChange?.(Math.max(1, Number(quantityValue) - 1))}
                             className="center-div text-white rounded-5 bg-primary cursor-pointer border-0"
-                            style={{
-                                transition: "background-color 0.15s ease",
-                                flexShrink: 0,
-                            }}
+                            style={{ transition: "background-color 0.15s ease", flexShrink: 0 }}
                         >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
                                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -1083,22 +867,14 @@ const Fields = ({
                             readOnly
                             value={quantityValue}
                             className="mini-text text-dark font-600 text-center border-0"
-                            style={{
-                                outline: "none",
-                                background: "transparent",
-                                width: "100%",
-                                minWidth: "0",
-                            }}
+                            style={{ outline: "none", background: "transparent", width: "100%", minWidth: "0" }}
                         />
 
                         <button
                             type="button"
                             onClick={() => onChange?.(Number(quantityValue) + 1)}
                             className="center-div text-white rounded-5 bg-primary cursor-pointer border-0"
-                            style={{
-                                transition: "background-color 0.15s ease",
-                                flexShrink: 0,
-                            }}
+                            style={{ transition: "background-color 0.15s ease", flexShrink: 0 }}
                         >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
                                 <line x1="12" y1="5" x2="12" y2="19" />
@@ -1159,13 +935,8 @@ const Fields = ({
                                         if (char && !/^\d+$/.test(char)) return;
                                         const newOtpArray = [...otpArray];
                                         newOtpArray[index] = char;
-                                        const newVal = newOtpArray.join("");
-                                        onChange?.(newVal);
-
-                                        // Auto-focus next input if we typed a character
-                                        if (char && index < count - 1) {
-                                            otpRefs.current[index + 1]?.focus();
-                                        }
+                                        onChange?.(newOtpArray.join(""));
+                                        if (char && index < count - 1) otpRefs.current[index + 1]?.focus();
                                     }}
                                     onKeyDown={(e) => {
                                         if (e.key === "Backspace") {
@@ -1181,12 +952,7 @@ const Fields = ({
                                         }
                                     }}
                                     className="text-center font-600 text-gray bg-white border-0 rounded-5 mini-text"
-                                    style={{
-                                        width: "42px",
-                                        height: "42px",
-                                        outline: "none",
-                                        transition: "all 0.2s",
-                                    }}
+                                    style={{ width: "42px", height: "42px", outline: "none", transition: "all 0.2s" }}
                                     onFocus={(e) => e.target.style.borderColor = "var(--primary)"}
                                     onBlur={(e) => e.target.style.borderColor = "var(--gray)"}
                                 />
@@ -1208,62 +974,56 @@ const Fields = ({
                 return (
                     <div className="py-4 w-full">
                         <style>{`
-                            .custom-slider-input {
-                                -webkit-appearance: none;
-                                appearance: none;
-                                width: 100%;
-                                height: 6px;
-                                border-radius: 9999px;
-                                outline: none;
-                                transition: background 0.1s ease;
-                            }
-                            .custom-slider-input::-webkit-slider-runnable-track {
-                                width: 100%;
-                                height: 6px;
-                                cursor: pointer;
-                                border-radius: 9999px;
-                                background: transparent;
-                            }
-                            .custom-slider-input::-webkit-slider-thumb {
-                                -webkit-appearance: none;
-                                appearance: none;
-                                width: 16px;
-                                height: 16px;
-                                border-radius: 50%;
-                                background: var(--primary);
-                                border: 2.5px solid #ffffff;
-                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
-                                cursor: pointer;
-                                margin-top: -5px;
-                                transition: transform 0.1s ease, background-color 0.1s ease;
-                            }
-                            .custom-slider-input::-webkit-slider-thumb:hover {
-                                transform: scale(1.2);
-                            }
-                            .custom-slider-input::-webkit-slider-thumb:active {
-                                transform: scale(0.95);
-                            }
-                            .custom-slider-input::-moz-range-track {
-                                width: 100%;
-                                height: 6px;
-                                cursor: pointer;
-                                border-radius: 9999px;
-                                background: transparent;
-                            }
-                            .custom-slider-input::-moz-range-thumb {
-                                width: 16px;
-                                height: 16px;
-                                border-radius: 50%;
-                                background: var(--primary);
-                                border: 2.5px solid #ffffff;
-                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
-                                cursor: pointer;
-                                transition: transform 0.1s ease;
-                            }
-                            .custom-slider-input::-moz-range-thumb:hover {
-                                transform: scale(1.2);
-                            }
-                        `}</style>
+              .custom-slider-input {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 100%;
+                height: 6px;
+                border-radius: 9999px;
+                outline: none;
+                transition: background 0.1s ease;
+              }
+              .custom-slider-input::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 6px;
+                cursor: pointer;
+                border-radius: 9999px;
+                background: transparent;
+              }
+              .custom-slider-input::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: var(--primary);
+                border: 2.5px solid #ffffff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                margin-top: -5px;
+                transition: transform 0.1s ease, background-color 0.1s ease;
+              }
+              .custom-slider-input::-webkit-slider-thumb:hover { transform: scale(1.2); }
+              .custom-slider-input::-webkit-slider-thumb:active { transform: scale(0.95); }
+              .custom-slider-input::-moz-range-track {
+                width: 100%;
+                height: 6px;
+                cursor: pointer;
+                border-radius: 9999px;
+                background: transparent;
+              }
+              .custom-slider-input::-moz-range-thumb {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: var(--primary);
+                border: 2.5px solid #ffffff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                transition: transform 0.1s ease;
+              }
+              .custom-slider-input::-moz-range-thumb:hover { transform: scale(1.2); }
+            `}</style>
                         <div className="flex justify-between items-center mb-6">
                             <span className="mini-text text-gray font-400">₹{min}</span>
                             <span className="mini-text text-primary font-600">Up to ₹{val.toLocaleString()}</span>
@@ -1277,9 +1037,7 @@ const Fields = ({
                             value={val}
                             onChange={(e) => onChange?.(Number(e.target.value))}
                             className="custom-slider-input"
-                            style={{
-                                background: trackBg,
-                            }}
+                            style={{ background: trackBg }}
                         />
                     </div>
                 );
@@ -1291,20 +1049,14 @@ const Fields = ({
     };
 
     return (
-        <div
-            className="w-full grid-cols-1 gap-6"
-        >
+        <div className="w-full grid-cols-1 gap-6">
             {label && (
                 <label className="mini-text font-500" style={{ fontSize: "14px", color: "#4b5563" }}>
                     {label}
                 </label>
             )}
             {renderField()}
-            {error && (
-                <small className="text-danger mt-2 mini-text">
-                    {error}
-                </small>
-            )}
+            {error && <small className="text-danger mt-2 mini-text">{error}</small>}
         </div>
     );
 };

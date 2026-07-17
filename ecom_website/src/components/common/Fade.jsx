@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from "react";
 
 const Fade = ({
   children,
-  version = "v1", // "v1" (intersection observer) or "v2" (scroll-linked)
-  direction = "up", // "up" | "down" | "left" | "right" | "scale" | "none"
-  distance = 30, // transform offset in px
-  duration = 800, // animation duration in ms
-  delay = 0, // delay before animation starts in ms
-  threshold = 0.15, // intersection trigger threshold
+  version = "v1",
+  direction = "up",
+  distance = 30,
+  duration = 800,
+  delay = 0,
+  threshold = 0.15,
   className = "",
   style = {},
   tag = "div",
@@ -30,10 +30,7 @@ const Fade = ({
       { rootMargin: `0px 0px -${threshold * 100}% 0px` }
     );
 
-    if (domRef.current) {
-      observer.observe(domRef.current);
-    }
-
+    if (domRef.current) observer.observe(domRef.current);
     return () => observer.disconnect();
   }, [threshold, version]);
 
@@ -47,59 +44,37 @@ const Fade = ({
 
       const rect = element.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-
-      // Calculate entry progress: 0 when top is at viewportHeight, 1 when top reaches 20% of viewport
       const entryProgress = Math.min(Math.max((viewportHeight - rect.top) / (viewportHeight * 0.8), 0), 1);
 
       element.style.opacity = entryProgress;
 
-      let transformStr;
       const shift = (1 - entryProgress) * distance;
-      switch (direction) {
-        case "up":
-          transformStr = `translate3d(0, ${shift}px, 0)`;
-          break;
-        case "down":
-          transformStr = `translate3d(0, -${shift}px, 0)`;
-          break;
-        case "left":
-          transformStr = `translate3d(-${shift}px, 0, 0)`;
-          break;
-        case "right":
-          transformStr = `translate3d(${shift}px, 0, 0)`;
-          break;
-        case "scale":
-          transformStr = `scale(${1 - (1 - entryProgress) * 0.1})`;
-          break;
-        default:
-          transformStr = "none";
-      }
-      element.style.transform = transformStr;
+      const transforms = {
+        up: `translate3d(0, ${shift}px, 0)`,
+        down: `translate3d(0, -${shift}px, 0)`,
+        left: `translate3d(-${shift}px, 0, 0)`,
+        right: `translate3d(${shift}px, 0, 0)`,
+        scale: `scale(${1 - (1 - entryProgress) * 0.1})`,
+      };
+      element.style.transform = transforms[direction] || "none";
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial run
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [version, direction, distance]);
 
   const getTransform = () => {
     if (isVisible) return "translate(0, 0) scale(1)";
-    switch (direction) {
-      case "up":
-        return `translateY(${distance}px)`;
-      case "down":
-        return `translateY(-${distance}px)`;
-      case "left":
-        return `translateX(-${distance}px)`;
-      case "right":
-        return `translateX(${distance}px)`;
-      case "scale":
-        return "scale(0.9)";
-      case "none":
-      default:
-        return "none";
-    }
+    const transMap = {
+      up: `translateY(${distance}px)`,
+      down: `translateY(-${distance}px)`,
+      left: `translateX(-${distance}px)`,
+      right: `translateX(${distance}px)`,
+      scale: "scale(0.9)",
+    };
+    return transMap[direction] || "none";
   };
 
   const transitionStyles = version === "v2"

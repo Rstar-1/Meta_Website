@@ -15,12 +15,15 @@ const FormBuilder = ({
 }) => {
     const getDefaultValue = (field) => {
         if (field.defaultValue !== undefined) return field.defaultValue;
-        if (field.type === "range-datepicker") return { fromDate: "", toDate: "" };
-        if (field.type === "multiselect") return [];
-        if (field.type === "quantity") return 1;
-        if (field.type === "rating") return 0;
-        if (field.type === "checkbox" || field.type === "radio" || field.type === "switch") return false;
-        return "";
+        return {
+            "range-datepicker": { fromDate: "", toDate: "" },
+            multiselect: [],
+            quantity: 1,
+            rating: 0,
+            checkbox: false,
+            radio: false,
+            switch: false,
+        }[field.type] ?? "";
     };
 
     const initialValues = useMemo(() => {
@@ -34,24 +37,18 @@ const FormBuilder = ({
     const [errors, setErrors] = useState({});
 
     const validateField = (field, val) => {
-        const validation = field.validation || {};
-        if (validation.required && (val === null || val === undefined || (typeof val === 'string' && val.trim() === '') || (Array.isArray(val) && val.length === 0))) {
+        const { required, minLength, email, mobile } = field.validation || {};
+        if (required && (val === null || val === undefined || val === "" || (typeof val === "string" && !val.trim()) || (Array.isArray(val) && !val.length))) {
             return "This field is required";
         }
-        if (validation.minLength && typeof val === 'string' && val.length < validation.minLength) {
-            return `Minimum ${validation.minLength} characters`;
+        if (minLength && typeof val === "string" && val.length < minLength) {
+            return `Minimum ${minLength} characters`;
         }
-        if (field.type === "email" || field.name === "email" || validation.email) {
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (val && !regex.test(val)) {
-                return "Invalid Email Address";
-            }
+        if ((field.type === "email" || field.name === "email" || email) && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            return "Invalid Email Address";
         }
-        if (field.type === "tel" || field.name === "mobile" || validation.mobile) {
-            const regex = /^[6-9]\d{9}$/;
-            if (val && !regex.test(val)) {
-                return "Enter a valid 10-digit mobile number";
-            }
+        if ((field.type === "tel" || field.name === "mobile" || mobile) && val && !/^[6-9]\d{9}$/.test(val)) {
+            return "Enter a valid 10-digit mobile number";
         }
         return "";
     };
@@ -63,10 +60,9 @@ const FormBuilder = ({
         }));
         const field = fields.find((f) => f.name === name);
         if (field) {
-            const err = validateField(field, value);
             setErrors((prev) => ({
                 ...prev,
-                [name]: err,
+                [name]: validateField(field, value),
             }));
         }
     };
@@ -96,21 +92,9 @@ const FormBuilder = ({
         const formData = new FormData();
         Object.entries(form).forEach(([key, val]) => {
             if (val === null || val === undefined) return;
-            if (val instanceof FileList) {
-                Array.from(val).forEach((file) => {
-                    formData.append(key, file);
-                });
-            } else if (Array.isArray(val)) {
-                val.forEach((item) => {
-                    if (item instanceof File) {
-                        formData.append(key, item);
-                    } else {
-                        formData.append(key, item);
-                    }
-                });
-            } else if (val instanceof File) {
-                formData.append(key, val);
-            } else if (typeof val === "object") {
+            if (val instanceof FileList || Array.isArray(val)) {
+                Array.from(val).forEach((item) => formData.append(key, item));
+            } else if (typeof val === "object" && !(val instanceof File)) {
                 formData.append(key, JSON.stringify(val));
             } else {
                 formData.append(key, val);
