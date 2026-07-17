@@ -85,6 +85,46 @@ const Skeleton = ({
     );
   }
 
+  if (variant === "blog") {
+    const cardBg = theme === "dark" ? "#0f172a" : theme === "light" ? "#ffffff" : "rgba(255,255,255,0.05)";
+    return (
+      <>
+        {Array.from({ length: count }).map((_, idx) => (
+          <div
+            key={idx}
+            className={`w-full flex sm-flex-column rounded-5 overflow-hidden mb-20 ${className}`}
+            style={{
+              background: cardBg,
+              boxShadow: theme === "light" ? "0 4px 6px -1px rgba(0,0,0,0.05)" : "none",
+              width: width || "100%",
+              height: height || "auto",
+              ...style
+            }}
+          >
+            <div className="w-40 sm-w-full" style={{ flexShrink: 0 }}>
+              <Skeleton variant="rect" theme={theme} animation={animation} height="250px" borderRadius="0px" />
+            </div>
+            <div className="w-60 sm-w-full" style={{ padding: "20px", flexGrow: 1 }}>
+              <Skeleton variant="text" theme={theme} animation={animation} width="25%" height="12px" />
+              <Skeleton variant="text" theme={theme} animation={animation} width="85%" height="24px" />
+              <div className="flex flex-column gap-6 my-10">
+                <Skeleton variant="text" theme={theme} animation={animation} width="100%" height="12px" style={{ margin: 0 }} />
+                <Skeleton variant="text" theme={theme} animation={animation} width="70%" height="12px" style={{ margin: 0 }} />
+              </div>
+              <div className="flex items-center gap-10 mt-15 pt-8" style={{ borderTop: "1px solid #ececec" }}>
+                <Skeleton variant="circle" theme={theme} animation={animation} width="32px" height="32px" />
+                <div className="flex-grow flex flex-column gap-4">
+                  <Skeleton variant="text" theme={theme} animation={animation} width="40%" height="12px" style={{ margin: 0 }} />
+                  <Skeleton variant="text" theme={theme} animation={animation} width="25%" height="10px" style={{ margin: 0 }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  }
+
   return (
     <>
       {Array.from({ length: count }).map((_, idx) => (

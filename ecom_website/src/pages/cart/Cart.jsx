@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../../components/common/Container';
 import Button from '../../components/common/Button';
@@ -7,7 +7,9 @@ import Image from '../../components/common/Image';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import CardLayout from '../../components/layout/CardLayout';
 import Banner from '../../components/layout/Banner';
-import ProductEnquiryForm from '../../components/forms/ProductEnquiryForm';
+import Skeleton from '../../components/common/Skeleton';
+
+const ProductEnquiryForm = lazy(() => import('../../components/forms/ProductEnquiryForm'));
 import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
 import { resolveProductImage, resolveImagePath } from '../../utils/imageResolver';
 import { products as productsData, categories as categoriesData } from '../../utils/productsData';
@@ -304,11 +306,22 @@ const Cart = () => {
 
             {/* Right Column - Submit Enquiry Form */}
             <div className="w-25 md-w-full sm-w-full pl-12 sm-pl-1">
-              <ProductEnquiryForm
-                isCart={true}
-                cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
-                onClearCart={clearCart}
-              />
+              <Suspense fallback={
+                <div className="bg-white border-ec p-20 rounded-5">
+                  <Skeleton variant="text" width="60%" height="24px" />
+                  <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                  <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                  <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                  <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
+                  <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
+                </div>
+              }>
+                <ProductEnquiryForm
+                  isCart={true}
+                  cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
+                  onClearCart={clearCart}
+                />
+              </Suspense>
             </div>
           </div>
 

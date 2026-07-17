@@ -4,9 +4,24 @@ import { products } from '../../utils/productsData';
 import ProductLayout from '../../components/layout/ProductLayout';
 import { resolveImagePath } from '../../utils/imageResolver';
 import Skeleton from '../../components/common/Skeleton';
+import Container from '../../components/common/Container';
 
 // Lazy load section components
 const ProductReviews = lazy(() => import('./sections/ProductReviews'));
+
+// DRY Skeleton Helper Components
+const SectionHeaderSkeleton = ({ titleWidth = '200px' }) => (
+  <div className="flex justify-between items-center mb-10">
+    <Skeleton variant="rect" width={titleWidth} height="32px" borderRadius="4px" theme="adaptive" />
+    <Skeleton variant="rect" width="80px" height="20px" borderRadius="4px" theme="adaptive" />
+  </div>
+);
+
+const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12' }) => (
+  <div className={className}>
+    <Skeleton variant="card" count={count} theme="adaptive" />
+  </div>
+);
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -62,13 +77,12 @@ const ProductDetail = () => {
         seoKeywords={keywords}
       />
       <Suspense fallback={
-        <div className="container mx-auto py-40">
-          <Skeleton variant="text" width="200px" height="30px" />
-          <div className="grid-cols-2 gap-12 mt-12">
-            <Skeleton variant="rect" height="150px" />
-            <Skeleton variant="rect" height="150px" />
+        <Container>
+          <div className="py-40 w-full">
+            <SectionHeaderSkeleton titleWidth="200px" />
+            <CardGridSkeleton count={2} className="grid-cols-2 md-grid-cols-1 gap-12 mt-12" />
           </div>
-        </div>
+        </Container>
       }>
         <ProductReviews
           rating={foundProduct?.rating}

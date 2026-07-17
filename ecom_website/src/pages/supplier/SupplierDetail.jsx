@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products as productsData, categories as categoryData } from '../../utils/productsData';
 import clientData from '../../data/client.json';
@@ -11,7 +11,9 @@ import Icon from '../../components/common/Icon';
 import Button from '../../components/common/Button';
 import Banner from '../../components/layout/Banner';
 import Tab from '../../components/common/Tab';
-import Table from '../../components/common/Table';
+import Skeleton from '../../components/common/Skeleton';
+
+const Table = lazy(() => import('../../components/common/Table'));
 
 const SupplierDetail = () => {
   const { brandName } = useParams();
@@ -208,12 +210,18 @@ const SupplierDetail = () => {
                   </p>
                 </div>
 
-                <Table
-                  columns={profileTableColumns}
-                  data={profileTableData}
-                  showControls={false}
-                  minWidth="100%"
-                />
+                <Suspense fallback={
+                  <div className="bg-white border-ec p-20 rounded-5">
+                    <Skeleton variant="rect" height="250px" />
+                  </div>
+                }>
+                  <Table
+                    columns={profileTableColumns}
+                    data={profileTableData}
+                    showControls={false}
+                    minWidth="100%"
+                  />
+                </Suspense>
               </div>
             )}
 

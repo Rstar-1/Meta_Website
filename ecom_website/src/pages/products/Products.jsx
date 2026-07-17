@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { products, categories } from '../../utils/productsData';
 import Container from '../../components/common/Container';
@@ -9,8 +9,25 @@ import Fields from '../../components/common/Fields';
 import Icon from '../../components/common/Icon';
 import Banner from '../../components/layout/Banner';
 import { categoryMetaTemplate } from '../../seo/metaTemplates';
-import Modal from '../../components/common/Modal';
 import Button from '../../components/common/Button';
+
+import Skeleton from '../../components/common/Skeleton';
+
+const Modal = lazy(() => import('../../components/common/Modal'));
+
+// DRY Skeleton Helper Components
+const SectionHeaderSkeleton = ({ titleWidth = '200px' }) => (
+  <div className="flex justify-between items-center mb-10">
+    <Skeleton variant="rect" width={titleWidth} height="32px" borderRadius="4px" theme="adaptive" />
+    <Skeleton variant="rect" width="80px" height="20px" borderRadius="4px" theme="adaptive" />
+  </div>
+);
+
+const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12' }) => (
+  <div className={className}>
+    <Skeleton variant="card" count={count} theme="adaptive" />
+  </div>
+);
 
 const Products = () => {
   const navigate = useNavigate();
@@ -65,6 +82,12 @@ const Products = () => {
   const [showAllCategories, setShowAllCategories] = useState(false);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [modalSize, setModalSize] = useState("sm");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -353,46 +376,54 @@ const Products = () => {
             </div>
 
             {/* Product Cards Grid */}
-            <CardLayout
-              items={filteredProducts}
-              cardType="product"
-              imageHeight="h-300 sm-h-250"
-              cols="3"
-              mdCols="2"
-              smCols="1"
-              gap="12"
-              onCardClick={(product) => handleProductClick(product.id)}
-              onButtonClick={(product) => handleProductClick(product.id)}
-            />
+            {loading ? (
+              <CardGridSkeleton count={6} className="grid-cols-3 md-grid-cols-2 sm-grid-cols-1 gap-12" />
+            ) : (
+              <>
+                <CardLayout
+                  items={filteredProducts}
+                  cardType="product"
+                  imageHeight="h-300 sm-h-250"
+                  cols="3"
+                  mdCols="2"
+                  smCols="1"
+                  gap="12"
+                  onCardClick={(product) => handleProductClick(product.id)}
+                  onButtonClick={(product) => handleProductClick(product.id)}
+                />
 
-            {filteredProducts.length === 0 && (
-              <div className="text-center py-50 text-gray">
-                <p className="mid-text font-500">No products found matching your search.</p>
-              </div>
+                {filteredProducts.length === 0 && (
+                  <div className="text-center py-50 text-gray">
+                    <p className="mid-text font-500">No products found matching your search.</p>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>
       </Container>
 
-      <Modal
-        isOpen={isFilterModalOpen}
-        onClose={() => setIsFilterModalOpen(false)}
-        title="Filter Options"
-        size={modalSize}
-        type="sidebar"
-        placement="left"
-        footer={
-          <Button
-            text="Apply Filters"
-            bg="primary"
-            onClick={() => setIsFilterModalOpen(false)}
-            version='v2'
-            className="w-full"
-          />
-        }
-      >
-        {renderFilters()}
-      </Modal>
+      <Suspense fallback={null}>
+        <Modal
+          isOpen={isFilterModalOpen}
+          onClose={() => setIsFilterModalOpen(false)}
+          title="Filter Options"
+          size={modalSize}
+          type="sidebar"
+          placement="left"
+          footer={
+            <Button
+              text="Apply Filters"
+              bg="primary"
+              onClick={() => setIsFilterModalOpen(false)}
+              version='v2'
+              className="w-full"
+            />
+          }
+        >
+          {renderFilters()}
+        </Modal>
+      </Suspense>
     </>
   );
 };

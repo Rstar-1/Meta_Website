@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../common/Container';
 import Icon from '../common/Icon';
@@ -7,17 +7,40 @@ import Fields from '../common/Fields';
 import Banner from './Banner';
 import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
-import LatestArticles from '../../pages/home/sections/LatestArticles';
 import NewsletterForm from '../forms/NewsletterForm';
+import Skeleton from '../common/Skeleton';
+
+const LatestArticles = lazy(() => import('../../pages/home/sections/LatestArticles'));
+
+// DRY Skeleton Helper Components
+const SectionHeaderSkeleton = ({ titleWidth = '200px' }) => (
+  <div className="flex justify-between items-center mb-10">
+    <Skeleton variant="rect" width={titleWidth} height="32px" borderRadius="4px" theme="adaptive" />
+    <Skeleton variant="rect" width="80px" height="20px" borderRadius="4px" theme="adaptive" />
+  </div>
+);
+
+const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12' }) => (
+  <div className={className}>
+    <Skeleton variant="card" count={count} theme="adaptive" />
+  </div>
+);
 
 import { formatDate } from '../../utils/formatDate';
 import { blogMetaTemplate } from '../../seo/metaTemplates';
+
+const CATEGORY_COLORS = {
+  SEO: "text-info",
+  "Social Media": "text-warning",
+  "Content Marketing": "text-warning",
+};
 
 const BlogLayout = ({
   type = 'list',
   blogsData = [],
   post = null,
   allBlogs = [],
+  loading = false,
 }) => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -62,14 +85,34 @@ const BlogLayout = ({
   const tags = useMemo(() => post?.keywords?.split(',').map(t => t.trim()) || [], [post?.keywords]);
   const formattedDate = useMemo(() => formatDate(post?.datePublished, 'human') || 'May 20, 2024', [post?.datePublished]);
 
-  const getCategoryColor = (category) => {
-    const colors = {
-      SEO: "text-info",
-      "Social Media": "text-warning",
-      "Content Marketing": "text-warning",
-    };
-    return colors[category] || "text-primary";
-  };
+  const getCategoryColor = (category) => CATEGORY_COLORS[category] || "text-primary";
+
+  const socialShares = useMemo(() => [
+    {
+      name: 'Facebook',
+      icon: 'Facebook',
+      url: `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+      aria: 'Share on Facebook',
+      width: '18',
+      height: '18',
+    },
+    {
+      name: 'Twitter',
+      icon: 'Twitter',
+      url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post?.title || '')}`,
+      aria: 'Share on Twitter',
+      width: '16',
+      height: '16',
+    },
+    {
+      name: 'LinkedIn',
+      icon: 'LinkedIn',
+      url: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(post?.title || '')}`,
+      aria: 'Share on LinkedIn',
+      width: '16',
+      height: '16',
+    },
+  ], [shareUrl, post?.title]);
 
   const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com') : {}, [post]);
 
@@ -174,43 +217,24 @@ const BlogLayout = ({
 
       <div className="bg-forth py-50 sm-py-36">
         <Container version="v2">
-          <div className="flex gap-12 sm-grid-cols-1">
+          <div className="flex gap-12 sm-grid-cols-1 w-full">
             {/* Far Left: Sticky Social Share Widget (Desktop Only, Details View Only) */}
             {type === 'detail' && post && (
               <div className="w-5 md-hidden sm-hidden">
                 <div className="sticky flex flex-column items-center gap-12" style={{ top: '100px' }}>
                   <span className="mini-text text-gray uppercase font-600 tracking-wider mb-5">Share</span>
-                  <a
-                    href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="share-btn"
-                    aria-label="Share on Facebook"
-                  >
-                    <Icon name="Facebook" width="18" height="18" fill="currentColor" />
-                  </a>
-                  <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(
-                      post.title
-                    )}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="share-btn"
-                    aria-label="Share on Twitter"
-                  >
-                    <Icon name="Twitter" width="16" height="16" fill="currentColor" />
-                  </a>
-                  <a
-                    href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-                      shareUrl
-                    )}&title=${encodeURIComponent(post.title)}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="share-btn"
-                    aria-label="Share on LinkedIn"
-                  >
-                    <Icon name="LinkedIn" width="16" height="16" fill="currentColor" />
-                  </a>
+                  {socialShares.map((share) => (
+                    <a
+                      key={share.name}
+                      href={share.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="share-btn"
+                      aria-label={share.aria}
+                    >
+                      <Icon name={share.icon} width={share.width} height={share.height} fill="currentColor" />
+                    </a>
+                  ))}
                   <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
                     <Icon name="CopyLink" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" />
                   </button>
@@ -226,7 +250,11 @@ const BlogLayout = ({
                     <h2 className="title-text font-600 text-dark">Latest Articles</h2>
                   </div>
 
-                  {filteredBlogs.length > 0 ? (
+                  {loading ? (
+                    <div className="grid-cols-1 gap-12">
+                      <Skeleton variant="blog" count={3} />
+                    </div>
+                  ) : filteredBlogs.length > 0 ? (
                     <div className="grid-cols-1 gap-12">
                       {filteredBlogs.map((blog, idx) => {
                         const categoryColorClass = getCategoryColor(blog.category);
@@ -305,7 +333,37 @@ const BlogLayout = ({
                   )}
                 </>
               ) : (
-                post && (
+                loading ? (
+                  <div className="flex flex-column gap-15 w-full">
+                    {/* Main Image Skeleton */}
+                    <Skeleton variant="rect" width="100%" height="400px" borderRadius="10px" theme="adaptive" />
+                    
+                    {/* Meta Row Skeleton */}
+                    <div className="flex items-center gap-12 py-15" style={{ borderBottom: '1px solid #ececec' }}>
+                      <Skeleton variant="circle" width="40px" height="40px" theme="adaptive" />
+                      <div className="flex-grow flex flex-column gap-6">
+                        <Skeleton variant="text" width="150px" height="14px" theme="adaptive" />
+                        <Skeleton variant="text" width="100px" height="10px" theme="adaptive" />
+                      </div>
+                    </div>
+
+                    {/* Article Body Skeleton */}
+                    <div className="flex flex-column gap-12 mt-20">
+                      <Skeleton variant="text" width="30%" height="24px" theme="adaptive" />
+                      <Skeleton variant="text" width="95%" height="14px" theme="adaptive" />
+                      <Skeleton variant="text" width="90%" height="14px" theme="adaptive" />
+                      <Skeleton variant="text" width="85%" height="14px" theme="adaptive" />
+                      <Skeleton variant="text" width="60%" height="14px" theme="adaptive" />
+                    </div>
+
+                    <div className="flex flex-column gap-12 mt-25">
+                      <Skeleton variant="text" width="45%" height="24px" theme="adaptive" />
+                      <Skeleton variant="text" width="95%" height="14px" theme="adaptive" />
+                      <Skeleton variant="text" width="90%" height="14px" theme="adaptive" />
+                      <Skeleton variant="text" width="40%" height="14px" theme="adaptive" />
+                    </div>
+                  </div>
+                ) : post && (
                   <>
                     {/* Main Article Image */}
                     <div className="overflow-hidden rounded-5 mb-35">
@@ -343,26 +401,18 @@ const BlogLayout = ({
                       <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
                         <Icon name="CopyLink" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" />
                       </button>
-                      <a
-                        href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="share-btn"
-                        aria-label="Share on Facebook"
-                      >
-                        <Icon name="Facebook" width="16" height="16" fill="currentColor" />
-                      </a>
-                      <a
-                        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(
-                          post.title
-                        )}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="share-btn"
-                        aria-label="Share on Twitter"
-                      >
-                        <Icon name="Twitter" width="14" height="14" fill="currentColor" />
-                      </a>
+                      {socialShares.map((share) => (
+                        <a
+                          key={share.name}
+                          href={share.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="share-btn"
+                          aria-label={share.aria}
+                        >
+                          <Icon name={share.icon} width="16" height="16" fill="currentColor" />
+                        </a>
+                      ))}
                     </div>
 
                     {/* Article Body */}
@@ -531,7 +581,20 @@ const BlogLayout = ({
         </Container>
       </div>
 
-      {type === 'detail' && <LatestArticles />}
+      {type === 'detail' && (
+        <Suspense fallback={
+          <Container version="v2">
+            <div className="pt-30 pb-20 w-full" style={{ minHeight: '500px' }}>
+              <SectionHeaderSkeleton titleWidth="220px" />
+              <CardGridSkeleton />
+            </div>
+          </Container>
+        }>
+          <Container version="v2">
+            <LatestArticles />
+          </Container>
+        </Suspense>
+      )}
     </>
   );
 };
