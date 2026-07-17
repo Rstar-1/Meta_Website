@@ -165,9 +165,9 @@ const CardLayout = ({
                         </div>
 
                         {/* Details */}
-                        <div className="p-10">
+                        <div className="py-10">
                             {item.tag && (
-                                <p className="px-12 py-5 rounded-5 font-600 mini-text mb-10 w-max bg-light-primary text-primary">
+                                <p className="px-12 py-4 rounded-5 font-400 mini-text mb-10 w-max bg-light-primary text-primary">
                                     {item.tag}
                                 </p>
                             )}
@@ -187,101 +187,12 @@ const CardLayout = ({
             );
         }
 
-        if (cardType === 'city') {
-            const paddedIndex = String(index + 1).padStart(2, '0');
-            return (
-                <div
-                    key={item.id || index}
-                    className="city-card relative overflow-hidden rounded-10 cursor-pointer h-350 flex items-end"
-                    onClick={() => onCardClick && onCardClick(item)}
-                >
-                    {/* Lazy-loaded background image */}
-                    <Image
-                        src={item.image}
-                        alt={item.name}
-                        loading={index < eagerCount ? "eager" : "lazy"}
-                        fetchPriority={index < eagerCount ? "high" : undefined}
-                        className="absolute inset-0 w-full h-full object-cover z-0"
-                        width="300"
-                        height="350"
-                    />
-                    {/* Overlay */}
-                    <div
-                        className="absolute inset-0 z-1"
-                        style={{
-                            backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%)'
-                        }}
-                    />
-
-                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12 flex items-center justify-center z-10" style={{ zIndex: 10 }}>
-                        <Icon name="MapPin" width="15" height="15" stroke="var(--primary)" strokeWidth="2.5" />
-                    </div>
-
-                    <div className="relative w-full z-10" style={{ zIndex: 10 }}>
-                        <div className="p-20">
-                            <div className="flex items-center gap-8 mb-6">
-                                <Icon name="MapPin" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                <h4 className="mid-text text-white font-600">{item.name}</h4>
-                            </div>
-
-                            {/* Stats List */}
-                            <div className="grid-cols-1 gap-6 mb-16">
-                                <div className="flex items-center gap-8 text-white opacity-95">
-                                    <Icon name="Building" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                    <span className="small-text font-400">{item.businesses}</span>
-                                </div>
-                                <div className="flex items-center gap-8 text-white opacity-95">
-                                    <Icon name="Grid" width="14" height="14" strokeWidth="2.5" className="text-white" />
-                                    <span className="small-text font-400">{item.categories}</span>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center justify-between w-full">
-                                {/* Dynamic Tag Badge */}
-                                {item.tag ? (
-                                    <div
-                                        className="px-12 py-5 rounded-20 w-max flex items-center gap-6"
-                                        style={{
-                                            backgroundColor: item.tagType === 'most-searched' ? '#eab308' : '#22c55e',
-                                            color: item.tagType === 'most-searched' ? '#000000' : '#ffffff',
-                                        }}
-                                    >
-                                        {item.tagType === 'most-searched' ? (
-                                            <Icon name="Star" width="12" height="12" fill="currentColor" stroke="none" className="flex" />
-                                        ) : (
-                                            <Icon name="Trending" width="12" height="12" stroke="currentColor" strokeWidth="3" className="flex" />
-                                        )}
-                                        <span className="mini-text font-600 uppercase tracking-wider">
-                                            {item.tag}
-                                        </span>
-                                    </div>
-                                ) : null}
-
-                                {/* Circular Right Action Button */}
-                                <div className="icon-lg bg-white rounded-full">
-                                    <Icon name="ArrowRight" width="16" height="16" stroke="var(--primary)" strokeWidth="3.5" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
         return null;
     };
 
     return (
         <>
             <style>{`
-                .city-card {
-                    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-                }
-                .city-card:hover {
-                    transform: translateY(-6px);
-                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-                }
-                
                 .custom-swiper-prev,
                 .custom-swiper-next {
                     position: absolute;

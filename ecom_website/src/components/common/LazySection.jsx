@@ -1,43 +1,77 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 
-const LazySection = ({ children, placeholderHeight = '300px', className = '' }) => {
-  const [isIntersected, setIsIntersected] = useState(false);
-  const ref = useRef(null);
+const LazySection = memo(
+  ({
+    children,
+    className = "",
+    placeholderHeight = 300,
+    placeholder = null,
+    rootMargin = "300px 0px",
+    threshold = 0.01,
+    once = true,
+  }) => {
+    const containerRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    // If IntersectionObserver is not supported, fall back to immediate rendering
-    if (typeof window === 'undefined' || !window.IntersectionObserver) {
-      setIsIntersected(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsIntersected(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '300px 0px' } // Eagerly load 300px before entering viewport
+    const placeholderStyle = useMemo(
+      () => ({
+        minHeight:
+          typeof placeholderHeight === "number"
+            ? `${placeholderHeight}px`
+            : placeholderHeight,
+      }),
+      [placeholderHeight]
     );
 
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    useEffect(() => {
+      if (isVisible && once) return;
 
-    return () => {
-      if (observer) {
-        observer.disconnect();
+      if (
+        typeof window === "undefined" ||
+        !("IntersectionObserver" in window)
+      ) {
+        setIsVisible(true);
+        return;
       }
-    };
-  }, []);
 
-  return (
-    <div ref={ref} className={className} style={!isIntersected ? { minHeight: placeholderHeight } : undefined}>
-      {isIntersected ? children : null}
-    </div>
-  );
-};
+      const element = containerRef.current;
+      if (!element) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+
+            if (once) {
+              observer.unobserve(entry.target);
+            }
+          } else if (!once) {
+            setIsVisible(false);
+          }
+        },
+        {
+          rootMargin,
+          threshold,
+        }
+      );
+
+      observer.observe(element);
+
+      return () => observer.disconnect();
+    }, [isVisible, once, rootMargin, threshold]);
+
+    return (
+      <div
+        ref={containerRef}
+        className={className}
+        style={!isVisible ? placeholderStyle : undefined}
+      >
+        {isVisible ? children : placeholder}
+      </div>
+    );
+  }
+);
+
+LazySection.displayName = "LazySection";
 
 export default LazySection;

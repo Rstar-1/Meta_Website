@@ -46,6 +46,7 @@ const Footer = () => {
                   <a
                     key={idx}
                     href={social.url}
+                    aria-label={`Visit our ${social.platform || social.iconName} page`}
                     className="social-link center-div rounded-full"
                     style={{
                       width: '36px',

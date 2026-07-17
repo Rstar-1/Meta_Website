@@ -22,6 +22,9 @@
   
   <!-- Preload the main logo in the header for fast initial rendering -->
   <link rel="preload" href="/sobo_logo.webp" as="image" fetchpriority="high">
+
+  <!-- Preload the Hero slider first image to minimize Largest Contentful Paint (LCP) -->
+  <link rel="preload" href="/src/assets/pvc_roll_industrial.webp" as="image" type="image/webp" fetchpriority="high">
 </head>
 
 <body>

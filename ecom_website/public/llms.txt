@@ -1,0 +1,13 @@
+# SOBO Marketing Solution
+
+SOBO Marketing Solution is a leading provider of high-quality PVC sheet, PVC roll, and PVC strip curtains. We serve B2B clients across India with custom fabrication and premium industrial plastics.
+
+## Core Products
+- [PVC Sheets](/products?category=cat-pvc-sheet) - Flexible transparent, color, and reinforced PVC sheets.
+- [PVC Rolls](/products?category=cat-pvc-roll) - Premium soft PVC film rolls in various thicknesses.
+- [PVC Strip Curtains](/products?category=cat-pvc-strip-curtains) - Anti-insect, polar grade freezer, and standard transparent strip curtains.
+
+## Business Information
+- [About Us](/about) - Our company history, certificates, and quality standards.
+- [Contact Us](/contact) - Address, phone number, and enquiry form details.
+- [Latest Articles](/blog) - Case studies and informational guides about industrial plastics.

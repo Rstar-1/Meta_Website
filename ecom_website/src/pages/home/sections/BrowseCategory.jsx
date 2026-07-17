@@ -1,6 +1,6 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { categories } from '../../../utils/productsData';
-import Container from '../../../components/common/Container';
 import { resolveImagePath } from '../../../utils/imageResolver';
 import Image from '../../../components/common/Image';
 
@@ -15,38 +15,36 @@ const BrowseCategory = ({ onSelectCategory }) => {
     }
   };
 
-  // Limit homepage categories to 7: first 6 actual categories + 1 custom "More" category
+  // Limit homepage categories to 6
   const displayedCategories = [
     ...categories.slice(0, 6)
   ];
 
   return (
-    <Container className='bg-forth'>
-      <div className="w-full py-30">
-        <div className='grid-cols-6 md-grid-cols-4 sm-grid-cols-2 gap-12'>
-          {displayedCategories.map((cat) => (
-            <div
-              key={cat.id}
-              className="px-10 py-20 bg-white rounded-10 cursor-pointer text-center"
-              onClick={() => handleCategoryClick(cat)}
-            >
-              <div className='relative'>
-                <Image
-                  src={resolveImagePath(cat.icon)}
-                  alt={cat.name}
-                  width="80"
-                  height="80"
-                  loading="lazy"
-                  className="flex object-cover rounded-full mx-auto"
-                  style={{ width: '80px', height: '80px' }}
-                />
-              </div>
-              <p className="text-gray font-500 mini-text text-center mt-18">{cat.name}</p>
+    <div className="w-full py-30">
+      <div className='grid-cols-6 md-grid-cols-4 sm-grid-cols-2 gap-12'>
+        {displayedCategories.map((cat) => (
+          <div
+            key={cat.id}
+            className="px-10 py-20 bg-white rounded-10 cursor-pointer text-center"
+            onClick={() => handleCategoryClick(cat)}
+          >
+            <div className='relative'>
+              <Image
+                src={resolveImagePath(cat.icon)}
+                alt={cat.name}
+                width="80"
+                height="80"
+                loading="lazy"
+                className="flex object-cover rounded-full mx-auto"
+                style={{ width: '80px', height: '80px' }}
+              />
             </div>
-          ))}
-        </div>
+            <p className="text-gray font-500 mini-text text-center mt-18">{cat.name}</p>
+          </div>
+        ))}
       </div>
-    </Container>
+    </div>
   );
 };
 

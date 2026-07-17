@@ -5,7 +5,7 @@ export const generateSchema = {
       "@type": "Organization",
       name: orgData.name || "SOBO Marketing Solution",
       url: orgData.url || "https://sobo-marketing.com",
-      logo: orgData.logo || "https://sobo-marketing.com/sobo_logo.png",
+      logo: orgData.logo || "https://sobo-marketing.com/sobo_logo.webp",
       contactPoint: orgData.contact
         ? {
             "@type": "ContactPoint",
@@ -37,7 +37,7 @@ export const generateSchema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: bizData.name || "SOBO Marketing Solution",
-      image: bizData.image || "https://sobo-marketing.com/sobo_logo.png",
+      image: bizData.image || "https://sobo-marketing.com/sobo_logo.webp",
       "@id": bizData.url || "https://sobo-marketing.com",
       url: bizData.url || "https://sobo-marketing.com",
       telephone: bizData.phone || "",
@@ -182,7 +182,7 @@ export const generateSchema = {
         name: post.publisherName || "SOBO Marketing Solution",
         logo: {
           "@type": "ImageObject",
-          url: post.publisherLogo || "https://sobo-marketing.com/sobo_logo.png",
+          url: post.publisherLogo || "https://sobo-marketing.com/sobo_logo.webp",
         },
       },
       description: post.description || "",

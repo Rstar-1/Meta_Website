@@ -142,6 +142,7 @@ const Header = () => {
                 alt="SOBO Marketing Solution Logo"
                 width="128"
                 height="42"
+                loading="eager"
                 style={{
                   maxHeight: '42px',
                   width: 'auto',

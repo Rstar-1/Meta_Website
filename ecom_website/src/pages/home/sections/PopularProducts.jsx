@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { products } from '../../../utils/productsData';
-import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const PopularProducts = () => {
@@ -19,26 +18,24 @@ const PopularProducts = () => {
 
 
   return (
-    <Container style={{ background: 'var(--forth)' }}>
-      <div className='py-40 w-full'>
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="title-text text-dark font-600">Popular Products</h2>
-          <p className='text-primary font-500 cursor-pointer small-text' onClick={handleViewAll}>
-            View All ➔</p>
-        </div>
-
-        <CardLayout
-          items={popularProducts}
-          cardType="product"
-          imageHeight="h-250"
-          isSlider={true}
-          className="mt-20"
-          showViewProducts={false}
-          onCardClick={handleProductClick}
-          onButtonClick={handleProductClick}
-        />
+    <div className='py-40 w-full'>
+      <div className="flex justify-between items-center mb-10">
+        <h2 className="title-text text-dark font-600">Popular Products</h2>
+        <p className='text-primary font-500 cursor-pointer small-text' onClick={handleViewAll}>
+          View All ➔</p>
       </div>
-    </Container>
+
+      <CardLayout
+        items={popularProducts}
+        cardType="product"
+        imageHeight="h-250"
+        isSlider={true}
+        className="mt-20"
+        showViewProducts={false}
+        onCardClick={handleProductClick}
+        onButtonClick={handleProductClick}
+      />
+    </div>
   );
 };
 

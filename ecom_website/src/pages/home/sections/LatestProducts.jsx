@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { products, categories } from '../../../utils/productsData';
-import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const LatestProducts = () => {
@@ -16,7 +15,7 @@ const LatestProducts = () => {
   const targetCategoryIds = ['cat-pvc-sheet', 'cat-pvc-roll', 'cat-pvc-strip-curtains'];
 
   return (
-    <>
+    <div className='w-full py-40'>
       {targetCategoryIds.map((catId, catIndex) => {
         const category = categories.find(c => c.id === catId);
         if (!category) return null;
@@ -28,32 +27,30 @@ const LatestProducts = () => {
         if (categoryProducts.length === 0) return null;
 
         return (
-          <Container key={category.id} className="bg-white">
-            <div className='py-30 w-full'>
-              <div className="flex justify-between items-center mb-10">
-                <h2 className="title-text text-dark font-600">{category.name}</h2>
-                <p
-                  className="text-primary font-500 cursor-pointer small-text"
-                  onClick={() => navigate(`/products?category=${category.id}`)}
-                >
-                  View All ➔
-                </p>
-              </div>
-
-              <CardLayout
-                items={categoryProducts}
-                cardType="product"
-                imageHeight="h-350"
-                isSlider={true}
-                eagerCount={catIndex === 0 ? 2 : 0}
-                onCardClick={handleProductClick}
-                onButtonClick={handleProductClick}
-              />
+          <div key={category.id} className="pb-20 w-full">
+            <div className="flex justify-between items-center mb-10">
+              <h2 className="title-text text-dark font-600">{category.name}</h2>
+              <p
+                className="text-primary font-500 cursor-pointer small-text"
+                onClick={() => navigate(`/products?category=${category.id}`)}
+              >
+                View All ➔
+              </p>
             </div>
-          </Container>
+
+            <CardLayout
+              items={categoryProducts}
+              cardType="product"
+              imageHeight="h-350"
+              isSlider={true}
+              eagerCount={catIndex === 0 ? 2 : 0}
+              onCardClick={handleProductClick}
+              onButtonClick={handleProductClick}
+            />
+          </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

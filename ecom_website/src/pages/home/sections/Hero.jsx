@@ -10,9 +10,9 @@ import { Autoplay, Pagination } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
-import pvcRollIndustrial from '../../../assets/pvc_roll_industrial.png';
-import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.png';
-import pvcCurtainIndustrial from '../../../assets/pvc_curtain_industrial.png';
+import pvcRollIndustrial from '../../../assets/pvc_roll_industrial.webp';
+import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.webp';
+import pvcCurtainIndustrial from '../../../assets/pvc_curtain_industrial.webp';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -135,6 +135,10 @@ const Hero = () => {
                     <Image
                       src={slide.image}
                       alt={slide.title}
+                      width={600}
+                      height={500}
+                      loading={idx === 0 ? "eager" : "lazy"}
+                      fetchPriority={idx === 0 ? "high" : undefined}
                       className="w-full h-full object-cover flex"
                     />
                     <div className="absolute bottom-0 left-0 z-10 m-10">
