@@ -185,6 +185,7 @@ const BlogLayout = ({
                     target="_blank"
                     rel="noreferrer"
                     className="share-btn"
+                    aria-label="Share on Facebook"
                   >
                     <Icon name="Facebook" width="18" height="18" fill="currentColor" />
                   </a>
@@ -195,6 +196,7 @@ const BlogLayout = ({
                     target="_blank"
                     rel="noreferrer"
                     className="share-btn"
+                    aria-label="Share on Twitter"
                   >
                     <Icon name="Twitter" width="16" height="16" fill="currentColor" />
                   </a>
@@ -205,10 +207,11 @@ const BlogLayout = ({
                     target="_blank"
                     rel="noreferrer"
                     className="share-btn"
+                    aria-label="Share on LinkedIn"
                   >
                     <Icon name="LinkedIn" width="16" height="16" fill="currentColor" />
                   </a>
-                  <button onClick={copyToClipboard} className="share-btn" title="Copy link">
+                  <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
                     <Icon name="CopyLink" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" />
                   </button>
                 </div>
@@ -337,7 +340,7 @@ const BlogLayout = ({
                     {/* Mobile Social Share Row */}
                     <div className="hidden sm-flex md-flex gap-10 items-center mb-25 sm-mb-14 bg-white p-12 rounded-5 border-ec">
                       <span className="small-text font-600 text-dark">Share:</span>
-                      <button onClick={copyToClipboard} className="share-btn" title="Copy link">
+                      <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
                         <Icon name="CopyLink" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" />
                       </button>
                       <a
@@ -345,6 +348,7 @@ const BlogLayout = ({
                         target="_blank"
                         rel="noreferrer"
                         className="share-btn"
+                        aria-label="Share on Facebook"
                       >
                         <Icon name="Facebook" width="16" height="16" fill="currentColor" />
                       </a>
@@ -355,6 +359,7 @@ const BlogLayout = ({
                         target="_blank"
                         rel="noreferrer"
                         className="share-btn"
+                        aria-label="Share on Twitter"
                       >
                         <Icon name="Twitter" width="14" height="14" fill="currentColor" />
                       </a>
@@ -502,7 +507,7 @@ const BlogLayout = ({
                             src={popPost.image}
                             alt={popPost.title}
                             className="rounded-5 flex w-30"
-                            style={{ height: '80px' }}
+                            style={{ height: '80px', objectFit: 'cover' }}
                           />
                           <div className='w-70'>
                             <h4 className="headmini-text font-500 text-dark line-clamp2">

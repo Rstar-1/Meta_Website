@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from '../../utils/productsData';
 import ProductLayout from '../../components/layout/ProductLayout';
 import { resolveImagePath } from '../../utils/imageResolver';
+import Skeleton from '../../components/common/Skeleton';
 
-// Import section components
-import { ProductReviews } from './sections';
+// Lazy load section components
+const ProductReviews = lazy(() => import('./sections/ProductReviews'));
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -60,13 +61,23 @@ const ProductDetail = () => {
         foundProduct={foundProduct}
         seoKeywords={keywords}
       />
-      <ProductReviews
-        rating={foundProduct?.rating}
-        reviewCount={foundProduct?.reviewCount}
-        reviews={foundProduct?.reviews}
-        productName={foundProduct?.name}
-        galleryImages={galleryImages}
-      />
+      <Suspense fallback={
+        <div className="container mx-auto py-40">
+          <Skeleton variant="text" width="200px" height="30px" />
+          <div className="grid-cols-2 gap-12 mt-12">
+            <Skeleton variant="rect" height="150px" />
+            <Skeleton variant="rect" height="150px" />
+          </div>
+        </div>
+      }>
+        <ProductReviews
+          rating={foundProduct?.rating}
+          reviewCount={foundProduct?.reviewCount}
+          reviews={foundProduct?.reviews}
+          productName={foundProduct?.name}
+          galleryImages={galleryImages}
+        />
+      </Suspense>
     </>
   );
 };

@@ -116,6 +116,7 @@ const Fields = ({
         onFocus: () => setIsFocused(true),
         onBlur: () => setIsFocused(false),
         style: { ...getInputStyle(), ...style },
+        "aria-label": props["aria-label"] || label || undefined,
         ...props,
     };
 
@@ -426,6 +427,7 @@ const Fields = ({
                             onChange={handleChange}
                             className="absolute top-0 left-0 w-full h-full cursor-pointer"
                             style={{ opacity: 0 }}
+                            aria-label={label || "Color picker"}
                         />
                     </div>
                 );
@@ -652,6 +654,7 @@ const Fields = ({
                             type="file"
                             onChange={(e) => onChange?.(e.target.files)}
                             className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer z-0"
+                            aria-label={label || "File upload"}
                         />
                     </div>
                 );
@@ -698,6 +701,7 @@ const Fields = ({
                             multiple
                             onChange={(e) => { if (e.target.files?.length) onChange?.([...e.target.files]); }}
                             style={{ display: "none" }}
+                            aria-label={label || "Drag and drop file upload"}
                         />
                         {value && Array.isArray(value) && value.length > 0 && (
                             <div
@@ -857,6 +861,7 @@ const Fields = ({
                             onClick={() => onChange?.(Math.max(1, Number(quantityValue) - 1))}
                             className="center-div text-white rounded-5 bg-primary cursor-pointer border-0"
                             style={{ transition: "background-color 0.15s ease", flexShrink: 0 }}
+                            aria-label="Decrease quantity"
                         >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
                                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -868,6 +873,7 @@ const Fields = ({
                             value={quantityValue}
                             className="mini-text text-dark font-600 text-center border-0"
                             style={{ outline: "none", background: "transparent", width: "100%", minWidth: "0" }}
+                            aria-label="Quantity"
                         />
 
                         <button
@@ -875,6 +881,7 @@ const Fields = ({
                             onClick={() => onChange?.(Number(quantityValue) + 1)}
                             className="center-div text-white rounded-5 bg-primary cursor-pointer border-0"
                             style={{ transition: "background-color 0.15s ease", flexShrink: 0 }}
+                            aria-label="Increase quantity"
                         >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
                                 <line x1="12" y1="5" x2="12" y2="19" />
@@ -1038,6 +1045,7 @@ const Fields = ({
                             onChange={(e) => onChange?.(Number(e.target.value))}
                             className="custom-slider-input"
                             style={{ background: trackBg }}
+                            aria-label={label || "Price range filter"}
                         />
                     </div>
                 );

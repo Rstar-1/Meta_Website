@@ -117,6 +117,7 @@ const ShareProduct = () => {
             rel="noopener noreferrer"
             style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: p.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', textDecoration: 'none' }}
             title={`Share on ${p.label}`}
+            aria-label={`Share on ${p.label}`}
           >
             <Icon name={p.name} width={p.size} height={p.size} fill="#ffffff" />
           </a>
@@ -127,6 +128,7 @@ const ShareProduct = () => {
           className="flex items-center justify-center cursor-pointer"
           style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#f1f5f9', border: '1px solid #cbd5e1', padding: 0 }}
           title="Copy Link"
+          aria-label="Copy link to clipboard"
         >
           {copiedLink ? <span style={{ fontSize: '12px', color: '#475569' }}>✓</span> : <Icon name="Link" width="18" height="18" stroke="#475569" strokeWidth="2" />}
         </Button>

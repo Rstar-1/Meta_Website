@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../../../components/common/Container";
 
 const Details = ({ addToRef }) => {
+    const [loadMap, setLoadMap] = useState(false);
+
     return (
         <Container>
             <div className="w-full py-40 sm-py-30">
@@ -80,14 +82,47 @@ const Details = ({ addToRef }) => {
                     </div>
                 </div>
                 <div ref={addToRef}>
-                    <iframe
-                        className="w-full border-0 mt-8"
-                        title="map"
-                        height={350}
-                        loading="lazy"
-                        allowFullScreen
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.972659949589!2d72.83078450931993!3d18.932604256387375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1dca3f2ca05%3A0x2906f2a183ce8356!2s37%2C%20Cawasji%20Patel%20St%2C%20Kala%20Ghoda%2C%20Fort%2C%20Mumbai%2C%20Maharashtra%20400001!5e0!3m2!1sen!2sin!4v1765117009660!5m2!1sen!2sin"
-                    />
+                    {loadMap ? (
+                        <iframe
+                            className="w-full border-0 mt-8"
+                            title="map"
+                            height={350}
+                            loading="lazy"
+                            allowFullScreen
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.972659949589!2d72.83078450931993!3d18.932604256387375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1dca3f2ca05%3A0x2906f2a183ce8356!2s37%2C%20Cawasji%20Patel%20St%2C%20Kala%20Ghoda%2C%20Fort%2C%20Mumbai%2C%20Maharashtra%20400001!5e0!3m2!1sen!2sin!4v1765117009660!5m2!1sen!2sin"
+                        />
+                    ) : (
+                        <div 
+                            className="w-full mt-8 bg-forth border-ec flex flex-column items-center justify-center rounded-5 relative overflow-hidden" 
+                            style={{ 
+                                height: 350,
+                                background: 'linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)), url("https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&auto=format&fit=crop&q=60") center/cover no-repeat'
+                            }}
+                        >
+                            <div className="text-center p-20 z-10 flex flex-column items-center gap-10">
+                                <div className="rounded-full bg-white border-ec flex items-center justify-center" style={{ width: 60, height: 60, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="var(--primary)" strokeWidth="2" fill="none">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <h3 className="mid-text font-600 text-dark">Interactive Location Map</h3>
+                                <p className="small-text text-gray max-w-280 mb-5">To protect your privacy, third-party cookies from Google Maps are blocked until loaded.</p>
+                                <button 
+                                    onClick={() => setLoadMap(true)}
+                                    className="px-20 py-10 rounded-5 text-white font-600 cursor-pointer"
+                                    style={{ 
+                                        backgroundColor: 'var(--primary)',
+                                        border: 'none',
+                                        transition: 'all 0.2s ease',
+                                        boxShadow: '0 4px 6px -1px var(--primary-light)'
+                                    }}
+                                >
+                                    Load Interactive Map
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </Container>

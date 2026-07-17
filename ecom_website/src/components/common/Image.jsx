@@ -12,14 +12,15 @@ export function Image({
   style,
   ...props
 }) {
+  const isEager = loading === "eager" || props.fetchPriority === "high" || props.fetchpriority === "high";
   const [imgSrc, setImgSrc] = useState(src);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(isEager);
   const imgRef = useRef(null);
 
   useEffect(() => {
     setImgSrc(src);
-    setIsLoaded(false);
-  }, [src]);
+    setIsLoaded(isEager);
+  }, [src, isEager]);
 
   useEffect(() => {
     if (imgRef.current?.complete) setIsLoaded(true);
@@ -37,7 +38,7 @@ export function Image({
       style={{
         aspectRatio,
         objectFit: aspectRatio ? "cover" : undefined,
-        transition: "opacity 0.3s ease-in-out, filter 0.3s ease-in-out",
+        transition: isEager ? "none" : "opacity 0.3s ease-in-out, filter 0.3s ease-in-out",
         opacity: isLoaded ? 1 : 0.6,
         filter: isLoaded ? "none" : "blur(4px)",
         ...style,

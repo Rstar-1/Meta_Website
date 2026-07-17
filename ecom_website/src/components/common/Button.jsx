@@ -25,6 +25,7 @@ const Button = ({
   iconHeight = "16",
   iconStrokeWidth = "2.5",
   iconPosition = "left",
+  ...props
 }) => {
   const borderClass = variant === "outline" ? `border-${bg}` : "border-0";
   const bgClass = variant === "outline" ? "bg-transparent" : `bg-${bg}`;
@@ -54,6 +55,7 @@ const Button = ({
         disabled ? "opacity-50 cursor-not-allowed" : ""
       } ${className}`}
       style={style}
+      {...props}
     >
       {icon ? (
         <span className="flex items-center justify-center gap-8 w-full">
