@@ -396,7 +396,7 @@ const Products = () => {
                 <CardLayout
                   items={filteredProducts}
                   cardType="product"
-                  imageHeight="h-300 sm-h-250"
+                  imageHeight="h-300 sm-h-300"
                   cols="3"
                   mdCols="2"
                   smCols="1"

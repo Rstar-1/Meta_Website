@@ -1,4 +1,4 @@
-import { memo, useState, useEffect } from "react";
+import { memo, useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Container from "../common/Container";
 import Button from "../common/Button";
@@ -87,6 +87,7 @@ const ProductsMenu = ({ onItemClick, productsData, categoriesData }) => (
     })}
   </>
 );
+
 const MegaMenuContent = memo(({ label, ...props }) =>
   label === "Products" ? <ProductsMenu {...props} /> : null
 );
@@ -99,6 +100,27 @@ const Header = () => {
   const [cartCount, setCartCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const searchRef = useRef(null);
+  const searchToggleRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isSearchOpen &&
+        searchRef.current &&
+        !searchRef.current.contains(event.target) &&
+        searchToggleRef.current &&
+        !searchToggleRef.current.contains(event.target)
+      ) {
+        setIsSearchOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSearchOpen]);
 
   useEffect(() => {
     const updateCount = () => setCartCount(JSON.parse(localStorage.getItem('cart') || '[]').length);
@@ -113,16 +135,16 @@ const Header = () => {
     productId
       ? navigate(`/product-detail/${productId}`)
       : categoryName
-      ? navigate("/products", { state: { category: categoryName } })
-      : navigate("/products");
+        ? navigate("/products", { state: { category: categoryName } })
+        : navigate("/products");
   };
 
   return (
-    <div style={{ backgroundColor: "#020712", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", position: "sticky", top: 0, zIndex: 100 }}>
+    <div style={{ backgroundColor: "#020712", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", position: "sticky", top: 0, zIndex: 99 }}>
       <Container className="navbar">
         <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
           <div className="flex items-center gap-8">
-            <NavLink to="/" className="flex items-center" style={{ textDecoration: 'none' }}>
+            <NavLink to="/" onClick={() => setIsMobileOpen(false)} className="flex items-center" style={{ textDecoration: 'none' }}>
               <Image
                 src={logoImg}
                 alt="SOBO Marketing Solution Logo"
@@ -199,31 +221,21 @@ const Header = () => {
 
           </div>
 
-          <div className="flex items-center gap-12 sm-gap-12">
+          <div className="flex items-center gap-12">
             {/* Desktop Search Toggle Icon */}
             <div
-              className="relative flex items-center justify-center cursor-pointer text-white hover:text-primary transition-all p-8 sm-hidden md-hidden"
+              ref={searchToggleRef}
+              className="relative flex items-center justify-center cursor-pointer text-white sm-hidden md-hidden"
               onClick={() => setIsSearchOpen(!isSearchOpen)}
               title="Search"
             >
               <Icon name="Search" width="22" height="22" stroke="#ffffff" />
             </div>
 
-            {/* User Profile Link */}
-            <Icon
-              name="Users"
-              width="22"
-              height="22"
-              stroke="#ffffff"
-              className="cursor-pointer hover:text-primary transition-all mr-6 sm-hidden md-hidden"
-              onClick={() => navigate("/dashboard")}
-              title="User Dashboard"
-            />
-
-            {/* Cart Link with Badge */}
             <NavLink
               to="/cart"
-              className="relative flex items-center justify-center cursor-pointer text-white hover:text-primary transition-all"
+              onClick={() => setIsMobileOpen(false)}
+              className="relative flex items-center justify-center cursor-pointer text-white"
               style={{ padding: '8px', textDecoration: 'none' }}
               title="View Cart"
             >
@@ -244,6 +256,17 @@ const Header = () => {
                 </span>
               )}
             </NavLink>
+
+            {/* User Profile Link */}
+            <Icon
+              name="Users"
+              width="22"
+              height="22"
+              stroke="#ffffff"
+              className="cursor-pointer mr-6 sm-hidden md-hidden"
+              onClick={() => navigate("/dashboard")}
+              title="User Dashboard"
+            />
 
             <div className="sm-hidden md-hidden">
               <Button
@@ -276,12 +299,16 @@ const Header = () => {
       {/* Mobile Drawer */}
       {isMobileOpen && (
         <div
-          className="mobile-drawer px-24 py-20"
-          style={{ backgroundColor: "#020712", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}
+          className="hidden md-block sm-block px-14 py-20"
+          style={{
+            background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)",
+            maxHeight: "calc(100vh - 65px)",
+            overflowY: "auto"
+          }}
         >
           <div className="grid-cols-1">
             {/* Mobile Search Bar */}
-            <div className="mb-20">
+            <div className="mb-10">
               <Fields
                 type="text"
                 placeholder="Search products..."
@@ -289,15 +316,6 @@ const Header = () => {
                 iconPosition="right"
                 value={searchQuery}
                 onChange={setSearchQuery}
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.08)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  color: "#ffffff",
-                  height: "36px",
-                  borderRadius: "6px",
-                  fontSize: "13px",
-                  width: "100%",
-                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     setIsMobileOpen(false);
@@ -385,7 +403,8 @@ const Header = () => {
       {/* Desktop Search Dropdown */}
       {isSearchOpen && (
         <div
-          className="absolute bg-white p-12 shadow-md rounded-5 z-99 border-ec sm-hidden md-hidden"
+          ref={searchRef}
+          className="absolute bg-white p-6 rounded-5 z-99 sm-hidden md-hidden"
           style={{
             top: "65px",
             right: "220px",
@@ -399,16 +418,6 @@ const Header = () => {
             iconPosition="right"
             value={searchQuery}
             onChange={setSearchQuery}
-            style={{
-              backgroundColor: "#ffffff",
-              border: "1px solid #ececec",
-              color: "#333333",
-              height: "36px",
-              borderRadius: "6px",
-              fontSize: "13px",
-              outline: "none",
-              width: "100%",
-            }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 setIsSearchOpen(false);

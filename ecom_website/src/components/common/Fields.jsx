@@ -172,7 +172,7 @@ const Fields = ({
             return icon ? (
                 <div className="relative w-full flex items-center overflow-hidden">
                     {isLeft && (
-                        <div className="absolute left-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
+                        <div className="absolute left-0 text-gray flex items-center pointer-events-none p-10 mx-2 rounded-5">
                             <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
                         </div>
                     )}
@@ -185,7 +185,7 @@ const Fields = ({
                         }}
                     />
                     {!isLeft && (
-                        <div className="absolute right-0 text-gray flex items-center pointer-events-none p-10 bg-white mx-2 rounded-5">
+                        <div className="absolute right-0 text-gray flex items-center pointer-events-none p-10 mx-2 rounded-5">
                             <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
                         </div>
                     )}

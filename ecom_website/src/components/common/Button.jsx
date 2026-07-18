@@ -4,7 +4,7 @@ import Icon from "./Icon";
 const VERSION_CLASSES = {
   v0: "px-22 py-8 sm-px-12 sm-py-6 mini-text",
   v1: "px-20 py-9 para-text",
-  v2: "px-25 py-11 sm-px-12 sm-py-6 small-text",
+  v2: "px-25 py-11 sm-px-19 sm-py-8 small-text",
   v3: "w-full py-10 sm-py-13 mini-text",
 };
 
@@ -30,7 +30,7 @@ const Button = ({
   const borderClass = variant === "outline" ? `border-${bg}` : "border-0";
   const bgClass = variant === "outline" ? "bg-transparent" : `bg-${bg}`;
   const textClass = variant === "outline" ? `text-${bg}` : `text-${color}`;
-  
+
   const versionClass = VERSION_CLASSES[version] || "w-full py-7 small-text";
   const buttonClass = `${versionClass} rounded-5 ${borderClass}`;
 
@@ -51,9 +51,8 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${buttonClass} ${bgClass} ${textClass} cursor-pointer ${
-        disabled ? "opacity-50 cursor-not-allowed" : ""
-      } ${className}`}
+      className={`${buttonClass} ${bgClass} ${textClass} cursor-pointer ${disabled ? "opacity-50 cursor-not-allowed" : ""
+        } ${className}`}
       style={style}
       {...props}
     >

@@ -95,7 +95,7 @@ const ProductReviews = ({
             ].map((row, idx) => (
               <div key={idx} className="flex items-center gap-12 small-text">
 
-                <div className="rounded-5 overflow-hidden" style={{ flex: 1, height: '18px', backgroundColor: 'var(--forth)' }}>
+                <div className="rounded-5 overflow-hidden sm-w-70" style={{ flex: 1, height: '18px', backgroundColor: 'var(--forth)' }}>
                   <div
                     style={{
                       width: `${row.pct}%`,
@@ -106,7 +106,7 @@ const ProductReviews = ({
                 </div>
 
                 {/* Info labels on the right */}
-                <div className="flex items-center gap-6" style={{ width: '120px', justifyContent: 'flex-start' }}>
+                <div className="flex items-center gap-6 sm-w-30" style={{ width: '120px', justifyContent: 'flex-start' }}>
                   <p className="font-500 text-dark mini-text">{row.label}</p>
                   <p className="text-gray font-400 mini-text">
                     {counts[row.label.charAt(0)]} reviews

@@ -272,7 +272,7 @@ const ProductLayout = ({
                       <Image
                         src={activeImage}
                         alt={productData.title}
-                        className='w-full h-450 object-cover border-ec rounded-5 flex'
+                        className='w-full h-450 sm-h-300 object-cover border-ec rounded-5 flex'
                         loading="eager"
                         fetchPriority="high"
                       />
