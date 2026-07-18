@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from 'react';
-import Hero from './sections/Hero';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import WebsiteSchema from '../../components/seo/WebsiteSchema';
 import OrganizationSchema from '../../components/seo/OrganizationSchema';
@@ -7,8 +6,10 @@ import SiteNavigationSchema from '../../components/seo/SiteNavigationSchema';
 import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Skeleton from '../../components/common/Skeleton';
+import { cms } from '../../utils/apiData';
 
 // Lazy Loaded Sections
+const Hero = lazy(() => import('./sections/Hero'));
 const BrowseCategory = lazy(() => import('./sections/BrowseCategory'));
 const LatestProducts = lazy(() => import('./sections/LatestProducts'));
 const WhyChoose = lazy(() => import('./sections/WhyChoose'));
@@ -31,7 +32,49 @@ const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 s
   </div>
 );
 
+const HeroSkeleton = () => (
+  <Container style={{
+    background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)",
+  }}>
+    <div className='py-40 w-full'>
+      <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full overflow-hidden">
+        {/* Left Column Skeleton */}
+        <div className="w-full pr-12 sm-pr-1 flex flex-column gap-12">
+          <Skeleton variant="rect" width="180px" height="34px" borderRadius="20px" theme="dark" />
+          <Skeleton variant="rect" width="80%" height="48px" borderRadius="4px" theme="dark" />
+          <Skeleton variant="text" width="90%" count={2} theme="dark" />
+          <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-30">
+            {Array.from({ length: 4 }).map((_, idx) => (
+              <div key={idx} className="flex items-center gap-12 mb-16">
+                <Skeleton variant="circle" width="40px" height="40px" theme="dark" />
+                <div className="flex-grow flex flex-column gap-6">
+                  <Skeleton variant="text" width="50%" height="14px" theme="dark" style={{ margin: 0 }} />
+                  <Skeleton variant="text" width="80%" height="10px" theme="dark" style={{ margin: 0 }} />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center gap-12 mt-20">
+            <Skeleton variant="rect" width="120px" height="40px" borderRadius="4px" theme="dark" />
+            <Skeleton variant="rect" width="150px" height="40px" borderRadius="4px" theme="dark" />
+          </div>
+        </div>
+        {/* Right Column Skeleton */}
+        <div className="w-full pl-12 sm-pl-1 sm-mt-10">
+          <Skeleton variant="rect" height="500px" borderRadius="5px" theme="dark" />
+        </div>
+      </div>
+    </div>
+  </Container>
+);
+
 const lazySections = [
+  {
+    Component: Hero,
+    height: 500,
+    fallback: <HeroSkeleton />,
+    noContainer: true
+  },
   {
     Component: BrowseCategory,
     height: 180,
@@ -232,18 +275,20 @@ const Home = () => {
       <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <SiteNavigationSchema navItems={navItems} />
 
-      <Hero />
-
-      {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version }, index) => (
+      {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer }, index) => (
         <LazySection key={index} placeholderHeight={height}>
           <Suspense fallback={fallback}>
-            <Container
-              className={containerClass || ''}
-              style={containerStyle || {}}
-              version={version || 'v2'}
-            >
-              <Component />
-            </Container>
+            {noContainer ? (
+              <Component cms={cms} />
+            ) : (
+              <Container
+                className={containerClass || ''}
+                style={containerStyle || {}}
+                version={version || 'v2'}
+              >
+                <Component cms={cms} />
+              </Container>
+            )}
           </Suspense>
         </LazySection>
       ))}

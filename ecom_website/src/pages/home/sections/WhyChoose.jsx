@@ -1,33 +1,20 @@
 import React from "react";
 import Image from "../../../components/common/Image";
 import Icon from "../../../components/common/Icon";
-
-const WhyChoose = () => {
-  const features = [
-    {
-      icon: "TrendingUp",
-      title: "Financial Solution",
-      description: "From startups established corporations, we offer tailored advice and services designed to navigate."
-    },
-    {
-      icon: "Settings",
-      title: "Financial Solution",
-      description: "From startups established corporations, we offer tailored advice and services designed to navigate."
-    }
-  ];
+const WhyChoose = ({ cms }) => {
+  if (!cms) return null;
+  const features = cms.whyChoose.features;
 
   return (
     <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center py-50 sm-py-40 w-full">
       {/* Left Content Column */}
       <div className="pr-15 sm-pr-1">
-        <p className="bg-light-primary text-primary small-text px-16 py-5 font-500 rounded-5 w-max">About Us</p>
+        <p className="bg-light-primary text-primary small-text px-16 py-5 font-500 rounded-5 w-max">{cms.whyChoose.tag}</p>
         <h2 className="head-text text-dark font-600 pt-16">
-          Know Your Trusted Partner in Business and Finance
+          {cms.whyChoose.title}
         </h2>
         <p className="small-text text-gray font-400 mt-13">
-          We believe that every business deserves a strong financial foundation.
-          With decades of experience in the industry, our team is dedicated to providing
-          personalized, strategic financial solutions that help our clients thrive.
+          {cms.whyChoose.desc}
         </p>
 
         <div className="grid-cols-1 gap-12 mt-19 w-85 sm-w-full">
@@ -54,15 +41,15 @@ const WhyChoose = () => {
         <div className="grid-cols-2 gap-12">
           <Image
             className="w-full h-300 sm-h-150 rounded-5 object-cover flex"
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop"
-            alt="Analyzing financial documents"
+            src={cms.whyChoose.images[0].src}
+            alt={cms.whyChoose.images[0].alt}
             width={250}
             height={300}
           />
           <Image
             className="w-full h-300 sm-h-150 rounded-5 object-cover flex"
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop"
-            alt="Business partners vertical profile"
+            src={cms.whyChoose.images[1].src}
+            alt={cms.whyChoose.images[1].alt}
             style={{ filter: "grayscale(100%)" }}
             width={250}
             height={300}
@@ -71,8 +58,8 @@ const WhyChoose = () => {
         <div className="mt-15">
           <Image
             className="w-full h-200 sm-h-150 rounded-5 object-cover flex"
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=500&auto=format&fit=crop"
-            alt="Businessman working on laptop"
+            src={cms.whyChoose.images[2].src}
+            alt={cms.whyChoose.images[2].alt}
             width={500}
             height={200}
           />

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { products, categories } from '../../../utils/apiData';
 import CardLayout from '../../../components/layout/CardLayout';
 
-const LatestProducts = () => {
+const LatestProducts = ({ cms }) => {
   const navigate = useNavigate();
 
   const handleProductClick = (item) => {
@@ -12,7 +12,9 @@ const LatestProducts = () => {
     }
   };
 
-  const targetCategoryIds = ['cat-pvc-sheet', 'cat-pvc-roll', 'cat-pvc-strip-curtains'];
+  if (!cms) return null;
+
+  const targetCategoryIds = cms.latestProducts.targetCategoryIds;
 
   return (
     <div className='w-full py-40'>
@@ -34,7 +36,7 @@ const LatestProducts = () => {
                 className="text-primary font-500 cursor-pointer small-text"
                 onClick={() => navigate(`/products?category=${category.id}`)}
               >
-                View All ➔
+                {cms.latestProducts.viewAll}
               </p>
             </div>
 

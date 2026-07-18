@@ -6,39 +6,35 @@ import Icon from '../../../components/common/Icon';
 import Image from '../../../components/common/Image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-
-// Import Swiper styles
 import 'swiper/css';
+
 
 import pvcRollIndustrial from '../../../assets/pvc_roll_industrial.webp';
 import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.webp';
 import pvcCurtainIndustrial from '../../../assets/pvc_curtain_industrial.webp';
 
-const Hero = () => {
+const Hero = ({ cms }) => {
   const navigate = useNavigate();
 
-  const features = [
-    { title: "Premium Quality", desc: "100% Virgin Material", icon: "Shield" },
-    { title: "Wide Range", desc: "of Products", icon: "Grid" },
-    { title: "Custom Solutions", desc: "Made to Measure", icon: "Builder" },
-    { title: "Fast Delivery", desc: "Pan India", icon: "Location" }
-  ];
+  if (!cms) return null;
+
+  const features = cms.hero.features;
 
   const slides = [
     {
       image: pvcRollIndustrial,
-      title: "Soft Transparent PVC Rolls",
-      desc: "High clarity, flexible grade"
+      title: cms.hero.slides[0].title,
+      desc: cms.hero.slides[0].desc
     },
     {
       image: pvcSheetsIndustrial,
-      title: "Super Clear PVC Sheets",
-      desc: "Industrial grade transparent protection"
+      title: cms.hero.slides[1].title,
+      desc: cms.hero.slides[1].desc
     },
     {
       image: pvcCurtainIndustrial,
-      title: "Polar Grade Strip Curtains",
-      desc: "Ideal for cold rooms and freezers"
+      title: cms.hero.slides[2].title,
+      desc: cms.hero.slides[2].desc
     }
   ];
 
@@ -61,19 +57,19 @@ const Hero = () => {
             >
               <Icon name="Shield" width="14" height="14" stroke="var(--primary)" />
               <p className="mini-text text-white font-500 uppercase">
-                India's No.1 PVC Manufacturer
+                {cms.hero.badge}
               </p>
             </div>
 
             {/* Title */}
             <h1 className="large-text text-white font-600 uppercase pt-10">
-              Premium PVC<br />
-              <span className="text-primary font-800">For Every Industry</span>
+              {cms.hero.title.split('\\n')[0]}<br />
+              <span className="text-primary font-800">{cms.hero.title.split('\\n')[1]}</span>
             </h1>
 
             {/* Subtext */}
             <p className="para-text font-400 uppercase text-white mt-12" style={{ opacity: 0.60 }}>
-              High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.
+              {cms.hero.subtitle}
             </p>
 
             {/* Features Grid */}
@@ -102,13 +98,13 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex items-center gap-12 mt-20">
               <Button
-                text="Shop Now"
+                text={cms.hero.ctaShop}
                 version="v2"
                 bg="primary"
                 onClick={() => navigate("/products")}
               />
               <Button
-                text="Request a Quote"
+                text={cms.hero.ctaQuote}
                 version="v2"
                 bg="transparent"
                 style={{ border: "1px solid rgba(255, 255, 255, 0.2)", color: "#ffffff" }}

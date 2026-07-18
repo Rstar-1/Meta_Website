@@ -4,32 +4,12 @@ import Button from '../../../components/common/Button';
 import Icon from '../../../components/common/Icon';
 import Image from '../../../components/common/Image';
 import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.webp';
-
-const BusinessPromo = () => {
+const BusinessPromo = ({ cms }) => {
   const navigate = useNavigate();
 
-  const trustBadges = [
-    {
-      title: "Secure Payments",
-      desc: "100% Protected",
-      icon: "CreditCard"
-    },
-    {
-      title: "Easy Returns",
-      desc: "Hassle Free Returns",
-      icon: "Rotate"
-    },
-    {
-      title: "Fast Shipping",
-      desc: "Quick & Safe Delivery",
-      icon: "Shipping"
-    },
-    {
-      title: "Dedicated Support",
-      desc: "We're Here to Help",
-      icon: "Support"
-    }
-  ];
+  if (!cms) return null;
+
+  const trustBadges = cms.businessPromo.trustBadges;
 
   return (
     <div className="w-full py-40">
@@ -50,18 +30,18 @@ const BusinessPromo = () => {
           >
             <Icon name="Shield" width="14" height="14" stroke="var(--primary)" />
             <p className="mini-text text-white font-500 uppercase">
-              India's No.1 PVC Manufacturer
+              {cms.businessPromo.badge}
             </p>
           </div>
           <h2 className="head-text text-primary font-700 uppercase pt-16">
-            We've Got You Covered!
+            {cms.businessPromo.title}
           </h2>
           <p className="para-text text-white font-300 mt-4" style={{ opacity: 0.70 }}>
-            High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.
+            {cms.businessPromo.desc}
           </p>
 
           <Button
-            text="Request Custom Quote"
+            text={cms.businessPromo.ctaQuote}
             bg="primary"
             version="v2"
             className="font-500 cursor-pointer mt-20"
@@ -92,9 +72,9 @@ const BusinessPromo = () => {
               padding: "8px"
             }}
           >
-            <p className="mini-text text-white font-300">Best</p>
-            <p className="small-text text-primary font-700 uppercase">Quality</p>
-            <p className="mini-text text-white font-300">Guaranteed</p>
+            <p className="mini-text text-white font-300">{cms.businessPromo.badgeCircle.top}</p>
+            <p className="small-text text-primary font-700 uppercase">{cms.businessPromo.badgeCircle.middle}</p>
+            <p className="mini-text text-white font-300">{cms.businessPromo.badgeCircle.bottom}</p>
           </div>
         </div>
       </div>

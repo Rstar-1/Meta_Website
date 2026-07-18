@@ -7,6 +7,7 @@ import footer from '../data/footer.json';
 import header from '../data/header.json';
 import reviews from '../data/reviews.json';
 import topCities from '../data/topCities.json';
+import cms from '../data/cms.json';
 
 export {
   products,
@@ -17,5 +18,6 @@ export {
   footer,
   header,
   reviews,
-  topCities
+  topCities,
+  cms
 };

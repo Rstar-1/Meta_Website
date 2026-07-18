@@ -5,6 +5,7 @@ import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema';
 import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Skeleton from '../../components/common/Skeleton';
+import { cms } from '../../utils/apiData';
 import Details from './sections/Details';
 
 // Lazy Loaded Sections
@@ -157,7 +158,7 @@ const Contact = () => {
               style={containerStyle || {}}
               version={version || 'v2'}
             >
-              <Component />
+              <Component cms={cms} />
             </Container>
           </Suspense>
         </LazySection>

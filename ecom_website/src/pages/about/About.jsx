@@ -5,6 +5,7 @@ import OrganizationSchema from '../../components/seo/OrganizationSchema';
 import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Skeleton from '../../components/common/Skeleton';
+import { cms } from '../../utils/apiData';
 
 // Lazy Loaded Sections
 const WhyChoose = lazy(() => import('../home/sections/WhyChoose'));
@@ -183,7 +184,7 @@ const About = () => {
               style={containerStyle || {}}
               version={version || 'v2'}
             >
-              <Component />
+              <Component cms={cms} />
             </Container>
           </Suspense>
         </LazySection>

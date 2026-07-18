@@ -1,0 +1,105 @@
+{
+  "hero": {
+    "badge": "India's No.1 PVC Manufacturer",
+    "title": "Premium PVC\\nFor Every Industry",
+    "subtitle": "High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.",
+    "ctaShop": "Shop Now",
+    "ctaQuote": "Request a Quote",
+    "features": [
+      { "title": "Premium Quality", "desc": "100% Virgin Material", "icon": "Shield" },
+      { "title": "Wide Range", "desc": "of Products", "icon": "Grid" },
+      { "title": "Custom Solutions", "desc": "Made to Measure", "icon": "Builder" },
+      { "title": "Fast Delivery", "desc": "Pan India", "icon": "Location" }
+    ],
+    "slides": [
+      {
+        "title": "Soft Transparent PVC Rolls",
+        "desc": "High clarity, flexible grade"
+      },
+      {
+        "title": "Super Clear PVC Sheets",
+        "desc": "Industrial grade transparent protection"
+      },
+      {
+        "title": "Polar Grade Strip Curtains",
+        "desc": "Ideal for cold rooms and freezers"
+      }
+    ]
+  },
+  "whyChoose": {
+    "tag": "About Us",
+    "title": "Know Your Trusted Partner in Business and Finance",
+    "desc": "We believe that every business deserves a strong financial foundation. With decades of experience in the industry, our team is dedicated to providing personalized, strategic financial solutions that help our clients thrive.",
+    "features": [
+      {
+        "icon": "TrendingUp",
+        "title": "Financial Solution",
+        "description": "From startups established corporations, we offer tailored advice and services designed to navigate."
+      },
+      {
+        "icon": "Settings",
+        "title": "Financial Solution",
+        "description": "From startups established corporations, we offer tailored advice and services designed to navigate."
+      }
+    ],
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+        "alt": "Analyzing financial documents"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+        "alt": "Business partners vertical profile"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=500&auto=format&fit=crop",
+        "alt": "Businessman working on laptop"
+      }
+    ]
+  },
+  "businessPromo": {
+    "badge": "India's No.1 PVC Manufacturer",
+    "title": "We've Got You Covered!",
+    "desc": "High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.",
+    "ctaQuote": "Request Custom Quote",
+    "badgeCircle": {
+      "top": "Best",
+      "middle": "Quality",
+      "bottom": "Guaranteed"
+    },
+    "trustBadges": [
+      {
+        "title": "Secure Payments",
+        "desc": "100% Protected",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Easy Returns",
+        "desc": "Hassle Free Returns",
+        "icon": "Rotate"
+      },
+      {
+        "title": "Fast Shipping",
+        "desc": "Quick & Safe Delivery",
+        "icon": "Shipping"
+      },
+      {
+        "title": "Dedicated Support",
+        "desc": "We're Here to Help",
+        "icon": "Support"
+      }
+    ]
+  },
+  "latestArticles": {
+    "title": "Latest from Justdial",
+    "viewAll": "View All ➔"
+  },
+  "latestProducts": {
+    "targetCategoryIds": ["cat-pvc-sheet", "cat-pvc-roll", "cat-pvc-strip-curtains"],
+    "viewAll": "View All ➔"
+  },
+  "popularProducts": {
+    "title": "Popular Products",
+    "viewAll": "View All ➔"
+  }
+}

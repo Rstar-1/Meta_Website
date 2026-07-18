@@ -2,8 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { products } from '../../../utils/apiData';
 import CardLayout from '../../../components/layout/CardLayout';
 
-const PopularProducts = () => {
+const PopularProducts = ({ cms }) => {
   const navigate = useNavigate();
+  if (!cms) return null;
   const popularProducts = products.filter(p => p.type === 'general' && p.popular);
 
   const handleViewAll = () => {
@@ -20,9 +21,9 @@ const PopularProducts = () => {
   return (
     <div className='py-40 w-full'>
       <div className="flex justify-between items-center mb-10">
-        <h2 className="title-text text-dark font-600">Popular Products</h2>
+        <h2 className="title-text text-dark font-600">{cms.popularProducts.title}</h2>
         <p className='text-primary font-500 cursor-pointer small-text' onClick={handleViewAll}>
-          View All ➔</p>
+          {cms.popularProducts.viewAll}</p>
       </div>
 
       <CardLayout
