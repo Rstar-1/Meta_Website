@@ -12,7 +12,7 @@ import Skeleton from '../../components/common/Skeleton';
 const ProductEnquiryForm = lazy(() => import('../../components/forms/ProductEnquiryForm'));
 import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
 import { resolveProductImage, resolveImagePath } from '../../utils/imageResolver';
-import { products as productsData, categories as categoriesData } from '../../utils/productsData';
+import { products as productsData, categories as categoriesData } from '../../utils/apiData';
 import Table from '../../components/common/Table';
 import Fields from '../../components/common/Fields';
 

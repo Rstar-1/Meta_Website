@@ -2,8 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import Container from '../common/Container'
 import Image from '../common/Image'
 import Icon from '../common/Icon'
-import footerData from '../../data/footer.json'
-import { products } from '../../utils/productsData'
+import { footer as footerData, products } from '../../utils/apiData'
 import NewsletterForm from '../forms/NewsletterForm'
 
 const logoImg = "/sobo_logo.webp";

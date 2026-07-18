@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { products } from '../../../utils/productsData';
+import { products } from '../../../utils/apiData';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const PopularProducts = () => {

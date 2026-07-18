@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
-import { products } from '../../utils/productsData';
+import { products } from '../../utils/apiData';
 import ProductLayout from '../../components/layout/ProductLayout';
 import { resolveImagePath } from '../../utils/imageResolver';
 import Skeleton from '../../components/common/Skeleton';

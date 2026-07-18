@@ -1,14 +1,10 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { products as productsData, categories as categoryData } from '../../utils/productsData';
-import clientData from '../../data/client.json';
+import { products as productsData, categories as categoryData, client as clientData } from '../../utils/apiData';
 import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
-import Fields from '../../components/common/Fields';
-import Icon from '../../components/common/Icon';
-import Button from '../../components/common/Button';
 import Banner from '../../components/layout/Banner';
 import Tab from '../../components/common/Tab';
 import Skeleton from '../../components/common/Skeleton';

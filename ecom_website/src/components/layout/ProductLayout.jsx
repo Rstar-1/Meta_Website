@@ -11,9 +11,8 @@ import ProductSchema from '../seo/ProductSchema';
 import { productMetaTemplate } from '../../seo/metaTemplates';
 import Banner from './Banner';
 
-import FormBuilder from '../common/FormBuilder';
 import Fields from '../common/Fields';
-import clientData from '../../data/client.json';
+import { client as clientData } from '../../utils/apiData';
 
 import ProductEnquiryForm from '../forms/ProductEnquiryForm';
 

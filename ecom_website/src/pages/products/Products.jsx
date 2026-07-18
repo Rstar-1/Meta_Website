@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { products, categories } from '../../utils/productsData';
+import { products, categories } from '../../utils/apiData';
 import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
 import SeoHelmet from '../../components/seo/SeoHelmet';

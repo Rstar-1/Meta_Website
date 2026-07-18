@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { products, categories } from '../../../utils/productsData';
+import { products, categories } from '../../../utils/apiData';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const LatestProducts = () => {

@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import blogsData from '../../data/blogs.json';
+import { blogs as blogsData } from '../../utils/apiData';
 import BlogLayout from '../../components/layout/BlogLayout';
 
 const BlogDetail = () => {

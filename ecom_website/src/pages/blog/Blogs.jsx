@@ -1,6 +1,6 @@
 import React, { memo, lazy, Suspense, useState, useEffect } from "react";
 import BlogLayout from "../../components/layout/BlogLayout";
-import blogsData from "../../data/blogs.json";
+import { blogs as blogsData } from "../../utils/apiData";
 import SeoHelmet from "../../components/seo/SeoHelmet";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema";
 import LazySection from "../../components/common/LazySection";

@@ -4,8 +4,7 @@ import Container from "../common/Container";
 import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
-import headerData from "../../data/header.json";
-import { products as productsData, categories as categoryData } from "../../utils/productsData";
+import { header as headerData, products as productsData, categories as categoryData } from "../../utils/apiData";
 import Fields from "../common/Fields";
 const logoImg = "/sobo_logo.webp";
 

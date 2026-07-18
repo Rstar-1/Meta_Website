@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { categories } from '../../../utils/productsData';
+import { categories } from '../../../utils/apiData';
 import { resolveImagePath } from '../../../utils/imageResolver';
 import Image from '../../../components/common/Image';
 

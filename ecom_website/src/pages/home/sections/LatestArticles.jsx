@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import blogsData from '../../../data/blogs.json';
+import { blogs as blogsData } from '../../../utils/apiData';
 import CardLayout from '../../../components/layout/CardLayout';
 
 const LatestArticles = ({ onArticleClick }) => {
