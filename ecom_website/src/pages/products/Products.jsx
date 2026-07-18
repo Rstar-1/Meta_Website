@@ -206,7 +206,7 @@ const Products = () => {
                 setPriceRange(maxProductPrice);
                 setShowAllCategories(false);
               }}
-              className="mini-text text-danger font-500 cursor-pointer"
+              className="mini-text text-danger font-400 cursor-pointer"
             >
               Reset
             </p>
@@ -235,7 +235,7 @@ const Products = () => {
           {categoryOptions.length > 5 && (
             <p
               onClick={() => setShowAllCategories(!showAllCategories)}
-              className="mini-text text-primary font-600 mt-8 cursor-pointer hover-text-secondary"
+              className="mini-text text-primary font-400 mt-8 cursor-pointer hover-text-secondary"
               style={{ userSelect: 'none' }}
             >
               {showAllCategories ? "Show Less" : `+${categoryOptions.length - 5} More`}
@@ -345,8 +345,8 @@ const Products = () => {
               <p className="small-text text-gray font-400">{headerInfo.desc}</p>
             </div>
 
-            <div className="flex sm-flex-column gap-12 items-center mb-12 w-40 md-w-full sm-w-full">
-              <div className="relative flex-grow w-full">
+            <div className="mb-12 w-55 md-w-full sm-w-full">
+              <div className="relative w-full">
                 <Fields
                   type="text"
                   placeholder="Search products by name or description..."

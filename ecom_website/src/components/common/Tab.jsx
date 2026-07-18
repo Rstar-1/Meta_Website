@@ -8,7 +8,7 @@ const TabItem = ({ name, count, icon, isActive, onClick }) => (
         {icon && <span className="flex items-center justify-center">{icon}</span>}
         <p className="small-text">{name}</p>
         {count !== undefined && count !== null && (
-            <p className={`px-9 py-3 rounded-20 mini-text ${isActive ? "bg-primary text-white font-600" : "bg-tertiary text-gray"}`}>
+            <p className={`px-7 py-2 rounded-20 mini-text font-400 ${isActive ? "bg-primary text-white" : "bg-tertiary text-gray"}`}>
                 {count}
             </p>
         )}

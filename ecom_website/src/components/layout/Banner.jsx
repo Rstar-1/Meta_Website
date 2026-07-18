@@ -5,8 +5,7 @@ import Breadcrumb from "../common/Breadcrumb";
 const Banner = ({ title, img, desc, style, breadcrumbs, productData }) => (
     <Container className="relative"
         style={{
-            backgroundColor: '#061325',
-            backgroundImage: 'linear-gradient(135deg, #061325 0%, #0c203a 100%)',
+            background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)",
             borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
             ...style
         }}>

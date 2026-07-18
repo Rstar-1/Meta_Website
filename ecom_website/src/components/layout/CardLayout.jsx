@@ -150,7 +150,7 @@ const CardLayout = ({
                                 <p className="px-12 py-4 rounded-5 font-400 mini-text mb-10 w-max bg-light-primary text-primary">{item.tag}</p>
                             )}
                             <h3 className="text-dark font-600 mid-text line-clamp1">{item.title}</h3>
-                            <p className="text-primary font-500 mini-text mt-3">
+                            <p className="text-gray font-500 mini-text mt-3">
                                 {formatDate(item.datePublished || item.date, 'human')} • {item.readTime}
                             </p>
                             <p className="text-gray small-text line-clamp2 mt-7">{item.description}</p>

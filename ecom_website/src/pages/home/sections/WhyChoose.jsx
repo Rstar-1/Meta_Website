@@ -30,7 +30,7 @@ const WhyChoose = () => {
           personalized, strategic financial solutions that help our clients thrive.
         </p>
 
-        <div className="grid-cols-1 gap-12 mt-19 w-85">
+        <div className="grid-cols-1 gap-12 mt-19 w-85 sm-w-full">
           {features.map((feature, idx) => (
             <div key={idx} className="bg-tertiary p-18 rounded-5">
               <div className="flex sm-grid-cols-1 items-center gap-12">

@@ -450,7 +450,6 @@ const Fields = ({
                                 checked={!!value}
                                 onChange={(e) => onChange?.(e.target.checked)}
                                 className="cursor-pointer"
-                                style={{ width: "18px", height: "18px", accentColor: "var(--primary)" }}
                             />
                         </div>
                     );
@@ -467,7 +466,7 @@ const Fields = ({
                             return (
                                 <label
                                     key={optVal}
-                                    className="flex items-center gap-8 cursor-pointer mini-text text-gray"
+                                    className="flex items-center gap-8 cursor-pointer"
                                     style={{ userSelect: "none" }}
                                 >
                                     <input
@@ -480,7 +479,7 @@ const Fields = ({
                                             onChange?.(nextValues);
                                         }}
                                     />
-                                    <span>{optLabel}</span>
+                                    <p className="mini-text text-gray font-400">{optLabel}</p>
                                 </label>
                             );
                         })}
@@ -1059,7 +1058,7 @@ const Fields = ({
     return (
         <div className="w-full grid-cols-1 gap-6">
             {label && (
-                <label className="mini-text font-500" style={{ fontSize: "14px", color: "#4b5563" }}>
+                <label className="mini-text font-500 text-gray">
                     {label}
                 </label>
             )}

@@ -58,11 +58,15 @@ const Button = ({
       {...props}
     >
       {icon ? (
-        <span className="flex items-center justify-center gap-8 w-full">
-          {iconPosition !== "right" && iconElement}
-          <span>{children || text}</span>
-          {iconPosition === "right" && iconElement}
-        </span>
+        (children || text) ? (
+          <span className="flex items-center justify-center gap-8 w-full">
+            {iconPosition !== "right" && iconElement}
+            <span>{children || text}</span>
+            {iconPosition === "right" && iconElement}
+          </span>
+        ) : (
+          iconElement
+        )
       ) : (
         children || text
       )}

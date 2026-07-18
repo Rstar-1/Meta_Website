@@ -9,6 +9,8 @@ import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
 import NewsletterForm from '../forms/NewsletterForm';
 import Skeleton from '../common/Skeleton';
+import { formatDate } from '../../utils/formatDate';
+import { blogMetaTemplate } from '../../seo/metaTemplates';
 
 const LatestArticles = lazy(() => import('../../pages/home/sections/LatestArticles'));
 
@@ -25,9 +27,6 @@ const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 s
     <Skeleton variant="card" count={count} theme="adaptive" />
   </div>
 );
-
-import { formatDate } from '../../utils/formatDate';
-import { blogMetaTemplate } from '../../seo/metaTemplates';
 
 const CATEGORY_COLORS = {
   SEO: "text-info",
@@ -80,12 +79,17 @@ const BlogLayout = ({
 
   const popularPosts = useMemo(() => blogsList.slice(0, 3), [blogsList]);
 
-  const content = useMemo(() => (type === 'detail' && post?.content) || null, [type, post]);
-  const authorBio = useMemo(() => post?.authorBio || '', [post]);
-  const tags = useMemo(() => post?.keywords?.split(',').map(t => t.trim()) || [], [post?.keywords]);
-  const formattedDate = useMemo(() => formatDate(post?.datePublished, 'human') || 'May 20, 2024', [post?.datePublished]);
+  const detailData = useMemo(() => {
+    if (type !== 'detail' || !post) return null;
+    return {
+      content: post.content || null,
+      authorBio: post.authorBio || '',
+      tags: post.keywords?.split(',').map(t => t.trim()) || [],
+      formattedDate: formatDate(post.datePublished, 'human') || 'May 20, 2024',
+    };
+  }, [type, post]);
 
-  const getCategoryColor = (category) => CATEGORY_COLORS[category] || "text-primary";
+  const { content, authorBio, tags, formattedDate } = detailData || { content: null, authorBio: '', tags: [], formattedDate: 'May 20, 2024' };
 
   const socialShares = useMemo(() => [
     {
@@ -181,7 +185,7 @@ const BlogLayout = ({
           line-height: 1.6;
           color: var(--dark);
         }
-         .author-bio-box {
+        .author-bio-box {
           border: 1px solid #e5e7eb;
           background: #f8fafc;
         }
@@ -198,20 +202,48 @@ const BlogLayout = ({
       `}</style>
 
       {/* --- Page Banner / Hero --- */}
-      {(type === 'list' || post) && (
+      {(type === 'list' || post || loading) && (
         <Banner
-          style={{ background: "linear-gradient(135deg, #021B44 0%, #00102A 100%)" }}
-          img="https://metatechnical.org/images/banners/blog.webp"
-          title={type === 'list' ? "Latest Articles" : post.category}
-          desc={type === 'list' ? "Insights, strategies, and tips to help your business grow with smart marketing." : post.title}
-          breadcrumbs={type === 'list' ? [
-            { label: 'Home', path: '/home' },
-            { label: 'Blog' }
-          ] : [
-            { label: 'Home', path: '/home' },
-            { label: 'Blog', path: '/blog' },
-            { label: post.title }
-          ]}
+          title={
+            loading && type === 'detail' ? (
+              <Skeleton variant="text" width="120px" height="14px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
+            ) : type === 'list' ? (
+              "Latest Articles"
+            ) : (
+              post?.category || "Blog"
+            )
+          }
+          desc={
+            loading && type === 'detail' ? (
+              <Skeleton variant="text" width="60%" height="28px" theme="dark" animation="shimmer" style={{ margin: '8px 0 0 0' }} />
+            ) : type === 'list' ? (
+              "Insights, strategies, and tips to help your business grow with smart marketing."
+            ) : (
+              post?.title
+            )
+          }
+          breadcrumbs={
+            type === 'list' ? (
+              [
+                { label: 'Home', path: '/home' },
+                { label: 'Blog' }
+              ]
+            ) : loading ? (
+              <div className="flex gap-6 items-center">
+                <Skeleton variant="text" width="40px" height="12px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
+                <span className="text-white font-300 opacity-60">&gt;</span>
+                <Skeleton variant="text" width="40px" height="12px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
+                <span className="text-white font-300 opacity-60">&gt;</span>
+                <Skeleton variant="text" width="120px" height="12px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
+              </div>
+            ) : post ? (
+              [
+                { label: 'Home', path: '/home' },
+                { label: 'Blog', path: '/blog' },
+                { label: post.title }
+              ]
+            ) : null
+          }
         />
       )}
 
@@ -219,26 +251,33 @@ const BlogLayout = ({
         <Container version="v2">
           <div className="flex gap-12 sm-grid-cols-1 w-full">
             {/* Far Left: Sticky Social Share Widget (Desktop Only, Details View Only) */}
-            {type === 'detail' && post && (
+            {type === 'detail' && (post || loading) && (
               <div className="w-5 md-hidden sm-hidden">
-                <div className="sticky flex flex-column items-center gap-12" style={{ top: '100px' }}>
-                  <span className="mini-text text-gray uppercase font-600 tracking-wider mb-5">Share</span>
-                  {socialShares.map((share) => (
-                    <a
-                      key={share.name}
-                      href={share.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="share-btn"
-                      aria-label={share.aria}
-                    >
-                      <Icon name={share.icon} width={share.width} height={share.height} fill="currentColor" />
-                    </a>
-                  ))}
-                  <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
-                    <Icon name="CopyLink" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" />
-                  </button>
-                </div>
+                {loading ? (
+                  <div className="sticky flex flex-column items-center gap-12" style={{ top: '100px' }}>
+                    <Skeleton variant="text" width="40px" height="10px" theme="adaptive" />
+                    <Skeleton variant="circle" width="40px" height="40px" theme="adaptive" count={4} />
+                  </div>
+                ) : (
+                  <div className="sticky flex flex-column items-center gap-12" style={{ top: '100px' }}>
+                    <span className="mini-text text-gray uppercase font-600 tracking-wider mb-5">Share</span>
+                    {socialShares.map((share) => (
+                      <a
+                        key={share.name}
+                        href={share.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="share-btn"
+                        aria-label={share.aria}
+                      >
+                        <Icon name={share.icon} width={share.width} height={share.height} fill="currentColor" />
+                      </a>
+                    ))}
+                    <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
+                      <Icon name="CopyLink" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" />
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
@@ -257,7 +296,7 @@ const BlogLayout = ({
                   ) : filteredBlogs.length > 0 ? (
                     <div className="grid-cols-1 gap-12">
                       {filteredBlogs.map((blog, idx) => {
-                        const categoryColorClass = getCategoryColor(blog.category);
+                        const categoryColorClass = CATEGORY_COLORS[blog.category] || "text-primary";
                         const itemFormattedDate = formatDate(blog.datePublished, 'human') || 'May 20, 2024';
 
                         return (
@@ -337,7 +376,7 @@ const BlogLayout = ({
                   <div className="flex flex-column gap-15 w-full">
                     {/* Main Image Skeleton */}
                     <Skeleton variant="rect" width="100%" height="400px" borderRadius="10px" theme="adaptive" />
-                    
+
                     {/* Meta Row Skeleton */}
                     <div className="flex items-center gap-12 py-15" style={{ borderBottom: '1px solid #ececec' }}>
                       <Skeleton variant="circle" width="40px" height="40px" theme="adaptive" />
@@ -349,18 +388,28 @@ const BlogLayout = ({
 
                     {/* Article Body Skeleton */}
                     <div className="flex flex-column gap-12 mt-20">
-                      <Skeleton variant="text" width="30%" height="24px" theme="adaptive" />
-                      <Skeleton variant="text" width="95%" height="14px" theme="adaptive" />
-                      <Skeleton variant="text" width="90%" height="14px" theme="adaptive" />
-                      <Skeleton variant="text" width="85%" height="14px" theme="adaptive" />
-                      <Skeleton variant="text" width="60%" height="14px" theme="adaptive" />
+                      {['30%', '95%', '90%', '85%', '60%'].map((w, i) => (
+                        <Skeleton key={i} variant="text" width={w} height={i === 0 ? '24px' : '14px'} theme="adaptive" />
+                      ))}
                     </div>
 
                     <div className="flex flex-column gap-12 mt-25">
-                      <Skeleton variant="text" width="45%" height="24px" theme="adaptive" />
-                      <Skeleton variant="text" width="95%" height="14px" theme="adaptive" />
-                      <Skeleton variant="text" width="90%" height="14px" theme="adaptive" />
-                      <Skeleton variant="text" width="40%" height="14px" theme="adaptive" />
+                      {['45%', '95%', '90%', '40%'].map((w, i) => (
+                        <Skeleton key={i} variant="text" width={w} height={i === 0 ? '24px' : '14px'} theme="adaptive" />
+                      ))}
+                    </div>
+
+                    {/* Author Bio Box Skeleton */}
+                    <div className="rounded-10 mt-18 w-80 p-20 flex gap-12 sm-grid-cols-1 items-start border-ec">
+                      <div className='w-15 sm-w-full'>
+                        <Skeleton variant="circle" width="80px" height="80px" theme="adaptive" />
+                      </div>
+                      <div className="w-85 sm-w-full flex flex-column gap-6">
+                        <Skeleton variant="text" width="120px" height="18px" theme="adaptive" />
+                        <Skeleton variant="text" width="180px" height="12px" theme="adaptive" />
+                        <Skeleton variant="text" width="100%" height="14px" theme="adaptive" />
+                        <Skeleton variant="text" width="80%" height="14px" theme="adaptive" />
+                      </div>
                     </div>
                   </div>
                 ) : post && (
@@ -436,8 +485,6 @@ const BlogLayout = ({
                           {content?.outro && <p className="small-text text-gray font-400">{content.outro}</p>}
                         </div>
                       )}
-
-
                     </div>
 
                     {/* Tags */}
@@ -507,68 +554,103 @@ const BlogLayout = ({
                 )}
 
                 {/* Table of Contents Widget */}
-                {type === 'detail' && content?.sections && (
-                  <div className="bg-white rounded-5 p-20 mb-12">
-                    <h3 className="headmini-text font-500 text-dark pb-8 bordb">Table of Contents</h3>
-                    <div className="grid-cols-1 gap-12 mt-15">
-                      {content.sections.map((sec) => (
-                        <div key={sec.id} className="toc-item">
-                          <a href={`#${sec.id}`} className="toc-link">
-                            <p className='mini-text text-gray font-400'>{sec.title}</p>
-                          </a>
-                        </div>
-                      ))}
+                {type === 'detail' && (
+                  loading ? (
+                    <div className="bg-white rounded-5 p-20 mb-12">
+                      <Skeleton variant="text" width="60%" height="20px" theme="adaptive" />
+                      <div className="grid-cols-1 gap-12 mt-15">
+                        {['80%', '70%', '90%', '75%'].map((w, i) => (
+                          <Skeleton key={i} variant="text" width={w} height="14px" theme="adaptive" />
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  ) : content?.sections && (
+                    <div className="bg-white rounded-5 p-20 mb-12">
+                      <h3 className="headmini-text font-500 text-dark pb-8 bordb">Table of Contents</h3>
+                      <div className="grid-cols-1 gap-12 mt-15">
+                        {content.sections.map((sec) => (
+                          <div key={sec.id} className="toc-item">
+                            <a href={`#${sec.id}`} className="toc-link">
+                              <p className='mini-text text-gray font-400'>{sec.title}</p>
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )
                 )}
 
                 {/* Categories Widget */}
-                {type === 'list' && categoriesList.length > 0 && (
+                {type === 'list' && (loading || categoriesList.length > 0) && (
                   <div className="bg-white rounded-5 p-15 mb-12">
                     <h3 className="headmini-text font-500 text-dark pb-8 bordb">Categories</h3>
                     <div className="grid-cols-1 gap-8 mt-8">
-                      {categoriesList.map((cat, idx) => (
-                        <div
-                          key={idx}
-                          className={`flex justify-between items-center py-9 px-12 rounded-5 cursor-pointer cat-item-hover ${selectedCategory === cat.name ? 'bg-tertiary text-primary font-600' : 'text-dark'
-                            }`}
-                          onClick={() => setSelectedCategory(cat.name)}
-                        >
-                          <p className="text-dark font-500 small-text">{cat.name}</p>
-                          <p className="text-gray font-500 mini-text">({cat.count})</p>
-                        </div>
-                      ))}
+                      {loading ? (
+                        Array.from({ length: 5 }).map((_, idx) => (
+                          <div key={idx} className="flex justify-between items-center py-9 px-12">
+                            <Skeleton variant="text" width="60%" height="12px" theme="adaptive" style={{ margin: 0 }} />
+                            <Skeleton variant="text" width="20px" height="12px" theme="adaptive" style={{ margin: 0 }} />
+                          </div>
+                        ))
+                      ) : (
+                        categoriesList.map((cat, idx) => (
+                          <div
+                            key={idx}
+                            className={`flex justify-between items-center py-9 px-12 rounded-5 cursor-pointer cat-item-hover ${selectedCategory === cat.name ? 'bg-tertiary text-primary font-600' : 'text-dark'
+                              }`}
+                            onClick={() => setSelectedCategory(cat.name)}
+                          >
+                            <p className="text-dark font-500 small-text">{cat.name}</p>
+                            <p className="text-gray font-500 mini-text">({cat.count})</p>
+                          </div>
+                        ))
+                      )}
                     </div>
                   </div>
                 )}
 
                 {/* Sidebar Popular Posts Widget */}
-                {popularPosts.length > 0 && (
+                {(loading || popularPosts.length > 0) && (
                   <div className="bg-white rounded-5 p-15 mb-12">
                     <h3 className="headmini-text font-500 text-dark pb-8 bordb">Popular Posts</h3>
                     <div className="grid-cols-1 gap-12 mt-12">
-                      {popularPosts.map((popPost) => (
-                        <div
-                          key={popPost.id}
-                          className="flex items-center gap-12 cursor-pointer"
-                          onClick={() => navigate(`/blog-detail/${popPost.id}`)}
-                        >
-                          <Image
-                            src={popPost.image}
-                            alt={popPost.title}
-                            className="rounded-5 flex w-30"
-                            style={{ height: '80px', objectFit: 'cover' }}
-                          />
-                          <div className='w-70'>
-                            <h4 className="headmini-text font-500 text-dark line-clamp2">
-                              {popPost.title}
-                            </h4>
-                            <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
-                              {formatDate(popPost.datePublished, 'short') || 'May 2024'}
-                            </p>
+                      {loading ? (
+                        Array.from({ length: 3 }).map((_, idx) => (
+                          <div key={idx} className="flex items-center gap-12">
+                            <div className="w-30 flex-shrink-0">
+                              <Skeleton variant="rect" width="100%" height="60px" borderRadius="5px" theme="adaptive" />
+                            </div>
+                            <div className="w-70 flex flex-column gap-6">
+                              {['90%', '60%', '40%'].map((w, i) => (
+                                <Skeleton key={i} variant="text" width={w} height={i === 2 ? '10px' : '12px'} theme="adaptive" style={{ margin: 0 }} />
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))
+                      ) : (
+                        popularPosts.map((popPost) => (
+                          <div
+                            key={popPost.id}
+                            className="flex items-center gap-12 cursor-pointer"
+                            onClick={() => navigate(`/blog-detail/${popPost.id}`)}
+                          >
+                            <Image
+                              src={popPost.image}
+                              alt={popPost.title}
+                              className="rounded-5 flex w-30"
+                              style={{ height: '80px', objectFit: 'cover' }}
+                            />
+                            <div className='w-70'>
+                              <h4 className="headmini-text font-500 text-dark line-clamp2">
+                                {popPost.title}
+                              </h4>
+                              <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
+                                {formatDate(popPost.datePublished, 'short') || 'May 2024'}
+                              </p>
+                            </div>
+                          </div>
+                        ))
+                      )}
                     </div>
                   </div>
                 )}
@@ -582,18 +664,27 @@ const BlogLayout = ({
       </div>
 
       {type === 'detail' && (
-        <Suspense fallback={
+        loading ? (
           <Container version="v2">
             <div className="pt-30 pb-20 w-full" style={{ minHeight: '500px' }}>
               <SectionHeaderSkeleton titleWidth="220px" />
               <CardGridSkeleton />
             </div>
           </Container>
-        }>
-          <Container version="v2">
-            <LatestArticles />
-          </Container>
-        </Suspense>
+        ) : (
+          <Suspense fallback={
+            <Container version="v2">
+              <div className="pt-30 pb-20 w-full" style={{ minHeight: '500px' }}>
+                <SectionHeaderSkeleton titleWidth="220px" />
+                <CardGridSkeleton />
+              </div>
+            </Container>
+          }>
+            <Container version="v2">
+              <LatestArticles />
+            </Container>
+          </Suspense>
+        )
       )}
     </>
   );

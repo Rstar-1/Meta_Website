@@ -18,7 +18,7 @@ const Table = lazy(() => import('../../components/common/Table'));
 const SupplierDetail = () => {
   const { brandName } = useParams();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('catalog');
+  const [activeTab, setActiveTab] = useState('profile');
 
   // Lookup client in client.json
   const matchedClient = clientData.find(
@@ -172,8 +172,8 @@ const SupplierDetail = () => {
           <div className="w-75 sm-w-full">
             <Tab
               tabs={[
-                { value: 'catalog', name: 'Products Catalog', count: finalProducts.length },
-                { value: 'profile', name: 'Company Profile' }
+                { value: 'profile', name: 'Company Profile' },
+                { value: 'catalog', name: 'Products Catalog', count: finalProducts.length }
               ]}
               activeTab={activeTab}
               onChange={setActiveTab}
@@ -185,8 +185,8 @@ const SupplierDetail = () => {
                   <CardLayout
                     items={finalProducts}
                     cardType="product"
-                    imageHeight="h-200 sm-h-250"
-                    cols="4"
+                    imageHeight="h-300"
+                    cols="3"
                     mdCols="2"
                     smCols="1"
                     gap="12"
