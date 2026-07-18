@@ -26,11 +26,7 @@ const StarRating = ({ rating, color = "var(--warning)", size = 16 }) => {
 };
 
 const ProductReviews = ({
-  rating,
-  reviewCount,
   reviews = [],
-  productName = "Product",
-  galleryImages = []
 }) => {
   const actualReviews = Array.isArray(reviews) ? reviews : [];
 
