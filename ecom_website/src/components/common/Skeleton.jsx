@@ -13,7 +13,7 @@ if (typeof document !== "undefined" && !document.getElementById("skeleton-styles
 }
 
 const Skeleton = ({
-  variant = "rect", // "rect" | "circle" | "text" | "card" | "blog" | "section-header" | "card-grid" | "articles" | "promo" | "reviews" | "product-detail" | "hero" | "browse-category" | "why-choose" | "review-section"
+  variant = "rect", // "rect" | "circle" | "text" | "card" | "blog" | "section-header" | "card-grid" | "articles" | "promo" | "reviews" | "product-detail" | "hero" | "browse-category" | "why-choose" | "review-section" | "table"
   width,
   height,
   borderRadius,
@@ -22,6 +22,7 @@ const Skeleton = ({
   theme = "light", // "light" | "dark" | "adaptive"
   animation = "shimmer", // "shimmer" | "pulse" | "none"
   style = {},
+  columns = [],
   ...props
 }) => {
   const themes = {
@@ -471,6 +472,70 @@ const Skeleton = ({
           </div>
         </div>
       </Container>
+    );
+  }
+
+  if (variant === "table") {
+    const cols = columns.length > 0 ? columns : Array.from({ length: 5 }).map((_, idx) => ({ id: idx }));
+    return (
+      <div className={`table-w rounded-5 bordl bordr`} style={{ overflowX: "auto", ...style }}>
+        <table className={`w-full ${className}`} style={{ borderCollapse: "collapse", minWidth: props.minWidth || "1100px" }}>
+          <thead>
+            <tr>
+              {cols.map((col, idx) => (
+                <th key={idx} className="bg-primary p-14 capitalize" style={col.style}>
+                  <div className="flex items-center" style={{ height: "16px" }}>
+                    <S variant="rect" width="60px" height="12px" borderRadius="3px" theme="dark" style={{ margin: 0 }} />
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {Array.from({ length: count || 5 }).map((_, rIdx) => (
+              <tr key={rIdx}>
+                {cols.map((col, cIdx) => {
+                  if (col.accessor === "checkbox") {
+                    return (
+                      <td key={cIdx} className="p-14 bordb" style={{ verticalAlign: "middle" }}>
+                        <S variant="rect" width="18px" height="18px" borderRadius="3px" theme="adaptive" />
+                      </td>
+                    );
+                  }
+                  if (col.ui === "profile") {
+                    const imgSize = col.imgStyle?.width || "40px";
+                    return (
+                      <td key={cIdx} className="p-14 bordb" style={{ verticalAlign: "middle" }}>
+                        <div className="flex items-center gap-12">
+                          <S variant="rect" width={imgSize} height={imgSize} borderRadius="5px" theme="adaptive" />
+                          <div className="flex-grow flex flex-column gap-6">
+                            <S variant="text" width="70%" height="14px" theme="adaptive" style={{ margin: 0 }} />
+                            <S variant="text" width="40%" height="10px" theme="adaptive" style={{ margin: 0 }} />
+                          </div>
+                        </div>
+                      </td>
+                    );
+                  }
+                  if (col.accessor === "actions" || col.header?.toLowerCase() === "action") {
+                    return (
+                      <td key={cIdx} className="p-14 bordb" style={{ verticalAlign: "middle" }}>
+                        <S variant="rect" width="60px" height="28px" borderRadius="4px" theme="adaptive" />
+                      </td>
+                    );
+                  }
+                  const widths = ["60%", "45%", "80%", "50%"];
+                  const w = widths[cIdx % widths.length];
+                  return (
+                    <td key={cIdx} className="p-14 bordb" style={{ verticalAlign: "middle" }}>
+                      <S variant="text" theme="adaptive" height="14px" width={w} style={{ margin: 0 }} />
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
 

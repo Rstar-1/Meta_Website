@@ -3,6 +3,7 @@ import Pagination from "./Pagination";
 import Icon from "./Icon";
 import { resolveImagePath } from "../../utils/imageResolver";
 import Image from "./Image";
+import Skeleton from "./Skeleton";
 
 // Helper function to render cell content based on column definition
 const renderCellContent = (col, row, rowIdx) => {
@@ -229,36 +230,30 @@ const Table = ({
                 </div>
             )}
 
-            <div className="table-w rounded-5 mt-12 bordl bordr" style={{ overflowX: "auto" }}>
-                <table className="w-full responsive-table-el" style={{ borderCollapse: "collapse", minWidth }}>
-                    <thead>
-                        <tr>
-                            {displayHeaders.map((col, idx) => (
-                                <th
-                                    key={idx}
-                                    style={{
-                                        ...col.style
-                                    }}
-                                    className={`bg-primary p-14 capitalize ${col.className || ""}`}
-                                >
-                                    <p className={`mini-text text-white font-500 ${col.className?.includes("text-center") ? "text-center" : col.className?.includes("text-right") ? "text-right" : "text-left"}`}>
-                                        {col.header}
-                                    </p>
-                                </th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {loading ? (
+            {loading ? (
+                <Skeleton variant="table" columns={displayHeaders} count={5} style={{ marginTop: "12px" }} minWidth={minWidth} />
+            ) : (
+                <div className="table-w rounded-5 mt-12 bordl bordr" style={{ overflowX: "auto" }}>
+                    <table className="w-full responsive-table-el" style={{ borderCollapse: "collapse", minWidth }}>
+                        <thead>
                             <tr>
-                                <td colSpan={displayHeaders.length} className="p-14 text-center text-gray">
-                                    <div className="flex items-center justify-center gap-8 py-12">
-                                        <Icon name="Spinner" width="18" height="18" strokeWidth="2.5" />
-                                        Loading...
-                                    </div>
-                                </td>
+                                {displayHeaders.map((col, idx) => (
+                                    <th
+                                        key={idx}
+                                        style={{
+                                            ...col.style
+                                        }}
+                                        className={`bg-primary p-14 capitalize ${col.className || ""}`}
+                                    >
+                                        <p className={`mini-text text-white font-500 ${col.className?.includes("text-center") ? "text-center" : col.className?.includes("text-right") ? "text-right" : "text-left"}`}>
+                                            {col.header}
+                                        </p>
+                                    </th>
+                                ))}
                             </tr>
-                        ) : data.length === 0 ? (
+                        </thead>
+                        <tbody>
+                            {data.length === 0 ? (
                             <tr>
                                 <td colSpan={displayHeaders.length}>
                                     <div className="py-40 text-center bordb">
@@ -340,6 +335,7 @@ const Table = ({
                     </tbody>
                 </table>
             </div>
+            )}
 
             {onPageChange && totalItems > itemsPerPage && (
                 <Pagination

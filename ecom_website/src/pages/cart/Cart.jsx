@@ -8,17 +8,26 @@ import SeoHelmet from '../../components/seo/SeoHelmet';
 import CardLayout from '../../components/layout/CardLayout';
 import Banner from '../../components/layout/Banner';
 import Skeleton from '../../components/common/Skeleton';
+import LazySection from '../../components/common/LazySection';
 
 const ProductEnquiryForm = lazy(() => import('../../components/forms/ProductEnquiryForm'));
+const BusinessPromo = lazy(() => import('../home/sections/BusinessPromo'));
+
 import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
 import { resolveProductImage, resolveImagePath } from '../../utils/imageResolver';
-import { products as productsData, categories as categoriesData } from '../../utils/apiData';
+import { products as productsData, categories as categoriesData, cms } from '../../utils/apiData';
 import Table from '../../components/common/Table';
 import Fields from '../../components/common/Fields';
 
 const Cart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     setCartItems(getCart());
@@ -165,9 +174,37 @@ const Cart = () => {
           { label: "Home", path: "/home" },
           { label: "Cart" },
         ]}
+        loading={loading}
       />
 
-      <Container className="bg-white">
+      {loading ? (
+        <Container>
+          <div className="py-30 w-full flex sm-grid-cols-1 gap-12 items-start">
+            <div className="w-75 md-w-full sm-w-full pr-12 sm-pr-1 flex flex-column gap-12">
+              <Skeleton variant="rect" width="150px" height="24px" borderRadius="4px" />
+              {Array.from({ length: 2 }).map((_, idx) => (
+                <div key={idx} className="flex gap-12 items-center p-15 border-ec rounded-5 bg-white">
+                  <Skeleton variant="rect" width="80px" height="80px" borderRadius="5px" />
+                  <div className="flex-grow flex flex-column gap-6">
+                    <Skeleton variant="text" width="40%" height="16px" />
+                    <Skeleton variant="text" width="20%" height="12px" />
+                    <Skeleton variant="text" width="60%" height="12px" />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="w-25 md-w-full sm-w-full pl-12 sm-pl-1 border-ec p-20 rounded-5 bg-white">
+              <Skeleton variant="text" width="60%" height="24px" />
+              <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+              <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+              <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+              <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
+              <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
+            </div>
+          </div>
+        </Container>
+      ) : (
+        <Container className="bg-white">
         <style>{`
           .cart-mobile-cards {
             display: none;
@@ -328,6 +365,19 @@ const Cart = () => {
 
         </div>
       </Container>
+    )}
+
+      <LazySection placeholderHeight={300}>
+        <Suspense fallback={
+          <Container>
+            <Skeleton variant="promo" theme="adaptive" />
+          </Container>
+        }>
+          <Container version="v2">
+            <BusinessPromo cms={cms} />
+          </Container>
+        </Suspense>
+      </LazySection>
     </>
   );
 };

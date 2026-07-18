@@ -41,7 +41,6 @@ const lazySections = [
 ];
 
 
-
 const Products = () => {
   const navigate = useNavigate();
   const location = useLocation();
