@@ -18,61 +18,15 @@ const PopularProducts = lazy(() => import('./sections/PopularProducts'));
 const BusinessPromo = lazy(() => import('./sections/BusinessPromo'));
 const Review = lazy(() => import('./sections/Review'));
 
-// DRY Skeleton Helper Components
-const SectionHeaderSkeleton = ({ titleWidth = '200px' }) => (
-  <div className="flex justify-between items-center mb-10">
-    <Skeleton variant="rect" width={titleWidth} height="32px" borderRadius="4px" theme="adaptive" />
-    <Skeleton variant="rect" width="80px" height="20px" borderRadius="4px" theme="adaptive" />
-  </div>
-);
-
-const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12' }) => (
-  <div className={className}>
-    <Skeleton variant="card" count={count} theme="adaptive" />
-  </div>
-);
-
-const HeroSkeleton = () => (
-  <Container style={{
-    background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)",
-  }}>
-    <div className='py-40 w-full'>
-      <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full overflow-hidden">
-        {/* Left Column Skeleton */}
-        <div className="w-full pr-12 sm-pr-1 flex flex-column gap-12">
-          <Skeleton variant="rect" width="180px" height="34px" borderRadius="20px" theme="dark" />
-          <Skeleton variant="rect" width="80%" height="48px" borderRadius="4px" theme="dark" />
-          <Skeleton variant="text" width="90%" count={2} theme="dark" />
-          <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-30">
-            {Array.from({ length: 4 }).map((_, idx) => (
-              <div key={idx} className="flex items-center gap-12 mb-16">
-                <Skeleton variant="circle" width="40px" height="40px" theme="dark" />
-                <div className="flex-grow flex flex-column gap-6">
-                  <Skeleton variant="text" width="50%" height="14px" theme="dark" style={{ margin: 0 }} />
-                  <Skeleton variant="text" width="80%" height="10px" theme="dark" style={{ margin: 0 }} />
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex items-center gap-12 mt-20">
-            <Skeleton variant="rect" width="120px" height="40px" borderRadius="4px" theme="dark" />
-            <Skeleton variant="rect" width="150px" height="40px" borderRadius="4px" theme="dark" />
-          </div>
-        </div>
-        {/* Right Column Skeleton */}
-        <div className="w-full pl-12 sm-pl-1 sm-mt-10">
-          <Skeleton variant="rect" height="500px" borderRadius="5px" theme="dark" />
-        </div>
-      </div>
-    </div>
-  </Container>
-);
-
 const lazySections = [
   {
     Component: Hero,
     height: 500,
-    fallback: <HeroSkeleton />,
+    fallback: (
+      <Container style={{ background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)" }}>
+        <Skeleton variant="hero" />
+      </Container>
+    ),
     noContainer: true
   },
   {
@@ -81,16 +35,7 @@ const lazySections = [
     containerClass: 'bg-forth',
     fallback: (
       <Container className="bg-forth">
-        <div className="w-full py-30" style={{ minHeight: '180px' }}>
-          <div className="grid-cols-6 md-grid-cols-4 sm-grid-cols-2 gap-12">
-            {Array.from({ length: 6 }).map((_, idx) => (
-              <div key={idx} className="px-10 py-20 bg-white rounded-10 text-center flex flex-column items-center gap-12">
-                <Skeleton variant="circle" width="80px" height="80px" theme="adaptive" />
-                <Skeleton variant="text" width="60%" height="12px" theme="adaptive" style={{ margin: 0 }} />
-              </div>
-            ))}
-          </div>
-        </div>
+        <Skeleton variant="browse-category" theme="adaptive" />
       </Container>
     ),
   },
@@ -103,8 +48,8 @@ const lazySections = [
         <div className='w-full' style={{ minHeight: '1350px' }}>
           {['PVC Sheet', 'PVC Roll', 'PVC Strip Curtains'].map((name, catIndex) => (
             <div key={catIndex} className="py-30 w-full">
-              <SectionHeaderSkeleton />
-              <CardGridSkeleton />
+              <Skeleton variant="section-header" theme="adaptive" />
+              <Skeleton variant="card-grid" count={4} theme="adaptive" />
             </div>
           ))}
         </div>
@@ -117,30 +62,7 @@ const lazySections = [
     containerStyle: { background: 'var(--forth)' },
     fallback: (
       <Container style={{ background: 'var(--forth)' }}>
-        <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center py-50 sm-py-40 w-full" style={{ minHeight: '350px' }}>
-          <div className="pr-15 sm-pr-1 flex flex-column gap-16">
-            <Skeleton variant="rect" width="80px" height="24px" borderRadius="5px" theme="adaptive" />
-            <Skeleton variant="rect" width="90%" height="36px" borderRadius="5px" theme="adaptive" />
-            <Skeleton variant="text" count={2} theme="adaptive" />
-            <div className="flex flex-column gap-12 mt-10">
-              {Array.from({ length: 2 }).map((_, idx) => (
-                <div key={idx} className="flex gap-12 items-center">
-                  <Skeleton variant="circle" width="50px" height="50px" theme="adaptive" />
-                  <div className="flex-grow flex flex-column gap-6">
-                    <Skeleton variant="text" width="40%" height="16px" theme="adaptive" />
-                    <Skeleton variant="text" width="90%" height="12px" theme="adaptive" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="pl-15 sm-pl-1 sm-mt-10">
-            <div className="grid-cols-2 gap-12">
-              <Skeleton variant="rect" height="300px" borderRadius="5px" theme="adaptive" />
-              <Skeleton variant="rect" height="300px" borderRadius="5px" theme="adaptive" />
-            </div>
-          </div>
-        </div>
+        <Skeleton variant="why-choose" theme="adaptive" />
       </Container>
     ),
   },
@@ -149,10 +71,7 @@ const lazySections = [
     height: 500,
     fallback: (
       <Container>
-        <div className="pt-30 pb-20 w-full" style={{ minHeight: '500px' }}>
-          <SectionHeaderSkeleton titleWidth="220px" />
-          <CardGridSkeleton />
-        </div>
+        <Skeleton variant="articles" theme="adaptive" />
       </Container>
     ),
   },
@@ -163,9 +82,9 @@ const lazySections = [
     fallback: (
       <Container style={{ background: 'var(--forth)' }}>
         <div className="py-40 w-full" style={{ minHeight: '500px' }}>
-          <SectionHeaderSkeleton />
+          <Skeleton variant="section-header" theme="adaptive" />
           <div className="mt-20">
-            <CardGridSkeleton />
+            <Skeleton variant="card-grid" count={4} theme="adaptive" />
           </div>
         </div>
       </Container>
@@ -176,30 +95,7 @@ const lazySections = [
     height: 300,
     fallback: (
       <Container>
-        <div className="w-full py-40" style={{ minHeight: '300px' }}>
-          <div className="flex sm-flex-column items-center justify-between p-40 sm-p-20 gap-12 relative overflow-hidden rounded-5" style={{ background: 'linear-gradient(135deg, #020712 0%, #081026 100%)' }}>
-            <div className="w-60 sm-w-full pr-12 sm-pr-1 flex flex-column gap-12">
-              <Skeleton variant="rect" width="180px" height="24px" borderRadius="20px" theme="dark" />
-              <Skeleton variant="rect" width="70%" height="36px" borderRadius="4px" theme="dark" />
-              <Skeleton variant="text" width="90%" theme="dark" />
-              <Skeleton variant="rect" width="160px" height="40px" borderRadius="4px" theme="dark" />
-            </div>
-            <div className="relative flex items-center justify-center w-40 sm-w-full sm-mt-10 pl-12 sm-pl-1">
-              <Skeleton variant="rect" height="250px" borderRadius="5px" theme="dark" />
-            </div>
-          </div>
-          <div className="grid-cols-4 sm-grid-cols-1 md-grid-cols-2 gap-12 mt-20">
-            {Array.from({ length: 4 }).map((_, idx) => (
-              <div key={idx} className="flex items-center gap-12 rounded-5 border-ec p-14">
-                <Skeleton variant="rect" width="48px" height="48px" borderRadius="5px" theme="adaptive" />
-                <div className="flex-grow flex flex-column gap-6">
-                  <Skeleton variant="text" width="60%" height="14px" theme="adaptive" />
-                  <Skeleton variant="text" width="40%" height="10px" theme="adaptive" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Skeleton variant="promo" theme="adaptive" />
       </Container>
     ),
   },
@@ -209,43 +105,7 @@ const lazySections = [
     containerStyle: { backgroundColor: 'var(--forth)' },
     fallback: (
       <Container style={{ backgroundColor: 'var(--forth)' }}>
-        <div className="w-full py-40" style={{ minHeight: '400px' }}>
-          <div className="flex md-flex-column sm-flex-column items-center gap-16">
-            <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
-              <Skeleton variant="rect" width="140px" height="28px" borderRadius="4px" theme="adaptive" />
-              <Skeleton variant="text" width="80px" height="12px" theme="adaptive" />
-            </div>
-            <div className="desktop-vertical-divider md-hidden" />
-            <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
-              <Skeleton variant="rect" width="100px" height="42px" borderRadius="4px" theme="adaptive" />
-              <Skeleton variant="rect" width="80px" height="12px" borderRadius="4px" theme="adaptive" />
-            </div>
-            <div className="desktop-vertical-divider md-hidden" />
-            <div className="grid-cols-3 md-grid-cols-1 sm-grid-cols-1 gap-12 w-70 md-w-full sm-w-full px-10">
-              {Array.from({ length: 3 }).map((_, idx) => (
-                <div key={idx}>
-                  <div className="flex items-center gap-12 mb-10">
-                    <Skeleton variant="circle" width="45px" height="45px" theme="adaptive" />
-                    <div className="flex-grow flex flex-column gap-6">
-                      <Skeleton variant="text" width="60%" height="14px" theme="adaptive" />
-                      <Skeleton variant="text" width="40%" height="10px" theme="adaptive" />
-                    </div>
-                  </div>
-                  <Skeleton variant="text" count={2} theme="adaptive" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="w-full my-24" style={{ height: '1px', backgroundColor: '#ececec' }} />
-          <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
-            {Array.from({ length: 4 }).map((_, idx) => (
-              <div key={idx} className="flex items-center justify-center sm-justify-start gap-12">
-                <Skeleton variant="rect" width="80px" height="24px" borderRadius="4px" theme="adaptive" />
-                <Skeleton variant="rect" width="50px" height="16px" borderRadius="4px" theme="adaptive" />
-              </div>
-            ))}
-          </div>
-        </div>
+        <Skeleton variant="review-section" theme="adaptive" />
       </Container>
     ),
   },

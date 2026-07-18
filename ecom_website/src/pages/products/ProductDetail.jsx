@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from '../../utils/apiData';
 import ProductLayout from '../../components/layout/ProductLayout';
@@ -9,23 +9,18 @@ import Container from '../../components/common/Container';
 // Lazy load section components
 const ProductReviews = lazy(() => import('./sections/ProductReviews'));
 
-// DRY Skeleton Helper Components
-const SectionHeaderSkeleton = ({ titleWidth = '200px' }) => (
-  <div className="flex justify-between items-center mb-10">
-    <Skeleton variant="rect" width={titleWidth} height="32px" borderRadius="4px" theme="adaptive" />
-    <Skeleton variant="rect" width="80px" height="20px" borderRadius="4px" theme="adaptive" />
-  </div>
-);
-
-const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12' }) => (
-  <div className={className}>
-    <Skeleton variant="card" count={count} theme="adaptive" />
-  </div>
-);
 
 const ProductDetail = () => {
   const { id } = useParams();
   const foundProduct = products.find(p => p.id === id || p.slug === id);
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, [id]);
 
   // Default product data matching the requested UI image
   const productData = {
@@ -75,13 +70,11 @@ const ProductDetail = () => {
         galleryImages={galleryImages}
         foundProduct={foundProduct}
         seoKeywords={keywords}
+        loading={loading}
       />
       <Suspense fallback={
         <Container>
-          <div className="py-40 w-full">
-            <SectionHeaderSkeleton titleWidth="200px" />
-            <CardGridSkeleton count={2} className="grid-cols-2 md-grid-cols-1 gap-12 mt-12" />
-          </div>
+          <Skeleton variant="reviews" count={2} theme="adaptive" />
         </Container>
       }>
         <ProductReviews

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { products, categories } from '../../utils/apiData';
+import { products, categories, cms } from '../../utils/apiData';
 import Container from '../../components/common/Container';
 import CardLayout from '../../components/layout/CardLayout';
 import SeoHelmet from '../../components/seo/SeoHelmet';
@@ -12,22 +12,35 @@ import { categoryMetaTemplate } from '../../seo/metaTemplates';
 import Button from '../../components/common/Button';
 
 import Skeleton from '../../components/common/Skeleton';
+import LazySection from '../../components/common/LazySection';
 
 const Modal = lazy(() => import('../../components/common/Modal'));
+const BusinessPromo = lazy(() => import('../home/sections/BusinessPromo'));
+const Review = lazy(() => import('../home/sections/Review'));
 
-// DRY Skeleton Helper Components
-const SectionHeaderSkeleton = ({ titleWidth = '200px' }) => (
-  <div className="flex justify-between items-center mb-10">
-    <Skeleton variant="rect" width={titleWidth} height="32px" borderRadius="4px" theme="adaptive" />
-    <Skeleton variant="rect" width="80px" height="20px" borderRadius="4px" theme="adaptive" />
-  </div>
-);
+const lazySections = [
+  {
+    Component: BusinessPromo,
+    height: 300,
+    fallback: (
+      <Container>
+        <Skeleton variant="promo" theme="adaptive" />
+      </Container>
+    ),
+  },
+  {
+    Component: Review,
+    height: 400,
+    containerStyle: { backgroundColor: 'var(--forth)' },
+    fallback: (
+      <Container style={{ backgroundColor: 'var(--forth)' }}>
+        <Skeleton variant="review-section" theme="adaptive" />
+      </Container>
+    ),
+  },
+];
 
-const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12' }) => (
-  <div className={className}>
-    <Skeleton variant="card" count={count} theme="adaptive" />
-  </div>
-);
+
 
 const Products = () => {
   const navigate = useNavigate();
@@ -306,6 +319,7 @@ const Products = () => {
           { label: "Home", path: "/home" },
           { label: "Products" },
         ]}
+        loading={loading}
       />
       <Container className="bg-white">
         <BreadcrumbSchema items={[
@@ -377,7 +391,7 @@ const Products = () => {
 
             {/* Product Cards Grid */}
             {loading ? (
-              <CardGridSkeleton count={6} className="grid-cols-3 md-grid-cols-2 sm-grid-cols-1 gap-12" />
+              <Skeleton variant="card-grid" count={6} className="grid-cols-3 md-grid-cols-2 sm-grid-cols-1 gap-12" theme="adaptive" />
             ) : (
               <>
                 <CardLayout
@@ -402,6 +416,20 @@ const Products = () => {
           </div>
         </div>
       </Container>
+
+      {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version }, index) => (
+        <LazySection key={index} placeholderHeight={height}>
+          <Suspense fallback={fallback}>
+            <Container
+              className={containerClass || ''}
+              style={containerStyle || {}}
+              version={version || 'v2'}
+            >
+              <Component cms={cms} />
+            </Container>
+          </Suspense>
+        </LazySection>
+      ))}
 
       <Suspense fallback={null}>
         <Modal

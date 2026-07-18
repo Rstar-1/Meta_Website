@@ -9,30 +9,36 @@ import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
 import NewsletterForm from '../forms/NewsletterForm';
 import Skeleton from '../common/Skeleton';
+import LazySection from '../common/LazySection';
 import { formatDate } from '../../utils/formatDate';
 import { blogMetaTemplate } from '../../seo/metaTemplates';
+import { cms } from '../../utils/apiData';
 
 const LatestArticles = lazy(() => import('../../pages/home/sections/LatestArticles'));
-
-// DRY Skeleton Helper Components
-const SectionHeaderSkeleton = ({ titleWidth = '200px' }) => (
-  <div className="flex justify-between items-center mb-10">
-    <Skeleton variant="rect" width={titleWidth} height="32px" borderRadius="4px" theme="adaptive" />
-    <Skeleton variant="rect" width="80px" height="20px" borderRadius="4px" theme="adaptive" />
-  </div>
-);
-
-const CardGridSkeleton = ({ count = 4, className = 'grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12' }) => (
-  <div className={className}>
-    <Skeleton variant="card" count={count} theme="adaptive" />
-  </div>
-);
+const BusinessPromo = lazy(() => import('../../pages/home/sections/BusinessPromo'));
 
 const CATEGORY_COLORS = {
   SEO: "text-info",
   "Social Media": "text-warning",
   "Content Marketing": "text-warning",
 };
+
+const lazySections = [
+  {
+    id: 'articles',
+    Component: LatestArticles,
+    height: 500,
+    version: 'v2',
+    fallback: <Skeleton variant="articles" theme="adaptive" />,
+  },
+  {
+    id: 'promo',
+    Component: BusinessPromo,
+    height: 300,
+    version: 'v2',
+    fallback: <Skeleton variant="promo" theme="adaptive" />,
+  }
+];
 
 const BlogLayout = ({
   type = 'list',
@@ -120,6 +126,8 @@ const BlogLayout = ({
 
   const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com') : {}, [post]);
 
+
+
   return (
     <>
       {type === 'detail' && post && (
@@ -204,38 +212,14 @@ const BlogLayout = ({
       {/* --- Page Banner / Hero --- */}
       {(type === 'list' || post || loading) && (
         <Banner
-          title={
-            loading && type === 'detail' ? (
-              <Skeleton variant="text" width="120px" height="14px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
-            ) : type === 'list' ? (
-              "Latest Articles"
-            ) : (
-              post?.category || "Blog"
-            )
-          }
-          desc={
-            loading && type === 'detail' ? (
-              <Skeleton variant="text" width="60%" height="28px" theme="dark" animation="shimmer" style={{ margin: '8px 0 0 0' }} />
-            ) : type === 'list' ? (
-              "Insights, strategies, and tips to help your business grow with smart marketing."
-            ) : (
-              post?.title
-            )
-          }
+          title={type === 'list' ? "Latest Articles" : (post?.category || "Blog")}
+          desc={type === 'list' ? "Insights, strategies, and tips to help your business grow with smart marketing." : post?.title}
           breadcrumbs={
             type === 'list' ? (
               [
                 { label: 'Home', path: '/home' },
                 { label: 'Blog' }
               ]
-            ) : loading ? (
-              <div className="flex gap-6 items-center">
-                <Skeleton variant="text" width="40px" height="12px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
-                <span className="text-white font-300 opacity-60">&gt;</span>
-                <Skeleton variant="text" width="40px" height="12px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
-                <span className="text-white font-300 opacity-60">&gt;</span>
-                <Skeleton variant="text" width="120px" height="12px" theme="dark" animation="shimmer" style={{ margin: 0 }} />
-              </div>
             ) : post ? (
               [
                 { label: 'Home', path: '/home' },
@@ -244,11 +228,12 @@ const BlogLayout = ({
               ]
             ) : null
           }
+          loading={loading}
         />
       )}
 
       <div className="bg-forth py-50 sm-py-36">
-        <Container version="v2">
+        <Container>
           <div className="flex gap-12 sm-grid-cols-1 w-full">
             {/* Far Left: Sticky Social Share Widget (Desktop Only, Details View Only) */}
             {type === 'detail' && (post || loading) && (
@@ -663,29 +648,33 @@ const BlogLayout = ({
         </Container>
       </div>
 
-      {type === 'detail' && (
-        loading ? (
-          <Container version="v2">
-            <div className="pt-30 pb-20 w-full" style={{ minHeight: '500px' }}>
-              <SectionHeaderSkeleton titleWidth="220px" />
-              <CardGridSkeleton />
-            </div>
-          </Container>
-        ) : (
+      {lazySections.filter(s => s.id !== 'articles' || type === 'detail').map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer, id }) => (
+        <LazySection key={id} placeholderHeight={height}>
           <Suspense fallback={
-            <Container version="v2">
-              <div className="pt-30 pb-20 w-full" style={{ minHeight: '500px' }}>
-                <SectionHeaderSkeleton titleWidth="220px" />
-                <CardGridSkeleton />
-              </div>
-            </Container>
+            noContainer ? fallback : (
+              <Container
+                className={containerClass || ''}
+                style={containerStyle || {}}
+                version={version || 'v2'}
+              >
+                {fallback}
+              </Container>
+            )
           }>
-            <Container version="v2">
-              <LatestArticles />
-            </Container>
+            {noContainer ? (
+              <Component cms={cms} />
+            ) : (
+              <Container
+                className={containerClass || ''}
+                style={containerStyle || {}}
+                version={version || 'v2'}
+              >
+                <Component cms={cms} />
+              </Container>
+            )}
           </Suspense>
-        )
-      )}
+        </LazySection>
+      ))}
     </>
   );
 };

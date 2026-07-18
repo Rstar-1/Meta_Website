@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import { addToCart } from '../../utils/cartHelper';
@@ -12,9 +12,31 @@ import { productMetaTemplate } from '../../seo/metaTemplates';
 import Banner from './Banner';
 
 import Fields from '../common/Fields';
-import { client as clientData } from '../../utils/apiData';
+import { client as clientData, cms } from '../../utils/apiData';
 
 import ProductEnquiryForm from '../forms/ProductEnquiryForm';
+import LazySection from '../common/LazySection';
+import Skeleton from '../common/Skeleton';
+
+const LatestArticles = lazy(() => import('../../pages/home/sections/LatestArticles'));
+const BusinessPromo = lazy(() => import('../../pages/home/sections/BusinessPromo'));
+
+const lazySections = [
+  {
+    id: 'articles',
+    Component: LatestArticles,
+    height: 500,
+    version: 'v2',
+    fallback: <Skeleton variant="articles" theme="adaptive" />,
+  },
+  {
+    id: 'promo',
+    Component: BusinessPromo,
+    height: 300,
+    version: 'v2',
+    fallback: <Skeleton variant="promo" theme="adaptive" />,
+  }
+];
 
 export const GetBestPriceForm = ProductEnquiryForm;
 
@@ -173,7 +195,8 @@ const ProductLayout = ({
   productData,
   galleryImages,
   foundProduct,
-  seoKeywords = ['HP 88A', 'Toner Cartridge', 'Printer Ink', 'PrintMax Solutions']
+  seoKeywords = ['HP 88A', 'Toner Cartridge', 'Printer Ink', 'PrintMax Solutions'],
+  loading = false,
 }) => {
   const navigate = useNavigate();
   const [activeImage, setActiveImage] = useState(galleryImages?.[0] || '');
@@ -230,9 +253,15 @@ const ProductLayout = ({
         desc={productData.title}
         img="https://html.ditsolution.net/industry/indastre1/assets/images/slider/banner.jpg"
         productData={productData}
+        loading={loading}
       />
 
-      <Container>
+      {loading ? (
+        <Container>
+          <Skeleton variant="product-detail" theme="adaptive" />
+        </Container>
+      ) : (
+        <Container>
         <div className="py-50">
           <div className='flex sm-grid-cols-1 items-start gap-12'>
             <div className='w-75 sm-w-full pr-5 sm-pr-1'>
@@ -442,6 +471,35 @@ const ProductLayout = ({
           </div>
         </div>
       </Container>
+      )}
+
+      {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer, id }) => (
+        <LazySection key={id} placeholderHeight={height}>
+          <Suspense fallback={
+            noContainer ? fallback : (
+              <Container
+                className={containerClass || ''}
+                style={containerStyle || {}}
+                version={version || 'v2'}
+              >
+                {fallback}
+              </Container>
+            )
+          }>
+            {noContainer ? (
+              <Component cms={cms} />
+            ) : (
+              <Container
+                className={containerClass || ''}
+                style={containerStyle || {}}
+                version={version || 'v2'}
+              >
+                <Component cms={cms} />
+              </Container>
+            )}
+          </Suspense>
+        </LazySection>
+      ))}
     </>
   );
 };
