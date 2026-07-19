@@ -6,9 +6,9 @@ const WhyChoose = ({ cms }) => {
   const features = cms.whyChoose.features;
 
   return (
-    <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center py-50 sm-py-40 w-full">
+    <div className="grid-cols-2 sm-grid-cols-1 gap-12 md-gap-6 items-center py-50 sm-py-40 w-full">
       {/* Left Content Column */}
-      <div className="pr-15 sm-pr-1">
+      <div className="pr-15 md-pr-4 sm-pr-1">
         <p className="bg-light-primary text-primary small-text px-16 py-5 font-500 rounded-5 w-max">{cms.whyChoose.tag}</p>
         <h2 className="head-text text-dark font-600 pt-16">
           {cms.whyChoose.title}
@@ -37,7 +37,7 @@ const WhyChoose = ({ cms }) => {
       </div>
 
       {/* Right Collage Column */}
-      <div className="pl-15 sm-pl-1 sm-mt-10">
+      <div className="pl-15 md-pl-4 sm-pl-1 sm-mt-10">
         <div className="grid-cols-2 gap-12">
           <Image
             className="w-full h-300 sm-h-150 rounded-5 object-cover flex"
