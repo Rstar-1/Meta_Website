@@ -120,7 +120,7 @@ const ShareProduct = () => {
   };
 
   const platforms = [
-    { name: 'WhatsAppShare', label: 'WhatsApp', bg: '#25D366', url: `https://api.whatsapp.com/send?text=${encodeURIComponent(href)}`, size: 18 },
+    { name: 'WhatsAppShare', label: 'WhatsApp', bg: '#25D366', url: `https://api.whatsapp.com/send?text=${encodeURIComponent(href)}`, size: 40 },
     { name: 'Facebook', label: 'Facebook', bg: '#1877F2', url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(href)}`, size: 18 },
     { name: 'X', label: 'X', bg: '#000000', url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(href)}`, size: 16 },
     { name: 'LinkedIn', label: 'LinkedIn', bg: '#0A66C2', url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(href)}`, size: 18 }
