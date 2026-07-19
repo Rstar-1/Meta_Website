@@ -12,10 +12,12 @@ import Hero from './sections/Hero';
 
 // Lazy Loaded Sections
 const BrowseCategory = lazy(() => import('./sections/BrowseCategory'));
+const TopCity = lazy(() => import('./sections/TopCity'));
 const LatestProducts = lazy(() => import('./sections/LatestProducts'));
 const WhyChoose = lazy(() => import('./sections/WhyChoose'));
 const LatestArticles = lazy(() => import('./sections/LatestArticles'));
 const PopularProducts = lazy(() => import('./sections/PopularProducts'));
+const FeaturedBusinesses = lazy(() => import('./sections/FeaturedBusinesses'));
 const BusinessPromo = lazy(() => import('./sections/BusinessPromo'));
 const Review = lazy(() => import('./sections/Review'));
 
@@ -27,6 +29,19 @@ const lazySections = [
     fallback: (
       <Container className="bg-forth">
         <Skeleton variant="browse-category" theme="adaptive" />
+      </Container>
+    ),
+  },
+  {
+    Component: TopCity,
+    height: 430,
+    noContainer: true,
+    fallback: (
+      <Container className="bg-white">
+        <div className="py-50 w-full" style={{ minHeight: '430px' }}>
+          <Skeleton variant="section-header" theme="adaptive" />
+          <Skeleton variant="card-grid" count={4} theme="adaptive" />
+        </div>
       </Container>
     ),
   },
@@ -82,6 +97,19 @@ const lazySections = [
     ),
   },
   {
+    Component: FeaturedBusinesses,
+    height: 380,
+    noContainer: true,
+    fallback: (
+      <Container className="bg-forth">
+        <div className="py-30 w-full" style={{ minHeight: '380px' }}>
+          <Skeleton variant="section-header" theme="adaptive" />
+          <Skeleton variant="card-grid" count={4} theme="adaptive" />
+        </div>
+      </Container>
+    ),
+  },
+  {
     Component: BusinessPromo,
     height: 300,
     fallback: (
@@ -126,7 +154,7 @@ const Home = () => {
       <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <SiteNavigationSchema navItems={navItems} />
 
-      <Hero cms={cms} />
+      <Hero />
 
       {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer }, index) => (
         <LazySection key={index} placeholderHeight={height}>

@@ -29,7 +29,7 @@ const PopularProducts = ({ cms }) => {
       <CardLayout
         items={popularProducts}
         cardType="product"
-        imageHeight="h-250"
+        imageHeight="h-200"
         isSlider={true}
         className="mt-20"
         showViewProducts={false}

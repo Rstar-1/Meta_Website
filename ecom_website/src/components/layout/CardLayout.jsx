@@ -47,11 +47,12 @@ const CardLayout = ({
             return (
                 <div
                     key={item.id || index}
-                    className="cursor-pointer"
-                    onClick={() => onCardClick?.(item)}
+                    className="bg-white border-ec rounded-10 p-12 cursor-pointer transition-all flex flex-column justify-between"
+                    onClick={() => onCardClick && onCardClick(item)}
                 >
                     <div>
-                        <div className="overflow-hidden rounded-5 bg-forth">
+                        {/* Product Image Container */}
+                        <div className="overflow-hidden rounded-5">
                             <Image
                                 src={imgSrc}
                                 alt={item.name}
@@ -61,14 +62,68 @@ const CardLayout = ({
                                 height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : '200'}
                             />
                         </div>
+
+                        {/* Product Metadata */}
                         <div className="mt-12">
-                            <h3 className="text-dark mid-text font-600 line-clamp1">{item.name}</h3>
+                            <h3
+                                className="text-dark mid-text font-500 line-clamp1"
+                            >
+                                {item.name}
+                            </h3>
+                            <p
+                                className="text-gray mini-text line-clamp2 font-400 mt-2"
+                            >
+                                {item.description}
+                            </p>
                             {(item.priceDisplay || item.price) && (
-                                <p className="text-gray mini-text font-400 mt-3">
+                                <p
+                                    className="text-dark mini-text font-500 mt-5"
+                                >
                                     {item.priceDisplay || `₹ ${item.price} / Piece`}
                                 </p>
                             )}
                         </div>
+                    </div>
+
+                    {/* Action Buttons at Bottom */}
+                    <div className="flex gap-10 mt-10 w-full">
+                        {showAddToCart && (
+                            <Button
+                                text="Quick Buy"
+                                variant="outline"
+                                bg="primary"
+                                color="primary"
+                                version="v3"
+                                icon="Cart"
+                                className={showViewProducts ? "flex-1" : "w-full"}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (onAddToCart) {
+                                        onAddToCart(item);
+                                    } else {
+                                        addToCart(item);
+                                        showToast(`${item.name} added to cart!`);
+                                    }
+                                }}
+                            />
+                        )}
+                        {showViewProducts && (
+                            <Button
+                                text="Explore"
+                                bg="primary"
+                                variant="filled"
+                                version="v3"
+                                className={showAddToCart ? "flex-1" : "w-full"}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (onButtonClick) {
+                                        onButtonClick(item);
+                                    } else if (onCardClick) {
+                                        onCardClick(item);
+                                    }
+                                }}
+                            />
+                        )}
                     </div>
                 </div>
             );
@@ -78,7 +133,7 @@ const CardLayout = ({
                 <div
                     key={item.id || index}
                     className="bg-white border-ec rounded-5 overflow-hidden p-10 cursor-pointer flex flex-column justify-between"
-                    onClick={() => onCardClick?.(item)}
+                    onClick={() => onCardClick && onCardClick(item)}
                 >
                     <div>
                         <div className="relative rounded-5 overflow-hidden">
@@ -96,16 +151,23 @@ const CardLayout = ({
                                 </div>
                             )}
                         </div>
+
                         <div className="mt-5">
                             <h3 className="text-dark font-600 mid-text">{item.name}</h3>
                             <p className="text-gray mini-text mb-8">{item.category}</p>
+
+                            {/* Rating Row */}
                             <div className="flex items-center gap-6 mb-8">
-                                <p className="text-white font-600 mini-text px-6 py-2 rounded-3 bg-success">★ {item.rating}</p>
+                                <p className="text-white font-600 mini-text px-6 py-2 rounded-3 bg-success">
+                                    ★ {item.rating}
+                                </p>
                                 <p className="text-gray mini-text">({item.reviews} Reviews)</p>
                             </div>
+
                             <p className="mini-text text-gray">📍 {item.location}</p>
                         </div>
                     </div>
+
                     <Button
                         text="Call Now"
                         bg="primary"
@@ -113,9 +175,91 @@ const CardLayout = ({
                         className="w-full cursor-pointer font-600 mt-8"
                         onClick={(e) => {
                             e.stopPropagation();
-                            onButtonClick ? onButtonClick(item) : onCardClick?.(item);
+                            if (onButtonClick) {
+                                onButtonClick(item);
+                            } else if (onCardClick) {
+                                onCardClick(item);
+                            }
                         }}
                     />
+                </div>
+            );
+        },
+        city: (item, index, imgProps) => {
+            return (
+                <div
+                    key={item.id || index}
+                    className="city-card relative overflow-hidden rounded-10 cursor-pointer h-350 flex items-end"
+                    onClick={() => onCardClick && onCardClick(item)}
+                >
+                    {/* Lazy-loaded background image */}
+                    <Image
+                        src={item.image}
+                        alt={item.name}
+                        {...imgProps}
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        width="300"
+                        height="350"
+                    />
+                    {/* Overlay */}
+                    <div
+                        className="absolute inset-0 z-1"
+                        style={{
+                            backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%)'
+                        }}
+                    />
+
+                    <div className="bg-white icon-lg rounded-full absolute top-0 left-0 m-12 flex items-center justify-center z-10" style={{ zIndex: 10 }}>
+                        <Icon name="MapPin" width="15" height="15" stroke="var(--primary)" strokeWidth="2.5" />
+                    </div>
+
+                    <div className="relative w-full z-10" style={{ zIndex: 10 }}>
+                        <div className="p-20">
+                            <div className="flex items-center gap-8 mb-6">
+                                <Icon name="MapPin" width="14" height="14" strokeWidth="2.5" className="text-white" />
+                                <h4 className="mid-text text-white font-600">{item.name}</h4>
+                            </div>
+
+                            {/* Stats List */}
+                            <div className="grid-cols-1 gap-6 mb-16">
+                                <div className="flex items-center gap-8 text-white opacity-95">
+                                    <Icon name="Building" width="14" height="14" strokeWidth="2.5" className="text-white" />
+                                    <span className="small-text font-400">{item.businesses}</span>
+                                </div>
+                                <div className="flex items-center gap-8 text-white opacity-95">
+                                    <Icon name="Grid" width="14" height="14" strokeWidth="2.5" className="text-white" />
+                                    <span className="small-text font-400">{item.categories}</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center justify-between w-full">
+                                {/* Dynamic Tag Badge */}
+                                {item.tag ? (
+                                    <div
+                                        className="px-12 py-5 rounded-20 w-max flex items-center gap-6"
+                                        style={{
+                                            backgroundColor: item.tagType === 'most-searched' ? '#eab308' : '#22c55e',
+                                            color: item.tagType === 'most-searched' ? '#000000' : '#ffffff',
+                                        }}
+                                    >
+                                        {item.tagType === 'most-searched' ? (
+                                            <Icon name="Star" width="12" height="12" fill="currentColor" stroke="none" className="flex" />
+                                        ) : (
+                                            <Icon name="Trending" width="12" height="12" stroke="currentColor" strokeWidth="3" className="flex" />
+                                        )}
+                                        <span className="mini-text font-600 uppercase tracking-wider">
+                                            {item.tag}
+                                        </span>
+                                    </div>
+                                ) : null}
+
+                                {/* Circular Right Action Button */}
+                                <div className="icon-lg bg-white rounded-full">
+                                    <Icon name="ArrowRight" width="16" height="16" stroke="var(--primary)" strokeWidth="3.5" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             );
         },
@@ -151,7 +295,7 @@ const CardLayout = ({
                 </article>
             );
         }
-    }), [imageMap, imageHeight, onCardClick, onButtonClick]);
+    }), [imageMap, imageHeight, onCardClick, onButtonClick, eagerCount, showAddToCart, onAddToCart, showViewProducts]);
 
     const renderDefaultCard = (item, index) => {
         const isEager = index < eagerCount;
@@ -167,6 +311,13 @@ const CardLayout = ({
     return (
         <>
             <style>{`
+            .city-card {
+                    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+                .city-card:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                }
                 .custom-swiper-prev,
                 .custom-swiper-next {
                     position: absolute;
