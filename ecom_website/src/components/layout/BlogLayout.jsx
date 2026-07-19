@@ -126,6 +126,101 @@ const BlogLayout = ({
 
   const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com') : {}, [post]);
 
+  const cardRenderers = useMemo(() => ({
+    blogCard: (blog, idx) => {
+      const categoryColorClass = CATEGORY_COLORS[blog.category] || "text-primary";
+      const itemFormattedDate = formatDate(blog.datePublished, 'human') || 'May 20, 2024';
+
+      return (
+        <article key={blog.id} className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-20">
+          {/* Card Image */}
+          <div
+            className="w-40 sm-w-full overflow-hidden cursor-pointer"
+            onClick={() => navigate(`/blog-detail/${blog.id}`)}
+          >
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              className="w-full h-250 object-cover flex"
+              loading={idx < 2 ? "eager" : "lazy"}
+              fetchPriority={idx < 2 ? "high" : undefined}
+            />
+          </div>
+
+          {/* Card Content */}
+          <div className="w-60 sm-w-full">
+            <div className='p-20 sm-p-12'>
+              <div>
+                <p
+                  className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
+                  onClick={() => {
+                    setSelectedCategory(blog.category);
+                    if (typeof setActivePage !== 'undefined') setActivePage(1);
+                  }}
+                >
+                  {blog.category}
+                </p>
+                <h3
+                  className="title-text font-600 text-dark cursor-pointer pt-5 line-clamp2"
+                  onClick={() => navigate(`/blog-detail/${blog.id}`)}
+                >
+                  {blog.title}
+                </h3>
+                <p className="small-text text-gray font-400 line-clamp2 sm-my-5 my-10">{blog.summary}</p>
+              </div>
+
+              <div className="flex sm-grid-cols-1 sm-gap-12 items-center justify-between pt-8 bordh">
+                <div className="flex items-center gap-10">
+                  <Image
+                    src={
+                      blog.authorAvatar ||
+                      'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60'
+                    }
+                    alt={blog.authorName}
+                    className="rounded-full"
+                    style={{ width: '32px', height: '32px', objectFit: 'cover' }}
+                  />
+                  <span className="small-text font-500 text-dark">By {blog.authorName}</span>
+                </div>
+                <div className="flex items-center gap-8 mini-text text-gray">
+                  <span>{itemFormattedDate}</span>
+                  <span className="font-600" style={{ fontSize: '6px' }}>
+                    •
+                  </span>
+                  <span>{blog.readTime || '5 min read'}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      );
+    },
+    popularCard: (popPost) => {
+      return (
+        <div
+          key={popPost.id}
+          className="flex items-center gap-12 cursor-pointer"
+          onClick={() => navigate(`/blog-detail/${popPost.id}`)}
+        >
+          <Image
+            src={popPost.image}
+            alt={popPost.title}
+            className="rounded-5 flex w-30"
+            style={{ height: '80px', objectFit: 'cover' }}
+          />
+          <div className='w-70'>
+            <h4 className="headmini-text font-500 text-dark line-clamp2">
+              {popPost.title}
+            </h4>
+            <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
+              {formatDate(popPost.datePublished, 'short') || 'May 2024'}
+            </p>
+          </div>
+        </div>
+      );
+    }
+  }), [navigate, setSelectedCategory]);
+
 
 
   return (
@@ -280,74 +375,7 @@ const BlogLayout = ({
                     </div>
                   ) : filteredBlogs.length > 0 ? (
                     <div className="grid-cols-1 gap-12">
-                      {filteredBlogs.map((blog, idx) => {
-                        const categoryColorClass = CATEGORY_COLORS[blog.category] || "text-primary";
-                        const itemFormattedDate = formatDate(blog.datePublished, 'human') || 'May 20, 2024';
-
-                        return (
-                          <article key={blog.id} className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-20">
-                            {/* Card Image */}
-                            <div
-                              className="w-40 sm-w-full overflow-hidden cursor-pointer"
-                              onClick={() => navigate(`/blog-detail/${blog.id}`)}
-                            >
-                              <Image
-                                src={blog.image}
-                                alt={blog.title}
-                                className="w-full h-250 object-cover flex"
-                                loading={idx < 2 ? "eager" : "lazy"}
-                                fetchPriority={idx < 2 ? "high" : undefined}
-                              />
-                            </div>
-
-                            {/* Card Content */}
-                            <div className="w-60 sm-w-full">
-                              <div className='p-20 sm-p-12'>
-                                <div>
-                                  <p
-                                    className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
-                                    onClick={() => {
-                                      setSelectedCategory(blog.category);
-                                      if (typeof setActivePage !== 'undefined') setActivePage(1);
-                                    }}
-                                  >
-                                    {blog.category}
-                                  </p>
-                                  <h3
-                                    className="title-text font-600 text-dark cursor-pointer pt-5 line-clamp2"
-                                    onClick={() => navigate(`/blog-detail/${blog.id}`)}
-                                  >
-                                    {blog.title}
-                                  </h3>
-                                  <p className="small-text text-gray font-400 line-clamp2 sm-my-5 my-10">{blog.summary}</p>
-                                </div>
-
-                                <div className="flex sm-grid-cols-1 sm-gap-12 items-center justify-between pt-8 bordh">
-                                  <div className="flex items-center gap-10">
-                                    <Image
-                                      src={
-                                        blog.authorAvatar ||
-                                        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60'
-                                      }
-                                      alt={blog.authorName}
-                                      className="rounded-full"
-                                      style={{ width: '32px', height: '32px', objectFit: 'cover' }}
-                                    />
-                                    <span className="small-text font-500 text-dark">By {blog.authorName}</span>
-                                  </div>
-                                  <div className="flex items-center gap-8 mini-text text-gray">
-                                    <span>{itemFormattedDate}</span>
-                                    <span className="font-600" style={{ fontSize: '6px' }}>
-                                      •
-                                    </span>
-                                    <span>{blog.readTime || '5 min read'}</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </article>
-                        );
-                      })}
+                      {filteredBlogs.map((blog, idx) => cardRenderers.blogCard(blog, idx))}
                     </div>
                   ) : (
                     <div className="bg-white rounded-5 p-50 text-center border border-gray text-gray">
@@ -613,28 +641,7 @@ const BlogLayout = ({
                           </div>
                         ))
                       ) : (
-                        popularPosts.map((popPost) => (
-                          <div
-                            key={popPost.id}
-                            className="flex items-center gap-12 cursor-pointer"
-                            onClick={() => navigate(`/blog-detail/${popPost.id}`)}
-                          >
-                            <Image
-                              src={popPost.image}
-                              alt={popPost.title}
-                              className="rounded-5 flex w-30"
-                              style={{ height: '80px', objectFit: 'cover' }}
-                            />
-                            <div className='w-70'>
-                              <h4 className="headmini-text font-500 text-dark line-clamp2">
-                                {popPost.title}
-                              </h4>
-                              <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
-                                {formatDate(popPost.datePublished, 'short') || 'May 2024'}
-                              </p>
-                            </div>
-                          </div>
-                        ))
+                        popularPosts.map((popPost) => cardRenderers.popularCard(popPost))
                       )}
                     </div>
                   </div>

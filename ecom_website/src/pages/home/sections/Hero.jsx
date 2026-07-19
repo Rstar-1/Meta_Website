@@ -9,7 +9,6 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
 
-import pvcRollIndustrial from '../../../assets/pvc_roll_industrial.webp';
 import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.webp';
 import pvcCurtainIndustrial from '../../../assets/pvc_curtain_industrial.webp';
 
@@ -22,7 +21,7 @@ const Hero = ({ cms }) => {
 
   const slides = [
     {
-      image: pvcRollIndustrial,
+      image: '/pvc_roll_industrial.webp',
       title: cms.hero.slides[0].title,
       desc: cms.hero.slides[0].desc
     },

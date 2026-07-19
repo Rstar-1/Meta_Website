@@ -17,7 +17,7 @@ import 'swiper/css/navigation';
 const CardLayout = ({
     items,
     renderItem,
-    cardType, // "product" | "business" | "article" | "city"
+    cardType,
     imageMap,
     imageHeight,
     onCardClick,
@@ -41,14 +41,8 @@ const CardLayout = ({
     const sliderId = React.useId().replace(/:/g, '');
     const combinedClassName = `grid-cols-${cols} md-grid-cols-${mdCols} sm-grid-cols-${smCols} gap-${gap} ${className}`.trim();
 
-    const renderDefaultCard = (item, index) => {
-        const isEager = index < eagerCount;
-        const imgProps = {
-            loading: isEager ? "eager" : "lazy",
-            fetchPriority: isEager ? "high" : undefined
-        };
-
-        if (cardType === 'product') {
+    const cardRenderers = React.useMemo(() => ({
+        product: (item, index, imgProps) => {
             const imgSrc = imageMap?.[item.id] || resolveProductImage(item);
             return (
                 <div
@@ -78,9 +72,8 @@ const CardLayout = ({
                     </div>
                 </div>
             );
-        }
-
-        if (cardType === 'business') {
+        },
+        business: (item, index, imgProps) => {
             return (
                 <div
                     key={item.id || index}
@@ -125,9 +118,8 @@ const CardLayout = ({
                     />
                 </div>
             );
-        }
-
-        if (cardType === 'article') {
+        },
+        article: (item, index, imgProps) => {
             return (
                 <article
                     key={item.id || index}
@@ -159,8 +151,17 @@ const CardLayout = ({
                 </article>
             );
         }
+    }), [imageMap, imageHeight, onCardClick, onButtonClick]);
 
-        return null;
+    const renderDefaultCard = (item, index) => {
+        const isEager = index < eagerCount;
+        const imgProps = {
+            loading: isEager ? "eager" : "lazy",
+            fetchPriority: isEager ? "high" : undefined
+        };
+
+        const renderer = cardRenderers[cardType];
+        return renderer ? renderer(item, index, imgProps) : null;
     };
 
     return (

@@ -17,7 +17,7 @@ const WhyChoose = ({ cms }) => {
           {cms.whyChoose.desc}
         </p>
 
-        <div className="grid-cols-1 gap-12 mt-19 w-85 sm-w-full">
+        <div className="grid-cols-1 gap-12 mt-19 w-85 md-w-full sm-w-full">
           {features.map((feature, idx) => (
             <div key={idx} className="bg-tertiary p-18 rounded-5">
               <div className="flex sm-grid-cols-1 items-center gap-12">

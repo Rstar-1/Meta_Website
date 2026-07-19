@@ -220,6 +220,25 @@ const ProductLayout = ({
     typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com'
   ), [foundProduct, productData, seoKeywords, activeImage]);
 
+  const cardRenderers = useMemo(() => ({
+    featureCard: (item, index) => (
+      <div key={index} className='flex items-center gap-12 bg-forth p-12 rounded-5'>
+        <div className='icon-lg flex items-center justify-center rounded-5 bg-light-warning'>
+          <p className='headpara-text flex'>
+            {item.icon}
+          </p>
+        </div>
+        <div>
+          <h3 className='headmini-text font-600 text-dark'>{item.title}</h3>
+          <p className='mini-text font-400 text-gray'>{item.subtitle}</p>
+        </div>
+      </div>
+    ),
+    supplierCard: (brand) => <SupplierCard brand={brand} />,
+    trustCard: () => <TrustAssurance />,
+    shareCard: () => <ShareProduct />
+  }), []);
+
   return (
     <>
       <SeoHelmet
@@ -337,19 +356,7 @@ const ProductLayout = ({
                       </p>
 
                       <div className='grid-cols-2 gap-12 mt-12'>
-                        {features?.map((item, index) => (
-                          <div key={index} className='flex items-center gap-12 bg-forth p-12 rounded-5'>
-                            <div className='icon-lg flex items-center justify-center rounded-5 bg-light-warning'>
-                              <p className='headpara-text flex'>
-                                {item.icon}
-                              </p>
-                            </div>
-                            <div>
-                              <h3 className='headmini-text font-600 text-dark'>{item.title}</h3>
-                              <p className='mini-text font-400 text-gray'>{item.subtitle}</p>
-                            </div>
-                          </div>
-                        ))}
+                        {features?.map((item, index) => cardRenderers.featureCard(item, index))}
                       </div>
                     </div>
 
@@ -464,9 +471,9 @@ const ProductLayout = ({
 
               <div className='w-25 sm-w-full grid-cols-1 gap-12 pl-5 sm-pl-1'>
                 <ProductEnquiryForm />
-                <SupplierCard brand={productData.brand} />
-                <TrustAssurance />
-                <ShareProduct />
+                {cardRenderers.supplierCard(productData.brand)}
+                {cardRenderers.trustCard()}
+                {cardRenderers.shareCard()}
               </div>
             </div>
           </div>

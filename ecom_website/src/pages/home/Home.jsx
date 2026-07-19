@@ -8,8 +8,9 @@ import Container from '../../components/common/Container';
 import Skeleton from '../../components/common/Skeleton';
 import { cms } from '../../utils/apiData';
 
+import Hero from './sections/Hero';
+
 // Lazy Loaded Sections
-const Hero = lazy(() => import('./sections/Hero'));
 const BrowseCategory = lazy(() => import('./sections/BrowseCategory'));
 const LatestProducts = lazy(() => import('./sections/LatestProducts'));
 const WhyChoose = lazy(() => import('./sections/WhyChoose'));
@@ -19,16 +20,6 @@ const BusinessPromo = lazy(() => import('./sections/BusinessPromo'));
 const Review = lazy(() => import('./sections/Review'));
 
 const lazySections = [
-  {
-    Component: Hero,
-    height: 500,
-    fallback: (
-      <Container style={{ background: "linear-gradient(135deg, #0d1525ff 0%, #030610ff 100%)" }}>
-        <Skeleton variant="hero" />
-      </Container>
-    ),
-    noContainer: true
-  },
   {
     Component: BrowseCategory,
     height: 180,
@@ -134,6 +125,8 @@ const Home = () => {
       <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
       <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <SiteNavigationSchema navItems={navItems} />
+
+      <Hero cms={cms} />
 
       {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer }, index) => (
         <LazySection key={index} placeholderHeight={height}>

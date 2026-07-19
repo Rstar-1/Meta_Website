@@ -22,7 +22,7 @@ const BrowseCategory = ({ onSelectCategory }) => {
 
   return (
     <div className="w-full py-30">
-      <div className='grid-cols-6 md-grid-cols-4 sm-grid-cols-2 gap-12'>
+      <div className='grid-cols-6 md-grid-cols-3 sm-grid-cols-2 gap-12'>
         {displayedCategories.map((cat) => (
           <div
             key={cat.id}
