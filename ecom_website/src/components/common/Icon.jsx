@@ -628,6 +628,64 @@ const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, 
                     <line x1="12" y1="22.08" x2="12" y2="12"></line>
                 </svg>
             );
+        case "Sheets":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="7" y1="7" x2="17" y2="7"></line>
+                    <line x1="7" y1="12" x2="13" y2="12"></line>
+                </svg>
+            );
+        case "Rolls":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <ellipse cx="12" cy="6" rx="8" ry="3"></ellipse>
+                    <path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6"></path>
+                    <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"></path>
+                </svg>
+            );
+        case "Layers":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+            );
+        case "GridDots":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "currentColor"} className={`flex ${className}`} {...props}>
+                    <circle cx="5" cy="6" r="2" />
+                    <circle cx="12" cy="6" r="2" />
+                    <circle cx="19" cy="6" r="2" />
+                    <circle cx="5" cy="18" r="2" />
+                    <circle cx="12" cy="18" r="2" />
+                    <circle cx="19" cy="18" r="2" />
+                </svg>
+            );
+        case "Building":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                    <path d="M6 12H4a2 2 0 0 0-2 2v8h4"></path>
+                    <path d="M18 9h2a2 2 0 0 1 2 2v11h-4"></path>
+                    <path d="M10 6h4"></path>
+                    <path d="M10 10h4"></path>
+                    <path d="M10 14h4"></path>
+                    <path d="M10 18h4"></path>
+                </svg>
+            );
+        case "Media":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"></path>
+                    <rect x="6" y="6" width="5" height="5"></rect>
+                    <line x1="14" y1="6" x2="18" y2="6"></line>
+                    <line x1="14" y1="10" x2="18" y2="10"></line>
+                    <line x1="6" y1="15" x2="18" y2="15"></line>
+                    <line x1="6" y1="18" x2="18" y2="18"></line>
+                </svg>
+            );
         default:
             return null;
     }

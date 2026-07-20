@@ -1,69 +1,13 @@
-import { memo, useState, useEffect, useRef } from "react";
+import { memo, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Container from "../common/Container";
 import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
-import { header as headerData, products as productsData, categories as categoryData } from "../../utils/apiData";
+import Dropdown from "../common/Dropdown";
+import { products as productsData } from "../../utils/apiData";
+import headerConfig from "../../data/header.json";
 import Fields from "../common/Fields";
-
-const logoImg = "/sobo_logo.webp";
-
-// Custom SVG Icons matching the screenshot
-const CategoryIcons = {
-  Sheets: (props) => (
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-      <line x1="7" y1="7" x2="17" y2="7"></line>
-      <line x1="7" y1="12" x2="13" y2="12"></line>
-    </svg>
-  ),
-  Rolls: (props) => (
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <ellipse cx="12" cy="6" rx="8" ry="3"></ellipse>
-      <path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6"></path>
-      <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"></path>
-    </svg>
-  ),
-  Layers: (props) => (
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-      <polyline points="2 17 12 22 22 17"></polyline>
-      <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-  ),
-  GridDots: (props) => (
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" {...props}>
-      <circle cx="5" cy="6" r="2" />
-      <circle cx="12" cy="6" r="2" />
-      <circle cx="19" cy="6" r="2" />
-      <circle cx="5" cy="18" r="2" />
-      <circle cx="12" cy="18" r="2" />
-      <circle cx="19" cy="18" r="2" />
-    </svg>
-  ),
-  Building: (props) => (
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
-      <path d="M6 12H4a2 2 0 0 0-2 2v8h4"></path>
-      <path d="M18 9h2a2 2 0 0 1 2 2v11h-4"></path>
-      <path d="M10 6h4"></path>
-      <path d="M10 10h4"></path>
-      <path d="M10 14h4"></path>
-      <path d="M10 18h4"></path>
-    </svg>
-  ),
-  Media: (props) => (
-    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"></path>
-      <rect x="6" y="6" width="5" height="5"></rect>
-      <line x1="14" y1="6" x2="18" y2="6"></line>
-      <line x1="14" y1="10" x2="18" y2="10"></line>
-      <line x1="6" y1="15" x2="18" y2="15"></line>
-      <line x1="6" y1="18" x2="18" y2="18"></line>
-    </svg>
-  )
-};
 
 const Header = () => {
   const navigate = useNavigate();
@@ -73,27 +17,6 @@ const Header = () => {
   const [cartCount, setCartCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const searchRef = useRef(null);
-  const searchToggleRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        isSearchOpen &&
-        searchRef.current &&
-        !searchRef.current.contains(event.target) &&
-        searchToggleRef.current &&
-        !searchToggleRef.current.contains(event.target)
-      ) {
-        setIsSearchOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isSearchOpen]);
 
   useEffect(() => {
     const updateCount = () => setCartCount(JSON.parse(localStorage.getItem('cart') || '[]').length);
@@ -114,6 +37,18 @@ const Header = () => {
       navigate("/products");
     }
   };
+
+  const renderTopSubmenu = (submenu) => (
+    submenu.map((sub, sIdx) => (
+      sub.type === "tel" ? (
+        <a key={sIdx} href={sub.href} className="drop-item">{sub.label}</a>
+      ) : sub.type === "external" ? (
+        <a key={sIdx} href={sub.href} target="_blank" rel="noreferrer" className="drop-item">{sub.label}</a>
+      ) : (
+        <NavLink key={sIdx} to={sub.path} className="drop-item">{sub.label}</NavLink>
+      )
+    ))
+  );
 
   return (
     <>
@@ -176,17 +111,6 @@ const Header = () => {
         .cat-nav-link:hover::after, .cat-nav-link.active::after {
           width: 80%;
         }
-        .drop-card {
-          position: absolute;
-          top: 100%;
-          background: #ffffff;
-          border: 1px solid #e2e8f0;
-          box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
-          border-radius: 6px;
-          padding: 10px 0;
-          min-width: 210px;
-          z-index: 1000;
-        }
         .drop-item {
           padding: 9px 16px;
           font-size: 12px;
@@ -204,111 +128,119 @@ const Header = () => {
       `}</style>
 
       {/* ROW 1: TOP MAIN HEADER BAR (LOGO & UTILITIES) */}
-      <header style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #f1f5f9" }} className="sm-hidden md-hidden">
-        <Container>
-          <div className="flex items-center justify-between w-full" style={{ minHeight: "52px" }}>
+      <Container
+        as="header"
+        style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #f1f5f9" }}
+        className="sm-hidden md-hidden"
+      >
+        <div className="flex items-center justify-between w-full" style={{ minHeight: "52px" }}>
 
             {/* LEFT: BRAND LOGO */}
             <div className="flex items-center">
-              <NavLink to="/" className="flex items-center" style={{ textDecoration: 'none' }}>
+              <NavLink to={headerConfig.logo.path} className="flex items-center" style={{ textDecoration: 'none' }}>
                 <Image
-                  src={logoImg}
-                  alt="SOBO Marketing Solution"
+                  src={headerConfig.logo.src}
+                  alt={headerConfig.logo.alt}
                   width="155"
                   height="46"
                   loading="eager"
-                  style={{
-                    maxHeight: '46px',
-                    width: 'auto',
-                    objectFit: 'contain'
-                  }}
+                  style={{ maxHeight: '46px', width: 'auto', objectFit: 'contain' }}
                 />
               </NavLink>
             </div>
 
             {/* MIDDLE LEFT LINKS */}
             <div className="flex items-center ml-20">
-              {/* CORPORATE DROPDOWN */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveTopDropdown("corporate")}
-                onMouseLeave={() => setActiveTopDropdown(null)}
-              >
-                <span className="top-nav-link">
-                  CORPORATE <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                </span>
-                {activeTopDropdown === "corporate" && (
-                  <div className="drop-card" style={{ left: 0 }}>
-                    <NavLink to="/about" className="drop-item">About SOBO Solutions</NavLink>
-                    <NavLink to="/about" className="drop-item">Management Message</NavLink>
-                    <NavLink to="/blog" className="drop-item">News &amp; Media</NavLink>
-                  </div>
-                )}
-              </div>
-
-              <div className="header-v-divider" />
-
-              <NavLink to="/about" className="top-nav-link">
-                INVESTOR RELATIONS
-              </NavLink>
-
-              <div className="header-v-divider" />
-
-              {/* EXECUTED PROJECTS DROPDOWN */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveTopDropdown("projects")}
-                onMouseLeave={() => setActiveTopDropdown(null)}
-              >
-                <span className="top-nav-link">
-                  EXECUTED PROJECTS <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                </span>
-                {activeTopDropdown === "projects" && (
-                  <div className="drop-card" style={{ left: 0 }}>
-                    <NavLink to="/products" className="drop-item">Industrial Sheet Installations</NavLink>
-                    <NavLink to="/products" className="drop-item">Cold Storage Enclosures</NavLink>
-                    <NavLink to="/products" className="drop-item">Cleanroom Strip Curtains</NavLink>
-                  </div>
-                )}
-              </div>
+              {headerConfig.topNav.left.map((item, idx) => (
+                <div key={item.id} className="flex items-center">
+                  {idx > 0 && <div className="header-v-divider" />}
+                  {item.hasDropdown ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setActiveTopDropdown(item.id)}
+                      onMouseLeave={() => setActiveTopDropdown(null)}
+                    >
+                      <span className="top-nav-link">
+                        {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                      </span>
+                      <Dropdown isOpen={activeTopDropdown === item.id} align="left">
+                        {renderTopSubmenu(item.submenu)}
+                      </Dropdown>
+                    </div>
+                  ) : (
+                    <NavLink to={item.path} className="top-nav-link">
+                      {item.label}
+                    </NavLink>
+                  )}
+                </div>
+              ))}
             </div>
 
             {/* RIGHT UTILITY LINKS */}
             <div className="flex items-center">
-              {/* SEARCH */}
-              <div
-                ref={searchToggleRef}
-                className="top-nav-link"
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-              >
-                <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH
-              </div>
-
-              <div className="header-v-divider" />
-
-              {/* GET IN TOUCH */}
+              {/* SEARCH WITH DROPDOWN */}
               <div
                 className="relative"
-                onMouseEnter={() => setActiveTopDropdown("touch")}
-                onMouseLeave={() => setActiveTopDropdown(null)}
+                onMouseEnter={() => setIsSearchOpen(true)}
+                onMouseLeave={() => setIsSearchOpen(false)}
               >
-                <span className="top-nav-link">
-                  GET IN TOUCH <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                </span>
-                {activeTopDropdown === "touch" && (
-                  <div className="drop-card" style={{ right: 0 }}>
-                    <NavLink to="/connect" className="drop-item">Submit RFQ Requirement</NavLink>
-                    <a href="tel:+918779030638" className="drop-item">Call +91 87790 30638</a>
-                    <a href="https://wa.me/918779030638" target="_blank" rel="noreferrer" className="drop-item">WhatsApp Support</a>
-                  </div>
-                )}
+                <div
+                  className="top-nav-link"
+                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                >
+                  <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                </div>
+                <Dropdown
+                  isOpen={isSearchOpen}
+                  onClose={() => setIsSearchOpen(false)}
+                  align="right"
+                  minWidth="340px"
+                  padding="10px"
+                  style={{ top: "100%", zIndex: 1001 }}
+                >
+                  <Fields
+                    type="text"
+                    placeholder="Search products & solutions..."
+                    icon="Search"
+                    iconPosition="right"
+                    value={searchQuery}
+                    onChange={setSearchQuery}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        setIsSearchOpen(false);
+                        navigate(`/products?search=${searchQuery}`);
+                      }
+                    }}
+                    autoFocus
+                  />
+                </Dropdown>
               </div>
 
               <div className="header-v-divider" />
 
-              <NavLink to="/connect" className="top-nav-link">
-                WHERE TO BUY
-              </NavLink>
+              {headerConfig.topNav.right.map((item, idx) => (
+                <div key={item.id} className="flex items-center">
+                  {idx > 0 && <div className="header-v-divider" />}
+                  {item.hasDropdown ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setActiveTopDropdown(item.id)}
+                      onMouseLeave={() => setActiveTopDropdown(null)}
+                    >
+                      <span className="top-nav-link">
+                        {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                      </span>
+                      <Dropdown isOpen={activeTopDropdown === item.id} align="right">
+                        {renderTopSubmenu(item.submenu)}
+                      </Dropdown>
+                    </div>
+                  ) : (
+                    <NavLink to={item.path} className="top-nav-link">
+                      {item.label}
+                    </NavLink>
+                  )}
+                </div>
+              ))}
 
               <div className="header-v-divider" />
 
@@ -319,7 +251,7 @@ const Header = () => {
 
               <div className="header-v-divider" />
 
-              {/* SHOPPING BAG CART ICON WITH BLUE BADGE */}
+              {/* SHOPPING BAG CART ICON */}
               <NavLink
                 to="/cart"
                 className="relative top-nav-link"
@@ -345,15 +277,14 @@ const Header = () => {
             </div>
           </div>
         </Container>
-      </header>
 
       {/* MOBILE HEADER BAR */}
       <div className="hidden md-block sm-block px-15 py-10" style={{ borderBottom: "1px solid #e2e8f0", position: "sticky", top: 0, zIndex: 999, backgroundColor: "#ffffff" }}>
         <div className="flex items-center justify-between w-full">
           <NavLink to="/" className="flex items-center">
             <Image
-              src={logoImg}
-              alt="SOBO Logo"
+              src={headerConfig.logo.src}
+              alt={headerConfig.logo.alt}
               width="120"
               height="36"
               style={{ maxHeight: "36px", objectFit: "contain" }}
@@ -392,7 +323,8 @@ const Header = () => {
       </div>
 
       {/* ROW 2: MAIN CATEGORY NAVIGATION BAR WITH ICONS - STICKY AT TOP */}
-      <nav
+      <Container
+        as="nav"
         className="sm-hidden md-hidden"
         style={{
           backgroundColor: "#ffffff",
@@ -404,251 +336,126 @@ const Header = () => {
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)"
         }}
       >
-          <Container>
-            <div className="flex items-center justify-between gap-8 w-full" style={{ minHeight: "48px" }}>
+        <div className="flex items-center justify-between gap-8 w-full" style={{ minHeight: "48px" }}>
 
-              {/* 1. PVC SHEETS & PANELS */}
+          {headerConfig.mainNav.map((item) => {
+            if (!item.hasDropdown) {
+              return (
+                <NavLink key={item.id} to={item.path} className="cat-nav-link">
+                  <Icon name={item.icon} width="16" height="16" /> {item.label}
+                </NavLink>
+              );
+            }
+
+            return (
               <div
+                key={item.id}
                 className="relative"
-                onMouseEnter={() => setActiveMainNavMenu("sheets")}
+                onMouseEnter={() => setActiveMainNavMenu(item.id)}
                 onMouseLeave={() => setActiveMainNavMenu(null)}
               >
-                <NavLink to="/products" className="cat-nav-link">
-                  <CategoryIcons.Sheets /> PVC SHEETS &amp; PANELS <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                <NavLink to={item.path} className="cat-nav-link">
+                  <Icon name={item.icon} width="16" height="16" /> {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
                 </NavLink>
 
-                {activeMainNavMenu === "sheets" && (
-                  <div
-                    className="drop-card p-16"
-                    style={{
-                      left: 0,
-                      width: "480px",
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      gap: "12px"
-                    }}
-                  >
-                    <div>
-                      <p className="text-gray font-700 mini-text uppercase tracking-wider mb-8">PVC Sheet Types</p>
-                      {productsData.filter(p => p.category === 'cat-pvc-sheet').slice(0, 5).map(prod => (
-                        <div
-                          key={prod.id}
-                          className="drop-item rounded-4 cursor-pointer"
-                          onClick={() => handleProductClick(prod.id)}
-                        >
-                          {prod.name}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="bg-tertiary p-12 rounded-6 flex flex-column justify-between">
-                      <div>
-                        <p className="text-dark font-600 small-text m-0">Industrial Grade PVC</p>
-                        <p className="text-gray mini-text mt-4">100% Waterproof, Chemical Resistant Heavy-Duty Sheets.</p>
-                      </div>
-                      <span
-                        className="text-primary font-600 mini-text mt-10 cursor-pointer flex items-center gap-4"
-                        onClick={() => handleProductClick(null, 'cat-pvc-sheet')}
+                <Dropdown
+                  isOpen={activeMainNavMenu === item.id}
+                  align="left"
+                  minWidth="480px"
+                  padding="16px"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "12px"
+                  }}
+                >
+                  <div>
+                    <p className="text-gray font-700 mini-text uppercase tracking-wider mb-8">{item.dropdownTitle}</p>
+                    {productsData.filter(p => p.category === item.category).slice(0, 5).map(prod => (
+                      <div
+                        key={prod.id}
+                        className="drop-item rounded-4 cursor-pointer"
+                        onClick={() => handleProductClick(prod.id)}
                       >
-                        View All Sheets <Icon name="ArrowRight" width="10" height="10" stroke="currentColor" />
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* 2. PVC ROLLS & STRIP CURTAINS */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveMainNavMenu("rolls")}
-                onMouseLeave={() => setActiveMainNavMenu(null)}
-              >
-                <NavLink to="/products" className="cat-nav-link">
-                  <CategoryIcons.Rolls /> PVC ROLLS &amp; STRIP CURTAINS <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                </NavLink>
-
-                {activeMainNavMenu === "rolls" && (
-                  <div
-                    className="drop-card p-16"
-                    style={{
-                      left: 0,
-                      width: "480px",
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      gap: "12px"
-                    }}
-                  >
-                    <div>
-                      <p className="text-gray font-700 mini-text uppercase tracking-wider mb-8">Strip Curtains &amp; Rolls</p>
-                      {productsData.filter(p => p.category === 'cat-pvc-roll').slice(0, 5).map(prod => (
-                        <div
-                          key={prod.id}
-                          className="drop-item rounded-4 cursor-pointer"
-                          onClick={() => handleProductClick(prod.id)}
-                        >
-                          {prod.name}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="bg-tertiary p-12 rounded-6 flex flex-column justify-between">
-                      <div>
-                        <p className="text-dark font-600 small-text m-0">Cold Storage &amp; Anti-Insect</p>
-                        <p className="text-gray mini-text mt-4">Ribbed &amp; Plain Strip Curtains with Stainless Steel Hangers.</p>
+                        {prod.name}
                       </div>
-                      <span
-                        className="text-primary font-600 mini-text mt-10 cursor-pointer flex items-center gap-4"
-                        onClick={() => handleProductClick(null, 'cat-pvc-roll')}
-                      >
-                        View All Rolls <Icon name="ArrowRight" width="10" height="10" stroke="currentColor" />
-                      </span>
-                    </div>
+                    ))}
                   </div>
-                )}
+                  <div className="bg-tertiary p-12 rounded-6 flex flex-column justify-between">
+                    <div>
+                      <p className="text-dark font-600 small-text m-0">{item.cardTitle}</p>
+                      <p className="text-gray mini-text mt-4">{item.cardDesc}</p>
+                    </div>
+                    <span
+                      className="text-primary font-600 mini-text mt-10 cursor-pointer flex items-center gap-4"
+                      onClick={() => handleProductClick(null, item.category)}
+                    >
+                      {item.cardLinkText} <Icon name="ArrowRight" width="10" height="10" stroke="currentColor" />
+                    </span>
+                  </div>
+                </Dropdown>
               </div>
+            );
+          })}
 
-              {/* 3. INDUSTRIAL MATERIALS */}
-              <NavLink to="/products" className="cat-nav-link">
-                <CategoryIcons.Layers /> INDUSTRIAL MATERIALS
-              </NavLink>
+        </div>
+      </Container>
 
-              {/* 4. ALL PRODUCTS */}
-              <NavLink to="/products" className="cat-nav-link">
-                <CategoryIcons.GridDots /> ALL PRODUCTS
-              </NavLink>
-
-              {/* 5. ABOUT US */}
-              <NavLink to="/about" className="cat-nav-link">
-                <CategoryIcons.Building /> ABOUT US
-              </NavLink>
-
-              {/* 6. RESOURCES & MEDIA */}
-              <NavLink to="/blog" className="cat-nav-link">
-                <CategoryIcons.Media /> RESOURCES &amp; MEDIA
-              </NavLink>
-
-            </div>
-          </Container>
-        </nav>
-
-        {/* SEARCH OVERLAY DROPDOWN */}
-        {isSearchOpen && (
-          <div
-            ref={searchRef}
-            className="absolute bg-white p-10 rounded-8 z-99 border-ec shadow-xl sm-hidden md-hidden"
-            style={{
-              top: "56px",
-              right: "220px",
-              width: "340px"
-            }}
-          >
+      {/* MOBILE DRAWER */}
+      {isMobileOpen && (
+        <div
+          className="hidden md-block sm-block px-16 py-16 bg-white border-t"
+          style={{
+            maxHeight: "calc(100vh - 60px)",
+            overflowY: "auto"
+          }}
+        >
+          <div className="mb-14">
             <Fields
               type="text"
-              placeholder="Search products & solutions..."
+              placeholder="Search products..."
               icon="Search"
               iconPosition="right"
               value={searchQuery}
               onChange={setSearchQuery}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  setIsSearchOpen(false);
+                  setIsMobileOpen(false);
                   navigate(`/products?search=${searchQuery}`);
                 }
               }}
-              autoFocus
             />
           </div>
-        )}
 
-        {/* MOBILE DRAWER */}
-        {isMobileOpen && (
-          <div
-            className="hidden md-block sm-block px-16 py-16 bg-white border-t"
-            style={{
-              maxHeight: "calc(100vh - 60px)",
-              overflowY: "auto"
-            }}
-          >
-            <div className="mb-14">
-              <Fields
-                type="text"
-                placeholder="Search products..."
-                icon="Search"
-                iconPosition="right"
-                value={searchQuery}
-                onChange={setSearchQuery}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    setIsMobileOpen(false);
-                    navigate(`/products?search=${searchQuery}`);
-                  }
-                }}
-              />
-            </div>
-
-            <div className="grid grid-cols-1 gap-10">
+          <div className="grid grid-cols-1 gap-10">
+            {headerConfig.mainNav.map((item) => (
               <NavLink
-                to="/products"
+                key={item.id}
+                to={item.path}
                 onClick={() => setIsMobileOpen(false)}
                 className="py-10 border-b text-dark font-600 small-text flex items-center justify-between"
                 style={{ textDecoration: 'none' }}
               >
-                <span className="flex items-center gap-8"><CategoryIcons.Sheets /> PVC SHEETS &amp; PANELS</span>
-                <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />
+                <span className="flex items-center gap-8">
+                  <Icon name={item.icon} width="16" height="16" /> {item.label}
+                </span>
+                {item.hasDropdown && <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />}
               </NavLink>
-              <NavLink
-                to="/products"
-                onClick={() => setIsMobileOpen(false)}
-                className="py-10 border-b text-dark font-600 small-text flex items-center justify-between"
-                style={{ textDecoration: 'none' }}
-              >
-                <span className="flex items-center gap-8"><CategoryIcons.Rolls /> PVC ROLLS &amp; STRIP CURTAINS</span>
-                <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />
-              </NavLink>
-              <NavLink
-                to="/products"
-                onClick={() => setIsMobileOpen(false)}
-                className="py-10 border-b text-dark font-600 small-text flex items-center gap-8"
-                style={{ textDecoration: 'none' }}
-              >
-                <CategoryIcons.Layers /> INDUSTRIAL MATERIALS
-              </NavLink>
-              <NavLink
-                to="/products"
-                onClick={() => setIsMobileOpen(false)}
-                className="py-10 border-b text-dark font-600 small-text flex items-center gap-8"
-                style={{ textDecoration: 'none' }}
-              >
-                <CategoryIcons.GridDots /> ALL PRODUCTS
-              </NavLink>
-              <NavLink
-                to="/about"
-                onClick={() => setIsMobileOpen(false)}
-                className="py-10 border-b text-dark font-600 small-text flex items-center gap-8"
-                style={{ textDecoration: 'none' }}
-              >
-                <CategoryIcons.Building /> ABOUT US
-              </NavLink>
-              <NavLink
-                to="/connect"
-                onClick={() => setIsMobileOpen(false)}
-                className="py-10 border-b text-dark font-600 small-text flex items-center gap-8"
-                style={{ textDecoration: 'none' }}
-              >
-                <CategoryIcons.Media /> RESOURCES &amp; MEDIA
-              </NavLink>
+            ))}
 
-              <Button
-                text="Request Quote"
-                version="v3"
-                bg="primary"
-                onClick={() => {
-                  setIsMobileOpen(false);
-                  navigate("/connect");
-                }}
-                className="mt-10"
-              />
-            </div>
+            <Button
+              text="Request Quote"
+              version="v3"
+              bg="primary"
+              onClick={() => {
+                setIsMobileOpen(false);
+                navigate("/connect");
+              }}
+              className="mt-10"
+            />
           </div>
-        )}
+        </div>
+      )}
 
     </>
   );

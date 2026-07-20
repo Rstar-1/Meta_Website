@@ -12,13 +12,17 @@ const Container = ({
   version = "v2",
   className = "",
   style = {},
+  as: Component = "section",
+  ...props
 }) => {
   const containerClass = VERSION_CLASSES[version] || "w-full";
 
   return (
-    <div className={`${containerClass} ${className}`} style={style}>
-      {children}
-    </div>
+    <Component style={style} {...props}>
+      <div className={`${containerClass} ${className}`}>
+        {children}
+      </div>
+    </Component>
   );
 };
 
