@@ -3,15 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 import Icon from '../../../components/common/Icon';
-import Image from '../../../components/common/Image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
 
-
-import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.webp';
-import pvcCurtainIndustrial from '../../../assets/pvc_curtain_industrial.webp';
 import pvcFactoryVideo from '../../../assets/pvc_factory_video.mp4';
+import pvcRollsVideo from '../../../assets/pvc_rolls.mp4';
 
 const Hero = ({ cms }) => {
   const navigate = useNavigate();
@@ -20,49 +19,71 @@ const Hero = ({ cms }) => {
 
   const features = cms.hero.features;
 
-  const slides = [
-    {
-      image: '/pvc_roll_industrial.webp',
-      title: cms.hero.slides[0].title,
-      desc: cms.hero.slides[0].desc
-    },
-    {
-      image: pvcSheetsIndustrial,
-      title: cms.hero.slides[1].title,
-      desc: cms.hero.slides[1].desc
-    },
-    {
-      image: pvcCurtainIndustrial,
-      title: cms.hero.slides[2].title,
-      desc: cms.hero.slides[2].desc
-    }
+  const videoSlides = [
+    { src: pvcFactoryVideo, alt: '/pvc_factory_video.mp4' },
+    { src: pvcRollsVideo, alt: '/pvc_rolls.mp4' }
   ];
 
   return (
     <div className="relative overflow-hidden">
-      {/* Background HTML5 Video from assets */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* Custom styles for Swiper video pagination dots */}
+      <style>{`
+        .hero-video-swiper .swiper-pagination {
+          bottom: 20px !important;
+          z-index: 5 !important;
+        }
+        .hero-video-swiper .swiper-pagination-bullet {
+          background: rgba(255, 255, 255, 0.4);
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+        .hero-video-swiper .swiper-pagination-bullet-active {
+          background: var(--primary, #1e74db);
+          width: 24px;
+          border-radius: 4px;
+        }
+      `}</style>
+
+      {/* Background HTML5 Video Swiper Carousel */}
+      <Swiper
+        modules={[Autoplay, EffectFade, Pagination]}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        loop={true}
+        pagination={{ clickable: true }}
+        className="hero-video-swiper"
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          objectFit: 'cover',
-          opacity: 1,
-          zIndex: 0,
-          pointerEvents: 'none'
+          zIndex: 0
         }}
       >
-        <source src={pvcFactoryVideo} type="video/mp4" />
-        <source src="/pvc_factory_video.mp4" type="video/mp4" />
-      </video>
+        {videoSlides.map((slide, idx) => (
+          <SwiperSlide key={idx} style={{ width: '100%', height: '100%' }}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                pointerEvents: 'none'
+              }}
+            >
+              <source src={slide.src} type="video/mp4" />
+              <source src={slide.alt} type="video/mp4" />
+            </video>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      {/* Overlay Gradient for contrast */}
+      {/* Overlay Gradient from bottom side for text contrast */}
       <div
         style={{
           position: 'absolute',
@@ -70,17 +91,17 @@ const Hero = ({ cms }) => {
           left: 0,
           width: '100%',
           height: '100%',
-          background: "linear-gradient(135deg, rgba(13, 21, 37, 0.32) 0%, rgba(3, 6, 16, 0.92) 100%)",
+          background: "linear-gradient(to top, rgba(3, 6, 16, 0.95) 20%, rgba(3, 6, 16, 0.65) 45%, rgba(13, 21, 37, 0.15) 90%)",
           zIndex: 1,
           pointerEvents: 'none'
         }}
       />
 
-      <Container style={{ position: "relative", zIndex: 2 }}>
-        <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full overflow-hidden py-40">
+      <Container className='relative z-10'>
+        <div className="w-full h-550 flex items-end">
 
           {/* Left Column: Text & Features */}
-          <div className="w-full pr-12 sm-pr-1">
+          <div className="w-70 py-40">
 
             {/* Tag Badge */}
             <div
@@ -96,97 +117,11 @@ const Hero = ({ cms }) => {
             </div>
 
             {/* Title */}
-            <h1 className="large-text text-white font-600 uppercase pt-10 sm-pt-14">
+            <h1 className="large-text text-white font-600 uppercase pt-12">
               {cms.hero.title.split('\\n')[0]}<br />
               <span className="text-primary font-800">{cms.hero.title.split('\\n')[1]}</span>
             </h1>
-
-            {/* Subtext */}
-            <p className="para-text font-400 uppercase text-white mt-12" style={{ opacity: 0.60 }}>
-              {cms.hero.subtitle}
-            </p>
-
-            {/* Features Grid */}
-            <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-30 sm-mt-20">
-              {features?.map((f, idx) => (
-                <div key={idx} className="flex items-center gap-12 mb-16">
-                  <div
-                    className="rounded-full flex items-center justify-center"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.19)",
-                      width: "40px",
-                      height: "40px",
-                      minWidth: "40px"
-                    }}
-                  >
-                    <Icon name={f.icon} width="18" height="18" stroke="var(--white)" />
-                  </div>
-                  <div>
-                    <h4 className="headmini-text font-500 text-white">{f.title}</h4>
-                    <p className="mini-text font-400 text-white" style={{ opacity: 0.60 }}>{f.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex items-center gap-12 mt-20 sm-mt-14">
-              <Button
-                text={cms.hero.ctaShop}
-                version="v2"
-                bg="primary"
-                onClick={() => navigate("/products")}
-              />
-              <Button
-                text={cms.hero.ctaQuote}
-                version="v2"
-                bg="transparent"
-                style={{ border: "1px solid rgba(255, 255, 255, 0.2)", color: "#ffffff" }}
-                onClick={() => navigate("/connect")}
-                icon="ArrowRight"
-                iconPosition="right"
-              />
-            </div>
           </div>
-
-          {/* Right Column: Swiper Slider */}
-          <div className="w-full pl-12 sm-pl-1 sm-mt-14">
-            <Swiper
-              modules={[Autoplay]}
-              autoplay={{ delay: 3500, disableOnInteraction: false }}
-              spaceBetween={20}
-              slidesPerView={1}
-              loop={true}
-              className="w-full"
-            >
-              {slides.map((slide, idx) => (
-                <SwiperSlide key={idx}>
-                  <div className="relative h-500 sm-h-350 rounded-5 overflow-hidden">
-                    <Image
-                      src={slide.image}
-                      alt={slide.title}
-                      width={600}
-                      height={500}
-                      loading={idx === 0 ? "eager" : "lazy"}
-                      fetchPriority={idx === 0 ? "high" : undefined}
-                      className="w-full h-full object-cover flex"
-                    />
-                    <div className="absolute bottom-0 left-0 z-10 m-10">
-                      <div className='bg-dark rounded-5 p-20'>
-                        <h3 className="mid-text font-500 text-white">
-                          {slide.title}
-                        </h3>
-                        <p className="mini-text text-white font-400" style={{ opacity: 0.80 }}>
-                          {slide.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
         </div>
       </Container>
     </div>

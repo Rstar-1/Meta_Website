@@ -6,10 +6,12 @@
     "ctaShop": "Shop Now",
     "ctaQuote": "Request a Quote",
     "features": [
-      { "title": "Premium Quality", "desc": "100% Virgin Material", "icon": "Shield" },
-      { "title": "Wide Range", "desc": "of Products", "icon": "Grid" },
-      { "title": "Custom Solutions", "desc": "Made to Measure", "icon": "Builder" },
-      { "title": "Fast Delivery", "desc": "Pan India", "icon": "Location" }
+      {
+        "title": "Premium Quality",
+        "desc": "100% Virgin Material",
+        "icon": "Shield"
+      },
+      { "title": "Wide Range", "desc": "of Products", "icon": "Grid" }
     ],
     "slides": [
       {
@@ -95,7 +97,11 @@
     "viewAll": "View All ➔"
   },
   "latestProducts": {
-    "targetCategoryIds": ["cat-pvc-sheet", "cat-pvc-roll", "cat-pvc-strip-curtains"],
+    "targetCategoryIds": [
+      "cat-pvc-sheet",
+      "cat-pvc-roll",
+      "cat-pvc-strip-curtains"
+    ],
     "viewAll": "View All ➔"
   },
   "popularProducts": {
