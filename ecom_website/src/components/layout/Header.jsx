@@ -130,8 +130,7 @@ const Header = () => {
       {/* ROW 1: TOP MAIN HEADER BAR (LOGO & UTILITIES) */}
       <Container
         as="header"
-        style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #f1f5f9" }}
-        className="sm-hidden md-hidden"
+        className="sm-hidden md-hidden bg-white bordb"
       >
         <div className="flex items-center justify-between w-full" style={{ minHeight: "52px" }}>
 
