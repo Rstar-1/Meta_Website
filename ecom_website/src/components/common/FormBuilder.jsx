@@ -8,7 +8,7 @@ const FormBuilder = ({
     submitType = "formdata",
     col = "1",
     submitText = "Save Changes",
-    buttonVersion = "v1",
+    buttonVersion = "v2",
     buttonBg = "primary",
     buttonClassName = "",
     children

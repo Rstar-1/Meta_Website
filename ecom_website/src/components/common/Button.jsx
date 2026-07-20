@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "./Icon";
 
 const VERSION_CLASSES = {
-  v0: "px-22 py-8 sm-px-12 sm-py-6 mini-text",
+  v0: "px-19 py-7 sm-px-12 sm-py-6 mini-text",
   v1: "px-20 py-9 para-text",
   v2: "px-25 py-11 sm-px-19 sm-py-8 small-text",
   v3: "w-full py-10 sm-py-13 mini-text",
@@ -34,7 +34,7 @@ const Button = ({
   const versionClass = VERSION_CLASSES[version] || "w-full py-7 small-text";
   const buttonClass = `${versionClass} rounded-5 ${borderClass}`;
 
-  const defaultStroke = variant === "outline" ? (style.color || "#2563eb") : (style.color || color);
+  const defaultStroke = style.color || (variant === "outline" ? "currentColor" : color);
 
   const iconElement = icon && (
     <Icon

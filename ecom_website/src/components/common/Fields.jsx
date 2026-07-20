@@ -25,6 +25,7 @@ const Fields = ({
     icon,
     iconPosition = "right",
     error: propError,
+    defaultValue,
     ...props
 }) => {
     const [localError, setLocalError] = useState("");
