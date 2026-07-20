@@ -608,6 +608,56 @@ const Skeleton = ({
     );
   }
 
+  if (variant === "cart") {
+    return (
+      <Container>
+        <div className="py-30 w-full flex sm-grid-cols-1 gap-12 items-start">
+          {/* Left Column: Cart items table / items */}
+          <div className="w-70 md-w-full sm-w-full pr-8 sm-pr-1 flex flex-column gap-12">
+            <div className="flex justify-between items-center">
+              <S variant="rect" width="160px" height="24px" borderRadius="4px" />
+              <S variant="rect" width="90px" height="32px" borderRadius="4px" />
+            </div>
+            {/* Table or Cart items skeleton */}
+            <div className="border-ec rounded-5 bg-white p-15 flex flex-column gap-12 mt-10">
+              {Array.from({ length: count || 3 }).map((_, idx) => (
+                <div key={idx} className="flex gap-12 items-center border-b pb-12">
+                  <S variant="rect" width="80px" height="80px" borderRadius="5px" />
+                  <div className="flex-grow flex flex-column gap-8">
+                    <S variant="rect" width="50%" height="18px" borderRadius="4px" />
+                    <S variant="rect" width="25%" height="14px" borderRadius="12px" />
+                    <div className="flex justify-between items-center mt-4">
+                      <S variant="text" width="80px" height="14px" style={{ margin: 0 }} />
+                      <S variant="rect" width="90px" height="30px" borderRadius="4px" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <div className="flex justify-between items-center pt-8">
+                <S variant="text" width="120px" height="14px" style={{ margin: 0 }} />
+                <S variant="text" width="140px" height="16px" style={{ margin: 0 }} />
+              </div>
+            </div>
+            {/* Note box skeleton */}
+            <S variant="rect" width="100%" height="60px" borderRadius="5px" />
+          </div>
+
+          {/* Right Column: Enquiry Form Skeleton */}
+          <div className="w-30 md-w-full sm-w-full pl-8 sm-pl-1">
+            <div className="border-ec p-20 rounded-5 bg-white flex flex-column gap-12">
+              <S variant="rect" width="70%" height="24px" borderRadius="4px" />
+              <S variant="rect" width="100%" height="40px" borderRadius="4px" style={{ marginTop: '8px' }} />
+              <S variant="rect" width="100%" height="40px" borderRadius="4px" style={{ marginTop: '8px' }} />
+              <S variant="rect" width="100%" height="40px" borderRadius="4px" style={{ marginTop: '8px' }} />
+              <S variant="rect" width="100%" height="100px" borderRadius="4px" style={{ marginTop: '8px' }} />
+              <S variant="rect" width="100%" height="44px" borderRadius="4px" style={{ marginTop: '12px' }} />
+            </div>
+          </div>
+        </div>
+      </Container>
+    );
+  }
+
   return (
     <>
       {Array.from({ length: count }).map((_, idx) => (

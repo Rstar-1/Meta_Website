@@ -178,34 +178,10 @@ const Cart = () => {
       />
 
       {loading ? (
-        <Container>
-          <div className="py-30 w-full flex sm-grid-cols-1 gap-12 items-start">
-            <div className="w-75 md-w-full sm-w-full pr-12 sm-pr-1 flex flex-column gap-12">
-              <Skeleton variant="rect" width="150px" height="24px" borderRadius="4px" />
-              {Array.from({ length: 2 }).map((_, idx) => (
-                <div key={idx} className="flex gap-12 items-center p-15 border-ec rounded-5 bg-white">
-                  <Skeleton variant="rect" width="80px" height="80px" borderRadius="5px" />
-                  <div className="flex-grow flex flex-column gap-6">
-                    <Skeleton variant="text" width="40%" height="16px" />
-                    <Skeleton variant="text" width="20%" height="12px" />
-                    <Skeleton variant="text" width="60%" height="12px" />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="w-25 md-w-full sm-w-full pl-12 sm-pl-1 border-ec p-20 rounded-5 bg-white">
-              <Skeleton variant="text" width="60%" height="24px" />
-              <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-              <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-              <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-              <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
-              <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
-            </div>
-          </div>
-        </Container>
+        <Skeleton variant="cart" />
       ) : (
         <Container className="bg-white">
-        <style>{`
+          <style>{`
           .cart-mobile-cards {
             display: none;
           }
@@ -223,149 +199,149 @@ const Cart = () => {
           }
         `}</style>
 
-        <div className="py-30 w-full">
+          <div className="py-30 w-full">
 
-          <div className="flex sm-grid-cols-1 gap-12 items-start w-full">
-            {/* Left Column - Selected Items */}
-            <div id="cart-items-section" className="w-75 md-w-full sm-w-full pr-12 sm-pr-1 grid-cols-1 gap-12">
-              <div>
-                <div className="flex justify-between items-center">
-                  <h3 className="mid-text text-dark font-600">Selected Items ({cartItems.length})</h3>
-                  {cartItems.length > 0 && (
-                    <Button
-                      onClick={clearCart}
-                      variant="outline"
-                      bg="danger"
-                      version='v0'
-                    >
-                      Clear All
-                    </Button>
+            <div className="flex sm-grid-cols-1 gap-12 items-start w-full">
+              {/* Left Column - Selected Items */}
+              <div id="cart-items-section" className="w-70 md-w-full sm-w-full pr-8 sm-pr-1 grid-cols-1 gap-12">
+                <div>
+                  <div className="flex justify-between items-center">
+                    <h3 className="mid-text text-dark font-600">Selected Items ({cartItems.length})</h3>
+                    {cartItems.length > 0 && (
+                      <Button
+                        onClick={clearCart}
+                        variant="outline"
+                        bg="danger"
+                        version='v0'
+                      >
+                        Clear All
+                      </Button>
+                    )}
+                  </div>
+
+                  {cartItems.length === 0 ? (
+                    <div className="text-center py-40 grid-cols-1 gap-8 bg-forth rounded-5 mt-10">
+                      <Icon name="Cart" width='28' height='28' color="var(--primary)" className='mx-auto' />
+                      <h4 className="mid-text font-500 capitalize text-dark mt-8">Your cart is empty</h4>
+                      <p className="small-text font-400 text-gray">Browse our product catalog to add products and get quotes.</p>
+                      <div className='mt-12'>
+                        <Button
+                          text="Browse Products"
+                          onClick={() => navigate('/products')}
+                          bg="primary"
+                          version="v2"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="cart-desktop-table">
+                        <Table
+                          data={cartItems}
+                          columns={columns}
+                          showControls={false}
+                          minWidth="100%"
+                        />
+                      </div>
+
+                      <div className="cart-mobile-cards gap-12 mt-10">
+                        {cartItems.map((item) => {
+                          const catName = getCategoryName(item.category);
+                          const colorClass = getCategoryColor(catName);
+                          return (
+                            <div key={item.id} className="bg-white border-ec p-10 rounded-5 flex gap-12 items-start relative">
+                              <Image
+                                src={resolveProductImage(item)}
+                                alt={item.name}
+                                width="80"
+                                height="80"
+                                className="object-cover rounded-5 flex"
+                                style={{ width: "80px", height: "80px", flexShrink: 0 }}
+                              />
+                              <div className="flex-grow pr-30">
+                                <h4 className="small-text font-600 text-dark line-clamp-1 w-85" style={{ margin: 0 }}>
+                                  {item.name}
+                                </h4>
+                                <div className="flex items-center gap-6 mt-6">
+                                  <span
+                                    className={`mini-text capitalize px-8 py-2 rounded-20 font-500 inline-flex ${colorClass}`}
+                                    style={{ whiteSpace: 'nowrap' }}
+                                  >
+                                    {catName}
+                                  </span>
+                                </div>
+                                <div className="flex gap-12 items-center mt-10">
+                                  <div>
+                                    <p className="small-text font-700 text-dark m-0">₹{item.price}</p>
+                                    <p className="mini-text text-gray m-0" style={{ fontSize: "1rem" }}>On Request</p>
+                                  </div>
+                                  <div>
+                                    <Fields
+                                      type="quantity"
+                                      value={item.quantity || 1}
+                                      onChange={(newVal) => updateCartQuantity(item.id, newVal)}
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="absolute top-0 right-0 m-8">
+                                <Button
+                                  variant="outline"
+                                  bg="danger"
+                                  onClick={() => removeFromCart(item.id)}
+                                  title="Remove Item"
+                                  version='v2'
+                                >
+                                  <Icon name="Trash" width="16" height="16" stroke="#c21b1b" />
+                                </Button>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Summary row */}
+                      <div className="flex justify-between items-center p-15">
+                        <p className="small-text text-dark font-500">Total Items ({cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)})</p>
+                        <p className="small-text font-500">Total Price: <span className="text-primary font-500">₹{totalPrice.toLocaleString('en-IN')}</span></p>
+                      </div>
+                    </div>
                   )}
                 </div>
 
-                {cartItems.length === 0 ? (
-                  <div className="text-center py-40 grid-cols-1 gap-8 bg-forth rounded-5 mt-10">
-                    <Icon name="Cart" width='28' height='28' color="var(--primary)" className='mx-auto' />
-                    <h4 className="mid-text font-500 capitalize text-dark mt-8">Your cart is empty</h4>
-                    <p className="small-text font-400 text-gray">Browse our product catalog to add products and get quotes.</p>
-                    <div className='mt-12'>
-                      <Button
-                        text="Browse Products"
-                        onClick={() => navigate('/products')}
-                        bg="primary"
-                        version="v2"
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <div className="cart-desktop-table">
-                      <Table
-                        data={cartItems}
-                        columns={columns}
-                        showControls={false}
-                        minWidth="100%"
-                      />
-                    </div>
-
-                    <div className="cart-mobile-cards gap-12 mt-10">
-                      {cartItems.map((item) => {
-                        const catName = getCategoryName(item.category);
-                        const colorClass = getCategoryColor(catName);
-                        return (
-                          <div key={item.id} className="bg-white border-ec p-10 rounded-5 flex gap-12 items-start relative">
-                            <Image
-                              src={resolveProductImage(item)}
-                              alt={item.name}
-                              width="80"
-                              height="80"
-                              className="object-cover rounded-5 flex"
-                              style={{ width: "80px", height: "80px", flexShrink: 0 }}
-                            />
-                            <div className="flex-grow pr-30">
-                              <h4 className="small-text font-600 text-dark line-clamp-1 w-85" style={{ margin: 0 }}>
-                                {item.name}
-                              </h4>
-                              <div className="flex items-center gap-6 mt-6">
-                                <span
-                                  className={`mini-text capitalize px-8 py-2 rounded-20 font-500 inline-flex ${colorClass}`}
-                                  style={{ whiteSpace: 'nowrap' }}
-                                >
-                                  {catName}
-                                </span>
-                              </div>
-                              <div className="flex gap-12 items-center mt-10">
-                                <div>
-                                  <p className="small-text font-700 text-dark m-0">₹{item.price}</p>
-                                  <p className="mini-text text-gray m-0" style={{ fontSize: "1rem" }}>On Request</p>
-                                </div>
-                                <div>
-                                  <Fields
-                                    type="quantity"
-                                    value={item.quantity || 1}
-                                    onChange={(newVal) => updateCartQuantity(item.id, newVal)}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="absolute top-0 right-0 m-8">
-                              <Button
-                                variant="outline"
-                                bg="danger"
-                                onClick={() => removeFromCart(item.id)}
-                                title="Remove Item"
-                                version='v2'
-                              >
-                                <Icon name="Trash" width="16" height="16" stroke="#c21b1b" />
-                              </Button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    {/* Summary row */}
-                    <div className="flex justify-between items-center p-15">
-                      <p className="small-text text-dark font-500">Total Items ({cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)})</p>
-                      <p className="small-text font-500">Total Price: <span className="text-primary font-500">₹{totalPrice.toLocaleString('en-IN')}</span></p>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="rounded-5 bg-forth p-15">
-                <h4 className="mid-text font-600 text-dark mb-2">ℹ️ Note</h4>
-                <p className="mini-text text-gray m-0">
-                  Prices shown are indicative. Final prices will be provided by suppliers based on your requirements.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column - Submit Enquiry Form */}
-            <div className="w-25 md-w-full sm-w-full pl-12 sm-pl-1">
-              <Suspense fallback={
-                <div className="bg-white border-ec p-20 rounded-5">
-                  <Skeleton variant="text" width="60%" height="24px" />
-                  <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                  <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                  <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                  <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
-                  <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
+                <div className="rounded-5 bg-forth p-15">
+                  <h4 className="mid-text font-600 text-dark mb-2">ℹ️ Note</h4>
+                  <p className="mini-text text-gray m-0">
+                    Prices shown are indicative. Final prices will be provided by suppliers based on your requirements.
+                  </p>
                 </div>
-              }>
-                <ProductEnquiryForm
-                  isCart={true}
-                  cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
-                  onClearCart={clearCart}
-                />
-              </Suspense>
+              </div>
+
+              {/* Right Column - Submit Enquiry Form */}
+              <div className="w-30 md-w-full sm-w-full pl-8 sm-pl-1">
+                <Suspense fallback={
+                  <div className="bg-white border-ec p-20 rounded-5">
+                    <Skeleton variant="text" width="60%" height="24px" />
+                    <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                    <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                    <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                    <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
+                    <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
+                  </div>
+                }>
+                  <ProductEnquiryForm
+                    isCart={true}
+                    cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
+                    onClearCart={clearCart}
+                  />
+                </Suspense>
+              </div>
             </div>
+
+
           </div>
-
-
-        </div>
-      </Container>
-    )}
+        </Container>
+      )}
 
       <LazySection placeholderHeight={300}>
         <Suspense fallback={
