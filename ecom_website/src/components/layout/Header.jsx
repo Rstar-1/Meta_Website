@@ -55,7 +55,7 @@ const Header = () => {
       <style>{`
         .top-nav-link {
           font-size: 11px;
-          font-weight: 700;
+          font-weight: 600;
           letter-spacing: 0.5px;
           text-transform: uppercase;
           color: #1e293b;
@@ -80,10 +80,10 @@ const Header = () => {
         }
         .cat-nav-link {
           font-size: 11.5px;
-          font-weight: 700;
+          font-weight: 500;
           letter-spacing: 0.5px;
           text-transform: uppercase;
-          color: #1e293b;
+          color: var(--dark);
           text-decoration: none;
           padding: 14px 12px;
           display: flex;
@@ -135,148 +135,148 @@ const Header = () => {
       >
         <div className="flex items-center justify-between w-full" style={{ minHeight: "52px" }}>
 
-            {/* LEFT: BRAND LOGO */}
-            <div className="flex items-center">
-              <NavLink to={headerConfig.logo.path} className="flex items-center" style={{ textDecoration: 'none' }}>
-                <Image
-                  src={headerConfig.logo.src}
-                  alt={headerConfig.logo.alt}
-                  width="155"
-                  height="46"
-                  loading="eager"
-                  style={{ maxHeight: '46px', width: 'auto', objectFit: 'contain' }}
-                />
-              </NavLink>
-            </div>
-
-            {/* MIDDLE LEFT LINKS */}
-            <div className="flex items-center ml-20">
-              {headerConfig.topNav.left.map((item, idx) => (
-                <div key={item.id} className="flex items-center">
-                  {idx > 0 && <div className="header-v-divider" />}
-                  {item.hasDropdown ? (
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setActiveTopDropdown(item.id)}
-                      onMouseLeave={() => setActiveTopDropdown(null)}
-                    >
-                      <span className="top-nav-link">
-                        {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                      </span>
-                      <Dropdown isOpen={activeTopDropdown === item.id} align="left">
-                        {renderTopSubmenu(item.submenu)}
-                      </Dropdown>
-                    </div>
-                  ) : (
-                    <NavLink to={item.path} className="top-nav-link">
-                      {item.label}
-                    </NavLink>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* RIGHT UTILITY LINKS */}
-            <div className="flex items-center">
-              {/* SEARCH WITH DROPDOWN */}
-              <div
-                className="relative"
-                onMouseEnter={() => setIsSearchOpen(true)}
-                onMouseLeave={() => setIsSearchOpen(false)}
-              >
-                <div
-                  className="top-nav-link"
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
-                >
-                  <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                </div>
-                <Dropdown
-                  isOpen={isSearchOpen}
-                  onClose={() => setIsSearchOpen(false)}
-                  align="right"
-                  minWidth="340px"
-                  padding="10px"
-                  style={{ top: "100%", zIndex: 1001 }}
-                >
-                  <Fields
-                    type="text"
-                    placeholder="Search products & solutions..."
-                    icon="Search"
-                    iconPosition="right"
-                    value={searchQuery}
-                    onChange={setSearchQuery}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        setIsSearchOpen(false);
-                        navigate(`/products?search=${searchQuery}`);
-                      }
-                    }}
-                    autoFocus
-                  />
-                </Dropdown>
-              </div>
-
-              <div className="header-v-divider" />
-
-              {headerConfig.topNav.right.map((item, idx) => (
-                <div key={item.id} className="flex items-center">
-                  {idx > 0 && <div className="header-v-divider" />}
-                  {item.hasDropdown ? (
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setActiveTopDropdown(item.id)}
-                      onMouseLeave={() => setActiveTopDropdown(null)}
-                    >
-                      <span className="top-nav-link">
-                        {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                      </span>
-                      <Dropdown isOpen={activeTopDropdown === item.id} align="right">
-                        {renderTopSubmenu(item.submenu)}
-                      </Dropdown>
-                    </div>
-                  ) : (
-                    <NavLink to={item.path} className="top-nav-link">
-                      {item.label}
-                    </NavLink>
-                  )}
-                </div>
-              ))}
-
-              <div className="header-v-divider" />
-
-              {/* ACCOUNT USER ICON */}
-              <NavLink to="/connect" className="top-nav-link p-4" title="User Account">
-                <Icon name="Users" width="17" height="17" stroke="currentColor" />
-              </NavLink>
-
-              <div className="header-v-divider" />
-
-              {/* SHOPPING BAG CART ICON */}
-              <NavLink
-                to="/cart"
-                className="relative top-nav-link"
-                style={{ padding: "4px 8px" }}
-                title="Enquiry Cart"
-              >
-                <Icon name="Bag" width="18" height="18" stroke="currentColor" />
-                <span
-                  className="absolute text-white rounded-full flex items-center justify-center font-700"
-                  style={{
-                    top: "-3px",
-                    right: "-2px",
-                    fontSize: "9px",
-                    width: "16px",
-                    height: "16px",
-                    backgroundColor: "#0284c7"
-                  }}
-                >
-                  {cartCount}
-                </span>
-              </NavLink>
-
-            </div>
+          {/* LEFT: BRAND LOGO */}
+          <div className="flex items-center">
+            <NavLink to={headerConfig.logo.path} className="flex items-center" style={{ textDecoration: 'none' }}>
+              <Image
+                src={headerConfig.logo.src}
+                alt={headerConfig.logo.alt}
+                width="155"
+                height="46"
+                loading="eager"
+                style={{ maxHeight: '46px', width: 'auto', objectFit: 'contain' }}
+              />
+            </NavLink>
           </div>
-        </Container>
+
+          {/* MIDDLE LEFT LINKS */}
+          <div className="flex items-center ml-20">
+            {headerConfig.topNav.left.map((item, idx) => (
+              <div key={item.id} className="flex items-center">
+                {idx > 0 && <div className="header-v-divider" />}
+                {item.hasDropdown ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveTopDropdown(item.id)}
+                    onMouseLeave={() => setActiveTopDropdown(null)}
+                  >
+                    <span className="top-nav-link">
+                      {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                    </span>
+                    <Dropdown isOpen={activeTopDropdown === item.id} align="left">
+                      {renderTopSubmenu(item.submenu)}
+                    </Dropdown>
+                  </div>
+                ) : (
+                  <NavLink to={item.path} className="top-nav-link">
+                    {item.label}
+                  </NavLink>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* RIGHT UTILITY LINKS */}
+          <div className="flex items-center">
+            {/* SEARCH WITH DROPDOWN */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsSearchOpen(true)}
+              onMouseLeave={() => setIsSearchOpen(false)}
+            >
+              <div
+                className="top-nav-link"
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+              >
+                <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+              </div>
+              <Dropdown
+                isOpen={isSearchOpen}
+                onClose={() => setIsSearchOpen(false)}
+                align="right"
+                minWidth="340px"
+                padding="10px"
+                style={{ top: "100%", zIndex: 1001 }}
+              >
+                <Fields
+                  type="text"
+                  placeholder="Search products & solutions..."
+                  icon="Search"
+                  iconPosition="right"
+                  value={searchQuery}
+                  onChange={setSearchQuery}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      setIsSearchOpen(false);
+                      navigate(`/products?search=${searchQuery}`);
+                    }
+                  }}
+                  autoFocus
+                />
+              </Dropdown>
+            </div>
+
+            <div className="header-v-divider" />
+
+            {headerConfig.topNav.right.map((item, idx) => (
+              <div key={item.id} className="flex items-center">
+                {idx > 0 && <div className="header-v-divider" />}
+                {item.hasDropdown ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveTopDropdown(item.id)}
+                    onMouseLeave={() => setActiveTopDropdown(null)}
+                  >
+                    <span className="top-nav-link">
+                      {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                    </span>
+                    <Dropdown isOpen={activeTopDropdown === item.id} align="right">
+                      {renderTopSubmenu(item.submenu)}
+                    </Dropdown>
+                  </div>
+                ) : (
+                  <NavLink to={item.path} className="top-nav-link">
+                    {item.label}
+                  </NavLink>
+                )}
+              </div>
+            ))}
+
+            <div className="header-v-divider" />
+
+            {/* ACCOUNT USER ICON */}
+            <NavLink to="/connect" className="top-nav-link p-4" title="User Account">
+              <Icon name="Users" width="17" height="17" stroke="currentColor" />
+            </NavLink>
+
+            <div className="header-v-divider" />
+
+            {/* SHOPPING BAG CART ICON */}
+            <NavLink
+              to="/cart"
+              className="relative top-nav-link"
+              style={{ padding: "4px 8px" }}
+              title="Enquiry Cart"
+            >
+              <Icon name="Bag" width="18" height="18" stroke="currentColor" />
+              <span
+                className="absolute text-white rounded-full flex items-center justify-center font-700"
+                style={{
+                  top: "-3px",
+                  right: "-2px",
+                  fontSize: "9px",
+                  width: "16px",
+                  height: "16px",
+                  backgroundColor: "#0284c7"
+                }}
+              >
+                {cartCount}
+              </span>
+            </NavLink>
+
+          </div>
+        </div>
+      </Container>
 
       {/* MOBILE HEADER BAR */}
       <div className="hidden md-block sm-block px-15 py-10" style={{ borderBottom: "1px solid #e2e8f0", position: "sticky", top: 0, zIndex: 999, backgroundColor: "#ffffff" }}>
