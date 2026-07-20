@@ -539,6 +539,75 @@ const Skeleton = ({
     );
   }
 
+  if (variant === "order") {
+    return (
+      <Container>
+        <div className="grid-cols-1 gap-10 w-full py-30">
+          <div className="border-ec p-20 rounded-10 bg-white flex flex-column gap-20">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-10">
+                <S variant="rect" width="160px" height="24px" borderRadius="4px" />
+                <S variant="rect" width="80px" height="20px" borderRadius="12px" />
+              </div>
+              <S variant="rect" width="140px" height="36px" borderRadius="6px" />
+            </div>
+            <S variant="text" width="200px" height="12px" style={{ margin: 0 }} />
+
+            {/* Stepper Timeline */}
+            <div className="grid-cols-4 sm-grid-cols-2 gap-12 my-20">
+              {Array.from({ length: 4 }).map((_, idx) => (
+                <div key={idx} className="flex flex-column items-center text-center gap-8">
+                  <S variant="circle" width="48px" height="48px" />
+                  <S variant="text" width="90px" height="14px" style={{ margin: 0 }} />
+                  <S variant="text" width="110px" height="10px" style={{ margin: 0 }} />
+                </div>
+              ))}
+            </div>
+
+            {/* Alert banner */}
+            <S variant="rect" width="100%" height="45px" borderRadius="8px" />
+          </div>
+
+          {/* Bottom Row: Details & Summary */}
+          <div className="flex w-full sm-grid-cols-1 gap-12">
+            <div className="border-ec p-20 rounded-10 bg-white grid-cols-1 gap-12 w-70">
+              <S variant="rect" width="120px" height="20px" borderRadius="4px" />
+              <div className="flex gap-12 items-start p-12 border-ec rounded-8">
+                <S variant="rect" width="80px" height="80px" borderRadius="6px" />
+                <div className="grid-cols-1 gap-8">
+                  <div className="flex justify-between items-center gap-6 ">
+                    <S variant="rect" width="180px" height="18px" borderRadius="4px" />
+                    <S variant="rect" width="60px" height="18px" borderRadius="4px" />
+                  </div>
+                  <S variant="rect" width="120px" height="16px" borderRadius="10px" />
+                  <S variant="text" width="220px" height="12px" style={{ margin: 0 }} />
+                </div>
+              </div>
+              <div className="flex justify-center mt-10">
+                <S variant="rect" width="130px" height="36px" borderRadius="6px" />
+              </div>
+            </div>
+
+            {/* Right Summary */}
+            <div className="border-ec p-20 rounded-10 bg-white grid-cols-1 gap-12 w-30">
+              {Array.from({ length: 3 }).map((_, idx) => (
+                <div key={idx} className="flex justify-between items-center">
+                  <S variant="text" width="70px" height="14px" style={{ margin: 0 }} />
+                  <S variant="text" width="50px" height="14px" style={{ margin: 0 }} />
+                </div>
+              ))}
+              <div style={{ height: "1px", backgroundColor: "#ececec" }} />
+              <div className="flex justify-between items-center">
+                <S variant="text" width="90px" height="16px" style={{ margin: 0 }} />
+                <S variant="text" width="70px" height="18px" style={{ margin: 0 }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    );
+  }
+
   return (
     <>
       {Array.from({ length: count }).map((_, idx) => (
