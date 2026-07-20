@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FormBuilder from '../common/FormBuilder';
+import { getCart } from '../../utils/cartHelper';
 
 const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
+  const navigate = useNavigate();
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const fields = isCart ? [
@@ -95,13 +98,21 @@ const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
 
     window.location.href = smsUrl;
 
+    if (isCart) {
+      const currentCart = getCart();
+      if (currentCart && currentCart.length > 0) {
+        localStorage.setItem('order_products', JSON.stringify(currentCart));
+      }
+    }
+
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);
-      if (isCart && onClearCart) {
-        onClearCart();
+      if (isCart) {
+        if (onClearCart) onClearCart();
+        navigate('/order');
       }
-    }, 4000);
+    }, 1500);
   };
 
   return (
