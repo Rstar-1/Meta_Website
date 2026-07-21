@@ -25,16 +25,18 @@ const Button = ({
   iconHeight = "16",
   iconStrokeWidth = "2.5",
   iconPosition = "left",
+  iconFill,
+  iconStroke,
   ...props
 }) => {
-  const borderClass = variant === "outline" ? `border-${bg}` : "border-0";
-  const bgClass = variant === "outline" ? "bg-transparent" : `bg-${bg}`;
-  const textClass = variant === "outline" ? `text-${bg}` : `text-${color}`;
+  const borderClass = variant === "outline" ? (bg.startsWith('#') || bg.startsWith('rgb') ? "" : `border-${bg}`) : "border-0";
+  const bgClass = variant === "outline" ? "bg-transparent" : (bg.startsWith('#') || bg.startsWith('rgb') ? "" : `bg-${bg}`);
+  const textClass = variant === "outline" ? (bg.startsWith('#') || bg.startsWith('rgb') ? "" : `text-${bg}`) : (color.startsWith('#') || color.startsWith('rgb') ? "" : `text-${color}`);
 
   const versionClass = VERSION_CLASSES[version] || "w-full py-7 small-text";
   const buttonClass = `${versionClass} rounded-5 ${borderClass}`;
 
-  const defaultStroke = style.color || (variant === "outline" ? "currentColor" : color);
+  const defaultStroke = iconStroke || style.color || (variant === "outline" ? "currentColor" : color);
 
   const iconElement = icon && (
     <Icon
@@ -43,6 +45,7 @@ const Button = ({
       height={iconHeight}
       strokeWidth={iconStrokeWidth}
       stroke={defaultStroke}
+      fill={iconFill}
     />
   );
 
