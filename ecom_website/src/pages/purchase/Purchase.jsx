@@ -5,14 +5,23 @@ import Container from '../../components/common/Container';
 import Skeleton from '../../components/common/Skeleton';
 import { cms } from '../../utils/apiData';
 
-import Marketing from './sections/Marketing';
-
 // Lazy Loaded Sections
+const Marketing = lazy(() => import('./sections/Marketing'));
 const LatestArticles = lazy(() => import('../home/sections/LatestArticles'));
 const BusinessPromo = lazy(() => import('../home/sections/BusinessPromo'));
 const Review = lazy(() => import('../home/sections/Review'));
 
 const lazySections = [
+    {
+        Component: Marketing,
+        height: 500,
+        noContainer: true,
+        fallback: (
+            <Container version="v2" style={{ background: 'linear-gradient(135deg, #041022 0%, #081a36 50%, #051329 100%)' }}>
+                <Skeleton variant="where" theme="dark" />
+            </Container>
+        ),
+    },
     {
         Component: LatestArticles,
         height: 500,
@@ -50,9 +59,6 @@ const Purchase = () => {
                 title="Find Responsive Products Near You | Authorized Dealer Locator"
                 description="Connect with our sales team to find authorized dealers for genuine PVC sheets, rolls, strip curtains, and SS hardware near your location."
             />
-
-            {/* Top Hero Marketing Section */}
-            <Marketing cms={cms} />
 
             {/* Lazy Loaded Sections with Skeleton Loaders */}
             {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer }, index) => (

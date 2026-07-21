@@ -92,6 +92,25 @@ const Skeleton = ({
     );
   }
 
+  // Where To Buy / Marketing Hero Section Skeleton
+  if (variant === "where") {
+    return (
+      <div className={`grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full py-30 ${className}`} style={{ minHeight: '450px', ...style }}>
+        <div className="relative grid-cols-1 gap-12 pr-12 sm-pr-1">
+          <S variant="rect" width="85%" height="70px" borderRadius="6px" theme="dark" />
+          <S variant="rect" width="90%" height="40px" borderRadius="4px" theme="dark" />
+          <div className="flex items-center gap-12 mt-20">
+            <S variant="rect" width="150px" height="42px" borderRadius="8px" theme="dark" />
+            <S variant="rect" width="160px" height="42px" borderRadius="8px" theme="dark" />
+          </div>
+        </div>
+        <div className="w-full">
+          <S variant="rect" width="100%" height="450px" borderRadius="6px" theme="dark" />
+        </div>
+      </div>
+    );
+  }
+
   // Browse Category Section Skeleton
   if (variant === "browse-category") {
     return (

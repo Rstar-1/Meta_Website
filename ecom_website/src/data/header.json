@@ -47,7 +47,7 @@
       {
         "id": "where-to-buy",
         "label": "WHERE TO BUY",
-        "path": "/connect",
+        "path": "/wheretobuy",
         "hasDropdown": false
       }
     ]
