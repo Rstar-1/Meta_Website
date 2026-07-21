@@ -205,7 +205,7 @@ const Products = () => {
 
   const renderFilters = () => {
     return (
-      <div className="bg-white border-ec p-12 rounded-10">
+      <div>
         <div className="flex items-center justify-between">
           <h3 className="headmini-text text-dark font-600">
             Filter By
