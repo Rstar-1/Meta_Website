@@ -110,7 +110,13 @@ const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
       setFormSubmitted(false);
       if (isCart) {
         if (onClearCart) onClearCart();
-        navigate('/order');
+        const ecomEnv = import.meta.env.ECOM ?? import.meta.env.VITE_ECOM;
+        const isEcom = String(ecomEnv).toLowerCase() === 'true';
+        if (isEcom) {
+          navigate('/order');
+        } else {
+          navigate('/wheretobuy');
+        }
       }
     }, 1500);
   };

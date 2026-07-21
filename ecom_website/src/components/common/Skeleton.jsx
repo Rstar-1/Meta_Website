@@ -17,7 +17,7 @@ const Skeleton = ({
   width,
   height,
   borderRadius,
-  count = 1,
+  count,
   className = "",
   theme = "light", // "light" | "dark" | "adaptive"
   animation = "shimmer", // "shimmer" | "pulse" | "none"
@@ -25,6 +25,7 @@ const Skeleton = ({
   columns = [],
   ...props
 }) => {
+  const itemCount = count !== undefined ? count : (variant === "card-grid" || variant === "articles" ? 4 : 1);
   const themes = {
     light: { bg: "#e2e8f0", grad: "linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%)" },
     dark: { bg: "#1e293b", grad: "linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%)" },
@@ -161,7 +162,7 @@ const Skeleton = ({
   if (variant === "review-section") {
     return (
       <div className={`w-full py-40 ${className}`} style={{ minHeight: '400px', ...style }}>
-        <div className="flex md-flex-column sm-flex-column items-center gap-16">
+        <div className="flex md-flex-column sm-grid-cols-1 items-center gap-16">
           <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
             <S variant="rect" width="140px" height="28px" borderRadius="4px" />
             <S variant="text" width="80px" height="12px" />
@@ -214,7 +215,7 @@ const Skeleton = ({
   if (variant === "card-grid") {
     return (
       <div className={`grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12 ${className}`} style={style}>
-        <S variant="card" count={count} />
+        <S variant="card" count={itemCount} />
       </div>
     );
   }
@@ -224,7 +225,7 @@ const Skeleton = ({
     return (
       <div className={`pt-30 pb-20 w-full ${className}`} style={{ minHeight: '500px', ...style }}>
         <S variant="section-header" width="220px" />
-        <S variant="card-grid" count={count || 4} />
+        <S variant="card-grid" count={itemCount} />
       </div>
     );
   }
@@ -233,7 +234,7 @@ const Skeleton = ({
   if (variant === "promo") {
     return (
       <div className={`w-full py-40 ${className}`} style={{ minHeight: '300px', ...style }}>
-        <div className="flex sm-flex-column items-center justify-between p-40 sm-p-20 gap-12 relative overflow-hidden rounded-5" style={{ background: 'linear-gradient(135deg, #020712 0%, #081026 100%)' }}>
+        <div className="flex sm-grid-cols-1 items-center justify-between p-40 sm-p-20 gap-12 relative overflow-hidden rounded-5" style={{ background: 'linear-gradient(135deg, #020712 0%, #081026 100%)' }}>
           <div className="w-60 sm-w-full pr-12 sm-pr-1 flex flex-column gap-12">
             <S variant="rect" width="180px" height="24px" borderRadius="20px" theme="dark" />
             <S variant="rect" width="70%" height="36px" borderRadius="4px" theme="dark" />
@@ -387,7 +388,7 @@ const Skeleton = ({
     const cardBg = theme === "dark" ? "#0f172a" : theme === "light" ? "#ffffff" : "rgba(255,255,255,0.05)";
     return (
       <>
-        {Array.from({ length: count }).map((_, idx) => (
+        {Array.from({ length: itemCount }).map((_, idx) => (
           <div
             key={idx}
             className={`rounded-5 ${className}`}
@@ -420,10 +421,10 @@ const Skeleton = ({
     const cardBg = theme === "dark" ? "#0f172a" : theme === "light" ? "#ffffff" : "rgba(255,255,255,0.05)";
     return (
       <>
-        {Array.from({ length: count }).map((_, idx) => (
+        {Array.from({ length: itemCount }).map((_, idx) => (
           <div
             key={idx}
-            className={`w-full flex sm-flex-column rounded-5 overflow-hidden mb-20 ${className}`}
+            className={`w-full flex sm-grid-cols-1 rounded-5 overflow-hidden mb-20 ${className}`}
             style={{
               background: cardBg,
               boxShadow: theme === "light" ? "0 4px 6px -1px rgba(0,0,0,0.05)" : "none",
@@ -679,7 +680,7 @@ const Skeleton = ({
 
   return (
     <>
-      {Array.from({ length: count }).map((_, idx) => (
+      {Array.from({ length: itemCount }).map((_, idx) => (
         <div
           key={idx}
           className={`skeleton-element ${className}`}

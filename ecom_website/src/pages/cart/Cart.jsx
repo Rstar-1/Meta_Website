@@ -224,12 +224,12 @@ const Cart = () => {
                       <Icon name="Cart" width='28' height='28' color="var(--primary)" className='mx-auto' />
                       <h4 className="mid-text font-500 capitalize text-dark mt-8">Your cart is empty</h4>
                       <p className="small-text font-400 text-gray">Browse our product catalog to add products and get quotes.</p>
-                      <div className='mt-12'>
+                      <div className='mt-8'>
                         <Button
                           text="Browse Products"
                           onClick={() => navigate('/products')}
                           bg="primary"
-                          version="v2"
+                          version="v0"
                         />
                       </div>
                     </div>
