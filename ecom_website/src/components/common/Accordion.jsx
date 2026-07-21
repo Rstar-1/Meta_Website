@@ -49,7 +49,7 @@ const Accordion = ({
                 return (
                     <div
                         key={id}
-                        className={`bordb transition-all py-15 ${itemClassName}`}
+                        className={`bordb py-15 ${itemClassName}`}
                     >
                         <div
                             style={{
