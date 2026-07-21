@@ -54,7 +54,7 @@ const BusinessPromo = ({ cms }) => {
         {/* Right Product Image & Badge */}
         <div className="relative flex items-center justify-center w-40 sm-w-full sm-mt-10 pl-12 sm-pl-1">
           <Image
-            src={pvcSheetsIndustrial}
+            src="/pvc_sheets_industrial.webp"
             alt="Industrial PVC Rolls"
             width={400}
             height={250}

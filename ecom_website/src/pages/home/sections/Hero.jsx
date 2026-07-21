@@ -1,7 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Container from '../../../components/common/Container';
-import Button from '../../../components/common/Button';
 import Icon from '../../../components/common/Icon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
@@ -9,42 +7,17 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 
-import pvcFactoryVideo from '../../../assets/pvc_factory_video.mp4';
-import pvcRollsVideo from '../../../assets/pvc_rolls.mp4';
-
 const Hero = ({ cms }) => {
-  const navigate = useNavigate();
-
   if (!cms) return null;
 
-  const features = cms.hero.features;
-
   const videoSlides = [
-    { src: pvcFactoryVideo, alt: '/pvc_factory_video.mp4' },
-    { src: pvcRollsVideo, alt: '/pvc_rolls.mp4' }
+    { src: '/pvc_factory_video.mp4' },
+    { src: '/pvc_rolls.mp4' }
   ];
 
   return (
-    <div className="relative overflow-hidden">
-      {/* Custom styles for Swiper video pagination dots */}
-      <style>{`
-        .hero-video-swiper .swiper-pagination {
-          bottom: 20px !important;
-          z-index: 5 !important;
-        }
-        .hero-video-swiper .swiper-pagination-bullet {
-          background: rgba(255, 255, 255, 0.4);
-          opacity: 1;
-          transition: all 0.3s ease;
-        }
-        .hero-video-swiper .swiper-pagination-bullet-active {
-          background: var(--primary, #1e74db);
-          width: 24px;
-          border-radius: 4px;
-        }
-      `}</style>
-
-      {/* Background HTML5 Video Swiper Carousel */}
+    <div className="relative overflow-hidden" style={{ backgroundColor: '#0a1120', minHeight: '500px', width: '100%' }}>
+      {/* Background HTML5 Video Swiper Carousel - 2 Video Slides */}
       <Swiper
         modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"
@@ -59,7 +32,7 @@ const Hero = ({ cms }) => {
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: 0
+          zIndex: 1
         }}
       >
         {videoSlides.map((slide, idx) => (
@@ -69,6 +42,9 @@ const Hero = ({ cms }) => {
               loop
               muted
               playsInline
+              poster="/hero.webp"
+              fetchPriority="high"
+              preload={idx === 0 ? "auto" : "metadata"}
               style={{
                 width: '100%',
                 height: '100%',
@@ -77,7 +53,6 @@ const Hero = ({ cms }) => {
               }}
             >
               <source src={slide.src} type="video/mp4" />
-              <source src={slide.alt} type="video/mp4" />
             </video>
           </SwiperSlide>
         ))}
@@ -92,13 +67,13 @@ const Hero = ({ cms }) => {
           width: '100%',
           height: '100%',
           background: "linear-gradient(to top, rgba(3, 6, 16, 0.95) 20%, rgba(3, 6, 16, 0.65) 45%, rgba(13, 21, 37, 0.15) 90%)",
-          zIndex: 1,
+          zIndex: 2,
           pointerEvents: 'none'
         }}
       />
 
       <Container className='relative z-10'>
-        <div className="w-full h-550 flex items-end">
+        <div className="w-full h-500 flex items-end">
 
           {/* Left Column: Text & Features */}
           <div className="w-70 py-40">

@@ -9,10 +9,10 @@ import Skeleton from '../../components/common/Skeleton';
 import { cms } from '../../utils/apiData';
 
 import Hero from './sections/Hero';
+import BrowseCategory from './sections/BrowseCategory';
+import LatestProducts from './sections/LatestProducts';
 
 // Lazy Loaded Sections
-const BrowseCategory = lazy(() => import('./sections/BrowseCategory'));
-const LatestProducts = lazy(() => import('./sections/LatestProducts'));
 const WhyChoose = lazy(() => import('./sections/WhyChoose'));
 const LatestArticles = lazy(() => import('./sections/LatestArticles'));
 const PopularProducts = lazy(() => import('./sections/PopularProducts'));
@@ -20,33 +20,6 @@ const BusinessPromo = lazy(() => import('./sections/BusinessPromo'));
 const Review = lazy(() => import('./sections/Review'));
 
 const lazySections = [
-  {
-    Component: BrowseCategory,
-    height: 180,
-    containerClass: 'bg-forth',
-    fallback: (
-      <Container className="bg-forth">
-        <Skeleton variant="browse-category" theme="adaptive" />
-      </Container>
-    ),
-  },
-  {
-    Component: LatestProducts,
-    height: 1350,
-    containerClass: 'bg-white',
-    fallback: (
-      <Container className="bg-white">
-        <div className='w-full' style={{ minHeight: '1350px' }}>
-          {['PVC Sheet', 'PVC Roll', 'PVC Strip Curtains'].map((name, catIndex) => (
-            <div key={catIndex} className="py-30 w-full">
-              <Skeleton variant="section-header" theme="adaptive" />
-              <Skeleton variant="card-grid" count={4} theme="adaptive" />
-            </div>
-          ))}
-        </div>
-      </Container>
-    ),
-  },
   {
     Component: WhyChoose,
     height: 350,
@@ -127,6 +100,14 @@ const Home = () => {
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero cms={cms} />
+
+      <Container className="bg-forth" version="v2">
+        <BrowseCategory cms={cms} />
+      </Container>
+
+      <Container className="bg-white" version="v2">
+        <LatestProducts cms={cms} />
+      </Container>
 
       {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer }, index) => (
         <LazySection key={index} placeholderHeight={height}>

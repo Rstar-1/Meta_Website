@@ -1,4 +1,5 @@
 import placeholder from '../assets/placeholder.webp';
+import hero from '../assets/hero.webp';
 // Import standard product images
 import printerHp88a from '../assets/printer_hp_88a.webp';
 import printerCanon74s from '../assets/printer_canon_74s.webp';
@@ -42,9 +43,9 @@ import pvc_plain_pvc_clear_sheet_2 from '../assets/pvc_plain-pvc-clear-sheet_2.w
 import pvc_plain_pvc_roll_1 from '../assets/pvc_plain-pvc-roll_1.webp';
 import pvc_polar_pvc_strip_curtain_1 from '../assets/pvc_polar-pvc-strip-curtain_1.webp';
 import pvc_polar_pvc_strip_curtain_3 from '../assets/pvc_polar-pvc-strip-curtain_3.webp';
-import pvc_ac_curtain_1 from '../assets/pvc_pvc-ac-curtain_1.webp';
-import pvc_ac_curtain_2 from '../assets/pvc_pvc-ac-curtain_2.webp';
-import pvc_clear_sheet_1 from '../assets/pvc_pvc-clear-sheet_1.webp';
+import pvc_pvc_ac_curtain_1 from '../assets/pvc_pvc-ac-curtain_1.webp';
+import pvc_pvc_ac_curtain_2 from '../assets/pvc_pvc-ac-curtain_2.webp';
+import pvc_pvc_clear_sheet_1 from '../assets/pvc_pvc-clear-sheet_1.webp';
 import pvc_pvc_clear_sheet_3 from '../assets/pvc_pvc-clear-sheet_3.webp';
 import pvc_clear_sheet from '../assets/pvc_clear_sheet.webp';
 import pvc_sheets_industrial from '../assets/pvc_sheets_industrial.webp';
@@ -53,20 +54,20 @@ import pvc_transparent_roll from '../assets/pvc_transparent_roll.webp';
 import pvc_curtain_industrial from '../assets/pvc_curtain_industrial.webp';
 import pvc_bracket_industrial from '../assets/pvc_bracket_industrial.webp';
 import pvc_polar_curtain from '../assets/pvc_polar_curtain.webp';
-import pvc_film_1 from '../assets/pvc_pvc-film_1.webp';
-import pvc_film_5 from '../assets/pvc_pvc-film_5.webp';
-import pvc_flexible_clear_sheet_1 from '../assets/pvc_pvc-flexible-clear-sheet_1.webp';
+import pvc_pvc_film_1 from '../assets/pvc_pvc-film_1.webp';
+import pvc_pvc_film_5 from '../assets/pvc_pvc-film_5.webp';
+import pvc_pvc_flexible_clear_sheet_1 from '../assets/pvc_pvc-flexible-clear-sheet_1.webp';
 import pvc_pvc_flexible_clear_sheet_3 from '../assets/pvc_pvc-flexible-clear-sheet_3.webp';
-import pvc_rainbow_clear_sheet_1 from '../assets/pvc_pvc-rainbow-clear-sheet_1.webp';
+import pvc_pvc_rainbow_clear_sheet_1 from '../assets/pvc_pvc-rainbow-clear-sheet_1.webp';
 import pvc_pvc_rainbow_clear_sheet_2 from '../assets/pvc_pvc-rainbow-clear-sheet_2.webp';
-import pvc_reinforced_sheet_1 from '../assets/pvc_pvc-reinforced-sheet_1.webp';
+import pvc_pvc_reinforced_sheet_1 from '../assets/pvc_pvc-reinforced-sheet_1.webp';
 import pvc_pvc_reinforced_sheet_2 from '../assets/pvc_pvc-reinforced-sheet_2.webp';
-import pvc_strip_curtain_1 from '../assets/pvc_pvc-strip-curtain_1.webp';
+import pvc_pvc_strip_curtain_1 from '../assets/pvc_pvc-strip-curtain_1.webp';
 import pvc_pvc_strip_curtain_3 from '../assets/pvc_pvc-strip-curtain_3.webp';
-import pvc_strip_curtains_hanger_1 from '../assets/pvc_pvc-strip-curtains-hanger_1.webp';
+import pvc_pvc_strip_curtains_hanger_1 from '../assets/pvc_pvc-strip-curtains-hanger_1.webp';
 import pvc_pvc_strip_curtains_hanger_2 from '../assets/pvc_pvc-strip-curtains-hanger_2.webp';
-import pvc_super_clear_sheet_1 from '../assets/pvc_pvc-super-clear-sheet_1.webp';
-import pvc_transparent_curtains_1 from '../assets/pvc_pvc-transparent-curtains_1.webp';
+import pvc_pvc_super_clear_sheet_1 from '../assets/pvc_pvc-super-clear-sheet_1.webp';
+import pvc_pvc_transparent_curtains_1 from '../assets/pvc_pvc-transparent-curtains_1.webp';
 import pvc_red_welding_grade_pvc_strip_curtain_1 from '../assets/pvc_red-welding-grade-pvc-strip-curtain_1.webp';
 import pvc_red_welding_grade_pvc_strip_curtain_2 from '../assets/pvc_red-welding-grade-pvc-strip-curtain_2.webp';
 import pvc_shamita_clear_transparent_pvc_roll_1 from '../assets/pvc_shamita-clear-transparent-pvc-roll_1.webp';
@@ -91,6 +92,7 @@ import pvc_yellow_anti_insect_pvc_strips_curtain_2 from '../assets/pvc_yellow-an
 
 const assetMap = {
   '/src/assets/placeholder.webp': placeholder,
+  '/src/assets/hero.webp': hero,
   '/src/assets/printer_hp_88a.webp': printerHp88a,
   '/src/assets/printer_canon_74s.webp': printerCanon74s,
   '/src/assets/printer_canon_746.webp': printerCanon746,
@@ -111,7 +113,7 @@ const assetMap = {
   '/src/assets/pvc_ball_valve.webp': pvcBallValve,
 
   '/src/assets/pvc_clear_sheet.webp': pvc_clear_sheet,
-  '/src/assets/pvc_sheets_industrial.webp': pvc_sheets_industrial,
+  '/src/assets/pvc_sheets_industrial.webp': '/pvc_sheets_industrial.webp',
   '/src/assets/pvc_plain-pvc-clear-sheet_2.webp': pvc_plain_pvc_clear_sheet_2,
   '/src/assets/pvc_pvc-clear-sheet_3.webp': pvc_pvc_clear_sheet_3,
   '/src/assets/pvc_pvc-flexible-clear-sheet_3.webp': pvc_pvc_flexible_clear_sheet_3,
@@ -154,16 +156,16 @@ const assetMap = {
   '/src/assets/pvc_plain-pvc-clear-sheet_1.webp': pvc_plain_pvc_clear_sheet_1,
   '/src/assets/pvc_plain-pvc-roll_1.webp': pvc_plain_pvc_roll_1,
   '/src/assets/pvc_polar-pvc-strip-curtain_1.webp': pvc_polar_pvc_strip_curtain_1,
-  '/src/assets/pvc_pvc-ac-curtain_1.webp': pvc_ac_curtain_1,
-  '/src/assets/pvc_pvc-clear-sheet_1.webp': pvc_clear_sheet_1,
-  '/src/assets/pvc_pvc-film_1.webp': pvc_film_1,
-  '/src/assets/pvc_pvc-flexible-clear-sheet_1.webp': pvc_flexible_clear_sheet_1,
-  '/src/assets/pvc_pvc-rainbow-clear-sheet_1.webp': pvc_rainbow_clear_sheet_1,
-  '/src/assets/pvc_pvc-reinforced-sheet_1.webp': pvc_reinforced_sheet_1,
-  '/src/assets/pvc_pvc-strip-curtain_1.webp': pvc_strip_curtain_1,
-  '/src/assets/pvc_pvc-strip-curtains-hanger_1.webp': pvc_strip_curtains_hanger_1,
-  '/src/assets/pvc_pvc-super-clear-sheet_1.webp': pvc_super_clear_sheet_1,
-  '/src/assets/pvc_pvc-transparent-curtains_1.webp': pvc_transparent_curtains_1,
+  '/src/assets/pvc_pvc-ac-curtain_1.webp': pvc_pvc_ac_curtain_1,
+  '/src/assets/pvc_pvc-clear-sheet_1.webp': pvc_pvc_clear_sheet_1,
+  '/src/assets/pvc_pvc-film_1.webp': pvc_pvc_film_1,
+  '/src/assets/pvc_pvc-flexible-clear-sheet_1.webp': pvc_pvc_flexible_clear_sheet_1,
+  '/src/assets/pvc_pvc-rainbow-clear-sheet_1.webp': pvc_pvc_rainbow_clear_sheet_1,
+  '/src/assets/pvc_pvc-reinforced-sheet_1.webp': pvc_pvc_reinforced_sheet_1,
+  '/src/assets/pvc_pvc-strip-curtain_1.webp': pvc_pvc_strip_curtain_1,
+  '/src/assets/pvc_pvc-strip-curtains-hanger_1.webp': pvc_pvc_strip_curtains_hanger_1,
+  '/src/assets/pvc_pvc-super-clear-sheet_1.webp': pvc_pvc_super_clear_sheet_1,
+  '/src/assets/pvc_pvc-transparent-curtains_1.webp': pvc_pvc_transparent_curtains_1,
   '/src/assets/pvc_red-welding-grade-pvc-strip-curtain_1.webp': pvc_red_welding_grade_pvc_strip_curtain_1,
   '/src/assets/pvc_shamita-clear-transparent-pvc-roll_1.webp': pvc_shamita_clear_transparent_pvc_roll_1,
   '/src/assets/pvc_soft-pvc-roll_1.webp': pvc_soft_pvc_roll_1,
@@ -235,16 +237,16 @@ const idMap = {
   'ashmita-273732957': pvc_pvc_rainbow_clear_sheet_2,
   'ashmita-229912724': pvc_florescent_super_clear_pvc_rolls_flourocent_2,
   'ashmita-160734006': pvc_polar_pvc_strip_curtain_3,
-  'ashmita-153592579': pvc_transparent_curtains_1,
+  'ashmita-153592579': pvc_pvc_transparent_curtains_1,
   'ashmita-158109669': pvc_super_clear_pvc_sheet_roll_2,
   'ashmita-152629349': pvc_covid_isolation_curtain_1,
   'ashmita-306732252': pvc_pvc_film_5,
-  'ashmita-329360249': pvc_film_1,
+  'ashmita-329360249': pvc_pvc_film_1,
   'ashmita-306732537': pvc_polar_curtain,
   'ashmita-111307527': pvc_pvc_reinforced_sheet_2,
   'ashmita-160733990': pvc_flexible_transparent_pvc_strip_1,
   'ashmita-328086039': pvc_pvc_strip_curtains_hanger_2,
-  'ashmita-87984066': pvc_strip_curtains_hanger_1,
+  'ashmita-87984066': pvc_pvc_strip_curtains_hanger_1,
   'ashmita-87984027': pvc_bracket_industrial,
   'ashmita-327247134': pvc_pvc_ac_curtain_2,
   'ashmita-313155565': pvc_cold_storage_curtains_2,

@@ -143,6 +143,8 @@ const Header = () => {
                 width="155"
                 height="46"
                 loading="eager"
+                fetchPriority="high"
+                decoding="sync"
                 style={{ maxHeight: '46px', width: 'auto', objectFit: 'contain' }}
               />
             </NavLink>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, forwardRef } from "react";
+import { useState, useEffect, forwardRef } from "react";
 
 export function Image({
   src,
@@ -10,41 +10,35 @@ export function Image({
   height,
   aspectRatio,
   style,
+  decoding,
   ...props
 }) {
-  const isEager = loading === "eager" || props.fetchPriority === "high" || props.fetchpriority === "high";
   const [imgSrc, setImgSrc] = useState(src);
-  const [isLoaded, setIsLoaded] = useState(isEager);
-  const imgRef = useRef(null);
+  const isEager = loading === "eager" || props.fetchPriority === "high" || props.fetchpriority === "high";
 
   useEffect(() => {
     setImgSrc(src);
-    setIsLoaded(isEager);
-  }, [src, isEager]);
-
-  useEffect(() => {
-    if (imgRef.current?.complete) setIsLoaded(true);
-  }, [imgSrc]);
+  }, [src]);
 
   return (
     <img
-      ref={imgRef}
       src={imgSrc || fallback}
       alt={alt}
       loading={loading}
+      decoding={decoding || (isEager ? "sync" : "async")}
       width={width}
       height={height}
       className={className}
       style={{
         aspectRatio,
         objectFit: aspectRatio ? "cover" : undefined,
-        transition: isEager ? "none" : "opacity 0.3s ease-in-out, filter 0.3s ease-in-out",
-        opacity: isLoaded ? 1 : 0.6,
-        filter: isLoaded ? "none" : "blur(4px)",
         ...style,
       }}
-      onLoad={() => setIsLoaded(true)}
-      onError={() => imgSrc !== fallback ? setImgSrc(fallback) : setIsLoaded(true)}
+      onError={() => {
+        if (imgSrc !== fallback) {
+          setImgSrc(fallback);
+        }
+      }}
       {...props}
     />
   );
