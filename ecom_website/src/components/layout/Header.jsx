@@ -8,6 +8,7 @@ import Dropdown from "../common/Dropdown";
 import { products as productsData, categories as categoriesData, client as clientData } from "../../utils/apiData";
 import headerConfig from "../../data/header.json";
 import Fields from "../common/Fields";
+import { resolveProductImage } from "../../utils/imageResolver";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ const Header = () => {
   const [activeTopDropdown, setActiveTopDropdown] = useState(null);
   const [activeMainNavMenu, setActiveMainNavMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -428,55 +430,377 @@ const Header = () => {
       {/* MOBILE DRAWER */}
       {isMobileOpen && (
         <div
-          className="hidden md-block sm-block px-16 py-16 bg-white border-t"
+          className="hidden md-block sm-block"
           style={{
-            maxHeight: "calc(100vh - 60px)",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "#ffffff",
+            zIndex: 10000,
+            display: "flex",
+            flexDirection: "column",
             overflowY: "auto"
           }}
         >
-          <div className="mb-14">
-            <Fields
-              type="text"
-              placeholder="Search products..."
-              icon="Search"
-              iconPosition="right"
-              value={searchQuery}
-              onChange={setSearchQuery}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  setIsMobileOpen(false);
-                  navigate(`/products?search=${searchQuery}`);
-                }
+          {/* DRAWER HEADER */}
+          <div
+            style={{
+              backgroundColor: "#1e293b",
+              color: "#ffffff",
+              padding: "14px 20px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              minHeight: "56px"
+            }}
+          >
+            {activeMobileSubmenu ? (
+              <button
+                onClick={() => setActiveMobileSubmenu(null)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "#ffffff",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  fontSize: "14px",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  padding: 0,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px"
+                }}
+              >
+                <Icon name="ChevronLeft" width="16" height="16" stroke="currentColor" strokeWidth="3" /> BACK
+              </button>
+            ) : (
+              <NavLink to="/" onClick={() => { setIsMobileOpen(false); setActiveMobileSubmenu(null); }}>
+                <Image
+                  src={headerConfig.logo.src}
+                  alt={headerConfig.logo.alt}
+                  width="110"
+                  height="32"
+                  style={{ maxHeight: "32px", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                />
+              </NavLink>
+            )}
+
+            <button
+              onClick={() => { setIsMobileOpen(false); setActiveMobileSubmenu(null); }}
+              style={{
+                background: "none",
+                border: "none",
+                color: "#ffffff",
+                cursor: "pointer",
+                padding: "4px"
               }}
-            />
+            >
+              <Icon name="Close" width="24" height="24" stroke="currentColor" />
+            </button>
           </div>
 
-          <div className="grid grid-cols-1 gap-10">
-            {navItems.map((item) => (
-              <Link
-                key={item.id}
-                to={item.path}
-                onClick={() => setIsMobileOpen(false)}
-                className="py-10 border-b text-dark font-600 small-text flex items-center justify-between"
-                style={{ textDecoration: 'none' }}
-              >
-                <span className="flex items-center gap-8">
-                  <Icon name={item.icon} width="16" height="16" /> {item.label}
-                </span>
-                {item.hasDropdown && <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />}
-              </Link>
-            ))}
-
-            <Button
-              text="Request Quote"
-              version="v3"
-              bg="primary"
-              onClick={() => {
-                setIsMobileOpen(false);
-                navigate("/connect");
+          {/* DRAWER SUBHEADER: USER PROFILE */}
+          <div
+            onClick={() => { setIsMobileOpen(false); navigate("/connect"); }}
+            style={{
+              backgroundColor: "#f3f4f6",
+              padding: "16px 20px",
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              cursor: "pointer",
+              borderBottom: "1px solid #e5e7eb"
+            }}
+          >
+            <div
+              style={{
+                width: "42px",
+                height: "42px",
+                borderRadius: "50%",
+                backgroundColor: "#1e293b",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#ffffff"
               }}
-              className="mt-10"
-            />
+            >
+              <Icon name="Users" width="20" height="20" stroke="currentColor" />
+            </div>
+            <div>
+              <p style={{ margin: 0, fontSize: "14px", fontWeight: "700", color: "#1e293b" }}>
+                Sign In / Create Account
+              </p>
+              <p style={{ margin: "2px 0 0 0", fontSize: "11px", color: "#6b7280" }}>
+                Logged In And Enjoy Exclusive Perks
+              </p>
+            </div>
+          </div>
+
+          {/* DRAWER CONTENT */}
+          <div style={{ flex: 1, overflowY: "auto" }}>
+            {!activeMobileSubmenu ? (
+              // SCREEN 1: MAIN MENU
+              <div>
+                {/* SEARCH BAR */}
+                <div style={{ padding: "16px 20px", borderBottom: "1px solid #f3f4f6" }}>
+                  <Fields
+                    type="text"
+                    placeholder="Search products..."
+                    icon="Search"
+                    iconPosition="right"
+                    value={searchQuery}
+                    onChange={setSearchQuery}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        setIsMobileOpen(false);
+                        navigate(`/products?search=${searchQuery}`);
+                      }
+                    }}
+                  />
+                </div>
+
+                {/* DYNAMIC CATEGORY LIST */}
+                {categoriesData.map((cat) => (
+                  <div
+                    key={cat.id}
+                    onClick={() => setActiveMobileSubmenu(cat)}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      padding: "16px 20px",
+                      borderBottom: "1px solid #f3f4f6",
+                      cursor: "pointer"
+                    }}
+                  >
+                    <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
+                      {cat.name}
+                    </span>
+                    <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                  </div>
+                ))}
+
+                {/* CORPORATE LINK */}
+                <div
+                  onClick={() => setActiveMobileSubmenu({ id: "corporate", name: "Corporate" })}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "16px 20px",
+                    borderBottom: "1px solid #f3f4f6",
+                    cursor: "pointer"
+                  }}
+                >
+                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
+                    Corporate
+                  </span>
+                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                </div>
+
+                {/* RESOURCES LINK */}
+                <div
+                  onClick={() => setActiveMobileSubmenu({ id: "resources", name: "Resources" })}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "16px 20px",
+                    borderBottom: "1px solid #f3f4f6",
+                    cursor: "pointer"
+                  }}
+                >
+                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
+                    Resources
+                  </span>
+                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                </div>
+
+                {/* SUPPLIER LINK */}
+                <div
+                  onClick={() => {
+                    setIsMobileOpen(false);
+                    navigate("/supplier/Ashmita");
+                  }}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "16px 20px",
+                    borderBottom: "1px solid #f3f4f6",
+                    cursor: "pointer"
+                  }}
+                >
+                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
+                    Supplier Detail
+                  </span>
+                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                </div>
+
+                {/* WHERE TO BUY */}
+                <div
+                  onClick={() => {
+                    setIsMobileOpen(false);
+                    navigate("/wheretobuy");
+                  }}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "16px 20px",
+                    borderBottom: "1px solid #f3f4f6",
+                    cursor: "pointer"
+                  }}
+                >
+                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
+                    Where To Buy
+                  </span>
+                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                </div>
+              </div>
+            ) : (
+              // SCREEN 2: SUBMENU VIEW
+              <div>
+                {/* CATEGORY SUBMENU */}
+                {activeMobileSubmenu.id.startsWith("cat-") && (
+                  <div>
+                    {productsData.filter(p => p.category === activeMobileSubmenu.id).length > 0 ? (
+                      productsData.filter(p => p.category === activeMobileSubmenu.id).map((prod) => (
+                        <div
+                          key={prod.id}
+                          onClick={() => {
+                            setIsMobileOpen(false);
+                            setActiveMobileSubmenu(null);
+                            navigate(`/product-detail/${prod.id}`);
+                          }}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            padding: "16px 20px",
+                            borderBottom: "1px solid #f3f4f6",
+                            cursor: "pointer"
+                          }}
+                        >
+                          <Image
+                            src={resolveProductImage(prod)}
+                            alt={prod.name}
+                            width="54"
+                            height="54"
+                            style={{
+                              width: "54px",
+                              height: "54px",
+                              borderRadius: "6px",
+                              objectFit: "cover",
+                              backgroundColor: "#f3f4f6"
+                            }}
+                          />
+                          <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937", marginLeft: "16px" }}>
+                            {prod.name}
+                          </span>
+                        </div>
+                      ))
+                    ) : (
+                      <div style={{ padding: "30px", textAlign: "center", color: "#6b7280", fontSize: "14px" }}>
+                        No products available in this category.
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* CORPORATE SUBMENU */}
+                {activeMobileSubmenu.id === "corporate" && (
+                  <div>
+                    {[
+                      { label: "About SOBO Solutions", path: "/about" },
+                      { label: "Management Message", path: "/about" },
+                      { label: "News & Media", path: "/blog" }
+                    ].map((sub, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => {
+                          setIsMobileOpen(false);
+                          setActiveMobileSubmenu(null);
+                          navigate(sub.path);
+                        }}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          padding: "18px 20px",
+                          borderBottom: "1px solid #f3f4f6",
+                          cursor: "pointer"
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            borderRadius: "6px",
+                            backgroundColor: "#eff6ff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#1d4ed8"
+                          }}
+                        >
+                          <Icon name={idx === 0 ? "Info" : idx === 1 ? "MessageSquare" : "FileText"} width="18" height="18" stroke="currentColor" />
+                        </div>
+                        <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937", marginLeft: "16px" }}>
+                          {sub.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* RESOURCES SUBMENU */}
+                {activeMobileSubmenu.id === "resources" && (
+                  <div>
+                    {[
+                      { label: "All Product Catalog", path: "/products" },
+                      { label: "Blogs & Technical Insights", path: "/blog" },
+                      { label: "Supplier Network", path: "/wheretobuy" }
+                    ].map((sub, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => {
+                          setIsMobileOpen(false);
+                          setActiveMobileSubmenu(null);
+                          navigate(sub.path);
+                        }}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          padding: "18px 20px",
+                          borderBottom: "1px solid #f3f4f6",
+                          cursor: "pointer"
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            borderRadius: "6px",
+                            backgroundColor: "#f0fdf4",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#16a34a"
+                          }}
+                        >
+                          <Icon name={idx === 0 ? "Grid" : idx === 1 ? "BookOpen" : "Layers"} width="18" height="18" stroke="currentColor" />
+                        </div>
+                        <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937", marginLeft: "16px" }}>
+                          {sub.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}
