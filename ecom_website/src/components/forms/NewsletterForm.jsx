@@ -48,7 +48,7 @@ const NewsletterForm = ({
     }).catch(err => console.error("Formspree error:", err));
 
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    const smsUrl = `sms:8779030638${isIOS ? '&' : '?'}body=${smsBody}`;
+    const smsUrl = `sms:${import.meta.env.VITE_PHONE || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
 
     window.location.href = smsUrl;
 

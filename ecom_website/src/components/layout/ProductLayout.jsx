@@ -351,7 +351,7 @@ const ProductLayout = ({
                         />
                       </div>
 
-                      <p className='small-text text-gray mt-12'>
+                      <p className='mini-text text-gray mt-12'>
                         {productData.description}
                       </p>
 

@@ -701,6 +701,59 @@ const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, 
                     <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
                 </svg>
             );
+        case "Curtain":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <line x1="9" y1="3" x2="9" y2="21" />
+                    <line x1="15" y1="3" x2="15" y2="21" />
+                    <line x1="3" y1="9" x2="21" y2="9" />
+                </svg>
+            );
+        case "Sheet":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                </svg>
+            );
+        case "Roll":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                    <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+                </svg>
+            );
+        case "Film":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 12h18" />
+                    <path d="M12 3v18" />
+                    <circle cx="8" cy="8" r="1.5" />
+                    <circle cx="16" cy="16" r="1.5" />
+                </svg>
+            );
+        case "CurtainAlt":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <line x1="9" y1="3" x2="9" y2="21" />
+                    <line x1="15" y1="3" x2="15" y2="21" />
+                </svg>
+            );
+        case "ClearFilm":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <line x1="9" y1="4" x2="9" y2="20" />
+                    <line x1="15" y1="4" x2="15" y2="20" />
+                    <line x1="4" y1="9" x2="20" y2="9" />
+                    <line x1="4" y1="15" x2="20" y2="15" />
+                </svg>
+            );
         default:
             return null;
     }

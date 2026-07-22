@@ -55,16 +55,20 @@ const Footer = () => {
                 {footerData.brand.description}
               </p>
               <div className="flex gap-12 mt-30">
-                {footerData.brand.socials.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.url}
-                    aria-label={`Visit our ${social.platform || social.iconName} page`}
-                    className="social-link center-div rounded-full footer-social-link"
-                  >
-                    <Icon name={social.iconName} width="16" height="16" stroke="currentColor" strokeWidth="2.5" />
-                  </a>
-                ))}
+                {footerData.brand.socials.map((social, idx) => {
+                  const envKey = `VITE_SOCIAL_${social.platform.toUpperCase()}`;
+                  const url = import.meta.env[envKey] || social.url;
+                  return (
+                    <a
+                      key={idx}
+                      href={url}
+                      aria-label={`Visit our ${social.platform || social.iconName} page`}
+                      className="social-link center-div rounded-full footer-social-link"
+                    >
+                      <Icon name={social.iconName} width="16" height="16" stroke="currentColor" strokeWidth="2.5" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
 

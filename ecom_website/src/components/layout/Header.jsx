@@ -1,16 +1,32 @@
 import { memo, useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Container from "../common/Container";
 import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
 import Dropdown from "../common/Dropdown";
-import { products as productsData } from "../../utils/apiData";
+import { products as productsData, categories as categoriesData, client as clientData } from "../../utils/apiData";
 import headerConfig from "../../data/header.json";
 import Fields from "../common/Fields";
 
 const Header = () => {
   const navigate = useNavigate();
+  const navItems = categoriesData.slice(0, 6).map(cat => ({
+    id: cat.id,
+    label: cat.name.toUpperCase(),
+    icon: cat.iconName || "Grid",
+    path: "/products",
+    hasDropdown: true,
+    category: cat.id,
+    dropdownTitle: cat.name.toUpperCase(),
+    cardTitle: cat.name,
+    cardDesc: cat.description,
+    cardLinkText: cat.name.toLowerCase().includes("curtain") ? "View All Curtains" :
+      cat.name.toLowerCase().includes("sheet") ? "View All Sheets" :
+        cat.name.toLowerCase().includes("roll") ? "View All Rolls" :
+          cat.name.toLowerCase().includes("film") ? "View All Films" :
+            `View All ${cat.name}`
+  }));
   const [activeTopDropdown, setActiveTopDropdown] = useState(null);
   const [activeMainNavMenu, setActiveMainNavMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -39,15 +55,26 @@ const Header = () => {
   };
 
   const renderTopSubmenu = (submenu) => (
-    submenu.map((sub, sIdx) => (
-      sub.type === "tel" ? (
-        <a key={sIdx} href={sub.href} className="drop-item">{sub.label}</a>
+    submenu.map((sub, sIdx) => {
+      let label = sub.label;
+      let href = sub.href;
+      const phoneEnv = import.meta.env.VITE_PHONE;
+      if (phoneEnv) {
+        if (sub.type === "tel") {
+          label = `Call +91 ${phoneEnv.slice(0, 5)} ${phoneEnv.slice(5)}`;
+          href = `tel:+91${phoneEnv}`;
+        } else if (sub.type === "external" && href.includes("wa.me")) {
+          href = `https://wa.me/91${phoneEnv}`;
+        }
+      }
+      return sub.type === "tel" ? (
+        <a key={sIdx} href={href} className="drop-item">{label}</a>
       ) : sub.type === "external" ? (
-        <a key={sIdx} href={sub.href} target="_blank" rel="noreferrer" className="drop-item">{sub.label}</a>
+        <a key={sIdx} href={href} target="_blank" rel="noreferrer" className="drop-item">{label}</a>
       ) : (
-        <NavLink key={sIdx} to={sub.path} className="drop-item">{sub.label}</NavLink>
-      )
-    ))
+        <NavLink key={sIdx} to={sub.path} className="drop-item">{label}</NavLink>
+      );
+    })
   );
 
   return (
@@ -135,7 +162,7 @@ const Header = () => {
         <div className="flex items-center justify-between w-full" style={{ minHeight: "52px" }}>
 
           {/* LEFT: BRAND LOGO */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-12">
             <NavLink to={headerConfig.logo.path} className="flex items-center" style={{ textDecoration: 'none' }}>
               <Image
                 src={headerConfig.logo.src}
@@ -148,33 +175,31 @@ const Header = () => {
                 style={{ maxHeight: '46px', width: 'auto', objectFit: 'contain' }}
               />
             </NavLink>
-          </div>
-
-          {/* MIDDLE LEFT LINKS */}
-          <div className="flex items-center ml-20">
-            {headerConfig.topNav.left.map((item, idx) => (
-              <div key={item.id} className="flex items-center">
-                {idx > 0 && <div className="header-v-divider" />}
-                {item.hasDropdown ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setActiveTopDropdown(item.id)}
-                    onMouseLeave={() => setActiveTopDropdown(null)}
-                  >
-                    <span className="top-nav-link">
-                      {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                    </span>
-                    <Dropdown isOpen={activeTopDropdown === item.id} align="left">
-                      {renderTopSubmenu(item.submenu)}
-                    </Dropdown>
-                  </div>
-                ) : (
-                  <NavLink to={item.path} className="top-nav-link">
-                    {item.label}
-                  </NavLink>
-                )}
-              </div>
-            ))}
+            <div className="ml-30 flex items-center">
+              {headerConfig.topNav.left.map((item, idx) => (
+                <div key={item.id} className="flex items-center">
+                  {idx > 0 && <div className="header-v-divider" />}
+                  {item.hasDropdown ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setActiveTopDropdown(item.id)}
+                      onMouseLeave={() => setActiveTopDropdown(null)}
+                    >
+                      <span className="top-nav-link">
+                        {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                      </span>
+                      <Dropdown isOpen={activeTopDropdown === item.id} align="left">
+                        {renderTopSubmenu(item.submenu)}
+                      </Dropdown>
+                    </div>
+                  ) : (
+                    <NavLink to={item.path} className="top-nav-link">
+                      {item.label}
+                    </NavLink>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* RIGHT UTILITY LINKS */}
@@ -333,18 +358,17 @@ const Header = () => {
           borderBottom: "1px solid #e2e8f0",
           position: "sticky",
           top: 0,
-          zIndex: 999,
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)"
+          zIndex: 99,
         }}
       >
         <div className="flex items-center justify-between gap-8 w-full" style={{ minHeight: "48px" }}>
 
-          {headerConfig.mainNav.map((item) => {
+          {navItems.map((item, index) => {
             if (!item.hasDropdown) {
               return (
-                <NavLink key={item.id} to={item.path} className="cat-nav-link">
+                <Link key={item.id} to={item.path} className="cat-nav-link">
                   <Icon name={item.icon} width="16" height="16" /> {item.label}
-                </NavLink>
+                </Link>
               );
             }
 
@@ -355,22 +379,21 @@ const Header = () => {
                 onMouseEnter={() => setActiveMainNavMenu(item.id)}
                 onMouseLeave={() => setActiveMainNavMenu(null)}
               >
-                <NavLink to={item.path} className="cat-nav-link">
+                <Link to={item.path} className="cat-nav-link">
                   <Icon name={item.icon} width="16" height="16" /> {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                </NavLink>
+                </Link>
 
                 <Dropdown
                   isOpen={activeMainNavMenu === item.id}
-                  align="left"
+                  align={index >= navItems.length - 3 ? "right" : "left"}
                   minWidth="480px"
-                  padding="16px"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
                     gap: "12px"
                   }}
                 >
-                  <div>
+                  <div className="p-12">
                     <p className="text-gray font-700 mini-text uppercase tracking-wider mb-8">{item.dropdownTitle}</p>
                     {productsData.filter(p => p.category === item.category).slice(0, 5).map(prod => (
                       <div
@@ -429,8 +452,8 @@ const Header = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-10">
-            {headerConfig.mainNav.map((item) => (
-              <NavLink
+            {navItems.map((item) => (
+              <Link
                 key={item.id}
                 to={item.path}
                 onClick={() => setIsMobileOpen(false)}
@@ -441,7 +464,7 @@ const Header = () => {
                   <Icon name={item.icon} width="16" height="16" /> {item.label}
                 </span>
                 {item.hasDropdown && <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />}
-              </NavLink>
+              </Link>
             ))}
 
             <Button

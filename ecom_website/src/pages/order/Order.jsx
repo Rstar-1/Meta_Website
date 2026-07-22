@@ -373,11 +373,14 @@ const Order = () => {
 
                         <div className="mt-6 grid-cols-1 gap-6">
                           <a
-                            href="tel:+919876543210"
+                            href={`tel:+91${import.meta.env.VITE_PHONE || '9876543210'}`}
                             className="mini-text font-400 text-gray flex items-center gap-6"
                           >
                             <Icon name="Phone" width="13" height="13" stroke="#f25c2b" />
-                            +91 98765 43210
+                            {(() => {
+                              const phone = import.meta.env.VITE_PHONE || '9876543210';
+                              return `+91 ${phone.slice(0, 5)} ${phone.slice(5)}`;
+                            })()}
                           </a>
                           <a
                             href="mailto:support@kalom.in"

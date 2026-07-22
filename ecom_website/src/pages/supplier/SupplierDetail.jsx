@@ -19,7 +19,9 @@ const SupplierDetail = () => {
   // Lookup client in client.json
   const matchedClient = clientData.find(
     (c) => c.name?.toLowerCase() === brandName?.toLowerCase() ||
-      c.id?.toLowerCase() === brandName?.toLowerCase()
+      c.id?.toLowerCase() === brandName?.toLowerCase() ||
+      c.name?.toLowerCase().startsWith(brandName?.toLowerCase() || '') ||
+      c.name?.toLowerCase().includes(brandName?.toLowerCase() || '')
   );
 
   // Normalize name

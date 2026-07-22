@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "./Icon";
 
 const VERSION_CLASSES = {
-  v0: "px-19 py-7 sm-px-12 sm-py-6 mini-text",
+  v0: "px-16 py-4 sm-px-12 sm-py-4 mini-text",
   v1: "px-20 py-9 para-text",
   v2: "px-25 py-11 sm-px-19 sm-py-8 small-text",
   v3: "w-full py-10 sm-py-13 mini-text",

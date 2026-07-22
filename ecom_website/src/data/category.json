@@ -3,78 +3,143 @@
     "id": "cat-pvc-strip-curtains",
     "name": "PVC Strip Curtains",
     "icon": "/src/assets/pvc_w-s-i-pvc-strip-curtain-roll_1.webp",
-    "color": "#e8f0fe"
+    "color": "#e8f0fe",
+    "description": "Durable strip curtains for temperature control, dust protection and energy efficiency.",
+    "number": "01",
+    "accentColor": "#1f5ac0",
+    "bgColor": "#e8f0fe",
+    "iconName": "Curtain"
   },
   {
     "id": "cat-pvc-sheet",
     "name": "PVC Sheet",
     "icon": "/src/assets/pvc_pvc-clear-sheet_1.webp",
-    "color": "#d1fae5"
+    "color": "#d1fae5",
+    "description": "High-quality PVC sheets in various colors, sizes and thicknesses.",
+    "number": "02",
+    "accentColor": "#7c3aed",
+    "bgColor": "#f5f3ff",
+    "iconName": "Sheet"
   },
   {
     "id": "cat-pvc-roll",
     "name": "PVC Roll",
     "icon": "/src/assets/pvc_soft-pvc-roll_1.webp",
-    "color": "#ffedd5"
+    "color": "#ffedd5",
+    "description": "Premium PVC rolls for packaging, lamination and industrial applications.",
+    "number": "03",
+    "accentColor": "#16a34a",
+    "bgColor": "#f0fdf4",
+    "iconName": "Roll"
   },
   {
     "id": "cat-pvc-color-film",
     "name": "PVC Color Film",
     "icon": "/src/assets/pvc_pvc-rainbow-clear-sheet_1.webp",
-    "color": "#fce7f3"
+    "color": "#fce7f3",
+    "description": "Vibrant color films for decorative, protective and branding applications.",
+    "number": "04",
+    "accentColor": "#ea580c",
+    "bgColor": "#fff7ed",
+    "iconName": "Film"
   },
   {
     "id": "cat-pvc-curtain",
     "name": "Pvc Curtain",
     "icon": "/src/assets/pvc_polar-pvc-strip-curtain_1.webp",
-    "color": "#fae8ff"
+    "color": "#fae8ff",
+    "description": "Flexible PVC curtains offering visibility, protection and easy maintenance.",
+    "number": "05",
+    "accentColor": "#0ea5e9",
+    "bgColor": "#f0f9ff",
+    "iconName": "CurtainAlt"
   },
   {
     "id": "cat-pvc-transparent-clear-film",
-    "name": "Pvc Transparent Clear Film",
+    "name": "Pvc Transparent Clear",
     "icon": "/src/assets/pvc_super-clear-pvc-sheet-roll_1.webp",
-    "color": "#e0f2fe"
+    "color": "#e0f2fe",
+    "description": "Crystal clear film with high transparency and durability for multiple uses.",
+    "number": "06",
+    "accentColor": "#db2777",
+    "bgColor": "#fdf2f8",
+    "iconName": "ClearFilm"
   },
   {
     "id": "cat-pvc-film-roll",
     "name": "Pvc Film Roll",
     "icon": "/src/assets/pvc_pvc-film_1.webp",
-    "color": "#fef3c7"
+    "color": "#fef3c7",
+    "description": "High-performance PVC film rolls for protection and lamination.",
+    "number": "07",
+    "accentColor": "#b45309",
+    "bgColor": "#fef3c7",
+    "iconName": "Film"
   },
   {
     "id": "cat-stretch-ceiling",
     "name": "Stretch Ceiling",
     "icon": "/src/assets/placeholder.webp",
-    "color": "#ffe4e6"
+    "color": "#ffe4e6",
+    "description": "Modern stretch ceiling films for premium interior design and lighting.",
+    "number": "08",
+    "accentColor": "#be123c",
+    "bgColor": "#ffe4e6",
+    "iconName": "Layers"
   },
   {
     "id": "cat-freezer-strip-curtain",
     "name": "Freezer Strip Curtain",
     "icon": "/src/assets/pvc_polar-pvc-strip-curtain_1.webp",
-    "color": "#ccfbf1"
+    "color": "#ccfbf1",
+    "description": "Polar grade PVC strip curtains designed for cold storage and freezers.",
+    "number": "09",
+    "accentColor": "#0f766e",
+    "bgColor": "#ccfbf1",
+    "iconName": "Curtain"
   },
   {
     "id": "cat-pvc-reinforced-sheet",
     "name": "PVC REINFORCED SHEET",
     "icon": "/src/assets/pvc_pvc-reinforced-sheet_1.webp",
-    "color": "#e0e7ff"
+    "color": "#e0e7ff",
+    "description": "Extra strong reinforced PVC sheets with high tear resistance.",
+    "number": "10",
+    "accentColor": "#4338ca",
+    "bgColor": "#e0e7ff",
+    "iconName": "Sheet"
   },
   {
     "id": "cat-pvc-strip-curtain",
     "name": "Pvc Strip Curtain",
     "icon": "/src/assets/pvc_flexible-transparent-pvc-strip_1.webp",
-    "color": "#f3e8ff"
+    "color": "#f3e8ff",
+    "description": "Flexible standard PVC strip curtains for dust and noise isolation.",
+    "number": "11",
+    "accentColor": "#6d28d9",
+    "bgColor": "#f3e8ff",
+    "iconName": "CurtainAlt"
   },
   {
     "id": "cat-mounting-brackets",
     "name": "Mounting Brackets",
     "icon": "/src/assets/pvc_pvc-strip-curtains-hanger_1.webp",
-    "color": "#ffedd5"
+    "color": "#ffedd5",
+    "description": "Stainless steel and iron mounting brackets and hangers for PVC curtains.",
+    "number": "12",
+    "accentColor": "#c2410c",
+    "bgColor": "#ffedd5",
+    "iconName": "Settings"
   },
   {
     "id": "cat-plastic-curtain",
     "name": "Plastic Curtain",
     "icon": "/src/assets/pvc_pvc-ac-curtain_1.webp",
-    "color": "#d1fae5"
+    "color": "#d1fae5",
+    "description": "Highly transparent and versatile plastic curtains for partition walls.",
+    "number": "13",
+    "accentColor": "#047857",
+    "bgColor": "#d1fae5",
+    "iconName": "Curtain"
   }
 ]

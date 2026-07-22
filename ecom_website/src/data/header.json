@@ -17,20 +17,16 @@
         ]
       },
       {
-        "id": "investor-relations",
-        "label": "INVESTOR RELATIONS",
-        "path": "/about",
+        "id": "supplier-top",
+        "label": "SUPPLIER",
+        "path": "/supplier/Ashmita",
         "hasDropdown": false
       },
       {
-        "id": "projects",
-        "label": "EXECUTED PROJECTS",
-        "hasDropdown": true,
-        "submenu": [
-          { "label": "Industrial Sheet Installations", "path": "/products" },
-          { "label": "Cold Storage Enclosures", "path": "/products" },
-          { "label": "Cleanroom Strip Curtains", "path": "/products" }
-        ]
+        "id": "category-top",
+        "label": "CATEGORY",
+        "path": "/category",
+        "hasDropdown": false
       }
     ],
     "right": [

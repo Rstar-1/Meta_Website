@@ -8,7 +8,7 @@ const Dropdown = ({
   style = {},
   align = "left",
   minWidth = "210px",
-  padding = "10px 0",
+  padding = "0",
   ...props
 }) => {
   const dropdownRef = useRef(null);
@@ -34,10 +34,6 @@ const Dropdown = ({
     position: "absolute",
     top: "100%",
     [align]: 0,
-    backgroundColor: "#ffffff",
-    border: "1px solid #e2e8f0",
-    boxShadow: "0 14px 35px rgba(0, 0, 0, 0.08)",
-    borderRadius: "6px",
     padding: padding,
     minWidth: minWidth,
     zIndex: 1000,
@@ -47,7 +43,7 @@ const Dropdown = ({
   return (
     <div
       ref={dropdownRef}
-      className={`drop-card ${className}`}
+      className={`bg-white ${className}`}
       style={baseStyle}
       {...props}
     >

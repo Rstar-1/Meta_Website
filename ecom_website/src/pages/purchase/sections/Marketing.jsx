@@ -5,6 +5,9 @@ import Button from '../../../components/common/Button';
 import Image from '../../../components/common/Image';
 
 const Marketing = () => {
+    const phoneEnv = import.meta.env.VITE_PHONE || '8178638960';
+    const formattedPhone = `+91 ${phoneEnv.slice(0, 5)} ${phoneEnv.slice(5)}`;
+
     return (
         <div className="">
 
@@ -23,7 +26,7 @@ const Marketing = () => {
                         </p>
 
                         {/* CTA Buttons using Button component */}
-                        <div className="flex items-center gap-12 mt-20">
+                        <div className="flex items-center gap-12 mt-32">
                             {/* WhatsApp Sales Button */}
                             <Button
                                 icon="WhatsApp"
@@ -34,7 +37,7 @@ const Marketing = () => {
                                 version='v2'
                                 bg='success'
                                 color='white'
-                                onClick={() => window.open('https://wa.me/918178638960?text=Hi,%20I%20am%20looking%20for%20an%20authorized%20dealer%20near%20me.', '_blank')}
+                                onClick={() => window.open(`https://wa.me/91${phoneEnv}?text=Hi,%20I%20am%20looking%20for%20an%20authorized%20dealer%20near%20me.`, '_blank')}
                             />
 
                             {/* Phone Sales Button */}
@@ -42,11 +45,11 @@ const Marketing = () => {
                                 icon="Phone"
                                 iconWidth="18"
                                 iconHeight="18"
-                                iconStroke="var(--primary)"
-                                text="+91 81786 38960"
+                                iconStroke="var(--white)"
+                                text={formattedPhone}
                                 version='v2'
-                                color='white'
-                                onClick={() => window.location.href = 'tel:+918178638960'}
+                                bg='white'
+                                onClick={() => window.location.href = `tel:+91${phoneEnv}`}
                                 variant="outline"
                             />
                         </div>
