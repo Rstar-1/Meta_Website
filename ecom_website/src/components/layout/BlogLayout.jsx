@@ -125,7 +125,7 @@ const BlogLayout = ({
     },
   ], [shareUrl, post?.title]);
 
-  const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com') : {}, [post]);
+  const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com')) : {}, [post]);
 
   const cardRenderers = useMemo(() => ({
     blogCard: (blog, idx) => {

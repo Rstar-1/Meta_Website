@@ -1,4 +1,4 @@
-export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = 'https://sobo-marketing.com') => {
+export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com') => {
   const lastmod = new Date().toISOString().split('T')[0];
   const urlXml = (loc, freq, prio) => `  <url>
     <loc>${baseUrl}${loc}</loc>

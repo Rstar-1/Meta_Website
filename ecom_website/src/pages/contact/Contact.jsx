@@ -51,7 +51,7 @@ const Contact = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com');
   return (
     <>
       <SeoHelmet

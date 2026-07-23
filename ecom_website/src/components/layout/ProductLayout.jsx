@@ -217,7 +217,7 @@ const ProductLayout = ({
 
   const productMeta = useMemo(() => productMetaTemplate(
     foundProduct || { name: productData.title, description: productData.description, tags: seoKeywords, image: activeImage },
-    typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com'
+    typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com')
   ), [foundProduct, productData, seoKeywords, activeImage]);
 
   const cardRenderers = useMemo(() => ({

@@ -1,10 +1,12 @@
+import defaultSEO from '../seo/defaultSEO';
+
 export const generateSchema = {
   organization: (orgData = {}) => ({
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: orgData.name || "SOBO Marketing Solution",
-    url: orgData.url || "https://sobo-marketing.com",
-    logo: orgData.logo || "https://sobo-marketing.com/sobo_logo.webp",
+    name: orgData.name || defaultSEO.organization.name,
+    url: orgData.url || defaultSEO.organization.url,
+    logo: orgData.logo || defaultSEO.organization.logo,
     contactPoint: orgData.contact
       ? {
           "@type": "ContactPoint",
@@ -13,17 +15,17 @@ export const generateSchema = {
           email: orgData.contact.email || "",
         }
       : undefined,
-    sameAs: orgData.socials || [],
+    sameAs: orgData.socials || defaultSEO.organization.socials,
   }),
 
   website: (siteData = {}) => ({
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: siteData.name || "SOBO Marketing Solution",
-    url: siteData.url || "https://sobo-marketing.com",
+    name: siteData.name || defaultSEO.siteName,
+    url: siteData.url || defaultSEO.siteUrl,
     potentialAction: {
       "@type": "SearchAction",
-      target: `${siteData.url || "https://sobo-marketing.com"}/search?q={search_term_string}`,
+      target: `${siteData.url || defaultSEO.siteUrl}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   }),
@@ -31,11 +33,11 @@ export const generateSchema = {
   localBusiness: (bizData = {}) => ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: bizData.name || "SOBO Marketing Solution",
-    image: bizData.image || "https://sobo-marketing.com/sobo_logo.webp",
-    "@id": bizData.url || "https://sobo-marketing.com",
-    url: bizData.url || "https://sobo-marketing.com",
-    telephone: bizData.phone || "",
+    name: bizData.name || defaultSEO.organization.name,
+    image: bizData.image || defaultSEO.organization.logo,
+    "@id": bizData.url || defaultSEO.organization.url,
+    url: bizData.url || defaultSEO.organization.url,
+    telephone: bizData.phone || defaultSEO.organization.phone,
     address: {
       "@type": "PostalAddress",
       streetAddress: bizData.address?.street || "",
@@ -124,13 +126,13 @@ export const generateSchema = {
     })),
   }),
 
-  faq: (faqs = [], logo = "/sobo_logo.webp") => ({
+  faq: (faqs = [], logo = defaultSEO.organization.logo) => ({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     image: logo,
     publisher: {
       "@type": "Organization",
-      name: "SOBO Marketing Solution",
+      name: defaultSEO.organization.name,
       logo: {
         "@type": "ImageObject",
         url: logo,
@@ -160,10 +162,10 @@ export const generateSchema = {
     },
     publisher: {
       "@type": "Organization",
-      name: post.publisherName || "SOBO Marketing Solution",
+      name: post.publisherName || defaultSEO.organization.name,
       logo: {
         "@type": "ImageObject",
-        url: post.publisherLogo || "https://sobo-marketing.com/sobo_logo.webp",
+        url: post.publisherLogo || defaultSEO.organization.logo,
       },
     },
     description: post.description || "",
