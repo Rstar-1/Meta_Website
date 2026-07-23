@@ -93,11 +93,11 @@ const Feature = ({ loading, displayCategories, handleCategoryClick }) => {
 
             {/* Main Categories Page Content Wrapper */}
             <Container style={{ background: 'var(--forth)' }}>
-                <div className='w-full py-50'>
+                <div className='w-full py-50 sm-py-20'>
                     {/* Floating Features Bar */}
                     <div className="bg-white p-20 sm-p-15 grid-cols-4 sm-grid-cols-1 gap-12">
                         {featuresList.map((item, index) => (
-                            <div key={index} className="flex items-center gap-12 sm-mb-8">
+                            <div key={index} className="flex items-center gap-12 sm-mb-12">
                                 <div className="feature-icon-wrapper">
                                     <Icon name={item.icon} width="20" height="20" stroke="currentColor" />
                                 </div>
@@ -110,13 +110,13 @@ const Feature = ({ loading, displayCategories, handleCategoryClick }) => {
                     </div>
 
                     {/* Section Header */}
-                    <div className="w-full mt-60 text-center">
+                    <div className="w-full mt-60 sm-mt-30 text-center">
                         <div className="flex justify-center mb-12">
                             <span className="category-badge-pill">OUR CATEGORIES</span>
                         </div>
-                        <h1 className="text-dark font-700 large-text mb-12">
-                            Premium <span style={{ color: '#1f5ac0' }}>PVC</span> Solutions
-                        </h1>
+                        <h2 className="text-dark font-600 large-text mb-12">
+                            Premium <span className="text-primary">PVC</span> Solutions
+                        </h2>
                         <p className="text-gray small-text mb-15" style={{ maxWidth: '600px', margin: '0 auto' }}>
                             High-quality PVC products for industrial, commercial and custom applications.
                         </p>

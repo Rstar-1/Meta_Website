@@ -254,7 +254,7 @@ const CardLayout = ({
                         autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
                         breakpoints={sliderBreakpoints || {
                             640: {
-                                slidesPerView: 1.2,
+                                slidesPerView: 1.4,
                             },
                             768: {
                                 slidesPerView: 3.5,

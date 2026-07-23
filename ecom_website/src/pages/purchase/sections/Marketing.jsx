@@ -14,7 +14,7 @@ const Marketing = () => {
             <Container version='v2' style={{
                 background: 'linear-gradient(135deg, #041022 0%, #081a36 50%, #051329 100%)',
             }}>
-                <div className="grid-cols-2 gap-12 items-center w-full py-30">
+                <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full py-30">
                     <div className="relative">
                         <h2 className="text-white font-700 uppercase large-text">
                             Find Responsive <br />
@@ -26,12 +26,12 @@ const Marketing = () => {
                         </p>
 
                         {/* CTA Buttons using Button component */}
-                        <div className="flex items-center gap-12 mt-32">
+                        <div className="flex items-center gap-12 mt-32 sm-mt-12">
                             {/* WhatsApp Sales Button */}
                             <Button
                                 icon="WhatsApp"
-                                iconWidth="20"
-                                iconHeight="20"
+                                iconWidth="18"
+                                iconHeight="18"
                                 iconFill="var(--white)"
                                 text="WhatsApp Sales"
                                 version='v2'
@@ -55,12 +55,11 @@ const Marketing = () => {
                         </div>
                     </div>
 
-                    <div>
+                    <div className='sm-mt-18'>
                         <Image
                             src="/purchase_hero_bg.webp"
                             alt="Modern Interior Showroom"
-                            className="w-full h-450 object-cover"
-
+                            className="w-full h-450 sm-h-300 object-cover flex"
                         />
                     </div>
                 </div>

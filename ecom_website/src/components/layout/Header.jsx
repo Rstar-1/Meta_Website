@@ -32,9 +32,17 @@ const Header = () => {
   const [activeMainNavMenu, setActiveMainNavMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
+  const [expandedCategory, setExpandedCategory] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isMobileOpen) {
+      setActiveMobileSubmenu(null);
+      setExpandedCategory(null);
+    }
+  }, [isMobileOpen]);
 
   useEffect(() => {
     const updateCount = () => setCartCount(JSON.parse(localStorage.getItem('cart') || '[]').length);
@@ -322,7 +330,7 @@ const Header = () => {
       </Container>
 
       {/* MOBILE HEADER BAR */}
-      <div className="hidden md-block sm-block px-15 py-10" style={{ borderBottom: "1px solid #e2e8f0", position: "sticky", top: 0, zIndex: 999, backgroundColor: "#ffffff" }}>
+      <div className="hidden md-block sm-block px-15 py-10 sticky top-0 left-0 z-99 bg-white">
         <div className="flex items-center justify-between w-full">
           <NavLink to="/" className="flex items-center">
             <Image
@@ -368,15 +376,7 @@ const Header = () => {
       {/* ROW 2: MAIN CATEGORY NAVIGATION BAR WITH ICONS - STICKY AT TOP */}
       <Container
         as="nav"
-        className="sm-hidden md-hidden"
-        style={{
-          backgroundColor: "#ffffff",
-          borderTop: "1px solid #f8fafc",
-          borderBottom: "1px solid #e2e8f0",
-          position: "sticky",
-          top: 0,
-          zIndex: 99,
-        }}
+        className="sm-hidden md-hidden bg-white bdrdh bordb sticky top-0 z-99"
       >
         <div className="flex items-center justify-between gap-8 w-full" style={{ minHeight: "48px" }}>
 
@@ -445,11 +445,11 @@ const Header = () => {
       {/* MOBILE DRAWER */}
       {isMobileOpen && (
         <div
-          className="hidden md-block sm-block fixed top-0 left-0 h-full overflow-auto z-999 bg-white w-full"
+          className="hidden md-block sm-block fixed top-0 left-0 h-full overflow-auto z-99 bg-white w-full"
         >
           {/* DRAWER HEADER */}
           <div
-            className="bg-white flex items-center justify-between p-12"
+            className="bg-white flex items-center justify-between p-12 bordb"
           >
             {activeMobileSubmenu ? (
               <Button
@@ -464,7 +464,7 @@ const Header = () => {
                 style={{
                   background: "none",
                   border: "none",
-                  color: "#ffffff",
+                  color: "#1e293b",
                   display: "flex",
                   alignItems: "center",
                   gap: "8px",
@@ -498,50 +498,13 @@ const Header = () => {
             />
           </div>
 
-          {/* DRAWER SUBHEADER: USER PROFILE */}
-          <div
-            onClick={() => { setIsMobileOpen(false); navigate("/connect"); }}
-            style={{
-              backgroundColor: "#f3f4f6",
-              padding: "16px 20px",
-              display: "flex",
-              alignItems: "center",
-              gap: "16px",
-              cursor: "pointer",
-              borderBottom: "1px solid #e5e7eb"
-            }}
-          >
-            <div
-              style={{
-                width: "42px",
-                height: "42px",
-                borderRadius: "50%",
-                backgroundColor: "#1e293b",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#ffffff"
-              }}
-            >
-              <Icon name="Users" width="20" height="20" stroke="currentColor" />
-            </div>
-            <div>
-              <p style={{ margin: 0, fontSize: "14px", fontWeight: "700", color: "#1e293b" }}>
-                Sign In / Create Account
-              </p>
-              <p style={{ margin: "2px 0 0 0", fontSize: "11px", color: "#6b7280" }}>
-                Logged In And Enjoy Exclusive Perks
-              </p>
-            </div>
-          </div>
-
           {/* DRAWER CONTENT */}
           <div style={{ flex: 1, overflowY: "auto" }}>
             {!activeMobileSubmenu ? (
               // SCREEN 1: MAIN MENU
               <div>
                 {/* SEARCH BAR */}
-                <div style={{ padding: "16px 20px", borderBottom: "1px solid #f3f4f6" }}>
+                <div className="py-16 px-20 bordb">
                   <Fields
                     type="text"
                     placeholder="Search products..."
@@ -558,60 +521,62 @@ const Header = () => {
                   />
                 </div>
 
-                {/* DYNAMIC CATEGORY LIST */}
-                {categoriesData.map((cat) => (
-                  <div
-                    key={cat.id}
-                    onClick={() => setActiveMobileSubmenu(cat)}
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      padding: "16px 20px",
-                      borderBottom: "1px solid #f3f4f6",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
-                      {cat.name}
-                    </span>
-                    <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                {/* EXPLORE PRODUCTS LINK */}
+                <div
+                  onClick={() => setActiveMobileSubmenu({ id: "categories", name: "Explore Products" })}
+                  className="flex items-center justify-between py-16 px-20 bordb"
+                >
+                  <div className="flex items-center gap-12">
+                    <Icon name="Product" width="16" height="16" stroke="#1f2937" />
+                    <p className="small-text text-dark font-500">
+                      Explore Products
+                    </p>
                   </div>
-                ))}
+                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                </div>
+
+                {/* CATEGORY LINK */}
+                <div
+                  onClick={() => {
+                    setIsMobileOpen(false);
+                    navigate("/category");
+                  }}
+                  className="flex items-center justify-between py-16 px-20 bordb"
+                >
+                  <div className="flex items-center gap-12">
+                    <Icon name="Grid" width="16" height="16" stroke="#1f2937" />
+                    <p className="small-text text-dark font-500">
+                      Category
+                    </p>
+                  </div>
+                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+                </div>
 
                 {/* CORPORATE LINK */}
                 <div
                   onClick={() => setActiveMobileSubmenu({ id: "corporate", name: "Corporate" })}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "16px 20px",
-                    borderBottom: "1px solid #f3f4f6",
-                    cursor: "pointer"
-                  }}
+                  className="flex items-center justify-between py-16 px-20 bordb"
                 >
-                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
-                    Corporate
-                  </span>
+                  <div className="flex items-center gap-12">
+                    <Icon name="Award" width="16" height="16" stroke="#1f2937" />
+                    <p className="small-text text-dark font-500">
+                      Corporate
+                    </p>
+                  </div>
                   <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
                 </div>
 
                 {/* RESOURCES LINK */}
                 <div
                   onClick={() => setActiveMobileSubmenu({ id: "resources", name: "Resources" })}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "16px 20px",
-                    borderBottom: "1px solid #f3f4f6",
-                    cursor: "pointer"
-                  }}
+                  className="flex items-center justify-between py-16 px-20 bordb"
                 >
-                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
-                    Resources
-                  </span>
+                  <div className="flex items-center gap-12">
+                    <Icon name="Layers" width="16" height="16" stroke="#1f2937" />
+                    <p className="small-text text-dark font-500">
+                      Resources
+                    </p>
+                  </div>
                   <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
                 </div>
 
@@ -621,18 +586,14 @@ const Header = () => {
                     setIsMobileOpen(false);
                     navigate("/supplier/Ashmita");
                   }}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "16px 20px",
-                    borderBottom: "1px solid #f3f4f6",
-                    cursor: "pointer"
-                  }}
+                  className="flex items-center justify-between py-16 px-20 bordb"
                 >
-                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
-                    Supplier Detail
-                  </span>
+                  <div className="flex items-center gap-12">
+                    <Icon name="Users" width="16" height="16" stroke="#1f2937" />
+                    <p className="small-text text-dark font-500">
+                      Supplier Detail
+                    </p>
+                  </div>
                   <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
                 </div>
 
@@ -642,24 +603,81 @@ const Header = () => {
                     setIsMobileOpen(false);
                     navigate("/wheretobuy");
                   }}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "16px 20px",
-                    borderBottom: "1px solid #f3f4f6",
-                    cursor: "pointer"
-                  }}
+                  className="flex items-center justify-between py-16 px-20 bordb"
                 >
-                  <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937" }}>
-                    Where To Buy
-                  </span>
+                  <div className="flex items-center gap-12">
+                    <Icon name="MapPin" width="16" height="16" stroke="#1f2937" />
+                    <p className="small-text text-dark font-500">
+                      Where To Buy
+                    </p>
+                  </div>
                   <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
                 </div>
               </div>
             ) : (
               // SCREEN 2: SUBMENU VIEW
               <div>
+                {/* ALL CATEGORIES SUBMENU */}
+                {activeMobileSubmenu.id === "categories" && (
+                  <div>
+                    {categoriesData.map((cat) => {
+                      const isExpanded = expandedCategory === cat.id;
+                      return (
+                        <div key={cat.id} style={{ borderBottom: "1px solid #f3f4f6" }}>
+                          <div
+                            onClick={() => setExpandedCategory(isExpanded ? null : cat.id)}
+                            className={`flex items-center justify-between py-16 px-20 cursor-pointer ${isExpanded ? "bg-tertiary" : "bg-transparent"}`}
+
+                          >
+                            <div className="flex items-center gap-12">
+                              <Icon name={cat.iconName || "Grid"} width="18" height="18" stroke={isExpanded ? "#f25c2b" : "#1f2937"} />
+                              <p className="small-text text-dark font-500">
+                                {cat.name}
+                              </p>
+                            </div>
+                            <Icon name={isExpanded ? "ChevronDown" : "ChevronRight"} width="16" height="16" stroke={isExpanded ? "#f25c2b" : "#9ca3af"} />
+                          </div>
+                          {isExpanded && (
+                            <div style={{ background: '#fafafa4b' }} className="px-16 py-5">
+                              <p
+                                onClick={() => {
+                                  setIsMobileOpen(false);
+                                  setActiveMobileSubmenu(null);
+                                  setExpandedCategory(null);
+                                  navigate("/products", { state: { category: cat.id } });
+                                }}
+                                className="font-400 text-primary small-text flex items-center gap-12 py-10"
+                              >
+                                View All {cat.name} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
+                              </p>
+                              {productsData.filter(p => p.category === cat.id).length > 0 ? (
+                                productsData.filter(p => p.category === cat.id).map((prod) => (
+                                  <p
+                                    key={prod.id}
+                                    onClick={() => {
+                                      setIsMobileOpen(false);
+                                      setActiveMobileSubmenu(null);
+                                      setExpandedCategory(null);
+                                      navigate(`/product-detail/${prod.id}`);
+                                    }}
+                                    className="text-gray font-400 text-gray small-text flex items-center gap-12 bordh py-10"
+                                  >
+                                    {prod.name}
+                                  </p>
+                                ))
+                              ) : (
+                                <div className="py-8 text-gray small-text">
+                                  No products available in this category.
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
                 {/* CATEGORY SUBMENU */}
                 {activeMobileSubmenu.id.startsWith("cat-") && (
                   <div>

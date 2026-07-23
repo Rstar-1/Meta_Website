@@ -342,6 +342,10 @@ input,
     font-size: 15px !important;
     line-height: 22px !important;
     font-weight: 400 !important;
+
+    @media (max-width: 640px) {
+        font-size: 13.5px !important;
+    }
 }
 
 .mini-text {
