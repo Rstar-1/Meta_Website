@@ -252,8 +252,8 @@ const idMap = {
   'ashmita-313155565': pvc_cold_storage_curtains_2,
 };
 
-export const resolveProductImage = (product) => 
+export const resolveProductImage = (product) =>
   product ? (idMap[product.id] || assetMap[product.image] || product.image || '') : '';
 
-export const resolveImagePath = (path) => 
+export const resolveImagePath = (path) =>
   path ? (assetMap[path] || path) : '';

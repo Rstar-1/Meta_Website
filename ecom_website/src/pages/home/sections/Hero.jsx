@@ -1,62 +1,30 @@
 import React from 'react';
 import Container from '../../../components/common/Container';
 import Icon from '../../../components/common/Icon';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
+import Image from '../../../components/common/Image';
+
+const heroVideoSrc = '/pvc_factory_video.mp4';
 
 const Hero = ({ cms }) => {
   if (!cms) return null;
 
-  const videoSlides = [
-    { src: '/pvc_factory_video.mp4' },
-    { src: '/pvc_rolls.mp4' }
-  ];
-
   return (
     <div className="relative overflow-hidden" style={{ backgroundColor: '#0a1120', minHeight: '500px', width: '100%' }}>
-      {/* Background HTML5 Video Swiper Carousel - 2 Video Slides */}
-      <Swiper
-        modules={[Autoplay, EffectFade, Pagination]}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        autoplay={{ delay: 6000, disableOnInteraction: false }}
-        loop={true}
-        pagination={{ clickable: true }}
-        className="hero-video-swiper"
+      {/* Background Video using generic Image component */}
+      <Image
+        src={heroVideoSrc}
+        alt="Hero Background Video"
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
+          objectFit: 'cover',
+          pointerEvents: 'none',
           zIndex: 1
         }}
-      >
-        {videoSlides.map((slide, idx) => (
-          <SwiperSlide key={idx} style={{ width: '100%', height: '100%' }}>
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="/hero.webp"
-              fetchPriority="high"
-              preload={idx === 0 ? "auto" : "metadata"}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                pointerEvents: 'none'
-              }}
-            >
-              <source src={slide.src} type="video/mp4" />
-            </video>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      />
 
       {/* Overlay Gradient from bottom side for text contrast */}
       <div

@@ -203,45 +203,70 @@ const Header = () => {
               ))}
             </div>
           </div>
-
           {/* RIGHT UTILITY LINKS */}
           <div className="flex items-center">
-            {/* SEARCH WITH DROPDOWN */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsSearchOpen(true)}
-              onMouseLeave={() => setIsSearchOpen(false)}
-            >
-              <div
-                className="top-nav-link"
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-              >
-                <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-              </div>
-              <Dropdown
-                isOpen={isSearchOpen}
-                onClose={() => setIsSearchOpen(false)}
-                align="right"
-                minWidth="340px"
-                padding="10px"
-                style={{ top: "100%", zIndex: 1001 }}
-              >
-                <Fields
-                  type="text"
-                  placeholder="Search products & solutions..."
-                  icon="Search"
-                  iconPosition="right"
-                  value={searchQuery}
-                  onChange={setSearchQuery}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      setIsSearchOpen(false);
-                      navigate(`/products?search=${searchQuery}`);
-                    }
-                  }}
-                  autoFocus
-                />
-              </Dropdown>
+            {/* SEARCH INLINE UTILITY */}
+            <div className="relative flex items-center" style={{ minWidth: isSearchOpen ? "210px" : "auto", transition: "all 0.2s ease" }}>
+              {isSearchOpen ? (
+                <div className="relative flex items-center w-full">
+                  <input
+                    type="text"
+                    placeholder="Search products & solutions..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        setIsSearchOpen(false);
+                        navigate(`/products?search=${searchQuery}`);
+                      }
+                    }}
+                    onBlur={() => {
+                      setTimeout(() => {
+                        if (!searchQuery) setIsSearchOpen(false);
+                      }, 200);
+                    }}
+                    autoFocus
+                    style={{
+                      border: "1px solid #cbd5e1",
+                      borderRadius: "16px",
+                      padding: "4px 28px 4px 12px",
+                      fontSize: "11px",
+                      width: "100%",
+                      outline: "none",
+                      color: "#0f172a",
+                      backgroundColor: "#f8fafc"
+                    }}
+                  />
+                  <span
+                    onClick={() => {
+                      if (searchQuery) {
+                        setIsSearchOpen(false);
+                        navigate(`/products?search=${searchQuery}`);
+                      } else {
+                        setIsSearchOpen(false);
+                      }
+                    }}
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      color: "#64748b"
+                    }}
+                  >
+                    <Icon name="Search" width="12" height="12" stroke="currentColor" />
+                  </span>
+                </div>
+              ) : (
+                <div
+                  className="top-nav-link"
+                  onClick={() => setIsSearchOpen(true)}
+                  style={{ display: "flex", alignItems: "center", gap: "4px" }}
+                >
+                  <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH
+                </div>
+              )}
             </div>
 
             <div className="header-v-divider" />

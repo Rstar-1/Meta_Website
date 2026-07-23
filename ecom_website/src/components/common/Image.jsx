@@ -1,5 +1,14 @@
 import { useState, useEffect, forwardRef } from "react";
 
+const isVideoSrc = (url) => {
+  if (!url) return false;
+  return typeof url === "string" && (
+    url.toLowerCase().endsWith(".mp4") || 
+    url.toLowerCase().endsWith(".webm") || 
+    url.toLowerCase().endsWith(".ogg")
+  );
+};
+
 export function Image({
   src,
   alt = "",
@@ -19,6 +28,27 @@ export function Image({
   useEffect(() => {
     setImgSrc(src);
   }, [src]);
+
+  if (isVideoSrc(src)) {
+    return (
+      <video
+        src={src}
+        className={className}
+        style={{
+          aspectRatio,
+          objectFit: aspectRatio ? "cover" : "cover",
+          width: width || "100%",
+          height: height || "100%",
+          ...style,
+        }}
+        autoPlay
+        loop
+        muted
+        playsInline
+        {...props}
+      />
+    );
+  }
 
   return (
     <img
@@ -61,18 +91,33 @@ export const ImageDiv = forwardRef(({
     setBgImage(image);
   }, [image]);
 
+  const isVideo = isVideoSrc(bgImage);
+
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`} {...props}>
-      <div
-        ref={innerRef}
-        className={innerClassName}
-        style={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 0,
-          background: `url(${bgImage || fallback}) center/cover no-repeat`,
-        }}
-      />
+      {isVideo ? (
+        <video
+          ref={innerRef}
+          src={bgImage}
+          className={`${innerClassName} absolute inset-0 w-full h-full object-cover`}
+          style={{ zIndex: 0 }}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      ) : (
+        <div
+          ref={innerRef}
+          className={innerClassName}
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+            background: `url(${bgImage || fallback}) center/cover no-repeat`,
+          }}
+        />
+      )}
       {overlay && (
         <div
           className={overlayClass}
