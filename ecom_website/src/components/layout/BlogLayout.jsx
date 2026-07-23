@@ -544,9 +544,9 @@ const BlogLayout = ({
                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />
                       </div>
-                      <div className="w-85 sm-w-full">
+                      <div className="w-85 sm-w-full ml-12 sm-ml-1">
                         <h4 className="mid-text font-600 text-dark">{post.authorName}</h4>
-                        <p className="mini-text text-primary font-500 uppercase tracking-wide mb-8">
+                        <p className="mini-text text-primary font-500 uppercase tracking-wide mb-5">
                           {post.authorRole || 'Digital Marketing Expert'}
                         </p>
                         <p className="small-text text-gray font-400" style={{ margin: 0 }}>
