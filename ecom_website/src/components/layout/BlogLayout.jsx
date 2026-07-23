@@ -396,7 +396,7 @@ const BlogLayout = ({
                 </>
               ) : (
                 loading ? (
-                  <div className="flex flex-column gap-15 w-full">
+                  <div className="grid-cols-1 gap-12 w-full">
                     {/* Main Image Skeleton */}
                     <Skeleton variant="rect" width="100%" height="400px" borderRadius="10px" theme="adaptive" />
 
