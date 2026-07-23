@@ -114,17 +114,17 @@ const SupplierDetail = () => {
             <div className="bg-white border-ec p-18 rounded-5">
               <div className="flex items-center gap-12 bordb pb-12">
                 <div
-                  className="bg-light-secondary rounded-full flex items-center justify-center"
+                  className="bg-light-primary rounded-full flex items-center justify-center"
                   style={{
                     width: '45px',
                     height: '45px',
                   }}
                 >
-                  <h2 className='font-500 text-secondary title-text'>{nameDisplay.charAt(0)}</h2>
+                  <h2 className='font-500 text-primary title-text'>{nameDisplay.charAt(0)}</h2>
                 </div>
                 <div>
                   <h2 className="text-dark mid-text font-500">{nameDisplay}</h2>
-                  <p className="mini-text text-secondary font-500">Verified Supplier</p>
+                  <p className="mini-text text-primary font-500">Verified Supplier</p>
                 </div>
               </div>
 

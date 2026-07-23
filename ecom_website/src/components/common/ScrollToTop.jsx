@@ -1,30 +1,50 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Icon from './Icon';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const circleRef = useRef(null);
+  const progressRef = useRef(0);
 
   // Scroll to top on pathname changes (route changes)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Monitor scroll progress
+  // Monitor scroll progress and update DOM directly for high performance
   useEffect(() => {
-    const handleScroll = () => {
+    const circumference = 40 * Math.PI; // r = 20 -> ~125.66
+    let ticked = false;
+
+    const updateProgress = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      
+      progressRef.current = progress;
 
-      setScrollProgress(progress);
+      if (circleRef.current) {
+        const strokeDashoffset = circumference * (1 - progress / 100);
+        circleRef.current.style.strokeDashoffset = strokeDashoffset;
+      }
+
+      // Only update state when crossing the threshold (minimize React re-renders)
       setIsVisible(scrollTop > 300);
+      ticked = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticked) {
+        window.requestAnimationFrame(updateProgress);
+        ticked = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    // Initial call
+    updateProgress();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -36,8 +56,7 @@ const ScrollToTop = () => {
     });
   };
 
-  const circumference = 40 * Math.PI; // r = 20 -> ~125.66
-  const strokeDashoffset = circumference * (1 - scrollProgress / 100);
+  const circumference = 40 * Math.PI;
 
   return (
     <>
@@ -56,6 +75,7 @@ const ScrollToTop = () => {
           <circle cx="25" cy="25" r="20" fill="none" stroke="#eef2f6" strokeWidth="2.5" />
           {/* Active progress circle */}
           <circle
+            ref={circleRef}
             cx="25"
             cy="25"
             r="20"
@@ -63,9 +83,9 @@ const ScrollToTop = () => {
             stroke="#0f1623"
             strokeWidth="2.5"
             strokeDasharray={circumference}
-            strokeDashoffset={strokeDashoffset}
+            strokeDashoffset={circumference * (1 - progressRef.current / 100)}
             strokeLinecap="round"
-            style={{ transition: 'stroke-dashoffset 0.1s ease' }}
+            style={{ transition: 'stroke-dashoffset 10ms linear' }}
           />
         </svg>
         <span>
