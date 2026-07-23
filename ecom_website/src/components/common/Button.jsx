@@ -6,6 +6,8 @@ const VERSION_CLASSES = {
   v1: "px-20 py-9 para-text",
   v2: "px-25 py-11 sm-px-19 sm-py-8 small-text",
   v3: "w-full py-10 sm-py-13 mini-text",
+  icon: "p-8",
+  none: "",
 };
 
 const Button = ({

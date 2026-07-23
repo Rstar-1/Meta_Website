@@ -172,36 +172,22 @@ const CardLayout = ({
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
-                    width: 44px;
-                    height: 44px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
                     cursor: pointer;
                     z-index: 10;
                     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
                     user-select: none;
                 }
 
                 .custom-swiper-prev {
                     left: -22px;
-                    background: #ffffff !important;
-                    border: 1.5px solid var(--primary) !important;
-                    color: var(--primary) !important;
                 }
 
                 .custom-swiper-prev:hover {
-                    background: rgba(30, 116, 219, 0.05) !important;
                     transform: translateY(-50%) scale(1.05);
                 }
 
                 .custom-swiper-next {
                     right: -22px;
-                    background: var(--primary) !important;
-                    border: 1.5px solid var(--primary) !important;
-                    color: #ffffff !important;
                 }
 
                 .custom-swiper-next:hover {
@@ -228,20 +214,34 @@ const CardLayout = ({
             {isSlider ? (
                 <div className="w-full relative py-10 swiper-slider-container">
                     {/* Thin custom prev icon (White background with blue border) */}
-                    <button className={`custom-swiper-prev prev-${sliderId}`} aria-label="Previous slide">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                    </button>
+                    <Button
+                        type="button"
+                        className={`custom-swiper-prev prev-${sliderId} rounded-full`}
+                        aria-label="Previous slide"
+                        version="icon"
+                        variant="outline"
+                        bg="primary"
+                        icon="ArrowLeft"
+                        iconWidth="18"
+                        iconHeight="18"
+                        iconStrokeWidth="2"
+                        iconStroke="currentColor"
+                    />
 
                     {/* Thin custom next icon (Solid blue background) */}
-                    <button className={`custom-swiper-next next-${sliderId}`} aria-label="Next slide">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                    <Button
+                        type="button"
+                        className={`custom-swiper-next next-${sliderId} rounded-full`}
+                        aria-label="Next slide"
+                        version="icon"
+                        bg="primary"
+                        color="white"
+                        icon="ArrowRight"
+                        iconWidth="18"
+                        iconHeight="18"
+                        iconStrokeWidth="2"
+                        iconStroke="currentColor"
+                    />
 
                     <Swiper
                         modules={[Navigation, Autoplay]}

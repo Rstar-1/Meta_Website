@@ -4,6 +4,7 @@ import Container from '../common/Container';
 import Icon from '../common/Icon';
 import Image from '../common/Image';
 import Fields from '../common/Fields';
+import Button from '../common/Button';
 import Banner from './Banner';
 import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
@@ -353,9 +354,18 @@ const BlogLayout = ({
                         <Icon name={share.icon} width={share.width} height={share.height} fill="currentColor" />
                       </a>
                     ))}
-                    <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
-                      <Icon name="CopyLink" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" />
-                    </button>
+                    <Button
+                      onClick={copyToClipboard}
+                      className="share-btn"
+                      title="Copy link"
+                      aria-label="Copy link to clipboard"
+                      version="v0"
+                      bg="transparent"
+                      icon="CopyLink"
+                      iconWidth="18"
+                      iconHeight="18"
+                      iconStrokeWidth="2.5"
+                    />
                   </div>
                 )}
               </div>
@@ -460,9 +470,18 @@ const BlogLayout = ({
                     {/* Mobile Social Share Row */}
                     <div className="hidden sm-flex md-flex gap-10 items-center mb-25 sm-mb-14 bg-white p-12 rounded-5 border-ec">
                       <span className="small-text font-600 text-dark">Share:</span>
-                      <button onClick={copyToClipboard} className="share-btn" title="Copy link" aria-label="Copy link to clipboard">
-                        <Icon name="CopyLink" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" />
-                      </button>
+                      <Button
+                        onClick={copyToClipboard}
+                        className="share-btn"
+                        title="Copy link"
+                        aria-label="Copy link to clipboard"
+                        version="v0"
+                        bg="transparent"
+                        icon="CopyLink"
+                        iconWidth="16"
+                        iconHeight="16"
+                        iconStrokeWidth="2"
+                      />
                       {socialShares.map((share) => (
                         <a
                           key={share.name}

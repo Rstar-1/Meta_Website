@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Container from "../../../components/common/Container";
+import Button from "../../../components/common/Button";
 
 const Details = ({ addToRef }) => {
     const [loadMap, setLoadMap] = useState(false);
@@ -110,18 +111,19 @@ const Details = ({ addToRef }) => {
                                 </div>
                                 <h3 className="mid-text font-600 text-dark">Interactive Location Map</h3>
                                 <p className="small-text text-gray max-w-280 mb-5">To protect your privacy, third-party cookies from Google Maps are blocked until loaded.</p>
-                                <button 
+                                <Button 
                                     onClick={() => setLoadMap(true)}
-                                    className="px-20 py-10 rounded-5 text-white font-600 cursor-pointer"
+                                    text="Load Interactive Map"
+                                    bg="primary"
+                                    color="white"
+                                    version="v1"
+                                    className="cursor-pointer"
                                     style={{ 
-                                        backgroundColor: 'var(--primary)',
                                         border: 'none',
                                         transition: 'all 0.2s ease',
                                         boxShadow: '0 4px 6px -1px var(--primary-light)'
                                     }}
-                                >
-                                    Load Interactive Map
-                                </button>
+                                />
                             </div>
                         </div>
                     )}

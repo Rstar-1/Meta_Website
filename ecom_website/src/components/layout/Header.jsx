@@ -472,8 +472,15 @@ const Header = () => {
             }}
           >
             {activeMobileSubmenu ? (
-              <button
+              <Button
                 onClick={() => setActiveMobileSubmenu(null)}
+                icon="ChevronLeft"
+                iconWidth="16"
+                iconHeight="16"
+                iconStrokeWidth="3"
+                text="BACK"
+                version="v0"
+                bg="transparent"
                 style={{
                   background: "none",
                   border: "none",
@@ -488,9 +495,7 @@ const Header = () => {
                   textTransform: "uppercase",
                   letterSpacing: "0.5px"
                 }}
-              >
-                <Icon name="ChevronLeft" width="16" height="16" stroke="currentColor" strokeWidth="3" /> BACK
-              </button>
+              />
             ) : (
               <NavLink to="/" onClick={() => { setIsMobileOpen(false); setActiveMobileSubmenu(null); }}>
                 <Image
@@ -503,8 +508,13 @@ const Header = () => {
               </NavLink>
             )}
 
-            <button
+            <Button
               onClick={() => { setIsMobileOpen(false); setActiveMobileSubmenu(null); }}
+              icon="Close"
+              iconWidth="24"
+              iconHeight="24"
+              version="v0"
+              bg="transparent"
               style={{
                 background: "none",
                 border: "none",
@@ -512,9 +522,7 @@ const Header = () => {
                 cursor: "pointer",
                 padding: "4px"
               }}
-            >
-              <Icon name="Close" width="24" height="24" stroke="currentColor" />
-            </button>
+            />
           </div>
 
           {/* DRAWER SUBHEADER: USER PROFILE */}

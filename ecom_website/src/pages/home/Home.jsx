@@ -10,7 +10,9 @@ import { cms } from '../../utils/apiData';
 
 import Hero from './sections/Hero';
 import BrowseCategory from './sections/BrowseCategory';
-import LatestProducts from './sections/LatestProducts';
+
+// Lazy Loaded Sections
+const LatestProducts = lazy(() => import('./sections/LatestProducts'));
 
 // Lazy Loaded Sections
 const WhyChoose = lazy(() => import('./sections/WhyChoose'));
@@ -105,9 +107,22 @@ const Home = () => {
         <BrowseCategory cms={cms} />
       </Container>
 
-      <Container className="bg-white" version="v2">
-        <LatestProducts cms={cms} />
-      </Container>
+      <LazySection placeholderHeight={400}>
+        <Suspense fallback={
+          <Container className="bg-white" version="v2">
+            <div className="py-40 w-full" style={{ minHeight: '400px' }}>
+              <Skeleton variant="section-header" theme="adaptive" />
+              <div className="mt-20">
+                <Skeleton variant="card-grid" count={4} theme="adaptive" />
+              </div>
+            </div>
+          </Container>
+        }>
+          <Container className="bg-white" version="v2">
+            <LatestProducts cms={cms} />
+          </Container>
+        </Suspense>
+      </LazySection>
 
       {lazySections.map(({ Component, height, fallback, containerClass, containerStyle, version, noContainer }, index) => (
         <LazySection key={index} placeholderHeight={height}>

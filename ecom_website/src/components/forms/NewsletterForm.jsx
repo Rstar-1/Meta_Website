@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Icon from '../common/Icon';
+import Button from '../common/Button';
 
 const NewsletterForm = ({
   variant = 'card', // 'card' or 'footer'
@@ -80,12 +81,15 @@ const NewsletterForm = ({
             }}
             required
           />
-          <button
+          <Button
             type="submit"
-            className="newsletter-btn bg-primary text-white border-0 px-14 py-8 rounded-5 font-600 cursor-pointer"
-          >
-            {buttonText}
-          </button>
+            text={buttonText}
+            bg="primary"
+            color="white"
+            version="v0"
+            className="newsletter-btn cursor-pointer"
+            style={{ border: '0', padding: '8px 14px', borderRadius: '5px', fontWeight: '600' }}
+          />
         </form>
         {error && (
           <small className="text-danger mt-6 block mini-text" style={{ color: '#ef4444' }}>
@@ -134,12 +138,15 @@ const NewsletterForm = ({
               }}
               required
             />
-            <button
+            <Button
               type="submit"
-              className="bg-primary text-white font-600 px-15 border-0 cursor-pointer mini-text"
-            >
-              {buttonText}
-            </button>
+              text={buttonText}
+              bg="primary"
+              color="white"
+              version="v0"
+              className="cursor-pointer font-600 px-15 border-0 mini-text"
+              style={{ borderRadius: 0 }}
+            />
           </form>
           {error && (
             <small className="text-danger mt-6 block mini-text" style={{ color: '#ef4444' }}>
