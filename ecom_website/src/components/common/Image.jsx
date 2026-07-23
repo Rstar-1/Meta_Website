@@ -45,6 +45,7 @@ export function Image({
         loop
         muted
         playsInline
+        preload="auto"
         {...props}
       />
     );

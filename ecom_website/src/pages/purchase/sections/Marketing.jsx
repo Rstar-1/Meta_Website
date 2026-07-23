@@ -57,7 +57,7 @@ const Marketing = () => {
 
                     <div>
                         <Image
-                            src="/purchase_hero_bg.png"
+                            src="/purchase_hero_bg.webp"
                             alt="Modern Interior Showroom"
                             className="w-full h-450 object-cover"
 

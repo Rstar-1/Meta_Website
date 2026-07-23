@@ -23,7 +23,7 @@ const BrowseCategory = ({ onSelectCategory }) => {
   return (
     <div className="w-full py-30">
       <div className='grid-cols-6 md-grid-cols-3 sm-grid-cols-2 gap-12'>
-        {displayedCategories.map((cat) => (
+        {displayedCategories.map((cat, idx) => (
           <div
             key={cat.id}
             className="px-10 py-20 bg-white rounded-10 cursor-pointer text-center"
@@ -35,7 +35,8 @@ const BrowseCategory = ({ onSelectCategory }) => {
                 alt={cat.name}
                 width="80"
                 height="80"
-                loading="lazy"
+                loading={idx < 3 ? "eager" : "lazy"}
+                fetchPriority={idx < 3 ? "high" : undefined}
                 className="flex object-cover rounded-full mx-auto"
                 style={{ width: '80px', height: '80px' }}
               />
