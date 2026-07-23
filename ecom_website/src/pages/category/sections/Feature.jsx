@@ -95,9 +95,9 @@ const Feature = ({ loading, displayCategories, handleCategoryClick }) => {
             <Container style={{ background: 'var(--forth)' }}>
                 <div className='w-full py-50'>
                     {/* Floating Features Bar */}
-                    <div className="bg-white p-20 grid-cols-4">
+                    <div className="bg-white p-20 sm-p-15 grid-cols-4 sm-grid-cols-1 gap-12">
                         {featuresList.map((item, index) => (
-                            <div key={index} className="flex items-center gap-12">
+                            <div key={index} className="flex items-center gap-12 sm-mb-8">
                                 <div className="feature-icon-wrapper">
                                     <Icon name={item.icon} width="20" height="20" stroke="currentColor" />
                                 </div>
@@ -131,7 +131,7 @@ const Feature = ({ loading, displayCategories, handleCategoryClick }) => {
                     {loading ? (
                         <Skeleton variant="card-grid" count={displayCategories.length || 6} className="grid-cols-3 gap-12" theme="adaptive" />
                     ) : (
-                        <div className="grid-cols-3 gap-12">
+                        <div className="grid-cols-3 sm-grid-cols-1 gap-12">
                             {displayCategories.map((cat) => (
                                 <div
                                     key={cat.id}
@@ -139,7 +139,7 @@ const Feature = ({ loading, displayCategories, handleCategoryClick }) => {
                                     onClick={() => handleCategoryClick(cat.id)}
                                 >
                                     {/* Left Text details */}
-                                    <div className="w-55">
+                                    <div className="w-55 sm-w-60">
                                         <div className='p-20'>
                                             <div>
                                                 <div
@@ -160,7 +160,7 @@ const Feature = ({ loading, displayCategories, handleCategoryClick }) => {
                                     </div>
 
                                     {/* Right slanted Image */}
-                                    <div className="card-image-right w-45">
+                                    <div className="card-image-right w-45 sm-w-40">
                                         <Image
                                             src={resolveImagePath(cat.icon)}
                                             alt={cat.name}
