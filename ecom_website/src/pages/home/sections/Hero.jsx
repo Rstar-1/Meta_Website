@@ -9,7 +9,7 @@ const Hero = ({ cms }) => {
   if (!cms) return null;
 
   return (
-    <div className="relative overflow-hidden" style={{ backgroundColor: '#0a1120', minHeight: '500px', width: '100%' }}>
+    <div className="relative overflow-hidden h-500 sm-h-400" style={{ backgroundColor: '#0a1120', width: '100%' }}>
       {/* Background Video using generic Image component */}
       <Image
         src={heroVideoSrc}
@@ -41,10 +41,10 @@ const Hero = ({ cms }) => {
       />
 
       <Container className='relative z-10'>
-        <div className="w-full h-500 flex items-end">
+        <div className="w-full h-500 sm-h-400 flex items-end">
 
           {/* Left Column: Text & Features */}
-          <div className="w-70 py-40">
+          <div className="w-70 sm-w-full py-40">
 
             {/* Tag Badge */}
             <div

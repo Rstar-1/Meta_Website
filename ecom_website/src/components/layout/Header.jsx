@@ -328,9 +328,9 @@ const Header = () => {
             <Image
               src={headerConfig.logo.src}
               alt={headerConfig.logo.alt}
-              width="120"
-              height="36"
-              style={{ maxHeight: "36px", objectFit: "contain" }}
+              width="150"
+              height="40"
+              className="flex object-contain"
             />
           </NavLink>
 
@@ -445,31 +445,11 @@ const Header = () => {
       {/* MOBILE DRAWER */}
       {isMobileOpen && (
         <div
-          className="hidden md-block sm-block"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "#ffffff",
-            zIndex: 10000,
-            display: "flex",
-            flexDirection: "column",
-            overflowY: "auto"
-          }}
+          className="hidden md-block sm-block fixed top-0 left-0 h-full overflow-auto z-999 bg-white w-full"
         >
           {/* DRAWER HEADER */}
           <div
-            style={{
-              backgroundColor: "#1e293b",
-              color: "#ffffff",
-              padding: "14px 20px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              minHeight: "56px"
-            }}
+            className="bg-white flex items-center justify-between p-12"
           >
             {activeMobileSubmenu ? (
               <Button
@@ -501,9 +481,9 @@ const Header = () => {
                 <Image
                   src={headerConfig.logo.src}
                   alt={headerConfig.logo.alt}
-                  width="110"
-                  height="32"
-                  style={{ maxHeight: "32px", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                  width="150"
+                  height="40"
+                  className="flex object-contain"
                 />
               </NavLink>
             )}
@@ -511,17 +491,10 @@ const Header = () => {
             <Button
               onClick={() => { setIsMobileOpen(false); setActiveMobileSubmenu(null); }}
               icon="Close"
-              iconWidth="24"
-              iconHeight="24"
-              version="v0"
-              bg="transparent"
-              style={{
-                background: "none",
-                border: "none",
-                color: "#ffffff",
-                cursor: "pointer",
-                padding: "4px"
-              }}
+              iconWidth="18"
+              iconHeight="18"
+              version="icon"
+              bg="dark"
             />
           </div>
 
