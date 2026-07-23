@@ -209,11 +209,11 @@ const Header = () => {
             <div className="relative flex items-center" style={{ minWidth: isSearchOpen ? "210px" : "auto", transition: "all 0.2s ease" }}>
               {isSearchOpen ? (
                 <div className="relative flex items-center w-full">
-                  <input
-                    type="text"
-                    placeholder="Search products & solutions..."
+                  <Fields
+                    type="input"
+                    placeholder="Search products"
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(val) => setSearchQuery(val)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         setIsSearchOpen(false);
@@ -226,16 +226,6 @@ const Header = () => {
                       }, 200);
                     }}
                     autoFocus
-                    style={{
-                      border: "1px solid #cbd5e1",
-                      borderRadius: "16px",
-                      padding: "4px 28px 4px 12px",
-                      fontSize: "11px",
-                      width: "100%",
-                      outline: "none",
-                      color: "#0f172a",
-                      backgroundColor: "#f8fafc"
-                    }}
                   />
                   <span
                     onClick={() => {
