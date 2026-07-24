@@ -32,16 +32,12 @@ const Header = () => {
   const [activeMainNavMenu, setActiveMainNavMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
-  const [expandedCategory, setExpandedCategory] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
-    if (!isMobileOpen) {
-      setActiveMobileSubmenu(null);
-      setExpandedCategory(null);
-    }
+    if (!isMobileOpen) setActiveMobileSubmenu(null);
   }, [isMobileOpen]);
 
   useEffect(() => {
@@ -51,17 +47,15 @@ const Header = () => {
     return () => window.removeEventListener('cart-updated', updateCount);
   }, []);
 
+  const closeMobile = () => { setIsMobileOpen(false); setActiveMobileSubmenu(null); };
+
   const handleProductClick = (productId, categoryName) => {
     setActiveMainNavMenu(null);
     setActiveTopDropdown(null);
     setIsSearchOpen(false);
-    if (productId) {
-      navigate(`/product-detail/${productId}`);
-    } else if (categoryName) {
-      navigate("/products", { state: { category: categoryName } });
-    } else {
-      navigate("/products");
-    }
+    if (productId) navigate(`/product-detail/${productId}`);
+    else if (categoryName) navigate("/products", { state: { category: categoryName } });
+    else navigate("/products");
   };
 
   const renderTopSubmenu = (submenu) => (
@@ -85,6 +79,118 @@ const Header = () => {
         <NavLink key={sIdx} to={sub.path} className="drop-item">{label}</NavLink>
       );
     })
+  );
+
+  /* ── Shared TopNav item renderer (used for both left + right) ── */
+  const renderTopNavItem = (item, idx, align) => (
+    <div key={item.id} className="flex items-center">
+      {idx > 0 && <div className="header-v-divider" />}
+      {item.hasDropdown ? (
+        <div
+          className="relative"
+          onMouseEnter={() => setActiveTopDropdown(item.id)}
+          onMouseLeave={() => setActiveTopDropdown(null)}
+        >
+          <span className="top-nav-link">
+            {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+          </span>
+          <Dropdown isOpen={activeTopDropdown === item.id} align={align}>
+            {renderTopSubmenu(item.submenu)}
+          </Dropdown>
+        </div>
+      ) : (
+        <NavLink to={item.path} className="top-nav-link">{item.label}</NavLink>
+      )}
+    </div>
+  );
+
+  /* ── Mobile: generic row link ── */
+  const MobileRow = ({ icon, label, onClick }) => (
+    <div onClick={onClick} className="flex items-center justify-between py-16 px-20 bordb" style={{ cursor: "pointer" }}>
+      <div className="flex items-center gap-12">
+        <Icon name={icon} width="16" height="16" stroke="#1f2937" />
+        <p className="small-text text-dark font-500">{label}</p>
+      </div>
+      <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+    </div>
+  );
+
+  /* ── Mobile: list submenu (corporate / resources) ── */
+  const renderListSubmenu = (menuItem) => (
+    <div>
+      {menuItem.submenu.map((sub, idx) => (
+        <div
+          key={idx}
+          onClick={() => { closeMobile(); navigate(sub.path); }}
+          style={{ display: "flex", alignItems: "center", padding: "18px 20px", borderBottom: "1px solid #f3f4f6", cursor: "pointer" }}
+        >
+          <div style={{
+            width: "40px", height: "40px", borderRadius: "6px",
+            backgroundColor: menuItem.badgeColor, display: "flex",
+            alignItems: "center", justifyContent: "center", color: menuItem.badgeIconColor
+          }}>
+            <Icon name={sub.icon} width="18" height="18" stroke="currentColor" />
+          </div>
+          <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937", marginLeft: "16px" }}>{sub.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+
+  /* ── Mobile: categories submenu (product image rows, NO collapse) ── */
+  const renderCategoriesSubmenu = () => (
+    <div>
+      {categoriesData.map((cat) => {
+        const catProducts = productsData.filter(p => p.category === cat.id);
+        return (
+          <div key={cat.id}>
+            {/* Category header */}
+            <div
+              className="flex items-center justify-between py-14 px-20 bg-tertiary"
+              style={{ borderBottom: "1px solid #e5e7eb", cursor: "pointer" }}
+              onClick={() => { closeMobile(); navigate("/products", { state: { category: cat.id } }); }}
+            >
+              <div className="flex items-center gap-12">
+                <Icon name={cat.iconName || "Grid"} width="18" height="18" stroke="#f25c2b" />
+                <p className="small-text text-dark font-600" style={{ margin: 0 }}>{cat.name}</p>
+              </div>
+              <span className="text-primary font-500 flex items-center gap-4" style={{ fontSize: "11px" }}>
+                View All <Icon name="ArrowRight" width="10" height="10" stroke="currentColor" />
+              </span>
+            </div>
+            {/* Product rows with images */}
+            {catProducts.length > 0 ? (
+              catProducts.map((prod) => (
+                <div
+                  key={prod.id}
+                  onClick={() => { closeMobile(); navigate(`/product-detail/${prod.id}`); }}
+                  style={{
+                    display: "flex", alignItems: "center", padding: "12px 20px",
+                    borderBottom: "1px solid #f3f4f6", cursor: "pointer"
+                  }}
+                >
+                  <Image
+                    src={resolveProductImage(prod)}
+                    alt={prod.name}
+                    width="48"
+                    height="48"
+                    style={{
+                      width: "48px", height: "48px", borderRadius: "6px",
+                      objectFit: "cover", backgroundColor: "#f3f4f6"
+                    }}
+                  />
+                  <span style={{ fontSize: "14px", fontWeight: "500", color: "#1f2937", marginLeft: "14px" }}>
+                    {prod.name}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <div className="py-8 px-20 text-gray small-text">No products in this category.</div>
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 
   return (
@@ -186,29 +292,7 @@ const Header = () => {
               />
             </NavLink>
             <div className="ml-30 flex items-center">
-              {headerConfig.topNav.left.map((item, idx) => (
-                <div key={item.id} className="flex items-center">
-                  {idx > 0 && <div className="header-v-divider" />}
-                  {item.hasDropdown ? (
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setActiveTopDropdown(item.id)}
-                      onMouseLeave={() => setActiveTopDropdown(null)}
-                    >
-                      <span className="top-nav-link">
-                        {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                      </span>
-                      <Dropdown isOpen={activeTopDropdown === item.id} align="left">
-                        {renderTopSubmenu(item.submenu)}
-                      </Dropdown>
-                    </div>
-                  ) : (
-                    <NavLink to={item.path} className="top-nav-link">
-                      {item.label}
-                    </NavLink>
-                  )}
-                </div>
-              ))}
+              {headerConfig.topNav.left.map((item, idx) => renderTopNavItem(item, idx, "left"))}
             </div>
           </div>
           {/* RIGHT UTILITY LINKS */}
@@ -269,29 +353,7 @@ const Header = () => {
 
             <div className="header-v-divider" />
 
-            {headerConfig.topNav.right.map((item, idx) => (
-              <div key={item.id} className="flex items-center">
-                {idx > 0 && <div className="header-v-divider" />}
-                {item.hasDropdown ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setActiveTopDropdown(item.id)}
-                    onMouseLeave={() => setActiveTopDropdown(null)}
-                  >
-                    <span className="top-nav-link">
-                      {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                    </span>
-                    <Dropdown isOpen={activeTopDropdown === item.id} align="right">
-                      {renderTopSubmenu(item.submenu)}
-                    </Dropdown>
-                  </div>
-                ) : (
-                  <NavLink to={item.path} className="top-nav-link">
-                    {item.label}
-                  </NavLink>
-                )}
-              </div>
-            ))}
+            {headerConfig.topNav.right.map((item, idx) => renderTopNavItem(item, idx, "right"))}
 
             <div className="header-v-divider" />
 
@@ -477,7 +539,7 @@ const Header = () => {
                 }}
               />
             ) : (
-              <NavLink to="/" onClick={() => { setIsMobileOpen(false); setActiveMobileSubmenu(null); }}>
+              <NavLink to="/" onClick={closeMobile}>
                 <Image
                   src={headerConfig.logo.src}
                   alt={headerConfig.logo.alt}
@@ -489,7 +551,7 @@ const Header = () => {
             )}
 
             <Button
-              onClick={() => { setIsMobileOpen(false); setActiveMobileSubmenu(null); }}
+              onClick={closeMobile}
               icon="Close"
               iconWidth="18"
               iconHeight="18"
@@ -501,7 +563,7 @@ const Header = () => {
           {/* DRAWER CONTENT */}
           <div style={{ flex: 1, overflowY: "auto" }}>
             {!activeMobileSubmenu ? (
-              // SCREEN 1: MAIN MENU
+              // SCREEN 1: MAIN MENU — mapped from header.json mobileMenu
               <div>
                 {/* SEARCH BAR */}
                 <div className="py-16 px-20 bordb">
@@ -521,298 +583,28 @@ const Header = () => {
                   />
                 </div>
 
-                {/* EXPLORE PRODUCTS LINK */}
-                <div
-                  onClick={() => setActiveMobileSubmenu({ id: "categories", name: "Explore Products" })}
-                  className="flex items-center justify-between py-16 px-20 bordb"
-                >
-                  <div className="flex items-center gap-12">
-                    <Icon name="Product" width="16" height="16" stroke="#1f2937" />
-                    <p className="small-text text-dark font-500">
-                      Explore Products
-                    </p>
-                  </div>
-                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
-                </div>
-
-                {/* CATEGORY LINK */}
-                <div
-                  onClick={() => {
-                    setIsMobileOpen(false);
-                    navigate("/category");
-                  }}
-                  className="flex items-center justify-between py-16 px-20 bordb"
-                >
-                  <div className="flex items-center gap-12">
-                    <Icon name="Grid" width="16" height="16" stroke="#1f2937" />
-                    <p className="small-text text-dark font-500">
-                      Category
-                    </p>
-                  </div>
-                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
-                </div>
-
-                {/* CORPORATE LINK */}
-                <div
-                  onClick={() => setActiveMobileSubmenu({ id: "corporate", name: "Corporate" })}
-                  className="flex items-center justify-between py-16 px-20 bordb"
-                >
-                  <div className="flex items-center gap-12">
-                    <Icon name="Award" width="16" height="16" stroke="#1f2937" />
-                    <p className="small-text text-dark font-500">
-                      Corporate
-                    </p>
-                  </div>
-                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
-                </div>
-
-                {/* RESOURCES LINK */}
-                <div
-                  onClick={() => setActiveMobileSubmenu({ id: "resources", name: "Resources" })}
-                  className="flex items-center justify-between py-16 px-20 bordb"
-                >
-                  <div className="flex items-center gap-12">
-                    <Icon name="Layers" width="16" height="16" stroke="#1f2937" />
-                    <p className="small-text text-dark font-500">
-                      Resources
-                    </p>
-                  </div>
-                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
-                </div>
-
-                {/* SUPPLIER LINK */}
-                <div
-                  onClick={() => {
-                    setIsMobileOpen(false);
-                    navigate("/supplier/Ashmita");
-                  }}
-                  className="flex items-center justify-between py-16 px-20 bordb"
-                >
-                  <div className="flex items-center gap-12">
-                    <Icon name="Users" width="16" height="16" stroke="#1f2937" />
-                    <p className="small-text text-dark font-500">
-                      Supplier Detail
-                    </p>
-                  </div>
-                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
-                </div>
-
-                {/* WHERE TO BUY */}
-                <div
-                  onClick={() => {
-                    setIsMobileOpen(false);
-                    navigate("/wheretobuy");
-                  }}
-                  className="flex items-center justify-between py-16 px-20 bordb"
-                >
-                  <div className="flex items-center gap-12">
-                    <Icon name="MapPin" width="16" height="16" stroke="#1f2937" />
-                    <p className="small-text text-dark font-500">
-                      Where To Buy
-                    </p>
-                  </div>
-                  <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
-                </div>
+                {/* ALL MENU ITEMS FROM JSON */}
+                {headerConfig.mobileMenu.map((menuItem) => (
+                  <MobileRow
+                    key={menuItem.id}
+                    icon={menuItem.icon}
+                    label={menuItem.label}
+                    onClick={() => {
+                      if (menuItem.hasSubmenu) {
+                        setActiveMobileSubmenu(menuItem);
+                      } else {
+                        closeMobile();
+                        navigate(menuItem.path);
+                      }
+                    }}
+                  />
+                ))}
               </div>
             ) : (
               // SCREEN 2: SUBMENU VIEW
               <div>
-                {/* ALL CATEGORIES SUBMENU */}
-                {activeMobileSubmenu.id === "categories" && (
-                  <div>
-                    {categoriesData.map((cat) => {
-                      const isExpanded = expandedCategory === cat.id;
-                      return (
-                        <div key={cat.id} style={{ borderBottom: "1px solid #f3f4f6" }}>
-                          <div
-                            onClick={() => setExpandedCategory(isExpanded ? null : cat.id)}
-                            className={`flex items-center justify-between py-16 px-20 cursor-pointer ${isExpanded ? "bg-tertiary" : "bg-transparent"}`}
-
-                          >
-                            <div className="flex items-center gap-12">
-                              <Icon name={cat.iconName || "Grid"} width="18" height="18" stroke={isExpanded ? "#f25c2b" : "#1f2937"} />
-                              <p className="small-text text-dark font-500">
-                                {cat.name}
-                              </p>
-                            </div>
-                            <Icon name={isExpanded ? "ChevronDown" : "ChevronRight"} width="16" height="16" stroke={isExpanded ? "#f25c2b" : "#9ca3af"} />
-                          </div>
-                          {isExpanded && (
-                            <div style={{ background: '#fafafa4b' }} className="px-16 py-5">
-                              <p
-                                onClick={() => {
-                                  setIsMobileOpen(false);
-                                  setActiveMobileSubmenu(null);
-                                  setExpandedCategory(null);
-                                  navigate("/products", { state: { category: cat.id } });
-                                }}
-                                className="font-400 text-primary small-text flex items-center gap-12 py-10"
-                              >
-                                View All {cat.name} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
-                              </p>
-                              {productsData.filter(p => p.category === cat.id).length > 0 ? (
-                                productsData.filter(p => p.category === cat.id).map((prod) => (
-                                  <p
-                                    key={prod.id}
-                                    onClick={() => {
-                                      setIsMobileOpen(false);
-                                      setActiveMobileSubmenu(null);
-                                      setExpandedCategory(null);
-                                      navigate(`/product-detail/${prod.id}`);
-                                    }}
-                                    className="text-gray font-400 text-gray small-text flex items-center gap-12 bordh py-10"
-                                  >
-                                    {prod.name}
-                                  </p>
-                                ))
-                              ) : (
-                                <div className="py-8 text-gray small-text">
-                                  No products available in this category.
-                                </div>
-                              )}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {/* CATEGORY SUBMENU */}
-                {activeMobileSubmenu.id.startsWith("cat-") && (
-                  <div>
-                    {productsData.filter(p => p.category === activeMobileSubmenu.id).length > 0 ? (
-                      productsData.filter(p => p.category === activeMobileSubmenu.id).map((prod) => (
-                        <div
-                          key={prod.id}
-                          onClick={() => {
-                            setIsMobileOpen(false);
-                            setActiveMobileSubmenu(null);
-                            navigate(`/product-detail/${prod.id}`);
-                          }}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            padding: "16px 20px",
-                            borderBottom: "1px solid #f3f4f6",
-                            cursor: "pointer"
-                          }}
-                        >
-                          <Image
-                            src={resolveProductImage(prod)}
-                            alt={prod.name}
-                            width="54"
-                            height="54"
-                            style={{
-                              width: "54px",
-                              height: "54px",
-                              borderRadius: "6px",
-                              objectFit: "cover",
-                              backgroundColor: "#f3f4f6"
-                            }}
-                          />
-                          <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937", marginLeft: "16px" }}>
-                            {prod.name}
-                          </span>
-                        </div>
-                      ))
-                    ) : (
-                      <div style={{ padding: "30px", textAlign: "center", color: "#6b7280", fontSize: "14px" }}>
-                        No products available in this category.
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {/* CORPORATE SUBMENU */}
-                {activeMobileSubmenu.id === "corporate" && (
-                  <div>
-                    {[
-                      { label: "About SOBO Solutions", path: "/about" },
-                      { label: "Management Message", path: "/about" },
-                      { label: "News & Media", path: "/blog" }
-                    ].map((sub, idx) => (
-                      <div
-                        key={idx}
-                        onClick={() => {
-                          setIsMobileOpen(false);
-                          setActiveMobileSubmenu(null);
-                          navigate(sub.path);
-                        }}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          padding: "18px 20px",
-                          borderBottom: "1px solid #f3f4f6",
-                          cursor: "pointer"
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: "40px",
-                            height: "40px",
-                            borderRadius: "6px",
-                            backgroundColor: "#eff6ff",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            color: "#1d4ed8"
-                          }}
-                        >
-                          <Icon name={idx === 0 ? "Info" : idx === 1 ? "MessageSquare" : "FileText"} width="18" height="18" stroke="currentColor" />
-                        </div>
-                        <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937", marginLeft: "16px" }}>
-                          {sub.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* RESOURCES SUBMENU */}
-                {activeMobileSubmenu.id === "resources" && (
-                  <div>
-                    {[
-                      { label: "All Product Catalog", path: "/products" },
-                      { label: "Blogs & Technical Insights", path: "/blog" },
-                      { label: "Supplier Network", path: "/wheretobuy" }
-                    ].map((sub, idx) => (
-                      <div
-                        key={idx}
-                        onClick={() => {
-                          setIsMobileOpen(false);
-                          setActiveMobileSubmenu(null);
-                          navigate(sub.path);
-                        }}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          padding: "18px 20px",
-                          borderBottom: "1px solid #f3f4f6",
-                          cursor: "pointer"
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: "40px",
-                            height: "40px",
-                            borderRadius: "6px",
-                            backgroundColor: "#f0fdf4",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            color: "#16a34a"
-                          }}
-                        >
-                          <Icon name={idx === 0 ? "Grid" : idx === 1 ? "BookOpen" : "Layers"} width="18" height="18" stroke="currentColor" />
-                        </div>
-                        <span style={{ fontSize: "15px", fontWeight: "500", color: "#1f2937", marginLeft: "16px" }}>
-                          {sub.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                {activeMobileSubmenu.submenuType === "categories" && renderCategoriesSubmenu()}
+                {activeMobileSubmenu.submenuType === "list" && renderListSubmenu(activeMobileSubmenu)}
               </div>
             )}
           </div>
