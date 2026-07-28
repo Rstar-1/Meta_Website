@@ -61,18 +61,18 @@ const About = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com');
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
   return (
     <>
       <SeoHelmet
-        title="About Us | SOBO Marketing Solution"
-        description="Learn about SOBO Marketing Solution, our journey, values, and how we deliver top-tier industrial products."
-        keywords={['About SOBO', 'B2B Supplier India', 'Industrial Partner']}
+        title="About Us | Ashmita Enterprises - PVC Importer & Wholesaler"
+        description="Learn about Ashmita Enterprises, a leading importer and wholesaler of high-quality PVC strip curtains, rolls, sheets, and mounting brackets in Mumbai."
+        keywords={['About Ashmita Enterprises', 'PVC roll supplier Mumbai', 'PVC strip curtain dealer']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/about"
         type="about"
       />
-      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
+      <OrganizationSchema orgData={{ name: 'Ashmita Enterprises', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <Banner
         title="About Us"
         img="https://html.ditsolution.net/industry/indastre1/assets/images/slider/banner.jpg"

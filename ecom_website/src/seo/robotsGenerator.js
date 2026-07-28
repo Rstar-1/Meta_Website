@@ -1,4 +1,4 @@
-export const generateRobots = (baseUrl = import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com') => {
+export const generateRobots = (baseUrl = import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in') => {
   return `# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /

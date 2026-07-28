@@ -78,7 +78,7 @@ const lazySections = [
 ];
 
 const Home = () => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com');
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
   const navItems = [
     { name: 'Home', url: `${siteUrl}/home` },
     { name: 'Products', url: `${siteUrl}/products` },
@@ -90,15 +90,15 @@ const Home = () => {
   return (
     <>
       <SeoHelmet
-        title="SOBO Marketing Solution | Industrial B2B E-Commerce"
-        description="Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution."
-        keywords={['Industrial Supplies', 'Printer Cartridges', 'Stainless Steel', 'SOBO Marketing', 'B2B India']}
+        title="Ashmita Enterprises | Importer & Wholesaler of PVC Strip Curtains & PVC Roll in Mumbai"
+        description="Ashmita Enterprises is a leading importer and wholesaler of high-quality PVC Strip Curtains, PVC Rolls, PVC Sheets, Plastic Curtains, PVC Films, and Mounting Brackets based in Mumbai, Maharashtra."
+        keywords={['PVC Strip Curtains Mumbai', 'PVC Roll Wholesaler', 'Soft PVC Roll', 'PVC Sheet Importer', 'Opaque Black PVC Strips', 'Anti Insect PVC Curtain', 'Cold Storage Curtains', 'PVC AC Curtain', 'Ashmita Enterprises Mumbai', 'Industrial PVC curtains']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/home"
         type="website"
       />
-      <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
-      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
+      <WebsiteSchema siteData={{ name: 'Ashmita Enterprises', url: siteUrl }} />
+      <OrganizationSchema orgData={{ name: 'Ashmita Enterprises', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero cms={cms} />

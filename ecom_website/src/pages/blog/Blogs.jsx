@@ -35,9 +35,9 @@ const Blogs = memo(() => {
   return (
     <>
       <SeoHelmet
-        title="B2B Industry Insights & Blogs | SOBO Marketing Solution"
-        description="Read our latest articles on industrial trends, office supply optimization, and manufacturing best practices."
-        keywords={['Industrial Blog', 'B2B Trends', 'Manufacturing Guide', 'Toner Cartridge Tips']}
+        title="PVC Sheets & Curtains Blog - Ashmita Enterprises"
+        description="Read industrial insights, maintenance guides, temperature control tips, and updates about PVC strip curtains and rolls."
+        keywords={['PVC curtains blog', 'cold storage insulation tips', 'PVC roll maintenance', 'Ashmita Enterprises']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/blog"
         type="blog"

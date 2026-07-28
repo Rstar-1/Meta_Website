@@ -1,6 +1,6 @@
 export const generateMeta = (pageMeta = {}, defaultMeta = {}) => {
   const siteName = defaultMeta.siteName || 'E-Commerce Store';
-  const siteUrl = (typeof window !== 'undefined' ? window.location.origin : '') || defaultMeta.siteUrl || import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com';
+  const siteUrl = (typeof window !== 'undefined' ? window.location.origin : '') || defaultMeta.siteUrl || import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in';
   const toAbsoluteUrl = (p) => p.startsWith('http') ? p : `${siteUrl}${p.startsWith('/') ? p : '/' + p}`;
 
   const title = pageMeta.title ? `${pageMeta.title} | ${siteName}` : defaultMeta.title || siteName;
@@ -32,7 +32,7 @@ export const generateMeta = (pageMeta = {}, defaultMeta = {}) => {
       { name: 'twitter:description', content: desc },
       { name: 'twitter:image', content: ogImage },
       { name: 'twitter:url', content: canonical },
-      { name: 'twitter:site', content: pageMeta.twitterSite || defaultMeta.twitterSite || '@sobomarketing' }
+      { name: 'twitter:site', content: pageMeta.twitterSite || defaultMeta.twitterSite || '@ashmitaent' }
     ],
     linkTags: [{ rel: 'canonical', href: canonical }]
   };

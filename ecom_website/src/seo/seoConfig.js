@@ -1,42 +1,42 @@
 import defaultSEO from './defaultSEO';
 
 const homeMeta = {
-  title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
+  title: 'Ashmita Enterprises | Importer & Wholesaler of PVC Strip Curtains & PVC Roll in Mumbai',
   description: defaultSEO.description,
   keywords: defaultSEO.keywords,
 };
 
 const contactMeta = {
-  title: 'Contact Us | SOBO Marketing Solution',
-  description: 'Have questions or need assistance with your B2B order? Reach out to SOBO Marketing Solution support.',
-  keywords: 'contact SOBO, B2B customer support, get quote, industrial supplier contact',
+  title: 'Contact Us | Ashmita Enterprises PVC Wholesaler',
+  description: 'Get in touch with Ashmita Enterprises in Mumbai for bulk orders, price quotes, and custom sizes of PVC Strip Curtains, PVC Rolls, and Sheets.',
+  keywords: 'Contact Ashmita Enterprises, PVC strip curtains Mumbai contact, bulk PVC roll price list, PVC manufacturer phone number',
 };
 
 export const routeMeta = {
   '/': { ...homeMeta, path: '/' },
   '/home': { ...homeMeta, path: '/home' },
   '/about': {
-    title: 'About Us | SOBO Marketing Solution',
-    description: 'Learn about SOBO Marketing Solution, our journey, values, and how we deliver top-tier industrial products.',
-    keywords: 'About SOBO, B2B Supplier India, Industrial Partner, SOBO Marketing',
+    title: 'About Us | Ashmita Enterprises - PVC Importer & Wholesaler',
+    description: 'Learn about Ashmita Enterprises, a leading importer and wholesaler of high-quality PVC strip curtains, rolls, sheets, and mounting brackets in Mumbai.',
+    keywords: 'About Ashmita Enterprises, PVC roll supplier Mumbai, PVC strip curtain dealer',
     path: '/about'
   },
   '/products': {
-    title: 'Industrial Products & Supplies Catalog | SOBO Marketing Solution',
-    description: 'Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products.',
-    keywords: 'Product Catalog, Toner Cartridges Shop, SS Steel Sheets, B2B Supplies, SOBO Marketing',
+    title: 'PVC Strip Curtains & PVC Rolls Catalog | Ashmita Enterprises',
+    description: 'Browse our full catalog of PVC Strip Curtains, Soft PVC Rolls, Clear Transparent Sheets, Anti-Insect Curtains, and Mounting Brackets.',
+    keywords: 'PVC strip curtain catalog, transparent PVC rolls, anti insect yellow curtain, mounting hanger brackets',
     path: '/products'
   },
   '/category': {
-    title: 'Product Categories | SOBO Marketing Solution',
-    description: 'Browse industrial and commercial products by category. Find premium stainless steel, PVC strip curtains, and printing consumables.',
-    keywords: 'product categories, stainless steel, PVC strip curtains, toner cartridges, B2B categories',
+    title: 'Product Categories - PVC Curtains & Rolls | Ashmita Enterprises',
+    description: 'Explore our product categories including PVC Curtains, PVC Transparent Rolls, PVC Colour Clear Film Rolls, PVC Reinforced Sheets, and Mounting Brackets.',
+    keywords: 'PVC categories, PVC sheets supplier, PVC roll manufacturer',
     path: '/category'
   },
   '/blog': {
-    title: 'SOBO Marketing Blog - Industrial & Marketing Insights',
-    description: 'Read the latest guides and tips on B2B marketing, industrial supply chain standards, and digital growth strategies.',
-    keywords: 'B2B marketing, industrial supplies blog, supply chain insights, digital marketing tips',
+    title: 'PVC Sheets & Curtains Blog - Ashmita Enterprises',
+    description: 'Read industrial insights, maintenance guides, temperature control tips, and updates about PVC strip curtains and rolls.',
+    keywords: 'PVC curtains blog, cold storage insulation tips, PVC roll maintenance',
     path: '/blog'
   },
   '/contact': { ...contactMeta, path: '/contact' },

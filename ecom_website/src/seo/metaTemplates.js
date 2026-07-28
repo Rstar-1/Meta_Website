@@ -2,7 +2,7 @@ import { slugify } from '../utils/slugify';
 
 const defaultImg = '/images/default-share.jpg';
 
-export const productMetaTemplate = (p, base = import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com') => {
+export const productMetaTemplate = (p, base = import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in') => {
   if (!p) return {};
   const slug = p.slug || slugify(p.name);
   return {
@@ -16,7 +16,7 @@ export const productMetaTemplate = (p, base = import.meta.env.VITE_SITE_URL || '
   };
 };
 
-export const categoryMetaTemplate = (c, base = import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com') => {
+export const categoryMetaTemplate = (c, base = import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in') => {
   if (!c) return {};
   const slug = c.slug || slugify(c.name);
   return {
@@ -30,7 +30,7 @@ export const categoryMetaTemplate = (c, base = import.meta.env.VITE_SITE_URL || 
   };
 };
 
-export const blogMetaTemplate = (post, base = import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com') => {
+export const blogMetaTemplate = (post, base = import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in') => {
   if (!post) return {};
   const slug = post.slug || slugify(post.title);
   return {

@@ -51,23 +51,23 @@ const Contact = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com');
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
   return (
     <>
       <SeoHelmet
-        title="Connect With Us | SOBO Marketing Solution"
-        description="Get in touch with SOBO Marketing Solution for wholesale inquiries, product support, and partnership opportunities."
-        keywords={['Contact SOBO', 'Wholesale Inquiry', 'Supplier Support']}
+        title="Connect With Us | Ashmita Enterprises - PVC Wholesaler"
+        description="Get in touch with Ashmita Enterprises in Mumbai for wholesale inquiries, custom PVC sizes, prices, and catalog requirements."
+        keywords={['Contact Ashmita Enterprises', 'Wholesale PVC Curtains', 'Mumbai PVC Wholesaler']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/connect"
         type="contact"
       />
       <LocalBusinessSchema bizData={{
-        name: 'SOBO Marketing Solution',
+        name: 'Ashmita Enterprises',
         url: siteUrl,
         image: siteUrl + '/sobo_logo.webp',
-        phone: '+91-XXXXXXXXXX',
-        address: { street: 'Industrial Area', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' }
+        phone: '+91-9379030638',
+        address: { street: 'Mumbai', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' }
       }} />
       <Banner
         title="Connect With Us"

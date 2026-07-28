@@ -57,7 +57,7 @@ const Category = () => {
         navigate(`/products?category=${catId}`, { state: { category: catId } });
     };
 
-    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com');
+    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
 
     // Get categories directly from category.json
     const displayCategories = categories.filter(cat => cat.number);
@@ -65,9 +65,9 @@ const Category = () => {
     return (
         <>
             <SeoHelmet
-                title="Product Categories | SOBO Marketing Solution"
-                description="Browse industrial and commercial products by category. Find premium stainless steel, PVC strip curtains, and printing consumables."
-                keywords={['Product Categories', 'PVC Strip Curtains', 'PVC Sheets', 'PVC Rolls', 'SOBO Marketing']}
+                title="Product Categories - PVC Curtains & Rolls | Ashmita Enterprises"
+                description="Explore our product categories including PVC Curtains, PVC Transparent Rolls, PVC Colour Clear Film Rolls, PVC Reinforced Sheets, and Mounting Brackets."
+                keywords={['Product Categories', 'PVC Strip Curtains', 'PVC Sheets', 'PVC Rolls', 'Ashmita Enterprises']}
                 image={siteUrl + '/sobo_logo.webp'}
                 path="/category"
                 type="website"

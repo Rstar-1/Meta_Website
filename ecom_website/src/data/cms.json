@@ -1,7 +1,7 @@
 {
   "hero": {
-    "badge": "India's No.1 PVC Manufacturer",
-    "title": "Premium PVC\\nFor Every Industry",
+    "badge": "India's Premium PVC Importer & Wholesaler",
+    "title": "Premium PVC\nFor Every Industry",
     "subtitle": "High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.",
     "ctaShop": "Shop Now",
     "ctaQuote": "Request a Quote",
@@ -34,37 +34,37 @@
   },
   "whyChoose": {
     "tag": "About Us",
-    "title": "Know Your Trusted Partner in Business and Finance",
-    "desc": "We believe that every business deserves a strong financial foundation. With decades of experience in the industry, our team is dedicated to providing personalized, strategic financial solutions that help our clients thrive.",
+    "title": "Your Trusted PVC Partner in Mumbai",
+    "desc": "At Ashmita Enterprises, we are committed to providing premium quality PVC strip curtains, rolls, and sheets. With years of experience as a trusted B2B importer and wholesaler, we deliver customized, reliable industrial solutions to optimize safety, dust control, and temperature management for your business.",
     "features": [
       {
-        "icon": "TrendingUp",
-        "title": "Financial Solution",
-        "description": "From startups established corporations, we offer tailored advice and services designed to navigate."
+        "icon": "Shield",
+        "title": "Premium Quality PVC",
+        "description": "We supply 100% virgin grade PVC rolls and sheets, ensuring high clarity, strength, and long-lasting durability for industrial and commercial environments."
       },
       {
         "icon": "Settings",
-        "title": "Financial Solution",
-        "description": "From startups established corporations, we offer tailored advice and services designed to navigate."
+        "title": "Bulk Custom Orders",
+        "description": "We specialize in custom sizes and configurations, offering various thicknesses, widths, colors, and grades (standard, freezer, anti-insect, magnetic) to suit your needs."
       }
     ],
     "images": [
       {
         "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
-        "alt": "Analyzing financial documents"
+        "alt": "Premium PVC Rolls storage in warehouse"
       },
       {
         "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
-        "alt": "Business partners vertical profile"
+        "alt": "Heavy duty PVC strip curtains installation"
       },
       {
         "src": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=500&auto=format&fit=crop",
-        "alt": "Businessman working on laptop"
+        "alt": "Custom cut PVC sheets packaging"
       }
     ]
   },
   "businessPromo": {
-    "badge": "India's No.1 PVC Manufacturer",
+    "badge": "Premium PVC Importer & Wholesaler",
     "title": "We've Got You Covered!",
     "desc": "High quality PVC sheets, rolls, strip curtains and industrial films for temperature control, safety, protection and performance.",
     "ctaQuote": "Request Custom Quote",

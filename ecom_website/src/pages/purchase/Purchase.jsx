@@ -56,7 +56,7 @@ const lazySections = [
 ];
 
 const Purchase = () => {
-    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://sobo-marketing.com');
+    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
     const navItems = [
         { name: 'Home', url: `${siteUrl}/home` },
         { name: 'Products', url: `${siteUrl}/products` },
@@ -69,15 +69,15 @@ const Purchase = () => {
     return (
         <>
             <SeoHelmet
-                title="Find Responsive Products Near You | Authorized Dealer Locator | SOBO Marketing Solution"
+                title="Find PVC Strip Curtains & PVC Rolls Near You | Ashmita Enterprises Dealer Locator"
                 description="Connect with our sales team to find authorized dealers for genuine PVC sheets, rolls, strip curtains, and SS hardware near your location."
-                keywords={['Industrial Supplies', 'Authorized Dealers', 'Where to Buy', 'PVC Sheets', 'SOBO Marketing', 'B2B India']}
+                keywords={['Industrial Supplies', 'Authorized Dealers', 'Where to Buy', 'PVC Sheets', 'Ashmita Enterprises', 'B2B India']}
                 image={siteUrl + '/sobo_logo.webp'}
                 path="/wheretobuy"
                 type="website"
             />
-            <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
-            <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
+            <WebsiteSchema siteData={{ name: 'Ashmita Enterprises', url: siteUrl }} />
+            <OrganizationSchema orgData={{ name: 'Ashmita Enterprises', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
             <SiteNavigationSchema navItems={navItems} />
 
             {/* Lazy Loaded Sections with Skeleton Loaders */}

@@ -38,7 +38,7 @@ const Footer = () => {
               <div className="mb-15 flex items-center">
                 <Image
                   src={logoImg}
-                  alt="SOBO Marketing Solution Logo"
+                  alt="Ashmita Enterprises Logo"
                   width="168"
                   height="55"
                   style={{

@@ -289,9 +289,9 @@ const Products = () => {
       }
     }
     return {
-      title: "Industrial Products & Supplies Catalog | SOBO Marketing Solution",
-      description: "Browse our comprehensive catalog of toner cartridges, stainless steel pipes, sheets, rods, and general products.",
-      keywords: ['Product Catalog', 'Toner Cartridges Shop', 'SS Steel Sheets', 'B2B Supplies'],
+      title: "PVC Strip Curtains & PVC Rolls Catalog | Ashmita Enterprises",
+      description: "Browse our full catalog of PVC Strip Curtains, Soft PVC Rolls, Clear Transparent Sheets, Anti-Insect Curtains, and Mounting Brackets.",
+      keywords: ['PVC strip curtain catalog', 'transparent PVC rolls', 'anti insect yellow curtain', 'mounting hanger brackets', 'Ashmita Enterprises'],
       image: siteUrl + '/sobo_logo.webp',
       path: "/products",
       type: "product",
