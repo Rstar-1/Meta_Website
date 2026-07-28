@@ -7,19 +7,31 @@
   "topNav": {
     "left": [
       {
-        "id": "corporate",
-        "label": "CORPORATE",
+        "id": "touch",
+        "label": "GET IN TOUCH",
         "hasDropdown": true,
         "submenu": [
-          { "label": "About SOBO Solutions", "path": "/about", "type": "link", "icon": "Info" },
-          { "label": "Management Message", "path": "/about", "type": "link", "icon": "MessageSquare" },
-          { "label": "News & Media", "path": "/blog", "type": "link", "icon": "FileText" }
+          {
+            "label": "Submit RFQ Requirement",
+            "path": "/connect",
+            "type": "link"
+          },
+          {
+            "label": "Call +91 87790 30638",
+            "href": "tel:+918779030638",
+            "type": "tel"
+          },
+          {
+            "label": "WhatsApp Support",
+            "href": "https://wa.me/918779030638",
+            "type": "external"
+          }
         ]
       },
       {
-        "id": "supplier-top",
-        "label": "SUPPLIER",
-        "path": "/supplier/Ashmita",
+        "id": "news-top",
+        "label": "NEWS & MEDIA",
+        "path": "/blog",
         "hasDropdown": false
       },
       {
@@ -31,19 +43,9 @@
     ],
     "right": [
       {
-        "id": "touch",
-        "label": "GET IN TOUCH",
-        "hasDropdown": true,
-        "submenu": [
-          { "label": "Submit RFQ Requirement", "path": "/connect", "type": "link" },
-          { "label": "Call +91 87790 30638", "href": "tel:+918779030638", "type": "tel" },
-          { "label": "WhatsApp Support", "href": "https://wa.me/918779030638", "type": "external" }
-        ]
-      },
-      {
-        "id": "where-to-buy",
-        "label": "WHERE TO BUY",
-        "path": "/wheretobuy",
+        "id": "supplier-top",
+        "label": "SUPPLIER",
+        "path": "/supplier/Ashmita",
         "hasDropdown": false
       }
     ]
@@ -118,18 +120,18 @@
       "hasSubmenu": false
     },
     {
-      "id": "corporate",
-      "label": "Corporate",
-      "icon": "Award",
-      "hasSubmenu": true,
-      "submenuType": "list",
-      "badgeColor": "#eff6ff",
-      "badgeIconColor": "#1d4ed8",
-      "submenu": [
-        { "label": "About SOBO Solutions", "path": "/about", "icon": "Info" },
-        { "label": "Management Message", "path": "/about", "icon": "MessageSquare" },
-        { "label": "News & Media", "path": "/blog", "icon": "FileText" }
-      ]
+      "id": "about-mobile",
+      "label": "About Us",
+      "icon": "Info",
+      "path": "/about",
+      "hasSubmenu": false
+    },
+    {
+      "id": "news-mobile",
+      "label": "News & Media",
+      "icon": "FileText",
+      "path": "/blog",
+      "hasSubmenu": false
     },
     {
       "id": "resources",
@@ -141,7 +143,11 @@
       "badgeIconColor": "#16a34a",
       "submenu": [
         { "label": "All Product Catalog", "path": "/products", "icon": "Grid" },
-        { "label": "Blogs & Technical Insights", "path": "/blog", "icon": "BookOpen" },
+        {
+          "label": "Blogs & Technical Insights",
+          "path": "/blog",
+          "icon": "BookOpen"
+        },
         { "label": "Supplier Network", "path": "/wheretobuy", "icon": "Layers" }
       ]
     },

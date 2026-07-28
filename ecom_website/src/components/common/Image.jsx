@@ -20,6 +20,7 @@ export function Image({
   aspectRatio,
   style,
   decoding,
+  preload = "metadata",
   ...props
 }) {
   const [imgSrc, setImgSrc] = useState(src);
@@ -45,7 +46,7 @@ export function Image({
         loop
         muted
         playsInline
-        preload="auto"
+        preload={preload}
         {...props}
       />
     );
@@ -84,6 +85,7 @@ export const ImageDiv = forwardRef(({
   overlay = false,
   overlayClass = "",
   innerRef,
+  preload = "metadata",
   ...props
 }, ref) => {
   const [bgImage, setBgImage] = useState(image);
@@ -106,6 +108,7 @@ export const ImageDiv = forwardRef(({
           loop
           muted
           playsInline
+          preload={preload}
         />
       ) : (
         <div

@@ -268,18 +268,26 @@ const Header = () => {
           color: #f25c2b;
           padding-left: 20px;
         }
+        .header-search-input {
+          height: 28px !important;
+          border-radius: 6px !important;
+          font-size: 12px !important;
+        }
       `}</style>
 
-      {/* ROW 1: TOP MAIN HEADER BAR (LOGO & UTILITIES) */}
-      <Container
-        as="header"
-        className="sm-hidden md-hidden bg-white bordb"
-      >
-        <div className="flex items-center justify-between w-full" style={{ minHeight: "52px" }}>
+      {/* DESKTOP HEADER - ROW 1 (NON-STICKY) */}
+      <div className="sm-hidden md-hidden bg-white w-full">
+        <Container
+          as="header"
+          className="bg-white bordb"
+        >
+          <div className="flex items-center w-full" style={{ minHeight: "52px" }}>
 
-          {/* LEFT: BRAND LOGO */}
-          <div className="flex items-center gap-12">
-            <NavLink to={headerConfig.logo.path} className="flex items-center" style={{ textDecoration: 'none' }}>
+            <div className="flex items-center w-40">
+              {headerConfig.topNav.left.map((item, idx) => renderTopNavItem(item, idx, "left"))}
+            </div>
+
+            <NavLink to={headerConfig.logo.path} className="flex items-center justify-center w-20">
               <Image
                 src={headerConfig.logo.src}
                 alt={headerConfig.logo.alt}
@@ -291,105 +299,174 @@ const Header = () => {
                 style={{ maxHeight: '46px', width: 'auto', objectFit: 'contain' }}
               />
             </NavLink>
-            <div className="ml-30 flex items-center">
-              {headerConfig.topNav.left.map((item, idx) => renderTopNavItem(item, idx, "left"))}
+
+            <div className="flex items-center justify-end w-40">
+              {/* SEARCH INLINE UTILITY */}
+              <div className="relative flex items-center" style={{ minWidth: isSearchOpen ? "210px" : "auto", transition: "all 0.2s ease" }}>
+                {isSearchOpen ? (
+                  <div className="relative flex items-center w-full">
+                    <Fields
+                      type="input"
+                      placeholder="Search products"
+                      value={searchQuery}
+                      onChange={(val) => setSearchQuery(val)}
+                      className="header-search-input"
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          setIsSearchOpen(false);
+                          navigate(`/products?search=${searchQuery}`);
+                        }
+                      }}
+                      onBlur={() => {
+                        setTimeout(() => {
+                          if (!searchQuery) setIsSearchOpen(false);
+                        }, 200);
+                      }}
+                      autoFocus
+                    />
+                    <span
+                      onClick={() => {
+                        if (searchQuery) {
+                          setIsSearchOpen(false);
+                          navigate(`/products?search=${searchQuery}`);
+                        } else {
+                          setIsSearchOpen(false);
+                        }
+                      }}
+                      style={{
+                        position: "absolute",
+                        right: "10px",
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        color: "#64748b"
+                      }}
+                    >
+                      <Icon name="Search" width="12" height="12" stroke="currentColor" />
+                    </span>
+                  </div>
+                ) : (
+                  <div
+                    className="top-nav-link"
+                    onClick={() => setIsSearchOpen(true)}
+                    style={{ display: "flex", alignItems: "center", gap: "4px" }}
+                  >
+                    <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH
+                  </div>
+                )}
+              </div>
+
+              <div className="header-v-divider" />
+
+              {headerConfig.topNav.right.map((item, idx) => renderTopNavItem(item, idx, "right"))}
+
+              <div className="header-v-divider" />
+
+              {/* ACCOUNT USER ICON */}
+              <NavLink to="/connect" className="top-nav-link p-4" title="User Account">
+                <Icon name="Users" width="17" height="17" stroke="currentColor" />
+              </NavLink>
+
+              <div className="header-v-divider" />
+
+              {/* SHOPPING BAG CART ICON */}
+              <NavLink
+                to="/cart"
+                className="relative top-nav-link"
+                style={{ padding: "4px 8px" }}
+                title="Enquiry Cart"
+              >
+                <Icon name="Bag" width="18" height="18" stroke="currentColor" />
+                <span
+                  className="absolute text-white rounded-full flex items-center justify-center font-700"
+                  style={{
+                    top: "-3px",
+                    right: "-2px",
+                    fontSize: "9px",
+                    width: "16px",
+                    height: "16px",
+                    backgroundColor: "#0284c7"
+                  }}
+                >
+                  {cartCount}
+                </span>
+              </NavLink>
+
             </div>
           </div>
-          {/* RIGHT UTILITY LINKS */}
-          <div className="flex items-center">
-            {/* SEARCH INLINE UTILITY */}
-            <div className="relative flex items-center" style={{ minWidth: isSearchOpen ? "210px" : "auto", transition: "all 0.2s ease" }}>
-              {isSearchOpen ? (
-                <div className="relative flex items-center w-full">
-                  <Fields
-                    type="input"
-                    placeholder="Search products"
-                    value={searchQuery}
-                    onChange={(val) => setSearchQuery(val)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        setIsSearchOpen(false);
-                        navigate(`/products?search=${searchQuery}`);
-                      }
-                    }}
-                    onBlur={() => {
-                      setTimeout(() => {
-                        if (!searchQuery) setIsSearchOpen(false);
-                      }, 200);
-                    }}
-                    autoFocus
-                  />
-                  <span
-                    onClick={() => {
-                      if (searchQuery) {
-                        setIsSearchOpen(false);
-                        navigate(`/products?search=${searchQuery}`);
-                      } else {
-                        setIsSearchOpen(false);
-                      }
-                    }}
+        </Container>
+      </div>
+
+      {/* DESKTOP HEADER - ROW 2 (STICKY) */}
+      <div className="sm-hidden md-hidden sticky top-0 z-99 bg-white w-full shadow-sm">
+        <Container
+          as="nav"
+          className="bg-white bdrdh bordb"
+        >
+          <div className="flex items-center justify-between gap-8 w-full" style={{ minHeight: "48px" }}>
+
+            {navItems.map((item, index) => {
+              if (!item.hasDropdown) {
+                return (
+                  <Link key={item.id} to={item.path} className="cat-nav-link">
+                    <Icon name={item.icon} width="16" height="16" /> {item.label}
+                  </Link>
+                );
+              }
+
+              return (
+                <div
+                  key={item.id}
+                  className="relative"
+                  onMouseEnter={() => setActiveMainNavMenu(item.id)}
+                  onMouseLeave={() => setActiveMainNavMenu(null)}
+                >
+                  <Link to={item.path} className="cat-nav-link">
+                    <Icon name={item.icon} width="16" height="16" /> {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
+                  </Link>
+
+                  <Dropdown
+                    isOpen={activeMainNavMenu === item.id}
+                    align={index >= navItems.length - 3 ? "right" : "left"}
+                    minWidth="480px"
                     style={{
-                      position: "absolute",
-                      right: "10px",
-                      cursor: "pointer",
-                      display: "flex",
-                      alignItems: "center",
-                      color: "#64748b"
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      gap: "12px"
                     }}
                   >
-                    <Icon name="Search" width="12" height="12" stroke="currentColor" />
-                  </span>
+                    <div className="p-12">
+                      <p className="text-gray font-700 mini-text uppercase tracking-wider mb-8">{item.dropdownTitle}</p>
+                      {productsData.filter(p => p.category === item.category).slice(0, 5).map(prod => (
+                        <div
+                          key={prod.id}
+                          className="drop-item rounded-4 cursor-pointer"
+                          onClick={() => handleProductClick(prod.id)}
+                        >
+                          {prod.name}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="bg-tertiary p-12 rounded-6 flex flex-column justify-between">
+                      <div>
+                        <p className="text-dark font-600 small-text m-0">{item.cardTitle}</p>
+                        <p className="text-gray mini-text mt-4">{item.cardDesc}</p>
+                      </div>
+                      <span
+                        className="text-primary font-600 mini-text mt-10 cursor-pointer flex items-center gap-4"
+                        onClick={() => handleProductClick(null, item.category)}
+                      >
+                        {item.cardLinkText} <Icon name="ArrowRight" width="10" height="10" stroke="currentColor" />
+                      </span>
+                    </div>
+                  </Dropdown>
                 </div>
-              ) : (
-                <div
-                  className="top-nav-link"
-                  onClick={() => setIsSearchOpen(true)}
-                  style={{ display: "flex", alignItems: "center", gap: "4px" }}
-                >
-                  <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH
-                </div>
-              )}
-            </div>
-
-            <div className="header-v-divider" />
-
-            {headerConfig.topNav.right.map((item, idx) => renderTopNavItem(item, idx, "right"))}
-
-            <div className="header-v-divider" />
-
-            {/* ACCOUNT USER ICON */}
-            <NavLink to="/connect" className="top-nav-link p-4" title="User Account">
-              <Icon name="Users" width="17" height="17" stroke="currentColor" />
-            </NavLink>
-
-            <div className="header-v-divider" />
-
-            {/* SHOPPING BAG CART ICON */}
-            <NavLink
-              to="/cart"
-              className="relative top-nav-link"
-              style={{ padding: "4px 8px" }}
-              title="Enquiry Cart"
-            >
-              <Icon name="Bag" width="18" height="18" stroke="currentColor" />
-              <span
-                className="absolute text-white rounded-full flex items-center justify-center font-700"
-                style={{
-                  top: "-3px",
-                  right: "-2px",
-                  fontSize: "9px",
-                  width: "16px",
-                  height: "16px",
-                  backgroundColor: "#0284c7"
-                }}
-              >
-                {cartCount}
-              </span>
-            </NavLink>
+              );
+            })}
 
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
 
       {/* MOBILE HEADER BAR */}
       <div className="hidden md-block sm-block px-15 py-10 sticky top-0 left-0 z-99 bg-white">
@@ -434,75 +511,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      {/* ROW 2: MAIN CATEGORY NAVIGATION BAR WITH ICONS - STICKY AT TOP */}
-      <Container
-        as="nav"
-        className="sm-hidden md-hidden bg-white bdrdh bordb sticky top-0 z-99"
-      >
-        <div className="flex items-center justify-between gap-8 w-full" style={{ minHeight: "48px" }}>
-
-          {navItems.map((item, index) => {
-            if (!item.hasDropdown) {
-              return (
-                <Link key={item.id} to={item.path} className="cat-nav-link">
-                  <Icon name={item.icon} width="16" height="16" /> {item.label}
-                </Link>
-              );
-            }
-
-            return (
-              <div
-                key={item.id}
-                className="relative"
-                onMouseEnter={() => setActiveMainNavMenu(item.id)}
-                onMouseLeave={() => setActiveMainNavMenu(null)}
-              >
-                <Link to={item.path} className="cat-nav-link">
-                  <Icon name={item.icon} width="16" height="16" /> {item.label} <Icon name="ChevronDown" width="10" height="10" stroke="currentColor" />
-                </Link>
-
-                <Dropdown
-                  isOpen={activeMainNavMenu === item.id}
-                  align={index >= navItems.length - 3 ? "right" : "left"}
-                  minWidth="480px"
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "12px"
-                  }}
-                >
-                  <div className="p-12">
-                    <p className="text-gray font-700 mini-text uppercase tracking-wider mb-8">{item.dropdownTitle}</p>
-                    {productsData.filter(p => p.category === item.category).slice(0, 5).map(prod => (
-                      <div
-                        key={prod.id}
-                        className="drop-item rounded-4 cursor-pointer"
-                        onClick={() => handleProductClick(prod.id)}
-                      >
-                        {prod.name}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bg-tertiary p-12 rounded-6 flex flex-column justify-between">
-                    <div>
-                      <p className="text-dark font-600 small-text m-0">{item.cardTitle}</p>
-                      <p className="text-gray mini-text mt-4">{item.cardDesc}</p>
-                    </div>
-                    <span
-                      className="text-primary font-600 mini-text mt-10 cursor-pointer flex items-center gap-4"
-                      onClick={() => handleProductClick(null, item.category)}
-                    >
-                      {item.cardLinkText} <Icon name="ArrowRight" width="10" height="10" stroke="currentColor" />
-                    </span>
-                  </div>
-                </Dropdown>
-              </div>
-            );
-          })}
-
-        </div>
-      </Container>
 
       {/* MOBILE DRAWER */}
       {isMobileOpen && (
