@@ -11,7 +11,11 @@
         "desc": "100% Virgin Material",
         "icon": "Shield"
       },
-      { "title": "Wide Range", "desc": "of Products", "icon": "Grid" }
+      {
+        "title": "Wide Range",
+        "desc": "of Products",
+        "icon": "Grid"
+      }
     ],
     "slides": [
       {
@@ -98,9 +102,8 @@
   },
   "latestProducts": {
     "targetCategoryIds": [
-      "cat-pvc-sheet",
-      "cat-pvc-roll",
-      "cat-pvc-strip-curtains"
+      "cat-pvc-transparent-roll",
+      "cat-pvc-curtain"
     ],
     "viewAll": "View All ➔"
   },

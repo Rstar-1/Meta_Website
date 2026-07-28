@@ -22,7 +22,7 @@ const BrowseCategory = ({ onSelectCategory }) => {
 
   return (
     <div className="w-full py-30">
-      <div className='grid-cols-6 md-grid-cols-3 sm-grid-cols-2 gap-12'>
+      <div className='grid-cols-5 md-grid-cols-3 sm-grid-cols-2 gap-12'>
         {displayedCategories.map((cat, idx) => (
           <div
             key={cat.id}
@@ -38,10 +38,10 @@ const BrowseCategory = ({ onSelectCategory }) => {
                 loading={idx < 3 ? "eager" : "lazy"}
                 fetchPriority={idx < 3 ? "high" : undefined}
                 className="flex object-cover rounded-full mx-auto"
-                style={{ width: '80px', height: '80px' }}
+                style={{ width: '120px', height: '120px' }}
               />
             </div>
-            <p className="text-gray font-500 mini-text text-center mt-18">{cat.name}</p>
+            <p className="text-dark font-500 small-text text-center mt-14">{cat.name}</p>
           </div>
         ))}
       </div>

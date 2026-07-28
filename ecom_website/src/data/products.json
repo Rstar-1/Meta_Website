@@ -9,7 +9,7 @@
     "inStock": true,
     "sku": "AE-153625330",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_w-s-i-pvc-strip-curtain-roll_1.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -29,7 +29,7 @@
     "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC Strip curtain roll. Available in 2mm and 3mm Thickness 8 inches and 12 inches Width Additional Information: Packaging Details: IN ROLL FORM",
+    "description": "PVC Strip curtain roll. Available in 2mm and 3mm Thickness 8 inches and 12 inches Width Additional Information: Packaging Details: IN ROLL FORM Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Material",
@@ -54,6 +54,14 @@
       {
         "label": "Thickness",
         "value": "2mm, Available in 3mm"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -81,7 +89,7 @@
     "inStock": true,
     "sku": "AE-78226248",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_yellow-anti-insect-pvc-strips-curtain_2.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -100,7 +108,7 @@
     "reviewCount": 14,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Features: Long life Immaculate finish Perfect size Light weight Simple design Enhanced durability",
+    "description": "Features: Long life Immaculate finish Perfect size Light weight Simple design Enhanced durability Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Pattern",
@@ -125,6 +133,14 @@
       {
         "label": "Weight",
         "value": "25-37 kg"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -152,7 +168,7 @@
     "inStock": true,
     "sku": "AE-78232989",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_freezer-grade-pvc-strip-curtain_3.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -170,7 +186,7 @@
     "reviewCount": 16,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Material",
@@ -195,6 +211,14 @@
       {
         "label": "Weight",
         "value": "24-36 kg"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -222,7 +246,7 @@
     "inStock": true,
     "sku": "AE-78233643",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_blue-pvc-strip-curtain_2.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -239,7 +263,7 @@
     "reviewCount": 22,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -264,6 +288,14 @@
       {
         "label": "Roll Width",
         "value": "10 inches"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -291,7 +323,7 @@
     "inStock": true,
     "sku": "AE-78227831",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_opaque-black-pvc-strips-curtain_2.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -309,7 +341,7 @@
     "reviewCount": 21,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -334,6 +366,14 @@
       {
         "label": "Packaging Type",
         "value": "Roll"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -361,7 +401,7 @@
     "inStock": true,
     "sku": "AE-87984212",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_red-welding-grade-pvc-strip-curtain_2.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -380,7 +420,7 @@
     "reviewCount": 27,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Our company has mastered the art in offering Red Welding Grade PVC Strip Curtain to the clients. Red Welding Grade PVC is precisely manufactured by talented professionals by making use of cutting-edge technology and quality-tested material in compliance with set universal norms. Offered range is broadly demanded in the market for brilliant attributes. This product is available in various specifications that meet individual requirements of esteemed clientele. Offered range ensures the user friendly nature that meets the demands of valuable customers.",
+    "description": "Our company has mastered the art in offering Red Welding Grade PVC Strip Curtain to the clients. Red Welding Grade PVC is precisely manufactured by talented professionals by making use of cutting-edge technology and quality-tested material in compliance with set universal norms. Offered range is broadly demanded in the market for brilliant attributes. This product is available in various specifications that meet individual requirements of esteemed clientele. Offered range ensures the user friendly nature that meets the demands of valuable customers. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Usage/Application",
@@ -405,6 +445,14 @@
       {
         "label": "Material",
         "value": "PVC"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -432,7 +480,7 @@
     "inStock": true,
     "sku": "AE-78228806",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_curtain_industrial.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -448,7 +496,7 @@
     "reviewCount": 15,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -473,6 +521,14 @@
       {
         "label": "Weight",
         "value": "24-36 kg"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -500,7 +556,7 @@
     "inStock": true,
     "sku": "AE-87983997",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_uv-grade-pvc-strip-curtain_3.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -518,7 +574,7 @@
     "reviewCount": 25,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -543,6 +599,14 @@
       {
         "label": "Grade",
         "value": "UV Grade"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -570,7 +634,7 @@
     "inStock": true,
     "sku": "AE-129120417",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_pvc-strip-curtain_3.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -586,7 +650,7 @@
     "reviewCount": 25,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC Strip Curtain Rolls Available in 8 inches Width and 12 inches Width. In 3mm and 2mm Thickness",
+    "description": "PVC Strip Curtain Rolls Available in 8 inches Width and 12 inches Width. In 3mm and 2mm Thickness Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -611,6 +675,14 @@
       {
         "label": "Uv Protection",
         "value": "Yes"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -638,7 +710,7 @@
     "inStock": true,
     "sku": "AE-289188460",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_welding-green-pvc-strip-curtains-roll_2.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -657,7 +729,7 @@
     "reviewCount": 30,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC Strip Curtain Rolls Supreme GradeGreen Transparent RollsBrand : W.S.IThickness : 3mm and 2mmWidth : 8 inchesRoll length : 50 MtrsRoll weight : 36 kg and 24 Kg RespectivelyAdditional Information: Packaging Details: Roll",
+    "description": "PVC Strip Curtain Rolls Supreme GradeGreen Transparent RollsBrand : W.S.IThickness : 3mm and 2mmWidth : 8 inchesRoll length : 50 MtrsRoll weight : 36 kg and 24 Kg RespectivelyAdditional Information: Packaging Details: Roll Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -666,6 +738,14 @@
       {
         "label": "Flexibility",
         "value": "Flexibile"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -694,7 +774,7 @@
     "inStock": true,
     "sku": "AE-306971742",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtains",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_warehouse-dividers-pvc-curtains_2.webp",
     "tags": [
       "pvc-strip-curtains",
@@ -711,7 +791,7 @@
     "reviewCount": 24,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "pvc strip curtainsProduct Name: PVC Strip CurtainWe have brands available like:WSI,LKY,VietnameseTwo thicknesses only available in Pvc strip curtain following:2mm3mmLength : 50mtrWidth : 200mm (8 inches)Tax rate is 18%Additional Information: Packaging Details: pvc strip curtains Product Name: PVC Strip Curtain We have brands available like: WSI, LKY, Vietnamese Two thicknesses only available in Pvc strip curtain following: 2mm 3mm Length : 50mtr Width : 200mm (8 inches) Tax rate is 18%",
+    "description": "pvc strip curtainsProduct Name: PVC Strip CurtainWe have brands available like:WSI,LKY,VietnameseTwo thicknesses only available in Pvc strip curtain following:2mm3mmLength : 50mtrWidth : 200mm (8 inches)Tax rate is 18%Additional Information: Packaging Details: pvc strip curtains Product Name: PVC Strip Curtain We have brands available like: WSI, LKY, Vietnamese Two thicknesses only available in Pvc strip curtain following: 2mm 3mm Length : 50mtr Width : 200mm (8 inches) Tax rate is 18% Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -728,6 +808,14 @@
       {
         "label": "Flammability",
         "value": "No"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -756,7 +844,7 @@
     "inStock": true,
     "sku": "AE-106899697",
     "brand": "Ashmita",
-    "category": "cat-pvc-sheet",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_clear_sheet.webp",
     "tags": [
       "pvc-sheet",
@@ -772,7 +860,7 @@
     "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC clear flexible sheeting in roll form . Thickness from 0.10mm , 0.12mm , 0.15mm , 0.20mm , 0.25mm , 0.30mm , 0.40mm, 0.50mm. Width : 54 inches",
+    "description": "PVC clear flexible sheeting in roll form . Thickness from 0.10mm , 0.12mm , 0.15mm , 0.20mm , 0.25mm , 0.30mm , 0.40mm, 0.50mm. Width : 54 inches Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -797,6 +885,18 @@
       {
         "label": "Pattern",
         "value": "Plain"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -824,7 +924,7 @@
     "inStock": true,
     "sku": "AE-158609054",
     "brand": "Ashmita",
-    "category": "cat-pvc-sheet",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_shamita-clear-transparent-pvc-roll_2.webp",
     "tags": [
       "pvc-sheet",
@@ -842,7 +942,7 @@
     "reviewCount": 27,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "SHAMITA clear transparent PVC roll Thickness 0.07mm to 3mm Width 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "SHAMITA clear transparent PVC roll Thickness 0.07mm to 3mm Width 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Color",
@@ -863,6 +963,18 @@
       {
         "label": "Country of Origin",
         "value": "Made in India"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -890,7 +1002,7 @@
     "inStock": true,
     "sku": "AE-78225274",
     "brand": "Ashmita",
-    "category": "cat-pvc-sheet",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_pvc-flexible-clear-sheet_3.webp",
     "tags": [
       "pvc-sheet",
@@ -907,7 +1019,7 @@
     "reviewCount": 17,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC clear flexible sheeting in roll form . Thickness from 0.10mm , 0.12mm , 0.15mm , 0.20mm , 0.25mm , 0.30mm , 0.40mm, 0.50mm. Width : 54 inches",
+    "description": "PVC clear flexible sheeting in roll form . Thickness from 0.10mm , 0.12mm , 0.15mm , 0.20mm , 0.25mm , 0.30mm , 0.40mm, 0.50mm. Width : 54 inches Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -932,6 +1044,18 @@
       {
         "label": "Material",
         "value": "PVC"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -959,7 +1083,7 @@
     "inStock": true,
     "sku": "AE-109353536",
     "brand": "Ashmita",
-    "category": "cat-pvc-sheet",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_plain-pvc-clear-sheet_2.webp",
     "tags": [
       "pvc-sheet",
@@ -976,7 +1100,7 @@
     "reviewCount": 27,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -1001,6 +1125,18 @@
       {
         "label": "Features",
         "value": "Fire Retardant, UV Protected, Moisture Resistant"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1028,7 +1164,7 @@
     "inStock": true,
     "sku": "AE-123937580",
     "brand": "Ashmita",
-    "category": "cat-pvc-sheet",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_sheets_industrial.webp",
     "tags": [
       "pvc-sheet",
@@ -1045,7 +1181,7 @@
     "reviewCount": 19,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -1070,6 +1206,18 @@
       {
         "label": "Length Per Roll",
         "value": "50-60 m"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1097,7 +1245,7 @@
     "inStock": true,
     "sku": "AE-116212175",
     "brand": "Ashmita",
-    "category": "cat-pvc-sheet",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_pvc-clear-sheet_3.webp",
     "tags": [
       "pvc-sheet",
@@ -1114,7 +1262,7 @@
     "reviewCount": 27,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -1139,6 +1287,18 @@
       {
         "label": "Color",
         "value": "Transparent"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1166,7 +1326,7 @@
     "inStock": true,
     "sku": "AE-158608203",
     "brand": "Ashmita",
-    "category": "cat-pvc-sheet",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_soft-pvc-sheet_1.webp",
     "tags": [
       "pvc-sheet",
@@ -1182,7 +1342,7 @@
     "reviewCount": 29,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Pvc Soft Sheet Thickness available 0.07mm to 3mm Width :54\" and 72,Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Pvc Soft Sheet Thickness available 0.07mm to 3mm Width :54\" and 72,Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -1207,6 +1367,18 @@
       {
         "label": "Pattern",
         "value": "Plain"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1234,7 +1406,7 @@
     "inStock": true,
     "sku": "AE-158608070",
     "brand": "Ashmita",
-    "category": "cat-pvc-roll",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_soft-pvc-roll_1.webp",
     "tags": [
       "pvc-roll",
@@ -1250,7 +1422,7 @@
     "reviewCount": 22,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Soft PVC rollThickness 0. 07mm to 3mmWidth :54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Soft PVC rollThickness 0. 07mm to 3mmWidth :54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Color",
@@ -1271,6 +1443,18 @@
       {
         "label": "Country of Origin",
         "value": "Made in India"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1298,7 +1482,7 @@
     "inStock": true,
     "sku": "AE-78204621",
     "brand": "Ashmita",
-    "category": "cat-pvc-roll",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_transparent_roll.webp",
     "tags": [
       "pvc-roll",
@@ -1314,7 +1498,7 @@
     "reviewCount": 16,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "We are identified as one of the leading names in the market engaged in providing a wide range of Transparent PVC Roll to our valued clients. Features: Rigid design Long life Low maintenance High strength Attractive pattern Fine finish",
+    "description": "We are identified as one of the leading names in the market engaged in providing a wide range of Transparent PVC Roll to our valued clients. Features: Rigid design Long life Low maintenance High strength Attractive pattern Fine finish Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Color",
@@ -1339,6 +1523,18 @@
       {
         "label": "Is It Water Proof",
         "value": "Water Proof"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1366,7 +1562,7 @@
     "inStock": true,
     "sku": "AE-78224831",
     "brand": "Ashmita",
-    "category": "cat-pvc-roll",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_plain-pvc-roll_1.webp",
     "tags": [
       "pvc-roll",
@@ -1382,7 +1578,7 @@
     "reviewCount": 26,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Material",
@@ -1407,6 +1603,18 @@
       {
         "label": "Width",
         "value": "54 inches"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1434,7 +1642,7 @@
     "inStock": true,
     "sku": "AE-158609289",
     "brand": "Ashmita",
-    "category": "cat-pvc-roll",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_hpy-clear-transparent-pvc-roll_2.webp",
     "tags": [
       "pvc-roll",
@@ -1452,7 +1660,7 @@
     "reviewCount": 12,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "HPY clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "HPY clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Color",
@@ -1473,6 +1681,18 @@
       {
         "label": "Country of Origin",
         "value": "Made in India"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1500,7 +1720,7 @@
     "inStock": true,
     "sku": "AE-153162207",
     "brand": "Ashmita",
-    "category": "cat-pvc-roll",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_roll_industrial.webp",
     "tags": [
       "pvc-roll",
@@ -1517,7 +1737,7 @@
     "reviewCount": 20,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Material",
@@ -1542,6 +1762,18 @@
       {
         "label": "Length",
         "value": "40 m"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1569,7 +1801,7 @@
     "inStock": true,
     "sku": "AE-158609000",
     "brand": "Ashmita",
-    "category": "cat-pvc-roll",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_dgt-clear-transparent-pvc-roll_2.webp",
     "tags": [
       "pvc-roll",
@@ -1587,7 +1819,7 @@
     "reviewCount": 22,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "DGT clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "DGT clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -1608,6 +1840,18 @@
       {
         "label": "Color",
         "value": "Blue"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1652,7 +1896,7 @@
     "reviewCount": 16,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC Clear Rainbow Rolls (PVC Holographic Clear Film) Used for MAKING bags, Pouches READY stock available 👇🏼 Thickness : 0.40mm (Exact 0.40mm) Width : 54\" Roll length : 50mtrsRoll weight : 35.60 kg approx",
+    "description": "PVC Clear Rainbow Rolls (PVC Holographic Clear Film) Used for MAKING bags, Pouches READY stock available 👇🏼 Thickness : 0.40mm (Exact 0.40mm) Width : 54\" Roll length : 50mtrsRoll weight : 35.60 kg approx Comes in 12 color combinations: Fluorescent Green/Yellow/Pink/Orange (0.30mm & 0.50mm), solids (0.50mm), and Rainbow Clear.",
     "specs": [
       {
         "label": "Polymer Type",
@@ -1677,6 +1921,18 @@
       {
         "label": "Size",
         "value": "54 inch width"
+      },
+      {
+        "label": "Combinations",
+        "value": "12 Colour Combination (including Fluorescent Green, Yellow, Pink, Orange)"
+      },
+      {
+        "label": "Thickness Options",
+        "value": "0.30mm & 0.50mm (Fluorescent), 0.50mm (Solid colours: Blue, Red, Yellow, Pink, Deep Pink, Purple, Turquoise), Rainbow Clear"
+      },
+      {
+        "label": "Width & Length",
+        "value": "60\" Width, 100 MTRS Length"
       }
     ],
     "images": [
@@ -1727,7 +1983,7 @@
     "reviewCount": 13,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Comes in 12 color combinations: Fluorescent Green/Yellow/Pink/Orange (0.30mm & 0.50mm), solids (0.50mm), and Rainbow Clear.",
     "specs": [
       {
         "label": "Color",
@@ -1752,6 +2008,18 @@
       {
         "label": "Gauge",
         "value": "0.50mm"
+      },
+      {
+        "label": "Combinations",
+        "value": "12 Colour Combination (including Fluorescent Green, Yellow, Pink, Orange)"
+      },
+      {
+        "label": "Thickness Options",
+        "value": "0.30mm & 0.50mm (Fluorescent), 0.50mm (Solid colours: Blue, Red, Yellow, Pink, Deep Pink, Purple, Turquoise), Rainbow Clear"
+      },
+      {
+        "label": "Width & Length",
+        "value": "60\" Width, 100 MTRS Length"
       }
     ],
     "images": [
@@ -1797,7 +2065,7 @@
     "reviewCount": 15,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Strip Thickness",
@@ -1822,6 +2090,14 @@
       {
         "label": "Curtain Height",
         "value": "7 ft"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -1865,7 +2141,7 @@
     "reviewCount": 28,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: Bundle Packing",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: Bundle Packing Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -1890,6 +2166,14 @@
       {
         "label": "Color",
         "value": "Transparent"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -1915,7 +2199,7 @@
     "inStock": true,
     "sku": "AE-158109669",
     "brand": "Ashmita",
-    "category": "cat-pvc-transparent-clear-film",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_super-clear-pvc-sheet-roll_2.webp",
     "tags": [
       "pvc-transparent-clear-film",
@@ -1933,7 +2217,7 @@
     "reviewCount": 15,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Color",
@@ -1954,6 +2238,18 @@
       {
         "label": "Country of Origin",
         "value": "Made in India"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -1981,7 +2277,7 @@
     "inStock": true,
     "sku": "AE-152629349",
     "brand": "Ashmita",
-    "category": "cat-pvc-transparent-clear-film",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_covid-isolation-curtain_1.webp",
     "tags": [
       "pvc-transparent-clear-film",
@@ -1997,7 +2293,7 @@
     "reviewCount": 26,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Color",
@@ -2022,6 +2318,18 @@
       {
         "label": "Is It Water Proof",
         "value": "Water Proof"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -2049,7 +2357,7 @@
     "inStock": true,
     "sku": "AE-306732252",
     "brand": "Ashmita",
-    "category": "cat-pvc-film-roll",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_pvc-film_5.webp",
     "tags": [
       "pvc-film-roll",
@@ -2064,7 +2372,7 @@
     "reviewCount": 29,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Thickness",
@@ -2077,6 +2385,18 @@
       {
         "label": "Color",
         "value": "Transparent"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -2107,7 +2427,7 @@
     "inStock": true,
     "sku": "AE-329360249",
     "brand": "Ashmita",
-    "category": "cat-stretch-ceiling",
+    "category": "cat-pvc-transparent-roll",
     "image": "/src/assets/pvc_pvc-film_1.webp",
     "tags": [
       "stretch-ceiling",
@@ -2123,7 +2443,7 @@
     "reviewCount": 28,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Pvc stretch ceiling film . Width 3.2mtr,4mtr,5mtr. Soft , flexible,stretch,super strength . Roll length 100 mtrs . White Back lit film",
+    "description": "Pvc stretch ceiling film . Width 3.2mtr,4mtr,5mtr. Soft , flexible,stretch,super strength . Roll length 100 mtrs . White Back lit film Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
     "specs": [
       {
         "label": "Material",
@@ -2148,6 +2468,18 @@
       {
         "label": "Application Area",
         "value": "Banquet Hall, Mall, Hotel, Residential, Ceiling film, Office, Retail"
+      },
+      {
+        "label": "Standard Thicknesses",
+        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+      },
+      {
+        "label": "Low Gauges",
+        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+      },
+      {
+        "label": "High Gauges",
+        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
       }
     ],
     "images": [
@@ -2173,7 +2505,7 @@
     "inStock": true,
     "sku": "AE-306732537",
     "brand": "Ashmita",
-    "category": "cat-freezer-strip-curtain",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_polar_curtain.webp",
     "tags": [
       "freezer-strip-curtain",
@@ -2190,7 +2522,7 @@
     "reviewCount": 28,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Polar PVC Strip Curtains are highly made for Freezer garde areas. Thickness availabe in:2MM3MMWidth - 8\"Length - 50 mtrsAdditional Information: Packaging Details: Polar PVC Strip Curtains are highly made for Freezer garde areas. Thickness availabe in:2MM3MMWidth - 8\"Length - 50 mtrs",
+    "description": "Polar PVC Strip Curtains are highly made for Freezer garde areas. Thickness availabe in:2MM3MMWidth - 8\"Length - 50 mtrsAdditional Information: Packaging Details: Polar PVC Strip Curtains are highly made for Freezer garde areas. Thickness availabe in:2MM3MMWidth - 8\"Length - 50 mtrs Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Water Absorption",
@@ -2207,6 +2539,14 @@
       {
         "label": "Transparency",
         "value": "Transparent"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -2252,15 +2592,15 @@
     "reviewCount": 17,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC REINFORCED ROLLSTHICKNESS : 0.40MM WIDTH ; 60 INCHES ROLL LENGTH : 80 MTRS,,Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "PVC REINFORCED ROLLSTHICKNESS : 0.40MM WIDTH ; 60 INCHES ROLL LENGTH : 80 MTRS,,Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Thickness: 0.35 mm, Width: 60\", Length: 100 MTRS. Application: Crate Covers, Stationery, Packaging.",
     "specs": [
       {
         "label": "Thickness",
-        "value": "1 to 2 mm"
+        "value": "0.35 mm"
       },
       {
         "label": "Usage/Application",
-        "value": "Industrial"
+        "value": "Crate Covers, Stationery, Packaging"
       },
       {
         "label": "Material",
@@ -2272,11 +2612,15 @@
       },
       {
         "label": "Length",
-        "value": "100 meter"
+        "value": "100 MTRS"
       },
       {
         "label": "Packaging Type",
         "value": "Roll"
+      },
+      {
+        "label": "Width",
+        "value": "60 inches"
       }
     ],
     "images": [
@@ -2304,7 +2648,7 @@
     "inStock": true,
     "sku": "AE-160733990",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtain",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_flexible-transparent-pvc-strip_1.webp",
     "tags": [
       "pvc-strip-curtain",
@@ -2321,7 +2665,7 @@
     "reviewCount": 27,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Thickness",
@@ -2346,6 +2690,14 @@
       {
         "label": "Pattern",
         "value": "Plain"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -2373,7 +2725,7 @@
     "inStock": true,
     "sku": "AE-328086039",
     "brand": "Ashmita",
-    "category": "cat-pvc-strip-curtain",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_pvc-strip-curtains-hanger_2.webp",
     "tags": [
       "pvc-strip-curtain",
@@ -2390,7 +2742,7 @@
     "reviewCount": 24,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Magnetic Pvc Strip Curtains of high durability and premium grade polymer material.",
+    "description": "Magnetic Pvc Strip Curtains of high durability and premium grade polymer material. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Strip Thickness",
@@ -2411,6 +2763,14 @@
       {
         "label": "Color",
         "value": "Transparent"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -2453,7 +2813,7 @@
     "reviewCount": 16,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Supports MS brackets (19.5\", 20.5\", 38.5\"), Stainless Steel SS 202 & SS 304 (20.5\", 38.5\"), Magnetic curtain bottom sets, and Track & Clip options (300mm / 350mm).",
     "specs": [
       {
         "label": "Color",
@@ -2478,6 +2838,14 @@
       {
         "label": "Set Contains",
         "value": "1 Mounting Bracket, 6 Pairs of Plates and Nut Bolts"
+      },
+      {
+        "label": "Material Options",
+        "value": "MS (19.5\", 20.5\", 38.5\"), SS 202 (20.5\", 38.5\"), SS 304 (20.5\", 38.5\")"
+      },
+      {
+        "label": "Accessories",
+        "value": "Bottom Set (for Magnetic Curtain), Track & Clip 300 MM, Track & Clip 350 MM"
       }
     ],
     "images": [
@@ -2522,7 +2890,7 @@
     "reviewCount": 20,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Supports MS brackets (19.5\", 20.5\", 38.5\"), Stainless Steel SS 202 & SS 304 (20.5\", 38.5\"), Magnetic curtain bottom sets, and Track & Clip options (300mm / 350mm).",
     "specs": [
       {
         "label": "Material",
@@ -2543,6 +2911,14 @@
       {
         "label": "Length",
         "value": "39 inch"
+      },
+      {
+        "label": "Material Options",
+        "value": "MS (19.5\", 20.5\", 38.5\"), SS 202 (20.5\", 38.5\"), SS 304 (20.5\", 38.5\")"
+      },
+      {
+        "label": "Accessories",
+        "value": "Bottom Set (for Magnetic Curtain), Track & Clip 300 MM, Track & Clip 350 MM"
       }
     ],
     "images": [
@@ -2570,7 +2946,7 @@
     "inStock": true,
     "sku": "AE-327247134",
     "brand": "Ashmita",
-    "category": "cat-plastic-curtain",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_pvc-ac-curtain_2.webp",
     "tags": [
       "plastic-curtain",
@@ -2586,7 +2962,7 @@
     "reviewCount": 20,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Curtain Thickness",
@@ -2603,6 +2979,14 @@
       {
         "label": "Pattern",
         "value": "Plain"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
@@ -2630,7 +3014,7 @@
     "inStock": true,
     "sku": "AE-313155565",
     "brand": "Ashmita",
-    "category": "cat-plastic-curtain",
+    "category": "cat-pvc-curtain",
     "image": "/src/assets/pvc_cold-storage-curtains_2.webp",
     "tags": [
       "plastic-curtain",
@@ -2646,7 +3030,7 @@
     "reviewCount": 22,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
     "specs": [
       {
         "label": "Material",
@@ -2655,6 +3039,14 @@
       {
         "label": "Transparency",
         "value": "Transparent"
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
       }
     ],
     "images": [
