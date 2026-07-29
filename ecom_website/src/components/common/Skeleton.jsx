@@ -223,8 +223,10 @@ const Skeleton = ({
 
   // Card Grid Skeleton
   if (variant === "card-grid") {
+    const hasGridCols = className && (className.includes('grid-cols') || className.includes('grid-'));
+    const finalClassName = hasGridCols ? className : `grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12 ${className}`;
     return (
-      <div className={`grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12 ${className}`} style={style}>
+      <div className={finalClassName} style={style}>
         <S variant="card" count={itemCount} />
       </div>
     );

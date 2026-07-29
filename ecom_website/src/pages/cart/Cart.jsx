@@ -285,7 +285,10 @@ const Cart = () => {
                 </div>
 
                 <div className="rounded-5 bg-forth p-15">
-                  <h4 className="mid-text font-600 text-dark mb-2">ℹ️ Note</h4>
+                  <h4 className="mid-text font-600 text-dark mb-2 flex items-center gap-6">
+                    <Icon name="Shield" width="18" height="18" stroke="var(--primary)" strokeWidth="2.5" />
+                    Note
+                  </h4>
                   <p className="mini-text text-gray m-0">
                     Prices shown are indicative. Final prices will be provided by suppliers based on your requirements.
                   </p>
@@ -363,7 +366,9 @@ const Cart = () => {
                         </div>
                       </div>
                     ) : (
-                      <p className="small-text text-gray text-center my-15">No items in cart</p>
+                      <div className='bg-forth py-20'>
+                        <p className="mini-text text-gray capitalize text-center my-15">No items in cart</p>
+                      </div>
                     )}
                   </div>
                 )}

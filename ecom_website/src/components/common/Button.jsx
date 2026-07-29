@@ -55,9 +55,8 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${buttonClass} ${bgClass} ${textClass} cursor-pointer ${disabled ? "opacity-50 cursor-not-allowed" : ""
-        } ${className}`}
-      style={style}
+      className={`${buttonClass} ${bgClass} ${textClass} ${disabled ? "opacity-50" : "cursor-pointer"} ${className}`}
+      style={{ ...style, ...(disabled ? { cursor: 'not-allowed' } : {}) }}
       {...props}
     >
       {icon ? (

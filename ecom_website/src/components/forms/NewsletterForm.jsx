@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Icon from '../common/Icon';
-import Button from '../common/Button';
+import FormBuilder from '../common/FormBuilder';
+import { sendEmail } from '../../utils/emailsend';
 
 const NewsletterForm = ({
   variant = 'card', // 'card' or 'footer'
@@ -10,91 +11,58 @@ const NewsletterForm = ({
   subtitle = 'Get the latest marketing insights and strategies straight to your inbox.',
   onSubscribe
 }) => {
-  const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
-  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError('');
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const trimmedEmail = email.trim();
-
-    if (!trimmedEmail) {
-      setError('Email address is required');
-      return;
+  const fields = [
+    {
+      name: 'email',
+      type: 'email',
+      placeholder: placeholder || (variant === 'footer' ? 'Corporate email...' : 'Enter your email'),
+      validation: { required: true, email: true },
+      className: variant === 'footer' ? 'newsletter-input' : ''
     }
-    if (!emailRegex.test(trimmedEmail)) {
-      setError('Please enter a valid email address');
-      return;
-    }
+  ];
 
-    // Send SMS & Email notification
+  const handleFormSubmit = async (formData) => {
+    const trimmedEmail = formData.email?.trim() || '';
+    if (!trimmedEmail) return;
+
     const message = `Newsletter Subscription Request:\nEmail: ${trimmedEmail}`;
     const smsBody = encodeURIComponent(message);
 
-    // Send background email via Formspree
-    fetch("https://formspree.io/rajshetye.5855@gmail.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        email: trimmedEmail,
-        message: message,
-        subject: "New Newsletter Subscription"
-      })
-    }).catch(err => console.error("Formspree error:", err));
+    try {
+      await sendEmail({ email: trimmedEmail }, "New Newsletter Subscription", message);
+    } catch (err) {
+      console.error("Formspree error:", err);
+    }
 
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    const smsUrl = `sms:${import.meta.env.VITE_PHONE || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
+    window.location.href = `sms:${import.meta.env.VITE_PHONE || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
 
-    window.location.href = smsUrl;
+    if (onSubscribe) onSubscribe(trimmedEmail);
+    else if (variant === 'footer') alert('Subscribed!');
 
-    if (onSubscribe) {
-      onSubscribe(trimmedEmail);
-    } else if (variant === 'footer') {
-      alert('Subscribed!');
-    }
     setIsSubscribed(true);
-    setEmail('');
-    setTimeout(() => {
-      setIsSubscribed(false);
-    }, 5000);
+    setTimeout(() => setIsSubscribed(false), 5000);
   };
 
   if (variant === 'footer') {
     return (
-      <div className="w-full">
-        <form className="flex gap-8 mt-15" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder={placeholder || 'Corporate email...'}
-            className="newsletter-input rounded-5 px-12 py-8 text-white"
-            style={{ flex: 1, outline: 'none' }}
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              if (error) setError('');
-            }}
-            required
+      <div className="w-full mt-10">
+        {isSubscribed ? (
+          <div className="p-10 bg-light-success text-success rounded-5 font-600 small-text text-center mt-15">
+            ✓ Subscribed successfully!
+          </div>
+        ) : (
+          <FormBuilder
+            fields={fields}
+            onSubmit={handleFormSubmit}
+            submitType="json"
+            submitText={buttonText}
+            buttonVersion="v3"
+            buttonBg="primary"
+            buttonClassName="mt-10"
           />
-          <Button
-            type="submit"
-            text={buttonText}
-            bg="primary"
-            color="white"
-            version="v0"
-            className="newsletter-btn cursor-pointer"
-            style={{ border: '0', padding: '8px 14px', borderRadius: '5px', fontWeight: '600' }}
-          />
-        </form>
-        {error && (
-          <small className="text-danger mt-6 block mini-text" style={{ color: '#ef4444' }}>
-            {error}
-          </small>
         )}
       </div>
     );
@@ -124,35 +92,16 @@ const NewsletterForm = ({
           ✓ Subscribed successfully!
         </div>
       ) : (
-        <div>
-          <form onSubmit={handleSubmit} className="flex bg-white rounded-5 overflow-hidden">
-            <input
-              type="email"
-              placeholder={placeholder || 'Enter your email'}
-              className="h-input bg-white p-10 border-0"
-              style={{ outline: 'none', fontSize: '13px', width: '100%' }}
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (error) setError('');
-              }}
-              required
-            />
-            <Button
-              type="submit"
-              text={buttonText}
-              bg="primary"
-              color="white"
-              version="v0"
-              className="cursor-pointer font-600 px-15 border-0 mini-text"
-              style={{ borderRadius: 0 }}
-            />
-          </form>
-          {error && (
-            <small className="text-danger mt-6 block mini-text" style={{ color: '#ef4444' }}>
-              {error}
-            </small>
-          )}
+        <div className="">
+          <FormBuilder
+            fields={fields}
+            onSubmit={handleFormSubmit}
+            submitType="json"
+            submitText={buttonText}
+            buttonVersion="v3"
+            buttonBg="primary"
+            buttonClassName="newsletter-btn-container"
+          />
         </div>
       )}
     </div>

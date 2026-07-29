@@ -1,4 +1,4 @@
-import { useState, useMemo, lazy, Suspense } from 'react';
+import { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import { addToCart } from '../../utils/cartHelper';
@@ -203,6 +203,26 @@ const ProductLayout = ({
   const [activeTab, setActiveTab] = useState('description');
   const [quantity, setQuantity] = useState(1);
 
+  const targetProductId = foundProduct?.id || productData.sku || productData.title || 'general-product';
+  const [isInCart, setIsInCart] = useState(() => {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    return cart.some(item => item.id === targetProductId);
+  });
+
+  useEffect(() => {
+    const checkCart = () => {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      setIsInCart(cart.some(item => item.id === targetProductId));
+    };
+
+    checkCart();
+
+    window.addEventListener('cart-updated', checkCart);
+    return () => {
+      window.removeEventListener('cart-updated', checkCart);
+    };
+  }, [targetProductId]);
+
   const defaultFeatures = {
     printer: ['Sharp & clear prints', 'Easy to install', 'High page yield', 'Reliable performance', 'Leak-proof technology', 'Value for money'],
     steel: ['High tensile strength', 'Corrosion resistant', 'Durable & long lasting', 'Premium surface finish', 'Accurate dimensions', 'Grade certified']
@@ -364,12 +384,14 @@ const ProductLayout = ({
 
                     <div className='grid-cols-2 gap-12 mt-8'>
                       <Button
-                        text="Add to Cart"
-                        bg="primary"
+                        text={isInCart ? "Already Added" : "Add to Cart"}
+                        bg={isInCart ? "forth" : "primary"}
+                        color={isInCart ? "gray" : "white"}
                         version="v3"
+                        disabled={isInCart}
                         onClick={() => {
                           const targetProduct = foundProduct || {
-                            id: productData.sku || 'general-product',
+                            id: productData.sku || productData.title || 'general-product',
                             name: productData.title,
                             price: productData.price,
                             image: galleryImages?.[0] || '',

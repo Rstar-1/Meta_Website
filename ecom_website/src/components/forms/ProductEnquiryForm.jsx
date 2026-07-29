@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FormBuilder from '../common/FormBuilder';
 import { getCart } from '../../utils/cartHelper';
+import { sendEmail } from '../../utils/emailsend';
 
 const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
   const navigate = useNavigate();
@@ -70,28 +71,27 @@ const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
     }
   ];
 
-  const handleFormSubmit = (data) => {
+  const handleFormSubmit = async (data) => {
     // Send SMS & Email notification
     const message = `New Product Enquiry:\nName: ${data.name || ''}\nMobile: ${data.mobile || ''}\n${data.city ? `City: ${data.city}\n` : ''}${data.quantity ? `Quantity: ${data.quantity}\n` : ''}${data.requirement ? `Requirement: ${data.requirement}\n` : ''}`;
     const smsBody = encodeURIComponent(message);
 
     // Send background email via Formspree
-    fetch("https://formspree.io/rajshetye.5855@gmail.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        name: data.name,
-        mobile: data.mobile,
-        city: data.city,
-        quantity: data.quantity,
-        requirement: data.requirement,
-        message: message,
-        subject: "New Product Enquiry"
-      })
-    }).catch(err => console.error("Formspree error:", err));
+    try {
+      await sendEmail(
+        {
+          name: data.name,
+          mobile: data.mobile,
+          city: data.city,
+          quantity: data.quantity,
+          requirement: data.requirement
+        },
+        "New Product Enquiry",
+        message
+      );
+    } catch (err) {
+      console.error("Formspree error:", err);
+    }
 
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
     const smsUrl = `sms:${import.meta.env.VITE_PHONE || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
