@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Banner from '../../components/layout/Banner';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema';

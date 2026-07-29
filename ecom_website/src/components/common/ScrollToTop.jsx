@@ -6,7 +6,6 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const circleRef = useRef(null);
-  const progressRef = useRef(0);
 
   // Scroll to top on pathname changes (route changes)
   useEffect(() => {
@@ -22,8 +21,6 @@ const ScrollToTop = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-      
-      progressRef.current = progress;
 
       if (circleRef.current) {
         const strokeDashoffset = circumference * (1 - progress / 100);
@@ -83,7 +80,7 @@ const ScrollToTop = () => {
             stroke="#0f1623"
             strokeWidth="2.5"
             strokeDasharray={circumference}
-            strokeDashoffset={circumference * (1 - progressRef.current / 100)}
+            strokeDashoffset={circumference}
             strokeLinecap="round"
             style={{ transition: 'stroke-dashoffset 10ms linear' }}
           />

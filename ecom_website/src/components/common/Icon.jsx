@@ -301,12 +301,7 @@ const Icon = React.memo(({ name, className = "", width, height, strokeWidth, fil
                     <line x1="14" y1="11" x2="14" y2="17"></line>
                 </svg>
             );
-        case "Layers":
-            return (
-                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-            );
+
         case "MapPin":
             return (
                 <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
@@ -351,13 +346,6 @@ const Icon = React.memo(({ name, className = "", width, height, strokeWidth, fil
                     <circle cx="9" cy="7" r="4" />
                     <line x1="19" y1="8" x2="19" y2="14" />
                     <line x1="16" y1="11" x2="22" y2="11" />
-                </svg>
-            );
-        case "Building":
-            return (
-                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                 </svg>
             );
         case "Business":
@@ -409,6 +397,12 @@ const Icon = React.memo(({ name, className = "", width, height, strokeWidth, fil
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
             );
+        case "Instagram":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} fill={fill || "#E1306C"} className={`flex ${className}`} {...props}>
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                </svg>
+            );
         case "Verified":
             return (
                 <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} fill={fill || "#0284c7"} className={`flex ${className}`} {...props}>
@@ -429,8 +423,8 @@ const Icon = React.memo(({ name, className = "", width, height, strokeWidth, fil
             );
         case "WhatsApp":
             return (
-                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} fill={fill || "#16a34a"} className={`flex ${className}`} {...props}>
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.107 4.04 4.15-1.087z" />
+                <svg viewBox="0 0 16 16" width={defaultWidth} height={defaultHeight} fill={fill || "#16a34a"} className={`flex ${className}`} {...props}>
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
                 </svg>
             );
         case "WhatsAppShare":
@@ -582,6 +576,21 @@ const Icon = React.memo(({ name, className = "", width, height, strokeWidth, fil
                 <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            );
+        case "Map":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+            );
+        case "Clock":
+            return (
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
             );
         case "Phone":

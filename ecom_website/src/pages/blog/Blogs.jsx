@@ -1,4 +1,4 @@
-import React, { memo, lazy, Suspense, useState, useEffect } from "react";
+import { memo, lazy, Suspense, useState, useEffect } from 'react';
 import BlogLayout from "../../components/layout/BlogLayout";
 import { blogs as blogsData } from "../../utils/apiData";
 import SeoHelmet from "../../components/seo/SeoHelmet";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from '../../utils/apiData';
 import ProductLayout from '../../components/layout/ProductLayout';
@@ -15,9 +15,14 @@ const ProductDetail = () => {
   const foundProduct = products.find(p => p.id === id || p.slug === id);
 
   const [loading, setLoading] = useState(true);
+  const [prevId, setPrevId] = useState(id);
+
+  if (id !== prevId) {
+    setPrevId(id);
+    setLoading(true);
+  }
 
   useEffect(() => {
-    setLoading(true);
     const timer = setTimeout(() => setLoading(false), 600);
     return () => clearTimeout(timer);
   }, [id]);

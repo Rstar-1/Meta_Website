@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Icon from "./Icon";
 
-const VERSION_CLASSES = {
-    v0: "w-full",
-    v1: "container mx-auto",
-    v2: "container2",
-    v3: "container3 mx-auto",
-};
 
 const Fields = ({
     type = "input",
@@ -25,7 +19,6 @@ const Fields = ({
     icon,
     iconPosition = "right",
     error: propError,
-    defaultValue,
     ...props
 }) => {
     const [localError, setLocalError] = useState("");

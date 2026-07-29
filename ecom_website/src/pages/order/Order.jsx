@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Container from '../../components/common/Container';
 import Button from '../../components/common/Button';
 import Icon from '../../components/common/Icon';
@@ -22,7 +22,20 @@ const ORDER_STEPS = [
 
 const Order = () => {
   const [loading, setLoading] = useState(true);
-  const [orderItems, setOrderItems] = useState([]);
+  const [orderItems] = useState(() => {
+    const stored = localStorage.getItem('order_products');
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
+      } catch (e) {
+        console.error("Error parsing order_products:", e);
+      }
+    }
+    return products.slice(0, 4);
+  });
   const [showAllItems, setShowAllItems] = useState(false);
   const [activeStep, setActiveStep] = useState(2);
   const [activeOrderId] = useState('ORD123456');
@@ -31,23 +44,6 @@ const Order = () => {
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const stored = localStorage.getItem('order_products');
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setOrderItems(parsed);
-          return;
-        }
-      } catch (e) {
-        console.error("Error parsing order_products:", e);
-      }
-    }
-    // Default fallback demo products (4 items to allow testing "View All Items")
-    setOrderItems(products.slice(0, 4));
   }, []);
 
   const handleDownloadInvoice = () => {

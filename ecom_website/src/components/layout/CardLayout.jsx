@@ -3,10 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import Button from '../common/Button';
 import Image from '../common/Image';
-import Icon from '../common/Icon';
-import { addToCart } from '../../utils/cartHelper';
-import { useNavigate } from 'react-router-dom';
-import { showToast } from '../common/Tooltip';
 import { resolveProductImage } from '../../utils/imageResolver';
 import { formatDate } from '../../utils/formatDate';
 
@@ -22,9 +18,6 @@ const CardLayout = ({
     imageHeight,
     onCardClick,
     onButtonClick,
-    onAddToCart,
-    showAddToCart = true,
-    showViewProducts = true,
     cols = '4',
     mdCols = '2',
     smCols = '1',
@@ -37,7 +30,6 @@ const CardLayout = ({
     eagerCount = 0,
     ...props
 }) => {
-    const navigate = useNavigate();
     const sliderId = React.useId().replace(/:/g, '');
     const combinedClassName = `grid-cols-${cols} md-grid-cols-${mdCols} sm-grid-cols-${smCols} gap-${gap} ${className}`.trim();
 
@@ -139,7 +131,7 @@ const CardLayout = ({
                         </div>
                         <div className="py-10">
                             {item.tag && (
-                                <p className="px-12 py-4 rounded-5 font-400 mini-text mb-10 w-max bg-light-primary text-primary">{item.tag}</p>
+                                <p className="px-12 py-2 rounded-5 font-400 mini-text mb-10 w-max bg-light-primary text-primary">{item.tag}</p>
                             )}
                             <h3 className="text-dark font-600 mid-text line-clamp1">{item.title}</h3>
                             <p className="text-gray font-500 mini-text mt-3">

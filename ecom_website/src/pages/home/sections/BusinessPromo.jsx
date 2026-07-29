@@ -1,9 +1,7 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../../components/common/Button';
 import Icon from '../../../components/common/Icon';
 import Image from '../../../components/common/Image';
-import pvcSheetsIndustrial from '../../../assets/pvc_sheets_industrial.webp';
 const BusinessPromo = ({ cms }) => {
   const navigate = useNavigate();
 

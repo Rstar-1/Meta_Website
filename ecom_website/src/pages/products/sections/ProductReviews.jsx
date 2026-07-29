@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from '../../../components/common/Container';
 
 const StarRating = ({ rating, color = "var(--warning)", size = 16 }) => {

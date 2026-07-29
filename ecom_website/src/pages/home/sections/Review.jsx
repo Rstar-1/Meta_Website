@@ -1,4 +1,3 @@
-import React from 'react';
 import { reviews as reviewsData } from '../../../utils/apiData';
 import Icon from '../../../components/common/Icon';
 import Image from '../../../components/common/Image';

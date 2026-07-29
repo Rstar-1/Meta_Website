@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import WebsiteSchema from '../../components/seo/WebsiteSchema';
 import OrganizationSchema from '../../components/seo/OrganizationSchema';

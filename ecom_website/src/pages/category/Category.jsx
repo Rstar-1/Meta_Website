@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 import Container from '../../components/common/Container';

@@ -1,4 +1,3 @@
-import React from "react";
 
 const TabItem = ({ name, count, icon, isActive, onClick }) => (
     <div

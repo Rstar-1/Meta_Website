@@ -1,4 +1,3 @@
-import React from 'react'
 import { generateSchema } from '../../utils/generateSchema'
 
 const BlogSchema = ({ post }) => {

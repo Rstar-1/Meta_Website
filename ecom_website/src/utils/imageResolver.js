@@ -26,7 +26,6 @@ import pvc_blue_pvc_strip_curtain_2 from '../assets/pvc_blue-pvc-strip-curtain_2
 import pvc_cold_storage_curtains_1 from '../assets/pvc_cold-storage-curtains_1.webp';
 import pvc_cold_storage_curtains_2 from '../assets/pvc_cold-storage-curtains_2.webp';
 import pvc_covid_isolation_curtain_1 from '../assets/pvc_covid-isolation-curtain_1.webp';
-import pvc_covid_isolation_curtain_2 from '../assets/pvc_covid-isolation-curtain_2.webp';
 import pvc_dgt_clear_transparent_pvc_roll_1 from '../assets/pvc_dgt-clear-transparent-pvc-roll_1.webp';
 import pvc_dgt_clear_transparent_pvc_roll_2 from '../assets/pvc_dgt-clear-transparent-pvc-roll_2.webp';
 import pvc_flexible_transparent_pvc_strip_1 from '../assets/pvc_flexible-transparent-pvc-strip_1.webp';

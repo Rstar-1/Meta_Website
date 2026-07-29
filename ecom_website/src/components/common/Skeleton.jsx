@@ -1,5 +1,18 @@
-import React from "react";
+import { createContext, useContext } from 'react';
 import Container from "./Container";
+
+const SkeletonContext = createContext(null);
+
+function S({ theme, animation, ...props }) {
+  const ctx = useContext(SkeletonContext);
+  return (
+    <Skeleton
+      theme={theme || (ctx ? ctx.theme : undefined)}
+      animation={animation || (ctx ? ctx.animation : undefined)}
+      {...props}
+    />
+  );
+}
 
 // Inject keyframes globally once (safe for SSR)
 if (typeof document !== "undefined" && !document.getElementById("skeleton-styles")) {
@@ -56,13 +69,9 @@ const Skeleton = ({
     }
   };
 
-  // Helper component to render child skeletons with inherited theme/animation properties
-  const S = (p) => (
-    <Skeleton theme={p.theme || theme} animation={animation} {...p} />
-  );
-
-  // Hero Section Skeleton
-  if (variant === "hero") {
+  const renderContent = () => {
+    // Hero Section Skeleton
+    if (variant === "hero") {
     return (
       <div className={`py-40 w-full ${className}`} style={{ minHeight: '500px', ...style }}>
         <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full overflow-hidden">
@@ -738,17 +747,24 @@ const Skeleton = ({
     );
   }
 
+    return (
+      <>
+        {Array.from({ length: itemCount }).map((_, idx) => (
+          <div
+            key={idx}
+            className={`skeleton-element ${className}`}
+            style={{ ...baseStyle, ...getStyle(), ...style }}
+            {...props}
+          />
+        ))}
+      </>
+    );
+  };
+
   return (
-    <>
-      {Array.from({ length: itemCount }).map((_, idx) => (
-        <div
-          key={idx}
-          className={`skeleton-element ${className}`}
-          style={{ ...baseStyle, ...getStyle(), ...style }}
-          {...props}
-        />
-      ))}
-    </>
+    <SkeletonContext.Provider value={{ theme, animation }}>
+      {renderContent()}
+    </SkeletonContext.Provider>
   );
 };
 

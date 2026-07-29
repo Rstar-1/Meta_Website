@@ -1,6 +1,4 @@
-import React from 'react';
 import Container from '../../../components/common/Container';
-import Icon from '../../../components/common/Icon';
 import Button from '../../../components/common/Button';
 import Image from '../../../components/common/Image';
 

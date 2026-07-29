@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react';
 import { generateMeta } from '../../utils/generateMeta'
 import defaultSEO from '../../seo/defaultSEO'
 import { routeMeta } from '../../seo/seoConfig'

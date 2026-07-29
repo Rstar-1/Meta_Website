@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
+import { useState, useMemo, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import { addToCart } from '../../utils/cartHelper';
@@ -211,9 +211,11 @@ const ProductLayout = ({
   const productFeatures = foundProduct?.keyFeatures || foundProduct?.features || defaultFeatures;
   const specsOverview = productData.specs?.slice(0, 5) || [];
 
-  useEffect(() => {
-    if (galleryImages?.length > 0) setActiveImage(galleryImages[0]);
-  }, [galleryImages]);
+  const [prevGallery, setPrevGallery] = useState(galleryImages);
+  if (galleryImages !== prevGallery) {
+    setPrevGallery(galleryImages);
+    setActiveImage(galleryImages?.[0] || '');
+  }
 
   const productMeta = useMemo(() => productMetaTemplate(
     foundProduct || { name: productData.title, description: productData.description, tags: seoKeywords, image: activeImage },
@@ -406,7 +408,7 @@ const ProductLayout = ({
                   {/* Tab Content */}
                   {activeTab === 'description' && (
                     <div className='grid-cols-2 sm-grid-cols-1 gap-12 items-start'>
-                      <div className='bg-tertiary p-16 rounded-5'>
+                      <div className='bg-forth p-16 rounded-5'>
                         <h4 className='mid-text font-600 text-dark mb-12'>Specifications Overview</h4>
                         <div className='flex flex-column gap-8'>
                           <div className='flex justify-between py-7 bordb'>

@@ -1,9 +1,8 @@
-import React from "react";
 import Container from "../common/Container";
 import Breadcrumb from "../common/Breadcrumb";
 import Skeleton from "../common/Skeleton";
 
-const Banner = ({ title, img, desc, style, breadcrumbs, productData, loading }) => {
+const Banner = ({ title, desc, style, breadcrumbs, productData, loading }) => {
     if (loading) {
         return <Skeleton variant="banner" style={style} />;
     }

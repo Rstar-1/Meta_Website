@@ -1,11 +1,10 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../../components/common/Container';
 import Button from '../../components/common/Button';
 import Icon from '../../components/common/Icon';
 import Image from '../../components/common/Image';
 import SeoHelmet from '../../components/seo/SeoHelmet';
-import CardLayout from '../../components/layout/CardLayout';
 import Banner from '../../components/layout/Banner';
 import Skeleton from '../../components/common/Skeleton';
 import LazySection from '../../components/common/LazySection';
@@ -14,14 +13,14 @@ const ProductEnquiryForm = lazy(() => import('../../components/forms/ProductEnqu
 const BusinessPromo = lazy(() => import('../home/sections/BusinessPromo'));
 
 import { getCart, removeFromCart, clearCart, updateCartQuantity } from '../../utils/cartHelper';
-import { resolveProductImage, resolveImagePath } from '../../utils/imageResolver';
-import { products as productsData, categories as categoriesData, cms } from '../../utils/apiData';
+import { resolveProductImage } from '../../utils/imageResolver';
+import { categories as categoriesData, cms } from '../../utils/apiData';
 import Table from '../../components/common/Table';
 import Fields from '../../components/common/Fields';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => getCart());
   const [loading, setLoading] = useState(true);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
 
@@ -31,12 +30,6 @@ const Cart = () => {
   }, []);
 
   useEffect(() => {
-    const initialCart = getCart();
-    setCartItems(initialCart);
-    if (initialCart.length === 0) {
-      setShowQuoteForm(false);
-    }
-
     const handleCartUpdate = () => {
       const updatedCart = getCart();
       setCartItems(updatedCart);
@@ -77,11 +70,6 @@ const Cart = () => {
     }
   };
 
-  const handleProductClick = (item) => {
-    if (item && item.id) {
-      navigate(`/product-detail/${item.id}`);
-    }
-  };
 
   const columns = [
     {

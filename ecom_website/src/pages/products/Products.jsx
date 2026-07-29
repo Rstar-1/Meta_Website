@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { products, categories, cms } from '../../utils/apiData';
 import Container from '../../components/common/Container';
@@ -82,7 +82,7 @@ const Products = () => {
     return city ? [city] : [];
   };
 
-  const maxProductPrice = React.useMemo(() => {
+  const maxProductPrice = useMemo(() => {
     const highest = Math.max(...products.map(p => p.price || 0));
     return (highest || 250000) + 20;
   }, []);
@@ -110,7 +110,9 @@ const Products = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
+  const [prevLocationKey, setPrevLocationKey] = useState(location.key);
+  if (location.key !== prevLocationKey) {
+    setPrevLocationKey(location.key);
     // 1. Resolve Category
     if (location.state?.category) {
       const catId = getCatId(location.state.category);
@@ -135,7 +137,7 @@ const Products = () => {
     }
 
     // 2. Resolve Search Query
-    if (location.state?.hasOwnProperty('search')) {
+    if (location.state && 'search' in location.state) {
       setSearch(location.state.search || '');
     } else {
       const queryParams = new URLSearchParams(location.search);
@@ -143,7 +145,7 @@ const Products = () => {
     }
 
     // 3. Resolve City
-    if (location.state?.hasOwnProperty('city')) {
+    if (location.state && 'city' in location.state) {
       const city = location.state.city;
       setSelectedCities(city ? [city] : []);
     } else {
@@ -151,7 +153,7 @@ const Products = () => {
       const city = queryParams.get('city');
       setSelectedCities(city ? [city] : []);
     }
-  }, [location.state, location.search]);
+  }
 
   const filteredProducts = products.filter((p) => {
     const matchesCat = selectedCats.length === 0 || selectedCats.includes(p.category);
@@ -280,7 +282,7 @@ const Products = () => {
 
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
 
-  const seoMeta = React.useMemo(() => {
+  const seoMeta = useMemo(() => {
     if (selectedCats.length === 1) {
       const catId = selectedCats[0];
       const catObj = categories.find(c => c.id === catId);

@@ -1,4 +1,4 @@
-import { useState, useEffect, forwardRef } from "react";
+import { useState, forwardRef } from "react";
 
 const isVideoSrc = (url) => {
   if (!url) return false;
@@ -23,12 +23,13 @@ export function Image({
   preload = "metadata",
   ...props
 }) {
+  const [prevSrc, setPrevSrc] = useState(src);
   const [imgSrc, setImgSrc] = useState(src);
-  const isEager = loading === "eager" || props.fetchPriority === "high" || props.fetchpriority === "high";
-
-  useEffect(() => {
+  if (src !== prevSrc) {
+    setPrevSrc(src);
     setImgSrc(src);
-  }, [src]);
+  }
+  const isEager = loading === "eager" || props.fetchPriority === "high" || props.fetchpriority === "high";
 
   if (isVideoSrc(src)) {
     return (
@@ -88,11 +89,12 @@ export const ImageDiv = forwardRef(({
   preload = "metadata",
   ...props
 }, ref) => {
+  const [prevImage, setPrevImage] = useState(image);
   const [bgImage, setBgImage] = useState(image);
-
-  useEffect(() => {
+  if (image !== prevImage) {
+    setPrevImage(image);
     setBgImage(image);
-  }, [image]);
+  }
 
   const isVideo = isVideoSrc(bgImage);
 

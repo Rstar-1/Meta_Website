@@ -5,7 +5,7 @@ import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
 import Dropdown from "../common/Dropdown";
-import { products as productsData, categories as categoriesData, client as clientData } from "../../utils/apiData";
+import { products as productsData, categories as categoriesData } from "../../utils/apiData";
 import headerConfig from "../../data/header.json";
 import Fields from "../common/Fields";
 import { resolveProductImage } from "../../utils/imageResolver";
@@ -36,9 +36,6 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  useEffect(() => {
-    if (!isMobileOpen) setActiveMobileSubmenu(null);
-  }, [isMobileOpen]);
 
   useEffect(() => {
     const updateCount = () => setCartCount(JSON.parse(localStorage.getItem('cart') || '[]').length);
@@ -72,11 +69,11 @@ const Header = () => {
         }
       }
       return sub.type === "tel" ? (
-        <a key={sIdx} href={href} className="drop-item">{label}</a>
+        <a key={sIdx} href={href} className="drop-item"><p className="mini-text font-500 px-6 py-2">{label}</p></a>
       ) : sub.type === "external" ? (
-        <a key={sIdx} href={href} target="_blank" rel="noreferrer" className="drop-item">{label}</a>
+        <a key={sIdx} href={href} target="_blank" rel="noreferrer" className="drop-item"><p className="mini-text font-500 px-6 py-2">{label}</p></a>
       ) : (
-        <NavLink key={sIdx} to={sub.path} className="drop-item">{label}</NavLink>
+        <NavLink key={sIdx} to={sub.path} className="drop-item"><p className="mini-text font-500 px-6 py-2">{label}</p></NavLink>
       );
     })
   );
@@ -255,18 +252,16 @@ const Header = () => {
           width: 80%;
         }
         .drop-item {
-          padding: 9px 16px;
-          font-size: 12px;
-          font-weight: 500;
-          color: #334155;
+          padding: 6px 5px;
+          color: var(--gray);
           text-decoration: none;
           display: block;
           transition: all 0.15s ease;
         }
         .drop-item:hover {
-          background-color: #f8fafc;
-          color: #f25c2b;
-          padding-left: 20px;
+          background-color: var(--forth);
+          color: var(--primary);
+          padding-left: 10px;
         }
         .header-search-input {
           height: 28px !important;
@@ -428,7 +423,7 @@ const Header = () => {
                   <Dropdown
                     isOpen={activeMainNavMenu === item.id}
                     align={index >= navItems.length - 3 ? "right" : "left"}
-                    minWidth="480px"
+                    minWidth="560px"
                     style={{
                       display: "grid",
                       gridTemplateColumns: "1fr 1fr",
@@ -436,24 +431,22 @@ const Header = () => {
                     }}
                   >
                     <div className="p-12">
-                      <p className="text-gray font-700 mini-text uppercase tracking-wider mb-8">{item.dropdownTitle}</p>
+                      <p className="text-dark font-500 mini-text uppercase tracking-wider mb-8">{item.dropdownTitle}</p>
                       {productsData.filter(p => p.category === item.category).slice(0, 5).map(prod => (
-                        <div
+                        <p
                           key={prod.id}
-                          className="drop-item rounded-4 cursor-pointer"
+                          className="drop-item rounded-5 mini-text cursor-pointer"
                           onClick={() => handleProductClick(prod.id)}
                         >
                           {prod.name}
-                        </div>
+                        </p>
                       ))}
                     </div>
-                    <div className="bg-tertiary p-12 rounded-6 flex flex-column justify-between">
-                      <div>
-                        <p className="text-dark font-600 small-text m-0">{item.cardTitle}</p>
-                        <p className="text-gray mini-text mt-4">{item.cardDesc}</p>
-                      </div>
+                    <div className="bg-forth p-12 rounded-5">
+                      <h6 className="text-dark font-500 headmini-text">{item.cardTitle}</h6>
+                      <p className="text-gray mini-text mt-4">{item.cardDesc}</p>
                       <span
-                        className="text-primary font-600 mini-text mt-10 cursor-pointer flex items-center gap-4"
+                        className="text-primary font-600 mini-text mt-12 cursor-pointer flex items-center gap-4"
                         onClick={() => handleProductClick(null, item.category)}
                       >
                         {item.cardLinkText} <Icon name="ArrowRight" width="10" height="10" stroke="currentColor" />
@@ -503,7 +496,7 @@ const Header = () => {
             </NavLink>
 
             <Button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              onClick={() => isMobileOpen ? closeMobile() : setIsMobileOpen(true)}
               icon={isMobileOpen ? "Close" : "Menu"}
               iconWidth="24"
               iconHeight="24"
@@ -586,7 +579,7 @@ const Header = () => {
                     onChange={setSearchQuery}
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
-                        setIsMobileOpen(false);
+                        closeMobile();
                         navigate(`/products?search=${searchQuery}`);
                       }
                     }}

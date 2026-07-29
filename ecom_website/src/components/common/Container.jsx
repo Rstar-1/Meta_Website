@@ -1,4 +1,3 @@
-import React from "react";
 
 const VERSION_CLASSES = {
   v0: "w-full",

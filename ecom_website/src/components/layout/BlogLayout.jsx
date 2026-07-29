@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
+import { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../common/Container';
 import Icon from '../common/Icon';
@@ -156,7 +156,6 @@ const BlogLayout = ({
                   className={`small-text font-600 uppercase cursor-pointer ${categoryColorClass}`}
                   onClick={() => {
                     setSelectedCategory(blog.category);
-                    if (typeof setActivePage !== 'undefined') setActivePage(1);
                   }}
                 >
                   {blog.category}

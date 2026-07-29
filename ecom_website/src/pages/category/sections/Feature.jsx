@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from '../../../components/common/Container';
 import Skeleton from '../../../components/common/Skeleton';
 import Icon from '../../../components/common/Icon';

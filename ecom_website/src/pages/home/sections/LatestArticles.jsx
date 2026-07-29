@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { blogs as blogsData } from '../../../utils/apiData';
 import CardLayout from '../../../components/layout/CardLayout';
@@ -29,6 +28,7 @@ const LatestArticles = ({ onArticleClick, cms }) => {
       <CardLayout
         items={articles.slice(0, 4)}
         cardType="article"
+        imageHeight="h-250"
         isSlider={false}
         cols="4"
         mdCols="2"

@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products as productsData, categories as categoryData, client as clientData } from '../../utils/apiData';
 import Container from '../../components/common/Container';

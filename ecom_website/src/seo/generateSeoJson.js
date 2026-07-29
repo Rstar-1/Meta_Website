@@ -1,3 +1,4 @@
+/* global process */
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -12,8 +13,8 @@ const slugify = (text) =>
         .toLowerCase()
         .trim()
         .replace(/\s+/g, '-')
-        .replace(/[^\w\-]+/g, '')
-        .replace(/\-\-+/g, '-')
+        .replace(/[^\w-]+/g, '')
+        .replace(/--+/g, '-')
         .replace(/^-+|-+$/g, '')
     : '';
 
@@ -115,7 +116,7 @@ async function generate() {
 
     // 2. Dynamic Product Detail Pages
     for (const p of products) {
-      const slug = p.slug || slugify(p.name);
+
       const desc = p.description ? p.description.substring(0, 155).trim() + '...' : `Buy ${p.name} online. Premium sustainable quality.`;
       const keywords = p.tags ? p.tags.join(', ') : `${p.name}, PVC product, buy ${p.name}`;
       const image = p.image || '/images/default-share.jpg';
@@ -163,7 +164,7 @@ async function generate() {
 
     // 4. Dynamic Blog Detail Pages
     for (const b of blogs) {
-      const slug = b.slug || slugify(b.title);
+
       const desc = b.summary || b.description || `Read our latest post about ${b.title}.`;
       const keywords = b.keywords || 'blog post, PVC advice, industrial ideas';
       const image = b.image || '/images/default-share.jpg';

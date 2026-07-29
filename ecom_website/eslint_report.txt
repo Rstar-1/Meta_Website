@@ -1,0 +1,2571 @@
+﻿
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\app\App.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Accordion.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Button.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Chart.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Container.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Dropdown.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Fields.jsx
+   4:7  error  'VERSION_CLASSES' is assigned a value but never used  no-unused-vars
+  28:5  error  'defaultValue' is defined but never used              no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\FormBuilder.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Icon.jsx
+  654:9  error  Duplicate case label  no-duplicate-case
+  673:9  error  Duplicate case label  no-duplicate-case
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Image.jsx
+  30:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  28 |
+  29 |   useEffect(() => {
+> 30 |     setImgSrc(src);
+     |     ^^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |   }, [src]);
+  32 |
+  33 |   if (isVideoSrc(src)) {                      react-hooks/set-state-in-effect
+  94:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  92 |
+  93 |   useEffect(() => {
+> 94 |     setBgImage(image);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  95 |   }, [image]);
+  96 |
+  97 |   const isVideo = isVideoSrc(bgImage);  react-hooks/set-state-in-effect
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\LazySection.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Loader.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Pagination.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\ScrollToTop.jsx
+  86:52  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+  84 |             strokeWidth="2.5"
+  85 |             strokeDasharray={circumference}
+> 86 |             strokeDashoffset={circumference * (1 - progressRef.current / 100)}
+     |                                                    ^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  87 |             strokeLinecap="round"
+  88 |             style={{ transition: 'stroke-dashoffset 10ms linear' }}
+  89 |           />  react-hooks/refs
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Skeleton.jsx
+    1:8   error  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-unused-vars
+   70:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  68 |         <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full overflow-hidden">
+  69 |           <div className="w-full pr-12 sm-pr-1 flex flex-column gap-12">
+> 70 |             <S variant="rect" width="180px" height="34px" borderRadius="20px" theme="dark" />
+     |              ^ This component is created during render
+  71 |             <S variant="rect" width="80%" height="48px" borderRadius="4px" theme="dark" />
+  72 |             <S variant="text" width="90%" count={2} theme="dark" />
+  73 |             <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-30">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                            react-hooks/static-components
+   71:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  69 |           <div className="w-full pr-12 sm-pr-1 flex flex-column gap-12">
+  70 |             <S variant="rect" width="180px" height="34px" borderRadius="20px" theme="dark" />
+> 71 |             <S variant="rect" width="80%" height="48px" borderRadius="4px" theme="dark" />
+     |              ^ This component is created during render
+  72 |             <S variant="text" width="90%" count={2} theme="dark" />
+  73 |             <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-30">
+  74 |               {Array.from({ length: 4 }).map((_, idx) => (
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                 react-hooks/static-components
+   72:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  70 |             <S variant="rect" width="180px" height="34px" borderRadius="20px" theme="dark" />
+  71 |             <S variant="rect" width="80%" height="48px" borderRadius="4px" theme="dark" />
+> 72 |             <S variant="text" width="90%" count={2} theme="dark" />
+     |              ^ This component is created during render
+  73 |             <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-30">
+  74 |               {Array.from({ length: 4 }).map((_, idx) => (
+  75 |                 <div key={idx} className="flex items-center gap-12 mb-16">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                               react-hooks/static-components
+   85:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  83 |             </div>
+  84 |             <div className="flex items-center gap-12 mt-20">
+> 85 |               <S variant="rect" width="120px" height="40px" borderRadius="4px" theme="dark" />
+     |                ^ This component is created during render
+  86 |               <S variant="rect" width="150px" height="40px" borderRadius="4px" theme="dark" />
+  87 |             </div>
+  88 |           </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                    react-hooks/static-components
+   86:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  84 |             <div className="flex items-center gap-12 mt-20">
+  85 |               <S variant="rect" width="120px" height="40px" borderRadius="4px" theme="dark" />
+> 86 |               <S variant="rect" width="150px" height="40px" borderRadius="4px" theme="dark" />
+     |                ^ This component is created during render
+  87 |             </div>
+  88 |           </div>
+  89 |           <div className="w-full pl-12 sm-pl-1 sm-mt-10">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                             react-hooks/static-components
+   90:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  88 |           </div>
+  89 |           <div className="w-full pl-12 sm-pl-1 sm-mt-10">
+> 90 |             <S variant="rect" height="500px" borderRadius="5px" theme="dark" />
+     |              ^ This component is created during render
+  91 |           </div>
+  92 |         </div>
+  93 |       </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                                                react-hooks/static-components
+  102:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  100 |       <div className={`grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full py-30 ${className}`} style={{ minHeight: '450px', ...style }}>
+  101 |         <div className="relative grid-cols-1 gap-12 pr-12 sm-pr-1">
+> 102 |           <S variant="rect" width="85%" height="70px" borderRadius="6px" theme="dark" />
+      |            ^ This component is created during render
+  103 |           <S variant="rect" width="90%" height="40px" borderRadius="4px" theme="dark" />
+  104 |           <div className="flex items-center gap-12 mt-20">
+  105 |             <S variant="rect" width="150px" height="42px" borderRadius="8px" theme="dark" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                         react-hooks/static-components
+  103:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  101 |         <div className="relative grid-cols-1 gap-12 pr-12 sm-pr-1">
+  102 |           <S variant="rect" width="85%" height="70px" borderRadius="6px" theme="dark" />
+> 103 |           <S variant="rect" width="90%" height="40px" borderRadius="4px" theme="dark" />
+      |            ^ This component is created during render
+  104 |           <div className="flex items-center gap-12 mt-20">
+  105 |             <S variant="rect" width="150px" height="42px" borderRadius="8px" theme="dark" />
+  106 |             <S variant="rect" width="160px" height="42px" borderRadius="8px" theme="dark" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                        react-hooks/static-components
+  105:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  103 |           <S variant="rect" width="90%" height="40px" borderRadius="4px" theme="dark" />
+  104 |           <div className="flex items-center gap-12 mt-20">
+> 105 |             <S variant="rect" width="150px" height="42px" borderRadius="8px" theme="dark" />
+      |              ^ This component is created during render
+  106 |             <S variant="rect" width="160px" height="42px" borderRadius="8px" theme="dark" />
+  107 |           </div>
+  108 |         </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                   react-hooks/static-components
+  106:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  104 |           <div className="flex items-center gap-12 mt-20">
+  105 |             <S variant="rect" width="150px" height="42px" borderRadius="8px" theme="dark" />
+> 106 |             <S variant="rect" width="160px" height="42px" borderRadius="8px" theme="dark" />
+      |              ^ This component is created during render
+  107 |           </div>
+  108 |         </div>
+  109 |         <div className="w-full">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                           react-hooks/static-components
+  110:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  108 |         </div>
+  109 |         <div className="w-full">
+> 110 |           <S variant="rect" width="100%" height="450px" borderRadius="6px" theme="dark" />
+      |            ^ This component is created during render
+  111 |         </div>
+  112 |       </div>
+  113 |     );
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/static-components
+  137:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  135 |       <div className={`grid-cols-2 sm-grid-cols-1 gap-12 items-center py-50 sm-py-40 w-full ${className}`} style={{ minHeight: '600px', ...style }}>
+  136 |         <div className="pr-15 sm-pr-1 flex flex-column gap-16">
+> 137 |           <S variant="rect" width="80px" height="24px" borderRadius="5px" />
+      |            ^ This component is created during render
+  138 |           <S variant="rect" width="90%" height="36px" borderRadius="5px" />
+  139 |           <S variant="text" count={2} />
+  140 |           <div className="flex flex-column gap-12 mt-10">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                  react-hooks/static-components
+  138:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  136 |         <div className="pr-15 sm-pr-1 flex flex-column gap-16">
+  137 |           <S variant="rect" width="80px" height="24px" borderRadius="5px" />
+> 138 |           <S variant="rect" width="90%" height="36px" borderRadius="5px" />
+      |            ^ This component is created during render
+  139 |           <S variant="text" count={2} />
+  140 |           <div className="flex flex-column gap-12 mt-10">
+  141 |             {Array.from({ length: 2 }).map((_, idx) => (
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                              react-hooks/static-components
+  139:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  137 |           <S variant="rect" width="80px" height="24px" borderRadius="5px" />
+  138 |           <S variant="rect" width="90%" height="36px" borderRadius="5px" />
+> 139 |           <S variant="text" count={2} />
+      |            ^ This component is created during render
+  140 |           <div className="flex flex-column gap-12 mt-10">
+  141 |             {Array.from({ length: 2 }).map((_, idx) => (
+  142 |               <div key={idx} className="flex gap-12 items-center">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                           react-hooks/static-components
+  154:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  152 |         <div className="pl-15 sm-pl-1 sm-mt-10">
+  153 |           <div className="grid-cols-2 gap-12">
+> 154 |             <S variant="rect" height="300px" borderRadius="5px" />
+      |              ^ This component is created during render
+  155 |             <S variant="rect" height="300px" borderRadius="5px" />
+  156 |           </div>
+  157 |         </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                           react-hooks/static-components
+  155:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  153 |           <div className="grid-cols-2 gap-12">
+  154 |             <S variant="rect" height="300px" borderRadius="5px" />
+> 155 |             <S variant="rect" height="300px" borderRadius="5px" />
+      |              ^ This component is created during render
+  156 |           </div>
+  157 |         </div>
+  158 |       </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                               react-hooks/static-components
+  168:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  166 |         <div className="flex md-flex-column sm-grid-cols-1 items-center gap-16">
+  167 |           <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
+> 168 |             <S variant="rect" width="140px" height="28px" borderRadius="4px" />
+      |              ^ This component is created during render
+  169 |             <S variant="text" width="80px" height="12px" />
+  170 |           </div>
+  171 |           <div className="desktop-vertical-divider md-hidden" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                react-hooks/static-components
+  169:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  167 |           <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
+  168 |             <S variant="rect" width="140px" height="28px" borderRadius="4px" />
+> 169 |             <S variant="text" width="80px" height="12px" />
+      |              ^ This component is created during render
+  170 |           </div>
+  171 |           <div className="desktop-vertical-divider md-hidden" />
+  172 |           <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                               react-hooks/static-components
+  173:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  171 |           <div className="desktop-vertical-divider md-hidden" />
+  172 |           <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
+> 173 |             <S variant="rect" width="100px" height="42px" borderRadius="4px" />
+      |              ^ This component is created during render
+  174 |             <S variant="rect" width="80px" height="12px" />
+  175 |           </div>
+  176 |           <div className="desktop-vertical-divider md-hidden" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                react-hooks/static-components
+  174:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  172 |           <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
+  173 |             <S variant="rect" width="100px" height="42px" borderRadius="4px" />
+> 174 |             <S variant="rect" width="80px" height="12px" />
+      |              ^ This component is created during render
+  175 |           </div>
+  176 |           <div className="desktop-vertical-divider md-hidden" />
+  177 |           <div className="grid-cols-3 md-grid-cols-1 sm-grid-cols-1 gap-12 w-70 md-w-full sm-w-full px-10">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                     react-hooks/static-components
+  209:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  207 |     return (
+  208 |       <div className={`flex justify-between items-center mb-10 ${className}`} style={style}>
+> 209 |         <S variant="rect" width={width || "200px"} height="32px" borderRadius="4px" />
+      |          ^ This component is created during render
+  210 |         <S variant="rect" width="80px" height="20px" borderRadius="4px" />
+  211 |       </div>
+  212 |     );
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                     react-hooks/static-components
+  210:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  208 |       <div className={`flex justify-between items-center mb-10 ${className}`} style={style}>
+  209 |         <S variant="rect" width={width || "200px"} height="32px" borderRadius="4px" />
+> 210 |         <S variant="rect" width="80px" height="20px" borderRadius="4px" />
+      |          ^ This component is created during render
+  211 |       </div>
+  212 |     );
+  213 |   }
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                              react-hooks/static-components
+  219:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  217 |     return (
+  218 |       <div className={`grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12 ${className}`} style={style}>
+> 219 |         <S variant="card" count={itemCount} />
+      |          ^ This component is created during render
+  220 |       </div>
+  221 |     );
+  222 |   }
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                                                           react-hooks/static-components
+  228:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  226 |     return (
+  227 |       <div className={`pt-30 pb-20 w-full ${className}`} style={{ minHeight: '500px', ...style }}>
+> 228 |         <S variant="section-header" width="220px" />
+      |          ^ This component is created during render
+  229 |         <S variant="card-grid" count={itemCount} />
+  230 |       </div>
+  231 |     );
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/static-components
+  229:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  227 |       <div className={`pt-30 pb-20 w-full ${className}`} style={{ minHeight: '500px', ...style }}>
+  228 |         <S variant="section-header" width="220px" />
+> 229 |         <S variant="card-grid" count={itemCount} />
+      |          ^ This component is created during render
+  230 |       </div>
+  231 |     );
+  232 |   }
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                 react-hooks/static-components
+  240:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  238 |         <div className="flex sm-grid-cols-1 items-center justify-between p-40 sm-p-20 gap-12 relative overflow-hidden rounded-5" style={{ background: 'linear-gradient(135deg, #020712:0%, #081026 100%)' }}>
+  239 |           <div className="w-60 sm-w-full pr-12 sm-pr-1 flex flex-column gap-12">
+> 240 |             <S variant="rect" width="180px" height="24px" borderRadius="20px" theme="dark" />
+      |              ^ This component is created during render
+  241 |             <S variant="rect" width="70%" height="36px" borderRadius="4px" theme="dark" />
+  242 |             <S variant="text" width="90%" theme="dark" />
+  243 |             <S variant="rect" width="160px" height="40px" borderRadius="4px" theme="dark" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {  react-hooks/static-components
+  241:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  239 |           <div className="w-60 sm-w-full pr-12 sm-pr-1 flex flex-column gap-12">
+  240 |             <S variant="rect" width="180px" height="24px" borderRadius="20px" theme="dark" />
+> 241 |             <S variant="rect" width="70%" height="36px" borderRadius="4px" theme="dark" />
+      |              ^ This component is created during render
+  242 |             <S variant="text" width="90%" theme="dark" />
+  243 |             <S variant="rect" width="160px" height="40px" borderRadius="4px" theme="dark" />
+  244 |           </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                               react-hooks/static-components
+  242:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  240 |             <S variant="rect" width="180px" height="24px" borderRadius="20px" theme="dark" />
+  241 |             <S variant="rect" width="70%" height="36px" borderRadius="4px" theme="dark" />
+> 242 |             <S variant="text" width="90%" theme="dark" />
+      |              ^ This component is created during render
+  243 |             <S variant="rect" width="160px" height="40px" borderRadius="4px" theme="dark" />
+  244 |           </div>
+  245 |           <div className="relative flex items-center justify-center w-40 sm-w-full sm-mt-10 pl-12 sm-pl-1">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                    react-hooks/static-components
+  243:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  241 |             <S variant="rect" width="70%" height="36px" borderRadius="4px" theme="dark" />
+  242 |             <S variant="text" width="90%" theme="dark" />
+> 243 |             <S variant="rect" width="160px" height="40px" borderRadius="4px" theme="dark" />
+      |              ^ This component is created during render
+  244 |           </div>
+  245 |           <div className="relative flex items-center justify-center w-40 sm-w-full sm-mt-10 pl-12 sm-pl-1">
+  246 |             <S variant="rect" height="250px" borderRadius="5px" theme="dark" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                  react-hooks/static-components
+  246:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  244 |           </div>
+  245 |           <div className="relative flex items-center justify-center w-40 sm-w-full sm-mt-10 pl-12 sm-pl-1">
+> 246 |             <S variant="rect" height="250px" borderRadius="5px" theme="dark" />
+      |              ^ This component is created during render
+  247 |           </div>
+  248 |         </div>
+  249 |         <div className="grid-cols-4 sm-grid-cols-1 md-grid-cols-2 gap-12 mt-20">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                   react-hooks/static-components
+  268:10  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  266 |     return (
+  267 |       <div className={`py-40 w-full ${className}`} style={style}>
+> 268 |         <S variant="section-header" width="200px" />
+      |          ^ This component is created during render
+  269 |         <div className="grid-cols-2 md-grid-cols-1 gap-12 mt-12">
+  270 |           {Array.from({ length: count || 2 }).map((_, idx) => (
+  271 |             <div key={idx} className="border-ec p-15 rounded-5 flex flex-column gap-12">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                      react-hooks/static-components
+  295:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  293 |             <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
+  294 |               <div className='pr-10 sm-pr-1'>
+> 295 |                 <S variant="rect" width="100%" height="450px" borderRadius="5px" />
+      |                  ^ This component is created during render
+  296 |                 <div className='grid-cols-4 gap-9 mt-12'>
+  297 |                   {Array.from({ length: 4 }).map((_, idx) => (
+  298 |                     <S key={idx} variant="rect" width="100%" height="100px" borderRadius="5px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                react-hooks/static-components
+  303:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  301 |               </div>
+  302 |               <div className='pl-10 sm-pl-1 flex flex-column gap-12'>
+> 303 |                 <S variant="rect" width="80%" height="32px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  304 |                 <S variant="rect" width="30%" height="16px" borderRadius="4px" />
+  305 |                 <div className="flex items-center gap-8">
+  306 |                   <S variant="rect" width="60px" height="24px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                               react-hooks/static-components
+  304:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  302 |               <div className='pl-10 sm-pl-1 flex flex-column gap-12'>
+  303 |                 <S variant="rect" width="80%" height="32px" borderRadius="4px" />
+> 304 |                 <S variant="rect" width="30%" height="16px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  305 |                 <div className="flex items-center gap-8">
+  306 |                   <S variant="rect" width="60px" height="24px" borderRadius="4px" />
+  307 |                   <S variant="rect" width="100px" height="16px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                              react-hooks/static-components
+  306:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  304 |                 <S variant="rect" width="30%" height="16px" borderRadius="4px" />
+  305 |                 <div className="flex items-center gap-8">
+> 306 |                   <S variant="rect" width="60px" height="24px" borderRadius="4px" />
+      |                    ^ This component is created during render
+  307 |                   <S variant="rect" width="100px" height="16px" borderRadius="4px" />
+  308 |                 </div>
+  309 |                 <S variant="rect" width="150px" height="20px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                         react-hooks/static-components
+  307:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  305 |                 <div className="flex items-center gap-8">
+  306 |                   <S variant="rect" width="60px" height="24px" borderRadius="4px" />
+> 307 |                   <S variant="rect" width="100px" height="16px" borderRadius="4px" />
+      |                    ^ This component is created during render
+  308 |                 </div>
+  309 |                 <S variant="rect" width="150px" height="20px" borderRadius="4px" />
+  310 |                 <S variant="rect" width="45%" height="36px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                         react-hooks/static-components
+  309:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  307 |                   <S variant="rect" width="100px" height="16px" borderRadius="4px" />
+  308 |                 </div>
+> 309 |                 <S variant="rect" width="150px" height="20px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  310 |                 <S variant="rect" width="45%" height="36px" borderRadius="4px" />
+  311 |                 <S variant="rect" width="120px" height="28px" borderRadius="4px" />
+  312 |                 <S variant="text" count={3} />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                       react-hooks/static-components
+  310:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  308 |                 </div>
+  309 |                 <S variant="rect" width="150px" height="20px" borderRadius="4px" />
+> 310 |                 <S variant="rect" width="45%" height="36px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  311 |                 <S variant="rect" width="120px" height="28px" borderRadius="4px" />
+  312 |                 <S variant="text" count={3} />
+  313 |                 <div className='grid-cols-2 gap-12 mt-12'>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                  react-hooks/static-components
+  311:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  309 |                 <S variant="rect" width="150px" height="20px" borderRadius="4px" />
+  310 |                 <S variant="rect" width="45%" height="36px" borderRadius="4px" />
+> 311 |                 <S variant="rect" width="120px" height="28px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  312 |                 <S variant="text" count={3} />
+  313 |                 <div className='grid-cols-2 gap-12 mt-12'>
+  314 |                   {Array.from({ length: 4 }).map((_, idx) => (
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                          react-hooks/static-components
+  312:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  310 |                 <S variant="rect" width="45%" height="36px" borderRadius="4px" />
+  311 |                 <S variant="rect" width="120px" height="28px" borderRadius="4px" />
+> 312 |                 <S variant="text" count={3} />
+      |                  ^ This component is created during render
+  313 |                 <div className='grid-cols-2 gap-12 mt-12'>
+  314 |                   {Array.from({ length: 4 }).map((_, idx) => (
+  315 |                     <div key={idx} className='flex items-center gap-12 bg-forth p-12 rounded-5'>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                             react-hooks/static-components
+  325:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  323 |                 </div>
+  324 |                 <div className='grid-cols-2 gap-12 mt-12'>
+> 325 |                   <S variant="rect" height="45px" borderRadius="5px" />
+      |                    ^ This component is created during render
+  326 |                   <S variant="rect" height="45px" borderRadius="5px" />
+  327 |                 </div>
+  328 |               </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                             react-hooks/static-components
+  326:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  324 |                 <div className='grid-cols-2 gap-12 mt-12'>
+  325 |                   <S variant="rect" height="45px" borderRadius="5px" />
+> 326 |                   <S variant="rect" height="45px" borderRadius="5px" />
+      |                    ^ This component is created during render
+  327 |                 </div>
+  328 |               </div>
+  329 |             </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                 react-hooks/static-components
+  332:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  330 |             <div className='bg-white mt-12 p-15 border-ec rounded-5'>
+  331 |               <div className="flex gap-12 mb-20 border-b pb-12">
+> 332 |                 <S variant="rect" width="150px" height="32px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  333 |                 <S variant="rect" width="120px" height="32px" borderRadius="4px" />
+  334 |                 <S variant="rect" width="160px" height="32px" borderRadius="4px" />
+  335 |               </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                     react-hooks/static-components
+  333:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  331 |               <div className="flex gap-12 mb-20 border-b pb-12">
+  332 |                 <S variant="rect" width="150px" height="32px" borderRadius="4px" />
+> 333 |                 <S variant="rect" width="120px" height="32px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  334 |                 <S variant="rect" width="160px" height="32px" borderRadius="4px" />
+  335 |               </div>
+  336 |               <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                         react-hooks/static-components
+  334:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  332 |                 <S variant="rect" width="150px" height="32px" borderRadius="4px" />
+  333 |                 <S variant="rect" width="120px" height="32px" borderRadius="4px" />
+> 334 |                 <S variant="rect" width="160px" height="32px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  335 |               </div>
+  336 |               <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
+  337 |                 <div className='bg-tertiary p-16 rounded-5 flex flex-column gap-12'>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                     react-hooks/static-components
+  346:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  344 |                 </div>
+  345 |                 <div className="flex flex-column gap-12">
+> 346 |                   <S variant="rect" width="150px" height="24px" borderRadius="4px" />
+      |                    ^ This component is created during render
+  347 |                   {Array.from({ length: 6 }).map((_, idx) => (
+  348 |                     <div key={idx} className="flex items-center gap-8">
+  349 |                       <S variant="circle" width="12px" height="12px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                     react-hooks/static-components
+  359:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  357 |           <div className='w-25 sm-w-full grid-cols-1 gap-12 pl-5 sm-pl-1'>
+  358 |             <div className='border-ec p-15 rounded-5 flex flex-column gap-12'>
+> 359 |               <S variant="rect" width="120px" height="24px" borderRadius="4px" />
+      |                ^ This component is created during render
+  360 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  361 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  362 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                react-hooks/static-components
+  360:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  358 |             <div className='border-ec p-15 rounded-5 flex flex-column gap-12'>
+  359 |               <S variant="rect" width="120px" height="24px" borderRadius="4px" />
+> 360 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+      |                ^ This component is created during render
+  361 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  362 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  363 |               <S variant="rect" width="100%" height="100px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                         react-hooks/static-components
+  361:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  359 |               <S variant="rect" width="120px" height="24px" borderRadius="4px" />
+  360 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+> 361 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+      |                ^ This component is created during render
+  362 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  363 |               <S variant="rect" width="100%" height="100px" borderRadius="4px" />
+  364 |               <S variant="rect" width="100%" height="45px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                       react-hooks/static-components
+  362:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  360 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  361 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+> 362 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+      |                ^ This component is created during render
+  363 |               <S variant="rect" width="100%" height="100px" borderRadius="4px" />
+  364 |               <S variant="rect" width="100%" height="45px" borderRadius="4px" />
+  365 |             </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                      react-hooks/static-components
+  363:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  361 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  362 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+> 363 |               <S variant="rect" width="100%" height="100px" borderRadius="4px" />
+      |                ^ This component is created during render
+  364 |               <S variant="rect" width="100%" height="45px" borderRadius="4px" />
+  365 |             </div>
+  366 |             <div className='border-ec p-15 rounded-5 flex flex-column gap-12'>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                        react-hooks/static-components
+  364:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  362 |               <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+  363 |               <S variant="rect" width="100%" height="100px" borderRadius="4px" />
+> 364 |               <S variant="rect" width="100%" height="45px" borderRadius="4px" />
+      |                ^ This component is created during render
+  365 |             </div>
+  366 |             <div className='border-ec p-15 rounded-5 flex flex-column gap-12'>
+  367 |               <div className='flex items-center gap-10'>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                react-hooks/static-components
+  368:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  366 |             <div className='border-ec p-15 rounded-5 flex flex-column gap-12'>
+  367 |               <div className='flex items-center gap-10'>
+> 368 |                 <S variant="rect" width="40px" height="40px" borderRadius="5px" />
+      |                  ^ This component is created during render
+  369 |                 <div className="flex-grow flex flex-column gap-6">
+  370 |                   <S variant="text" width="70%" />
+  371 |                   <S variant="text" width="50%" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                         react-hooks/static-components
+  370:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  368 |                 <S variant="rect" width="40px" height="40px" borderRadius="5px" />
+  369 |                 <div className="flex-grow flex flex-column gap-6">
+> 370 |                   <S variant="text" width="70%" />
+      |                    ^ This component is created during render
+  371 |                   <S variant="text" width="50%" />
+  372 |                 </div>
+  373 |               </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                   react-hooks/static-components
+  371:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  369 |                 <div className="flex-grow flex flex-column gap-6">
+  370 |                   <S variant="text" width="70%" />
+> 371 |                   <S variant="text" width="50%" />
+      |                    ^ This component is created during render
+  372 |                 </div>
+  373 |               </div>
+  374 |               <S variant="rect" width="120px" height="16px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                       react-hooks/static-components
+  374:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  372 |                 </div>
+  373 |               </div>
+> 374 |               <S variant="rect" width="120px" height="16px" />
+      |                ^ This component is created during render
+  375 |               <div className="flex flex-column gap-8 py-8 border-t border-b">
+  376 |                 <S variant="text" width="60%" />
+  377 |                 <S variant="text" width="80%" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                    react-hooks/static-components
+  376:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  374 |               <S variant="rect" width="120px" height="16px" />
+  375 |               <div className="flex flex-column gap-8 py-8 border-t border-b">
+> 376 |                 <S variant="text" width="60%" />
+      |                  ^ This component is created during render
+  377 |                 <S variant="text" width="80%" />
+  378 |                 <S variant="text" width="50%" />
+  379 |               </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                        react-hooks/static-components
+  377:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  375 |               <div className="flex flex-column gap-8 py-8 border-t border-b">
+  376 |                 <S variant="text" width="60%" />
+> 377 |                 <S variant="text" width="80%" />
+      |                  ^ This component is created during render
+  378 |                 <S variant="text" width="50%" />
+  379 |               </div>
+  380 |               <S variant="rect" width="100%" height="36px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                      react-hooks/static-components
+  378:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  376 |                 <S variant="text" width="60%" />
+  377 |                 <S variant="text" width="80%" />
+> 378 |                 <S variant="text" width="50%" />
+      |                  ^ This component is created during render
+  379 |               </div>
+  380 |               <S variant="rect" width="100%" height="36px" borderRadius="4px" />
+  381 |             </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                 react-hooks/static-components
+  380:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  378 |                 <S variant="text" width="50%" />
+  379 |               </div>
+> 380 |               <S variant="rect" width="100%" height="36px" borderRadius="4px" />
+      |                ^ This component is created during render
+  381 |             </div>
+  382 |           </div>
+  383 |         </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/static-components
+  482:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  480 |               }}
+  481 |             />
+> 482 |             <S variant="rect" width="120px" height="14px" borderRadius="4px" theme="dark" style={{ display: 'inline-block', verticalAlign: 'middle', margin: 0 }} />
+      |              ^ This component is created during render
+  483 |           </div>
+  484 |
+  485 |           <S variant="rect" width="280px" height="28px" borderRadius="4px" theme="dark" style={{ display: 'inline-block', verticalAlign: 'middle', margin: 0 }} />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                        react-hooks/static-components
+  485:12  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  483 |           </div>
+  484 |
+> 485 |           <S variant="rect" width="280px" height="28px" borderRadius="4px" theme="dark" style={{ display: 'inline-block', verticalAlign: 'middle', margin: 0 }} />
+      |            ^ This component is created during render
+  486 |
+  487 |           <div className="mt-15 flex items-center gap-8">
+  488 |             <S variant="rect" width="60px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                   react-hooks/static-components
+  488:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  486 |
+  487 |           <div className="mt-15 flex items-center gap-8">
+> 488 |             <S variant="rect" width="60px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+      |              ^ This component is created during render
+  489 |             <span className="text-white opacity-40">/</span>
+  490 |             <S variant="rect" width="80px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+  491 |             <span className="text-white opacity-40">/</span>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                         react-hooks/static-components
+  490:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  488 |             <S variant="rect" width="60px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+  489 |             <span className="text-white opacity-40">/</span>
+> 490 |             <S variant="rect" width="80px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+      |              ^ This component is created during render
+  491 |             <span className="text-white opacity-40">/</span>
+  492 |             <S variant="rect" width="100px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+  493 |           </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                               react-hooks/static-components
+  492:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  490 |             <S variant="rect" width="80px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+  491 |             <span className="text-white opacity-40">/</span>
+> 492 |             <S variant="rect" width="100px" height="14px" borderRadius="4px" theme="dark" style={{ margin: 0 }} />
+      |              ^ This component is created during render
+  493 |           </div>
+  494 |         </div>
+  495 |       </Container>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                            react-hooks/static-components
+  570:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  568 |             <div className="flex justify-between items-center">
+  569 |               <div className="flex items-center gap-10">
+> 570 |                 <S variant="rect" width="160px" height="24px" borderRadius="4px" />
+      |                  ^ This component is created during render
+  571 |                 <S variant="rect" width="80px" height="20px" borderRadius="12px" />
+  572 |               </div>
+  573 |               <S variant="rect" width="140px" height="36px" borderRadius="6px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                     react-hooks/static-components
+  571:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  569 |               <div className="flex items-center gap-10">
+  570 |                 <S variant="rect" width="160px" height="24px" borderRadius="4px" />
+> 571 |                 <S variant="rect" width="80px" height="20px" borderRadius="12px" />
+      |                  ^ This component is created during render
+  572 |               </div>
+  573 |               <S variant="rect" width="140px" height="36px" borderRadius="6px" />
+  574 |             </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                  react-hooks/static-components
+  573:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  571 |                 <S variant="rect" width="80px" height="20px" borderRadius="12px" />
+  572 |               </div>
+> 573 |               <S variant="rect" width="140px" height="36px" borderRadius="6px" />
+      |                ^ This component is created during render
+  574 |             </div>
+  575 |             <S variant="text" width="200px" height="12px" style={{ margin: 0 }} />
+  576 |
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                              react-hooks/static-components
+  575:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  573 |               <S variant="rect" width="140px" height="36px" borderRadius="6px" />
+  574 |             </div>
+> 575 |             <S variant="text" width="200px" height="12px" style={{ margin: 0 }} />
+      |              ^ This component is created during render
+  576 |
+  577 |             {/* Stepper Timeline */}
+  578 |             <div className="grid-cols-4 sm-grid-cols-2 gap-12 my-20">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                              react-hooks/static-components
+  589:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  587 |
+  588 |             {/* Alert banner */}
+> 589 |             <S variant="rect" width="100%" height="45px" borderRadius="8px" />
+      |              ^ This component is created during render
+  590 |           </div>
+  591 |
+  592 |           {/* Bottom Row: Details & Summary */}
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                                                                react-hooks/static-components
+  595:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  593 |           <div className="flex w-full sm-grid-cols-1 gap-12">
+  594 |             <div className="border-ec p-20 rounded-10 bg-white grid-cols-1 gap-12 w-70">
+> 595 |               <S variant="rect" width="120px" height="20px" borderRadius="4px" />
+      |                ^ This component is created during render
+  596 |               <div className="flex gap-12 items-start p-12 border-ec rounded-8">
+  597 |                 <S variant="rect" width="80px" height="80px" borderRadius="6px" />
+  598 |                 <div className="grid-cols-1 gap-8">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                              react-hooks/static-components
+  597:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  595 |               <S variant="rect" width="120px" height="20px" borderRadius="4px" />
+  596 |               <div className="flex gap-12 items-start p-12 border-ec rounded-8">
+> 597 |                 <S variant="rect" width="80px" height="80px" borderRadius="6px" />
+      |                  ^ This component is created during render
+  598 |                 <div className="grid-cols-1 gap-8">
+  599 |                   <div className="flex justify-between items-center gap-6 ">
+  600 |                     <S variant="rect" width="180px" height="18px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                              react-hooks/static-components
+  600:22  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  598 |                 <div className="grid-cols-1 gap-8">
+  599 |                   <div className="flex justify-between items-center gap-6 ">
+> 600 |                     <S variant="rect" width="180px" height="18px" borderRadius="4px" />
+      |                      ^ This component is created during render
+  601 |                     <S variant="rect" width="60px" height="18px" borderRadius="4px" />
+  602 |                   </div>
+  603 |                   <S variant="rect" width="120px" height="16px" borderRadius="10px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                         react-hooks/static-components
+  601:22  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  599 |                   <div className="flex justify-between items-center gap-6 ">
+  600 |                     <S variant="rect" width="180px" height="18px" borderRadius="4px" />
+> 601 |                     <S variant="rect" width="60px" height="18px" borderRadius="4px" />
+      |                      ^ This component is created during render
+  602 |                   </div>
+  603 |                   <S variant="rect" width="120px" height="16px" borderRadius="10px" />
+  604 |                   <S variant="text" width="220px" height="12px" style={{ margin: 0 }} />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                    react-hooks/static-components
+  603:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  601 |                     <S variant="rect" width="60px" height="18px" borderRadius="4px" />
+  602 |                   </div>
+> 603 |                   <S variant="rect" width="120px" height="16px" borderRadius="10px" />
+      |                    ^ This component is created during render
+  604 |                   <S variant="text" width="220px" height="12px" style={{ margin: 0 }} />
+  605 |                 </div>
+  606 |               </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                               react-hooks/static-components
+  604:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  602 |                   </div>
+  603 |                   <S variant="rect" width="120px" height="16px" borderRadius="10px" />
+> 604 |                   <S variant="text" width="220px" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  605 |                 </div>
+  606 |               </div>
+  607 |               <div className="flex justify-center mt-10">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                            react-hooks/static-components
+  608:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  606 |               </div>
+  607 |               <div className="flex justify-center mt-10">
+> 608 |                 <S variant="rect" width="130px" height="36px" borderRadius="6px" />
+      |                  ^ This component is created during render
+  609 |               </div>
+  610 |             </div>
+  611 |
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/static-components
+  622:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  620 |               <div style={{ height: "1px", backgroundColor: "#ececec" }} />
+  621 |               <div className="flex justify-between items-center">
+> 622 |                 <S variant="text" width="90px" height="16px" style={{ margin: 0 }} />
+      |                  ^ This component is created during render
+  623 |                 <S variant="text" width="70px" height="18px" style={{ margin: 0 }} />
+  624 |               </div>
+  625 |             </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                           react-hooks/static-components
+  623:18  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  621 |               <div className="flex justify-between items-center">
+  622 |                 <S variant="text" width="90px" height="16px" style={{ margin: 0 }} />
+> 623 |                 <S variant="text" width="70px" height="18px" style={{ margin: 0 }} />
+      |                  ^ This component is created during render
+  624 |               </div>
+  625 |             </div>
+  626 |           </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                      react-hooks/static-components
+  663:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  661 |           <div className="w-70 md-w-full sm-w-full pr-8 sm-pr-1 flex flex-column gap-12">
+  662 |             <div className="flex justify-between items-center">
+> 663 |               <S variant="rect" width="160px" height="24px" borderRadius="4px" />
+      |                ^ This component is created during render
+  664 |               <S variant="rect" width="90px" height="32px" borderRadius="4px" />
+  665 |             </div>
+  666 |
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                               react-hooks/static-components
+  664:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  662 |             <div className="flex justify-between items-center">
+  663 |               <S variant="rect" width="160px" height="24px" borderRadius="4px" />
+> 664 |               <S variant="rect" width="90px" height="32px" borderRadius="4px" />
+      |                ^ This component is created during render
+  665 |             </div>
+  666 |
+  667 |             {/* Desktop Table Skeleton */}
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                              react-hooks/static-components
+  669:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  667 |             {/* Desktop Table Skeleton */}
+  668 |             <div className="cart-desktop-table mt-10">
+> 669 |               <S variant="table" columns={cartCols} count={count || 3} />
+      |                ^ This component is created during render
+  670 |             </div>
+  671 |
+  672 |             {/* Mobile Cards Skeleton */}
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/static-components
+  698:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  696 |
+  697 |             {/* Note box skeleton */}
+> 698 |             <S variant="rect" width="100%" height="60px" borderRadius="5px" />
+      |              ^ This component is created during render
+  699 |           </div>
+  700 |
+  701 |           {/* Right Column: Order Summary Skeleton */}
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/static-components
+  704:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  702 |           <div className="w-30 md-w-full sm-w-full pl-8 sm-pl-1">
+  703 |             <div className="bg-white border-ec p-12 rounded-5 flex flex-column gap-12">
+> 704 |               <S variant="rect" width="60%" height="20px" borderRadius="4px" />
+      |                ^ This component is created during render
+  705 |               <S variant="text" width="85%" height="12px" style={{ margin: 0 }} />
+  706 |               
+  707 |               <div className="grid-cols-1 gap-12 pt-12 bordh mt-4">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                               react-hooks/static-components
+  705:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  703 |             <div className="bg-white border-ec p-12 rounded-5 flex flex-column gap-12">
+  704 |               <S variant="rect" width="60%" height="20px" borderRadius="4px" />
+> 705 |               <S variant="text" width="85%" height="12px" style={{ margin: 0 }} />
+      |                ^ This component is created during render
+  706 |               
+  707 |               <div className="grid-cols-1 gap-12 pt-12 bordh mt-4">
+  708 |                 {/* Mock item rows */}
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                          react-hooks/static-components
+  710:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  708 |                 {/* Mock item rows */}
+  709 |                 <div className="flex justify-between items-center">
+> 710 |                   <S variant="text" width="50%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  711 |                   <S variant="text" width="20%" height="12px" style={{ margin: 0 }} />
+  712 |                 </div>
+  713 |                 <div className="flex justify-between items-center">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                       react-hooks/static-components
+  711:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  709 |                 <div className="flex justify-between items-center">
+  710 |                   <S variant="text" width="50%" height="12px" style={{ margin: 0 }} />
+> 711 |                   <S variant="text" width="20%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  712 |                 </div>
+  713 |                 <div className="flex justify-between items-center">
+  714 |                   <S variant="text" width="45%" height="12px" style={{ margin: 0 }} />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                       react-hooks/static-components
+  714:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  712 |                 </div>
+  713 |                 <div className="flex justify-between items-center">
+> 714 |                   <S variant="text" width="45%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  715 |                   <S variant="text" width="18%" height="12px" style={{ margin: 0 }} />
+  716 |                 </div>
+  717 |
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                           react-hooks/static-components
+  715:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  713 |                 <div className="flex justify-between items-center">
+  714 |                   <S variant="text" width="45%" height="12px" style={{ margin: 0 }} />
+> 715 |                   <S variant="text" width="18%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  716 |                 </div>
+  717 |
+  718 |                 <div className="flex justify-between items-center mt-4">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                         react-hooks/static-components
+  719:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  717 |
+  718 |                 <div className="flex justify-between items-center mt-4">
+> 719 |                   <S variant="text" width="25%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  720 |                   <S variant="text" width="15%" height="12px" style={{ margin: 0 }} />
+  721 |                 </div>
+  722 |                 <div className="flex justify-between items-center bordb pb-10">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                             react-hooks/static-components
+  720:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  718 |                 <div className="flex justify-between items-center mt-4">
+  719 |                   <S variant="text" width="25%" height="12px" style={{ margin: 0 }} />
+> 720 |                   <S variant="text" width="15%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  721 |                 </div>
+  722 |                 <div className="flex justify-between items-center bordb pb-10">
+  723 |                   <S variant="text" width="30%" height="12px" style={{ margin: 0 }} />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                      react-hooks/static-components
+  723:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  721 |                 </div>
+  722 |                 <div className="flex justify-between items-center bordb pb-10">
+> 723 |                   <S variant="text" width="30%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  724 |                   <S variant="text" width="35%" height="12px" style={{ margin: 0 }} />
+  725 |                 </div>
+  726 |                 <div className="flex justify-between items-center mt-4">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                      react-hooks/static-components
+  724:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  722 |                 <div className="flex justify-between items-center bordb pb-10">
+  723 |                   <S variant="text" width="30%" height="12px" style={{ margin: 0 }} />
+> 724 |                   <S variant="text" width="35%" height="12px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  725 |                 </div>
+  726 |                 <div className="flex justify-between items-center mt-4">
+  727 |                   <S variant="text" width="35%" height="14px" style={{ margin: 0 }} />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                      react-hooks/static-components
+  727:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  725 |                 </div>
+  726 |                 <div className="flex justify-between items-center mt-4">
+> 727 |                   <S variant="text" width="35%" height="14px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  728 |                   <S variant="text" width="30%" height="14px" style={{ margin: 0 }} />
+  729 |                 </div>
+  730 |                 <div className="mt-8">
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                               react-hooks/static-components
+  728:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  726 |                 <div className="flex justify-between items-center mt-4">
+  727 |                   <S variant="text" width="35%" height="14px" style={{ margin: 0 }} />
+> 728 |                   <S variant="text" width="30%" height="14px" style={{ margin: 0 }} />
+      |                    ^ This component is created during render
+  729 |                 </div>
+  730 |                 <div className="mt-8">
+  731 |                   <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                 react-hooks/static-components
+  731:20  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  729 |                 </div>
+  730 |                 <div className="mt-8">
+> 731 |                   <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+      |                    ^ This component is created during render
+  732 |                 </div>
+  733 |               </div>
+  734 |             </div>
+
+  58 |
+  59 |   // Helper component to render child skeletons with inherited theme/animation properties
+> 60 |   const S = (p) => (
+     |             ^^^^^^^^
+> 61 |     <Skeleton theme={p.theme || theme} animation={animation} {...p} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   );
+     | ^^^^ The component is created during render here
+  63 |
+  64 |   // Hero Section Skeleton
+  65 |   if (variant === "hero") {                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/static-components
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Tab.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\common\Tooltip.jsx
+   1:8   error  'React' is defined but never used                                                                                               no-unused-vars
+  41:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\forms\NewsletterForm.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\forms\ProductEnquiryForm.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\layout\Banner.jsx
+  1:8   error  'React' is defined but never used  no-unused-vars
+  6:26  error  'img' is defined but never used    no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\layout\BlogLayout.jsx
+    1:8   error  'React' is defined but never used  no-unused-vars
+  159:63  error  'setActivePage' is not defined     no-undef
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\layout\CardLayout.jsx
+   6:8   error  'Icon' is defined but never used                       no-unused-vars
+   7:10  error  'addToCart' is defined but never used                  no-unused-vars
+   9:10  error  'showToast' is defined but never used                  no-unused-vars
+  25:5   error  'onAddToCart' is defined but never used                no-unused-vars
+  26:5   error  'showAddToCart' is assigned a value but never used     no-unused-vars
+  27:5   error  'showViewProducts' is assigned a value but never used  no-unused-vars
+  40:11  error  'navigate' is assigned a value but never used          no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\layout\Header.jsx
+   8:76  error  'clientData' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+  40:24  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  38 |
+  39 |   useEffect(() => {
+> 40 |     if (!isMobileOpen) setActiveMobileSubmenu(null);
+     |                        ^^^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  41 |   }, [isMobileOpen]);
+  42 |
+  43 |   useEffect(() => {  react-hooks/set-state-in-effect
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\layout\Layout.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\layout\ProductLayout.jsx
+    1:8   error  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no-unused-vars
+  215:36  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  213 |
+  214 |   useEffect(() => {
+> 215 |     if (galleryImages?.length > 0) setActiveImage(galleryImages[0]);
+      |                                    ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  216 |   }, [galleryImages]);
+  217 |
+  218 |   const productMeta = useMemo(() => productMetaTemplate(  react-hooks/set-state-in-effect
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\BlogSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\BreadcrumbSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\FAQSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\LocalBusinessSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\OrganizationSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\ProductSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\SeoHelmet.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\SiteNavigationSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\components\seo\WebsiteSchema.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\about\About.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\about\sections\DetailSection.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\about\sections\Timeline.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\blog\BlogDetail.jsx
+   1:8  error  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+  11:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+   9 |
+  10 |   useEffect(() => {
+> 11 |     setLoading(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  12 |     const timer = setTimeout(() => setLoading(false), 600);
+  13 |     return () => clearTimeout(timer);
+  14 |   }, [id]);  react-hooks/set-state-in-effect
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\blog\Blogs.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\cart\Cart.jsx
+   1:8   error  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       no-unused-vars
+   8:8   error  'CardLayout' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+  17:31  error  'resolveImagePath' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+  18:22  error  'productsData' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+  35:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  33 |   useEffect(() => {
+  34 |     const initialCart = getCart();
+> 35 |     setCartItems(initialCart);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  36 |     if (initialCart.length === 0) {
+  37 |       setShowQuoteForm(false);
+  38 |     }  react-hooks/set-state-in-effect
+  80:9   error  'handleProductClick' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\category\Category.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\category\sections\Feature.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\contact\Contact.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\contact\sections\Details.jsx
+  1:8   error  'React' is defined but never used      no-unused-vars
+  1:27  error  'useEffect' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\Home.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\sections\BrowseCategory.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\sections\BusinessPromo.jsx
+  1:8  error  'React' is defined but never used                no-unused-vars
+  6:8  error  'pvcSheetsIndustrial' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\sections\Hero.jsx
+  1:8   error  'React' is defined but never used             no-unused-vars
+  5:10  error  'resolveImagePath' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\sections\LatestArticles.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\sections\LatestProducts.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\sections\Review.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\home\sections\WhyChoose.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\order\Order.jsx
+   1:8   error  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-unused-vars
+  42:11  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  40 |         const parsed = JSON.parse(stored);
+  41 |         if (Array.isArray(parsed) && parsed.length > 0) {
+> 42 |           setOrderItems(parsed);
+     |           ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  43 |           return;
+  44 |         }
+  45 |       } catch (e) {  react-hooks/set-state-in-effect
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\products\ProductDetail.jsx
+   1:8  error  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+  20:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  18 |
+  19 |   useEffect(() => {
+> 20 |     setLoading(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  21 |     const timer = setTimeout(() => setLoading(false), 600);
+  22 |     return () => clearTimeout(timer);
+  23 |   }, [id]);  react-hooks/set-state-in-effect
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\products\Products.jsx
+  118:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  116 |       const catId = getCatId(location.state.category);
+  117 |       if (catId && catId !== 'All') {
+> 118 |         setSelectedCats([catId]);
+      |         ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  119 |       } else {
+  120 |         setSelectedCats([]);
+  121 |       }  react-hooks/set-state-in-effect
+  138:25  error  Do not access Object.prototype method 'hasOwnProperty' from target object                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-prototype-builtins
+  146:25  error  Do not access Object.prototype method 'hasOwnProperty' from target object                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-prototype-builtins
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\products\sections\ProductReviews.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\purchase\Purchase.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\purchase\sections\Marketing.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+  3:8  error  'Icon' is defined but never used   no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\pages\supplier\SupplierDetail.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\routes\index.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\seo\generateSeoJson.js
+   15:23  error  Unnecessary escape character: \-           no-useless-escape
+   16:19  error  Unnecessary escape character: \-           no-useless-escape
+   16:21  error  Unnecessary escape character: \-           no-useless-escape
+  118:13  error  'slug' is assigned a value but never used  no-unused-vars
+  166:13  error  'slug' is assigned a value but never used  no-unused-vars
+  229:5   error  'process' is not defined                   no-undef
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\utils\imageResolver.js
+  29:8  error  'pvc_covid_isolation_curtain_2' is defined but never used  no-unused-vars
+
+C:\Users\IT\Downloads\slider\Meta_Website\ecom_website\src\utils\slugify.js
+  7:23  error  Unnecessary escape character: \-  no-useless-escape
+  8:19  error  Unnecessary escape character: \-  no-useless-escape
+  8:21  error  Unnecessary escape character: \-  no-useless-escape
+
+Γ£û 194 problems (194 errors, 0 warnings)
+

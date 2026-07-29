@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Container from '../../../components/common/Container';
 import Icon from '../../../components/common/Icon';
 import Image from '../../../components/common/Image';
-import { resolveImagePath } from '../../../utils/imageResolver';
 
 const heroVideoSrc = '/pvc_factory_video.mp4';
 

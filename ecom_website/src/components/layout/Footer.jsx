@@ -14,7 +14,7 @@ const Footer = () => {
   const popularProducts = products.filter(p => p.popular).slice(0, 4)
 
   return (
-    <footer className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
+    <footer className="w-full py-40 bg-dark">
       <style>{`
         .footer-social-link {
           width: 36px;
@@ -25,7 +25,7 @@ const Footer = () => {
           transition: all 0.3s ease;
         }
         .footer-social-link:hover {
-          background-color: var(--primary) !important;
+          background-color: var(--white) !important;
           transform: scale(1.1);
         }
       `}</style>
@@ -127,15 +127,15 @@ const Footer = () => {
           <div
             className="flex justify-between items-center sm-flex-column sm-text-center mt-40 pt-25"
             style={{
-              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+              borderTop: "1px solid rgba(255, 255, 255, 0.2)",
               gap: "15px",
               color: "rgba(255, 255, 255, 0.5)"
             }}
           >
-            <div className="small-text">{footerData.bottom.copyright}</div>
+            <p className="mini-text">{footerData.bottom.copyright}</p>
             <div className="flex" style={{ gap: '15px' }}>
               {footerData.bottom.links.map((link, idx) => (
-                <a key={idx} href={link.url} className="footer-link small-text">
+                <a key={idx} href={link.url} className="footer-link mini-text">
                   {link.label}
                 </a>
               ))}
