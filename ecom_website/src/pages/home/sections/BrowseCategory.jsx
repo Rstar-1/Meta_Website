@@ -33,8 +33,8 @@ const BrowseCategory = ({ onSelectCategory }) => {
               <Image
                 src={resolveImagePath(cat.icon)}
                 alt={cat.name}
-                width="80"
-                height="80"
+                width="120"
+                height="120"
                 loading={idx < 3 ? "eager" : "lazy"}
                 fetchPriority={idx < 3 ? "high" : undefined}
                 className="flex object-cover rounded-full mx-auto"

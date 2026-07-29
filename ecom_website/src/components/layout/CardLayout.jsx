@@ -58,7 +58,7 @@ const CardLayout = ({
                                 {...imgProps}
                                 className={`w-full object-cover flex ${imageHeight || 'h-200'}`}
                                 width="300"
-                                height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : '200'}
+                                height={imageHeight?.includes('h-150') ? '150' : imageHeight?.includes('h-250') ? '250' : imageHeight?.includes('h-300') ? '300' : '200'}
                             />
                         </div>
                         <div className="mt-12">

@@ -29,7 +29,8 @@ const Skeleton = ({
   const themes = {
     light: { bg: "#e2e8f0", grad: "linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%)" },
     dark: { bg: "#1e293b", grad: "linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%)" },
-    adaptive: { bg: "rgba(0,0,0,0.08)", grad: "linear-gradient(90deg, rgba(0,0,0,0.08) 25%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.08) 75%)" }
+    adaptive: { bg: "rgba(0,0,0,0.08)", grad: "linear-gradient(90deg, rgba(0,0,0,0.08) 25%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.08) 75%)" },
+    translucent: { bg: "rgba(255,255,255,0.2)", grad: "linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%)" }
   };
   const active = themes[theme] || themes.light;
 
@@ -131,7 +132,7 @@ const Skeleton = ({
   // Why Choose Section Skeleton
   if (variant === "why-choose") {
     return (
-      <div className={`grid-cols-2 sm-grid-cols-1 gap-12 items-center py-50 sm-py-40 w-full ${className}`} style={{ minHeight: '350px', ...style }}>
+      <div className={`grid-cols-2 sm-grid-cols-1 gap-12 items-center py-50 sm-py-40 w-full ${className}`} style={{ minHeight: '600px', ...style }}>
         <div className="pr-15 sm-pr-1 flex flex-column gap-16">
           <S variant="rect" width="80px" height="24px" borderRadius="5px" />
           <S variant="rect" width="90%" height="36px" borderRadius="5px" />
@@ -161,7 +162,7 @@ const Skeleton = ({
   // Review Section Skeleton
   if (variant === "review-section") {
     return (
-      <div className={`w-full py-40 ${className}`} style={{ minHeight: '400px', ...style }}>
+      <div className={`w-full py-40 ${className}`} style={{ minHeight: '280px', ...style }}>
         <div className="flex md-flex-column sm-grid-cols-1 items-center gap-16">
           <div className="w-20 md-w-full sm-w-full px-10 flex flex-column gap-8">
             <S variant="rect" width="140px" height="28px" borderRadius="4px" />
@@ -505,7 +506,7 @@ const Skeleton = ({
               {cols.map((col, idx) => (
                 <th key={idx} className="bg-primary p-14 capitalize" style={col.style}>
                   <div className="flex items-center" style={{ height: "16px" }}>
-                    <S variant="rect" width="60px" height="12px" borderRadius="3px" theme="dark" style={{ margin: 0 }} />
+                    <S variant="rect" width="60px" height="12px" borderRadius="3px" theme="translucent" style={{ margin: 0 }} />
                   </div>
                 </th>
               ))}
@@ -629,8 +630,32 @@ const Skeleton = ({
   }
 
   if (variant === "cart") {
+    const cartCols = [
+      { header: "Item", accessor: "name", ui: "profile", imgStyle: { width: "60px", height: "60px" }, style: { width: "35%" } },
+      { header: "Category", accessor: "category", style: { width: "20%" } },
+      { header: "Quantity", accessor: "quantity", style: { width: "20%" } },
+      { header: "Action", accessor: "id", style: { width: "10%" } }
+    ];
+
     return (
       <Container>
+        <style>{`
+          .cart-mobile-cards {
+            display: none;
+          }
+          .cart-desktop-table {
+            display: block;
+          }
+          @media (max-width: 768px) {
+            .cart-mobile-cards {
+              display: flex;
+              flex-direction: column;
+            }
+            .cart-desktop-table {
+              display: none;
+            }
+          }
+        `}</style>
         <div className="py-30 w-full flex sm-grid-cols-1 gap-12 items-start">
           {/* Left Column: Cart items table / items */}
           <div className="w-70 md-w-full sm-w-full pr-8 sm-pr-1 flex flex-column gap-12">
@@ -638,39 +663,74 @@ const Skeleton = ({
               <S variant="rect" width="160px" height="24px" borderRadius="4px" />
               <S variant="rect" width="90px" height="32px" borderRadius="4px" />
             </div>
-            {/* Table or Cart items skeleton */}
-            <div className="border-ec rounded-5 bg-white p-15 flex flex-column gap-12 mt-10">
+
+            {/* Desktop Table Skeleton */}
+            <div className="cart-desktop-table mt-10">
+              <S variant="table" columns={cartCols} count={count || 3} />
+            </div>
+
+            {/* Mobile Cards Skeleton */}
+            <div className="cart-mobile-cards gap-12 mt-10">
               {Array.from({ length: count || 3 }).map((_, idx) => (
-                <div key={idx} className="flex gap-12 items-center border-b pb-12">
-                  <S variant="rect" width="80px" height="80px" borderRadius="5px" />
-                  <div className="flex-grow flex flex-column gap-8">
-                    <S variant="rect" width="50%" height="18px" borderRadius="4px" />
-                    <S variant="rect" width="25%" height="14px" borderRadius="12px" />
-                    <div className="flex justify-between items-center mt-4">
-                      <S variant="text" width="80px" height="14px" style={{ margin: 0 }} />
-                      <S variant="rect" width="90px" height="30px" borderRadius="4px" />
+                <div key={idx} className="bg-white border-ec p-10 rounded-5 flex gap-12 items-start relative">
+                  <S variant="rect" width="80px" height="80px" borderRadius="5px" style={{ flexShrink: 0 }} />
+                  <div className="flex-grow pr-30">
+                    <S variant="rect" width="75%" height="18px" borderRadius="4px" />
+                    <div className="flex items-center gap-6 mt-6">
+                      <S variant="rect" width="60px" height="18px" borderRadius="10px" />
                     </div>
+                    <div className="flex gap-12 items-center mt-10">
+                      <div className="flex flex-column gap-4">
+                        <S variant="rect" width="40px" height="12px" borderRadius="3px" />
+                        <S variant="rect" width="55px" height="10px" borderRadius="3px" />
+                      </div>
+                      <S variant="rect" width="80px" height="28px" borderRadius="4px" />
+                    </div>
+                  </div>
+                  <div className="absolute top-0 right-0 m-8">
+                    <S variant="rect" width="28px" height="28px" borderRadius="4px" />
                   </div>
                 </div>
               ))}
-              <div className="flex justify-between items-center pt-8">
-                <S variant="text" width="120px" height="14px" style={{ margin: 0 }} />
-                <S variant="text" width="140px" height="16px" style={{ margin: 0 }} />
-              </div>
             </div>
+
             {/* Note box skeleton */}
             <S variant="rect" width="100%" height="60px" borderRadius="5px" />
           </div>
 
-          {/* Right Column: Enquiry Form Skeleton */}
+          {/* Right Column: Order Summary Skeleton */}
           <div className="w-30 md-w-full sm-w-full pl-8 sm-pl-1">
-            <div className="border-ec p-20 rounded-5 bg-white flex flex-column gap-12">
-              <S variant="rect" width="70%" height="24px" borderRadius="4px" />
-              <S variant="rect" width="100%" height="40px" borderRadius="4px" style={{ marginTop: '8px' }} />
-              <S variant="rect" width="100%" height="40px" borderRadius="4px" style={{ marginTop: '8px' }} />
-              <S variant="rect" width="100%" height="40px" borderRadius="4px" style={{ marginTop: '8px' }} />
-              <S variant="rect" width="100%" height="100px" borderRadius="4px" style={{ marginTop: '8px' }} />
-              <S variant="rect" width="100%" height="44px" borderRadius="4px" style={{ marginTop: '12px' }} />
+            <div className="bg-white border-ec p-12 rounded-5 flex flex-column gap-12">
+              <S variant="rect" width="60%" height="20px" borderRadius="4px" />
+              <S variant="text" width="85%" height="12px" style={{ margin: 0 }} />
+              
+              <div className="grid-cols-1 gap-12 pt-12 bordh mt-4">
+                {/* Mock item rows */}
+                <div className="flex justify-between items-center">
+                  <S variant="text" width="50%" height="12px" style={{ margin: 0 }} />
+                  <S variant="text" width="20%" height="12px" style={{ margin: 0 }} />
+                </div>
+                <div className="flex justify-between items-center">
+                  <S variant="text" width="45%" height="12px" style={{ margin: 0 }} />
+                  <S variant="text" width="18%" height="12px" style={{ margin: 0 }} />
+                </div>
+
+                <div className="flex justify-between items-center mt-4">
+                  <S variant="text" width="25%" height="12px" style={{ margin: 0 }} />
+                  <S variant="text" width="15%" height="12px" style={{ margin: 0 }} />
+                </div>
+                <div className="flex justify-between items-center bordb pb-10">
+                  <S variant="text" width="30%" height="12px" style={{ margin: 0 }} />
+                  <S variant="text" width="35%" height="12px" style={{ margin: 0 }} />
+                </div>
+                <div className="flex justify-between items-center mt-4">
+                  <S variant="text" width="35%" height="14px" style={{ margin: 0 }} />
+                  <S variant="text" width="30%" height="14px" style={{ margin: 0 }} />
+                </div>
+                <div className="mt-8">
+                  <S variant="rect" width="100%" height="40px" borderRadius="4px" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

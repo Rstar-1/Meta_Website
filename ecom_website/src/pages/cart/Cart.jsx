@@ -23,6 +23,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 600);
@@ -30,10 +31,18 @@ const Cart = () => {
   }, []);
 
   useEffect(() => {
-    setCartItems(getCart());
+    const initialCart = getCart();
+    setCartItems(initialCart);
+    if (initialCart.length === 0) {
+      setShowQuoteForm(false);
+    }
 
     const handleCartUpdate = () => {
-      setCartItems(getCart());
+      const updatedCart = getCart();
+      setCartItems(updatedCart);
+      if (updatedCart.length === 0) {
+        setShowQuoteForm(false);
+      }
     };
 
     window.addEventListener('cart-updated', handleCartUpdate);
@@ -67,11 +76,6 @@ const Cart = () => {
         return 'text-primary bg-light-primary';
     }
   };
-
-  // Filter 4 related/suggested products that are not currently in the cart
-  const suggestedProducts = productsData
-    .filter(p => !cartItems.some(item => item.id === p.id))
-    .slice(0, 4);
 
   const handleProductClick = (item) => {
     if (item && item.id) {
@@ -110,17 +114,6 @@ const Cart = () => {
           </span>
         );
       }
-    },
-    {
-      header: 'Price',
-      accessor: 'price',
-      style: { width: '15%' },
-      render: (row) => (
-        <div>
-          <p className="small-text font-600 text-dark m-0">₹{row.price}</p>
-          <p className="mini-text text-gray m-0">On Request</p>
-        </div>
-      )
     },
     {
       header: 'Quantity',
@@ -259,16 +252,16 @@ const Cart = () => {
                                 style={{ width: "80px", height: "80px", flexShrink: 0 }}
                               />
                               <div className="flex-grow pr-30">
-                                <h4 className="small-text font-600 text-dark line-clamp-1 w-85" style={{ margin: 0 }}>
+                                <h4 className="mid-text font-600 text-dark line-clamp-1 w-85" style={{ margin: 0 }}>
                                   {item.name}
                                 </h4>
                                 <div className="flex items-center gap-6 mt-6">
-                                  <span
+                                  <p
                                     className={`mini-text capitalize px-8 py-2 rounded-20 font-500 inline-flex ${colorClass}`}
                                     style={{ whiteSpace: 'nowrap' }}
                                   >
                                     {catName}
-                                  </span>
+                                  </p>
                                 </div>
                                 <div className="flex gap-12 items-center mt-10">
                                   <div>
@@ -299,12 +292,6 @@ const Cart = () => {
                           );
                         })}
                       </div>
-
-                      {/* Summary row */}
-                      <div className="flex justify-between items-center p-15">
-                        <p className="small-text text-dark font-500">Total Items ({cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)})</p>
-                        <p className="small-text font-500">Total Price: <span className="text-primary font-500">₹{totalPrice.toLocaleString('en-IN')}</span></p>
-                      </div>
                     </div>
                   )}
                 </div>
@@ -319,22 +306,79 @@ const Cart = () => {
 
               {/* Right Column - Submit Enquiry Form */}
               <div className="w-30 md-w-full sm-w-full pl-8 sm-pl-1">
-                <Suspense fallback={
-                  <div className="bg-white border-ec p-20 rounded-5">
-                    <Skeleton variant="text" width="60%" height="24px" />
-                    <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                    <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                    <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                    <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
-                    <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
+                {showQuoteForm ? (
+                  <Suspense fallback={
+                    <div className="bg-white border-ec p-20 rounded-5">
+                      <Skeleton variant="text" width="60%" height="24px" />
+                      <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                      <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                      <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
+                      <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
+                      <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
+                    </div>
+                  }>
+                    <div className="grid-cols-1 gap-8">
+                      <p className='mini-text text-primary font-500 cursor-pointer mb-6 ' onClick={() => setShowQuoteForm(false)} >← Back to Summary</p>
+                      <ProductEnquiryForm
+                        isCart={true}
+                        cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
+                        onClearCart={clearCart}
+                      />
+                    </div>
+                  </Suspense>
+                ) : (
+                  <div className="bg-white border-ec p-12 rounded-5">
+                    <h3 className='mid-text text-dark font-500'>Order Summary</h3>
+                    <p className='mini-text text-gray mb-12'>Fill the form and get quotes from verified suppliers</p>
+
+                    {cartItems.length > 0 ? (
+                      <div className="grid-cols-1 gap-12 pt-12 bordh">
+                        {/* Items list */}
+                        <div className="grid-cols-1 gap-12">
+                          {cartItems.map((item) => (
+                            <div key={item.id} className="flex justify-between items-start">
+                              <div className="w-70">
+                                <p className="mini-text text-dark font-500 line-clamp1">{item.name}</p>
+                                <p className="mini-text text-gray m-0">Qty: {item.quantity || 1}</p>
+                              </div>
+                              <p className="mini-text font-500 text-dark m-0">
+                                ₹{((Number(item.price) || 0) * (item.quantity || 1)).toLocaleString('en-IN')}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="flex justify-between items-center">
+                          <p className="mini-text text-gray font-400">Shipping</p>
+                          <p className="mini-text text-success font-600">FREE</p>
+                        </div>
+
+                        <div className="flex justify-between items-center bordb pb-10">
+                          <p className="mini-text text-gray font-400">Taxes (GST)</p>
+                          <p className="mini-text text-gray font-400">Extra (On Actuals)</p>
+                        </div>
+
+                        <div className="flex justify-between items-center">
+                          <p className="small-text text-dark font-500">Total Price</p>
+                          <p className="small-text text-primary font-500">
+                            ₹{totalPrice.toLocaleString('en-IN')}
+                          </p>
+                        </div>
+
+                        <div className="mt-8">
+                          <Button
+                            text="Place Order"
+                            onClick={() => setShowQuoteForm(true)}
+                            bg="primary"
+                            version="v3"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="small-text text-gray text-center my-15">No items in cart</p>
+                    )}
                   </div>
-                }>
-                  <ProductEnquiryForm
-                    isCart={true}
-                    cartCount={cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
-                    onClearCart={clearCart}
-                  />
-                </Suspense>
+                )}
               </div>
             </div>
 

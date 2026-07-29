@@ -27,14 +27,14 @@ const renderCellContent = (col, row, rowIdx) => {
                             <Image src={imgUrl} alt={name} className="common-img rounded-5 object-cover border-tertiary" style={imgStyle} />
                         ) : (
                             <div style={{ background: favColor, width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0 }} className="center-div">
-                                <p className="small-text text-white font-600" style={{ margin: 0 }}>
+                                <p className="mini-text text-white font-600">
                                     {name ? name.charAt(0).toUpperCase() : "?"}
                                 </p>
                             </div>
                         )}
                         <div>
-                            <p className="text-dark small-text font-500" style={{ margin: 0 }}>{name}</p>
-                            {subText && <p className="text-gray mini-text font-500" style={{ margin: 0 }}>{subText}</p>}
+                            <h5 className="text-dark headmini-text font-500">{name}</h5>
+                            {subText && <p className="text-gray mini-text font-500">{subText}</p>}
                         </div>
                     </div>
                 );
@@ -254,87 +254,87 @@ const Table = ({
                         </thead>
                         <tbody>
                             {data.length === 0 ? (
-                            <tr>
-                                <td colSpan={displayHeaders.length}>
-                                    <div className="py-40 text-center bordb">
-                                        <p className="head-text text-gray">🔍</p>
-                                        <p className="text-gray small-text mt-7">No data found .</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        ) : (
-                            data.map((row, rowIdx) => {
-                                const rowId = row._id || row.id || rowIdx;
-                                const isExpanded = expandedRowId === rowId;
+                                <tr>
+                                    <td colSpan={displayHeaders.length}>
+                                        <div className="py-40 text-center bordb">
+                                            <p className="head-text text-gray">🔍</p>
+                                            <p className="text-gray small-text mt-7">No data found .</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ) : (
+                                data.map((row, rowIdx) => {
+                                    const rowId = row._id || row.id || rowIdx;
+                                    const isExpanded = expandedRowId === rowId;
 
-                                return (
-                                    <React.Fragment key={rowId}>
-                                        <tr className={isExpanded ? "bg-light-primary-subtle" : ""}>
-                                            {displayHeaders.map((col, colIdx) => {
-                                                if (col.accessor === "_expand") {
+                                    return (
+                                        <React.Fragment key={rowId}>
+                                            <tr className={isExpanded ? "bg-light-primary-subtle" : ""}>
+                                                {displayHeaders.map((col, colIdx) => {
+                                                    if (col.accessor === "_expand") {
+                                                        return (
+                                                            <td key={colIdx} className="p-14 text-center bordb" style={{ verticalAlign: "middle" }}>
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={() => toggleRow(rowId)}
+                                                                    className="p-6 rounded-5 border-0 bg-light text-primary hover:bg-primary hover:text-white cursor-pointer flex items-center justify-center"
+                                                                    style={{ margin: "0 auto", transition: "all 0.2s ease", transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)" }}
+                                                                    title={isExpanded ? "Collapse Details" : "Expand Details"}
+                                                                >
+                                                                    <Icon name="ChevronDown" width="14" height="14" strokeWidth="2.5" />
+                                                                </button>
+                                                            </td>
+                                                        );
+                                                    }
+
                                                     return (
-                                                        <td key={colIdx} className="p-14 text-center bordb" style={{ verticalAlign: "middle" }}>
-                                                            <button
-                                                                type="button"
-                                                                onClick={() => toggleRow(rowId)}
-                                                                className="p-6 rounded-5 border-0 bg-light text-primary hover:bg-primary hover:text-white cursor-pointer flex items-center justify-center"
-                                                                style={{ margin: "0 auto", transition: "all 0.2s ease", transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)" }}
-                                                                title={isExpanded ? "Collapse Details" : "Expand Details"}
-                                                            >
-                                                                <Icon name="ChevronDown" width="14" height="14" strokeWidth="2.5" />
-                                                            </button>
+                                                        <td
+                                                            key={colIdx}
+                                                            style={{
+                                                                verticalAlign: "middle",
+                                                                ...col.style
+                                                            }}
+                                                            className={`p-14 text-dark bordb ${col.className || ""}`}
+                                                        >
+                                                            {renderCellContent(col, row, rowIdx)}
                                                         </td>
                                                     );
-                                                }
-
-                                                return (
-                                                    <td
-                                                        key={colIdx}
-                                                        style={{
-                                                            verticalAlign: "middle",
-                                                            ...col.style
-                                                        }}
-                                                        className={`p-14 text-dark bordb ${col.className || ""}`}
-                                                    >
-                                                        {renderCellContent(col, row, rowIdx)}
-                                                    </td>
-                                                );
-                                            })}
-                                        </tr>
-                                        {hasCollapsedCols && isExpanded && (
-                                            <tr key={`${rowId}-expanded`}>
-                                                <td colSpan={displayHeaders.length} className="p-16 bordb bg-light">
-                                                    <div className="bg-white p-16 rounded-5 border-ec shadow-sm" style={{ borderLeft: "4px solid var(--primary-color, #1e74db)" }}>
-                                                        <div className="flex items-center justify-between mb-12">
-                                                            <h4 className="mini-text text-gray font-600 uppercase tracking-wider flex items-center gap-6" style={{ margin: 0 }}>
-                                                                <Icon name="Info" width="14" height="14" strokeWidth="2.5" />
-                                                                Additional Specifications & Details
-                                                            </h4>
-                                                            <span className="mini-text text-primary font-500 bg-light-primary px-8 py-2 rounded-4">
-                                                                {collapsedColumns.length} fields collapsed
-                                                            </span>
-                                                        </div>
-                                                        <div className="grid-cols-3 gap-16">
-                                                            {collapsedColumns.map((col, cIdx) => (
-                                                                <div key={col.accessor || cIdx} className="bg-light p-12 rounded-5 border-ec">
-                                                                    <span className="mini-text text-gray font-600 uppercase block mb-6">{col.header}</span>
-                                                                    <div className="mini-text text-dark font-500">
-                                                                        {renderCellContent(col, row, rowIdx)}
-                                                                    </div>
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                })}
                                             </tr>
-                                        )}
-                                    </React.Fragment>
-                                );
-                            })
-                        )}
-                    </tbody>
-                </table>
-            </div>
+                                            {hasCollapsedCols && isExpanded && (
+                                                <tr key={`${rowId}-expanded`}>
+                                                    <td colSpan={displayHeaders.length} className="p-16 bordb bg-light">
+                                                        <div className="bg-white p-16 rounded-5 border-ec shadow-sm" style={{ borderLeft: "4px solid var(--primary-color, #1e74db)" }}>
+                                                            <div className="flex items-center justify-between mb-12">
+                                                                <h4 className="mini-text text-gray font-600 uppercase tracking-wider flex items-center gap-6" style={{ margin: 0 }}>
+                                                                    <Icon name="Info" width="14" height="14" strokeWidth="2.5" />
+                                                                    Additional Specifications & Details
+                                                                </h4>
+                                                                <span className="mini-text text-primary font-500 bg-light-primary px-8 py-2 rounded-4">
+                                                                    {collapsedColumns.length} fields collapsed
+                                                                </span>
+                                                            </div>
+                                                            <div className="grid-cols-3 gap-16">
+                                                                {collapsedColumns.map((col, cIdx) => (
+                                                                    <div key={col.accessor || cIdx} className="bg-light p-12 rounded-5 border-ec">
+                                                                        <span className="mini-text text-gray font-600 uppercase block mb-6">{col.header}</span>
+                                                                        <div className="mini-text text-dark font-500">
+                                                                            {renderCellContent(col, row, rowIdx)}
+                                                                        </div>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </React.Fragment>
+                                    );
+                                })
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             )}
 
             {onPageChange && totalItems > itemsPerPage && (

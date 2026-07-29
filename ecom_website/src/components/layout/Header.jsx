@@ -477,6 +477,9 @@ const Header = () => {
               alt={headerConfig.logo.alt}
               width="150"
               height="40"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
               className="flex object-contain"
             />
           </NavLink>
@@ -568,7 +571,6 @@ const Header = () => {
             />
           </div>
 
-          {/* DRAWER CONTENT */}
           <div style={{ flex: 1, overflowY: "auto" }}>
             {!activeMobileSubmenu ? (
               // SCREEN 1: MAIN MENU — mapped from header.json mobileMenu
@@ -618,9 +620,8 @@ const Header = () => {
           </div>
         </div>
       )}
-
     </>
   );
 };
 
-export default Header;
+export default memo(Header);

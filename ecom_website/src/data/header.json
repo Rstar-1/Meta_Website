@@ -29,10 +29,21 @@
         ]
       },
       {
-        "id": "news-top",
-        "label": "NEWS & MEDIA",
-        "path": "/blog",
-        "hasDropdown": false
+        "id": "corporate",
+        "label": "CORPORATE",
+        "hasDropdown": true,
+        "submenu": [
+          {
+            "label": "News & Media",
+            "path": "/blog",
+            "type": "link"
+          },
+          {
+            "label": "ABOUT US",
+            "path": "/about",
+            "type": "link"
+          }
+        ]
       },
       {
         "id": "category-top",
@@ -142,13 +153,21 @@
       "badgeColor": "#f0fdf4",
       "badgeIconColor": "#16a34a",
       "submenu": [
-        { "label": "All Product Catalog", "path": "/products", "icon": "Grid" },
+        {
+          "label": "All Product Catalog",
+          "path": "/products",
+          "icon": "Grid"
+        },
         {
           "label": "Blogs & Technical Insights",
           "path": "/blog",
           "icon": "BookOpen"
         },
-        { "label": "Supplier Network", "path": "/wheretobuy", "icon": "Layers" }
+        {
+          "label": "Supplier Network",
+          "path": "/wheretobuy",
+          "icon": "Layers"
+        }
       ]
     },
     {

@@ -50,15 +50,15 @@
     ],
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+        "src": "/pvc_roll_industrial.webp",
         "alt": "Premium PVC Rolls storage in warehouse"
       },
       {
-        "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+        "src": "/pvc_curtain_industrial.webp",
         "alt": "Heavy duty PVC strip curtains installation"
       },
       {
-        "src": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=500&auto=format&fit=crop",
+        "src": "/pvc_sheets_industrial.webp",
         "alt": "Custom cut PVC sheets packaging"
       }
     ]

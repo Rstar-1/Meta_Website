@@ -1,6 +1,6 @@
 import React from "react";
 
-const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, ...props }) => {
+const Icon = React.memo(({ name, className = "", width, height, strokeWidth, fill, stroke, ...props }) => {
     const defaultWidth = width || "14";
     const defaultHeight = height || "15";
     const defaultStrokeWidth = strokeWidth || "2";
@@ -779,6 +779,6 @@ const Icon = ({ name, className = "", width, height, strokeWidth, fill, stroke, 
         default:
             return null;
     }
-};
+});
 
 export default Icon;

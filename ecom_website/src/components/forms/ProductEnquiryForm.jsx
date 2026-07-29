@@ -122,9 +122,9 @@ const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
   };
 
   return (
-    <div className='border-ec p-15 rounded-5 bg-white'>
-      <h3 className='title-text text-dark font-600'>{isCart ? 'Request a Quote' : 'Get Best Price'}</h3>
-      <p className='mini-text text-gray mt-4'>Fill the form and get quotes from verified suppliers</p>
+    <div className='border-ec p-12 rounded-5 bg-white'>
+      <h3 className='mid-text text-dark font-500'>{isCart ? 'Request a Quote' : 'Get Best Price'}</h3>
+      <p className='mini-text text-gray'>Fill the form and get quotes from verified suppliers</p>
 
       {formSubmitted ? (
         <div className='mt-8 p-10 text-center bg-forth'>

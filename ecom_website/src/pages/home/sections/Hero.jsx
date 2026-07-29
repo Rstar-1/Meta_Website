@@ -1,30 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from '../../../components/common/Container';
 import Icon from '../../../components/common/Icon';
 import Image from '../../../components/common/Image';
+import { resolveImagePath } from '../../../utils/imageResolver';
 
 const heroVideoSrc = '/pvc_factory_video.mp4';
 
 const Hero = ({ cms }) => {
+  const [loadVideo, setLoadVideo] = useState(false);
+
+  useEffect(() => {
+    // Mount the video after the initial paint is complete to speed up LCP and FCP
+    const timer = setTimeout(() => {
+      setLoadVideo(true);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   if (!cms) return null;
+
+  const posterPath = '/hero.webp';
 
   return (
     <div className="relative overflow-hidden h-500" style={{ backgroundColor: '#0a1120', width: '100%' }}>
-      {/* Background Video using generic Image component */}
-      <Image
-        src={heroVideoSrc}
-        alt="Hero Background Video"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          pointerEvents: 'none',
-          zIndex: 1
-        }}
-      />
+      {/* Defer video element mount to prioritize loading of LCP poster image */}
+      {loadVideo ? (
+        <Image
+          src={heroVideoSrc}
+          poster={posterPath}
+          alt="Hero Background Video"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            pointerEvents: 'none',
+            zIndex: 1
+          }}
+        />
+      ) : (
+        <Image
+          src={posterPath}
+          alt="Hero Background Poster"
+          loading="eager"
+          fetchPriority="high"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            pointerEvents: 'none',
+            zIndex: 1
+          }}
+        />
+      )}
 
       {/* Overlay Gradient from bottom side for text contrast */}
       <div

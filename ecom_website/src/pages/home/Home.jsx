@@ -24,7 +24,7 @@ const Review = lazy(() => import('./sections/Review'));
 const lazySections = [
   {
     Component: WhyChoose,
-    height: 350,
+    height: 600,
     containerStyle: { background: 'var(--forth)' },
     fallback: (
       <Container style={{ background: 'var(--forth)' }}>
@@ -34,7 +34,7 @@ const lazySections = [
   },
   {
     Component: LatestArticles,
-    height: 500,
+    height: 440,
     fallback: (
       <Container>
         <Skeleton variant="articles" theme="adaptive" />
@@ -43,11 +43,11 @@ const lazySections = [
   },
   {
     Component: PopularProducts,
-    height: 500,
+    height: 410,
     containerStyle: { background: 'var(--forth)' },
     fallback: (
       <Container style={{ background: 'var(--forth)' }}>
-        <div className="py-40 w-full" style={{ minHeight: '500px' }}>
+        <div className="py-40 w-full" style={{ minHeight: '410px' }}>
           <Skeleton variant="section-header" theme="adaptive" />
           <div className="mt-20">
             <Skeleton variant="card-grid" count={4} theme="adaptive" />
@@ -58,7 +58,7 @@ const lazySections = [
   },
   {
     Component: BusinessPromo,
-    height: 300,
+    height: 510,
     fallback: (
       <Container>
         <Skeleton variant="promo" theme="adaptive" />
@@ -67,7 +67,7 @@ const lazySections = [
   },
   {
     Component: Review,
-    height: 400,
+    height: 280,
     containerStyle: { backgroundColor: 'var(--forth)' },
     fallback: (
       <Container style={{ backgroundColor: 'var(--forth)' }}>
@@ -107,10 +107,14 @@ const Home = () => {
         <BrowseCategory cms={cms} />
       </Container>
 
-      <LazySection placeholderHeight={400}>
+      <LazySection placeholderHeight={860}>
         <Suspense fallback={
           <Container className="bg-white" version="v2">
-            <div className="py-40 w-full" style={{ minHeight: '400px' }}>
+            <div className="py-40 w-full" style={{ minHeight: '860px' }}>
+              <Skeleton variant="section-header" theme="adaptive" />
+              <div className="mt-20 mb-40">
+                <Skeleton variant="card-grid" count={4} theme="adaptive" />
+              </div>
               <Skeleton variant="section-header" theme="adaptive" />
               <div className="mt-20">
                 <Skeleton variant="card-grid" count={4} theme="adaptive" />
