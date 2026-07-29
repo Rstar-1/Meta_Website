@@ -273,7 +273,7 @@ const Cart = () => {
                                   title="Remove Item"
                                   version='v2'
                                 >
-                                  <Icon name="Trash" width="16" height="16" stroke="#c21b1b" />
+                                  <Icon name="Trash" width="16" height="16" stroke="var(--danger)" />
                                 </Button>
                               </div>
                             </div>
@@ -298,16 +298,7 @@ const Cart = () => {
               {/* Right Column - Submit Enquiry Form */}
               <div className="w-30 md-w-full sm-w-full pl-8 sm-pl-1">
                 {showQuoteForm ? (
-                  <Suspense fallback={
-                    <div className="bg-white border-ec p-20 rounded-5">
-                      <Skeleton variant="text" width="60%" height="24px" />
-                      <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                      <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                      <Skeleton variant="rect" height="40px" style={{ marginTop: '12px' }} />
-                      <Skeleton variant="rect" height="100px" style={{ marginTop: '12px' }} />
-                      <Skeleton variant="rect" height="42px" style={{ marginTop: '16px' }} />
-                    </div>
-                  }>
+                  <Suspense fallback={<Skeleton variant="form" />}>
                     <div className="grid-cols-1 gap-8">
                       <p className='mini-text text-primary font-500 cursor-pointer mb-6 ' onClick={() => setShowQuoteForm(false)} >← Back to Summary</p>
                       <ProductEnquiryForm

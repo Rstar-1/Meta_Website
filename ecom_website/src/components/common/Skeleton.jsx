@@ -26,7 +26,7 @@ if (typeof document !== "undefined" && !document.getElementById("skeleton-styles
 }
 
 const Skeleton = ({
-  variant = "rect", // "rect" | "circle" | "text" | "card" | "blog" | "section-header" | "card-grid" | "articles" | "promo" | "reviews" | "product-detail" | "hero" | "browse-category" | "why-choose" | "review-section" | "table"
+  variant = "rect", // "rect" | "circle" | "text" | "card" | "blog" | "section-header" | "card-grid" | "articles" | "promo" | "reviews" | "product-detail" | "hero" | "browse-category" | "why-choose" | "review-section" | "table" | "form"
   width,
   height,
   borderRadius,
@@ -746,6 +746,20 @@ const Skeleton = ({
           </div>
         </div>
       </Container>
+    );
+  }
+
+  // Generic Form Skeleton
+  if (variant === "form") {
+    return (
+      <div className={`bg-white border-ec p-20 rounded-5 ${className}`} style={style}>
+        <S variant="text" width="60%" height="24px" />
+        <S variant="rect" height="40px" style={{ marginTop: '12px' }} />
+        <S variant="rect" height="40px" style={{ marginTop: '12px' }} />
+        <S variant="rect" height="40px" style={{ marginTop: '12px' }} />
+        <S variant="rect" height="100px" style={{ marginTop: '12px' }} />
+        <S variant="rect" height="42px" style={{ marginTop: '16px' }} />
+      </div>
     );
   }
 
