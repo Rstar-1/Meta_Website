@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';

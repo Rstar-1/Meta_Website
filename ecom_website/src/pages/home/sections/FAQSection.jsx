@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Accordion from '../../../components/common/Accordion';

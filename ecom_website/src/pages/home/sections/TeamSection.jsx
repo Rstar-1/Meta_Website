@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from '../../../components/common/Container';
 import CardLayout from '../../../components/layout/CardLayout';
 
