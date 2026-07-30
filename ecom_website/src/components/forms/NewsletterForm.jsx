@@ -100,7 +100,7 @@ const NewsletterForm = ({
             submitText={buttonText}
             buttonVersion="v3"
             buttonBg="primary"
-            buttonClassName="newsletter-btn-container"
+            buttonClassName="mt-10"
           />
         </div>
       )}

@@ -42,6 +42,11 @@
             "label": "ABOUT US",
             "path": "/about",
             "type": "link"
+          },
+          {
+            "label": "Where To Buy",
+            "path": "/wheretobuy",
+            "type": "link"
           }
         ]
       },
@@ -143,32 +148,6 @@
       "icon": "FileText",
       "path": "/blog",
       "hasSubmenu": false
-    },
-    {
-      "id": "resources",
-      "label": "Resources",
-      "icon": "Layers",
-      "hasSubmenu": true,
-      "submenuType": "list",
-      "badgeColor": "#f0fdf4",
-      "badgeIconColor": "#16a34a",
-      "submenu": [
-        {
-          "label": "All Product Catalog",
-          "path": "/products",
-          "icon": "Grid"
-        },
-        {
-          "label": "Blogs & Technical Insights",
-          "path": "/blog",
-          "icon": "BookOpen"
-        },
-        {
-          "label": "Supplier Network",
-          "path": "/wheretobuy",
-          "icon": "Layers"
-        }
-      ]
     },
     {
       "id": "supplier",

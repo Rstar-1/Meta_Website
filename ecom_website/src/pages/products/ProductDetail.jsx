@@ -83,6 +83,7 @@ const ProductDetail = () => {
         </Container>
       }>
         <ProductReviews
+          key={id}
           rating={foundProduct?.rating}
           reviewCount={foundProduct?.reviewCount}
           reviews={foundProduct?.reviews}

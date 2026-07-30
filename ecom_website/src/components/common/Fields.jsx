@@ -887,20 +887,19 @@ const Fields = ({
 
             case "rating":
                 return (
-                    <div className="flex gap-4" style={{ padding: "4px 0" }}>
+                    <div className="flex gap-4">
                         {[1, 2, 3, 4, 5].map((star) => (
-                            <span
+                            <p
                                 key={star}
-                                className="cursor-pointer"
+                                className="cursor-pointer headpara-text"
                                 style={{
-                                    fontSize: "26px",
                                     color: star <= value ? "#fbbf24" : "#d1d5db",
                                     transition: "color 0.15s ease-in-out"
                                 }}
                                 onClick={() => onChange?.(star)}
                             >
                                 ★
-                            </span>
+                            </p>
                         ))}
                     </div>
                 );
@@ -1050,7 +1049,7 @@ const Fields = ({
     };
 
     return (
-        <div className="w-full grid-cols-1 gap-6">
+        <div className="w-full grid-cols-1">
             {label && (
                 <label className="mini-text font-500 text-gray">
                     {label}

@@ -1,33 +1,63 @@
+import { useState } from 'react';
 import Container from '../../../components/common/Container';
+import Modal from '../../../components/common/Modal';
+import FormBuilder from '../../../components/common/FormBuilder';
+import Button from '../../../components/common/Button';
+import Icon from '../../../components/common/Icon';
 
 const StarRating = ({ rating, color = "var(--warning)", size = 16 }) => {
   const stars = [];
   const rounded = Math.round(rating);
   for (let i = 1; i <= 5; i++) {
     stars.push(
-      <svg
+      <Icon
         key={i}
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
+        name="Star"
+        width={size.toString()}
+        height={size.toString()}
         fill={i <= rounded ? color : "none"}
         stroke={color}
         strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
         style={{ display: 'inline-block', marginRight: '2px' }}
-      >
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-      </svg>
+      />
     );
   }
   return <div style={{ display: 'inline-flex', alignItems: 'center' }}>{stars}</div>;
 };
 
+const reviewFields = [
+  {
+    name: "name",
+    type: "text",
+    label: "Your Name",
+    placeholder: "Enter your name",
+    validation: { required: true, minLength: 2 },
+  },
+  {
+    name: "rating",
+    type: "rating",
+    label: "Your Rating",
+    defaultValue: 5,
+    validation: { required: true },
+  },
+  {
+    name: "comment",
+    type: "textarea",
+    label: "Your Review",
+    placeholder: "Write your review comment here...",
+    validation: { required: true, minLength: 10 },
+  },
+];
+
 const ProductReviews = ({
   reviews = [],
 }) => {
-  const actualReviews = Array.isArray(reviews) ? reviews : [];
+  const [localReviews, setLocalReviews] = useState(reviews);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const actualReviews = Array.isArray(localReviews) ? localReviews : [];
 
   // Calculate total reviews count
   const displayCount = actualReviews.length;
@@ -66,6 +96,23 @@ const ProductReviews = ({
     { label: "Delivery", score: (displayRating - 0.2).toFixed(1) },
     { label: "Value", score: Math.min(5.0, displayRating + 0.1).toFixed(1) }
   ];
+
+  const handleReviewSubmit = (formData) => {
+    const newReview = {
+      name: formData.name,
+      rating: Number(formData.rating),
+      comment: formData.comment,
+      date: "Just now"
+    };
+
+    setLocalReviews(prev => [newReview, ...prev]);
+    setIsSubmitted(true);
+
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setIsSubmitted(false);
+    }, 1500);
+  };
 
   return (
     <Container className="bg-forth">
@@ -117,20 +164,30 @@ const ProductReviews = ({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-12">
-          {aspects.map((aspect, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-8 rounded-5 py-6 px-14 border-ec bg-white"
-            >
-              <p className='small-text font-500' style={{ color: getAspectScoreColor(aspect.score), fontWeight: '700' }}>
-                {aspect.score}
-              </p>
-              <span className="text-gray mini-text">
-                {aspect.label}
-              </span>
-            </div>
-          ))}
+        <div className="flex justify-between items-center gap-12 mt-15 w-full">
+          <div className="flex flex-wrap gap-12">
+            {aspects.map((aspect, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-8 rounded-5 py-6 px-14 border-ec bg-white"
+              >
+                <p className='small-text font-500' style={{ color: getAspectScoreColor(aspect.score), fontWeight: '700' }}>
+                  {aspect.score}
+                </p>
+                <span className="text-gray mini-text">
+                  {aspect.label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <Button
+            onClick={() => setIsModalOpen(true)}
+            version="v2"
+            bg="primary"
+          >
+            Write a Review
+          </Button>
         </div>
 
         <div className="grid-cols-1 gap-12 mt-20">
@@ -180,6 +237,34 @@ const ProductReviews = ({
         </div>
 
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Write a Review"
+        size="sm"
+        footer={null}
+      >
+        {isSubmitted ? (
+          <div className="text-center py-20">
+            <div className="rounded-full mx-auto bg-light-success text-success flex items-center justify-center" style={{ width: '60px', height: '60px', fontSize: '24px', fontWeight: 'bold' }}>
+              ✓
+            </div>
+            <h4 className="title-text font-600 text-success pt-16">Review Submitted!</h4>
+            <p className="small-text text-gray mt-6">Thank you for sharing your feedback.</p>
+          </div>
+        ) : (
+          <FormBuilder
+            fields={reviewFields}
+            onSubmit={handleReviewSubmit}
+            submitType="json"
+            submitText="Submit Review"
+            buttonVersion="v2"
+            buttonBg="primary"
+          />
+        )}
+      </Modal>
+
     </Container>
   );
 };
