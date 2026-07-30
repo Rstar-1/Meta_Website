@@ -5,6 +5,7 @@ import { addToCart } from '../../utils/cartHelper';
 import Icon from '../common/Icon';
 import Container from '../common/Container';
 import Image from '../common/Image';
+import ImageMagnifier from '../common/Magnify';
 import Tab from '../common/Tab';
 import SeoHelmet from '../seo/SeoHelmet';
 import ProductSchema from '../seo/ProductSchema';
@@ -310,13 +311,22 @@ const ProductLayout = ({
                 <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
                   <div className='pr-10 sm-pr-1'>
                     <div className='relative'>
-                      <Image
-                        src={activeImage}
-                        alt={productData.title}
-                        className='w-full h-450 sm-h-300 object-cover border-ec rounded-5 flex'
-                        loading="eager"
-                        fetchPriority="high"
-                      />
+                      {import.meta.env.VITE_MAGNIFY === 'true' ? (
+                        <ImageMagnifier
+                          src={activeImage}
+                          alt={productData.title}
+                          className='w-full h-450 sm-h-300'
+                          imgClassName='object-cover border-ec rounded-5 flex'
+                        />
+                      ) : (
+                        <Image
+                          src={activeImage}
+                          alt={productData.title}
+                          className='w-full h-450 sm-h-300 object-cover border-ec rounded-5 flex'
+                          loading="eager"
+                          fetchPriority="high"
+                        />
+                      )}
                     </div>
                     <div className='grid-cols-4 gap-9 mt-12'>
                       {galleryImages?.map((img, idx) => (

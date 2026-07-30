@@ -39,13 +39,13 @@
             "type": "link"
           },
           {
-            "label": "ABOUT US",
+            "label": "About Us",
             "path": "/about",
             "type": "link"
           },
           {
-            "label": "Where To Buy",
-            "path": "/wheretobuy",
+            "label": "Supplier",
+            "path": "/supplier/Ashmita",
             "type": "link"
           }
         ]
@@ -59,9 +59,9 @@
     ],
     "right": [
       {
-        "id": "supplier-top",
-        "label": "SUPPLIER",
-        "path": "/supplier/Ashmita",
+        "id": "wheretobuy",
+        "label": "Where To Buy",
+        "path": "/wheretobuy",
         "hasDropdown": false
       }
     ]
