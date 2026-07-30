@@ -32,7 +32,7 @@ const Hero = () => {
         <div className="pl-15 sm-pl-1">
           <div className='relative'>
             <Image
-              src="https://demo.alhikmahsoft.com/template/stir/assets/images/testimonial-6.jpg"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80"
               alt="Digital Agency Team"
               className="w-full object-cover h-500 flex rounded-5"
             />
@@ -41,9 +41,9 @@ const Hero = () => {
             <div className="absolute bottom-0 right-0 m-10">
               <div className='p-20 bg-white rounded-5'>
                 <div className="flex items-center gap-12">
-                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-1.jpg" alt="User" />
-                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-2.jpg" alt="User" />
-                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://demo.alhikmahsoft.com/template/stir/assets/images/team-3.jpg" alt="User" />
+                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User" />
+                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User" />
+                  <Image className='flex object-cover rounded-full' width='40px' height='40px' src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="User" />
                 </div>
                 <h5 className="text-dark font-500 mid-text pt-12">Juan Manuel</h5>
                 <p className="text-gray font-400 small-text">"Their Meta campaign strategy grew our sales by 150%!"</p>

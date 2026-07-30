@@ -20,7 +20,7 @@ const Services = () => {
       />
       <Banner
         title="Our Services"
-        img="https://demo.alhikmahsoft.com/template/stir/assets/images/who-we-are-img-2.jpg"
+        img="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&auto=format&fit=crop&q=80"
         desc="Innovative Solutions Tailored to Power Your Business Growth"
         breadcrumbs={[
           { label: 'Home', path: '/' },

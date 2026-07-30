@@ -12,14 +12,14 @@ const Reviews = () => {
       text: "Whether it's custom web development, ranking first on Google searches via SEO, or scaling Meta ad campaigns, this agency delivers exceptional results. They transformed our online presence and tripled our inbound leads.",
       name: "Brandi Rowe",
       role: "Marketing Lead at Technlogia",
-      avatar: "https://demo.alhikmahsoft.com/template/stir/assets/images/testimonial-3.png"
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     {
       id: 2,
       text: "Their deep domain expertise and structured design workshops helped us accelerate our digital product launch by three months. The level of collaboration, execution quality, and brand insight is absolutely unmatched.",
       name: "David Ross",
       role: "Product Manager at Innova Group",
-      avatar: "https://demo.alhikmahsoft.com/template/stir/assets/images/team-2.jpg"
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
     }
   ];
 
@@ -88,7 +88,7 @@ const Reviews = () => {
         {/* Right Column - Large image */}
         <div>
           <Image
-            src="https://demo.alhikmahsoft.com/template/stir/assets/images/testimonial-5.jpg"
+            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=80"
             alt="Testimonials Meeting"
             className="w-full object-cover h-500 flex"
           />

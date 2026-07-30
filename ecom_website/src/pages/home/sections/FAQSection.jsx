@@ -31,7 +31,7 @@ const FAQSection = () => {
     <Container style={{ backgroundColor: 'var(--forth)' }}>
       <div className='py-80'>
         <Image
-          src="https://demo.alhikmahsoft.com/template/stir/assets/images/faq-img.jpg"
+          src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800&auto=format&fit=crop&q=80"
           alt="Digital Agency Team"
           className="w-full object-cover h-250 flex rounded-5"
         />
