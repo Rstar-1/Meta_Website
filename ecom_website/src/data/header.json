@@ -145,7 +145,7 @@
     {
       "id": "news-mobile",
       "label": "News & Media",
-      "icon": "FileText",
+      "icon": "Media",
       "path": "/blog",
       "hasSubmenu": false
     },
