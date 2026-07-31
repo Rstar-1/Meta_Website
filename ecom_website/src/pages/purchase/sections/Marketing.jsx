@@ -2,8 +2,10 @@ import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 import Image from '../../../components/common/Image';
 
+import { config } from '../../../config/env';
+
 const Marketing = () => {
-    const phoneEnv = import.meta.env.VITE_PHONE || '8178638960';
+    const phoneEnv = config.phone || '8178638960';
     const formattedPhone = `+91 ${phoneEnv.slice(0, 5)} ${phoneEnv.slice(5)}`;
 
     return (

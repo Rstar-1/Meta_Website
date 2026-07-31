@@ -14,6 +14,7 @@ import LazySection from '../common/LazySection';
 import { formatDate } from '../../utils/formatDate';
 import { blogMetaTemplate } from '../../seo/metaTemplates';
 import { cms } from '../../utils/apiData';
+import { config } from '../../config/env';
 
 const LatestArticles = lazy(() => import('../../pages/home/sections/LatestArticles'));
 const BusinessPromo = lazy(() => import('../../pages/home/sections/BusinessPromo'));
@@ -125,7 +126,7 @@ const BlogLayout = ({
     },
   ], [shareUrl, post?.title]);
 
-  const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in')) : {}, [post]);
+  const blogMeta = useMemo(() => post ? blogMetaTemplate(post, typeof window !== 'undefined' ? window.location.origin : (config.siteUrl || 'https://www.ashmitaenterprises.co.in')) : {}, [post]);
 
   const cardRenderers = useMemo(() => ({
     blogCard: (blog, idx) => {

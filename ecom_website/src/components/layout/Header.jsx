@@ -9,6 +9,7 @@ import { products as productsData, categories as categoriesData } from "../../ut
 import headerConfig from "../../data/header.json";
 import Fields from "../common/Fields";
 import { resolveProductImage } from "../../utils/imageResolver";
+import { config } from "../../config/env";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const Header = () => {
     submenu.map((sub, sIdx) => {
       let label = sub.label;
       let href = sub.href;
-      const phoneEnv = import.meta.env.VITE_PHONE;
+      const phoneEnv = config.phone;
       if (phoneEnv) {
         if (sub.type === "tel") {
           label = `Call +91 ${phoneEnv.slice(0, 5)} ${phoneEnv.slice(5)}`;

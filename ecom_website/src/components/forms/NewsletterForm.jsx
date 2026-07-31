@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Icon from '../common/Icon';
 import FormBuilder from '../common/FormBuilder';
 import { sendEmail } from '../../utils/emailsend';
+import { config } from '../../config/env';
 
 const NewsletterForm = ({
   variant = 'card', // 'card' or 'footer'
@@ -37,7 +38,7 @@ const NewsletterForm = ({
     }
 
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    window.location.href = `sms:${import.meta.env.VITE_PHONE || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
+    window.location.href = `sms:${config.phone || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
 
     if (onSubscribe) onSubscribe(trimmedEmail);
     else if (variant === 'footer') alert('Subscribed!');

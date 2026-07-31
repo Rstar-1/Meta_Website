@@ -55,8 +55,10 @@ const lazySections = [
     },
 ];
 
+import { config } from '../../config/env';
+
 const Purchase = () => {
-    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
+    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (config.siteUrl || 'https://www.ashmitaenterprises.co.in');
     const navItems = [
         { name: 'Home', url: `${siteUrl}/home` },
         { name: 'Products', url: `${siteUrl}/products` },

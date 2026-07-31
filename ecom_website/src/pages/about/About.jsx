@@ -54,6 +54,8 @@ const lazySections = [
   }
 ];
 
+import { config } from '../../config/env';
+
 const About = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -61,7 +63,7 @@ const About = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : (config.siteUrl || 'https://www.ashmitaenterprises.co.in');
   return (
     <>
       <SeoHelmet

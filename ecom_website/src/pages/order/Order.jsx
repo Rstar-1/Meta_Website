@@ -10,6 +10,7 @@ import LazySection from '../../components/common/LazySection';
 
 import { resolveProductImage } from '../../utils/imageResolver';
 import { products, cms } from '../../utils/apiData';
+import { config } from '../../config/env';
 
 const BusinessPromo = lazy(() => import('../home/sections/BusinessPromo'));
 
@@ -369,12 +370,12 @@ const Order = () => {
 
                         <div className="mt-6 grid-cols-1 gap-6">
                           <a
-                            href={`tel:+91${import.meta.env.VITE_PHONE || '9876543210'}`}
+                            href={`tel:+91${config.phone || '9876543210'}`}
                             className="mini-text font-400 text-gray flex items-center gap-6"
                           >
                             <Icon name="Phone" width="13" height="13" stroke="#f25c2b" />
                             {(() => {
-                              const phone = import.meta.env.VITE_PHONE || '9876543210';
+                              const phone = config.phone || '9876543210';
                               return `+91 ${phone.slice(0, 5)} ${phone.slice(5)}`;
                             })()}
                           </a>

@@ -3,8 +3,9 @@ import { BrowserRouter, useLocation } from 'react-router-dom'
 import ReactGA from 'react-ga4'
 import AppRoutes from '../routes/index'
 import ScrollToTop from '../components/common/ScrollToTop'
+import { config } from '../config/env'
 
-const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID
+const gaId = config.gaMeasurementId
 
 if (gaId) {
   ReactGA.initialize(gaId)

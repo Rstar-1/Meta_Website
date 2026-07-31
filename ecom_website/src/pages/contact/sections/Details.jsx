@@ -4,9 +4,11 @@ import Button from "../../../components/common/Button";
 import Icon from "../../../components/common/Icon";
 import cmsData from "../../../data/cms.json";
 
+import { config } from "../../../config/env";
+
 const Details = ({ addToRef }) => {
     const [loadMap, setLoadMap] = useState(false);
-    const phoneEnv = import.meta.env.VITE_PHONE || '8511700544';
+    const phoneEnv = config.phone || '8511700544';
     const formattedPhone = `+91 ${phoneEnv.slice(0, 5)} ${phoneEnv.slice(5)}`;
     const { contact } = cmsData;
 

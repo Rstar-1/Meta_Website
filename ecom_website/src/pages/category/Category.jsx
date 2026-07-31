@@ -44,6 +44,8 @@ const lazySections = [
     },
 ];
 
+import { config } from '../../config/env';
+
 const Category = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
@@ -57,7 +59,7 @@ const Category = () => {
         navigate(`/products?category=${catId}`, { state: { category: catId } });
     };
 
-    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in');
+    const siteUrl = typeof window !== 'undefined' ? window.location.origin : (config.siteUrl || 'https://www.ashmitaenterprises.co.in');
 
     // Get categories directly from category.json
     const displayCategories = categories.filter(cat => cat.number);

@@ -1,6 +1,8 @@
+import { config } from '../config/env';
+
 export const generateMeta = (pageMeta = {}, defaultMeta = {}) => {
   const siteName = defaultMeta.siteName || 'E-Commerce Store';
-  const siteUrl = (typeof window !== 'undefined' ? window.location.origin : '') || defaultMeta.siteUrl || import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in';
+  const siteUrl = (typeof window !== 'undefined' ? window.location.origin : '') || defaultMeta.siteUrl || config.siteUrl || 'https://www.ashmitaenterprises.co.in';
   const toAbsoluteUrl = (p) => p.startsWith('http') ? p : `${siteUrl}${p.startsWith('/') ? p : '/' + p}`;
 
   const title = pageMeta.title ? `${pageMeta.title} | ${siteName}` : defaultMeta.title || siteName;

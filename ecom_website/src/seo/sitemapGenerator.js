@@ -1,4 +1,6 @@
-export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in') => {
+import { config } from '../config/env';
+
+export const generateSitemap = (routes = [], products = [], categories = [], blogs = [], baseUrl = config.siteUrl || 'https://www.ashmitaenterprises.co.in') => {
   const lastmod = new Date().toISOString().split('T')[0];
   const urlXml = (loc, freq, prio) => `  <url>
     <loc>${baseUrl}${loc}</loc>

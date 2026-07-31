@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import FormBuilder from '../common/FormBuilder';
 import { getCart } from '../../utils/cartHelper';
 import { sendEmail } from '../../utils/emailsend';
+import { config } from '../../config/env';
 
 const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
   const navigate = useNavigate();
@@ -94,7 +95,7 @@ const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
     }
 
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    const smsUrl = `sms:${import.meta.env.VITE_PHONE || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
+    const smsUrl = `sms:${config.phone || '8779030638'}${isIOS ? '&' : '?'}body=${smsBody}`;
 
     window.location.href = smsUrl;
 
@@ -110,8 +111,7 @@ const ProductEnquiryForm = ({ isCart = false, cartCount = 0, onClearCart }) => {
       setFormSubmitted(false);
       if (isCart) {
         if (onClearCart) onClearCart();
-        const ecomEnv = import.meta.env.ECOM ?? import.meta.env.VITE_ECOM;
-        const isEcom = String(ecomEnv).toLowerCase() === 'true';
+        const isEcom = config.ecom;
         if (isEcom) {
           navigate('/order');
         } else {

@@ -11,6 +11,7 @@ import SeoHelmet from '../seo/SeoHelmet';
 import ProductSchema from '../seo/ProductSchema';
 import { productMetaTemplate } from '../../seo/metaTemplates';
 import Banner from './Banner';
+import { config } from '../../config/env';
 
 import Fields from '../common/Fields';
 import { client as clientData, cms } from '../../utils/apiData';
@@ -240,7 +241,7 @@ const ProductLayout = ({
 
   const productMeta = useMemo(() => productMetaTemplate(
     foundProduct || { name: productData.title, description: productData.description, tags: seoKeywords, image: activeImage },
-    typeof window !== 'undefined' ? window.location.origin : (import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in')
+    typeof window !== 'undefined' ? window.location.origin : (config.siteUrl || 'https://www.ashmitaenterprises.co.in')
   ), [foundProduct, productData, seoKeywords, activeImage]);
 
   const cardRenderers = useMemo(() => ({
@@ -311,7 +312,7 @@ const ProductLayout = ({
                 <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
                   <div className='pr-10 sm-pr-1'>
                     <div className='relative'>
-                      {import.meta.env.VITE_MAGNIFY === 'true' ? (
+                      {config.magnify ? (
                         <ImageMagnifier
                           src={activeImage}
                           alt={productData.title}

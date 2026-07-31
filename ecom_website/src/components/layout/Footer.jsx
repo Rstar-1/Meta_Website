@@ -4,6 +4,7 @@ import Image from '../common/Image'
 import Icon from '../common/Icon'
 import { footer as footerData, products } from '../../utils/apiData'
 import NewsletterForm from '../forms/NewsletterForm'
+import { config } from '../../config/env'
 
 const logoImg = "/sobo_logo.webp";
 
@@ -56,8 +57,7 @@ const Footer = () => {
               </p>
               <div className="flex gap-12 mt-30">
                 {footerData.brand.socials.map((social, idx) => {
-                  const envKey = `VITE_SOCIAL_${social.platform.toUpperCase()}`;
-                  const url = import.meta.env[envKey] || social.url;
+                  const url = config.social[social.platform.toLowerCase()] || social.url;
                   return (
                     <a
                       key={idx}

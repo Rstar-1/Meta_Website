@@ -1,4 +1,6 @@
-export const generateRobots = (baseUrl = import.meta.env.VITE_SITE_URL || 'https://www.ashmitaenterprises.co.in') => {
+import { config } from '../config/env';
+
+export const generateRobots = (baseUrl = config.siteUrl || 'https://www.ashmitaenterprises.co.in') => {
   return `# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
