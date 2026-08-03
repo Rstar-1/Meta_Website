@@ -1,15 +1,36 @@
 import { memo, useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Container from "../common/Container";
 import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
 import Dropdown from "../common/Dropdown";
+import Modal from "../common/Modal";
+import FormBuilder from "../common/FormBuilder";
+import Steps from "../common/Steps";
 import { products as productsData, categories as categoriesData } from "../../utils/apiData";
 import headerConfig from "../../data/header.json";
 import Fields from "../common/Fields";
 import { resolveProductImage } from "../../utils/imageResolver";
 import { config } from "../../config/env";
+import { logout } from "../../feature/authSlice";
+import { useLogin } from "../../hook/useLogin";
+import { useRegister } from "../../hook/useRegister";
+import { useVerifyOtp } from "../../hook/useVerifyOtp";
+import { useMutation } from "@tanstack/react-query";
+import { forgotPassword, verifyForgotOtp, resetPassword } from "../../api/authApi";
+
+/* ── Mobile: generic row link ── */
+const MobileRow = ({ icon, label, onClick }) => (
+  <div onClick={onClick} className="flex items-center justify-between py-16 px-20 bordb" style={{ cursor: "pointer" }}>
+    <div className="flex items-center gap-12">
+      <Icon name={icon} width="16" height="16" stroke="#1f2937" />
+      <p className="small-text text-dark font-500" style={{ margin: 0 }}>{label}</p>
+    </div>
+    <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
+  </div>
+);
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,6 +59,56 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const { isLoggedIn, user } = useSelector((state) => state.auth) || {};
+  const dispatch = useDispatch();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
+  const [loginError, setLoginError] = useState("");
+  const [registerError, setRegisterError] = useState("");
+  const loginMutation = useLogin();
+  const registerMutation = useRegister();
+  const verifyOtpMutation = useVerifyOtp();
+  const [registerStep, setRegisterStep] = useState("form");
+  const [formStep, setFormStep] = useState(1);
+  const [registerFormData, setRegisterFormData] = useState({});
+  const [tempRegisterData, setTempRegisterData] = useState(null);
+
+  const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
+  const [forgotPasswordStep, setForgotPasswordStep] = useState(1);
+  const [forgotPasswordError, setForgotPasswordError] = useState("");
+  const [forgotPasswordFormData, setForgotPasswordFormData] = useState({});
+
+  const forgotPasswordMutation = useMutation({
+    mutationFn: forgotPassword
+  });
+
+  const verifyForgotOtpMutation = useMutation({
+    mutationFn: verifyForgotOtp
+  });
+
+  const resetPasswordMutation = useMutation({
+    mutationFn: resetPassword
+  });
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
+
+  const userMenuItems = [
+    { label: "My Profile", icon: "Users", path: "/profile", show: true },
+    { label: "Admin Panel", icon: "Dashboard", path: "/admin", show: user?.role === "admin" },
+    { label: "Logout", icon: "Logout", action: handleLogout, show: true, className: "text-danger" }
+  ];
+
+  const dropdownItems = isLoggedIn
+    ? userMenuItems.filter((item) => item.show)
+    : [
+      { label: "Login", icon: "Login", action: () => setIsLoginModalOpen(true) },
+      { label: "Register", icon: "Register", action: () => setIsRegisterModalOpen(true) }
+    ];
+
 
   useEffect(() => {
     const updateCount = () => setCartCount(JSON.parse(localStorage.getItem('cart') || '[]').length);
@@ -61,28 +132,30 @@ const Header = () => {
     else navigate("/products");
   };
 
-  const renderTopSubmenu = (submenu) => (
+  const renderTopSubmenu = (submenu) =>
     submenu.map((sub, sIdx) => {
-      let label = sub.label;
-      let href = sub.href;
+      let { label, href, path, type } = sub;
       const phoneEnv = config.phone;
       if (phoneEnv) {
-        if (sub.type === "tel") {
+        if (type === "tel") {
           label = `Call +91 ${phoneEnv.slice(0, 5)} ${phoneEnv.slice(5)}`;
           href = `tel:+91${phoneEnv}`;
-        } else if (sub.type === "external" && href.includes("wa.me")) {
+        } else if (type === "external" && href?.includes("wa.me")) {
           href = `https://wa.me/91${phoneEnv}`;
         }
       }
-      return sub.type === "tel" ? (
-        <a key={sIdx} href={href} className="drop-item"><p className="mini-text font-500 px-6 py-2">{label}</p></a>
-      ) : sub.type === "external" ? (
-        <a key={sIdx} href={href} target="_blank" rel="noreferrer" className="drop-item"><p className="mini-text font-500 px-6 py-2">{label}</p></a>
-      ) : (
-        <NavLink key={sIdx} to={sub.path} className="drop-item"><p className="mini-text font-500 px-6 py-2">{label}</p></NavLink>
+      const isExt = type === "tel" || type === "external";
+      const Tag = isExt ? "a" : NavLink;
+      return (
+        <Tag
+          key={sIdx}
+          {...(isExt ? { href, target: type === "external" ? "_blank" : undefined, rel: "noreferrer" } : { to: path })}
+          className="drop-item"
+        >
+          <p className="mini-text font-500 px-6 py-2">{label}</p>
+        </Tag>
       );
-    })
-  );
+    });
 
   /* ── Shared TopNav item renderer (used for both left + right) ── */
   const renderTopNavItem = (item, idx, align) => (
@@ -104,17 +177,6 @@ const Header = () => {
       ) : (
         <NavLink to={item.path} className="top-nav-link">{item.label}</NavLink>
       )}
-    </div>
-  );
-
-  /* ── Mobile: generic row link ── */
-  const MobileRow = ({ icon, label, onClick }) => (
-    <div onClick={onClick} className="flex items-center justify-between py-16 px-20 bordb" style={{ cursor: "pointer" }}>
-      <div className="flex items-center gap-12">
-        <Icon name={icon} width="16" height="16" stroke="#1f2937" />
-        <p className="small-text text-dark font-500">{label}</p>
-      </div>
-      <Icon name="ChevronRight" width="16" height="16" stroke="#9ca3af" />
     </div>
   );
 
@@ -381,9 +443,8 @@ const Header = () => {
                   </div>
                 ) : (
                   <div
-                    className="top-nav-link"
+                    className="top-nav-link flex items-center gap-4"
                     onClick={() => setIsSearchOpen(true)}
-                    style={{ display: "flex", alignItems: "center", gap: "4px" }}
                   >
                     <Icon name="Search" width="14" height="14" stroke="currentColor" /> SEARCH
                   </div>
@@ -397,9 +458,72 @@ const Header = () => {
               <div className="header-v-divider" />
 
               {/* ACCOUNT USER ICON */}
-              <NavLink to="/connect" className="top-nav-link p-4" title="User Account">
-                <Icon name="Users" width="17" height="17" stroke="currentColor" />
-              </NavLink>
+              <div
+                className="relative flex items-center"
+                onMouseEnter={() => setIsUserDropdownOpen(true)}
+                onMouseLeave={() => setIsUserDropdownOpen(false)}
+              >
+                {isLoggedIn ? (
+                  <div
+                    className="top-nav-link p-4 cursor-pointer flex items-center"
+                    title="User Account"
+                  >
+                    <Icon name="Users" width="17" height="17" stroke="#f25c2b" />
+                  </div>
+                ) : (
+                  <div
+                    className="top-nav-link p-4 cursor-pointer flex items-center"
+                    title="Account Options"
+                  >
+                    <Icon name="Users" width="17" height="17" stroke="currentColor" />
+                  </div>
+                )}
+
+                {isUserDropdownOpen && (
+                  <Dropdown isOpen={isUserDropdownOpen} align="right" minWidth="200px">
+                    <div className="p-12 bordb flex items-center gap-12">
+                      {isLoggedIn ? (
+                        <>
+                          <div className="rounded-full bg-light-primary icon-lg text-primary">
+                            <Icon name="Users" width="20" height="20" stroke="currentColor" />
+                          </div>
+                          <div>
+                            <h4 className="font-600 text-dark headmini-text capitalize">{user?.fullname || "User"}</h4>
+                            <p className="text-gray mini-text">{user?.role || "Customer"}</p>
+                          </div>
+                        </>
+                      ) : (
+                        <div>
+                          <h4 className="font-600 text-dark headmini-text capitalize">Welcome Guest</h4>
+                          <p className="text-gray mini-text">Manage your account</p>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-4">
+                      {dropdownItems.map((item, idx) => (
+                        <p
+                          key={idx}
+                          className={`drop-item rounded-5 mini-text cursor-pointer p-10 flex items-center gap-8 ${item.className || ""}`}
+                          onClick={() => {
+                            setIsUserDropdownOpen(false);
+                            item.action ? item.action() : navigate(item.path);
+                          }}
+                        >
+                          {item.icon && (
+                            <Icon
+                              name={item.icon}
+                              width="14"
+                              height="14"
+                              stroke="currentColor"
+                            />
+                          )}
+                          <span>{item.label}</span>
+                        </p>
+                      ))}
+                    </div>
+                  </Dropdown>
+                )}
+              </div>
 
               <div className="header-v-divider" />
 
@@ -642,6 +766,43 @@ const Header = () => {
                     }}
                   />
                 ))}
+                {isLoggedIn ? (
+                  <>
+                    <div className="flex items-center justify-between py-16 px-20 bordb" style={{ backgroundColor: "#f0fdf4" }}>
+                      <div className="flex items-center gap-12">
+                        <Icon name="Users" width="16" height="16" stroke="#15803d" />
+                        <p className="small-text font-600" style={{ color: "#15803d", margin: 0 }}>Logged in as {user?.fullname}</p>
+                      </div>
+                    </div>
+                    <MobileRow
+                      icon="Close"
+                      label="Logout"
+                      onClick={() => {
+                        closeMobile();
+                        handleLogout();
+                      }}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <MobileRow
+                      icon="Users"
+                      label="Login"
+                      onClick={() => {
+                        closeMobile();
+                        setIsLoginModalOpen(true);
+                      }}
+                    />
+                    <MobileRow
+                      icon="Users"
+                      label="Register"
+                      onClick={() => {
+                        closeMobile();
+                        setIsRegisterModalOpen(true);
+                      }}
+                    />
+                  </>
+                )}
               </div>
             ) : (
               // SCREEN 2: SUBMENU VIEW
@@ -653,6 +814,668 @@ const Header = () => {
           </div>
         </div>
       )}
+
+      {/* LOGIN MODAL */}
+      <Modal
+        isOpen={isLoginModalOpen}
+        onClose={() => {
+          setIsLoginModalOpen(false);
+          setLoginError("");
+        }}
+        title="Welcome Back"
+        size="sm"
+        footer={null}
+      >
+        <div className="py-10">
+          {loginError && (
+            <div className="p-12 mb-16 rounded-5 bg-light-danger">
+              <p className="mini-text font-500 text-danger">{loginError}</p>
+            </div>
+          )}
+
+          <FormBuilder
+            key={isLoginModalOpen ? "open" : "closed"}
+            fields={[
+              {
+                name: "mobile",
+                type: "tel",
+                label: "Mobile Number",
+                placeholder: "Enter mobile number",
+                validation: { required: true, mobile: true }
+              },
+              {
+                name: "password",
+                type: "password",
+                label: "Password",
+                placeholder: "Enter password",
+                validation: { required: true }
+              }
+            ]}
+            submitType="json"
+            onSubmit={(formData) => {
+              setLoginError("");
+              loginMutation.mutate(formData, {
+                onSuccess: () => {
+                  setIsLoginModalOpen(false);
+                },
+                onError: (err) => {
+                  setLoginError(err.response?.data?.message || err.message || "Invalid mobile or password.");
+                }
+              });
+            }}
+            buttonClassName="hidden"
+          >
+            <div className="flex justify-end mt-4">
+              <span 
+                className="mini-text text-primary cursor-pointer font-500"
+                onClick={() => {
+                  setIsLoginModalOpen(false);
+                  setIsForgotPasswordModalOpen(true);
+                }}
+              >
+                Forgot Password?
+              </span>
+            </div>
+
+            <Button
+              type="submit"
+              disabled={loginMutation.isPending}
+              bg="primary"
+              color="white"
+              version="v2"
+              className="mt-20 w-full"
+            >
+              {loginMutation.isPending ? (
+                "Logging in..."
+              ) : (
+                "Login"
+              )}
+            </Button>
+
+            <div className="text-center mt-20">
+              <p className="mini-text text-gray">
+                Don't have an account?{" "}
+                <span
+                  className="text-primary font-600 cursor-pointer ml-4"
+                  onClick={() => {
+                    setIsLoginModalOpen(false);
+                    setIsRegisterModalOpen(true);
+                  }}
+                >
+                  Register here
+                </span>
+              </p>
+            </div>
+          </FormBuilder>
+        </div>
+      </Modal>
+
+      {/* FORGOT PASSWORD MODAL */}
+      <Modal
+        isOpen={isForgotPasswordModalOpen}
+        onClose={() => {
+          setIsForgotPasswordModalOpen(false);
+          setForgotPasswordError("");
+          setForgotPasswordStep(1);
+          setForgotPasswordFormData({});
+        }}
+        title={
+          forgotPasswordStep === 1
+            ? "Forgot Password"
+            : forgotPasswordStep === 2
+            ? "Verify OTP"
+            : "Reset Password"
+        }
+        size="sm"
+        footer={null}
+      >
+        <div className="py-10">
+          {forgotPasswordError && (
+            <div className="p-12 mb-16 rounded-5 bg-light-danger">
+              <p className="mini-text font-500 text-danger">{forgotPasswordError}</p>
+            </div>
+          )}
+
+          {forgotPasswordStep === 1 ? (
+            <FormBuilder
+              key="forgot-password-step-1"
+              fields={[
+                {
+                  name: "mobile",
+                  type: "tel",
+                  label: "Mobile Number",
+                  placeholder: "Enter mobile number",
+                  validation: { required: true, mobile: true }
+                }
+              ]}
+              submitType="json"
+              onSubmit={(formData) => {
+                setForgotPasswordError("");
+                forgotPasswordMutation.mutate(
+                  { mobile: formData.mobile },
+                  {
+                    onSuccess: () => {
+                      setForgotPasswordFormData({ mobile: formData.mobile });
+                      setForgotPasswordStep(2);
+                    },
+                    onError: (err) => {
+                      setForgotPasswordError(
+                        err.response?.data?.message || err.message || "Failed to send OTP. Try again."
+                      );
+                    }
+                  }
+                );
+              }}
+              buttonClassName="hidden"
+            >
+              <div className="text-center mt-16">
+                <div className="rounded-full bg-light-primary text-primary mx-auto flex items-center justify-center" style={{ height: '54px', width: '54px' }}>
+                  <Icon name="Lock" width="23" height="23" stroke="currentColor" />
+                </div>
+                <h3 className="font-500 text-dark mid-text pt-8">Reset Password</h3>
+                <p className="text-gray mini-text">Enter your mobile number to request an OTP code</p>
+              </div>
+
+              <Button
+                type="submit"
+                disabled={forgotPasswordMutation.isPending}
+                bg="primary"
+                color="white"
+                version="v2"
+                className="mt-20 w-full"
+              >
+                {forgotPasswordMutation.isPending ? "Sending OTP..." : "Send OTP"}
+              </Button>
+
+              <div className="text-center mt-20">
+                <span
+                  className="text-primary font-600 cursor-pointer ml-4 mini-text"
+                  onClick={() => {
+                    setIsForgotPasswordModalOpen(false);
+                    setIsLoginModalOpen(true);
+                  }}
+                >
+                  &larr; Back to Login
+                </span>
+              </div>
+            </FormBuilder>
+          ) : forgotPasswordStep === 2 ? (
+            <FormBuilder
+              key="forgot-password-step-2"
+              fields={[
+                {
+                  name: "otp",
+                  type: "text",
+                  label: "OTP Code",
+                  placeholder: "Enter verification OTP",
+                  validation: { required: true }
+                }
+              ]}
+              submitType="json"
+              onSubmit={(formData) => {
+                setForgotPasswordError("");
+                verifyForgotOtpMutation.mutate(
+                  {
+                    mobile: forgotPasswordFormData.mobile,
+                    otp: formData.otp
+                  },
+                  {
+                    onSuccess: () => {
+                      setForgotPasswordFormData(prev => ({ ...prev, otp: formData.otp }));
+                      setForgotPasswordStep(3);
+                    },
+                    onError: (err) => {
+                      setForgotPasswordError(
+                        err.response?.data?.message || err.message || "Invalid OTP code."
+                      );
+                    }
+                  }
+                );
+              }}
+              buttonClassName="hidden"
+            >
+              <div className="text-center mt-16">
+                <div className="rounded-full bg-light-primary text-primary mx-auto flex items-center justify-center" style={{ height: '54px', width: '54px' }}>
+                  <Icon name="Mail" width="23" height="23" stroke="currentColor" />
+                </div>
+                <h3 className="font-500 text-dark mid-text pt-8">Verify OTP</h3>
+                <p className="text-gray mini-text">Enter the OTP sent to {forgotPasswordFormData.mobile}</p>
+              </div>
+
+              <Button
+                type="submit"
+                disabled={verifyForgotOtpMutation.isPending}
+                bg="primary"
+                color="white"
+                version="v2"
+                className="mt-20 w-full"
+              >
+                {verifyForgotOtpMutation.isPending ? "Verifying..." : "Verify OTP"}
+              </Button>
+
+              <div className="text-center mt-20">
+                <span
+                  className="text-gray cursor-pointer mini-text"
+                  onClick={() => setForgotPasswordStep(1)}
+                >
+                  &larr; Change Mobile Number
+                </span>
+              </div>
+            </FormBuilder>
+          ) : (
+            <FormBuilder
+              key="forgot-password-step-3"
+              fields={[
+                {
+                  name: "password",
+                  type: "password",
+                  label: "New Password",
+                  placeholder: "Enter new password",
+                  validation: { required: true }
+                },
+                {
+                  name: "confirmPassword",
+                  type: "password",
+                  label: "Confirm Password",
+                  placeholder: "Confirm new password",
+                  validation: { required: true }
+                }
+              ]}
+              submitType="json"
+              onSubmit={(formData) => {
+                setForgotPasswordError("");
+                if (formData.password !== formData.confirmPassword) {
+                  setForgotPasswordError("Passwords do not match.");
+                  return;
+                }
+                resetPasswordMutation.mutate(
+                  {
+                    mobile: forgotPasswordFormData.mobile,
+                    password: formData.password
+                  },
+                  {
+                    onSuccess: () => {
+                      alert("Password reset successfully! Please login with your new password.");
+                      setIsForgotPasswordModalOpen(false);
+                      setIsLoginModalOpen(true);
+                      setForgotPasswordStep(1);
+                      setForgotPasswordFormData({});
+                    },
+                    onError: (err) => {
+                      setForgotPasswordError(
+                        err.response?.data?.message || err.message || "Failed to reset password."
+                      );
+                    }
+                  }
+                );
+              }}
+              buttonClassName="hidden"
+            >
+              <div className="text-center mt-16">
+                <div className="rounded-full bg-light-primary text-primary mx-auto flex items-center justify-center" style={{ height: '54px', width: '54px' }}>
+                  <Icon name="Lock" width="23" height="23" stroke="currentColor" />
+                </div>
+                <h3 className="font-500 text-dark mid-text pt-8">Create New Password</h3>
+                <p className="text-gray mini-text">Ensure your new password is secure</p>
+              </div>
+
+              <Button
+                type="submit"
+                disabled={resetPasswordMutation.isPending}
+                bg="primary"
+                color="white"
+                version="v2"
+                className="mt-20 w-full"
+              >
+                {resetPasswordMutation.isPending ? "Resetting Password..." : "Reset Password"}
+              </Button>
+            </FormBuilder>
+          )}
+        </div>
+      </Modal>
+
+      {/* REGISTER MODAL */}
+      <Modal
+        isOpen={isRegisterModalOpen}
+        onClose={() => {
+          setIsRegisterModalOpen(false);
+          setRegisterError("");
+          setRegisterStep("form");
+          setFormStep(1);
+          setRegisterFormData({});
+          setTempRegisterData(null);
+        }}
+        title={registerStep === "otp" ? "Verify OTP" : "Create an Account"}
+        size="sm"
+        footer={null}
+      >
+        <div className="py-10">
+          {registerStep !== "otp" && (
+            <Steps
+              currentStep={formStep}
+              steps={["Personal", "Contact", "Security", "Complete"]}
+            />
+          )}
+
+          {registerError && (
+            <div className="p-12 mb-16 rounded-5 bg-light-danger">
+              <p className="mini-text font-500 text-danger">{registerError}</p>
+            </div>
+          )}
+
+          {registerStep === "form" ? (
+            formStep === 1 ? (
+              <FormBuilder
+                key="register-step-1"
+                fields={[
+                  {
+                    name: "fullname",
+                    type: "text",
+                    label: "Full Name",
+                    placeholder: "Enter your full name",
+                    defaultValue: registerFormData.fullname || "",
+                    validation: { required: true }
+                  }
+                ]}
+                submitType="json"
+                onSubmit={(formData) => {
+                  setRegisterError("");
+                  setRegisterFormData(formData);
+                  setFormStep(2);
+                }}
+                buttonClassName="hidden"
+              >
+                <div className="text-center mt-16">
+                  <div className="rounded-full bg-light-primary text-primary mx-auto flex items-center justify-center" style={{ height: '54px', width: '54px' }}>
+                    <Icon name="Users" width="23" height="23" stroke="currentColor" />
+                  </div>
+                  <h3 className="font-500 text-dark mid-text pt-8">Let's start with your name</h3>
+                  <p className="text-gray mini-text">Enter your full name to continue</p>
+                </div>
+                <div className="flex justify-end mt-20">
+                  <Button
+                    type="submit"
+                    bg="primary"
+                    color="white"
+                    version="v2"
+                  >
+                    Next &rarr;
+                  </Button>
+                </div>
+              </FormBuilder>
+            ) : formStep === 2 ? (
+              <FormBuilder
+                key="register-step-2"
+                fields={[
+                  {
+                    name: "email",
+                    type: "email",
+                    label: "Email Address",
+                    placeholder: "Enter your email address",
+                    defaultValue: registerFormData.email || "",
+                    validation: { required: true, email: true }
+                  },
+                  {
+                    name: "mobile",
+                    type: "tel",
+                    label: "Mobile Number",
+                    placeholder: "Enter mobile number",
+                    defaultValue: registerFormData.mobile || "",
+                    validation: { required: true, mobile: true }
+                  }
+                ]}
+                submitType="json"
+                onSubmit={(formData) => {
+                  setRegisterError("");
+                  setRegisterFormData(prev => ({
+                    ...prev,
+                    email: formData.email,
+                    mobile: formData.mobile
+                  }));
+                  setFormStep(3);
+                }}
+                buttonClassName="hidden"
+              >
+                <div className="flex items-center justify-between mt-20">
+                  <Button
+                    type="button"
+                    onClick={() => setFormStep(1)}
+                    bg="forth"
+                    color="dark"
+                    version="v2"
+                  >
+                    &larr; Back
+                  </Button>
+                  <Button
+                    type="submit"
+                    bg="primary"
+                    color="white"
+                    version="v2"
+                  >
+                    Next &rarr;
+                  </Button>
+                </div>
+              </FormBuilder>
+            ) : formStep === 3 ? (
+              <FormBuilder
+                key="register-step-3"
+                fields={[
+                  {
+                    name: "password",
+                    type: "password",
+                    label: "Password",
+                    placeholder: "Create password",
+                    validation: { required: true }
+                  },
+                  {
+                    name: "confirmPassword",
+                    type: "password",
+                    label: "Confirm Password",
+                    placeholder: "Confirm password",
+                    validation: { required: true }
+                  }
+                ]}
+                submitType="json"
+                onSubmit={(formData) => {
+                  setRegisterError("");
+                  if (formData.password !== formData.confirmPassword) {
+                    setRegisterError("Passwords do not match.");
+                    return;
+                  }
+                  setRegisterFormData(prev => ({
+                    ...prev,
+                    password: formData.password
+                  }));
+                  setFormStep(4);
+                }}
+                buttonClassName="hidden"
+              >
+
+                {/* Requirements list */}
+                <div className="mt-12 mb-20 text-gray mini-text flex flex-column gap-6" style={{ paddingLeft: "4px" }}>
+                  <div className="flex items-center gap-6">
+                    <Icon name="Check" width="14" height="14" stroke="#10b981" strokeWidth="2.5" />
+                    <span>At least 8 characters</span>
+                  </div>
+                  <div className="flex items-center gap-6">
+                    <Icon name="Check" width="14" height="14" stroke="#10b981" strokeWidth="2.5" />
+                    <span>Include a number or symbol</span>
+                  </div>
+                  <div className="flex items-center gap-6">
+                    <Icon name="Check" width="14" height="14" stroke="#10b981" strokeWidth="2.5" />
+                    <span>Mix of uppercase and lowercase</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between mt-20">
+                  <Button
+                    type="button"
+                    onClick={() => setFormStep(2)}
+                    bg="forth"
+                    color="dark"
+                    version="v2"
+                  >
+                    &larr; Back
+                  </Button>
+                  <Button
+                    type="submit"
+                    bg="primary"
+                    color="white"
+                    version="v2"
+                  >
+                    Next &rarr;
+                  </Button>
+                </div>
+              </FormBuilder>
+            ) : (
+              <FormBuilder
+                key="register-step-4"
+                fields={[]}
+                submitType="json"
+                onSubmit={() => {
+                  setRegisterError("");
+                  registerMutation.mutate(registerFormData, {
+                    onSuccess: () => {
+                      setTempRegisterData(registerFormData);
+                      setRegisterStep("otp");
+                    },
+                    onError: (err) => {
+                      setRegisterError(err.response?.data?.message || err.message || "Registration failed. Try again.");
+                    }
+                  });
+                }}
+                buttonClassName="hidden"
+              >
+                <div className="flex flex-column items-center mb-24 text-center">
+                  <div className="rounded-full flex items-center justify-center" style={{ width: "56px", height: "56px", backgroundColor: "#ffedd5", color: "#ea580c" }}>
+                    <Icon name="Check" width="24" height="24" stroke="currentColor" />
+                  </div>
+                  <h3 className="font-600 text-dark mid-text pt-4">Review & Confirm</h3>
+                  <p className="text-gray mini-text">Please review your details before creating your account</p>
+                </div>
+
+                <div className="grid-cols-1 gap-5">
+                  <div className="flex items-center justify-between pb-8 border-b" style={{ borderColor: "#ececec" }}>
+                    <p className="text-gray mini-text">Full Name</p>
+                    <p className="text-dark font-600 headmini-text capitalize">{registerFormData.fullname}</p>
+                  </div>
+                  <div className="flex items-center justify-between pb-8 border-b" style={{ borderColor: "#ececec" }}>
+                    <p className="text-gray mini-text">Email Address</p>
+                    <p className="text-dark font-600 headmini-text">{registerFormData.email}</p>
+                  </div>
+                  <div className="flex items-center justify-between pb-8 border-b" style={{ borderColor: "#ececec" }}>
+                    <p className="text-gray mini-text">Mobile Number</p>
+                    <p className="text-dark font-600 headmini-text">{registerFormData.mobile}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between mt-10">
+                  <Button
+                    type="button"
+                    onClick={() => setFormStep(3)}
+                    bg="forth"
+                    color="dark"
+                    version="v2"
+                  >
+                    &larr; Back
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={registerMutation.isPending}
+                    bg="primary"
+                    color="white"
+                    version="v2"
+                  >
+                    {registerMutation.isPending ? "Registering..." : "Register"}
+                  </Button>
+                </div>
+              </FormBuilder>
+            )
+          ) : (
+            <FormBuilder
+              key="otp-verification-form"
+              fields={[
+                {
+                  name: "otp",
+                  type: "text",
+                  label: "OTP Code",
+                  placeholder: "Enter the OTP sent to your phone",
+                  validation: { required: true }
+                }
+              ]}
+              submitType="json"
+              onSubmit={(otpData) => {
+                setRegisterError("");
+                verifyOtpMutation.mutate(
+                  {
+                    mobile: tempRegisterData?.mobile,
+                    otp: otpData.otp
+                  },
+                  {
+                    onSuccess: () => {
+                      // Automatically login the user once OTP is verified
+                      loginMutation.mutate(
+                        {
+                          mobile: tempRegisterData?.mobile,
+                          password: tempRegisterData?.password
+                        },
+                        {
+                          onSuccess: () => {
+                            setIsRegisterModalOpen(false);
+                            setRegisterStep("form");
+                            setFormStep(1);
+                            setRegisterFormData({});
+                            setTempRegisterData(null);
+                          },
+                          onError: (err) => {
+                            setRegisterError(err.response?.data?.message || err.message || "OTP verified, but automatic login failed. Please login manually.");
+                          }
+                        }
+                      );
+                    },
+                    onError: (err) => {
+                      setRegisterError(err.response?.data?.message || err.message || "Invalid OTP code.");
+                    }
+                  }
+                );
+              }}
+              buttonClassName="hidden"
+            >
+              <Button
+                type="submit"
+                disabled={verifyOtpMutation.isPending || loginMutation.isPending}
+                bg="primary"
+                color="white"
+                version="v3"
+                className="mt-12 w-full flex items-center justify-center gap-6"
+              >
+                {verifyOtpMutation.isPending ? (
+                  <span className="flex items-center gap-4 justify-center">
+                    <svg
+                      className="animate-spin"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      style={{ animation: "spin 1s linear infinite" }}
+                    >
+                      <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" />
+                      <path d="M12 2a10 10 0 0 1 10 10" stroke="white" />
+                    </svg>
+                    Verifying...
+                  </span>
+                ) : loginMutation.isPending ? (
+                  "Logging in..."
+                ) : (
+                  "Verify OTP"
+                )}
+              </Button>
+            </FormBuilder>
+          )}
+        </div>
+      </Modal>
     </>
   );
 };

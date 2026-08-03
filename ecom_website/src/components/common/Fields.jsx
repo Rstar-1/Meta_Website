@@ -43,7 +43,7 @@ const Fields = ({
         return !isNaN(parsed.getTime()) ? parsed.getFullYear() : new Date().getFullYear();
     });
 
-    const clsInput = `${outline && !error && !isFocused ? "border-ec" : border ? "border-forth" : "border-0"
+    const clsInput = `${outline && !error && !isFocused ? "border-forth" : border ? "border-forth" : "border-forth"
         } h-input rounded-5 text-gray w-full mini-text`;
 
     const clsBox = `${outline ? "border-ec" : border ? "border-forth" : "border-0"
@@ -91,18 +91,21 @@ const Fields = ({
         onChange?.(val);
     };
 
-    const getInputStyle = () => ({
-        padding: "10px 0px",
-        textIndent: "12px",
-        borderRadius: "8px",
-        border: `1px solid ${error ? "var(--danger)" : isFocused ? "var(--secondary)" : outline ? "#ececec" : "var(--forth)"
-            }`,
-        fontSize: "13px",
-        outline: "none",
-        width: "100%",
-        backgroundColor: "var(--white)",
-        color: "var(--gray)",
-    });
+    const getInputStyle = () => {
+        const hasLeftIcon = icon && iconPosition === "left";
+        return {
+            padding: "10px 12px",
+            paddingLeft: hasLeftIcon ? "36px" : "12px",
+            borderRadius: "8px",
+            border: `1px solid ${error ? "var(--danger)" : isFocused ? "var(--secondary)" : outline ? "#ececec" : "var(--forth)"
+                }`,
+            fontSize: "13px",
+            outline: "none",
+            width: "100%",
+            backgroundColor: "var(--white)",
+            color: "var(--gray)",
+        };
+    };
 
     const commonProps = {
         value: value || "",
@@ -176,6 +179,8 @@ const Fields = ({
                         className={`${clsInput} ${className || ""}`}
                         style={{
                             ...commonProps.style,
+                            paddingLeft: isLeft ? "38px" : "12px",
+                            paddingRight: !isLeft ? "38px" : "12px",
                         }}
                     />
                     {!isLeft && (
@@ -194,32 +199,39 @@ const Fields = ({
         }
 
         switch (type) {
-            case "password":
+            case "password": {
+                const isLeft = iconPosition === "left";
                 return (
                     <div className="relative w-full flex items-center overflow-hidden rounded-5">
+                        {icon && isLeft && (
+                            <div className="absolute left-0 text-gray flex items-center pointer-events-none p-10 mx-2 rounded-5">
+                                <Icon name={icon} width="16" height="16" stroke="var(--gray)" />
+                            </div>
+                        )}
                         <input
                             type={showPassword ? "text" : "password"}
                             {...commonProps}
-                            className={`${clsInput} pr-12 ${className || ""}`}
+                            className={`${clsInput} ${className || ""}`}
+                            style={{
+                                ...commonProps.style,
+                                paddingLeft: icon && isLeft ? "38px" : "12px",
+                                paddingRight: "40px",
+                            }}
                         />
                         <div
                             onClick={() => setShowPassword(!showPassword)}
-                            className="absolute top-0 right-0 p-10 bg-white cursor-pointer text-gray"
+                            className="absolute top-0 right-0 p-10 bg-white cursor-pointer text-gray m-3 rounded-5"
+                            style={{ zIndex: 2 }}
                         >
                             {showPassword ? (
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
+                                <Icon name="Eye" width="15" height="15" stroke="currentColor" strokeWidth="2" />
                             ) : (
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
-                                    <line x1="1" y1="1" x2="23" y2="23" />
-                                </svg>
+                                <Icon name="EyeOff" width="15" height="15" stroke="currentColor" strokeWidth="2" />
                             )}
                         </div>
                     </div>
                 );
+            }
 
             case "range-datepicker": {
                 const fromDate = value?.fromDate || "";
@@ -1051,7 +1063,7 @@ const Fields = ({
     return (
         <div className="w-full grid-cols-1">
             {label && (
-                <label className="mini-text font-500 text-gray">
+                <label className="mini-text font-400 text-gray mb-3">
                     {label}
                 </label>
             )}

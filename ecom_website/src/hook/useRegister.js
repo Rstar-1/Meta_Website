@@ -1,15 +1,17 @@
 import { useMutation } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../api/authApi";
+import { registerUser } from "../api/authApi";
 import { setAuth } from "../feature/authSlice";
 
-export const useLogin = () => {
+export const useRegister = () => {
     const dispatch = useDispatch();
 
     return useMutation({
-        mutationFn: loginUser,
+        mutationFn: registerUser,
         onSuccess: (data) => {
-            dispatch(setAuth(data.data));
+            if (data?.data?.user && data?.data?.token) {
+                dispatch(setAuth(data.data));
+            }
         },
     });
 };

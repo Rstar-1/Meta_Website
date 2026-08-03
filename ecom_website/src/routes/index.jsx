@@ -18,6 +18,7 @@ const Cart = lazy(() => import('../pages/cart/Cart'))
 const Order = lazy(() => import('../pages/order/Order'))
 const SupplierDetail = lazy(() => import('../pages/supplier/SupplierDetail'))
 const Purchase = lazy(() => import('../pages/purchase/Purchase'))
+const Profile = lazy(() => import('../pages/profile/Profile'))
 
 
 function AppRoutes() {
@@ -41,6 +42,7 @@ function AppRoutes() {
           <Route path="order/:id" element={<Order />} />
           <Route path="supplier/:brandName" element={<SupplierDetail />} />
           <Route path="wheretobuy" element={<Purchase />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="purchase" element={<Navigate to="/wheretobuy" replace />} />
         </Route>
         <Route path="*" element={<h2 style={{ textAlign: 'center', padding: '100px 20px', fontFamily: 'Outfit, sans-serif' }}>404 - Page Not Found</h2>} />
