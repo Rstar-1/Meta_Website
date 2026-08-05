@@ -1,3 +1,4 @@
+import { config } from '../config/env';
 import placeholder from '../assets/placeholder.webp';
 import hero from '../assets/hero.webp';
 // Import standard product images
@@ -254,5 +255,15 @@ const idMap = {
 export const resolveProductImage = (product) =>
   product ? (idMap[product.id] || assetMap[product.image] || product.image || '') : '';
 
-export const resolveImagePath = (path) =>
-  path ? (assetMap[path] || path) : '';
+export const resolveImagePath = (path) => {
+  if (!path) return '';
+  if (assetMap[path]) return assetMap[path];
+  if (path.startsWith('data:') || path.startsWith('http://') || path.startsWith('https://') || path.startsWith('/src/')) {
+    return path;
+  }
+  if (path.startsWith('/uploads/')) {
+    const apiBase = config.apiUrl.replace(/\/api$/, "");
+    return `${apiBase}${path}`;
+  }
+  return path;
+};
