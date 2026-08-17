@@ -1,0 +1,934 @@
+/* Babet Pet Care & Grooming - Home4 CSS Design System */
+
+:root {
+  --babet-orange: #FF6B00;
+  --babet-orange-hover: #E05D00;
+  --babet-orange-light: #FFF0E5;
+  --babet-navy: #13262F;
+  --babet-slate: #2B3A42;
+  --babet-muted: #64748B;
+  --babet-cream-bg: #FFF9F2;
+  --babet-card-bg: #FFFFFF;
+  --babet-border: #F1E5D8;
+  --babet-gold: #FFB800;
+  --babet-radius-lg: 28px;
+  --babet-radius-md: 18px;
+  --babet-font: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --babet-shadow-sm: 0 4px 16px rgba(255, 107, 0, 0.06);
+  --babet-shadow-md: 0 12px 32px rgba(19, 38, 47, 0.08);
+}
+
+.babet-home4-wrapper {
+  font-family: var(--babet-font);
+  background-color: var(--babet-cream-bg);
+  color: var(--babet-navy);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Container */
+.babet-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section Common Header */
+.babet-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.babet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--babet-orange-light);
+  color: var(--babet-orange);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.babet-section-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--babet-navy);
+  margin: 0 0 16px;
+}
+
+.babet-section-subtitle {
+  font-size: 15px;
+  color: var(--babet-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Top Mini Bar & Main Header */
+.babet-topbar {
+  background: var(--babet-navy);
+  color: white;
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+.babet-topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.babet-topbar-left {
+  display: flex;
+  gap: 24px;
+}
+
+.babet-topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.babet-topbar-item:hover {
+  color: var(--babet-orange);
+}
+
+.babet-header {
+  background: white;
+  padding: 18px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.babet-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.babet-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--babet-navy);
+  text-decoration: none;
+}
+
+.babet-logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--babet-orange);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.babet-nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.babet-nav-link {
+  text-decoration: none;
+  color: var(--babet-slate);
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.babet-nav-link:hover {
+  color: var(--babet-orange);
+}
+
+.babet-btn-orange {
+  background: var(--babet-orange);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.babet-btn-orange:hover {
+  background: var(--babet-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 107, 0, 0.3);
+}
+
+.babet-btn-navy {
+  background: var(--babet-navy);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.babet-btn-navy:hover {
+  background: #000000;
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.babet-hero {
+  padding: 60px 0 80px;
+  position: relative;
+  background: linear-gradient(180deg, #FFF9F2 0%, #FFF3E6 100%);
+}
+
+.babet-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.babet-hero-content {
+  max-width: 580px;
+}
+
+.babet-hero-title {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--babet-navy);
+  margin: 0 0 20px;
+}
+
+.babet-hero-title span {
+  color: var(--babet-orange);
+}
+
+.babet-hero-desc {
+  font-size: 17px;
+  color: var(--babet-muted);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.babet-hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.babet-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: var(--babet-shadow-md);
+  border: 1px solid var(--babet-border);
+}
+
+.babet-stat-item {
+  text-align: center;
+}
+
+.babet-stat-val {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--babet-orange);
+  margin-bottom: 2px;
+}
+
+.babet-stat-lbl {
+  font-size: 12px;
+  color: var(--babet-muted);
+  font-weight: 600;
+}
+
+.babet-hero-image-wrapper {
+  position: relative;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(19, 38, 47, 0.12);
+}
+
+.babet-hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.babet-hero-badge-float {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: white;
+  padding: 14px 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* About / Commitment Section */
+.babet-about-section {
+  padding: 80px 0;
+}
+
+.babet-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.babet-about-image-card {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--babet-shadow-md);
+}
+
+.babet-about-img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.babet-features-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 28px 0 36px;
+}
+
+.babet-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--babet-navy);
+}
+
+.babet-check-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--babet-orange-light);
+  color: var(--babet-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* Grooming Services Section */
+.babet-services-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.babet-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.babet-service-card {
+  background: var(--babet-cream-bg);
+  border: 1px solid var(--babet-border);
+  border-radius: 24px;
+  padding: 30px 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.babet-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--babet-shadow-md);
+  border-color: var(--babet-orange);
+}
+
+.babet-service-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: white;
+  color: var(--babet-orange);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--babet-border);
+}
+
+.babet-service-icon {
+  width: 52px;
+  height: 52px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  box-shadow: var(--babet-shadow-sm);
+}
+
+.babet-service-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--babet-navy);
+  margin-bottom: 10px;
+}
+
+.babet-service-desc {
+  font-size: 13.5px;
+  color: var(--babet-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Why Choose Us & Tag Marquee */
+.babet-why-section {
+  padding: 80px 0;
+}
+
+.babet-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.babet-why-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.babet-why-card-item {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid var(--babet-border);
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  box-shadow: var(--babet-shadow-sm);
+  transition: transform 0.2s;
+}
+
+.babet-why-card-item:hover {
+  transform: translateX(6px);
+}
+
+.babet-why-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--babet-orange-light);
+  color: var(--babet-orange);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.babet-why-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--babet-navy);
+  margin-bottom: 4px;
+}
+
+.babet-why-card-text {
+  font-size: 13.5px;
+  color: var(--babet-muted);
+  margin: 0;
+}
+
+/* Marquee Ticker */
+.babet-tag-marquee {
+  background: var(--babet-orange);
+  color: white;
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.babet-marquee-track {
+  display: inline-flex;
+  gap: 40px;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Process Steps Section */
+.babet-process-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.babet-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.babet-process-card {
+  background: var(--babet-cream-bg);
+  border-radius: 24px;
+  padding: 36px 28px;
+  position: relative;
+  border: 1px solid var(--babet-border);
+}
+
+.babet-step-number {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-size: 32px;
+  font-weight: 800;
+  color: rgba(255, 107, 0, 0.2);
+}
+
+.babet-process-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--babet-orange);
+  color: white;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.babet-process-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.babet-process-desc {
+  font-size: 14px;
+  color: var(--babet-muted);
+  line-height: 1.6;
+}
+
+/* Pricing Packages Section */
+.babet-pricing-section {
+  padding: 80px 0;
+}
+
+.babet-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.babet-price-card {
+  background: white;
+  border-radius: 28px;
+  padding: 40px 32px;
+  border: 1px solid var(--babet-border);
+  box-shadow: var(--babet-shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s;
+}
+
+.babet-price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--babet-shadow-md);
+}
+
+.babet-price-card.popular {
+  border: 2px solid var(--babet-orange);
+}
+
+.babet-popular-tag {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--babet-orange);
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.babet-plan-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--babet-navy);
+  margin-bottom: 8px;
+}
+
+.babet-plan-price {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--babet-orange);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.babet-plan-price span {
+  font-size: 14px;
+  color: var(--babet-muted);
+  font-weight: 500;
+}
+
+.babet-plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.babet-plan-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--babet-slate);
+}
+
+/* Testimonials / Success Stories */
+.babet-testimonials-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.babet-testimonial-card {
+  background: var(--babet-cream-bg);
+  border-radius: 28px;
+  padding: 40px;
+  border: 1px solid var(--babet-border);
+  box-shadow: var(--babet-shadow-sm);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.babet-quote-mark {
+  font-size: 40px;
+  color: var(--babet-orange);
+  margin-bottom: 16px;
+}
+
+.babet-quote-body {
+  font-size: 19px;
+  line-height: 1.6;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--babet-navy);
+  margin-bottom: 28px;
+}
+
+.babet-author-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.babet-author-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--babet-orange);
+}
+
+/* Team Section */
+.babet-team-section {
+  padding: 80px 0;
+}
+
+.babet-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.babet-team-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--babet-border);
+  box-shadow: var(--babet-shadow-sm);
+  transition: transform 0.3s;
+}
+
+.babet-team-card:hover {
+  transform: translateY(-6px);
+}
+
+.babet-team-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.babet-team-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.babet-member-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--babet-navy);
+  margin-bottom: 4px;
+}
+
+.babet-member-role {
+  font-size: 13px;
+  color: var(--babet-orange);
+  font-weight: 700;
+}
+
+/* Appointment & FAQ Section */
+.babet-appointment-faq-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.babet-app-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.babet-booking-form-card {
+  background: var(--babet-cream-bg);
+  border-radius: 28px;
+  padding: 36px;
+  border: 1px solid var(--babet-border);
+}
+
+.babet-form-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.babet-form-group {
+  margin-bottom: 16px;
+}
+
+.babet-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--babet-border);
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+  outline: none;
+}
+
+.babet-input:focus {
+  border-color: var(--babet-orange);
+}
+
+/* Blog Section */
+.babet-blog-section {
+  padding: 80px 0;
+}
+
+.babet-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.babet-blog-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--babet-border);
+  box-shadow: var(--babet-shadow-sm);
+  transition: transform 0.3s;
+}
+
+.babet-blog-card:hover {
+  transform: translateY(-6px);
+}
+
+.babet-blog-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.babet-blog-content {
+  padding: 24px;
+}
+
+.babet-blog-meta {
+  display: flex;
+  gap: 14px;
+  font-size: 12.5px;
+  color: var(--babet-muted);
+  margin-bottom: 10px;
+}
+
+.babet-blog-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: var(--babet-navy);
+}
+
+/* Footer */
+.babet-footer {
+  background: var(--babet-navy);
+  color: white;
+  padding: 70px 0 30px;
+}
+
+.babet-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.babet-footer-logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.babet-footer-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+
+}
+
+.babet-footer-heading {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.babet-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.babet-footer-link {
+  margin-bottom: 12px;
+}
+
+.babet-footer-link a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.babet-footer-link a:hover {
+  color: var(--babet-orange);
+}
+
+.babet-copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Rules */
+@media (max-width: 1100px) {
+  .babet-hero-grid, .babet-about-grid, .babet-why-grid, .babet-app-faq-grid {
+    grid-template-columns: 1fr;
+  }
+  .babet-services-grid, .babet-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .babet-pricing-grid, .babet-process-grid, .babet-blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .babet-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .babet-hero-title {
+    font-size: 38px;
+  }
+  .babet-section-title {
+    font-size: 30px;
+  }
+  .babet-services-grid, .babet-pricing-grid, .babet-process-grid, .babet-blog-grid, .babet-team-grid {
+    grid-template-columns: 1fr;
+  }
+  .babet-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .babet-nav-links {
+    display: none;
+  }
+  .babet-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
