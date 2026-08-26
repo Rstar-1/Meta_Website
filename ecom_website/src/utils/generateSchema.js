@@ -117,9 +117,9 @@ export const generateSchema = {
       "@type": "BlogPosting",
       headline: post.title || "",
       image: post.image || [],
-      datePublished: post.datePublished || new Date().toISOString(),
+      datePublished: post.createdAt || post.datePublished || new Date().toISOString(),
       dateModified:
-        post.dateModified || post.datePublished || new Date().toISOString(),
+        post.updatedAt || post.dateModified || post.createdAt || post.datePublished || new Date().toISOString(),
       author: {
         "@type": "Person",
         name: post.authorName || "Admin",

@@ -104,8 +104,8 @@ const BlogLayout = ({
   }, [post?.keywords]);
 
   const formattedDate = useMemo(() => {
-    return formatDate(post?.datePublished, 'human') || 'May 20, 2024';
-  }, [post?.datePublished]);
+    return formatDate(post?.createdAt || post?.datePublished, 'human') || 'May 20, 2024';
+  }, [post?.createdAt, post?.datePublished]);
 
 
   const getCategoryColor = (category) => {
@@ -293,7 +293,7 @@ const BlogLayout = ({
                     <div className="grid-cols-1 gap-12">
                       {filteredBlogs.map((blog, idx) => {
                         const categoryColorClass = getCategoryColor(blog.category);
-                        const itemFormattedDate = formatDate(blog.datePublished, 'human') || 'May 20, 2024';
+                        const itemFormattedDate = formatDate(blog.createdAt || blog.datePublished, 'human') || 'May 20, 2024';
 
                         return (
                           <article key={blog.id} className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-20">
@@ -575,7 +575,7 @@ const BlogLayout = ({
                               {popPost.title}
                             </h4>
                             <p className="mini-text text-gray" style={{ display: 'block', marginTop: '4px' }}>
-                              {formatDate(popPost.datePublished, 'short') || 'May 2024'}
+                              {formatDate(popPost.createdAt || popPost.datePublished, 'short') || 'May 2024'}
                             </p>
                           </div>
                         </div>
