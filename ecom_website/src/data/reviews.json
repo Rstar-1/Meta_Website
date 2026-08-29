@@ -1,53 +1,74 @@
 {
-  "overallRating": "4.6",
+  "overallRating": "4.9",
   "ratingScale": "5",
-  "totalReviews": "25,000+",
+  "totalReviews": "500+",
   "userReviews": [
     {
       "id": "rev-1",
-      "name": "Rahul Sharma",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
+      "name": "Sarah Jenkins",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "rating": 5,
       "time": "2 days ago",
-      "text": "Very helpful platform! Found the best service provider nearby. Highly recommend!"
+      "role": "CMO at Technologia Global",
+      "text": "Inraclick Digital Agency (inraclick.com) transformed our online presence completely! Their custom web design and targeted Meta ad campaigns tripled our monthly qualified leads within 90 days. Highly recommend their strategic expertise."
     },
     {
       "id": "rev-2",
-      "name": "Priya Mehta",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
+      "name": "David Ross",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
       "rating": 5,
       "time": "1 week ago",
-      "text": "Amazing experience. Easy to use and reliable listings. Saved me a lot of time."
+      "role": "Product Manager at Innova Group",
+      "text": "Their deep technical expertise and structured design workshops helped us accelerate our platform launch by three months. The level of UI design detail, Meta campaign execution quality, and brand insights is unmatched."
     },
     {
       "id": "rev-3",
-      "name": "Ankit Verma",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+      "name": "Elena Rostova",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
       "rating": 5,
       "time": "2 weeks ago",
-      "text": "Great platform for local business discovery. Customer support is also very responsive."
+      "role": "Founder & CEO at CyberCloud",
+      "text": "Working with Inraclick has been a game-changer. They overhauled our SEO architecture, taking us from page 4 to #1 for our top commercial keywords. Fantastic ROI and transparent weekly reporting!"
+    },
+    {
+      "id": "rev-4",
+      "name": "Marcus Vance",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "time": "3 weeks ago",
+      "role": "Head of Growth at VibePay",
+      "text": "Their Meta ad creative and funnel optimization produced a 4.2x ROAS on our paid ad budget. The Inraclick team is hyper-responsive, data-driven, and focused on tangible business growth."
+    },
+    {
+      "id": "rev-5",
+      "name": "Priya Sharma",
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "time": "1 month ago",
+      "role": "Marketing Director at Zenith Health",
+      "text": "From complete visual rebranding to custom React website development, Inraclick delivered outstanding quality. Our bounce rate dropped by 40% and site conversion rate doubled!"
     }
   ],
   "platforms": [
     {
+      "name": "Clutch.co",
+      "rating": "4.9/5",
+      "reviews": "180+ reviews"
+    },
+    {
       "name": "Google",
-      "rating": "4.6/5",
-      "reviews": "12,500 reviews"
+      "rating": "4.9/5",
+      "reviews": "320+ reviews"
     },
     {
       "name": "Trustpilot",
-      "rating": "4.5/5",
-      "reviews": "6,200 reviews"
+      "rating": "4.8/5",
+      "reviews": "210+ reviews"
     },
     {
-      "name": "Justdial",
-      "rating": "4.6/5",
-      "reviews": "4,800 reviews"
-    },
-    {
-      "name": "Facebook",
-      "rating": "4.7/5",
-      "reviews": "1,500 reviews"
+      "name": "G2",
+      "rating": "4.9/5",
+      "reviews": "95+ reviews"
     }
   ]
 }

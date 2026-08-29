@@ -6,13 +6,13 @@ import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema";
 import PromoCTA from "../home/sections/PromoCTA";
 
 const Blogs = memo(() => {
-    const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
+    const siteUrl = 'https://inraclick.com';
     return (
         <>
             <SeoHelmet
-                title="B2B Industry Insights & Blogs | SOBO Marketing Solution"
-                description="Read our latest articles on industrial trends, office supply optimization, and manufacturing best practices."
-                keywords={['Industrial Blog', 'B2B Trends', 'Manufacturing Guide', 'Toner Cartridge Tips']}
+                title="Inraclick Blog | Digital Marketing & SEO Insights"
+                description="Read the latest articles on SEO strategy, Meta ads optimization, React web engineering, and conversion rate optimization by Inraclick (inraclick.com)."
+                keywords={['Inraclick Blog', 'Inraclick Insights', 'Digital Marketing Blog', 'SEO Guide Inraclick', 'inraclick.com']}
                 image={siteUrl + '/sobo_logo.webp'}
                 path="/blog"
                 type="blog"

@@ -5,22 +5,22 @@ import PromoCTA from '../home/sections/PromoCTA';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 
 const Services = () => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com';
+  const siteUrl = 'https://inraclick.com';
 
   return (
     <>
       <SeoHelmet
-        title="Our Services | SOBO Marketing Solution"
-        description="Explore our range of premium branding design, website development, digital marketing, analytics, and SEO services."
-        keywords={['B2B Services', 'Branding Design', 'Web Development', 'Digital Marketing', 'SEO India']}
+        title="Digital Services | Inraclick Digital Agency"
+        description="Explore Inraclick's full suite of agency services including custom React web development, Meta ad campaigns, SEO optimization, and visual brand design."
+        keywords={['Inraclick Services', 'Web Development Inraclick', 'Meta Ads Inraclick', 'SEO Inraclick', 'Inraclick.com']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/services"
         type="services"
       />
       <Banner
-        title="Our Services"
+        title="Inraclick Digital Services"
         img="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&auto=format&fit=crop&q=80"
-        desc="Innovative Solutions Tailored to Power Your Business Growth"
+        desc="Innovative Digital Solutions Tailored to Accelerate Revenue Growth"
         breadcrumbs={[
           { label: 'Home', path: '/' },
           { label: 'Services' }

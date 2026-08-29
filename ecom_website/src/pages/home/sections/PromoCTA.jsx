@@ -11,10 +11,10 @@ const PromoCTA = () => {
       <div className='w-full flex items-end justify-between py-40'>
         <div className='w-80'>
           <h2 className="text-white font-600 head-text mt-8">
-            Let’s Work Together
+            Ready to Scale Your Digital Brand?
           </h2>
           <p className="text-white para-text mt-8">
-            We are digital agency that helps businesses develop immersive and engaging user experiences.
+            We are a premier digital agency helping forward-thinking businesses build custom web platforms, launch Meta ad campaigns, and dominate search engine results.
           </p>
         </div>
 

@@ -5,10 +5,10 @@ import CardLayout from '../../../components/layout/CardLayout';
 
 const WhyChoose = () => {
   const skills = [
-    { label: "Development", percentage: 85 },
-    { label: "Advertising", percentage: 65 },
-    { label: "Marketing", percentage: 90 },
-    { label: "Branding", percentage: 75 }
+    { label: "Web Engineering & Development", percentage: 95 },
+    { label: "Meta & Social Advertising", percentage: 92 },
+    { label: "Search Engine Optimization (SEO)", percentage: 94 },
+    { label: "Brand Strategy & UI/UX Design", percentage: 90 }
   ];
 
   return (
@@ -26,12 +26,12 @@ const WhyChoose = () => {
         {/* Right Column - Text & Progress Bars */}
         <div className='pl-15 sm-pl-1'>
           <div>
-            <p className="text-primary font-600 uppercase small-text">WHO WE ARE</p>
+            <p className="text-primary font-600 uppercase small-text">WHY CHOOSE US</p>
             <h2 className="text-dark font-600 head-text uppercase pt-8">
-              We Offer a Wide Range of Brand Services
+              Full-Spectrum Digital Agency Capabilities
             </h2>
             <p className="text-gray small-text mt-10">
-              We are a Digital agency working with brands building insightful strategy, creating unique designs and crafting value.
+              We are a premier Digital Agency empowering ambitious brands through data-backed strategy, sleek UI/UX design, custom web engineering, and performance marketing that delivers quantifiable revenue growth.
             </p>
 
             {/* Progress Bars via CardLayout */}

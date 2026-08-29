@@ -1,17 +1,27 @@
 [
   {
     "id": "brand-1",
-    "name": "Apex Robotics",
-    "description": "Global manufacturers of industrial articulated robot arms and multi-axis PLCs."
+    "name": "InnovaTech Solutions",
+    "description": "Global enterprise enterprise SaaS and cloud infrastructure platform."
   },
   {
     "id": "brand-2",
-    "name": "Titan Hydraulics",
-    "description": "Heavy-duty hydraulic pumps, valves, cylinders, and high-pressure forgings."
+    "name": "CyberCloud Systems",
+    "description": "Next-generation cybersecurity analytics and automated monitoring suite."
   },
   {
     "id": "brand-3",
-    "name": "Optima Laser",
-    "description": "CNC lasers, high-speed scanners, optical lenses, and laser calibration tooling."
+    "name": "VibePay Digital",
+    "description": "Fintech payment processing and global cross-border transactions platform."
+  },
+  {
+    "id": "brand-4",
+    "name": "Zenith Health AI",
+    "description": "AI-powered healthcare diagnostics and clinical data management."
+  },
+  {
+    "id": "brand-5",
+    "name": "Apex Digital Commerce",
+    "description": "Omnichannel e-commerce marketplace and digital store optimization."
   }
 ]

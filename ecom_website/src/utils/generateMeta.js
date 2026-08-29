@@ -1,25 +1,26 @@
 export const generateMeta = (pageMeta = {}, defaultMeta = {}) => {
-  const siteName = defaultMeta.siteName || 'E-Commerce Store';
-  const siteUrl = (typeof window !== 'undefined' ? window.location.origin : '') || defaultMeta.siteUrl || 'https://sobo-marketing.com';
+  const siteName = defaultMeta.siteName || 'Inraclick';
+  const siteUrl = defaultMeta.siteUrl || (typeof window !== 'undefined' ? window.location.origin : '') || 'https://inraclick.com';
   
-  // Resolve title
-  const title = pageMeta.title 
-    ? `${pageMeta.title} | ${siteName}` 
-    : defaultMeta.title || siteName;
+  // Resolve title smartly without duplicating brand name if already present
+  let title = pageMeta.title || defaultMeta.title || siteName;
+  if (siteName && !title.toLowerCase().includes(siteName.toLowerCase())) {
+    title = `${title} | ${siteName}`;
+  }
 
   // Resolve description, keywords, and robots tags
-  const description = pageMeta.description || defaultMeta.description || '';
+  const description = pageMeta.description || defaultMeta.description || 'Inraclick (inraclick.com) is India\'s top digital agency for web development, Meta ad campaigns, SEO, and branding.';
   const keywords = pageMeta.keywords
     ? (Array.isArray(pageMeta.keywords) ? pageMeta.keywords.join(', ') : pageMeta.keywords)
-    : defaultMeta.keywords || '';
-  const robots = pageMeta.robots || defaultMeta.robots || 'index, follow';
+    : defaultMeta.keywords || 'Inraclick, inraclick.com, Inraclick Agency, Digital Marketing, Web Development, Meta Ads, SEO';
+  const robots = pageMeta.robots || defaultMeta.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
   // Resolve canonical URL
   const path = pageMeta.path || '';
   const canonical = pageMeta.canonical || `${siteUrl}${path.startsWith('/') ? path : '/' + path}`;
 
   // Resolve sharing image
-  const image = pageMeta.image || defaultMeta.image || '/og-image.jpg';
+  const image = pageMeta.image || defaultMeta.image || '/sobo_logo.webp';
   const ogImage = image.startsWith('http') ? image : `${siteUrl}${image.startsWith('/') ? image : '/' + image}`;
 
   // Open Graph content type
@@ -27,12 +28,12 @@ export const generateMeta = (pageMeta = {}, defaultMeta = {}) => {
 
   // Recommended and Optional fields
   const themeColor = pageMeta.themeColor || defaultMeta.themeColor || '#1e74db';
-  const author = pageMeta.author || defaultMeta.author || siteName;
+  const author = pageMeta.author || defaultMeta.author || 'Inraclick Digital Agency';
   const referrer = pageMeta.referrer || defaultMeta.referrer || 'no-referrer-when-downgrade';
   const imageAlt = pageMeta.imageAlt || defaultMeta.imageAlt || title;
   const imageWidth = pageMeta.imageWidth || defaultMeta.imageWidth || '1200';
   const imageHeight = pageMeta.imageHeight || defaultMeta.imageHeight || '630';
-  const twitterSite = pageMeta.twitterSite || defaultMeta.twitterSite || '@sobomarketing';
+  const twitterSite = pageMeta.twitterSite || defaultMeta.twitterSite || '@inraclick';
 
   return {
     title,
@@ -68,4 +69,3 @@ export const generateMeta = (pageMeta = {}, defaultMeta = {}) => {
     ]
   };
 };
-

@@ -1,4 +1,4 @@
-export const generateSitemap = (routes = [], blogs = [], baseUrl = 'https://sobo-marketing.com') => {
+export const generateSitemap = (routes = [], blogs = [], baseUrl = 'https://inraclick.com') => {
   const urls = [];
   const addUrl = (loc, changefreq = 'daily', priority = '0.8') => {
     urls.push(`  <url>

@@ -6,23 +6,23 @@ const FAQSection = () => {
   const faqs = [
     {
       id: 1,
-      question: "What services does your digital agency offer?",
-      answer: "We offer full-service digital solutions including custom website development, Meta/social media advertising campaigns, advanced search engine optimization (SEO), branding design, and growth analytics."
+      question: "What core services does MetaTech Digital Agency offer?",
+      answer: "We offer full-service digital agency solutions including custom web design & React development, performance Meta & Google ad campaigns, advanced Search Engine Optimization (SEO), visual brand identity, and growth analytics."
     },
     {
       id: 2,
-      question: "How do you design and optimize campaigns for lead generation?",
-      answer: "We combine modern UX design, data-driven Meta campaigns, and targeted search optimization. Every project includes comprehensive keyword research and high-accuracy conversion tracking to maximize ROI."
+      question: "How do you design & optimize ad campaigns for maximum ROAS?",
+      answer: "We combine demographic research, high-converting video creative hooks, A/B ad copy testing, custom audience retargeting, and multi-touch GA4 attribution to maximize return on ad spend (ROAS)."
     },
     {
       id: 3,
-      question: "Can I customize the design and SEO packages?",
-      answer: "Yes, absolutely! We customize our website design, Meta advertising, and SEO strategy to match your specific industry, growth goals, and marketing budget."
+      question: "Can I get a tailored web design & marketing campaign package?",
+      answer: "Yes! We customize our web engineering, Meta ad budget management, and SEO packages to match your specific industry niche, growth objectives, and launch timeline."
     },
     {
       id: 4,
-      question: "How do we get started on a project?",
-      answer: "Simply visit our Connect page or click 'Get Started'. Complete the quick inquiry form, and one of our digital strategists will contact you within 24 hours to set up a discovery call."
+      question: "How quickly can we begin work on a new campaign or website?",
+      answer: "Our team initiates strategic discovery within 48 hours of onboarding. Digital ad campaigns typically launch within 3–5 business days, while custom web applications take 2–4 weeks."
     }
   ];
 

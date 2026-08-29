@@ -16,31 +16,53 @@ import Reviews from './sections/Reviews';
 import LazySection from '../../components/common/LazySection';
 
 const Home = () => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://sobo-marketing.com';
+  const siteUrl = 'https://inraclick.com';
+
   const navItems = [
-    { name: 'Home', url: `${siteUrl}/home` },
-    { name: 'About Us', url: `${siteUrl}/about` },
-    { name: 'Blog', url: `${siteUrl}/blog` },
-    { name: 'Contact Us', url: `${siteUrl}/contact` }
+    { 
+      name: 'Home', 
+      url: `${siteUrl}/home`, 
+      description: 'Inraclick official homepage featuring digital marketing, web engineering, and ROI case studies.' 
+    },
+    { 
+      name: 'About Us', 
+      url: `${siteUrl}/about`, 
+      description: 'Learn about Inraclick Digital Agency, our vision, team, and client performance strategy.' 
+    },
+    { 
+      name: 'Digital Services', 
+      url: `${siteUrl}/services`, 
+      description: 'Inraclick full service agency offerings: web development, Meta advertising, SEO, and branding.' 
+    },
+    { 
+      name: 'Agency Insights', 
+      url: `${siteUrl}/blog`, 
+      description: 'Read in-depth digital marketing guides, SEO checklists, and ad campaign tips by Inraclick.' 
+    },
+    { 
+      name: 'Connect', 
+      url: `${siteUrl}/connect`, 
+      description: 'Get in touch with Inraclick digital strategists for project consultations and growth audits.' 
+    }
   ];
 
   return (
     <>
       <SeoHelmet
-        title="SOBO Marketing Solution | Industrial B2B E-Commerce"
-        description="Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution."
-        keywords={['Industrial Supplies', 'Printer Cartridges', 'Stainless Steel', 'SOBO Marketing', 'B2B India']}
+        title="Inraclick: Digital Marketing & Web Engineering Agency"
+        description="Inraclick (inraclick.com) is India's leading digital agency providing high-converting custom web development, Meta ad campaigns, SEO, and visual branding."
+        keywords={['Inraclick', 'inraclick.com', 'Inraclick Agency', 'Inraclick Digital', 'Digital Marketing Agency', 'Web Development', 'Meta Ads', 'SEO Services']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/home"
         type="website"
       />
-      <WebsiteSchema siteData={{ name: 'SOBO Marketing Solution', url: siteUrl }} />
-      <OrganizationSchema orgData={{ name: 'SOBO Marketing Solution', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
+      <WebsiteSchema siteData={{ name: 'Inraclick', url: siteUrl }} />
+      <OrganizationSchema orgData={{ name: 'Inraclick Digital Agency', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero />
       <LazySection placeholderHeight="140px">
-        <Marquee text="OUR LATEST CASES • " />
+        <Marquee text="INRICLICK CASE STUDIES & AGENCY INSIGHTS • " />
       </LazySection>
       <BrowseServices />
 

@@ -1,22 +1,23 @@
 const defaultSEO = {
-  siteName: 'SOBO Marketing Solution',
-  title: 'SOBO Marketing Solution | Industrial B2B E-Commerce',
-  description: 'Discover high-quality industrial supplies, printing cartridges, and stainless steel products at SOBO Marketing Solution.',
-  keywords: 'Industrial Supplies, Printer Cartridges, Stainless Steel, SOBO Marketing, B2B India, B2B e-commerce',
-  siteUrl: 'https://sobo-marketing.com',
+  siteName: 'Inraclick',
+  title: 'Inraclick: Digital Marketing & Web Engineering Agency',
+  description: 'Inraclick (inraclick.com) is India\'s premier digital agency delivering high-converting custom web applications, Meta & Google ad campaigns, ROI-driven SEO, and brand design.',
+  keywords: 'Inraclick, inraclick.com, Inraclick Agency, Inraclick Digital, Digital Marketing Agency, Web Development, Meta Ads, SEO Services, Branding',
+  siteUrl: 'https://inraclick.com',
   image: '/sobo_logo.webp',
   robots: 'index, follow',
   organization: {
-    name: 'SOBO Marketing Solution',
-    url: 'https://sobo-marketing.com',
-    logo: 'https://sobo-marketing.com/sobo_logo.webp',
-    phone: '+91-9876543210',
-    email: 'info@sobomarketing.com',
+    name: 'Inraclick Digital Agency',
+    alternateName: ['Inraclick', 'Inraclick.com', 'Inraclick Agency', 'Inraclick Marketing'],
+    url: 'https://inraclick.com',
+    logo: 'https://inraclick.com/sobo_logo.webp',
+    phone: '+91 98765 43210',
+    email: 'hello@inraclick.com',
     socials: [
-      'https://facebook.com/sobomarketing',
-      'https://twitter.com/sobomarketing',
-      'https://instagram.com/sobomarketing',
-      'https://linkedin.com/company/sobomarketing'
+      'https://facebook.com/inraclick',
+      'https://twitter.com/inraclick',
+      'https://instagram.com/inraclick',
+      'https://linkedin.com/company/inraclick'
     ]
   }
 };

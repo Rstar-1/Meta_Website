@@ -1,5 +1,11 @@
+# User-agent directives for Inraclick (inraclick.com)
 User-agent: *
 Allow: /
 
-# Sitemap Location
-Sitemap: https://sobo-marketing.com/sitemap.xml
+# Exclude private or parameter-heavy URLs
+Disallow: /admin/
+Disallow: /search
+Disallow: /*?*
+
+# Explicit Sitemap URL for Googlebot and Bingbot
+Sitemap: https://inraclick.com/sitemap.xml

@@ -3,18 +3,29 @@ export const generateSchema = {
     return {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: orgData.name || "SOBO Marketing Solution",
-      url: orgData.url || "https://sobo-marketing.com",
-      logo: orgData.logo || "https://sobo-marketing.com/sobo_logo.png",
+      name: orgData.name || "Inraclick Digital Agency",
+      alternateName: orgData.alternateName || ["Inraclick", "Inraclick.com", "Inraclick Agency", "Inraclick Marketing"],
+      url: orgData.url || "https://inraclick.com",
+      logo: orgData.logo || "https://inraclick.com/sobo_logo.webp",
       contactPoint: orgData.contact
         ? {
             "@type": "ContactPoint",
-            telephone: orgData.contact.phone || "",
+            telephone: orgData.contact.phone || "+91 98765 43210",
             contactType: "customer service",
-            email: orgData.contact.email || "",
+            email: orgData.contact.email || "hello@inraclick.com",
           }
-        : undefined,
-      sameAs: orgData.socials || [],
+        : {
+            "@type": "ContactPoint",
+            telephone: "+91 98765 43210",
+            contactType: "customer service",
+            email: "hello@inraclick.com",
+          },
+      sameAs: orgData.socials || [
+        "https://facebook.com/inraclick",
+        "https://twitter.com/inraclick",
+        "https://instagram.com/inraclick",
+        "https://linkedin.com/company/inraclick"
+      ],
     };
   },
 
@@ -22,11 +33,12 @@ export const generateSchema = {
     return {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: siteData.name || "SOBO Marketing Solution",
-      url: siteData.url || "https://sobo-marketing.com",
+      name: siteData.name || "Inraclick",
+      alternateName: ["Inraclick", "Inraclick.com", "Inraclick Digital Agency"],
+      url: siteData.url || "https://inraclick.com",
       potentialAction: {
         "@type": "SearchAction",
-        target: `${siteData.url || "https://sobo-marketing.com"}/search?q={search_term_string}`,
+        target: `${siteData.url || "https://inraclick.com"}/search?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
     };
@@ -36,18 +48,19 @@ export const generateSchema = {
     return {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      name: bizData.name || "SOBO Marketing Solution",
-      image: bizData.image || "https://sobo-marketing.com/sobo_logo.png",
-      "@id": bizData.url || "https://sobo-marketing.com",
-      url: bizData.url || "https://sobo-marketing.com",
-      telephone: bizData.phone || "",
+      name: bizData.name || "Inraclick Digital Agency",
+      image: bizData.image || "https://inraclick.com/sobo_logo.webp",
+      "@id": bizData.url || "https://inraclick.com",
+      url: bizData.url || "https://inraclick.com",
+      telephone: bizData.phone || "+91 98765 43210",
+      priceRange: "$$",
       address: {
         "@type": "PostalAddress",
-        streetAddress: bizData.address?.street || "",
-        addressLocality: bizData.address?.city || "",
-        addressRegion: bizData.address?.region || "",
-        postalCode: bizData.address?.postalCode || "",
-        addressCountry: bizData.address?.country || "",
+        streetAddress: bizData.address?.street || "Bandra Kurla Complex",
+        addressLocality: bizData.address?.city || "Mumbai",
+        addressRegion: bizData.address?.region || "Maharashtra",
+        postalCode: bizData.address?.postalCode || "400051",
+        addressCountry: bizData.address?.country || "India",
       },
       geo: bizData.geo
         ? {
@@ -65,14 +78,26 @@ export const generateSchema = {
               "Wednesday",
               "Thursday",
               "Friday",
+              "Saturday"
             ],
             opens: bizData.hours.opens || "09:00",
-            closes: bizData.hours.closes || "18:00",
+            closes: bizData.hours.closes || "19:00",
           }
-        : undefined,
+        : {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            opens: "09:00",
+            closes: "19:00",
+          },
     };
   },
-
 
   breadcrumb: (items = []) => {
     return {
@@ -94,7 +119,7 @@ export const generateSchema = {
       image: logo,
       publisher: {
         "@type": "Organization",
-        name: "SOBO Marketing Solution",
+        name: "Inraclick Digital Agency",
         logo: {
           "@type": "ImageObject",
           url: logo,
@@ -122,14 +147,14 @@ export const generateSchema = {
         post.updatedAt || post.dateModified || post.createdAt || post.datePublished || new Date().toISOString(),
       author: {
         "@type": "Person",
-        name: post.authorName || "Admin",
+        name: post.authorName || "Inraclick Team",
       },
       publisher: {
         "@type": "Organization",
-        name: post.publisherName || "SOBO Marketing Solution",
+        name: post.publisherName || "Inraclick Digital Agency",
         logo: {
           "@type": "ImageObject",
-          url: post.publisherLogo || "https://sobo-marketing.com/sobo_logo.png",
+          url: post.publisherLogo || "https://inraclick.com/sobo_logo.webp",
         },
       },
       description: post.description || "",
@@ -145,6 +170,7 @@ export const generateSchema = {
         "@id": item.url,
         name: item.name,
         url: item.url,
+        description: item.description || ""
       })),
     };
   },

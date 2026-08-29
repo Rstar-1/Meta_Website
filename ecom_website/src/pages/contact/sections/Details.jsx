@@ -21,7 +21,7 @@ const Details = ({ addToRef }) => {
                             <line x1="16" y1="6" x2="16" y2="22"></line>
                         </svg>
                         <p className="para-text text-gray w-95">
-                            Shop No. 271, Next to State Bank of India, Mohammed Ali Road, Masjid Bunder, Mumbai – 400003, Maharashtra.
+                            Suite 402, MetaTech Hub, Bandra Kurla Complex (BKC), Mumbai – 400051, Maharashtra, India.
                         </p>
                     </div>
                     <div className="flex items-start gap-6 mt-10 sm-mt-15" ref={addToRef}>
@@ -37,9 +37,9 @@ const Details = ({ addToRef }) => {
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
-                        <a href="mailto:info@wadhumal.com" className="w-95">
+                        <a href="mailto:hello@metatechagency.com" className="w-95">
                             <p className="para-text text-gray">
-                                info@wadhumal.com
+                                hello@metatechagency.com
                             </p>
                         </a>
                     </div>
@@ -57,7 +57,7 @@ const Details = ({ addToRef }) => {
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
                         <p className="para-text text-gray w-95">
-                            Monday – Saturday: 10:00 AM – 7:00 PM (Sunday Closed)
+                            Monday – Saturday: 9:00 AM – 7:00 PM IST (Sunday Closed)
                         </p>
                     </div>
                     <div className="flex items-start gap-6 mt-10 sm-mt-15" ref={addToRef}>
@@ -73,8 +73,8 @@ const Details = ({ addToRef }) => {
                             <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
                         <div className="w-95 flex sm-grid-cols-1 items-center gap-12">
-                            <a href="tel:+918511700544">
-                                <p className="para-text text-gray">+91 85117 00544</p>
+                            <a href="tel:+919876543210">
+                                <p className="para-text text-gray">+91 98765 43210</p>
                             </a>
                         </div>
                     </div>

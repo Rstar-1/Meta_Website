@@ -7,28 +7,28 @@ import PromoCTA from '../home/sections/PromoCTA'
 import Details from './sections/Details'
 
 const Contact = () => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
+  const siteUrl = 'https://inraclick.com';
   return (
     <>
       <SeoHelmet
-        title="Connect With Us | SOBO Marketing Solution"
-        description="Get in touch with SOBO Marketing Solution for wholesale inquiries, product support, and partnership opportunities."
-        keywords={['Contact SOBO', 'Wholesale Inquiry', 'Supplier Support']}
+        title="Contact Inraclick | Connect With Digital Agency Experts"
+        description="Connect with Inraclick Digital Agency for website development, Meta ad campaigns, and SEO strategy audits. Reach us at hello@inraclick.com."
+        keywords={['Contact Inraclick', 'Inraclick Phone', 'Inraclick Address', 'Inraclick Inquiry', 'Inraclick.com Contact']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/connect"
         type="contact"
       />
       <LocalBusinessSchema bizData={{
-        name: 'SOBO Marketing Solution',
+        name: 'Inraclick Digital Agency',
         url: siteUrl,
         image: siteUrl + '/sobo_logo.webp',
-        phone: '+91-XXXXXXXXXX',
-        address: { street: 'Industrial Area', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' }
+        phone: '+91 98765 43210',
+        address: { street: 'Bandra Kurla Complex', city: 'Mumbai', region: 'Maharashtra', postalCode: '400051', country: 'India' }
       }} />
       <Banner
-        title="Connect With Us"
-        img="https://html.ditsolution.net/industry/indastre1/assets/images/slider/banner.jpg"
-        desc="Solutions Industrial Market Values for Funding"
+        title="Connect With Inraclick Agency"
+        img="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&auto=format&fit=crop&q=80"
+        desc="Let's Discuss How We Can Transform Your Digital Brand Presence"
         breadcrumbs={[
           { label: "Home", path: "/home" },
           { label: "Connect" },

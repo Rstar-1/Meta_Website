@@ -2,26 +2,29 @@ import { useState } from 'react';
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';
+import reviewsData from '../../../data/reviews.json';
 
 const Reviews = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 
-  const testimonials = [
-    {
-      id: 1,
-      text: "Whether it's custom web development, ranking first on Google searches via SEO, or scaling Meta ad campaigns, this agency delivers exceptional results. They transformed our online presence and tripled our inbound leads.",
-      name: "Brandi Rowe",
-      role: "Marketing Lead at Technlogia",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
-    },
-    {
-      id: 2,
-      text: "Their deep domain expertise and structured design workshops helped us accelerate our digital product launch by three months. The level of collaboration, execution quality, and brand insight is absolutely unmatched.",
-      name: "David Ross",
-      role: "Product Manager at Innova Group",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
-    }
-  ];
+  const testimonials = reviewsData.userReviews && reviewsData.userReviews.length > 0
+    ? reviewsData.userReviews
+    : [
+        {
+          id: 1,
+          text: "MetaTech Digital Agency transformed our online presence completely! Their custom web design and targeted Meta ad campaigns tripled our monthly qualified leads within 90 days. Highly recommend their strategic expertise.",
+          name: "Sarah Jenkins",
+          role: "CMO at Technologia Global",
+          avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+        },
+        {
+          id: 2,
+          text: "Their deep technical expertise and structured design workshops helped us accelerate our platform launch by three months. The level of UI design detail, Meta campaign execution quality, and brand insights is unmatched.",
+          name: "David Ross",
+          role: "Product Manager at Innova Group",
+          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
+        }
+      ];
 
   const handlePrev = () => {
     setActiveIdx((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));

@@ -29,28 +29,28 @@
   ],
   "projectsMenu": {
     "bannerImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
-    "bannerTitle": "Featured Projects",
-    "bannerDesc": "Explore our successful B2B transformations and engineering projects.",
+    "bannerTitle": "Inraclick Projects",
+    "bannerDesc": "Explore Inraclick's portfolio of high-converting web apps, Meta ad campaigns, and brand redesigns.",
     "bannerLinkText": "View All Projects",
     "sections": [
       {
-        "title": "Web Developments",
+        "title": "Web Engineering",
         "items": [
-          "B2B Portal Integration",
-          "E-Commerce Suite",
-          "Enterprise CMS Solutions",
-          "SaaS Dashboard Design",
-          "Dashboard Design"
+          "SaaS Web Applications",
+          "E-Commerce Storefronts",
+          "Custom CMS & Portals",
+          "UI/UX Design Systems",
+          "Interactive Web Dashboards"
         ]
       },
       {
-        "title": "Marketing Campaigns",
+        "title": "Growth Marketing",
         "items": [
-          "SEO Optimization",
-          "Branding & Design",
-          "Social Campaigns",
-          "PPC Campaigns",
-          "SEO Enhacement"
+          "Meta Ads Campaigns",
+          "Full-Funnel SEO Strategy",
+          "Brand & Visual Identity",
+          "Google PPC Campaigns",
+          "Conversion Rate Optimization"
         ]
       }
     ]

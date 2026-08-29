@@ -1,18 +1,18 @@
 [
   {
     "id": "city-delhi",
-    "name": "Delhi",
-    "businesses": "10,200+ Businesses",
-    "categories": "1,250 Categories",
-    "tag": "Most Searched",
+    "name": "Delhi NCR",
+    "businesses": "10,200+ Tech Clients",
+    "categories": "1,250 Service Hubs",
+    "tag": "Most Active",
     "tagType": "most-searched",
     "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=500&auto=format&fit=crop"
   },
   {
     "id": "city-mumbai",
     "name": "Mumbai",
-    "businesses": "12,500+ Businesses",
-    "categories": "1,480 Categories",
+    "businesses": "12,500+ Tech Clients",
+    "categories": "1,480 Service Hubs",
     "tag": "Trending",
     "tagType": "trending",
     "image": "https://images.unsplash.com/photo-1562979314-bee7453e911c?q=80&w=500&auto=format&fit=crop"
@@ -20,8 +20,8 @@
   {
     "id": "city-bangalore",
     "name": "Bangalore",
-    "businesses": "8,800+ Businesses",
-    "categories": "1,120 Categories",
+    "businesses": "15,800+ SaaS & Tech Hubs",
+    "categories": "1,820 Service Hubs",
     "tag": "Most Searched",
     "tagType": "most-searched",
     "image": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?q=80&w=500&auto=format&fit=crop"
@@ -29,46 +29,28 @@
   {
     "id": "city-chennai",
     "name": "Chennai",
-    "businesses": "6,700+ Businesses",
-    "categories": "980 Categories",
+    "businesses": "6,700+ Tech Clients",
+    "categories": "980 Service Hubs",
     "tag": "Trending",
     "tagType": "trending",
     "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=500&auto=format&fit=crop"
   },
   {
-    "id": "city-kolkata",
-    "name": "Kolkata",
-    "businesses": "5,100+ Businesses",
-    "categories": "720 Categories",
+    "id": "city-pune",
+    "name": "Pune",
+    "businesses": "8,100+ Enterprise Clients",
+    "categories": "1,120 Service Hubs",
     "tag": "Most Searched",
     "tagType": "most-searched",
     "image": "https://images.unsplash.com/photo-1558431382-27e303142255?q=80&w=500&auto=format&fit=crop"
   },
   {
-    "id": "city-ahmedabad",
-    "name": "Ahmedabad",
-    "businesses": "4,600+ Businesses",
-    "categories": "650 Categories",
+    "id": "city-hyderabad",
+    "name": "Hyderabad",
+    "businesses": "9,600+ Tech Clients",
+    "categories": "1,350 Service Hubs",
     "tag": "Trending",
     "tagType": "trending",
     "image": "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?q=80&w=500&auto=format&fit=crop"
-  },
-  {
-    "id": "city-surat",
-    "name": "Surat",
-    "businesses": "3,800+ Businesses",
-    "categories": "540 Categories",
-    "tag": "Most Searched",
-    "tagType": "most-searched",
-    "image": "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?q=80&w=500&auto=format&fit=crop"
-  },
-  {
-    "id": "city-jaipur",
-    "name": "Jaipur",
-    "businesses": "3,500+ Businesses",
-    "categories": "510 Categories",
-    "tag": "Trending",
-    "tagType": "trending",
-    "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=500&auto=format&fit=crop"
   }
 ]
