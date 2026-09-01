@@ -15,7 +15,7 @@ const marqueeWords = [
 const AgencyMarquee = () => {
   return (
     <div
-      className="bg-white py-40"
+      className="bg-white py-40 sm-py-20"
     >
       <style>{`
         @keyframes marqueeSlide {
@@ -38,7 +38,7 @@ const AgencyMarquee = () => {
           className="flex items-center"
           style={{
             display: 'inline-flex',
-            animation: 'marqueeSlide 25s linear infinite',
+            animation: 'marqueeSlide 12s linear infinite',
             willChange: 'transform'
           }}
         >

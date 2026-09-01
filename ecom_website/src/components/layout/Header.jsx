@@ -21,6 +21,9 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const headerBg = (isScrolled || isMobileOpen) ? "#FFFFFF" : "transparent";
+  const headerBorder = (isScrolled || isMobileOpen) ? "1px solid #EAEAEA" : "1px solid rgba(255, 255, 255, 0.1)";
+
   return (
     <Container
       as="header"
@@ -30,8 +33,8 @@ const Header = () => {
         left: 0,
         zIndex: 1000,
         width: "100%",
-        backgroundColor: isScrolled ? "#FFFFFF" : "transparent",
-        borderBottom: isScrolled ? "1px solid #EAEAEA" : "1px solid rgba(255, 255, 255, 0.1)",
+        backgroundColor: headerBg,
+        borderBottom: headerBorder,
         transition: "background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease"
       }}
     >
@@ -40,9 +43,9 @@ const Header = () => {
         style={{ height: "70px" }}
       >
         {/* Left Logo */}
-        <NavLink to="/" className="flex items-center">
+        <NavLink to="/" className="flex items-center" onClick={() => setIsMobileOpen(false)}>
           <Image
-            src={isScrolled ? "/sobo_logo.webp" : "/sobos.png"}
+            src={(isScrolled || isMobileOpen) ? "/sobo_logo.webp" : "/sobos.png"}
             alt="Infitech Logo"
             className="object-contain"
             style={{ width: "100%", height: "54px" }}
@@ -84,7 +87,6 @@ const Header = () => {
         <div className="flex items-center gap-12">
           <div className="sm-hidden md-hidden flex items-center gap-12">
 
-            {/* Phone Icon Button */}
             <a
               href="tel:+5284567592"
               aria-label="Call Us"
@@ -107,9 +109,14 @@ const Header = () => {
             </a>
 
             {/* CTA Orange Pill Button */}
-            <button
+            <Button
               onClick={() => navigate("/connect")}
-              className="flex items-center gap-8 font-700 mini-text px-24 py-10 cursor-pointer text-white whitespace-nowrap"
+              icon="ArrowUpRight"
+              iconPosition="right"
+              iconWidth="16"
+              iconHeight="16"
+              iconStroke="#FFFFFF"
+              className="font-700 mini-text px-24 py-10 text-white whitespace-nowrap"
               style={{
                 backgroundColor: "#FF5100",
                 borderRadius: "50px",
@@ -119,34 +126,39 @@ const Header = () => {
               }}
             >
               Get In Touch
-              <Icon name="ArrowUpRight" width="16" height="16" stroke="#FFFFFF" />
-            </button>
+            </Button>
           </div>
 
-          {/* Hamburger Menu Toggle Button for Mobile/Tablet Devices */}
+          {/* Hamburger Menu Toggle Button */}
           <Button
-            className="hidden md-block sm-block cursor-pointer"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            style={{ border: "none", color: isMobileOpen ? "#FFFFFF" : (isScrolled ? "#161616" : "#FFFFFF") }}
+            aria-label="Toggle Navigation Menu"
+            className="hidden md-flex sm-flex items-center justify-center rounded-6 p-8"
+            style={{
+              backgroundColor: (isScrolled || isMobileOpen) ? "#F4F1EA" : "rgba(255, 255, 255, 0.15)",
+              border: (isScrolled || isMobileOpen) ? "1px solid #E0DCD3" : "1px solid rgba(255, 255, 255, 0.25)",
+              transition: "all 0.25s ease"
+            }}
             icon={isMobileOpen ? "Close" : "Menu"}
             iconWidth="24"
             iconHeight="24"
-            iconStrokeWidth="2"
-            version="v1"
-            bg="forth"
+            iconStroke={(isScrolled || isMobileOpen) ? "#161616" : "#FFFFFF"}
+            iconStrokeWidth="2.5"
+            version="icon"
+            bg="transparent"
           />
         </div>
       </div>
 
-      {/* Mobile Drawer Overlay */}
+      {/* Mobile White-Theme Drawer Overlay */}
       {isMobileOpen && (
         <div
-          className="fixed left-0 w-full flex flex-column justify-between px-24 py-20"
+          className="fixed left-0 w-full px-24 py-20"
           style={{
             top: "70px",
             height: "calc(100vh - 70px)",
-            backgroundColor: "rgba(17, 17, 17, 0.96)",
-            backdropFilter: "blur(12px)",
+            backgroundColor: "#FFFFFF",
+            boxShadow: "0 20px 40px rgba(0, 0, 0, 0.08)",
             boxSizing: "border-box",
             overflowY: "auto",
             zIndex: 999
@@ -156,7 +168,11 @@ const Header = () => {
             {headerData.navLinks.map((item, i) => {
               const isActive = location.pathname === item.href;
               return (
-                <div key={i} className="py-16 bordb">
+                <div
+                  key={i}
+                  className="py-16"
+                  style={{ borderBottom: "1px solid #F0ECE6" }}
+                >
                   <NavLink
                     to={item.href}
                     onClick={() => setIsMobileOpen(false)}
@@ -165,7 +181,7 @@ const Header = () => {
                     <span
                       className="para-text font-600 uppercase"
                       style={{
-                        color: isActive ? "#FF5100" : "#FFFFFF",
+                        color: isActive ? "#FF5100" : "#161616",
                         letterSpacing: "0.03em"
                       }}
                     >
@@ -175,7 +191,7 @@ const Header = () => {
                       name="ChevronRight"
                       width="18"
                       height="18"
-                      stroke={isActive ? "#FF5100" : "rgba(255, 255, 255, 0.4)"}
+                      stroke={isActive ? "#FF5100" : "#999999"}
                     />
                   </NavLink>
                 </div>
@@ -183,23 +199,27 @@ const Header = () => {
             })}
           </div>
 
-          <div className="mt-30 w-full pb-20">
-            <button
+          <div className="w-full mt-40">
+            <Button
               onClick={() => {
                 setIsMobileOpen(false);
                 navigate("/connect");
               }}
-              className="flex items-center justify-center gap-8 font-700 small-text py-14 w-full cursor-pointer text-white"
+              icon="ArrowUpRight"
+              iconPosition="right"
+              iconWidth="18"
+              iconHeight="18"
+              iconStroke="#FFFFFF"
+              className="font-700 small-text py-14 w-full text-white"
               style={{
                 backgroundColor: "#FF5100",
                 borderRadius: "50px",
                 border: "none",
-                boxShadow: "0 6px 20px rgba(255, 81, 0, 0.4)"
+                boxShadow: "0 6px 20px rgba(255, 81, 0, 0.35)"
               }}
             >
               Get In Touch
-              <Icon name="ArrowUpRight" width="18" height="18" stroke="#FFFFFF" />
-            </button>
+            </Button>
           </div>
         </div>
       )}

@@ -1,11 +1,11 @@
 /* ======================= Start-Color ======================= */
 
 :root {
-    --primary: #2c6bf4 !important;
+    --primary: #fb7d40 !important;
     --secondary: #1f5ac0 !important;
-    --tertiary: #edf2f756 !important;
+    --tertiary: #edf2f7d6 !important;
     --forth: #fafafa !important;
-    --success: #1cb012bc !important;
+    --success: #4bb543 !important;
     --successtext: #25771fbc !important;
     --warning: #fb5711 !important;
     --warningtext: #ff5722 !important;
@@ -79,7 +79,7 @@
 }
 
 .bg-light-primary {
-    background: #e9e7fd !important;
+    background: #faf0edcb !important;
 }
 
 .bg-light-secondary {
@@ -238,7 +238,7 @@ input,
 
 /* ======================= Start-Fontsize ======================= */
 .largehead-text {
-    font-size: 134px !important;
+    font-size: 130px !important;
     margin: 0px !important;
     line-height: 130px !important;
 
@@ -246,6 +246,7 @@ input,
         font-size: 42px !important;
         margin: 0px !important;
         line-height: 56px !important;
+        font-weight: 500 !important;
     }
 }
 
@@ -256,16 +257,16 @@ input,
     font-weight: 500 !important;
 
     @media (max-width: 640px) {
-        font-size: 30px !important;
+        font-size: 32px !important;
         margin: 0px !important;
-        line-height: 44px !important;
+        line-height: 43px !important;
         font-weight: 500 !important;
     }
 }
 
 .head-text {
-    font-size: 43px !important;
-    line-height: 55px !important;
+    font-size: 34px !important;
+    line-height: 44px !important;
     margin: 0px !important;
     font-weight: 500 !important;
 
@@ -278,10 +279,9 @@ input,
 }
 
 .title-text {
-    font-size: 22px !important;
+    font-size: 28px !important;
     margin: 0px !important;
-    font-weight: 500 !important;
-    line-height: 29px !important;
+    line-height: 36px !important;
 
     @media (max-width: 640px) {
         font-size: 20px !important;
@@ -290,14 +290,14 @@ input,
 }
 
 .mid-text {
-    font-size: 18px !important;
+    font-size: 17px !important;
     line-height: 29px !important;
     margin: 0px !important;
     font-weight: 500 !important;
 }
 
 .headmini-text {
-    font-size: 15px !important;
+    font-size: 14px !important;
     line-height: 22px !important;
     margin: 0px !important;
     font-weight: 500 !important;
@@ -332,7 +332,7 @@ input,
     font-weight: 400 !important;
 
     @media (max-width: 640px) {
-        font-size: 16px !important;
+        font-size: 15px !important;
     }
 }
 
@@ -340,11 +340,15 @@ input,
     font-size: 15px !important;
     line-height: 22px !important;
     font-weight: 400 !important;
+
+    @media (max-width: 640px) {
+        font-size: 13.5px !important;
+    }
 }
 
 .mini-text {
-    font-size: 13px !important;
-    line-height: 18px !important;
+    font-size: 12.5px !important;
+    line-height: 21px !important;
     font-weight: 400 !important;
 }
 

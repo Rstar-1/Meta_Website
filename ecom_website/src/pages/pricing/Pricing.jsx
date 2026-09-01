@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Banner from '../../components/layout/Banner';
 import Container from '../../components/common/Container';
 import Icon from '../../components/common/Icon';
+import Button from '../../components/common/Button';
 import SeoHelmet from '../../components/seo/SeoHelmet';
 
 const pricingPlans = [
@@ -83,7 +84,6 @@ const Pricing = () => {
         type="website"
       />
 
-      {/* Hero Banner Section */}
       <Banner
         title="Pricing Plans"
         img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80"
@@ -94,23 +94,28 @@ const Pricing = () => {
         ]}
       />
 
-      {/* Main Pricing Section */}
-      <div style={{ backgroundColor: '#FAF8F5' }} className="py-80">
-        <Container>
-          <div className="grid-cols-4 sm-grid-cols-1 gap-12">
-            {pricingPlans.map((plan) => (
+      <Container className='bg-forth'>
+        <div className='py-80 sm-py-50'>
+          <p className="mini-text text-white bg-dark mx-auto w-max px-18 py-8 rounded-20 flex items-center gap-8 font-500 uppercase mb-10">
+            <Icon name="Settings" width="14" height="14" className="text-warning" />
+            OUR SERVICE FOR YOU
+          </p>
+          <h2 className="large-text text-dark uppercase font-600 text-center">
+            Solutions That Work For You
+          </h2>
+
+          <div className="grid-cols-4 sm-grid-cols-1 gap-12 mt-40 sm-mt-20">
+            {pricingPlans?.map((plan) => (
               <div
                 key={plan.id}
-                className="bg-white rounded-10 p-25 flex flex-column justify-between transition-all"
+                className="bg-white rounded-10 p-25 b-shadow"
 
               >
                 <div>
-                  {/* Plan Title */}
-                  <p className="title-text font-600 text-dark mb-16">
+                  <p className="mid-text font-600 text-dark mb-5 uppercase">
                     {plan.name}
                   </p>
 
-                  {/* Price Header */}
                   <div className="flex items-center gap-4 mb-14">
                     <h2
                       className="font-600 text-dark large-text"
@@ -122,25 +127,19 @@ const Pricing = () => {
                     </p>
                   </div>
 
-                  {/* Subtitle / Target Description */}
-                  <p className="small-text text-gray mb-24">
+                  <p className="small-text text-gray text-muted mb-24">
                     {plan.desc}
                   </p>
 
-                  {/* CTA Button */}
-                  <button
-                    type="button"
+                  <Button
+                    text={plan.buttonText}
+                    icon="ArrowUpRight"
+                    iconPosition="right"
                     onClick={() => navigate('/connect')}
-                    className="flex items-center justify-center gap-8 w-full py-14 px-20 font-600 small-text cursor-pointer text-white border-none transition-all"
-                    style={{
-                      backgroundColor: '#262626',
-                      borderRadius: '10px',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
-                    }}
-                  >
-                    <span>{plan.buttonText}</span>
-                    <Icon name="ArrowUpRight" width="16" height="16" stroke="#FFFFFF" />
-                  </button>
+                    version="v3"
+                    bg="dark"
+                    color="white"
+                  />
 
                   {/* Includes Header */}
                   <p className="mini-text font-600 text-gray uppercase mt-28 mb-16 m-0" style={{ color: '#888888', letterSpacing: '0.02em' }}>
@@ -151,8 +150,8 @@ const Pricing = () => {
                   <div className="grid-cols-1 gap-12">
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-10">
-                        <Icon name="ArrowUpRight" width="16" height="16" stroke="#FF5100" />
-                        <p className="small-text font-500 text-dark" style={{ color: '#333333' }}>
+                        <Icon name="ArrowUpRight" width="16" height="16" stroke="var(--warning)" />
+                        <p className="small-text font-500 text-dark text-muted">
                           {feature}
                         </p>
                       </div>
@@ -162,8 +161,8 @@ const Pricing = () => {
               </div>
             ))}
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </>
   );
 };

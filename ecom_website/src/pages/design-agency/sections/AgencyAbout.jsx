@@ -11,20 +11,20 @@ const metrics = [
 
 const officeCards = [
   {
-    id: 'workstation-1',
-    src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-    alt: 'Infitech Office Workstation'
+    id: 'website-design',
+    src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    alt: 'Website Design & Development Agency'
   },
   {
-    id: 'conference',
-    src: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80',
-    alt: 'Infitech Conference Workspace',
+    id: 'marketing-agency',
+    src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    alt: 'Digital Marketing & Strategy Team',
     hasPlayBtn: false
   },
   {
-    id: 'workstation-2',
-    src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-    alt: 'Infitech Office Workstation'
+    id: 'agency-strategy',
+    src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+    alt: 'Creative Agency Website Strategy'
   }
 ];
 
@@ -37,6 +37,15 @@ const AgencyAbout = () => {
     let ticking = false;
 
     const handleScroll = () => {
+      const winW = window.innerWidth || document.documentElement.clientWidth;
+      if (winW <= 640) {
+        cardsRef.current.forEach((card) => {
+          if (card) card.style.transform = 'none';
+        });
+        ticking = false;
+        return;
+      }
+
       const winH = window.innerHeight || document.documentElement.clientHeight;
       cardsRef.current.forEach((card, idx) => {
         if (!card) return;
@@ -77,14 +86,13 @@ const AgencyAbout = () => {
   return (
     <Container className="bg-white">
       <div className="py-100 sm-py-50 relative">
-        {/* Top Header Grid */}
+        <p className="mini-text text-white bg-dark w-max px-18 py-8 rounded-20 flex items-center gap-8 font-500 uppercase">
+          <Icon name="Settings" width="14" height="14" className="text-warning" />
+          WHO WE ARE
+        </p>
         <div className="flex sm-grid-cols-1 items-start">
-          {/* Left Column */}
-          <div className="grid-cols-1 w-25 sm-w-full">
-            <p className="mini-text text-white bg-dark w-max px-18 py-8 rounded-20 flex items-center gap-8 font-500 uppercase mb-10">
-              <Icon name="Settings" width="14" height="14" className="text-warning" />
-              WHO WE ARE
-            </p>
+          <div className="grid-cols-1 sm-grid-cols-2 w-25 sm-w-full">
+
 
             <div style={{ position: 'relative', marginTop: '10px', marginLeft: '20px' }}>
               <svg style={{ width: '90px', height: '60px', marginBottom: '-5px', marginLeft: '30px' }} viewBox="0 0 100 80" fill="none">
@@ -99,8 +107,7 @@ const AgencyAbout = () => {
                   width: '140px',
                   height: '140px',
                   borderRadius: '50%',
-                  backgroundColor: isHoveredBadge ? '#FF5100' : '#E8E4DC',
-                  border: isHoveredBadge ? '1px solid #FF5100' : '1px solid #DCD7CE',
+                  backgroundColor: isHoveredBadge ? 'var(--warning)' : 'var(--tertiary)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -132,23 +139,10 @@ const AgencyAbout = () => {
                   </span>
                   <span>More Here</span>
                 </div>
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '14px',
-                    zIndex: 2,
-                    width: '10px',
-                    height: '10px',
-                    borderRadius: '50%',
-                    backgroundColor: isHoveredBadge ? '#FFFFFF' : '#FF5100',
-                    transition: 'all 0.35s ease'
-                  }}
-                />
               </div>
             </div>
 
-            {/* Metrics Column */}
-            <div className="grid-cols-1 gap-12 mt-60 w-80">
+            <div className="grid-cols-1 gap-12 mt-60 w-80 sm-w-full sm-mt-1">
               {metrics.map((item, idx) => (
                 <div key={idx} className="p-10 bordb">
                   <p className="text-gray mini-text font-500">{item.label}</p>
@@ -158,9 +152,8 @@ const AgencyAbout = () => {
             </div>
           </div>
 
-          {/* Right Column Headline & Showcase */}
-          <div className="w-75 sm-w-full">
-            <h2 className="large-text text-dark font-500">
+          <div className="w-75 sm-w-full sm-mt-40">
+            <h2 className="large-text text-dark font-600">
               <span className="font-600 text-warning">Hello!</span> Focus On Branding, Purpose, And Impactful Websites.
             </h2>
 
@@ -168,9 +161,7 @@ const AgencyAbout = () => {
               With Over 8 Years Of Experience, In Your Interest, For You, For Your Customers And, Last But Not Least, For Us, We Do Everything We Can To Ensure That Our Work Makes Sense.
             </p>
 
-            {/* Office Showcase Cards Container */}
-            <div className="mt-62 grid-cols-3 sm-grid-cols-1 gap-12 relative">
-              {/* Soft decorative accent dot */}
+            <div className="mt-62 sm-mt-30 grid-cols-3 sm-grid-cols-2 gap-12 relative">
               <div
                 style={{
                   position: 'absolute',
@@ -186,12 +177,11 @@ const AgencyAbout = () => {
               />
 
               {officeCards.map((card, idx) => (
-                <div key={card.id || idx}>
+                <div key={card.id || idx} className={idx === 2 ? 'sm-col-span-2' : ''}>
                   <div
                     ref={(el) => (cardsRef.current[idx] = el)}
-                    className="rounded-20 overflow-hidden relative w-full"
+                    className="rounded-10 overflow-hidden relative w-full h-400 sm-h-200"
                     style={{
-                      height: '380px',
                       willChange: 'transform',
                       transform: 'translate3d(0, 0, 0)'
                     }}
@@ -199,47 +189,9 @@ const AgencyAbout = () => {
                     <Image
                       src={card.src}
                       alt={card.alt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-400 sm-h-200 object-cover"
                     />
-
-                    {/* Play Video Button Graphic */}
-                    {card.hasPlayBtn && (
-                      <div
-                        style={{
-                          position: 'absolute',
-                          top: '50%',
-                          left: '50%',
-                          transform: 'translate(-50%, -50%)',
-                          width: '76px',
-                          height: '76px',
-                          borderRadius: '50%',
-                          backgroundColor: '#FFFFFF',
-                          boxShadow: '0 0 0 8px rgba(255, 255, 255, 0.3), 0 12px 35px rgba(0, 0, 0, 0.2)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          zIndex: 4
-                        }}
-                      >
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="#FF5100" style={{ marginLeft: '4px' }}>
-                          <polygon points="6,3 20,12 6,21" />
-                        </svg>
-                      </div>
-                    )}
                   </div>
-
-                  {/* Decorative dot below second card */}
-                  {card.hasPlayBtn && (
-                    <div
-                      style={{
-                        width: '10px',
-                        height: '10px',
-                        borderRadius: '50%',
-                        backgroundColor: '#FF5100',
-                        marginTop: '20px'
-                      }}
-                    />
-                  )}
                 </div>
               ))}
             </div>

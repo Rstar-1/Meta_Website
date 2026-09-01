@@ -66,11 +66,11 @@ const AgencyCTA = () => {
 
   return (
     <Container>
-      <div ref={sectionRef} className="py-50 relative overflow-hidden w-full">
+      <div ref={sectionRef} className="py-50 bordb relative overflow-hidden w-full">
         <div
           className="w-full bg-white rounded-10"
         >
-          <div className='text-center p-40'>
+          <div className='text-center p-80 sm-p-20'>
             <h3
               className="head-text font-700 text-dark uppercase text-center"
             >
@@ -106,11 +106,9 @@ const AgencyCTA = () => {
           />
         </div>
 
-        {/* Main Contact Section */}
-        <div className="relative grid-cols-2 sm-grid-cols-1 gap-12 mt-60">
-          {/* Left Side Form Card */}
+        <div className="relative grid-cols-2 sm-grid-cols-1 gap-12 mt-60 sm-mt-25">
           <div
-            className="rounded-10 p-50 relative"
+            className="rounded-10 p-50 sm-p-28 relative z-50"
             style={{
               background: 'rgba(22, 22, 22, 0.75)',
               backdropFilter: 'blur(12px)',
@@ -122,7 +120,7 @@ const AgencyCTA = () => {
               <span>START A PROJECT</span>
             </p>
 
-            <h2 className="large-text text-white font-800 mb-35">
+            <h2 className="large-text text-white font-600 mb-35">
               Get A Quote
             </h2>
 
@@ -134,86 +132,50 @@ const AgencyCTA = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="gap-28">
-                <div className="grid-cols-2 gap-30" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Name *"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      style={inputStyle}
-                    />
-                  </div>
-
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Email Address *"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      style={inputStyle}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid-cols-2 gap-30" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="About Project"
-                      value={formData.aboutProject}
-                      onChange={(e) => setFormData({ ...formData, aboutProject: e.target.value })}
-                      style={inputStyle}
-                    />
-                  </div>
-
-                  <div>
-                    <select
-                      value={formData.option}
-                      onChange={(e) => setFormData({ ...formData, option: e.target.value })}
-                      style={{ ...inputStyle, color: formData.option ? '#FFFFFF' : '#999999', cursor: 'pointer' }}
-                    >
-                      <option value="" style={{ background: '#1A1A1A', color: '#FFFFFF' }}>Chose A Option</option>
-                      <option value="web" style={{ background: '#1A1A1A', color: '#FFFFFF' }}>Web Design &amp; Development</option>
-                      <option value="app" style={{ background: '#1A1A1A', color: '#FFFFFF' }}>Mobile App Design</option>
-                      <option value="branding" style={{ background: '#1A1A1A', color: '#FFFFFF' }}>Brand Identity &amp; Strategy</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <textarea
-                    rows="3"
-                    placeholder="Write About Project . . ."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                <div className="grid-cols-2 gap-12">
+                  <input
+                    type="text"
+                    placeholder="Name *"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    style={inputStyle}
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email Address *"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     style={inputStyle}
                   />
                 </div>
+                <textarea
+                  rows="3"
+                  placeholder="Write About Project . . ."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  style={inputStyle}
+                  className='mt-10'
+                />
 
                 <div className="mt-24">
-                  <button
+                  <Button
                     type="submit"
-                    className="flex items-center justify-center gap-10 rounded-50 font-700 cursor-pointer text-white"
-                    style={{
-                      backgroundColor: '#FF5100',
-                      border: 'none',
-                      padding: '16px 36px',
-                      fontSize: '1rem',
-                      boxShadow: '0 10px 25px rgba(255, 81, 0, 0.35)'
-                    }}
-                  >
-                    Send Message <Icon name="ArrowUpRight" width="16" height="16" stroke="#FFFFFF" />
-                  </button>
+                    text="Send Message"
+                    icon="ArrowUpRight"
+                    iconPosition="right"
+                    bg="warning"
+                    color="white"
+                    version="v2"
+                    className='py-10'
+                  />
                 </div>
               </form>
             )}
           </div>
 
-          {/* Right Side Locations & Info */}
-          <div className="p-30">
+          <div className="p-30 sm-p-12">
             <div>
               <h3 className="head-text text-white font-600 mb-8">
                 IN<br />

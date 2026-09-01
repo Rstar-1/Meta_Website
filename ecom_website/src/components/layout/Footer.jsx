@@ -5,7 +5,11 @@ import Icon from '../common/Icon';
 import footerData from '../../data/footer.json';
 import NewsletterForm from '../forms/NewsletterForm';
 
-const socialLinks = ['Facebook', 'LinkedIn', 'Twitter', 'YouTube'];
+const socialLinks = [
+  { iconName: 'Facebook', url: 'https://www.facebook.com/Inraclick/' },
+  { iconName: 'YouTube', url: 'https://www.youtube.com/@INRACLICK' },
+  { iconName: 'LinkedIn', url: 'https://www.linkedin.com/company/-inraclick/' }
+];
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -53,8 +57,8 @@ const Footer = () => {
       {/* 1. High-Height Parallax Image Banner */}
       <div
         ref={containerRef}
-        className="w-full relative overflow-hidden"
-        style={{ height: '520px', backgroundColor: '#0F1623' }}
+        className="w-full relative overflow-hidden h-500 sm-h-250"
+        style={{ backgroundColor: '#0F1623' }}
       >
         <div
           ref={bannerRef}
@@ -102,10 +106,13 @@ const Footer = () => {
 
                 {/* Social Links */}
                 <div className="flex gap-10 mt-20">
-                  {socialLinks.map((iconName, idx) => (
+                  {socialLinks.map((item, idx) => (
                     <a
                       key={idx}
-                      href="#social"
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.iconName}
                       className="center-div rounded-circle text-white decoration-none transition-all"
                       style={{
                         width: '36px',
@@ -122,7 +129,7 @@ const Footer = () => {
                         e.currentTarget.style.transform = 'translateY(0)';
                       }}
                     >
-                      <Icon name={iconName} width="16" height="16" stroke="currentColor" strokeWidth="2.5" />
+                      <Icon name={item.iconName} width="16" height="16" fill="#FFFFFF" />
                     </a>
                   ))}
                 </div>

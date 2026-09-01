@@ -10,13 +10,12 @@ const defaultSEO = {
     name: 'SOBO Marketing Solution',
     url: 'https://sobo-marketing.com',
     logo: 'https://sobo-marketing.com/sobo_logo.webp',
-    phone: '+91-9876543210',
-    email: 'info@sobomarketing.com',
+    phone: '+91-7015163045',
+    email: 'inra@inraclick.com',
     socials: [
-      'https://facebook.com/sobomarketing',
-      'https://twitter.com/sobomarketing',
-      'https://instagram.com/sobomarketing',
-      'https://linkedin.com/company/sobomarketing'
+      'https://www.facebook.com/Inraclick/',
+      'https://www.youtube.com/@INRACLICK',
+      'https://www.linkedin.com/company/-inraclick/'
     ]
   }
 };

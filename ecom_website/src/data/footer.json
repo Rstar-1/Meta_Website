@@ -7,17 +7,17 @@
       {
         "platform": "facebook",
         "iconName": "Facebook",
-        "url": "#"
+        "url": "https://www.facebook.com/Inraclick/"
       },
       {
-        "platform": "instagram",
-        "iconName": "Instagram",
-        "url": "#"
+        "platform": "youtube",
+        "iconName": "YouTube",
+        "url": "https://www.youtube.com/@INRACLICK"
       },
       {
-        "platform": "whatsapp",
-        "iconName": "WhatsApp",
-        "url": "#"
+        "platform": "linkedin",
+        "iconName": "LinkedIn",
+        "url": "https://www.linkedin.com/company/-inraclick/"
       }
     ]
   },

@@ -45,7 +45,7 @@ const AgencyTestimonials = () => {
 
   return (
     <Container>
-      <div className="py-80 w-full">
+      <div className="py-60 w-full">
         <p
           className="mini-text text-dark bg-white w-max px-18 py-6 rounded-20 flex items-center gap-8 font-700 uppercase mb-10"
         >
@@ -55,56 +55,55 @@ const AgencyTestimonials = () => {
         <h2 className="large-text text-white uppercase font-500">
           Reviews &amp; Trust Ratings
         </h2>
-        <div className="rounded-10 overflow-hidden relative flex mt-40 sm-grid-cols-1">
+        <div className="rounded-10 overflow-hidden relative flex mt-40 sm-mt-20 sm-grid-cols-1">
           {/* Left Dark Sidebar */}
           <div
-            className="p-40 sm-p-1 bg-dark w-40 sm-w-full"
+            className="bg-dark w-40 sm-w-full"
           >
-            <div>
+            <div className='p-40 sm-p-20'>
               <h3 className="large-text text-white font-600">
                 Clutch Reviews &amp; Trust Ratings
               </h3>
-            </div>
 
-            <div className="flex items-center gap-9 text-warning mt-20">
-              {[...Array(5)].map((_, i) => (
-                <Icon key={i} name="Star" width="18" height="18" className="text-warning" />
-              ))}
-            </div>
-            <p className="text-white font-500 small-text mt-20">4.9 / 5.0 Rating</p>
-            <p className="text-white font-500 small-text">Based on 80+ verified reviews</p>
+              <div className="flex items-center gap-9 text-warning mt-20">
+                {[...Array(5)].map((_, i) => (
+                  <Icon key={i} name="Star" width="18" height="18" className="text-warning" />
+                ))}
+              </div>
+              <p className="text-white font-500 small-text mt-20">4.9 / 5.0 Rating</p>
+              <p className="text-white font-500 small-text">Based on 80+ verified reviews</p>
 
-            <div className="flex gap-12 items-center mt-50">
-              <Button
-                onClick={handlePrev}
-                aria-label="Previous review"
-                icon="ChevronLeft"
-                iconWidth="30"
-                iconHeight="30"
-                iconStroke="#FFFFFF"
-                version="icon"
-                bg="transparent"
-              />
-              <Button
-                onClick={handleNext}
-                aria-label="Next review"
-                icon="ChevronRight"
-                iconWidth="30"
-                iconHeight="30"
-                iconStroke="#FFFFFF"
-                version="icon"
-                bg="transparent"
-              />
+              <div className="flex gap-12 items-center mt-50 sm-mt-25">
+                <Button
+                  onClick={handlePrev}
+                  aria-label="Previous review"
+                  icon="ChevronLeft"
+                  iconWidth="30"
+                  iconHeight="30"
+                  iconStroke="#FFFFFF"
+                  version="icon"
+                  bg="transparent"
+                />
+                <Button
+                  onClick={handleNext}
+                  aria-label="Next review"
+                  icon="ChevronRight"
+                  iconWidth="30"
+                  iconHeight="30"
+                  iconStroke="#FFFFFF"
+                  version="icon"
+                  bg="transparent"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Right Light Review Panel */}
-          <div className="bg-white p-50 sm-p-1 w-60 sm-w-full">
-            <p className="headpara-text text-dark font-400 mb-30">
-              "{activeReview.quote}"
-            </p>
+          <div className="bg-white w-60 sm-w-full">
+            <div className='p-40 sm-p-20'>
+              <p className="headpara-text text-dark font-400 mb-30">
+                "{activeReview.quote}"
+              </p>
 
-            <div className="flex items-center justify-between">
               <div className="flex items-center gap-12">
                 <Image
                   src={activeReview.avatar}
@@ -128,7 +127,6 @@ const AgencyTestimonials = () => {
                 </div>
               </div>
 
-              <span style={{ fontSize: '2rem', fontFamily: 'serif', opacity: 0.2 }}>“</span>
             </div>
           </div>
         </div>

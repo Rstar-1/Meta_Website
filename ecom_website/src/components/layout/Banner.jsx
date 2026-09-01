@@ -12,7 +12,7 @@ const Banner = ({ title, desc, style, breadcrumbs, productData }) => {
                 ...style
             }}>
             <div className="w-full py-90">
-                <div className="flex items-center gap-8 mb-12">
+                <div className="flex items-center gap-8 mb-12 mt-40">
                     <span
                         className="bg-primary dot rounded-full"
                     />

@@ -9,14 +9,14 @@
 
 /* ======================= End-NavFoot ======================= */
 
-/* ======================= Footer White Theme Styles ======================= */
+/* ======================= Footer Dark Theme Styles ======================= */
 .footer-link {
-  color: #666666 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   transition: color 0.2s ease !important;
 }
 
 .footer-link:hover {
-  color: var(--primary, #FF5100) !important;
+  color: var(--white) !important;
 }
 
 .social-link {
@@ -28,13 +28,9 @@
 }
 
 .newsletter-input {
-  background-color: #F8F9FA !important;
-  border: 1px solid #E0E0E0 !important;
-  color: #161616 !important;
-}
-
-.newsletter-input::placeholder {
-  color: #888888 !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
 }
 
 .newsletter-input:focus {
@@ -59,5 +55,11 @@
     width: 100%;
     height: 1px;
     margin: 16px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .sm-col-span-2 {
+    grid-column: span 2 / span 2 !important;
   }
 }
