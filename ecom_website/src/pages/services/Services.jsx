@@ -43,7 +43,7 @@ const Services = () => {
       {/* Main Service Layout Section */}
       <div style={{ backgroundColor: '#FAF8F5' }} className="py-80">
         <Container>
-          <div className="flex sm-grid-cols-1 gap-30 items-start">
+          <div className="flex sm-grid-cols-1 gap-12 items-start">
 
             {/* Left Main Content Column */}
             <div className="w-70 sm-w-full">
@@ -57,78 +57,26 @@ const Services = () => {
               </div>
 
               {/* Main Heading & Description */}
-              <h2 className="large-text font-600 text-dark mt-28 mb-16" style={{ letterSpacing: '-0.02em', lineHeight: 1.3 }}>
+              <h2 className="head-text font-600 text-dark mt-28 mb-16" style={{ letterSpacing: '-0.02em', lineHeight: 1.3 }}>
                 End-to-End Tech Solutions for modern businesses
               </h2>
 
-              <p className="para-text text-gray leading-relaxed mb-16">
+              <p className="small-text text-gray mb-16">
                 We deliver end-to-end tech solutions designed to simplify complexity, improve performance, and support long-term business growth. From strategy and system architecture to development, integration, and ongoing support, our solutions are built to be secure, scalable, and aligned with your business goals.
               </p>
 
-              <p className="para-text text-gray leading-relaxed mb-28">
+              <p className="small-text text-gray mb-28">
                 Our tech solutions help businesses operate smarter, faster, and more securely. We analyze your challenges, design tailored systems, and implement reliable technologies that integrate seamlessly with your existing infrastructure. With a focus on performance, security, and scalability, we ensure your technology evolves as your business grows.
               </p>
 
-              {/* Feature Cards 2-Column Grid */}
-              <div className="grid-cols-2 sm-grid-cols-1 gap-20 my-28">
-                {/* Feature Card 1 */}
-                <div
-                  className="bg-white rounded-15 p-24 flex items-start gap-16 border"
-                  style={{ borderColor: '#EFECE6', boxShadow: '0 4px 15px rgba(0,0,0,0.02)' }}
-                >
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '50%',
-                      backgroundColor: '#FFF0EB'
-                    }}
-                  >
-                    <Icon name="Settings" width="22" height="22" stroke="#FF5100" />
-                  </div>
-                  <div>
-                    <h4 className="para-text font-600 text-dark mb-6">Digital Solutions</h4>
-                    <p className="small-text text-gray leading-normal m-0">
-                      We provide info-reliable solutions designed to help our modern business thrive.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Feature Card 2 */}
-                <div
-                  className="bg-white rounded-15 p-24 flex items-start gap-16 border"
-                  style={{ borderColor: '#EFECE6', boxShadow: '0 4px 15px rgba(0,0,0,0.02)' }}
-                >
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '50%',
-                      backgroundColor: '#FFF0EB'
-                    }}
-                  >
-                    <Icon name="ArrowUpRight" width="22" height="22" stroke="#FF5100" />
-                  </div>
-                  <div>
-                    <h4 className="para-text font-600 text-dark mb-6">Live And Delivers</h4>
-                    <p className="small-text text-gray leading-normal m-0">
-                      We provide info-reliable solutions designed to help our modern business thrive.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Explore Benefits Subsection */}
-              <div className="mt-36">
-                <h3 className="head-text font-600 text-dark mb-12">Explore Benefits</h3>
-                <p className="para-text text-gray leading-relaxed mb-24">
+              <div className="mt-20">
+                <h3 className="title-text font-600 text-dark mb-12">Explore Benefits</h3>
+                <p className="small-text text-gray mb-24">
                   We deliver end-to-end tech solutions designed to simplify complexity, improve performance, and support long-term business growth. From strategy and system architecture to development.
                 </p>
 
                 {/* Dual Benefit Showcase Images */}
-                <div className="grid-cols-2 sm-grid-cols-1 gap-20 mb-32">
+                <div className="grid-cols-2 sm-grid-cols-1 gap-12 mb-32">
                   <div className="rounded-15 overflow-hidden relative" style={{ height: '220px' }}>
                     <Image
                       src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80"
@@ -148,64 +96,23 @@ const Services = () => {
 
               {/* Final Conclusion Subsection */}
               <div className="mt-32">
-                <h3 className="head-text font-600 text-dark mb-12">Final Conclusion</h3>
-                <p className="para-text text-gray leading-relaxed mb-14">
+                <h3 className="title-text font-600 text-dark mb-12">Final Conclusion</h3>
+                <p className="small-text text-gray mb-14">
                   Our tech solutions help businesses operate smarter, faster, and more securely. We analyze your challenges, design tailored systems, and implement reliable technologies that integrate seamlessly with your existing infrastructure. With a focus on performance, security, and scalability, we ensure your technology evolves as your business grows.
                 </p>
-                <p className="para-text text-gray leading-relaxed">
+                <p className="small-text text-gray">
                   Our tech solutions help businesses operate smarter, faster, and more securely. We analyze your challenges, design tailored systems, and implement reliable technologies that integrate.
                 </p>
               </div>
             </div>
 
             {/* Right Sidebar Column */}
-            <div className="w-30 sm-w-full flex flex-column gap-24">
+            <div className="w-30 sm-w-full">
 
-              {/* Sidebar Widget 1: More Services Navigation */}
               <div
-                className="bg-white rounded-15 p-24 border"
-                style={{ borderColor: '#EFECE6', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}
-              >
-                <h3 className="para-text font-700 text-dark mb-18 flex items-center gap-8 uppercase" style={{ letterSpacing: '0.02em' }}>
-                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#FF5100' }} />
-                  More services
-                </h3>
-
-                <div className="flex flex-column gap-8">
-                  {sidebarServices.map((service, index) => {
-                    const isActive = activeSidebarIndex === index;
-                    return (
-                      <button
-                        key={service.id}
-                        type="button"
-                        onClick={() => setActiveSidebarIndex(index)}
-                        onMouseEnter={() => setActiveSidebarIndex(index)}
-                        className="flex items-center justify-between px-16 py-14 rounded-10 cursor-pointer transition-all border-none text-left"
-                        style={{
-                          backgroundColor: isActive ? '#FAF8F5' : 'transparent',
-                          color: isActive ? '#FF5100' : '#161616',
-                          fontWeight: isActive ? '600' : '500'
-                        }}
-                      >
-                        <span className="small-text">{service.label}</span>
-                        <Icon
-                          name="ChevronRight"
-                          width="16"
-                          height="16"
-                          stroke={isActive ? '#FF5100' : '#999999'}
-                        />
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Sidebar Widget 2: CTA Contact Card */}
-              <div
-                className="rounded-15 p-28 relative overflow-hidden text-white"
+                className="rounded-10 p-28 relative overflow-hidden text-white"
                 style={{
                   background: 'linear-gradient(145deg, #2E1914 0%, #1A0D0A 100%)',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
                 }}
               >
                 {/* Subtle background decorative glow */}
@@ -222,17 +129,17 @@ const Services = () => {
                   }}
                 />
 
-                <h3 className="head-text font-700 text-white mb-12" style={{ lineHeight: 1.3 }}>
+                <h3 className="title-text font-700 text-white mb-12">
                   Need Any Software Company Services?
                 </h3>
-                <p className="small-text text-gray leading-normal mb-24" style={{ color: '#C0B7B1' }}>
+                <p className="mini-text text-gray" style={{ color: '#C0B7B1' }}>
                   Our tech solutions help businesses operate smarter, faster, and more.
                 </p>
 
                 {/* Contact items */}
-                <div className="flex flex-column gap-16 mb-28">
+                <div className="grid-cols-1 gap-12 mt-16">
                   {/* Item 1 */}
-                  <div className="flex items-center gap-14">
+                  <div className="flex items-center gap-12">
                     <div
                       className="flex items-center justify-center flex-shrink-0"
                       style={{
@@ -248,7 +155,7 @@ const Services = () => {
                   </div>
 
                   {/* Item 2 */}
-                  <div className="flex items-center gap-14">
+                  <div className="flex items-center gap-12">
                     <div
                       className="flex items-center justify-center flex-shrink-0"
                       style={{
@@ -264,7 +171,7 @@ const Services = () => {
                   </div>
 
                   {/* Item 3 */}
-                  <div className="flex items-center gap-14">
+                  <div className="flex items-center gap-12">
                     <div
                       className="flex items-center justify-center flex-shrink-0"
                       style={{
@@ -280,7 +187,7 @@ const Services = () => {
                   </div>
 
                   {/* Item 4 */}
-                  <div className="flex items-center gap-14">
+                  <div className="flex items-center gap-12">
                     <div
                       className="flex items-center justify-center flex-shrink-0"
                       style={{
@@ -300,7 +207,7 @@ const Services = () => {
                 <button
                   type="button"
                   onClick={() => navigate('/connect')}
-                  className="flex items-center justify-center gap-10 w-full py-14 px-20 font-700 small-text cursor-pointer text-white border-none"
+                  className="flex items-center justify-center gap-10 w-full py-14 px-20 mt-15 font-700 small-text cursor-pointer text-white border-0"
                   style={{
                     backgroundColor: '#FF5100',
                     borderRadius: '50px',
@@ -311,6 +218,54 @@ const Services = () => {
                   <span>Know More Us</span>
                   <Icon name="ArrowUpRight" width="16" height="16" stroke="#FFFFFF" />
                 </button>
+              </div>
+
+              <div className="grid-cols-1 gap-12 mt-16">
+                {/* Feature Card 1 */}
+                <div
+                  className="bg-white rounded-10 p-20 flex items-start gap-12 border"
+                >
+                  <div
+                    className="flex items-center justify-center w-30"
+                    style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      backgroundColor: '#FFF0EB'
+                    }}
+                  >
+                    <Icon name="Settings" width="22" height="22" stroke="#FF5100" />
+                  </div>
+                  <div>
+                    <h4 className="mid-text font-600 text-dark mb-6">Digital Solutions</h4>
+                    <p className="mini-text text-gray leading-normal m-0">
+                      We provide info-reliable solutions designed to help our modern business thrive.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature Card 2 */}
+                <div
+                  className="bg-white rounded-10 p-20 flex items-start gap-12 border"
+                >
+                  <div
+                    className="flex items-center justify-center w-30"
+                    style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      backgroundColor: '#FFF0EB'
+                    }}
+                  >
+                    <Icon name="ArrowUpRight" width="22" height="22" stroke="#FF5100" />
+                  </div>
+                  <div>
+                    <h4 className="mid-text font-600 text-dark mb-6">Live And Delivers</h4>
+                    <p className="mini-text text-gray leading-normal m-0">
+                      We provide info-reliable solutions designed to help our modern business thrive.
+                    </p>
+                  </div>
+                </div>
               </div>
 
             </div>
