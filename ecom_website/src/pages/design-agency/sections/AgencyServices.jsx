@@ -44,7 +44,7 @@ const AgencyServices = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <Container className='bg-white'>
+    <Container style={{ background: 'var(--white)' }}>
       <div className="py-80">
         <p className="mini-text text-white bg-dark mx-auto w-max px-18 py-8 rounded-20 flex items-center gap-8 font-500 uppercase mb-10">
           <Icon name="Settings" width="14" height="14" className="text-warning" />

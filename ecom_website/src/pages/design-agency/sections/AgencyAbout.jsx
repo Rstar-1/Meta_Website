@@ -84,7 +84,7 @@ const AgencyAbout = () => {
   }, []);
 
   return (
-    <Container className="bg-white">
+    <Container style={{ background: 'var(--white)' }}>
       <div className="py-100 sm-py-50 relative">
         <p className="mini-text text-white bg-dark w-max px-18 py-8 rounded-20 flex items-center gap-8 font-500 uppercase">
           <Icon name="Settings" width="14" height="14" className="text-warning" />

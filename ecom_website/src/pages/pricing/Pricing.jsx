@@ -10,61 +10,65 @@ const pricingPlans = [
   {
     id: 'starter',
     name: 'Starter',
-    price: '$29',
-    period: '/Months',
-    desc: 'For businesses ready to level up their digital presence with a professional.',
+    price: '$49',
+    period: '/Month',
+    isPopular: false,
+    desc: 'Essential digital presence for startups and small businesses.',
     buttonText: 'Get Started Today',
     features: [
-      'Basic IT support',
-      'Uptime monitoring',
-      'Email priority help',
-      'Small fixes included',
-      'Team Q&A session'
+      'Basic Website Audit',
+      'Responsive UI Design',
+      'SEO Metadata Setup',
+      'Standard Support (Mon-Fri)',
+      '1 Revision Cycle'
     ]
   },
   {
     id: 'essential',
     name: 'Essential',
-    price: '$799',
-    period: '/Months',
-    desc: 'For businesses ready to level up their digital presence with a professional.',
+    price: '$199',
+    period: '/Month',
+    isPopular: true,
+    desc: 'Comprehensive package for growing brands needing active performance.',
     buttonText: 'Get Started Today',
     features: [
-      'Advanced tech support',
-      'Full infra audit',
-      '24/7 monitoring',
-      'Cloud optimization',
-      'Disaster plan setup'
+      'Custom Web & UI Design',
+      'Advanced SEO Optimization',
+      '24/7 Uptime Monitoring',
+      'Monthly Analytics Report',
+      'Priority Email Support'
     ]
   },
   {
-    id: 'starter',
-    name: 'Starter',
-    price: '$29',
-    period: '/Months',
-    desc: 'For businesses ready to level up their digital presence with a professional.',
+    id: 'professional',
+    name: 'Professional',
+    price: '$499',
+    period: '/Month',
+    isPopular: false,
+    desc: 'For scaling businesses requiring custom web apps & growth strategy.',
     buttonText: 'Get Started Today',
     features: [
-      'Basic IT support',
-      'Uptime monitoring',
-      'Email priority help',
-      'Small fixes included',
-      'Team Q&A session'
+      'Full-Stack App Development',
+      'Custom API Integration',
+      'Conversion Rate Optimization',
+      'Dedicated Account Manager',
+      'Unlimited Minor Tweaks'
     ]
   },
   {
-    id: 'basic',
-    name: 'Basic',
-    price: '$2,800',
-    period: '/Months',
-    desc: 'For businesses ready to level up their digital presence with a professional.',
+    id: 'enterprise',
+    name: 'Enterprise',
+    price: '$999',
+    period: '/Month',
+    isPopular: false,
+    desc: 'Tailored digital ecosystem with round-the-clock priority SLA.',
     buttonText: 'Get Started Today',
     features: [
-      'Basic IT support',
-      'Uptime monitoring',
-      'Email priority help',
-      'Small fixes included',
-      'Team Q&A session'
+      'Bespoke Enterprise Systems',
+      'Multi-Platform Integration',
+      '24/7 SLA & Incident Team',
+      'Security & Audit Reports',
+      'Strategic Advisory Calls'
     ]
   }
 ];
@@ -94,7 +98,7 @@ const Pricing = () => {
         ]}
       />
 
-      <Container className='bg-forth'>
+      <Container style={{ background: 'var(--forth)' }}>
         <div className='py-80 sm-py-50'>
           <p className="mini-text text-white bg-dark mx-auto w-max px-18 py-8 rounded-20 flex items-center gap-8 font-500 uppercase mb-10">
             <Icon name="Settings" width="14" height="14" className="text-warning" />
@@ -108,9 +112,17 @@ const Pricing = () => {
             {pricingPlans?.map((plan) => (
               <div
                 key={plan.id}
-                className="bg-white rounded-10 p-25 b-shadow"
-
+                className="bg-white rounded-10 p-25 b-shadow relative flex flex-column justify-between"
+                style={plan.isPopular ? { border: '2px solid #FF5100' } : {}}
               >
+                {plan.isPopular && (
+                  <span
+                    className="absolute bg-warning text-white mini-text font-700 uppercase px-12 py-4 rounded-20"
+                    style={{ top: '-14px', right: '20px' }}
+                  >
+                    Popular
+                  </span>
+                )}
                 <div>
                   <p className="mid-text font-600 text-dark mb-5 uppercase">
                     {plan.name}
@@ -127,7 +139,7 @@ const Pricing = () => {
                     </p>
                   </div>
 
-                  <p className="small-text text-gray text-muted mb-24">
+                  <p className="small-text text-gray text-muted mb-24" style={{ minHeight: '44px' }}>
                     {plan.desc}
                   </p>
 
@@ -137,7 +149,7 @@ const Pricing = () => {
                     iconPosition="right"
                     onClick={() => navigate('/connect')}
                     version="v3"
-                    bg="dark"
+                    bg={plan.isPopular ? 'warning' : 'dark'}
                     color="white"
                   />
 
@@ -151,7 +163,7 @@ const Pricing = () => {
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-10">
                         <Icon name="ArrowUpRight" width="16" height="16" stroke="var(--warning)" />
-                        <p className="small-text font-500 text-dark text-muted">
+                        <p className="small-text font-500 text-dark text-muted m-0">
                           {feature}
                         </p>
                       </div>
