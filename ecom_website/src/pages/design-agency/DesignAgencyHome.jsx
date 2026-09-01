@@ -9,7 +9,6 @@ import AgencyServices from './sections/AgencyServices';
 import AgencyPortfolio from './sections/AgencyPortfolio';
 import AgencyTestimonials from './sections/AgencyTestimonials';
 import AgencyCTA from './sections/AgencyCTA';
-import AgencyCustomCursor from './components/AgencyCustomCursor';
 
 const DesignAgencyHome = () => {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://infitech-agency.com';
@@ -24,7 +23,6 @@ const DesignAgencyHome = () => {
         minHeight: '100vh'
       }}
     >
-      <AgencyCustomCursor />
       <SeoHelmet
         title="Infitech Design Agency | A New Generation Communications Agency"
         description="Infitech is a premier digital communications agency specializing in branding, high-converting websites, app design, and creative media solutions."
