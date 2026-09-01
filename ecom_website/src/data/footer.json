@@ -1,8 +1,8 @@
 {
   "brand": {
-    "logo": "⚙️",
-    "name": "Metatech",
-    "description": "ISO 9001:2015 certified engineering and automated manufacturing solutions for global B2B operations and assembly.",
+    "logo": "/sobo_logo.webp",
+    "name": "Inraclick",
+    "description": "Helping businesses thrive in a rapidly evolving digital world with bespoke strategy, cutting-edge web design, and growth-driven marketing solutions.",
     "socials": [
       {
         "platform": "facebook",
@@ -26,64 +26,48 @@
       "title": "Quick Links",
       "links": [
         {
-          "label": "Home",
-          "path": "/home"
-        },
-        {
           "label": "About Us",
           "path": "/about"
         },
         {
-          "label": "Products",
-          "path": "/products"
-        },
-        {
           "label": "Blogs",
           "path": "/blog"
+        }
+      ]
+    },
+    {
+      "title": "Navigation",
+      "links": [
+        {
+          "label": "Services",
+          "path": "/services"
+        },
+        {
+          "label": "Pricing",
+          "path": "/pricing"
         },
         {
           "label": "Connect",
           "path": "/connect"
         }
       ]
-    },
-    {
-      "title": "Commissioning Support",
-      "links": [
-        {
-          "label": "About Group",
-          "path": "/about"
-        },
-        {
-          "label": "Contact Desk",
-          "path": "/contact"
-        },
-        {
-          "label": "Engineering Insights",
-          "path": "/blog"
-        },
-        {
-          "label": "RFQ Portal",
-          "path": "/contact"
-        }
-      ]
     }
   ],
   "newsletter": {
-    "title": "Technical Updates",
-    "description": "Get automation updates, engineering journals, and catalog releases.",
-    "placeholder": "Corporate email...",
-    "buttonText": "Subscribe"
+    "title": "Subscribe Newsletter",
+    "description": "Stay updated with our latest design trends, agency insights, and digital strategies.",
+    "placeholder": "Email address",
+    "buttonText": "Subscribe Now"
   },
   "bottom": {
-    "copyright": "© 2026 Metatech Industries. All rights reserved. Registered ISO-9001 Facility.",
+    "copyright": "© 2026 Inraclick. All rights reserved.",
     "links": [
       {
-        "label": "Security Statement",
+        "label": "Privacy Policy",
         "url": "#"
       },
       {
-        "label": "Terms of Machinery Commissioning",
+        "label": "Terms of Service",
         "url": "#"
       }
     ]

@@ -1,15 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '../common/Container';
+import Image from '../common/Image';
 import Icon from '../common/Icon';
 import footerData from '../../data/footer.json';
 import NewsletterForm from '../forms/NewsletterForm';
-
-const socialLinks = [
-  { iconName: 'Facebook', url: 'https://www.facebook.com/Inraclick/' },
-  { iconName: 'YouTube', url: 'https://www.youtube.com/@INRACLICK' },
-  { iconName: 'LinkedIn', url: 'https://www.linkedin.com/company/-inraclick/' }
-];
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -87,26 +82,24 @@ const Footer = () => {
         <Container>
           <div className="w-full">
             <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 items-start gap-30">
-              {/* Column 1: Infitech Brand */}
+              {/* Column 1: Brand Logo & Description */}
               <div>
-                <div className="flex items-center gap-10 mb-16">
-                  <span
-                    className="rounded-6 font-900 text-white center-div flex-shrink-0"
-                    style={{ width: '34px', height: '34px', backgroundColor: '#FF5100', fontSize: '1.2rem' }}
-                  >
-                    i
-                  </span>
-                  <span className="font-800 text-dark" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>
-                    Infitech
-                  </span>
+                <div className="flex items-center mb-16">
+                  <Image
+                    src={footerData.brand?.logo || '/sobo_logo.webp'}
+                    alt={`${footerData.brand?.name || 'Inraclick'} Logo`}
+                    className="object-contain cursor-pointer"
+                    style={{ height: '52px' }}
+                    onClick={() => navigate('/home')}
+                  />
                 </div>
-                <p className="small-text text-gray m-0" style={{ lineHeight: '1.65', maxWidth: '300px' }}>
-                  Businesses to thrive in changing digital world. With over a decade systems that drive growth an efficiency. From IT consulting.
+                <p className="small-text text-gray m-0" style={{ lineHeight: '1.65', maxWidth: '280px' }}>
+                  {footerData.brand?.description}
                 </p>
 
                 {/* Social Links */}
                 <div className="flex gap-10 mt-20">
-                  {socialLinks.map((item, idx) => (
+                  {footerData.brand?.socials?.map((item, idx) => (
                     <a
                       key={idx}
                       href={item.url}
@@ -135,55 +128,39 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Column 2: Company Links */}
-              <div>
-                <h3 className="mid-text text-dark font-600 mb-16">Company</h3>
-                <ul className="list-none grid-cols-1 gap-12 p-1">
-                  {[
-                    { label: 'Home', path: '/' },
-                    { label: 'About Us', path: '/about' },
-                    { label: 'Blogs', path: '/blog' }
-                  ].map((item, idx) => (
-                    <li key={idx}>
-                      <span onClick={() => navigate(item.path)} className="cursor-pointer small-text text-gray">
-                        {item.label}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* Dynamic Menu Columns from footerData */}
+              {footerData.columns?.map((col, cIdx) => (
+                <div key={cIdx}>
+                  <h3 className="mid-text text-dark font-600 mb-16">{col.title}</h3>
+                  <ul className="list-none grid-cols-1 gap-12 p-1">
+                    {col.links?.map((link, lIdx) => (
+                      <li key={lIdx}>
+                        <span onClick={() => navigate(link.path)} className="cursor-pointer small-text text-gray">
+                          {link.label}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
 
-              {/* Column 3: Recourse Links */}
+              {/* Newsletter Column */}
               <div>
-                <h3 className="mid-text text-dark font-600 mb-16">Recourse</h3>
-                <ul className="list-none grid-cols-1 gap-12 p-1">
-                  {[
-                    { label: 'About Group', path: '/about' },
-                    { label: 'Contact Desk', path: '/connect' },
-                    { label: 'Engineering Insights', path: '/blog' }
-                  ].map((item, idx) => (
-                    <li key={idx}>
-                      <span onClick={() => navigate(item.path)} className="cursor-pointer small-text text-gray">
-                        {item.label}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Column 4: Newsletter */}
-              <div>
-                <h3 className="mid-text text-dark font-600 mb-16">Subscribe Newsletter</h3>
-                <NewsletterForm variant="footer" placeholder="Email address" buttonText="Subscribe Now" />
+                <h3 className="mid-text text-dark font-600 mb-16">{footerData.newsletter?.title || 'Subscribe Newsletter'}</h3>
+                <NewsletterForm
+                  variant="footer"
+                  placeholder={footerData.newsletter?.placeholder || 'Email address'}
+                  buttonText={footerData.newsletter?.buttonText || 'Subscribe Now'}
+                />
               </div>
             </div>
 
             {/* Bottom Copyright Row */}
-            <div className="flex justify-between items-center sm-flex-column mt-50 pt-24 bordb-top gap-16 text-gray">
+            <div className="flex justify-between items-center sm-flex-column pt-30 bordb-top gap-16 text-gray">
               <div className="small-text">
-                {footerData.bottom?.copyright || '© 2026 Infitech. All Rights Reserved.'}
+                {footerData.bottom?.copyright || '© 2026 Inraclick. All rights reserved.'}
               </div>
-              <div className="flex gap-16">
+              <div className="flex gap-12">
                 {footerData.bottom?.links?.map((link, idx) => (
                   <a key={idx} href={link.url} className="decoration-none small-text text-gray">
                     {link.label}
