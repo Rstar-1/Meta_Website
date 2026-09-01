@@ -1,282 +1,209 @@
-import { memo, useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Container from "../common/Container";
-import Button from "../common/Button";
 import Image from "../common/Image";
 import Icon from "../common/Icon";
+import Button from "../common/Button";
 import headerData from "../../data/header.json";
-
-const logoImg = "/sobo_logo.webp";
-
-const ProjectsMenu = ({ onItemClick }) => (
-  <>
-    <style>{`
-      .mega-menu-item {
-        padding: 10px 0px;
-        cursor: pointer;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .mega-menu-item:hover {
-        background-color: var(--tertiary) !important;
-        transform: translateX(3px);
-      }
-      .mega-menu-item:hover p {
-        color: var(--primary) !important;
-      }
-      .mega-menu-link:hover {
-        color: var(--primary) !important;
-      }
-      .arrow-icon {
-        font-size: 0.8rem;
-        color: var(--gray);
-        opacity: 0;
-        transform: translateX(-5px);
-        transition: all 0.2s ease;
-        padding-right: 15px;
-      }
-      .mega-menu-item:hover .arrow-icon {
-        opacity: 1;
-        transform: translateX(0);
-        color: var(--primary) !important;
-      }
-    `}</style>
-    <div className="bg-tertiary p-18">
-      <Image
-        src={headerData.projectsMenu.bannerImage}
-        alt="Projects"
-        className="flex w-full h-200 object-cover rounded-5"
-      />
-      <h4 className="mid-text text-dark font-500 pt-10">{headerData.projectsMenu.bannerTitle}</h4>
-      <p className="mini-text text-gray font-400 mt-2">
-        {headerData.projectsMenu.bannerDesc}
-      </p>
-      <p className="mini-text text-secondary font-500 mt-8 cursor-pointer mega-menu-link flex items-center gap-4" onClick={() => onItemClick()}>
-        {headerData.projectsMenu.bannerLinkText} <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
-      </p>
-    </div>
-    {headerData.projectsMenu.sections.map((section, idx) => (
-      <div key={idx} className="p-18">
-        <p className="text-gray uppercase mini-text font-500">
-          {section.title}
-        </p>
-        <div className="grid grid-cols-1 gap-8 mt-8">
-          {section.items.map((item, itemIdx) => (
-            <div
-              key={itemIdx}
-              className="mega-menu-item"
-              onClick={() => onItemClick()}
-            >
-              <p className="text-dark small-text font-500 px-10" style={{ margin: 0 }}>
-                {item}
-              </p>
-              <span className="arrow-icon">
-                <Icon name="ArrowRight" width="12" height="12" stroke="currentColor" />
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    ))}
-  </>
-);
-
-const MegaMenuContent = memo(({ label, onItemClick }) => {
-  switch (label) {
-    case "Projects":
-      return <ProjectsMenu onItemClick={onItemClick} />;
-    default:
-      return null;
-  }
-});
 
 const Header = () => {
   const navigate = useNavigate();
-  const [activeMenu, setActiveMenu] = useState(null);
+  const location = useLocation();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [openMobileMenu, setOpenMobileMenu] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [hoveredNav, setHoveredNav] = useState(null);
+  const [hoveredIcon, setHoveredIcon] = useState(null);
 
-  const handleItemClick = (path) => {
-    setActiveMenu(null);
-    if (path) {
-      navigate(path);
-    } else {
-      navigate("/");
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <>
-      <Container className="navbar">
-        <div className="flex items-center justify-between w-full" style={{ height: "65px" }}>
-          <div className="flex items-center gap-8">
-            <NavLink to="/" className="flex items-center" style={{ textDecoration: 'none' }}>
-              <Image
-                src={logoImg}
-                alt="SOBO Marketing Solution Logo"
-                width="128"
-                height="42"
-                style={{
-                  maxHeight: '42px',
-                  width: 'auto',
-                  objectFit: 'contain'
-                }}
-              />
-            </NavLink>
+    <Container
+      as="header"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: 1000,
+        width: "100%",
+        backgroundColor: isScrolled ? "#FFFFFF" : "transparent",
+        borderBottom: isScrolled ? "1px solid #EAEAEA" : "1px solid rgba(255, 255, 255, 0.1)",
+        transition: "background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease"
+      }}
+    >
+      <div
+        className="flex items-center justify-between mx-auto w-full"
+        style={{ height: "70px" }}
+      >
+        {/* Left Logo */}
+        <NavLink to="/" className="flex items-center">
+          <Image
+            src={isScrolled ? "/sobo_logo.webp" : "/sobos.png"}
+            alt="Infitech Logo"
+            className="object-contain"
+            style={{ width: "100%", height: "54px" }}
+          />
+        </NavLink>
 
-            <div className="flex sm-hidden md-hidden items-center h-full ml-40">
-              {headerData.navLinks?.map((item, i) => (
-                <div
-                  key={i}
-                  className="relative flex items-center"
-                  onMouseEnter={() =>
-                    item?.hasMegaMenu && setActiveMenu(item?.label)
-                  }
-                  onMouseLeave={() => setActiveMenu(null)}
-                  style={{ height: "65px", display: "flex", alignItems: "center" }}
+        {/* Center Navigation Links */}
+        <div className="sm-hidden md-hidden flex items-center h-full gap-4">
+          {headerData.navLinks?.map((item, i) => {
+            const isActive = location.pathname === item.href;
+            const isHovered = hoveredNav === i;
+            const linkColor = (isActive || isHovered)
+              ? "#FF5100"
+              : (isScrolled ? "#161616" : "#FFFFFF");
+
+            return (
+              <div
+                key={i}
+                onMouseEnter={() => setHoveredNav(i)}
+                onMouseLeave={() => setHoveredNav(null)}
+                className="relative flex items-center h-full"
+              >
+                <NavLink
+                  to={item.href}
+                  className="font-500 small-text px-14 py-6 cursor-pointer decoration-none"
+                  style={{
+                    color: linkColor,
+                    transition: "color 0.2s ease"
+                  }}
                 >
-                  {!item?.hasMegaMenu ? (
-                    <NavLink
-                      to={item?.href}
-                      className="small-text font-500 px-20 py-6 cursor-pointer text-dark"
-                      style={{ textDecoration: "none" }}
-                    >
-                      {item?.label}
-                    </NavLink>
-                  ) : (
-                    <p className="small-text text-dark font-500 px-20 py-6 cursor-pointer">
-                      {item?.label}
-                    </p>
-                  )}
+                  {item.label}
+                </NavLink>
+              </div>
+            );
+          })}
+        </div>
 
-                  {item?.hasMegaMenu && activeMenu === item?.label && (
-                    <div
-                      className="absolute z-50 bg-white bordh"
+        {/* Right Action Items */}
+        <div className="flex items-center gap-12">
+          <div className="sm-hidden md-hidden flex items-center gap-12">
+
+            {/* Phone Icon Button */}
+            <a
+              href="tel:+5284567592"
+              aria-label="Call Us"
+              onMouseEnter={() => setHoveredIcon("phone")}
+              onMouseLeave={() => setHoveredIcon(null)}
+              className="flex items-center justify-center cursor-pointer flex-shrink-0 transition-all decoration-none"
+              style={{
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                border: hoveredIcon === "phone"
+                  ? "1px solid #FF5100"
+                  : (isScrolled ? "1px solid rgba(0, 0, 0, 0.2)" : "1px solid rgba(255, 255, 255, 0.25)"),
+                backgroundColor: hoveredIcon === "phone"
+                  ? (isScrolled ? "rgba(255, 81, 0, 0.08)" : "rgba(255, 255, 255, 0.1)")
+                  : "transparent"
+              }}
+            >
+              <Icon name="Phone" width="16" height="16" stroke="#FF5100" />
+            </a>
+
+            {/* CTA Orange Pill Button */}
+            <button
+              onClick={() => navigate("/connect")}
+              className="flex items-center gap-8 font-700 mini-text px-24 py-10 cursor-pointer text-white whitespace-nowrap"
+              style={{
+                backgroundColor: "#FF5100",
+                borderRadius: "50px",
+                border: "none",
+                boxShadow: "0 4px 15px rgba(255, 81, 0, 0.35)",
+                transition: "all 0.3s ease"
+              }}
+            >
+              Get In Touch
+              <Icon name="ArrowUpRight" width="16" height="16" stroke="#FFFFFF" />
+            </button>
+          </div>
+
+          {/* Hamburger Menu Toggle Button for Mobile/Tablet Devices */}
+          <Button
+            className="hidden md-block sm-block cursor-pointer"
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            style={{ border: "none", color: isMobileOpen ? "#FFFFFF" : (isScrolled ? "#161616" : "#FFFFFF") }}
+            icon={isMobileOpen ? "Close" : "Menu"}
+            iconWidth="24"
+            iconHeight="24"
+            iconStrokeWidth="2"
+            version="v1"
+            bg="forth"
+          />
+        </div>
+      </div>
+
+      {/* Mobile Drawer Overlay */}
+      {isMobileOpen && (
+        <div
+          className="fixed left-0 w-full flex flex-column justify-between px-24 py-20"
+          style={{
+            top: "70px",
+            height: "calc(100vh - 70px)",
+            backgroundColor: "rgba(17, 17, 17, 0.96)",
+            backdropFilter: "blur(12px)",
+            boxSizing: "border-box",
+            overflowY: "auto",
+            zIndex: 999
+          }}
+        >
+          <div className="grid-cols-1 w-full">
+            {headerData.navLinks.map((item, i) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <div key={i} className="py-16 bordb">
+                  <NavLink
+                    to={item.href}
+                    onClick={() => setIsMobileOpen(false)}
+                    className="decoration-none flex items-center justify-between"
+                  >
+                    <span
+                      className="para-text font-600 uppercase"
                       style={{
-                        top: "65px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        maxWidth: "90vw",
+                        color: isActive ? "#FF5100" : "#FFFFFF",
+                        letterSpacing: "0.03em"
                       }}
                     >
-                      <div
-                        className={`grid ${item?.cols} items-start`}
-                        style={{ width: item?.width, maxWidth: "100%" }}
-                      >
-                        <MegaMenuContent
-                          label={item?.label}
-                          onItemClick={handleItemClick}
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-12 sm-gap-1">
-
-            <div className="sm-hidden md-hidden">
-              <Button
-                text="Talk to Engineer"
-                version="v2"
-                bg="primary"
-                onClick={() => navigate("/connect")}
-              />
-            </div>
-
-            {/* Hamburger Menu Toggle Button for Mobile/Tablet Devices */}
-            <Button
-              className="hidden md-block sm-block cursor-pointer"
-              onClick={() => {
-                setIsMobileOpen(!isMobileOpen);
-                setOpenMobileMenu(null);
-              }}
-              style={{ border: "none", color: "var(--dark)" }}
-              icon={isMobileOpen ? "Close" : "Menu"}
-              iconWidth="24"
-              iconHeight="24"
-              iconStrokeWidth="2"
-              version="v1"
-              bg="forth"
-            />
-          </div>
-        </div>
-      </Container>
-
-      {isMobileOpen && (
-        <div className="mobile-drawer bg-forth px-24 py-20">
-          <div className="grid-cols-1">
-            {headerData.navLinks.map((item, i) => {
-              const isExpanded = openMobileMenu === item.label;
-              const hasMega = item.hasMegaMenu;
-              return (
-                <div key={i} className="bordb py-12">
-                  {hasMega ? (
-                    <>
-                      <div
-                        className="flex items-center justify-between cursor-pointer"
-                        onClick={() => setOpenMobileMenu(isExpanded ? null : item.label)}
-                      >
-                        <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
-                          {item.label}
-                        </p>
-                        <span
-                          className="text-dark flex items-center justify-center"
-                          style={{
-                            transition: "transform 0.2s ease",
-                            transform: isExpanded ? "rotate(90deg)" : "none",
-                            display: "inline-block"
-                          }}
-                        >
-                          <Icon name="ChevronRight" width="14" height="14" stroke="currentColor" />
-                        </span>
-                      </div>
-                      {isExpanded && (
-                        <div className="mt-12 bg-white rounded-5 grid grid-cols-1 gap-12 overflow-hidden">
-                          <MegaMenuContent
-                            label={item.label}
-                            onItemClick={(path) => {
-                              setIsMobileOpen(false);
-                              setOpenMobileMenu(null);
-                              handleItemClick(path);
-                            }}
-                          />
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <NavLink
-                      to={item.href || "/products"}
-                      onClick={() => setIsMobileOpen(false)}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <p className="para-text font-500 text-dark" style={{ margin: 0 }}>
-                        {item.label}
-                      </p>
-                    </NavLink>
-                  )}
+                      {item.label}
+                    </span>
+                    <Icon
+                      name="ChevronRight"
+                      width="18"
+                      height="18"
+                      stroke={isActive ? "#FF5100" : "rgba(255, 255, 255, 0.4)"}
+                    />
+                  </NavLink>
                 </div>
               );
             })}
-            <Button
-              text="Talk to Engineer"
-              version="v3"
-              bg="primary"
+          </div>
+
+          <div className="mt-30 w-full pb-20">
+            <button
               onClick={() => {
                 setIsMobileOpen(false);
                 navigate("/connect");
               }}
-              className="mt-3"
-            />
+              className="flex items-center justify-center gap-8 font-700 small-text py-14 w-full cursor-pointer text-white"
+              style={{
+                backgroundColor: "#FF5100",
+                borderRadius: "50px",
+                border: "none",
+                boxShadow: "0 6px 20px rgba(255, 81, 0, 0.4)"
+              }}
+            >
+              Get In Touch
+              <Icon name="ArrowUpRight" width="18" height="18" stroke="#FFFFFF" />
+            </button>
           </div>
         </div>
       )}
-    </>
+    </Container>
   );
 };
 

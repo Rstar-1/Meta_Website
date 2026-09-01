@@ -2,8 +2,6 @@ import React from 'react'
 import Banner from '../../components/layout/Banner'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema'
-import FAQSection from '../home/sections/FAQSection'
-import PromoCTA from '../home/sections/PromoCTA'
 import Details from './sections/Details'
 
 const Contact = () => {
@@ -35,8 +33,6 @@ const Contact = () => {
         ]}
       />
       <Details />
-      <FAQSection />
-      <PromoCTA />
     </>
   )
 }

@@ -238,16 +238,14 @@ input,
 
 /* ======================= Start-Fontsize ======================= */
 .largehead-text {
-    font-size: 84px !important;
+    font-size: 134px !important;
     margin: 0px !important;
-    line-height: 90px !important;
-    font-weight: 500 !important;
+    line-height: 130px !important;
 
     @media (max-width: 640px) {
         font-size: 42px !important;
         margin: 0px !important;
         line-height: 56px !important;
-        font-weight: 500 !important;
     }
 }
 
@@ -266,8 +264,8 @@ input,
 }
 
 .head-text {
-    font-size: 34px !important;
-    line-height: 44px !important;
+    font-size: 43px !important;
+    line-height: 55px !important;
     margin: 0px !important;
     font-weight: 500 !important;
 

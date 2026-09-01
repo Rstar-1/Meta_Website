@@ -1,150 +1,194 @@
-import { useNavigate } from 'react-router-dom'
-import Container from '../common/Container'
-import Image from '../common/Image'
-import Icon from '../common/Icon'
-import footerData from '../../data/footer.json'
-import NewsletterForm from '../forms/NewsletterForm'
+import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Container from '../common/Container';
+import Icon from '../common/Icon';
+import footerData from '../../data/footer.json';
+import NewsletterForm from '../forms/NewsletterForm';
 
-const logoImg = "/sobo_logo.webp";
+const socialLinks = ['Facebook', 'LinkedIn', 'Twitter', 'YouTube'];
 
 const Footer = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const containerRef = useRef(null);
+  const bannerRef = useRef(null);
 
-  // Filter out any link pointing to '/products'
-  const quickLinks = (footerData.columns[0]?.links || []).filter(
-    link => link.path !== '/products'
-  );
+  useEffect(() => {
+    let animId;
+    let ticking = false;
+
+    const updateParallax = () => {
+      if (!containerRef.current || !bannerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      const totalDistance = windowHeight + rect.height;
+      const rawProgress = (windowHeight - rect.top) / totalDistance;
+      const progress = Math.max(0, Math.min(1, rawProgress));
+
+      const offsetY = (progress - 0.5) * 160;
+      bannerRef.current.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0)`;
+      ticking = false;
+    };
+
+    const handleScrollOrResize = () => {
+      if (!ticking) {
+        animId = requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollOrResize, { passive: true });
+    window.addEventListener('resize', handleScrollOrResize, { passive: true });
+    updateParallax();
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollOrResize);
+      window.removeEventListener('resize', handleScrollOrResize);
+      if (animId) cancelAnimationFrame(animId);
+    };
+  }, []);
 
   return (
-    <footer className="w-full py-50" style={{ backgroundColor: '#0f1623' }}>
-      <Container>
-        <div>
-          <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 items-start gap-12">
+    <footer className="w-full relative" style={{ backgroundColor: '#FAF8F5', color: '#161616' }}>
+      {/* 1. High-Height Parallax Image Banner */}
+      <div
+        ref={containerRef}
+        className="w-full relative overflow-hidden"
+        style={{ height: '520px', backgroundColor: '#0F1623' }}
+      >
+        <div
+          ref={bannerRef}
+          style={{
+            position: 'absolute',
+            top: '-25%',
+            left: 0,
+            width: '100%',
+            height: '150%',
+            backgroundImage: 'url(/agency_footer_banner.png)',
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            willChange: 'transform',
+            transform: 'translate3d(0, -80px, 0)'
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }}
+        />
+      </div>
 
-            {/* Column 1: Brand Info */}
-            <div className="grid-cols-1 pr-10 sm-pr-1">
-              <div className="mb-15 flex items-center">
-                <Image
-                  src={logoImg}
-                  alt="SOBO Marketing Solution Logo"
-                  width="168"
-                  height="55"
-                  style={{
-                    maxHeight: '55px',
-                    width: 'auto',
-                    objectFit: 'contain',
-                    borderRadius: '6px',
-                    padding: '4px 10px',
-                    backgroundColor: '#ffffff'
-                  }}
-                />
-              </div>
-              <p className="small-text font-200 mt-4 text-white">
-                {footerData.brand.description}
-              </p>
-              <div className="flex gap-12 mt-30">
-                {footerData.brand.socials.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.url}
-                    className="social-link center-div rounded-full"
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                      color: '#ffffff',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--primary)';
-                      e.currentTarget.style.transform = 'scale(1.1)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-                      e.currentTarget.style.transform = 'scale(1)';
-                    }}
+      {/* 2. Main Footer Content */}
+      <div className="py-60">
+        <Container>
+          <div className="w-full">
+            <div className="grid-cols-4 md-grid-cols-2 sm-grid-cols-1 items-start gap-30">
+              {/* Column 1: Infitech Brand */}
+              <div>
+                <div className="flex items-center gap-10 mb-16">
+                  <span
+                    className="rounded-6 font-900 text-white center-div flex-shrink-0"
+                    style={{ width: '34px', height: '34px', backgroundColor: '#FF5100', fontSize: '1.2rem' }}
                   >
-                    <Icon name={social.iconName} width="16" height="16" stroke="currentColor" strokeWidth="2.5" />
-                  </a>
-                ))}
-              </div>
-            </div>
+                    i
+                  </span>
+                  <span className="font-800 text-dark" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>
+                    Infitech
+                  </span>
+                </div>
+                <p className="small-text text-gray m-0" style={{ lineHeight: '1.65', maxWidth: '300px' }}>
+                  Businesses to thrive in changing digital world. With over a decade systems that drive growth an efficiency. From IT consulting.
+                </p>
 
-            {/* Column 2: Quick Links */}
-            <div className="grid-cols-1 pr-10 sm-pr-1">
-              <h3 className="text-white mid-text mb-12 font-600">Quick Links</h3>
-              <ul className="list-none m-1 p-1">
-                {quickLinks.map((link, idx) => (
-                  <li key={idx} className="mb-12">
-                    <span
-                      onClick={() => navigate(link.path)}
-                      className="footer-link cursor-pointer small-text"
+                {/* Social Links */}
+                <div className="flex gap-10 mt-20">
+                  {socialLinks.map((iconName, idx) => (
+                    <a
+                      key={idx}
+                      href="#social"
+                      className="center-div rounded-circle text-white decoration-none transition-all"
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '50%',
+                        backgroundColor: '#4A4D52'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#FF5100';
+                        e.currentTarget.style.transform = 'translateY(-3px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#4A4D52';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                      }}
                     >
-                      {link.label}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                      <Icon name={iconName} width="16" height="16" stroke="currentColor" strokeWidth="2.5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
 
-            {/* Column 3: Commissioning Support */}
-            {footerData.columns[1] && (
-              <div className="grid-cols-1 pr-10 sm-pr-1">
-                <h3 className="text-white mid-text mb-12 font-600">{footerData.columns[1].title}</h3>
-                <ul className="list-none m-1 p-1">
-                  {footerData.columns[1].links.map((link, linkIdx) => (
-                    <li key={linkIdx} className="mb-12">
-                      <span
-                        onClick={() => navigate(link.path)}
-                        className="footer-link cursor-pointer small-text"
-                      >
-                        {link.label}
+              {/* Column 2: Company Links */}
+              <div>
+                <h3 className="mid-text text-dark font-600 mb-16">Company</h3>
+                <ul className="list-none grid-cols-1 gap-12 p-1">
+                  {[
+                    { label: 'Home', path: '/' },
+                    { label: 'About Us', path: '/about' },
+                    { label: 'Blogs', path: '/blog' }
+                  ].map((item, idx) => (
+                    <li key={idx}>
+                      <span onClick={() => navigate(item.path)} className="cursor-pointer small-text text-gray">
+                        {item.label}
                       </span>
                     </li>
                   ))}
                 </ul>
               </div>
-            )}
 
-            {/* Column 4: Newsletter */}
-            <div className="grid-cols-1 pr-10 sm-pr-1">
-              <h3 className="text-white mid-text mb-12 font-600">{footerData.newsletter.title}</h3>
-              <p className="small-text" style={{ color: "rgba(255, 255, 255, 0.6)" }}>
-                {footerData.newsletter.description}
-              </p>
-              <NewsletterForm
-                variant="footer"
-                placeholder={footerData.newsletter.placeholder}
-                buttonText={footerData.newsletter.buttonText}
-              />
+              {/* Column 3: Recourse Links */}
+              <div>
+                <h3 className="mid-text text-dark font-600 mb-16">Recourse</h3>
+                <ul className="list-none grid-cols-1 gap-12 p-1">
+                  {[
+                    { label: 'About Group', path: '/about' },
+                    { label: 'Contact Desk', path: '/connect' },
+                    { label: 'Engineering Insights', path: '/blog' }
+                  ].map((item, idx) => (
+                    <li key={idx}>
+                      <span onClick={() => navigate(item.path)} className="cursor-pointer small-text text-gray">
+                        {item.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Column 4: Newsletter */}
+              <div>
+                <h3 className="mid-text text-dark font-600 mb-16">Subscribe Newsletter</h3>
+                <NewsletterForm variant="footer" placeholder="Email address" buttonText="Subscribe Now" />
+              </div>
             </div>
 
-          </div>
-
-          {/* Bottom Row */}
-          <div
-            className="flex justify-between items-center sm-flex-column sm-text-center mt-40 pt-25"
-            style={{
-              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-              gap: "15px",
-              color: "rgba(255, 255, 255, 0.5)"
-            }}
-          >
-            <div className="small-text">{footerData.bottom.copyright}</div>
-            <div className="flex" style={{ gap: '15px' }}>
-              {footerData.bottom.links.map((link, idx) => (
-                <a key={idx} href={link.url} className="footer-link small-text">
-                  {link.label}
-                </a>
-              ))}
+            {/* Bottom Copyright Row */}
+            <div className="flex justify-between items-center sm-flex-column mt-50 pt-24 bordb-top gap-16 text-gray">
+              <div className="small-text">
+                {footerData.bottom?.copyright || '© 2026 Infitech. All Rights Reserved.'}
+              </div>
+              <div className="flex gap-16">
+                {footerData.bottom?.links?.map((link, idx) => (
+                  <a key={idx} href={link.url} className="decoration-none small-text text-gray">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-
-        </div>
-      </Container>
+        </Container>
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

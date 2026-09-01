@@ -1,4 +1,15 @@
-import { useState, useEffect, useRef, forwardRef } from "react";
+import { useState, forwardRef } from "react";
+
+const isVideoSrc = (url) => {
+  if (!url || typeof url !== "string") return false;
+  const cleanUrl = url.split('?')[0].split('#')[0].toLowerCase();
+  return (
+    cleanUrl.endsWith(".mp4") ||
+    cleanUrl.endsWith(".webm") ||
+    cleanUrl.endsWith(".ogg") ||
+    cleanUrl.endsWith(".mov")
+  );
+};
 
 export function Image({
   src,
@@ -10,46 +21,57 @@ export function Image({
   height,
   aspectRatio,
   style,
+  decoding,
+  preload = "metadata",
   ...props
 }) {
+  const [prevSrc, setPrevSrc] = useState(src);
   const [imgSrc, setImgSrc] = useState(src);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const imgRef = useRef(null);
-
-  useEffect(() => {
+  if (src !== prevSrc) {
+    setPrevSrc(src);
     setImgSrc(src);
-    setIsLoaded(false);
-  }, [src]);
+  }
+  const isEager = loading === "eager" || props.fetchPriority === "high" || props.fetchpriority === "high";
 
-  useEffect(() => {
-    if (imgRef.current?.complete) {
-      setIsLoaded(true);
-    }
-  }, [imgSrc]);
+  if (isVideoSrc(src)) {
+    return (
+      <video
+        src={src}
+        className={className}
+        style={{
+          aspectRatio,
+          objectFit: aspectRatio ? "cover" : "cover",
+          width: width || "100%",
+          height: height || "100%",
+          ...style,
+        }}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload={preload}
+        {...props}
+      />
+    );
+  }
 
   return (
     <img
-      ref={imgRef}
       src={imgSrc || fallback}
       alt={alt}
       loading={loading}
+      decoding={decoding || (isEager ? "sync" : "async")}
       width={width}
       height={height}
       className={className}
       style={{
         aspectRatio,
         objectFit: aspectRatio ? "cover" : undefined,
-        transition: "opacity 0.3s ease-in-out, filter 0.3s ease-in-out",
-        opacity: isLoaded ? 1 : 0.6,
-        filter: isLoaded ? "none" : "blur(4px)",
         ...style,
       }}
-      onLoad={() => setIsLoaded(true)}
       onError={() => {
         if (imgSrc !== fallback) {
           setImgSrc(fallback);
-        } else {
-          setIsLoaded(true);
         }
       }}
       {...props}
@@ -66,30 +88,44 @@ export const ImageDiv = forwardRef(({
   overlay = false,
   overlayClass = "",
   innerRef,
+  preload = "metadata",
   ...props
 }, ref) => {
+  const [prevImage, setPrevImage] = useState(image);
   const [bgImage, setBgImage] = useState(image);
-
-  useEffect(() => {
+  if (image !== prevImage) {
+    setPrevImage(image);
     setBgImage(image);
-  }, [image]);
+  }
+
+  const isVideo = isVideoSrc(bgImage);
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`} {...props}>
-      <div
-        ref={innerRef}
-        className={innerClassName}
-        style={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 0,
-          backgroundImage: `url(${bgImage || fallback})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-        onError={() => setBgImage(fallback)}
-      />
+      {isVideo ? (
+        <video
+          ref={innerRef}
+          src={bgImage}
+          className={`${innerClassName} absolute inset-0 w-full h-full object-cover`}
+          style={{ zIndex: 0 }}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload={preload}
+        />
+      ) : (
+        <div
+          ref={innerRef}
+          className={innerClassName}
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+            background: `url(${bgImage || fallback}) center/cover no-repeat`,
+          }}
+        />
+      )}
       {overlay && (
         <div
           className={overlayClass}

@@ -39,7 +39,7 @@ const Home = () => {
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero />
-      <LazySection placeholderHeight="140px">
+      {/* <LazySection placeholderHeight="140px">
         <Marquee text="OUR LATEST CASES • " />
       </LazySection>
       <BrowseServices />
@@ -61,7 +61,7 @@ const Home = () => {
       </LazySection>
       <LazySection placeholderHeight="300px">
         <PromoCTA />
-      </LazySection>
+      </LazySection> */}
     </>
   );
 };

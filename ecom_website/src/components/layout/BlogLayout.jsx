@@ -7,7 +7,6 @@ import Fields from '../common/Fields';
 import Banner from './Banner';
 import SeoHelmet from '../seo/SeoHelmet';
 import BlogSchema from '../seo/BlogSchema';
-import PromoCTA from '../../pages/home/sections/PromoCTA';
 import NewsletterForm from '../forms/NewsletterForm';
 
 import { formatDate } from '../../utils/formatDate';
@@ -591,8 +590,6 @@ const BlogLayout = ({
           </div>
         </Container>
       </div>
-
-      {type === 'detail' && <PromoCTA />}
     </>
   );
 };

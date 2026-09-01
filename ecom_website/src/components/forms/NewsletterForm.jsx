@@ -67,12 +67,11 @@ const NewsletterForm = ({
   if (variant === 'footer') {
     return (
       <div className="w-full">
-        <form className="flex gap-8 mt-15" onSubmit={handleSubmit}>
+        <form className=" items-center gap-12 mt-15" onSubmit={handleSubmit} style={{ flexWrap: 'nowrap' }}>
           <input
             type="email"
-            placeholder={placeholder || 'Corporate email...'}
-            className="newsletter-input rounded-5 px-12 py-8 text-white"
-            style={{ flex: 1, outline: 'none' }}
+            placeholder={placeholder || 'Email address'}
+            className="h-input border-0"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -82,9 +81,27 @@ const NewsletterForm = ({
           />
           <button
             type="submit"
-            className="newsletter-btn bg-primary text-white border-0 px-14 py-8 rounded-5 font-600 cursor-pointer"
+            className="newsletter-btn cursor-pointer font-600 w-full mt-10"
+            style={{
+              flexShrink: 0,
+              backgroundColor: '#2B2B2B',
+              color: '#FFFFFF',
+              border: 'none',
+              padding: '12px 20px',
+              borderRadius: '6px',
+              fontSize: '0.9rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '6px',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              transition: 'background-color 0.25s ease'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#FF5100'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2B2B2B'}
           >
-            {buttonText}
+            {buttonText || 'Subscribe Now'} ↗
           </button>
         </form>
         {error && (

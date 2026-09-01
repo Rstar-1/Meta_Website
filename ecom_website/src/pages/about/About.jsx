@@ -3,7 +3,6 @@ import Banner from '../../components/layout/Banner'
 import DetailSection from './sections/DetailSection'
 import SeoHelmet from '../../components/seo/SeoHelmet'
 import OrganizationSchema from '../../components/seo/OrganizationSchema'
-import PromoCTA from '../home/sections/PromoCTA'
 import FAQSection from '../home/sections/FAQSection'
 
 const About = () => {
@@ -30,7 +29,6 @@ const About = () => {
       />
       <DetailSection />
       <FAQSection />
-      <PromoCTA />
     </>
   )
 }

@@ -1,33 +1,27 @@
-import React from "react";
+
+const VERSION_CLASSES = {
+    v0: "w-full",
+    v1: "container mx-auto",
+    v2: "container2",
+    v3: "container3 mx-auto",
+};
 
 const Container = ({
     children,
     version = "v1",
     className = "",
     style = {},
+    as: Component = "section",
     ...props
 }) => {
-    const getContainerClass = () => {
-        switch (version) {
-            case "v0":
-                return "w-full";
-            case "v1":
-                return "container mx-auto";
-            case "v2":
-                return "container2";
-            case "v3":
-                return "container3 mx-auto";
-            default:
-                return "w-full";
-        }
-    };
+    const containerClass = VERSION_CLASSES[version] || "w-full";
 
     return (
-        <section style={style} {...props}>
-            <div className={`${getContainerClass()} ${className}`}>
+        <Component style={style} {...props}>
+            <div className={`${containerClass} ${className}`}>
                 {children}
             </div>
-        </section>
+        </Component>
     );
 };
 

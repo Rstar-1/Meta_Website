@@ -3,7 +3,6 @@ import BlogLayout from "../../components/layout/BlogLayout";
 import blogsData from "../../data/blogs.json";
 import SeoHelmet from "../../components/seo/SeoHelmet";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema";
-import PromoCTA from "../home/sections/PromoCTA";
 
 const Blogs = memo(() => {
     const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ecom-website.example.com';
@@ -22,7 +21,6 @@ const Blogs = memo(() => {
                 { name: 'Blog', url: siteUrl + '/blog' }
             ]} />
             <BlogLayout type="list" blogsData={blogsData} />
-            <PromoCTA />
         </>
     );
 });
