@@ -12,6 +12,7 @@ const defaultSEO = {
     logo: 'https://sobo-marketing.com/sobo_logo.webp',
     phone: '+91-7015163045',
     email: 'inra@inraclick.com',
+    address: 'Apollo Bunder, Colaba, Mumbai, Maharashtra - 400001',
     socials: [
       'https://www.facebook.com/Inraclick/',
       'https://www.youtube.com/@INRACLICK',

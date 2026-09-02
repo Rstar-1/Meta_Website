@@ -182,9 +182,9 @@ const AgencyCTA = () => {
                 Maharashtra
               </h3>
               <p className="para-text text-gray small-text font-400" style={{ color: '#AAAAAA', lineHeight: 1.6 }}>
-                540 Madison Ave, 18th Floor<br />
-                New York, NY 10022<br />
-                contact@infitech.com | +1 (212) 555-0199
+                Apollo Bunder, Colaba<br />
+                Mumbai, Maharashtra - 400001<br />
+                inra@inraclick.com | +91 7015163045
               </p>
             </div>
           </div>

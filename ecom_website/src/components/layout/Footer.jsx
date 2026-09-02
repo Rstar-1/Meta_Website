@@ -97,6 +97,15 @@ const Footer = () => {
                   {footerData.brand?.description}
                 </p>
 
+                {footerData.brand?.address && (
+                  <div className="flex items-start gap-8 mt-12 text-gray" style={{ maxWidth: '280px' }}>
+                    <Icon name="MapPin" width="16" height="16" stroke="#FF5100" className="flex-shrink-0 mt-1" />
+                    <p className="small-text m-0 text-gray" style={{ lineHeight: '1.5' }}>
+                      {footerData.brand.address}
+                    </p>
+                  </div>
+                )}
+
                 {/* Social Links */}
                 <div className="flex gap-10 mt-20">
                   {footerData.brand?.socials?.map((item, idx) => (

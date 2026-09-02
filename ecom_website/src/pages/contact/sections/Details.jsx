@@ -21,7 +21,7 @@ const Details = ({ addToRef }) => {
                             <line x1="16" y1="6" x2="16" y2="22"></line>
                         </svg>
                         <p className="para-text text-gray w-95">
-                            Shop No. 271, Next to State Bank of India, Mohammed Ali Road, Masjid Bunder, Mumbai – 400003, Maharashtra.
+                            Apollo Bunder, Colaba, Mumbai, Maharashtra – 400001.
                         </p>
                     </div>
                     <div className="flex items-start gap-6 mt-10 sm-mt-15" ref={addToRef}>
@@ -86,7 +86,7 @@ const Details = ({ addToRef }) => {
                         height={350}
                         loading="lazy"
                         allowFullScreen
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.972659949589!2d72.83078450931993!3d18.932604256387375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1dca3f2ca05%3A0x2906f2a183ce8356!2s37%2C%20Cawasji%20Patel%20St%2C%20Kala%20Ghoda%2C%20Fort%2C%20Mumbai%2C%20Maharashtra%20400001!5e0!3m2!1sen!2sin!4v1765117009660!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.2464016629986!2d72.8304!3d18.9220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06d0d7ef9%3A0x6b77227c244c6883!2sApollo%20Bunder%2C%20Colaba%2C%20Mumbai%2C%20Maharashtra%20400001!5e0!3m2!1sen!2sin!4v1765117009660!5m2!1sen!2sin"
                     />
                 </div>
             </div>

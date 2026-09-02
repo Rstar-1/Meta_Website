@@ -30,6 +30,11 @@ const AgencyFooter = () => {
               Businesses to thrive in changing digital world. With over a decade systems that drive growth an efficiency. From IT consulting.
             </p>
 
+            <div style={{ color: '#666666', fontSize: '0.88rem', lineHeight: 1.5, display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
+              <span style={{ color: '#FF5100' }}>📍</span>
+              <span>Apollo Bunder, Colaba, Mumbai, Maharashtra - 400001</span>
+            </div>
+
             <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
               {['Facebook', 'LinkedIn', 'Twitter', 'YouTube'].map((name, i) => (
                 <a

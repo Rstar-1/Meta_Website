@@ -43,11 +43,11 @@ export const generateSchema = {
       telephone: bizData.phone || "",
       address: {
         "@type": "PostalAddress",
-        streetAddress: bizData.address?.street || "",
-        addressLocality: bizData.address?.city || "",
-        addressRegion: bizData.address?.region || "",
-        postalCode: bizData.address?.postalCode || "",
-        addressCountry: bizData.address?.country || "",
+        streetAddress: bizData.address?.street || "Apollo Bunder, Colaba",
+        addressLocality: bizData.address?.city || "Mumbai",
+        addressRegion: bizData.address?.region || "Maharashtra",
+        postalCode: bizData.address?.postalCode || "400001",
+        addressCountry: bizData.address?.country || "India",
       },
       geo: bizData.geo
         ? {

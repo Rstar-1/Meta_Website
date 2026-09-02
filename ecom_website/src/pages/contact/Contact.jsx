@@ -20,8 +20,8 @@ const Contact = () => {
         name: 'SOBO Marketing Solution',
         url: siteUrl,
         image: siteUrl + '/sobo_logo.webp',
-        phone: '+91-XXXXXXXXXX',
-        address: { street: 'Industrial Area', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' }
+        phone: '+91 7015163045',
+        address: { street: 'Apollo Bunder, Colaba', city: 'Mumbai', region: 'Maharashtra', postalCode: '400001', country: 'India' }
       }} />
       <Banner
         title="Connect With Us"
