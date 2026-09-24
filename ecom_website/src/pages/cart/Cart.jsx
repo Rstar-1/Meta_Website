@@ -142,7 +142,7 @@ const Cart = () => {
   return (
     <>
       <SeoHelmet
-        title="Your Cart | Ashmita Enterprises"
+        title="Your Cart | Ashmita Vinyl"
         description="Review your selected items and submit your requirement to get the best quotes from verified suppliers."
         path="/cart"
         type="website"

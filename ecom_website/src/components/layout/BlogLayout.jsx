@@ -19,9 +19,12 @@ const LatestArticles = lazy(() => import('../../pages/home/sections/LatestArticl
 const BusinessPromo = lazy(() => import('../../pages/home/sections/BusinessPromo'));
 
 const CATEGORY_COLORS = {
-  SEO: "text-info",
-  "Social Media": "text-warning",
-  "Content Marketing": "text-warning",
+  "Buyer's Guide": "text-info",
+  "Industry News": "text-primary",
+  "Troubleshooting": "text-danger",
+  "Cost Optimization": "text-success",
+  "Technology": "text-warning",
+  "Maintenance & Care": "text-secondary",
 };
 
 const lazySections = [
@@ -133,7 +136,7 @@ const BlogLayout = ({
       const itemFormattedDate = formatDate(blog.datePublished, 'human') || 'May 20, 2024';
 
       return (
-        <article key={blog.id} className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-20">
+        <article key={blog.id} className="blog-card-hover flex sm-grid-cols-1 bg-white rounded-5 overflow-hidden mb-4">
           {/* Card Image */}
           <div
             className="w-40 sm-w-full overflow-hidden cursor-pointer"
@@ -308,7 +311,7 @@ const BlogLayout = ({
       {(type === 'list' || post || loading) && (
         <Banner
           title={type === 'list' ? "Latest Articles" : (post?.category || "Blog")}
-          desc={type === 'list' ? "Insights, strategies, and tips to help your business grow with smart marketing." : post?.title}
+          desc={type === 'list' ? "Printer cartridge news, buying guides, troubleshooting tips, and industry updates." : post?.title}
           breadcrumbs={
             type === 'list' ? (
               [

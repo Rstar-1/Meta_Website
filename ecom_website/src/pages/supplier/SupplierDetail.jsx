@@ -83,7 +83,7 @@ const SupplierDetail = () => {
   return (
     <>
       <SeoHelmet
-        title={`${nameDisplay} - Verified Supplier | Ashmita Enterprises`}
+        title={`${nameDisplay} - Verified Supplier | Ashmita Vinyl`}
         description={`Get authentic products, wholesale prices, and verified profile info for ${nameDisplay}. Location: ${cityLocation}.`}
         keywords={[`${nameDisplay} Supplier`, `${nameDisplay} Wholesale`, `Verified Supplier ${cityLocation}`]}
         path={`/supplier/${brandName}`}

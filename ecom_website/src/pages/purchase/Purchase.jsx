@@ -69,15 +69,15 @@ const Purchase = () => {
     return (
         <>
             <SeoHelmet
-                title="Find PVC Strip Curtains & PVC Rolls Near You | Ashmita Enterprises Dealer Locator"
+                title="Find PVC Strip Curtains & PVC Rolls Near You | Ashmita Vinyl Dealer Locator"
                 description="Connect with our sales team to find authorized dealers for genuine PVC sheets, rolls, strip curtains, and SS hardware near your location."
-                keywords={['Industrial Supplies', 'Authorized Dealers', 'Where to Buy', 'PVC Sheets', 'Ashmita Enterprises', 'B2B India']}
+                keywords={['Industrial Supplies', 'Authorized Dealers', 'Where to Buy', 'PVC Sheets', 'Ashmita Vinyl', 'B2B India']}
                 image={siteUrl + '/sobo_logo.webp'}
                 path="/wheretobuy"
                 type="website"
             />
-            <WebsiteSchema siteData={{ name: 'Ashmita Enterprises', url: siteUrl }} />
-            <OrganizationSchema orgData={{ name: 'Ashmita Enterprises', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
+            <WebsiteSchema siteData={{ name: 'Ashmita Vinyl', url: siteUrl }} />
+            <OrganizationSchema orgData={{ name: 'Ashmita Vinyl', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
             <SiteNavigationSchema navItems={navItems} />
 
             {/* Lazy Loaded Sections with Skeleton Loaders */}

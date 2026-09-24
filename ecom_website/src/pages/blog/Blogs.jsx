@@ -35,9 +35,9 @@ const Blogs = memo(() => {
   return (
     <>
       <SeoHelmet
-        title="PVC Sheets & Curtains Blog - Ashmita Enterprises"
+        title="PVC Sheets & Curtains Blog - Ashmita Vinyl"
         description="Read industrial insights, maintenance guides, temperature control tips, and updates about PVC strip curtains and rolls."
-        keywords={['PVC curtains blog', 'cold storage insulation tips', 'PVC roll maintenance', 'Ashmita Enterprises']}
+        keywords={['PVC curtains blog', 'cold storage insulation tips', 'PVC roll maintenance', 'Ashmita Vinyl']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/blog"
         type="blog"

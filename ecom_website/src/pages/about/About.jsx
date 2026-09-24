@@ -65,14 +65,14 @@ const About = () => {
   return (
     <>
       <SeoHelmet
-        title="About Us | Ashmita Enterprises - PVC Importer & Wholesaler"
-        description="Learn about Ashmita Enterprises, a leading importer and wholesaler of high-quality PVC strip curtains, rolls, sheets, and mounting brackets in Mumbai."
-        keywords={['About Ashmita Enterprises', 'PVC roll supplier Mumbai', 'PVC strip curtain dealer']}
+        title="About Us | Ashmita Vinyl - PVC Importer & Wholesaler"
+        description="Learn about Ashmita Vinyl, a leading importer and wholesaler of high-quality PVC strip curtains, rolls, sheets, and mounting brackets in Mumbai."
+        keywords={['About Ashmita Vinyl', 'PVC roll supplier Mumbai', 'PVC strip curtain dealer']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/about"
         type="about"
       />
-      <OrganizationSchema orgData={{ name: 'Ashmita Enterprises', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
+      <OrganizationSchema orgData={{ name: 'Ashmita Vinyl', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <Banner
         title="About Us"
         img="https://html.ditsolution.net/industry/indastre1/assets/images/slider/banner.jpg"

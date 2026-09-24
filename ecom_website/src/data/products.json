@@ -1,758 +1,238 @@
 [
   {
-    "id": "ashmita-153625330",
-    "name": "W. S. I PVC Strip Curtain Roll",
-    "slug": "w-s-i-pvc-strip-curtain-roll",
-    "price": 115,
-    "priceDisplay": "Rs 115 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-153625330",
+    "id": "ashmita-pvc-sheeting-clear-blue",
+    "name": "PVC Sheeting Roll Colour Clear Blue",
+    "slug": "pvc-sheeting-roll-colour-clear-blue",
     "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_w-s-i-pvc-strip-curtain-roll_1.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "w",
-      "s",
-      "i",
-      "pvc",
-      "strip",
-      "curtain",
-      "roll"
-    ],
+    "category": "cat-pvc-sheeting-colour-clear",
     "type": "general",
     "popular": true,
     "rating": 4.5,
     "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC Strip curtain roll. Available in 2mm and 3mm Thickness 8 inches and 12 inches Width Additional Information: Packaging Details: IN ROLL FORM Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-PVC-CLEAR-BLUE",
+    "description": "Ashmita PVC Sheeting Roll in Clear Blue is a high-definition, super clear and super genuine gloss PVC sheet designed for industrial and commercial applications. The sheet is manufactured in EN 71 grade PVC with a thickness of 0.50 mm, offering a clear blue appearance, smooth glossy finish, flexibility and durability. Available in a 54-inch width and 50-meter roll length, making it suitable for a wide range of protective, partitioning, covering and industrial applications.",
+    "shortDescription": "High-definition 0.50 mm Clear Blue PVC Sheeting Roll with a super clear, glossy finish. 54-inch width and 50-meter roll length.",
     "specs": [
       {
         "label": "Material",
         "value": "PVC"
       },
       {
-        "label": "Color",
-        "value": "Transparent"
+        "label": "Product Type",
+        "value": "PVC Super Clear Sheet"
       },
       {
-        "label": "Usage/Application",
-        "value": "Industries"
+        "label": "Colour",
+        "value": "Clear Blue"
       },
       {
-        "label": "Brand",
-        "value": "W.S.I"
-      },
-      {
-        "label": "Roll Width",
-        "value": "8 Inch"
-      },
-      {
-        "label": "Thickness",
-        "value": "2mm, Available in 3mm"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_w-s-i-pvc-strip-curtain-roll_1.webp",
-      "/src/assets/pvc_w-s-i-pvc-strip-curtain-roll_2.webp",
-      "/src/assets/pvc_w-s-i-pvc-strip-curtain-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78226248",
-    "name": "Yellow Anti Insect PVC Strips Curtain",
-    "slug": "yellow-anti-insect-pvc-strips-curtain",
-    "price": 130,
-    "priceDisplay": "Rs 130 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78226248",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_yellow-anti-insect-pvc-strips-curtain_2.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "yellow",
-      "anti",
-      "insect",
-      "pvc",
-      "strips",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 14,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Features: Long life Immaculate finish Perfect size Light weight Simple design Enhanced durability Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Industrial, Residential etc."
-      },
-      {
-        "label": "Color",
-        "value": "Yellow"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Weight",
-        "value": "25-37 kg"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_yellow-anti-insect-pvc-strips-curtain_2.webp",
-      "/src/assets/pvc_yellow-anti-insect-pvc-strips-curtain_2.webp",
-      "/src/assets/pvc_yellow-anti-insect-pvc-strips-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78232989",
-    "name": "Freezer Grade PVC Strip Curtain",
-    "slug": "freezer-grade-pvc-strip-curtain",
-    "price": 165,
-    "priceDisplay": "Rs 165 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78232989",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_freezer-grade-pvc-strip-curtain_3.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "freezer",
-      "grade",
-      "pvc",
-      "strip",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 16,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Thickness",
-        "value": "3 mm"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Home, Hotel, Office etc."
-      },
-      {
-        "label": "Brand",
-        "value": "W.S.I"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Weight",
-        "value": "24-36 kg"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_freezer-grade-pvc-strip-curtain_3.webp",
-      "/src/assets/pvc_freezer-grade-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_freezer-grade-pvc-strip-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78233643",
-    "name": "Blue PVC Strip Curtain",
-    "slug": "blue-pvc-strip-curtain",
-    "price": 108,
-    "priceDisplay": "Rs 108 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78233643",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_blue-pvc-strip-curtain_2.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "blue",
-      "pvc",
-      "strip",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 22,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "8-12 mm"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Color",
-        "value": "Blue"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Home, Hotel, Office etc."
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Roll Width",
-        "value": "10 inches"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_blue-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_blue-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_blue-pvc-strip-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78227831",
-    "name": "Opaque Black PVC Strips Curtain",
-    "slug": "opaque-black-pvc-strips-curtain",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78227831",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_opaque-black-pvc-strips-curtain_2.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "opaque",
-      "black",
-      "pvc",
-      "strips",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 21,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "2-3 mm"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Curtains"
-      },
-      {
-        "label": "Color",
-        "value": "Opaque Black"
-      },
-      {
-        "label": "Roll Length",
-        "value": "50 meter"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_opaque-black-pvc-strips-curtain_2.webp",
-      "/src/assets/pvc_opaque-black-pvc-strips-curtain_2.webp",
-      "/src/assets/pvc_opaque-black-pvc-strips-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-87984212",
-    "name": "Red Welding Grade PVC Strip Curtain",
-    "slug": "red-welding-grade-pvc-strip-curtain",
-    "price": 150,
-    "priceDisplay": "Rs 150 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-87984212",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_red-welding-grade-pvc-strip-curtain_2.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "red",
-      "welding",
-      "grade",
-      "pvc",
-      "strip",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 27,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Our company has mastered the art in offering Red Welding Grade PVC Strip Curtain to the clients. Red Welding Grade PVC is precisely manufactured by talented professionals by making use of cutting-edge technology and quality-tested material in compliance with set universal norms. Offered range is broadly demanded in the market for brilliant attributes. This product is available in various specifications that meet individual requirements of esteemed clientele. Offered range ensures the user friendly nature that meets the demands of valuable customers. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Usage/Application",
-        "value": "Home, Office, Industrial etc."
-      },
-      {
-        "label": "Color",
-        "value": "Red"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Weight",
-        "value": "37 kg"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_red-welding-grade-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_red-welding-grade-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_red-welding-grade-pvc-strip-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78228806",
-    "name": "PVC Strip Curtain",
-    "slug": "pvc-strip-curtain",
-    "price": 150,
-    "priceDisplay": "Rs 150 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78228806",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_curtain_industrial.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "pvc",
-      "strip",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 15,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "2-3 mm"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Industrial Curtains"
-      },
-      {
-        "label": "Packing Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Roll Length",
-        "value": "50 m"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Weight",
-        "value": "24-36 kg"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_curtain_industrial.webp",
-      "/src/assets/pvc_pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_pvc-strip-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-87983997",
-    "name": "UV Grade PVC Strip Curtain",
-    "slug": "uv-grade-pvc-strip-curtain",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-87983997",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_uv-grade-pvc-strip-curtain_3.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "uv",
-      "grade",
-      "pvc",
-      "strip",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 25,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "2-3 mm"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Home, Hotel, Office etc."
-      },
-      {
-        "label": "Roll Length",
-        "value": "50 m"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Weight",
-        "value": "24-36 kg"
+        "label": "Finish",
+        "value": "Super Clear Gloss / High Gloss"
       },
       {
         "label": "Grade",
-        "value": "UV Grade"
+        "value": "EN 71 Grade"
       },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_uv-grade-pvc-strip-curtain_3.webp",
-      "/src/assets/pvc_uv-grade-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_uv-grade-pvc-strip-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-129120417",
-    "name": "PVC Strip Curtain",
-    "slug": "pvc-strip-curtain",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-129120417",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_pvc-strip-curtain_3.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "pvc",
-      "strip",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 25,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "PVC Strip Curtain Rolls Available in 8 inches Width and 12 inches Width. In 3mm and 2mm Thickness Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
       {
         "label": "Thickness",
-        "value": "2-3 mm"
+        "value": "0.50 mm"
       },
       {
-        "label": "Usage/Application",
-        "value": "Home, Hotel, Office etc."
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
+        "label": "Roll Width",
+        "value": "54 Inches"
       },
       {
         "label": "Roll Length",
         "value": "50 m"
       },
       {
-        "label": "Weight",
-        "value": "25-37 kg"
+        "label": "PHR",
+        "value": "40"
       },
       {
-        "label": "Uv Protection",
-        "value": "Yes"
+        "label": "Brand",
+        "value": "Ashmita"
       },
       {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+        "label": "Application",
+        "value": "Industrial, Commercial, Protective Covering, Partitioning"
       },
       {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
+        "label": "Packaging",
+        "value": "Roll Form"
+      },
+      {
+        "label": "Net Weight",
+        "value": "Approx. 44 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "Approx. 46.4 kg"
+      },
+      {
+        "label": "Roll No.",
+        "value": "18"
+      },
+      {
+        "label": "Lot No.",
+        "value": "550911 Blue"
       }
+    ],
+    "features": [
+      "High Definition PVC Sheet",
+      "Super Clear Finish",
+      "Glossy Surface",
+      "Clear Blue Colour",
+      "EN 71 Grade",
+      "0.50 mm Thickness",
+      "54 Inch Roll Width",
+      "50 Meter Roll Length",
+      "Flexible and Durable",
+      "Suitable for Industrial Applications",
+      "Supplied in Roll Form"
+    ],
+    "tags": [
+      "pvc-sheeting",
+      "pvc-sheet-roll",
+      "clear-blue-pvc",
+      "blue-pvc-sheet",
+      "clear-pvc-sheet",
+      "pvc-roll",
+      "pvc-film",
+      "transparent-pvc",
+      "glossy-pvc",
+      "industrial-pvc",
+      "pvc-sheet",
+      "ashmita"
     ],
     "images": [
-      "/src/assets/pvc_pvc-strip-curtain_3.webp",
-      "/src/assets/pvc_pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_pvc-strip-curtain_3.webp"
+      "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Blue.jpeg"
     ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
+    "image": "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Blue.jpeg"
   },
   {
-    "id": "ashmita-289188460",
-    "name": "Welding Green Pvc Strip Curtains Roll",
-    "slug": "welding-green-pvc-strip-curtains-roll",
-    "price": 155,
-    "priceDisplay": "Rs 155 / Kg",
+    "id": "ashmita-pvc-sheeting-clear-deep-pink",
+    "name": "PVC Sheeting Roll Colour Clear Deep Pink",
+    "slug": "pvc-sheeting-roll-colour-clear-deep-pink",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-289188460",
+    "sku": "AE-PVC-CLEAR-DEEP-PINK",
     "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_welding-green-pvc-strip-curtains-roll_2.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "welding",
-      "green",
-      "pvc",
-      "strip",
-      "curtains",
-      "roll"
-    ],
+    "category": "cat-pvc-sheeting-colour-clear",
     "type": "general",
-    "popular": false,
+    "popular": true,
     "rating": 4.5,
-    "reviewCount": 30,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC Strip Curtain Rolls Supreme GradeGreen Transparent RollsBrand : W.S.IThickness : 3mm and 2mmWidth : 8 inchesRoll length : 50 MtrsRoll weight : 36 kg and 24 Kg RespectivelyAdditional Information: Packaging Details: Roll Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
+    "description": "Ashmita High Definition (HD) PVC Super Clear Sheet in Clear Deep Pink colour, featuring a smooth super-clear glossy finish. Manufactured in EN 71 grade PVC with 0.50 mm thickness, 54-inch width and 50-meter roll length. This flexible and durable PVC sheeting is suitable for industrial, commercial, protective covering, partitioning and decorative applications. Supplied in convenient roll form.",
+    "shortDescription": "High Definition PVC Sheeting Roll in Clear Deep Pink with a super clear glossy finish, 0.50 mm thickness, 54-inch width and 50-meter roll length.",
     "specs": [
       {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product Type",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Colour",
+        "value": "Clear Deep Pink"
+      },
+      {
+        "label": "Finish",
+        "value": "Super Clear Gloss / High Gloss"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 Grade"
+      },
+      {
         "label": "Thickness",
-        "value": "2 mm"
+        "value": "0.50 mm"
       },
       {
-        "label": "Flexibility",
-        "value": "Flexibile"
+        "label": "Roll Width",
+        "value": "54 Inches"
       },
       {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+        "label": "Roll Length",
+        "value": "50 m"
       },
       {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
+        "label": "PHR",
+        "value": "40"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Usage/Application",
+        "value": "Industrial, Commercial, Protective Covering, Partitioning and Decorative Applications"
+      },
+      {
+        "label": "Packaging",
+        "value": "Roll Form"
+      },
+      {
+        "label": "Net Weight",
+        "value": "Approx. 44.5 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "Approx. 47.3 kg"
+      },
+      {
+        "label": "Roll No.",
+        "value": "43"
+      },
+      {
+        "label": "Lot No.",
+        "value": "560607 DeepPink"
       }
     ],
+    "features": [
+      "High Definition (HD) PVC Sheet",
+      "Super Clear Finish",
+      "High Gloss Surface",
+      "Clear Deep Pink Colour",
+      "EN 71 Grade",
+      "0.50 mm Thickness",
+      "54 Inch Roll Width",
+      "50 Meter Roll Length",
+      "Flexible and Durable",
+      "Smooth Glossy Surface",
+      "Suitable for Industrial Applications",
+      "Supplied in Roll Form"
+    ],
+    "tags": [
+      "pvc-sheeting",
+      "pvc-sheet-roll",
+      "clear-deep-pink-pvc",
+      "deep-pink-pvc-sheet",
+      "clear-pink-pvc",
+      "pink-pvc-sheet",
+      "pvc-roll",
+      "pvc-film",
+      "transparent-pvc",
+      "glossy-pvc",
+      "hd-pvc-sheet",
+      "industrial-pvc",
+      "pvc-sheet",
+      "ashmita"
+    ],
     "images": [
-      "/src/assets/pvc_welding-green-pvc-strip-curtains-roll_2.webp",
-      "/src/assets/pvc_welding-green-pvc-strip-curtains-roll_2.webp",
-      "/src/assets/pvc_welding-green-pvc-strip-curtains-roll_3.webp",
-      "/src/assets/pvc_welding-green-pvc-strip-curtains-roll_4.webp"
+      "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Deep Pink.jpeg"
     ],
     "reviews": [
       {
@@ -762,67 +242,126 @@
         "rating": 5,
         "comment": "Excellent quality PVC product, very durable and well packaged."
       }
-    ]
+    ],
+    "image": "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Deep Pink.jpeg"
   },
   {
-    "id": "ashmita-306971742",
-    "name": "Warehouse Dividers PVC Curtains",
-    "slug": "warehouse-dividers-pvc-curtains",
-    "price": 135,
-    "priceDisplay": "Rs 135 / Roll",
+    "id": "ashmita-pvc-sheeting-clear-purple",
+    "name": "PVC Sheeting Roll Colour Clear Purple",
+    "slug": "pvc-sheeting-roll-colour-clear-purple",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-306971742",
+    "sku": "AE-PVC-CLEAR-PURPLE",
     "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_warehouse-dividers-pvc-curtains_2.webp",
-    "tags": [
-      "pvc-strip-curtains",
-      "pvc",
-      "pvc-strip-curtains",
-      "warehouse",
-      "dividers",
-      "pvc",
-      "curtains"
-    ],
+    "category": "cat-pvc-sheeting-colour-clear",
     "type": "general",
-    "popular": false,
+    "popular": true,
     "rating": 4.5,
-    "reviewCount": 24,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "pvc strip curtainsProduct Name: PVC Strip CurtainWe have brands available like:WSI,LKY,VietnameseTwo thicknesses only available in Pvc strip curtain following:2mm3mmLength : 50mtrWidth : 200mm (8 inches)Tax rate is 18%Additional Information: Packaging Details: pvc strip curtains Product Name: PVC Strip Curtain We have brands available like: WSI, LKY, Vietnamese Two thicknesses only available in Pvc strip curtain following: 2mm 3mm Length : 50mtr Width : 200mm (8 inches) Tax rate is 18% Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
+    "description": "Ashmita High Definition (HD) PVC Super Clear Sheet in Clear Purple colour, featuring a smooth, glossy and highly transparent finish. Manufactured in EN 71 grade PVC with 0.50 mm thickness, 54-inch width and 50-meter roll length. This flexible and durable PVC sheeting is suitable for industrial, commercial, protective covering, partitioning and decorative applications. Supplied in roll form for convenient handling and installation.",
+    "shortDescription": "High Definition PVC Sheeting Roll in Clear Purple with a super clear glossy finish, 0.50 mm thickness, 54-inch width and 50-meter roll length.",
     "specs": [
       {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product Type",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Colour",
+        "value": "Clear Purple"
+      },
+      {
+        "label": "Finish",
+        "value": "Super Clear Gloss / High Gloss"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 Grade"
+      },
+      {
         "label": "Thickness",
-        "value": "3 mm"
+        "value": "0.50 mm"
       },
       {
-        "label": "Flexibility",
-        "value": "Flexibile"
+        "label": "Roll Width",
+        "value": "54 Inches"
       },
       {
-        "label": "Moisture Proof",
-        "value": "Yes"
+        "label": "Roll Length",
+        "value": "50 m"
       },
       {
-        "label": "Flammability",
-        "value": "No"
+        "label": "PHR",
+        "value": "40"
       },
       {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+        "label": "Brand",
+        "value": "Ashmita"
       },
       {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
+        "label": "Usage/Application",
+        "value": "Industrial, Commercial, Protective Covering, Partitioning and Decorative Applications"
+      },
+      {
+        "label": "Packaging",
+        "value": "Roll Form"
+      },
+      {
+        "label": "Net Weight",
+        "value": "Approx. 44 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "Approx. 46.4 kg"
+      },
+      {
+        "label": "Roll No.",
+        "value": "33"
+      },
+      {
+        "label": "Lot No.",
+        "value": "550911 Purple"
       }
     ],
+    "features": [
+      "High Definition (HD) PVC Sheet",
+      "Super Clear Finish",
+      "High Gloss Surface",
+      "Clear Purple Colour",
+      "EN 71 Grade",
+      "0.50 mm Thickness",
+      "54 Inch Roll Width",
+      "50 Meter Roll Length",
+      "Flexible and Durable",
+      "Smooth Glossy Surface",
+      "Suitable for Industrial Applications",
+      "Supplied in Roll Form"
+    ],
+    "tags": [
+      "pvc-sheeting",
+      "pvc-sheet-roll",
+      "clear-purple-pvc",
+      "purple-pvc-sheet",
+      "clear-purple-sheet",
+      "purple-pvc-roll",
+      "clear-pvc-sheet",
+      "transparent-pvc",
+      "glossy-pvc",
+      "hd-pvc-sheet",
+      "industrial-pvc",
+      "pvc-film",
+      "pvc-roll",
+      "ashmita"
+    ],
     "images": [
-      "/src/assets/pvc_warehouse-dividers-pvc-curtains_2.webp",
-      "/src/assets/pvc_warehouse-dividers-pvc-curtains_2.webp",
-      "/src/assets/pvc_warehouse-dividers-pvc-curtains_3.webp",
-      "/src/assets/pvc_warehouse-dividers-pvc-curtains_4.webp"
+      "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Purple.jpeg"
     ],
     "reviews": [
       {
@@ -832,27 +371,29 @@
         "rating": 5,
         "comment": "Excellent quality PVC product, very durable and well packaged."
       }
-    ]
+    ],
+    "image": "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Purple.jpeg"
   },
   {
-    "id": "ashmita-106899697",
-    "name": "PVC Clear Sheet",
-    "slug": "pvc-clear-sheet",
-    "price": 145,
-    "priceDisplay": "Rs 145 / Kg",
+    "id": "ashmita-pvc-super-clear-sheet-red",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Clear Red",
+    "slug": "ashmita-pvc-super-clear-sheet-red",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-106899697",
+    "sku": "AE-153625331",
     "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_clear_sheet.webp",
+    "category": "cat-pvc-sheeting-colour-clear",
+    "image": "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Red.jpeg",
     "tags": [
-      "pvc-sheet",
+      "pvc-sheeting-roll",
       "pvc",
       "pvc-sheet",
-      "pvc",
-      "clear",
-      "sheet"
+      "super-clear",
+      "super-gloss",
+      "clear-red",
+      "ashmita"
     ],
     "type": "general",
     "popular": true,
@@ -860,767 +401,59 @@
     "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC clear flexible sheeting in roll form . Thickness from 0.10mm , 0.12mm , 0.15mm , 0.20mm , 0.25mm , 0.30mm , 0.40mm, 0.50mm. Width : 54 inches Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Clear Red. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
     "specs": [
       {
-        "label": "Thickness",
-        "value": ">30 mm"
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Clear Red"
       },
       {
         "label": "Brand",
-        "value": "W.S.I"
+        "value": "Ashmita"
       },
       {
-        "label": "Color",
-        "value": "Transparent"
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
       },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_clear_sheet.webp",
-      "/src/assets/pvc_pvc-clear-sheet_2.webp",
-      "/src/assets/pvc_pvc-clear-sheet_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-158609054",
-    "name": "Shamita clear transparent  PVC roll",
-    "slug": "shamita-clear-transparent-pvc-roll",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-158609054",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_shamita-clear-transparent-pvc-roll_2.webp",
-    "tags": [
-      "pvc-sheet",
-      "pvc",
-      "pvc-sheet",
-      "shamita",
-      "clear",
-      "transparent",
-      "pvc",
-      "roll"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 27,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "SHAMITA clear transparent PVC roll Thickness 0.07mm to 3mm Width 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Surface Finish",
-        "value": "PVC"
-      },
-      {
-        "label": "Brand",
-        "value": "Shamita"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Country of Origin",
-        "value": "Made in India"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_shamita-clear-transparent-pvc-roll_2.webp",
-      "/src/assets/pvc_shamita-clear-transparent-pvc-roll_2.webp",
-      "/src/assets/pvc_shamita-clear-transparent-pvc-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78225274",
-    "name": "PVC Flexible Clear Sheet",
-    "slug": "pvc-flexible-clear-sheet",
-    "price": 110,
-    "priceDisplay": "Rs 110 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78225274",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_pvc-flexible-clear-sheet_3.webp",
-    "tags": [
-      "pvc-sheet",
-      "pvc",
-      "pvc-sheet",
-      "pvc",
-      "flexible",
-      "clear",
-      "sheet"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 17,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "PVC clear flexible sheeting in roll form . Thickness from 0.10mm , 0.12mm , 0.15mm , 0.20mm , 0.25mm , 0.30mm , 0.40mm, 0.50mm. Width : 54 inches Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
       {
         "label": "Thickness",
-        "value": "0.10 - 3 mm"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "House,Home,Office etc."
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Brand",
-        "value": "W.S.I"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_pvc-flexible-clear-sheet_3.webp",
-      "/src/assets/pvc_pvc-flexible-clear-sheet_2.webp",
-      "/src/assets/pvc_pvc-flexible-clear-sheet_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-109353536",
-    "name": "Plain PVC Clear Sheet",
-    "slug": "plain-pvc-clear-sheet",
-    "price": 130,
-    "priceDisplay": "Rs 130 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-109353536",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_plain-pvc-clear-sheet_2.webp",
-    "tags": [
-      "pvc-sheet",
-      "pvc",
-      "pvc-sheet",
-      "plain",
-      "pvc",
-      "clear",
-      "sheet"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 27,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "0.20 - 2 mm"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Features",
-        "value": "Fire Retardant, UV Protected, Moisture Resistant"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_plain-pvc-clear-sheet_2.webp",
-      "/src/assets/pvc_plain-pvc-clear-sheet_2.webp",
-      "/src/assets/pvc_plain-pvc-clear-sheet_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-123937580",
-    "name": "PVC Super Clear Sheet",
-    "slug": "pvc-super-clear-sheet",
-    "price": 115,
-    "priceDisplay": "Rs 115 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-123937580",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_sheets_industrial.webp",
-    "tags": [
-      "pvc-sheet",
-      "pvc",
-      "pvc-sheet",
-      "pvc",
-      "super",
-      "clear",
-      "sheet"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 19,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "0.30-3 mm"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Industrial Curtains"
-      },
-      {
-        "label": "Brand",
-        "value": "W.S.I"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Length Per Roll",
-        "value": "50-60 m"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_sheets_industrial.webp",
-      "/src/assets/pvc_pvc-super-clear-sheet_2.webp",
-      "/src/assets/pvc_pvc-super-clear-sheet_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-116212175",
-    "name": "Transparent PVC Clear Sheet",
-    "slug": "transparent-pvc-clear-sheet",
-    "price": 110,
-    "priceDisplay": "Rs 110 / Kilogram",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-116212175",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_pvc-clear-sheet_3.webp",
-    "tags": [
-      "pvc-sheet",
-      "pvc",
-      "pvc-sheet",
-      "transparent",
-      "pvc",
-      "clear",
-      "sheet"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 27,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "0.30-3 mm"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Hotel, Home, Office etc."
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Brand",
-        "value": "W.S.I"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_pvc-clear-sheet_3.webp",
-      "/src/assets/pvc_transparent-pvc-clear-sheet_2.webp",
-      "/src/assets/pvc_transparent-pvc-clear-sheet_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-158608203",
-    "name": "Soft Pvc Sheet",
-    "slug": "soft-pvc-sheet",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-158608203",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_soft-pvc-sheet_1.webp",
-    "tags": [
-      "pvc-sheet",
-      "pvc",
-      "pvc-sheet",
-      "soft",
-      "pvc",
-      "sheet"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 29,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Pvc Soft Sheet Thickness available 0.07mm to 3mm Width :54\" and 72,Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "5 mm"
-      },
-      {
-        "label": "Length",
-        "value": ">10 Feet"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Industrial"
-      },
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_soft-pvc-sheet_1.webp",
-      "/src/assets/pvc_soft-pvc-sheet_2.webp",
-      "/src/assets/pvc_soft-pvc-sheet_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-158608070",
-    "name": "Soft PVC Roll",
-    "slug": "soft-pvc-roll",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-158608070",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_soft-pvc-roll_1.webp",
-    "tags": [
-      "pvc-roll",
-      "pvc",
-      "pvc-roll",
-      "soft",
-      "pvc",
-      "roll"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.5,
-    "reviewCount": 22,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Soft PVC rollThickness 0. 07mm to 3mmWidth :54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Packaging"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Length",
-        "value": "30 m"
-      },
-      {
-        "label": "Country of Origin",
-        "value": "Made in India"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_soft-pvc-roll_1.webp",
-      "/src/assets/pvc_soft-pvc-roll_2.webp",
-      "/src/assets/pvc_soft-pvc-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78204621",
-    "name": "Transparent PVC Roll",
-    "slug": "transparent-pvc-roll",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kilogram",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78204621",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_transparent_roll.webp",
-    "tags": [
-      "pvc-roll",
-      "pvc",
-      "pvc-roll",
-      "transparent",
-      "pvc",
-      "roll"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 16,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "We are identified as one of the leading names in the market engaged in providing a wide range of Transparent PVC Roll to our valued clients. Features: Rigid design Long life Low maintenance High strength Attractive pattern Fine finish Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Brand",
-        "value": "W.S.I"
-      },
-      {
-        "label": "Length Per Roll",
-        "value": "50 m"
-      },
-      {
-        "label": "Is It Recyclable",
-        "value": "Recyclable"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Is It Water Proof",
-        "value": "Water Proof"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_transparent_roll.webp",
-      "/src/assets/pvc_transparent-pvc-roll_2.webp",
-      "/src/assets/pvc_transparent-pvc-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-78224831",
-    "name": "Plain PVC Roll",
-    "slug": "plain-pvc-roll",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kilogram",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-78224831",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_plain-pvc-roll_1.webp",
-    "tags": [
-      "pvc-roll",
-      "pvc",
-      "pvc-roll",
-      "plain",
-      "pvc",
-      "roll"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 26,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Is It Water Proof",
-        "value": "Water Proof"
-      },
-      {
-        "label": "Roll Length",
-        "value": "50 meter"
+        "value": "0.50 mm"
       },
       {
         "label": "Width",
         "value": "54 inches"
       },
       {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+        "label": "Roll Length",
+        "value": "50 m"
       },
       {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
+        "label": "PHR",
+        "value": "40"
       },
       {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
+        "label": "Net Weight",
+        "value": "44.4 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "46.2 kg"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
       }
     ],
     "images": [
-      "/src/assets/pvc_plain-pvc-roll_1.webp",
-      "/src/assets/pvc_plain-pvc-roll_2.webp",
-      "/src/assets/pvc_plain-pvc-roll_3.webp"
+      "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Red.jpeg"
     ],
     "reviews": [
       {
@@ -1633,400 +466,762 @@
     ]
   },
   {
-    "id": "ashmita-158609289",
-    "name": "HPY clear transparent  PVC roll",
-    "slug": "hpy-clear-transparent-pvc-roll",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-158609289",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_hpy-clear-transparent-pvc-roll_2.webp",
-    "tags": [
-      "pvc-roll",
-      "pvc",
-      "pvc-roll",
-      "hpy",
-      "clear",
-      "transparent",
-      "pvc",
-      "roll"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 12,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "HPY clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Thickness",
-        "value": "0.1 - 0.5 mm"
-      },
-      {
-        "label": "Brand",
-        "value": "HPY"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Country of Origin",
-        "value": "Made in India"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_hpy-clear-transparent-pvc-roll_2.webp",
-      "/src/assets/pvc_hpy-clear-transparent-pvc-roll_2.webp",
-      "/src/assets/pvc_hpy-clear-transparent-pvc-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-153162207",
-    "name": "Super Clear PVC Roll",
-    "slug": "super-clear-pvc-roll",
+    "id": "ashmita-pvc-super-clear-sheet-turquoise",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Clear Turquoise",
+    "slug": "ashmita-pvc-super-clear-sheet-turquoise",
     "price": 115,
     "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-153162207",
+    "sku": "AE-153625332",
     "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_roll_industrial.webp",
+    "category": "cat-pvc-sheeting-colour-clear",
+    "image": "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Turquoise.jpeg",
     "tags": [
-      "pvc-roll",
+      "pvc-sheeting-roll",
       "pvc",
-      "pvc-roll",
-      "super",
-      "clear",
-      "pvc",
-      "roll"
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "clear-turquoise",
+      "ashmita"
     ],
     "type": "general",
-    "popular": false,
+    "popular": true,
     "rating": 4.5,
-    "reviewCount": 20,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Clear Turquoise. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
     "specs": [
       {
         "label": "Material",
         "value": "PVC"
       },
       {
-        "label": "Packaging Type",
-        "value": "Roll"
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Clear Turquoise"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Thickness",
+        "value": "0.50 mm"
+      },
+      {
+        "label": "Width",
+        "value": "54 inches"
+      },
+      {
+        "label": "Roll Length",
+        "value": "50 m"
+      },
+      {
+        "label": "PHR",
+        "value": "40"
+      },
+      {
+        "label": "Net Weight",
+        "value": "44.5 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "46.3 kg"
+      },
+      {
+        "label": "Lot No.",
+        "value": "550911 Turquoise"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Turquoise.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-pvc-super-clear-sheet-yellow",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Clear Yellow",
+    "slug": "ashmita-pvc-super-clear-sheet-yellow",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625333",
+    "brand": "Ashmita",
+    "category": "cat-pvc-sheeting-colour-clear",
+    "image": "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Yellow.jpeg",
+    "tags": [
+      "pvc-sheeting-roll",
+      "pvc",
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "clear-yellow",
+      "ashmita"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Clear Yellow. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Clear Yellow"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Thickness",
+        "value": "0.50 mm"
+      },
+      {
+        "label": "Width",
+        "value": "54 inches"
+      },
+      {
+        "label": "Roll Length",
+        "value": "50 m"
+      },
+      {
+        "label": "PHR",
+        "value": "40"
+      },
+      {
+        "label": "Net Weight",
+        "value": "44.5 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "46.3 kg"
+      },
+      {
+        "label": "Lot No.",
+        "value": "550911 Yellow"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Colour Clear/PVC Sheeting Roll Colour Clear Yellow.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-pvc-super-clear-sheet-fluorescent-green",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Fluorescent Green",
+    "slug": "ashmita-pvc-super-clear-sheet-fluorescent-green",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625334",
+    "brand": "Ashmita",
+    "category": "cat-pvc-sheeting-flourescent",
+    "image": "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Green.jpeg",
+    "tags": [
+      "pvc-sheeting-roll",
+      "pvc",
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "fluorescent-green",
+      "ashmita"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Fluorescent Green. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Fluorescent Green"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Thickness",
+        "value": "0.5 mm"
+      },
+      {
+        "label": "Width",
+        "value": "54 inches"
+      },
+      {
+        "label": "Roll Length",
+        "value": "50 m"
+      },
+      {
+        "label": "PHR",
+        "value": "40"
+      },
+      {
+        "label": "Net Weight",
+        "value": "44.3 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "46.1 kg"
+      },
+      {
+        "label": "Lot No.",
+        "value": "550102 Fluorescent Green"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Green.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-pvc-super-clear-sheet-fluorescent-orange",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Fluorescent Orange",
+    "slug": "ashmita-pvc-super-clear-sheet-fluorescent-orange",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625335",
+    "brand": "Ashmita",
+    "category": "cat-pvc-sheeting-flourescent",
+    "image": "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Orange.jpeg",
+    "tags": [
+      "pvc-sheeting-roll",
+      "pvc",
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "fluorescent-orange",
+      "ashmita"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Fluorescent Orange. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Fluorescent Orange"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Thickness",
+        "value": "0.50 mm"
+      },
+      {
+        "label": "Width",
+        "value": "54 inches"
+      },
+      {
+        "label": "Roll Length",
+        "value": "50 m"
+      },
+      {
+        "label": "PHR",
+        "value": "40"
+      },
+      {
+        "label": "Net Weight",
+        "value": "44.1 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "45.9 kg"
+      },
+      {
+        "label": "Lot No.",
+        "value": "550107 Fluorescent Orange"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Orange.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-pvc-super-clear-sheet-fluorescent-pink-2",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Fluorescent Pink (Shade 2)",
+    "slug": "ashmita-pvc-super-clear-sheet-fluorescent-pink-2",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625336",
+    "brand": "Ashmita",
+    "category": "cat-pvc-sheeting-flourescent",
+    "image": "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Pink 2.jpeg",
+    "tags": [
+      "pvc-sheeting-roll",
+      "pvc",
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "fluorescent-pink",
+      "ashmita"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Fluorescent Pink. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Fluorescent Pink"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Pink 2.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-pvc-super-clear-sheet-fluorescent-pink",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Fluorescent Pink",
+    "slug": "ashmita-pvc-super-clear-sheet-fluorescent-pink",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625337",
+    "brand": "Ashmita",
+    "category": "cat-pvc-sheeting-flourescent",
+    "image": "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Pink.jpeg",
+    "tags": [
+      "pvc-sheeting-roll",
+      "pvc",
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "fluorescent-pink",
+      "ashmita"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Fluorescent Pink. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Fluorescent Pink"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Pink.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-pvc-super-clear-sheet-fluorescent-yellow",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Fluorescent Yellow",
+    "slug": "ashmita-pvc-super-clear-sheet-fluorescent-yellow",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625338",
+    "brand": "Ashmita",
+    "category": "cat-pvc-sheeting-flourescent",
+    "image": "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent yellow.jpeg",
+    "tags": [
+      "pvc-sheeting-roll",
+      "pvc",
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "fluorescent-yellow",
+      "ashmita"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Fluorescent Yellow. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Fluorescent Yellow"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Thickness",
+        "value": "0.5 mm"
+      },
+      {
+        "label": "Width",
+        "value": "54 inches"
+      },
+      {
+        "label": "Roll Length",
+        "value": "50 m"
+      },
+      {
+        "label": "PHR",
+        "value": "40"
+      },
+      {
+        "label": "Net Weight",
+        "value": "44.5 kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "46.3 kg"
+      },
+      {
+        "label": "Lot No.",
+        "value": "550102 Fluorescent Yellow"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent yellow.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-pvc-super-clear-sheet-fluorescent-yellow-1",
+    "name": "Ashmita High Definition(HD) Super Clear Super Gloss PVC Sheeting Roll - Fluorescent Yellow (Shade 1)",
+    "slug": "ashmita-pvc-super-clear-sheet-fluorescent-yellow-1",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625339",
+    "brand": "Ashmita",
+    "category": "cat-pvc-sheeting-flourescent",
+    "image": "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Yellow1.jpeg",
+    "tags": [
+      "pvc-sheeting-roll",
+      "pvc",
+      "pvc-sheet",
+      "super-clear",
+      "super-gloss",
+      "fluorescent-yellow",
+      "ashmita"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "Ashmita High Definition (HD) Super Clear Super Gloss PVC Sheeting Roll in Fluorescent Yellow. Platinum Grade, EN 71 certified quality ideal for industrial and commercial packaging or protective applications.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Super Clear Sheet"
+      },
+      {
+        "label": "Color",
+        "value": "Fluorescent Yellow"
+      },
+      {
+        "label": "Brand",
+        "value": "Ashmita"
+      },
+      {
+        "label": "Grade",
+        "value": "EN 71 grade / Platinum Grade"
+      },
+      {
+        "label": "Special Features",
+        "value": "High Definition (HD), Super Clear, Super Gloss"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Sheeting Roll Flourescent/PVC Sheeting Roll Fluroscent Yellow1.jpeg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "wsi-pvc-strip-curtain-roll-5mm",
+    "name": "W.S.I PVC Strip Curtain Roll - 5mm Blue Tinge",
+    "slug": "w-s-i-pvc-strip-curtain-roll-5mm",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625340",
+    "brand": "W.S.I",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain  5mm.jpg",
+    "tags": [
+      "pvc-strip-curtains",
+      "pvc",
+      "w-s-i",
+      "strip",
+      "curtain",
+      "roll",
+      "blue-tinge",
+      "5mm"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "W.S.I Reliable Grade PVC Strip Curtain Roll in Blue Tinge. Designed for heavy-duty industrial partition and thermal insulation with 5mm thickness and 200mm width.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Color",
+        "value": "Blue Tinge"
       },
       {
         "label": "Brand",
         "value": "W.S.I."
       },
       {
-        "label": "Is It Water Proof",
-        "value": "Water Proof"
-      },
-      {
-        "label": "Roll Width",
-        "value": "54 inch"
-      },
-      {
-        "label": "Length",
-        "value": "40 m"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_roll_industrial.webp",
-      "/src/assets/pvc_super-clear-pvc-roll_2.webp",
-      "/src/assets/pvc_super-clear-pvc-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-158609000",
-    "name": "DGT Clear Transparent  PVC Roll",
-    "slug": "dgt-clear-transparent-pvc-roll",
-    "price": 120,
-    "priceDisplay": "Price on request",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-158609000",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_dgt-clear-transparent-pvc-roll_2.webp",
-    "tags": [
-      "pvc-roll",
-      "pvc",
-      "pvc-roll",
-      "dgt",
-      "clear",
-      "transparent",
-      "pvc",
-      "roll"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 22,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "DGT clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "0.6 - 1 mm"
-      },
-      {
-        "label": "Surface Finish",
-        "value": "PVC"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Country of Origin",
-        "value": "Made in India"
-      },
-      {
-        "label": "Color",
-        "value": "Blue"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_dgt-clear-transparent-pvc-roll_2.webp",
-      "/src/assets/pvc_dgt-clear-transparent-pvc-roll_2.webp",
-      "/src/assets/pvc_dgt-clear-transparent-pvc-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-273732957",
-    "name": "PVC  Rainbow Clear sheet",
-    "slug": "pvc-rainbow-clear-sheet",
-    "price": 350,
-    "priceDisplay": "Rs 350 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-273732957",
-    "brand": "Ashmita",
-    "category": "cat-pvc-color-film",
-    "image": "/src/assets/pvc_pvc-rainbow-clear-sheet_2.webp",
-    "tags": [
-      "pvc-color-film",
-      "pvc",
-      "pvc-colour-film",
-      "pvc",
-      "rainbow",
-      "clear",
-      "sheet"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.5,
-    "reviewCount": 16,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "PVC Clear Rainbow Rolls (PVC Holographic Clear Film) Used for MAKING bags, Pouches READY stock available 👇🏼 Thickness : 0.40mm (Exact 0.40mm) Width : 54\" Roll length : 50mtrsRoll weight : 35.60 kg approx Comes in 12 color combinations: Fluorescent Green/Yellow/Pink/Orange (0.30mm & 0.50mm), solids (0.50mm), and Rainbow Clear.",
-    "specs": [
-      {
-        "label": "Polymer Type",
-        "value": "PVC"
+        "label": "Grade",
+        "value": "Reliable Grade"
       },
       {
         "label": "Thickness",
-        "value": "0.40mm"
+        "value": "5mm"
       },
       {
-        "label": "Sheet Size",
-        "value": "Roll"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Transparency",
-        "value": "Multicolor"
-      },
-      {
-        "label": "Size",
-        "value": "54 inch width"
-      },
-      {
-        "label": "Combinations",
-        "value": "12 Colour Combination (including Fluorescent Green, Yellow, Pink, Orange)"
-      },
-      {
-        "label": "Thickness Options",
-        "value": "0.30mm & 0.50mm (Fluorescent), 0.50mm (Solid colours: Blue, Red, Yellow, Pink, Deep Pink, Purple, Turquoise), Rainbow Clear"
-      },
-      {
-        "label": "Width & Length",
-        "value": "60\" Width, 100 MTRS Length"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_pvc-rainbow-clear-sheet_2.webp",
-      "/src/assets/pvc_pvc-rainbow-clear-sheet_2.webp",
-      "/src/assets/pvc_pvc-rainbow-clear-sheet_3.webp",
-      "/src/assets/pvc_pvc-rainbow-clear-sheet_4.webp",
-      "/src/assets/pvc_pvc-rainbow-clear-sheet_5.webp",
-      "/src/assets/pvc_pvc-rainbow-clear-sheet_6.webp",
-      "/src/assets/pvc_pvc-rainbow-clear-sheet_7.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-229912724",
-    "name": "Florescent Super Clear PVC Rolls (Flourocent)",
-    "slug": "florescent-super-clear-pvc-rolls-flourocent",
-    "price": 160,
-    "priceDisplay": "Rs 160 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-229912724",
-    "brand": "Ashmita",
-    "category": "cat-pvc-color-film",
-    "image": "/src/assets/pvc_florescent-super-clear-pvc-rolls-flourocent_2.webp",
-    "tags": [
-      "pvc-color-film",
-      "pvc",
-      "pvc-colour-film",
-      "florescent",
-      "super",
-      "clear",
-      "pvc",
-      "rolls",
-      "flourocent"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 13,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Comes in 12 color combinations: Fluorescent Green/Yellow/Pink/Orange (0.30mm & 0.50mm), solids (0.50mm), and Rainbow Clear.",
-    "specs": [
-      {
-        "label": "Color",
-        "value": "Multicolor"
-      },
-      {
-        "label": "Usage/ Application",
-        "value": "Stationery Material"
+        "label": "Width",
+        "value": "200mm"
       },
       {
         "label": "Length",
-        "value": "50 m"
+        "value": "50m"
       },
       {
-        "label": "Packaging Type",
-        "value": "in roll"
+        "label": "Net Weight",
+        "value": "63kg"
       },
       {
-        "label": "Usage/Application",
-        "value": "Used for manufacturing  pencil pouches , bags , small bags"
+        "label": "Gross Weight",
+        "value": "63.5kg"
       },
       {
-        "label": "Gauge",
-        "value": "0.50mm"
+        "label": "Roll No.",
+        "value": "35"
       },
       {
-        "label": "Combinations",
-        "value": "12 Colour Combination (including Fluorescent Green, Yellow, Pink, Orange)"
-      },
-      {
-        "label": "Thickness Options",
-        "value": "0.30mm & 0.50mm (Fluorescent), 0.50mm (Solid colours: Blue, Red, Yellow, Pink, Deep Pink, Purple, Turquoise), Rainbow Clear"
-      },
-      {
-        "label": "Width & Length",
-        "value": "60\" Width, 100 MTRS Length"
+        "label": "Lot No.",
+        "value": "420806"
       }
     ],
     "images": [
-      "/src/assets/pvc_florescent-super-clear-pvc-rolls-flourocent_2.webp",
-      "/src/assets/pvc_florescent-super-clear-pvc-rolls-flourocent_2.webp",
-      "/src/assets/pvc_florescent-super-clear-pvc-rolls-flourocent_3.webp",
-      "/src/assets/pvc_florescent-super-clear-pvc-rolls-flourocent_4.webp"
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain  5mm.jpg"
     ],
     "reviews": [
       {
@@ -2039,71 +1234,74 @@
     ]
   },
   {
-    "id": "ashmita-160734006",
-    "name": "Polar PVC Strip Curtain",
-    "slug": "polar-pvc-strip-curtain",
-    "price": 150,
-    "priceDisplay": "Rs 150 / sq ft",
+    "id": "wsi-pvc-strip-curtain-roll-amber-orange",
+    "name": "W.S.I. PVC Strip Curtain Roll - Amber Orange",
+    "slug": "w-s-i-pvc-strip-curtain-roll-amber-orange",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-160734006",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_polar-pvc-strip-curtain_3.webp",
+    "sku": "AE-153625341",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Amber Orange.jpg",
     "tags": [
-      "pvc-curtain",
+      "pvc-strip-curtains",
       "pvc",
-      "pvc-curtain",
-      "polar",
-      "pvc",
+      "w-s-i",
       "strip",
-      "curtain"
+      "curtain",
+      "roll",
+      "amber-orange",
+      "transparent"
     ],
     "type": "general",
     "popular": true,
     "rating": 4.5,
-    "reviewCount": 15,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
+    "description": "W.S.I. Standard Grade PVC Strip Curtain Roll in Transparent Amber Orange. Ideal for industrial partitions and door openings, providing temperature control, insect protection, and UV filtration.",
     "specs": [
       {
-        "label": "Strip Thickness",
-        "value": "3 mm"
+        "label": "Material",
+        "value": "PVC"
       },
       {
-        "label": "Curtain Thickness",
-        "value": "0.3 mm"
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
       },
       {
-        "label": "Strip Width",
-        "value": "200 mm"
+        "label": "Type",
+        "value": "Transparent"
       },
       {
-        "label": "Curtain Width",
-        "value": "3 ft"
+        "label": "Color",
+        "value": "Amber Orange"
       },
       {
-        "label": "Temperature Range",
-        "value": "-40 to 0 C"
+        "label": "Brand",
+        "value": "W.S.I."
       },
       {
-        "label": "Curtain Height",
-        "value": "7 ft"
+        "label": "Grade",
+        "value": "Standard Grade"
       },
       {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+        "label": "Roll Length",
+        "value": "50 metres"
       },
       {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
+        "label": "Width",
+        "value": "200 mm (approx 8 inches)"
+      },
+      {
+        "label": "Thickness x Weight Options",
+        "value": "2mm x 25 kg, 3mm x 37 kg"
       }
     ],
     "images": [
-      "/src/assets/pvc_polar-pvc-strip-curtain_3.webp",
-      "/src/assets/pvc_polar-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_polar-pvc-strip-curtain_3.webp"
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Amber Orange.jpg"
     ],
     "reviews": [
       {
@@ -2111,379 +1309,74 @@
         "verified": true,
         "date": "May 14, 2026",
         "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
+        "comment": "Excellent quality PVC product"
       }
     ]
   },
   {
-    "id": "ashmita-153592579",
-    "name": "PVC Transparent Curtains",
-    "slug": "pvc-transparent-curtains",
-    "price": 228,
-    "priceDisplay": "Rs 228 / Piece",
+    "id": "ashmita-pvc-strip-curtain-amber-orange",
+    "name": "W. S. I. PVC Strip Curtain Roll - Transparent Amber Orange",
+    "slug": "w-s-i-pvc-strip-curtain-roll-transparent-amber-orange",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-153592579",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_pvc-transparent-curtains_1.webp",
+    "sku": "AE-153625330-AO",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Amber Orange.jpg",
     "tags": [
-      "pvc-curtain",
+      "pvc-strip-curtains",
       "pvc",
-      "pvc-curtain",
-      "pvc",
+      "w-s-i",
+      "amber-orange",
       "transparent",
-      "curtains"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 28,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: Bundle Packing Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "0.15-0.80 mm"
-      },
-      {
-        "label": "Pattern",
-        "value": "Transparent"
-      },
-      {
-        "label": "Size",
-        "value": "4 x 4.5 feet"
-      },
-      {
-        "label": "Operating Temperature",
-        "value": "0 To 65 degree C"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Home"
-      },
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_pvc-transparent-curtains_1.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-158109669",
-    "name": "Super Clear PVC sheet roll",
-    "slug": "super-clear-pvc-sheet-roll",
-    "price": 120,
-    "priceDisplay": "Rs 120 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-158109669",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_super-clear-pvc-sheet-roll_2.webp",
-    "tags": [
-      "pvc-transparent-clear-film",
-      "pvc",
-      "pvc-transparent-clear-film",
-      "super",
-      "clear",
-      "pvc",
-      "sheet",
-      "roll"
+      "pvc-roll",
+      "strip-curtain"
     ],
     "type": "general",
     "popular": true,
     "rating": 4.5,
-    "reviewCount": 15,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Thickness",
-        "value": "0.1 - 0.5 mm"
-      },
-      {
-        "label": "Packaging Size",
-        "value": "54\" Width"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Country of Origin",
-        "value": "Made in India"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_super-clear-pvc-sheet-roll_2.webp",
-      "/src/assets/pvc_super-clear-pvc-sheet-roll_2.webp",
-      "/src/assets/pvc_super-clear-pvc-sheet-roll_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-152629349",
-    "name": "Covid Isolation Curtain",
-    "slug": "covid-isolation-curtain",
-    "price": 110,
-    "priceDisplay": "Rs 110 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-152629349",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_covid-isolation-curtain_1.webp",
-    "tags": [
-      "pvc-transparent-clear-film",
-      "pvc",
-      "pvc-transparent-clear-film",
-      "covid",
-      "isolation",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 26,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Length Per Roll",
-        "value": "40 m"
-      },
-      {
-        "label": "Roll Width",
-        "value": "54 inches"
-      },
-      {
-        "label": "Is It Water Proof",
-        "value": "Water Proof"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_covid-isolation-curtain_1.webp",
-      "/src/assets/pvc_covid-isolation-curtain_2.webp",
-      "/src/assets/pvc_covid-isolation-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-306732252",
-    "name": "Pvc Film",
-    "slug": "pvc-film",
-    "price": 130,
-    "priceDisplay": "Rs 130 / Roll",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-306732252",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_pvc-film_5.webp",
-    "tags": [
-      "pvc-film-roll",
-      "pvc",
-      "pvc-film-roll",
-      "pvc",
-      "film"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.5,
-    "reviewCount": 29,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: clear transparent PVC roll Thickness 0.07mm to 3mm Width : 54\" and 72\",Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
-    "specs": [
-      {
-        "label": "Thickness",
-        "value": "0.5 mm"
-      },
-      {
-        "label": "Packaging Type",
-        "value": "Roll"
-      },
-      {
-        "label": "Color",
-        "value": "Transparent"
-      },
-      {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
-      },
-      {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_pvc-film_5.webp",
-      "/src/assets/pvc_pvc-film_2.webp",
-      "/src/assets/pvc_pvc-film_3.webp",
-      "/src/assets/pvc_pvc-film_4.webp",
-      "/src/assets/pvc_pvc-film_5.webp",
-      "/src/assets/pvc_pvc-film_6.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-329360249",
-    "name": "Stretch Ceiling Film",
-    "slug": "stretch-ceiling-film",
-    "price": 21,
-    "priceDisplay": "Rs 21 / sq ft",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-329360249",
-    "brand": "Ashmita",
-    "category": "cat-pvc-transparent-roll",
-    "image": "/src/assets/pvc_pvc-film_1.webp",
-    "tags": [
-      "stretch-ceiling",
-      "pvc",
-      "stretch-ceiling",
-      "stretch",
-      "ceiling",
-      "film"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.5,
-    "reviewCount": 28,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Pvc stretch ceiling film . Width 3.2mtr,4mtr,5mtr. Soft , flexible,stretch,super strength . Roll length 100 mtrs . White Back lit film Available sizes: 0.15MM-0.50MM Standard. Low Gauges [28/30 & 38/40 PHR] (0.06MM-0.50MM) and High Gauges (0.80MM-3.0MM).",
+    "description": "W.S.I. Transparent Amber Orange PVC Strip Curtain Roll designed for industrial and commercial doorways. Comes in standard grade colours in 50-metre rolls with options for 2mm and 3mm thickness.",
     "specs": [
       {
         "label": "Material",
         "value": "PVC"
       },
       {
-        "label": "Max Width",
-        "value": "5000 mm"
+        "label": "Type",
+        "value": "Transparent"
       },
       {
-        "label": "Length",
-        "value": "5 m (16.4 ft)"
+        "label": "Colour",
+        "value": "Amber Orange"
       },
       {
-        "label": "Features",
-        "value": "Waterproof, UV Resistant, Fire Resistant, Stretchable"
+        "label": "Grade",
+        "value": "Standard grade colours"
       },
       {
-        "label": "Color",
-        "value": "White"
+        "label": "Roll Length",
+        "value": "50 metres"
       },
       {
-        "label": "Application Area",
-        "value": "Banquet Hall, Mall, Hotel, Residential, Ceiling film, Office, Retail"
+        "label": "Width",
+        "value": "200 mm (approx 8 inches)"
       },
       {
-        "label": "Standard Thicknesses",
-        "value": "0.15mm, 0.20mm, 0.25mm, 0.30mm, 0.40mm, 0.50mm"
+        "label": "Thickness x Weight Options",
+        "value": "2mm x 25 kg, 3mm x 37 kg"
       },
       {
-        "label": "Low Gauges",
-        "value": "0.06mm to 0.50mm [28/30 PHR & 38/40 PHR]"
-      },
-      {
-        "label": "High Gauges",
-        "value": "0.80mm, 1.0mm, 1.5mm, 2.0mm, 3.0mm"
+        "label": "Brand",
+        "value": "W.S.I."
       }
     ],
     "images": [
-      "/src/assets/pvc_pvc-film_1.webp"
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Amber Orange.jpg"
     ],
     "reviews": [
       {
@@ -2496,65 +1389,73 @@
     ]
   },
   {
-    "id": "ashmita-306732537",
-    "name": "Polar Pvc Strip Curtain",
-    "slug": "polar-pvc-strip-curtain",
-    "price": 185,
-    "priceDisplay": "Rs 185 / Kg",
+    "id": "wsi-pvc-strip-curtain-amber-yellow",
+    "name": "W.S.I. Super Clear PVC Strip Curtain Roll - Amber Yellow",
+    "slug": "w-s-i-pvc-strip-curtain-roll-amber-yellow",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-306732537",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_polar_curtain.webp",
+    "sku": "AE-153625342",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Amber Yellow.jpg",
     "tags": [
-      "freezer-strip-curtain",
+      "pvc-strip-curtains",
       "pvc",
-      "freezer-strip-curtain",
-      "polar",
-      "pvc",
-      "strip",
-      "curtain"
+      "w-s-i",
+      "amber-yellow",
+      "super-clear",
+      "pvc-roll",
+      "strip-curtain"
     ],
     "type": "general",
     "popular": true,
     "rating": 4.5,
-    "reviewCount": 28,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Polar PVC Strip Curtains are highly made for Freezer garde areas. Thickness availabe in:2MM3MMWidth - 8\"Length - 50 mtrsAdditional Information: Packaging Details: Polar PVC Strip Curtains are highly made for Freezer garde areas. Thickness availabe in:2MM3MMWidth - 8\"Length - 50 mtrs Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
+    "description": "W.S.I. Super Clear Standard Grade PVC Strip Curtain Roll in Amber Yellow. Engineered for industrial and commercial partition needs, offering enhanced visibility, insect prevention, and temperature control.",
     "specs": [
       {
-        "label": "Water Absorption",
-        "value": "yes"
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "Super Clear PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Color",
+        "value": "Amber Yellow"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grade",
+        "value": "Standard Grade"
       },
       {
         "label": "Thickness",
         "value": "2 mm"
       },
       {
-        "label": "Feature",
-        "value": "Dust Proof"
+        "label": "Width",
+        "value": "200 mm"
       },
       {
-        "label": "Transparency",
-        "value": "Transparent"
+        "label": "Roll Length",
+        "value": "50 metres"
       },
       {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
+        "label": "Weight",
+        "value": "25 kg"
       }
     ],
     "images": [
-      "/src/assets/pvc_polar_curtain.webp",
-      "/src/assets/pvc_polar-pvc-strip-curtain_2.webp",
-      "/src/assets/pvc_polar-pvc-strip-curtain_3.webp",
-      "/src/assets/pvc_polar-pvc-strip-curtain_4.webp",
-      "/src/assets/pvc_polar-pvc-strip-curtain_5.webp"
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Amber Yellow.jpg"
     ],
     "reviews": [
       {
@@ -2567,66 +1468,168 @@
     ]
   },
   {
-    "id": "ashmita-111307527",
-    "name": "Pvc Reinforced Sheet",
-    "slug": "pvc-reinforced-sheet",
-    "price": 100,
-    "priceDisplay": "Rs 100 / Kg",
+    "id": "wsi-pvc-strip-curtain-black-opaque",
+    "name": "W.S.I. PVC Strip Curtain Roll - Black Opaque",
+    "slug": "w-s-i-pvc-strip-curtain-roll-black-opaque",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-111307527",
-    "brand": "Ashmita",
-    "category": "cat-pvc-reinforced-sheet",
-    "image": "/src/assets/pvc_pvc-reinforced-sheet_2.webp",
+    "sku": "AE-153625343",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Black Opaque.jpg",
     "tags": [
-      "pvc-reinforced-sheet",
+      "pvc-strip-curtains",
       "pvc",
-      "pvc-reinforced-sheet",
-      "pvc",
-      "reinforced",
-      "sheet"
+      "w-s-i",
+      "black-opaque",
+      "opaque",
+      "pvc-roll",
+      "strip-curtain"
     ],
     "type": "general",
     "popular": true,
     "rating": 4.5,
-    "reviewCount": 17,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "PVC REINFORCED ROLLSTHICKNESS : 0.40MM WIDTH ; 60 INCHES ROLL LENGTH : 80 MTRS,,Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Thickness: 0.35 mm, Width: 60\", Length: 100 MTRS. Application: Crate Covers, Stationery, Packaging.",
+    "description": "W.S.I. Black Opaque PVC Strip Curtain Roll designed for complete privacy, light blocking, and industrial partitioning. Durable and flexible construction suitable for heavy-duty commercial applications.",
     "specs": [
-      {
-        "label": "Thickness",
-        "value": "0.35 mm"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Crate Covers, Stationery, Packaging"
-      },
       {
         "label": "Material",
         "value": "PVC"
       },
       {
-        "label": "Pattern",
-        "value": "Plain"
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
       },
       {
-        "label": "Length",
-        "value": "100 MTRS"
+        "label": "Type",
+        "value": "Opaque"
       },
       {
-        "label": "Packaging Type",
-        "value": "Roll"
+        "label": "Color",
+        "value": "Black"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grades Available",
+        "value": "Standard Grade, Supreme Grade, Reliable Grade"
+      },
+      {
+        "label": "Roll Width Options",
+        "value": "8 Inch, 12 Inch"
+      },
+      {
+        "label": "Thickness Options",
+        "value": "2mm, 3mm"
+      },
+      {
+        "label": "Special Features",
+        "value": "Black Opaque finish for light shielding, privacy barrier, and temperature separation."
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Black Opaque.jpg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "wsi-pvc-strip-curtain-freezer-cold-storage",
+    "name": "W.S.I. Freezer Grade PVC Strip Curtain Roll - Cold Storage",
+    "slug": "w-s-i-freezer-grade-pvc-strip-curtain-roll-cold-storage",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625344",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Cold Storage.jpg",
+    "tags": [
+      "pvc-strip-curtains",
+      "pvc",
+      "w-s-i",
+      "freezer-grade",
+      "cold-storage",
+      "blue-tinge",
+      "strip-curtain"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "W.S.I. Freezer Grade PVC Strip Curtain Roll in Blue Tinge. Specially designed for cold storage and low-temperature environments down to -40°C, maintaining flexibility without cracking.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Color",
+        "value": "Blue Tinge"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grade",
+        "value": "Freezer Grade"
+      },
+      {
+        "label": "Certification",
+        "value": "Minus 40 Degree Certified (-40°C)"
+      },
+      {
+        "label": "Thickness",
+        "value": "3mm"
       },
       {
         "label": "Width",
-        "value": "60 inches"
+        "value": "200mm"
+      },
+      {
+        "label": "Roll Length",
+        "value": "50m"
+      },
+      {
+        "label": "Net Weight",
+        "value": "36kg"
+      },
+      {
+        "label": "Gross Weight",
+        "value": "36.3kg"
+      },
+      {
+        "label": "Roll No.",
+        "value": "19"
+      },
+      {
+        "label": "Lot No.",
+        "value": "411107"
       }
     ],
     "images": [
-      "/src/assets/pvc_pvc-reinforced-sheet_2.webp",
-      "/src/assets/pvc_pvc-reinforced-sheet_2.webp",
-      "/src/assets/pvc_pvc-reinforced-sheet_3.webp"
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Cold Storage.jpg"
     ],
     "reviews": [
       {
@@ -2639,142 +1642,324 @@
     ]
   },
   {
-    "id": "ashmita-160733990",
-    "name": "Flexible Transparent PVC Strip",
-    "slug": "flexible-transparent-pvc-strip",
-    "price": 125,
-    "priceDisplay": "Rs 125 / Kg",
+    "id": "wsi-pvc-strip-curtain-crystal-clear",
+    "name": "W.S.I. Crystal Grade PVC Strip Curtain Roll - Crystal Water",
+    "slug": "w-s-i-pvc-strip-curtain-roll-crystal-water",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-160733990",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_flexible-transparent-pvc-strip_1.webp",
+    "sku": "AE-153625345",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Crystal Clear.jpg",
     "tags": [
-      "pvc-strip-curtain",
+      "pvc-strip-curtains",
       "pvc",
-      "pvc-strip-curtain",
-      "flexible",
+      "w-s-i",
+      "crystal-clear",
+      "crystal-water",
       "transparent",
-      "pvc",
-      "strip"
+      "pvc-roll",
+      "strip-curtain"
     ],
     "type": "general",
     "popular": true,
     "rating": 4.5,
-    "reviewCount": 27,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
+    "description": "W.S.I. Crystal Grade PVC Strip Curtain Roll in Transparent Crystal Water. Features high clarity for maximum visibility, ideal for industrial partitions, dust control, and temperature management.",
     "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Type",
+        "value": "Transparent"
+      },
+      {
+        "label": "Colour",
+        "value": "Crystal water"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grade",
+        "value": "Crystal Grade"
+      },
+      {
+        "label": "Roll Length",
+        "value": "50 metres"
+      },
+      {
+        "label": "Width",
+        "value": "200 mm (approx 8 inches)"
+      },
+      {
+        "label": "Thickness x Weight Options",
+        "value": "2mm x 24 kg, 3mm x 36 kg"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Crystal Clear.jpg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "wsi-pvc-strip-curtain-green-welding",
+    "name": "W.S.I. Welding Grade PVC Strip Curtain Roll - Translucent Green",
+    "slug": "w-s-i-pvc-strip-curtain-roll-green-welding",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625346",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Green Welding.jpg",
+    "tags": [
+      "pvc-strip-curtains",
+      "pvc",
+      "w-s-i",
+      "welding-grade",
+      "green-welding",
+      "translucent-green",
+      "strip-curtain"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "W.S.I. Welding Grade PVC Strip Curtain Roll in Translucent Green. Designed to protect workers from harmful UV and infrared radiation generated during welding while allowing light pass-through and partition separation.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Type",
+        "value": "Translucent / Welding Screen"
+      },
+      {
+        "label": "Color",
+        "value": "Dark Green / Welding Green"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grade",
+        "value": "Welding Grade / UV Protective"
+      },
+      {
+        "label": "Roll Width Options",
+        "value": "8 Inch (200mm), 12 Inch (300mm)"
+      },
+      {
+        "label": "Thickness Options",
+        "value": "2mm, 3mm"
+      },
+      {
+        "label": "Special Features",
+        "value": "Filters UV light and flash arc rays, spark resistance, temperature barrier, and noise reduction."
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Green Welding.jpg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "wsi-pvc-strip-curtain-solid-grey",
+    "name": "W.S.I. Supreme Grade PVC Strip Curtain Roll - Solid Grey",
+    "slug": "w-s-i-pvc-strip-curtain-roll-solid-grey",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625347",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Opaque Grey.jpg",
+    "tags": [
+      "pvc-strip-curtains",
+      "pvc",
+      "w-s-i",
+      "opaque-grey",
+      "solid-grey",
+      "supreme-grade",
+      "strip-curtain"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "W.S.I. Supreme Grade PVC Strip Curtain Roll in Solid Grey. Designed for privacy, light obstruction, and space separation in industrial and commercial environments.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Color",
+        "value": "Solid Grey"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grade",
+        "value": "Supreme"
+      },
       {
         "label": "Thickness",
-        "value": "<0.5 mm"
+        "value": "3mm"
+      },
+      {
+        "label": "Width",
+        "value": "200mm"
       },
       {
         "label": "Length",
-        "value": ">10 Feet"
+        "value": "50m"
       },
       {
-        "label": "Usage/Application",
-        "value": "Industrial"
+        "label": "Net Weight (N.W.)",
+        "value": "36kg"
       },
       {
-        "label": "Color",
-        "value": "Transparent"
+        "label": "Gross Weight (G.W.)",
+        "value": "36.3kg"
       },
+      {
+        "label": "Roll No.",
+        "value": "8"
+      },
+      {
+        "label": "Lot No.",
+        "value": "411104"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Opaque Grey.jpg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "wsi-pvc-strip-curtain-opaque-white",
+    "name": "W.S.I. PVC Strip Curtain Roll - Opaque White",
+    "slug": "w-s-i-pvc-strip-curtain-roll-opaque-white",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625348",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Opaque White.jpg",
+    "tags": [
+      "pvc-strip-curtains",
+      "pvc",
+      "w-s-i",
+      "opaque-white",
+      "solid-white",
+      "opaque",
+      "pvc-roll",
+      "strip-curtain"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "W.S.I. Opaque White PVC Strip Curtain Roll designed for complete visual privacy, dust shielding, and spatial segregation in industrial, commercial, and cleanroom environments.",
+    "specs": [
       {
         "label": "Material",
         "value": "PVC"
       },
       {
-        "label": "Pattern",
-        "value": "Plain"
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
       },
       {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_flexible-transparent-pvc-strip_1.webp",
-      "/src/assets/pvc_flexible-transparent-pvc-strip_2.webp",
-      "/src/assets/pvc_flexible-transparent-pvc-strip_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-328086039",
-    "name": "Magnetic Pvc Strip Curtains",
-    "slug": "magnetic-pvc-strip-curtains",
-    "price": 210,
-    "priceDisplay": "Rs 210 / sq ft",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-328086039",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_pvc-strip-curtains-hanger_2.webp",
-    "tags": [
-      "pvc-strip-curtain",
-      "pvc",
-      "pvc-strip-curtain",
-      "magnetic",
-      "pvc",
-      "strip",
-      "curtains"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 24,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Magnetic Pvc Strip Curtains of high durability and premium grade polymer material. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Strip Thickness",
-        "value": "1.8mm"
-      },
-      {
-        "label": "Strip Width",
-        "value": "350mm"
-      },
-      {
-        "label": "Curtain Type",
-        "value": "Magnetic Pvc Strip"
-      },
-      {
-        "label": "Application Area",
-        "value": "Warehouse, Loading Dock, Retail Entry, Industrial Doorway, Clean Room"
+        "label": "Type",
+        "value": "Opaque"
       },
       {
         "label": "Color",
-        "value": "Transparent"
+        "value": "White / Milky White"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
       },
       {
         "label": "Grades Available",
         "value": "Standard Grade, Supreme Grade, Reliable Grade"
       },
       {
+        "label": "Roll Width Options",
+        "value": "8 Inch (200mm), 12 Inch (300mm)"
+      },
+      {
+        "label": "Thickness Options",
+        "value": "2mm, 3mm"
+      },
+      {
         "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
+        "value": "Opaque barrier for privacy, dust protection, temperature containment, and noise insulation."
       }
     ],
     "images": [
-      "/src/assets/pvc_pvc-strip-curtains-hanger_2.webp"
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Opaque White.jpg"
     ],
     "reviews": [
       {
@@ -2787,272 +1972,255 @@
     ]
   },
   {
-    "id": "ashmita-87984066",
-    "name": "Pvc Strip Curtains Hanger",
-    "slug": "pvc-strip-curtains-hanger",
-    "price": 750,
-    "priceDisplay": "Rs 750 / Piece",
+    "id": "wsi-pvc-strip-curtain-welding-red-transparent",
+    "name": "W.S.I. Supreme Grade PVC Strip Curtain Roll - Welding Red Transparent",
+    "slug": "w-s-i-pvc-strip-curtain-roll-welding-red-transparent",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
     "priceCurrency": "INR",
     "inStock": true,
-    "sku": "AE-87984066",
-    "brand": "Ashmita",
-    "category": "cat-mounting-brackets",
-    "image": "/src/assets/pvc_pvc-strip-curtains-hanger_1.webp",
+    "sku": "AE-153625349",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Red transparent.jpg",
     "tags": [
-      "mounting-brackets",
+      "pvc-strip-curtains",
       "pvc",
-      "mounting-brackets",
-      "pvc",
-      "strip",
-      "curtains",
-      "hanger"
+      "w-s-i",
+      "welding-red",
+      "red-transparent",
+      "supreme-grade",
+      "strip-curtain"
     ],
     "type": "general",
     "popular": true,
     "rating": 4.5,
-    "reviewCount": 16,
+    "reviewCount": 31,
     "client": "biz-6",
     "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Supports MS brackets (19.5\", 20.5\", 38.5\"), Stainless Steel SS 202 & SS 304 (20.5\", 38.5\"), Magnetic curtain bottom sets, and Track & Clip options (300mm / 350mm).",
+    "description": "W.S.I. Supreme Grade PVC Strip Curtain Roll in Welding Red Transparent. Engineered specifically for welding enclosures to protect personnel from dangerous UV radiation and optical radiation while maintaining visibility into work bays.",
     "specs": [
       {
-        "label": "Color",
-        "value": "Silver"
+        "label": "Material",
+        "value": "PVC"
       },
       {
-        "label": "Weight Holding Capacity (Kg)",
-        "value": "20 - 40 Kg"
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Type",
+        "value": "Transparent / Welding Screen"
+      },
+      {
+        "label": "Color",
+        "value": "Welding Red Transparent"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grade",
+        "value": "Supreme / Welding Red"
+      },
+      {
+        "label": "Thickness",
+        "value": "3mm"
+      },
+      {
+        "label": "Width",
+        "value": "200mm"
+      },
+      {
+        "label": "Length",
+        "value": "50m"
+      },
+      {
+        "label": "Net Weight (N.W.)",
+        "value": "36kg"
+      },
+      {
+        "label": "Gross Weight (G.W.)",
+        "value": "36.3kg"
+      },
+      {
+        "label": "Roll No.",
+        "value": "17"
+      },
+      {
+        "label": "Lot No.",
+        "value": "411107"
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Red transparent.jpg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "wsi-pvc-strip-curtain-red-welding",
+    "name": "W.S.I. Welding Grade PVC Strip Curtain Roll - Translucent Red",
+    "slug": "w-s-i-pvc-strip-curtain-roll-red-welding",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625350",
+    "brand": "W.S.I.",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Red welding.jpg",
+    "tags": [
+      "pvc-strip-curtains",
+      "pvc",
+      "w-s-i",
+      "welding-grade",
+      "red-welding",
+      "translucent-red",
+      "strip-curtain"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "W.S.I. Welding Grade PVC Strip Curtain Roll in Translucent Red. Specially formulated to filter harmful ultraviolet (UV) and infrared rays generated during arc welding processes, preventing flash burns while enabling supervisor visibility into work areas.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Product",
+        "value": "PVC Strip Curtain Roll"
+      },
+      {
+        "label": "Type",
+        "value": "Translucent / Welding Screen"
+      },
+      {
+        "label": "Color",
+        "value": "Welding Red / Translucent Red"
+      },
+      {
+        "label": "Brand",
+        "value": "W.S.I."
+      },
+      {
+        "label": "Grade",
+        "value": "Welding Grade / UV Protective"
+      },
+      {
+        "label": "Roll Width Options",
+        "value": "8 Inch (200mm), 12 Inch (300mm)"
+      },
+      {
+        "label": "Thickness Options",
+        "value": "2mm, 3mm"
+      },
+      {
+        "label": "Special Features",
+        "value": "UV & optical radiation filtration, spark & spatter protection, partition barrier, thermal insulation, and noise reduction."
+      }
+    ],
+    "images": [
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Red welding.jpg"
+    ],
+    "reviews": [
+      {
+        "name": "Amit Patel",
+        "verified": true,
+        "date": "May 14, 2026",
+        "rating": 5,
+        "comment": "Excellent quality PVC product, very durable and well packaged."
+      }
+    ]
+  },
+  {
+    "id": "ashmita-153625330",
+    "name": "W. S. I PVC Strip Curtain Roll - Blue Tint Transparent",
+    "slug": "w-s-i-pvc-strip-curtain-roll-blue-tint",
+    "price": 115,
+    "priceDisplay": "Rs 115 / Kg",
+    "priceCurrency": "INR",
+    "inStock": true,
+    "sku": "AE-153625330",
+    "brand": "W.S.I",
+    "category": "cat-pvc-strip-curtain",
+    "image": "/src/assets/PVC Strip Curtain/PVC Strip Curtain Transparent.jpg",
+    "tags": [
+      "pvc-strip-curtains",
+      "pvc",
+      "w-s-i",
+      "blue-tint-pvc",
+      "pvc-strip-roll",
+      "flexible-pvc-curtain",
+      "transparent-pvc-roll"
+    ],
+    "type": "general",
+    "popular": true,
+    "rating": 4.5,
+    "reviewCount": 31,
+    "client": "biz-6",
+    "city": "Mumbai",
+    "description": "High-quality W.S.I PVC Strip Curtain Roll with transparent blue tint. Designed for temperature control, noise reduction, and barrier protection in industrial, cold storage, clean room, and warehouse environments.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Flexible PVC"
+      },
+      {
+        "label": "Color",
+        "value": "Transparent Blue Tint"
+      },
+      {
+        "label": "Form Factor",
+        "value": "Roll Form"
       },
       {
         "label": "Usage/Application",
-        "value": "Curtain Fitting"
+        "value": "Industrial Doorways, Warehouses, Cold Storage, Walk-in Freezers, Clean Rooms"
       },
       {
         "label": "Brand",
         "value": "W.S.I"
       },
       {
-        "label": "Material Grade",
-        "value": "SS 202"
+        "label": "Roll Width",
+        "value": "200 mm (8 Inches), 300 mm (12 Inches)"
       },
       {
-        "label": "Set Contains",
-        "value": "1 Mounting Bracket, 6 Pairs of Plates and Nut Bolts"
+        "label": "Thickness",
+        "value": "2mm, 3mm"
       },
       {
-        "label": "Material Options",
-        "value": "MS (19.5\", 20.5\", 38.5\"), SS 202 (20.5\", 38.5\"), SS 304 (20.5\", 38.5\")"
+        "label": "Roll Length",
+        "value": "50 Meters"
       },
       {
-        "label": "Accessories",
-        "value": "Bottom Set (for Magnetic Curtain), Track & Clip 300 MM, Track & Clip 350 MM"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_pvc-strip-curtains-hanger_1.webp",
-      "/src/assets/pvc_pvc-strip-curtains-hanger_2.webp",
-      "/src/assets/pvc_pvc-strip-curtains-hanger_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-87984027",
-    "name": "Strip Curtain Mounting Brackets",
-    "slug": "strip-curtain-mounting-brackets",
-    "price": 1250,
-    "priceDisplay": "Rs 1,250 / Piece",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-87984027",
-    "brand": "Ashmita",
-    "category": "cat-mounting-brackets",
-    "image": "/src/assets/pvc_bracket_industrial.webp",
-    "tags": [
-      "mounting-brackets",
-      "pvc",
-      "mounting-brackets",
-      "strip",
-      "curtain",
-      "mounting",
-      "brackets"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 20,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Supports MS brackets (19.5\", 20.5\", 38.5\"), Stainless Steel SS 202 & SS 304 (20.5\", 38.5\"), Magnetic curtain bottom sets, and Track & Clip options (300mm / 350mm).",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Stainless steel"
-      },
-      {
-        "label": "Usage/Application",
-        "value": "Curtain Fitting"
-      },
-      {
-        "label": "Brand",
-        "value": "W.S.I"
-      },
-      {
-        "label": "Set Contains",
-        "value": "1 Mounting Bracket"
-      },
-      {
-        "label": "Length",
-        "value": "39 inch"
-      },
-      {
-        "label": "Material Options",
-        "value": "MS (19.5\", 20.5\", 38.5\"), SS 202 (20.5\", 38.5\"), SS 304 (20.5\", 38.5\")"
-      },
-      {
-        "label": "Accessories",
-        "value": "Bottom Set (for Magnetic Curtain), Track & Clip 300 MM, Track & Clip 350 MM"
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_bracket_industrial.webp",
-      "/src/assets/pvc_strip-curtain-mounting-brackets_2.webp",
-      "/src/assets/pvc_strip-curtain-mounting-brackets_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-327247134",
-    "name": "PVC AC Curtain",
-    "slug": "pvc-ac-curtain",
-    "price": 150,
-    "priceDisplay": "Rs 150 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-327247134",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_pvc-ac-curtain_2.webp",
-    "tags": [
-      "plastic-curtain",
-      "pvc",
-      "plastic-curtain",
-      "pvc",
-      "ac",
-      "curtain"
-    ],
-    "type": "general",
-    "popular": true,
-    "rating": 4.5,
-    "reviewCount": 20,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Curtain Thickness",
-        "value": "0.5 mm"
-      },
-      {
-        "label": "Curtain Width",
-        "value": "8 Inch"
-      },
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Pattern",
-        "value": "Plain"
+        "label": "Temperature Resistance",
+        "value": "Standard (0°C to 60°C), Polar/Freezer Grade (-40°C)"
       },
       {
         "label": "Grades Available",
         "value": "Standard Grade, Supreme Grade, Reliable Grade"
       },
       {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
+        "label": "Key Features",
+        "value": "Crystal Clear Visibility, Thermal Loss Reduction, Dust & Fly Control, UV Protection, High Flexibility"
       }
     ],
     "images": [
-      "/src/assets/pvc_pvc-ac-curtain_2.webp",
-      "/src/assets/pvc_pvc-ac-curtain_2.webp",
-      "/src/assets/pvc_pvc-ac-curtain_3.webp"
-    ],
-    "reviews": [
-      {
-        "name": "Amit Patel",
-        "verified": true,
-        "date": "May 14, 2026",
-        "rating": 5,
-        "comment": "Excellent quality PVC product, very durable and well packaged."
-      }
-    ]
-  },
-  {
-    "id": "ashmita-313155565",
-    "name": "Cold Storage Curtains",
-    "slug": "cold-storage-curtains",
-    "price": 165,
-    "priceDisplay": "Rs 165 / Kg",
-    "priceCurrency": "INR",
-    "inStock": true,
-    "sku": "AE-313155565",
-    "brand": "Ashmita",
-    "category": "cat-pvc-curtain",
-    "image": "/src/assets/pvc_cold-storage-curtains_2.webp",
-    "tags": [
-      "plastic-curtain",
-      "pvc",
-      "plastic-curtain",
-      "cold",
-      "storage",
-      "curtains"
-    ],
-    "type": "general",
-    "popular": false,
-    "rating": 4.5,
-    "reviewCount": 22,
-    "client": "biz-6",
-    "city": "Mumbai",
-    "description": "Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.Additional Information: Packaging Details: Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life. Grades: Standard, Supreme, Reliable. Specialities include Crystal Clear, colored opaque curtains, freezer-grade (-40°C), and magnetic closure strips.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "PVC"
-      },
-      {
-        "label": "Transparency",
-        "value": "Transparent"
-      },
-      {
-        "label": "Grades Available",
-        "value": "Standard Grade, Supreme Grade, Reliable Grade"
-      },
-      {
-        "label": "Special Features",
-        "value": "Crystal Clear, Opaque (Red, Green, Grey, White, Cream, Blue, Black, Amber Yellow/Orange), Freezer/Cold Storage Grade (-40°C), Magnetic strip."
-      }
-    ],
-    "images": [
-      "/src/assets/pvc_cold-storage-curtains_2.webp",
-      "/src/assets/pvc_cold-storage-curtains_2.webp",
-      "/src/assets/pvc_cold-storage-curtains_3.webp"
+      "/src/assets/PVC Strip Curtain/PVC Strip Curtain Transparent.jpg"
     ],
     "reviews": [
       {

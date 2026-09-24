@@ -81,7 +81,7 @@ const Order = () => {
   return (
     <>
       <SeoHelmet
-        title={`Order #${activeOrderId} - Order Details | Ashmita Enterprises`}
+        title={`Order #${activeOrderId} - Order Details | Ashmita Vinyl`}
         description="Track your order status, view shipment timeline and download invoice."
         path="/order"
         type="website"

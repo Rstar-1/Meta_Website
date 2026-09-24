@@ -55,15 +55,15 @@ const Contact = () => {
   return (
     <>
       <SeoHelmet
-        title="Connect With Us | Ashmita Enterprises - PVC Wholesaler"
-        description="Get in touch with Ashmita Enterprises in Mumbai for wholesale inquiries, custom PVC sizes, prices, and catalog requirements."
-        keywords={['Contact Ashmita Enterprises', 'Wholesale PVC Curtains', 'Mumbai PVC Wholesaler']}
+        title="Connect With Us | Ashmita Vinyl - PVC Wholesaler"
+        description="Get in touch with Ashmita Vinyl in Mumbai for wholesale inquiries, custom PVC sizes, prices, and catalog requirements."
+        keywords={['Contact Ashmita Vinyl', 'Wholesale PVC Curtains', 'Mumbai PVC Wholesaler']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/connect"
         type="contact"
       />
       <LocalBusinessSchema bizData={{
-        name: 'Ashmita Enterprises',
+        name: 'Ashmita Vinyl',
         url: siteUrl,
         image: siteUrl + '/sobo_logo.webp',
         phone: '+91-9379030638',

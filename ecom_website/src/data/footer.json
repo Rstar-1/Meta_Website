@@ -1,7 +1,7 @@
 {
   "brand": {
-    "logo": "⚙️",
-    "name": "Ashmita Enterprises",
+    "logo": "/sobo_logo.png",
+    "name": "Ashmita Vinyls",
     "description": "Leading importer and wholesaler of high-quality PVC Strip Curtains, PVC Rolls, Clear PVC Sheets, and Mounting Brackets based in Mumbai, Maharashtra.",
     "socials": [
       {
@@ -76,7 +76,7 @@
     "buttonText": "Subscribe"
   },
   "bottom": {
-    "copyright": "© 2026 Ashmita Enterprises. All rights reserved. Importer & Wholesaler.",
+    "copyright": "© 2026 Ashmita Vinyl. All rights reserved. Importer & Wholesaler.",
     "links": [
       {
         "label": "Privacy Policy",

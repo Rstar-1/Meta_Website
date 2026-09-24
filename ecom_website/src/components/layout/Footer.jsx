@@ -5,7 +5,7 @@ import Icon from '../common/Icon'
 import { footer as footerData, products } from '../../utils/apiData'
 import NewsletterForm from '../forms/NewsletterForm'
 
-const logoImg = "/sobo_logo.webp";
+const logoImg = "/sobo_logo.png";
 
 const Footer = () => {
   const navigate = useNavigate()
@@ -38,7 +38,7 @@ const Footer = () => {
               <div className="mb-15 flex items-center">
                 <Image
                   src={logoImg}
-                  alt="Ashmita Enterprises Logo"
+                  alt="Ashmita Vinyls Logo"
                   width="168"
                   height="55"
                   style={{

@@ -512,6 +512,7 @@ const Header = () => {
               fetchPriority="high"
               decoding="sync"
               className="flex object-contain"
+              style={{ maxHeight: '40px', width: 'auto', objectFit: 'contain' }}
             />
           </NavLink>
 
@@ -588,6 +589,7 @@ const Header = () => {
                   width="150"
                   height="40"
                   className="flex object-contain"
+                  style={{ maxHeight: '40px', width: 'auto', objectFit: 'contain' }}
                 />
               </NavLink>
             )}

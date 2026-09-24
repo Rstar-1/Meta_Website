@@ -3,7 +3,7 @@ import Button from '../../../components/common/Button';
 import Image from '../../../components/common/Image';
 
 const Marketing = () => {
-    const phoneEnv = import.meta.env.VITE_PHONE || '8178638960';
+    const phoneEnv = import.meta.env.VITE_PHONE;
     const formattedPhone = `+91 ${phoneEnv.slice(0, 5)} ${phoneEnv.slice(5)}`;
 
     return (
@@ -15,12 +15,14 @@ const Marketing = () => {
                 <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-center w-full py-30">
                     <div className="relative">
                         <h2 className="text-white font-700 uppercase large-text">
-                            Find Responsive <br />
-                            <span className='text-primary'>products</span> near you
+                            Quality PVC <br />
+                            <span className="text-primary">Products</span> for Every Need
                         </h2>
 
                         <p className="text-white font-400 mt-16 para-text">
-                            Connect with our sales team to be routed to the nearest authorized dealer in your region – genuine products, verified partners.
+                            Explore premium PVC strip curtains, PVC rolls, sheets, films and
+                            customized solutions from Ashmita Enterprises — trusted products
+                            for industrial, commercial and specialized applications.
                         </p>
 
                         {/* CTA Buttons using Button component */}

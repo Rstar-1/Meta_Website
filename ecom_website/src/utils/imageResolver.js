@@ -251,8 +251,14 @@ const idMap = {
   'ashmita-313155565': pvc_cold_storage_curtains_2,
 };
 
-export const resolveProductImage = (product) =>
-  product ? (idMap[product.id] || assetMap[product.image] || product.image || '') : '';
+export const resolveProductImage = (product) => {
+  if (!product) return '';
+  const directImg = product.image || (product.images && product.images[0]);
+  if (directImg && (directImg.includes('PVC Strip Curtain') || directImg.includes('PVC Sheeting Roll') || directImg.startsWith('http') || directImg.startsWith('data:'))) {
+    return directImg;
+  }
+  return idMap[product.id] || assetMap[product.image] || directImg || '';
+};
 
 export const resolveImagePath = (path) =>
   path ? (assetMap[path] || path) : '';

@@ -65,9 +65,9 @@ const Category = () => {
     return (
         <>
             <SeoHelmet
-                title="Product Categories - PVC Curtains & Rolls | Ashmita Enterprises"
+                title="Product Categories - PVC Curtains & Rolls | Ashmita Vinyl"
                 description="Explore our product categories including PVC Curtains, PVC Transparent Rolls, PVC Colour Clear Film Rolls, PVC Reinforced Sheets, and Mounting Brackets."
-                keywords={['Product Categories', 'PVC Strip Curtains', 'PVC Sheets', 'PVC Rolls', 'Ashmita Enterprises']}
+                keywords={['Product Categories', 'PVC Strip Curtains', 'PVC Sheets', 'PVC Rolls', 'Ashmita Vinyl']}
                 image={siteUrl + '/sobo_logo.webp'}
                 path="/category"
                 type="website"

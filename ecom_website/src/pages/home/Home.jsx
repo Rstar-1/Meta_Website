@@ -90,15 +90,15 @@ const Home = () => {
   return (
     <>
       <SeoHelmet
-        title="Ashmita Enterprises | Importer & Wholesaler of PVC Strip Curtains & PVC Roll in Mumbai"
-        description="Ashmita Enterprises is a leading importer and wholesaler of high-quality PVC Strip Curtains, PVC Rolls, PVC Sheets, Plastic Curtains, PVC Films, and Mounting Brackets based in Mumbai, Maharashtra."
-        keywords={['PVC Strip Curtains Mumbai', 'PVC Roll Wholesaler', 'Soft PVC Roll', 'PVC Sheet Importer', 'Opaque Black PVC Strips', 'Anti Insect PVC Curtain', 'Cold Storage Curtains', 'PVC AC Curtain', 'Ashmita Enterprises Mumbai', 'Industrial PVC curtains']}
+        title="Ashmita Vinyl | Importer & Wholesaler of PVC Strip Curtains & PVC Roll in Mumbai"
+        description="Ashmita Vinyl is a leading importer and wholesaler of high-quality PVC Strip Curtains, PVC Rolls, PVC Sheets, Plastic Curtains, PVC Films, and Mounting Brackets based in Mumbai, Maharashtra."
+        keywords={['PVC Strip Curtains Mumbai', 'PVC Roll Wholesaler', 'Soft PVC Roll', 'PVC Sheet Importer', 'Opaque Black PVC Strips', 'Anti Insect PVC Curtain', 'Cold Storage Curtains', 'PVC AC Curtain', 'Ashmita Vinyl Mumbai', 'Industrial PVC curtains']}
         image={siteUrl + '/sobo_logo.webp'}
         path="/home"
         type="website"
       />
-      <WebsiteSchema siteData={{ name: 'Ashmita Enterprises', url: siteUrl }} />
-      <OrganizationSchema orgData={{ name: 'Ashmita Enterprises', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
+      <WebsiteSchema siteData={{ name: 'Ashmita Vinyl', url: siteUrl }} />
+      <OrganizationSchema orgData={{ name: 'Ashmita Vinyl', url: siteUrl, logo: siteUrl + '/sobo_logo.webp' }} />
       <SiteNavigationSchema navItems={navItems} />
 
       <Hero cms={cms} />

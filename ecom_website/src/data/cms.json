@@ -35,7 +35,7 @@
   "whyChoose": {
     "tag": "About Us",
     "title": "Your Trusted PVC Partner in Mumbai",
-    "desc": "At Ashmita Enterprises, we are committed to providing premium quality PVC strip curtains, rolls, and sheets. With years of experience as a trusted B2B importer and wholesaler, we deliver customized, reliable industrial solutions to optimize safety, dust control, and temperature management for your business.",
+    "desc": "At Ashmita Vinyl, we are committed to providing premium quality PVC strip curtains, rolls, and sheets. With years of experience as a trusted B2B importer and wholesaler, we deliver customized, reliable industrial solutions to optimize safety, dust control, and temperature management for your business.",
     "features": [
       {
         "icon": "Shield",
@@ -101,10 +101,7 @@
     "viewAll": "View All ➔"
   },
   "latestProducts": {
-    "targetCategoryIds": [
-      "cat-pvc-transparent-roll",
-      "cat-pvc-curtain"
-    ],
+    "targetCategoryIds": ["cat-pvc-strip-curtain", "cat-pvc-sheeting-colour-clear", "cat-pvc-sheeting-flourescent"],
     "viewAll": "View All ➔"
   },
   "popularProducts": {

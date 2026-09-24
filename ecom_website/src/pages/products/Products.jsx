@@ -50,6 +50,7 @@ const Products = () => {
     if (categories.some(c => c.id === nameOrId)) return nameOrId;
     const found = categories.find(c => c.name === nameOrId);
     if (found) return found.id;
+    if (nameOrId === 'cat-pvc-curtain' || nameOrId === 'PVC Curtain') return 'cat-pvc-strip-curtain';
     if (nameOrId === 'Printer Cartridges') return 'cat-7';
     if (nameOrId === 'Steel Products') return 'cat-1';
     return nameOrId;
@@ -182,7 +183,7 @@ const Products = () => {
       const catName = categories.find(c => c.id === catId)?.name || 'Products';
       let desc = `Discover our comprehensive range of premium ${catName.toLowerCase()} and industrial solutions.`;
       if (catId === 'cat-2') {
-        desc = "Discover Ashmita Enterprises' comprehensive range of premium PVC strip curtains, printed rolls, sheets, rolls, films, mounting brackets, and clear sheets.";
+        desc = "Discover Ashmita Vinyl' comprehensive range of premium PVC strip curtains, printed rolls, sheets, rolls, films, mounting brackets, and clear sheets.";
       } else if (catId === 'cat-1') {
         desc = "Discover our comprehensive range of premium stainless steel sheets, pipes, coils, rods, plates, and kitchen equipment.";
       } else if (catId === 'cat-7') {
@@ -291,9 +292,9 @@ const Products = () => {
       }
     }
     return {
-      title: "PVC Strip Curtains & PVC Rolls Catalog | Ashmita Enterprises",
+      title: "PVC Strip Curtains & PVC Rolls Catalog | Ashmita Vinyl",
       description: "Browse our full catalog of PVC Strip Curtains, Soft PVC Rolls, Clear Transparent Sheets, Anti-Insect Curtains, and Mounting Brackets.",
-      keywords: ['PVC strip curtain catalog', 'transparent PVC rolls', 'anti insect yellow curtain', 'mounting hanger brackets', 'Ashmita Enterprises'],
+      keywords: ['PVC strip curtain catalog', 'transparent PVC rolls', 'anti insect yellow curtain', 'mounting hanger brackets', 'Ashmita Vinyl'],
       image: siteUrl + '/sobo_logo.webp',
       path: "/products",
       type: "product",
