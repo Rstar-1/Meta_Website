@@ -6,7 +6,7 @@ const VERSION_CLASSES = {
   v1: "px-20 py-9 para-text",
   v2: "px-19 py-8 sm-px-10 sm-py-7 mini-text",
   v3: "w-full py-9 sm-py-12 small-text",
-  icon: "p-8",
+  icon: "p-8 inline-flex items-center justify-center",
   none: "",
 };
 
@@ -79,7 +79,11 @@ const Button = memo(
       const base = { ...style };
       if (disabled) base.cursor = "not-allowed";
       if (isHexBg && !isOutline) base.backgroundColor = bg;
-      if (isHexColor) base.color = color;
+      if (isHexColor) {
+        base.color = color;
+      } else if (color && color !== "white" && color !== "transparent" && color !== "none") {
+        base.color = `var(--${color}, currentColor)`;
+      }
 
       // Handle border explicitly
       if (border === "none" || border === "0") {

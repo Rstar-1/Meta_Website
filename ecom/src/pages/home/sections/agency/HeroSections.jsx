@@ -1,5 +1,5 @@
 import React from 'react';
-import agencyVideo from '../../../../assets/agencys.mp4';
+import agencyVideo from '../../../../assets/agency.mp4';
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import { heroCMS } from '../../../../utils/apiData';

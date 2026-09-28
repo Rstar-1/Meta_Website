@@ -3,11 +3,9 @@ import footer from "../data/footer.json";
 import cmsData from "../data/cms.json";
 import rawConfigData from "../data/config.json";
 
-const isEcom = import.meta.env.VITE_ECOM === 'true';
-
 const header = {
     ...headerData,
-    navLinks: headerData.navLinks?.filter(item => item.ecomOnly === undefined || item.ecomOnly === isEcom)
+    navLinks: headerData.navLinks?.filter(item => item.ecomOnly === undefined || item.ecomOnly === true)
 };
 
 const configData = {

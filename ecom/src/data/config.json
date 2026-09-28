@@ -3,10 +3,10 @@
     {
       "HeaderVersion": 1,
       "HeaderType": 2,
-      "HeaderCategory": 1,
+      "HeaderCategory": 2,
       "HeaderNavMenu": "nav",
       "HeaderSticky": true,
-      "HeaderTopBar": false,
+      "HeaderTopBar": true,
       "HeaderBottomBar": true
     }
   ],
@@ -14,19 +14,25 @@
     {
       "HeroBannerVersion": 1,
       "HeroBannerType": 1,
+      "HeroBannerCat": true,
       "HeroBannerText": 1,
       "HeroBannerImage": 1
     }
   ],
   "Category": [
     {
-      "CategoryVersion": 3
+      "CategoryVersion": 1
+    }
+  ],
+  "Product": [
+    {
+      "ProductVersion": 1
     }
   ],
   "About": [
     {
       "AboutVersion": 2,
-      "AboutType": 2,
+      "AboutType": 1,
       "AboutSide": "left",
       "AboutLeft": 1,
       "AboutRight": 4

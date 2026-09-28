@@ -400,13 +400,7 @@ const Enquiry = React.memo(({ version, isCart = false, onClearCart }) => {
         if (isCart) {
             setTimeout(() => {
                 if (onClearCart) onClearCart();
-                const ecomEnv = import.meta.env.ECOM ?? import.meta.env.VITE_ECOM;
-                const isEcom = String(ecomEnv).toLowerCase() === 'true';
-                if (isEcom) {
-                    navigate('/order');
-                } else {
-                    navigate('/wheretobuy');
-                }
+                navigate('/order');
             }, 1500);
         }
     }, [isCart, onClearCart, navigate]);

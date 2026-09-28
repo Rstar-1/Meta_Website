@@ -7,13 +7,13 @@ import Icon from "../common/Icon";
 import Button from "../common/Button";
 import Modal from "../common/Modal";
 import Dropdown from "../common/Dropdown";
+import Badge from "../common/Badge";
 import Fields from "../forms/Fields";
 
 import { header, configData } from "../../utils/apiData";
 import { resolveImagePath } from "../../utils/imageResolver";
 import { useCart } from "../../context/CartContext";
 
-const isEcom = import.meta.env.VITE_ECOM === "true";
 const headerType = configData?.Header?.HeaderType ?? configData?.Header?.[0]?.HeaderType ?? 1;
 
 const LogoClass = {
@@ -26,14 +26,14 @@ const LogoClass = {
 const NavigationClass = {
   1: "w-50 justify-center",
   2: "w-60 justify-start",
-  3: isEcom ? "w-70 justify-end" : "w-75 justify-end",
+  3: "w-70 justify-end",
   4: "w-70 justify-end",
 }[headerType] || "w-50 justify-center";
 
 const ActionClass = {
   1: "w-25 sm-w-15",
   2: "w-25 sm-w-15",
-  3: isEcom ? "w-25 sm-w-15" : "w-20 sm-w-15",
+  3: "w-25 sm-w-15",
   4: "w-20 sm-w-15",
 }[headerType] || "w-25 sm-w-15";
 
@@ -171,12 +171,21 @@ const HeaderNavigation = React.memo(
             >
               <NavLink
                 to={item.href}
-                className="font-500 para-text px-16 cursor-pointer flex items-center"
+                className="font-500 para-text px-16 cursor-pointer flex items-center gap-6"
                 style={{
                   color: linkColor,
                 }}
               >
-                {item.label}
+                <span>{item.label}</span>
+
+                {item.badge && (
+                  <Badge
+                    text={item.badge}
+                    color={item.badgeColor || item.badgeTheme}
+                    size="xs"
+                    shape="pill"
+                  />
+                )}
 
                 {item.hasMegaMenu && (
                   <Icon
@@ -205,7 +214,6 @@ const HeaderNavigation = React.memo(
 
 const HeaderBottomBar = React.memo(
   ({
-    isEcom,
     pathname,
     hoveredNav,
     activeMegaMenu,
@@ -213,9 +221,6 @@ const HeaderBottomBar = React.memo(
     onNavMouseEnter,
     onNavMouseLeave,
   }) => {
-    if (!isEcom) {
-      return null;
-    }
 
     if (configData?.Header?.[0]?.HeaderBottomBar === false) {
       return null;
@@ -264,10 +269,18 @@ const HeaderBottomBar = React.memo(
                 >
                   <NavLink
                     to={item.href || "/product"}
-                    className="font-500 mini-text capitalize cursor-pointer flex items-center gap-2"
+                    className="font-500 small-text capitalize cursor-pointer flex items-center gap-6"
                     style={{ color: linkColor }}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {item.badge && (
+                      <Badge
+                        text={item.badge}
+                        color={item.badgeColor || item.badgeTheme}
+                        size="xs"
+                        shape="pill"
+                      />
+                    )}
                     {item.hasMegaMenu && (
                       <Icon
                         name="ChevronDown"
@@ -296,7 +309,6 @@ const HeaderBottomBar = React.memo(
 
 const CartSidebar = React.memo(
   ({
-    isEcom,
     cartItems,
     cartQty,
     subtotal,
@@ -308,16 +320,23 @@ const CartSidebar = React.memo(
     onSetQuantity,
     onNavigate,
   }) => {
-    if (!isEcom) {
-      return null;
-    }
 
     return (
       <Modal
         type="sidebar"
         placement="right"
         size="sm"
-        title={`Your cart (${cartQty})`}
+        title={
+          <div className="flex items-center gap-8">
+            <span>Your cart</span>
+            <Badge
+              text={cartQty}
+              color={cartQty > 0 ? "primary" : "secondary"}
+              size="sm"
+              shape="pill"
+            />
+          </div>
+        }
         footer={null}
         isOpen={isCartOpen}
         onClose={onCloseCart}
@@ -326,11 +345,18 @@ const CartSidebar = React.memo(
             <Button
               aria-label="Cart"
               onClick={onOpenCart}
-              icon="ShoppingCart"
+              icon="Bag"
               iconWidth="16"
               iconHeight="16"
               iconStrokeWidth="2"
               variant="outline"
+              border={
+                configData?.Header?.HeaderSticky
+                  ? isHeaderWhite
+                    ? "primary"
+                    : "white"
+                  : "primary"
+              }
               iconStroke={
                 configData?.Header?.HeaderSticky
                   ? isHeaderWhite
@@ -339,29 +365,21 @@ const CartSidebar = React.memo(
                   : "var(--primary)"
               }
               version="icon"
-              bg={
-                configData?.Header?.HeaderSticky
-                  ? isHeaderWhite
-                    ? "var(--primary)"
-                    : "none"
-                  : "var(--primary)"
-              }
-              className="border-primary rounded-30 p-12 relative"
+              bg="transparent"
+              className="rounded-30 p-10"
             />
 
             {cartQty > 0 && (
               <p
-                className="bg-primary flex items-center justify-center rounded-full text-white absolute"
+                className="absolute bg-primary text-white rounded-full flex items-center justify-center"
                 style={{
                   top: "-7px",
                   right: "-7px",
-                  width: '20px',
-                  height: '20px',
-                  fontSize: "10px",
+                  width: "20px",
+                  height: "20px",
+                  fontSize: '10px'
                 }}
-              >
-                {cartQty}
-              </p>
+              >{cartQty}</p>
             )}
           </div>
         }
@@ -429,7 +447,7 @@ const CartSidebar = React.memo(
             ) : (
               <div className="text-center py-40 bg-forth">
                 <Icon
-                  name="ShoppingCart"
+                  name="Bag"
                   width="48"
                   height="48"
                   stroke="var(--primary)"
@@ -444,41 +462,38 @@ const CartSidebar = React.memo(
           </div>
         </div>
 
-        <div className="w-full fixed bottom-0 left-0 bg-forth bordh">
-          <div className="p-30">
-            <div className="flex items-center justify-between mb-16">
-              <p className="small-text font-500 text-dark">
-                Subtotal
-              </p>
-
-              <p className="small-text font-500 text-primary">
-                ₹{subtotal}
-              </p>
+        <div className="fixed bottom-0 left-0 w-full bg-forth">
+          <div className="p-15">
+            <div className="flex items-end w-full">
+              <div className="w-80">
+                <h4 className="mid-text text-dark font-600">Estimated total</h4>
+                <p className="mini-text text-gray">Taxes and shipping at checkout</p>
+              </div>
+              <p className="small-text text-dark font-600 w-20 text-right">${subtotal.toFixed(2)}</p>
             </div>
-
-            <div className="grid-cols-2 gap-10">
+            <div className="grid-cols-2 gap-12 mt-12">
               <Button
-                text="Checkout"
-                version="v2"
-                bg="primary"
-                color="white"
-                disabled={cartItems.length === 0}
+                text="Explore More"
                 onClick={() => {
                   onCloseCart();
-                  onNavigate("/pricing");
+                  onNavigate('/products');
                 }}
+                version="v3"
+                bg="tertiary"
+                color="dark"
+                className="rounded-30 font-500"
               />
 
               <Button
-                text="View Products"
-                version="v2"
-                variant="outline"
-                bg="primary"
-                color="dark"
+                text="Send Enquiry"
                 onClick={() => {
                   onCloseCart();
-                  onNavigate("/products");
+                  onNavigate('/connect');
                 }}
+                version="v3"
+                bg="dark"
+                color="white"
+                className="rounded-30 font-500"
               />
             </div>
           </div>
@@ -526,13 +541,13 @@ const HeaderActions = React.memo(
             }
             version="icon"
             bg="transparent"
-            className="rounded-30 p-12"
+            className="rounded-30 p-10"
           />
 
           {cartSection}
 
           <Button
-            text="Schedule Call"
+            text="Get A Quote"
             onClick={() =>
               onNavigate("/connect")
             }
@@ -629,6 +644,7 @@ const MegaMenu = React.memo(
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         className="w-full bg-white bordh"
+        style={{ marginTop: '-5px' }}
       >
         <Container>
           <div className="flex items-start gap-12 py-20 w-full">
@@ -655,7 +671,7 @@ const MegaMenu = React.memo(
                     style={{
                       backgroundColor:
                         isActive
-                          ? "var(--tertiary)"
+                          ? "var(--forth)"
                           : "transparent",
 
                       color: isActive
@@ -663,14 +679,18 @@ const MegaMenu = React.memo(
                         : "#334155",
                     }}
                   >
-                    <p className="mini-text font-500">
+                    <p className="small-text font-500">
                       {cat.name}
                     </p>
 
                     {cat.badge && (
-                      <p className="mini-text rounded-20 px-8 py-2 font-500 bg-light-success text-success">
-                        {cat.badge}
-                      </p>
+                      <Badge
+                        text={cat.badge}
+                        color={cat.badgeColor || cat.badgeTheme}
+                        size="xs"
+                        shape="pill"
+                        className='px-12 py-3'
+                      />
                     )}
                   </div>
                 );
@@ -680,7 +700,7 @@ const MegaMenu = React.memo(
             <div className="w-80">
               <div
                 key={currentCategory?.id || "category-grid"}
-                className="grid grid-cols-4 sm-grid-cols-2 gap-12"
+                className="grid-cols-4 sm-grid-cols-2 gap-12"
               >
                 {currentCategory?.items?.map(
                   (item, idx) => (
@@ -698,6 +718,16 @@ const MegaMenu = React.memo(
                           alt={item.title}
                           className="w-full h-150 object-cover flex"
                         />
+                        {item.badge && (
+                          <div className="absolute top-8 left-8 z-2">
+                            <Badge
+                              text={item.badge}
+                              color={item.badgeColor || item.badgeTheme}
+                              size="xs"
+                              shape="pill"
+                            />
+                          </div>
+                        )}
                       </div>
 
                       <p className="small-text font-500 text-dark mt-6">
@@ -746,7 +776,7 @@ const MobileMenu = React.memo(
                       className="decoration-none flex items-center justify-between"
                     >
                       <span
-                        className="para-text font-500 uppercase"
+                        className="para-text font-500 uppercase flex items-center gap-8"
                         style={{
                           color: isActive
                             ? "var(--primary)"
@@ -756,7 +786,15 @@ const MobileMenu = React.memo(
                             "0.03em",
                         }}
                       >
-                        {item.label}
+                        <span>{item.label}</span>
+                        {item.badge && (
+                          <Badge
+                            text={item.badge}
+                            color={item.badgeColor || item.badgeTheme}
+                            size="xs"
+                            shape="pill"
+                          />
+                        )}
                       </span>
 
                       <Icon
@@ -791,9 +829,12 @@ const MobileMenu = React.memo(
                                 </span>
 
                                 {cat.badge && (
-                                  <span className="mini-text rounded-20 px-6 py-2 font-500 bg-light-success text-success">
-                                    {cat.badge}
-                                  </span>
+                                  <Badge
+                                    text={cat.badge}
+                                    color={cat.badgeColor || cat.badgeTheme}
+                                    size="xs"
+                                    shape="pill"
+                                  />
                                 )}
                               </NavLink>
                             )
@@ -806,7 +847,7 @@ const MobileMenu = React.memo(
             )}
           </div>
 
-          {isEcom && header.bottomBar?.menu?.length > 0 && (
+          {header.bottomBar?.menu?.length > 0 && (
             <div className="pt-16 pb-8 bordb">
               <p
                 className="mini-text text-gray font-600 uppercase mb-8"
@@ -821,8 +862,16 @@ const MobileMenu = React.memo(
                     onClick={onClose}
                     className="decoration-none flex items-center justify-between"
                   >
-                    <span className="para-text font-500 uppercase text-dark">
-                      {item.label}
+                    <span className="para-text font-500 uppercase text-dark flex items-center gap-8">
+                      <span>{item.label}</span>
+                      {item.badge && (
+                        <Badge
+                          text={item.badge}
+                          color={item.badgeColor || item.badgeTheme}
+                          size="xs"
+                          shape="pill"
+                        />
+                      )}
                     </span>
                     {item.hasMegaMenu ? (
                       <Icon
@@ -889,9 +938,6 @@ const Header = () => {
     isCartOpen,
     setIsCartOpen,
   } = useCart();
-
-  const isEcom =
-    import.meta.env.VITE_ECOM === "true";
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -1077,7 +1123,7 @@ const Header = () => {
           <div
             className="flex items-center w-full"
             style={{
-              height: "70px"
+              height: "64px"
             }}
           >
             <HeaderLogo
@@ -1123,7 +1169,6 @@ const Header = () => {
               }
               cartSection={
                 <CartSidebar
-                  isEcom={isEcom}
                   cartItems={cartItems}
                   cartQty={cartQty}
                   subtotal={subtotal}
@@ -1155,7 +1200,6 @@ const Header = () => {
         </Container>
 
         <HeaderBottomBar
-          isEcom={isEcom}
           pathname={location.pathname}
           hoveredNav={hoveredNav}
           activeMegaMenu={activeMegaMenu}

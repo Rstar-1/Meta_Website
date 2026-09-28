@@ -369,7 +369,7 @@ const Chatbot = () => {
                         position: 'fixed',
                         bottom: '30px',
                         right: '6px',
-                        zIndex: '888',
+                        zIndex: '88',
                     }}
                     className='flex items-end justify-end gap-6'
                 >

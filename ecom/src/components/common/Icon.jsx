@@ -120,7 +120,7 @@ const Icon = React.memo(({ name, icon, className = "", width, height, strokeWidt
             );
         case "ChevronRight":
             return (
-                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} className={`flex ${className}`} {...props}>
+                <svg viewBox="0 0 24 24" width={defaultWidth} height={defaultHeight} stroke={stroke || "currentColor"} strokeWidth={defaultStrokeWidth} fill={fill || "none"} strokeLinecap="round" strokeLinejoin="round" className={`flex ${className}`} {...props}>
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             );

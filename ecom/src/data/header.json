@@ -18,8 +18,8 @@
       "label": "News & Media"
     },
     {
-      "href": "/service",
-      "label": "Services"
+      "href": "/suplier",
+      "label": "Find A Store"
     },
     {
       "href": "/connect",
@@ -251,118 +251,6 @@
         }
       ]
     },
-    "leathersWaterproofing": {
-      "categories": [
-        {
-          "id": "faux-leather",
-          "name": "Faux & PU Leather",
-          "badge": "Premium",
-          "items": [
-            {
-              "title": "Nappa Synthetic Leather",
-              "image": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=nappa-synthetic-leather"
-            },
-            {
-              "title": "Textured Upholstery PU",
-              "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=textured-upholstery-pu"
-            },
-            {
-              "title": "Microfiber Suede",
-              "image": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=microfiber-suede"
-            },
-            {
-              "title": "Automotive Grade Vinyl",
-              "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=automotive-grade-vinyl"
-            }
-          ]
-        },
-        {
-          "id": "waterproof-membranes",
-          "name": "Waterproofing Membranes",
-          "badge": null,
-          "items": [
-            {
-              "title": "Self-Adhesive Bitumen",
-              "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=self-adhesive-bitumen"
-            },
-            {
-              "title": "EPDM Rubber Sheet",
-              "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=epdm-rubber-sheet"
-            },
-            {
-              "title": "TPO Roofing Membrane",
-              "image": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=tpo-roofing-membrane"
-            },
-            {
-              "title": "Liquid Applied PU",
-              "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=liquid-applied-pu"
-            }
-          ]
-        },
-        {
-          "id": "underlayment",
-          "name": "Underlay & Moisture Barrier",
-          "badge": null,
-          "items": [
-            {
-              "title": "Acoustic Dampening Foam",
-              "image": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=acoustic-dampening-foam"
-            },
-            {
-              "title": "Foil Backed Vapor Barrier",
-              "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=foil-backed-vapor-barrier"
-            },
-            {
-              "title": "Rubber Crumb Mat",
-              "image": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=rubber-crumb-mat"
-            },
-            {
-              "title": "Cork Insulation Underlay",
-              "image": "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=cork-insulation-underlay"
-            }
-          ]
-        },
-        {
-          "id": "marine-vinyl",
-          "name": "Marine & Outdoor Vinyl",
-          "badge": null,
-          "items": [
-            {
-              "title": "UV Resistant Marine Fabric",
-              "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=uv-resistant-marine-fabric"
-            },
-            {
-              "title": "Heavy-Duty Boat Vinyl",
-              "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=heavy-duty-boat-vinyl"
-            },
-            {
-              "title": "Mildew Resistant Canvas",
-              "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=mildew-resistant-canvas"
-            },
-            {
-              "title": "All-Weather Tarpaulin",
-              "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=all-weather-tarpaulin"
-            }
-          ]
-        }
-      ]
-    },
     "ropesNets": {
       "categories": [
         {
@@ -470,118 +358,6 @@
               "title": "Marine Docking Net",
               "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
               "href": "/products?type=marine-docking-net"
-            }
-          ]
-        }
-      ]
-    },
-    "foamBoardProfiles": {
-      "categories": [
-        {
-          "id": "pvc-foam-board",
-          "name": "PVC Foam Boards",
-          "badge": "Best Seller",
-          "items": [
-            {
-              "title": "High Density Celuka Board",
-              "image": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=high-density-celuka-board"
-            },
-            {
-              "title": "Lightweight Foam PVC",
-              "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=lightweight-foam-pvc"
-            },
-            {
-              "title": "Colored Signage Board",
-              "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=colored-signage-board"
-            },
-            {
-              "title": "Wood Grain Laminated Board",
-              "image": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=wood-grain-laminated-board"
-            }
-          ]
-        },
-        {
-          "id": "aluminum-profiles",
-          "name": "Aluminum Profiles & Trims",
-          "badge": null,
-          "items": [
-            {
-              "title": "L-Angle Floor Transition",
-              "image": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=l-angle-floor-transition"
-            },
-            {
-              "title": "T-Molding Expansion Strip",
-              "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=t-molding-expansion-strip"
-            },
-            {
-              "title": "Stair Nosing Anti-Slip",
-              "image": "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=stair-nosing-anti-slip"
-            },
-            {
-              "title": "LED Channel Profile",
-              "image": "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=led-channel-profile"
-            }
-          ]
-        },
-        {
-          "id": "skirting-boards",
-          "name": "Skirting & Baseboards",
-          "badge": null,
-          "items": [
-            {
-              "title": "Waterproof PVC Skirting",
-              "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=waterproof-pvc-skirting"
-            },
-            {
-              "title": "Modern Metal Baseboard",
-              "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=modern-metal-baseboard"
-            },
-            {
-              "title": "Flush Wall Skirting",
-              "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=flush-wall-skirting"
-            },
-            {
-              "title": "Flexible Rubber Cove Base",
-              "image": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=flexible-rubber-cove-base"
-            }
-          ]
-        },
-        {
-          "id": "edge-banding",
-          "name": "Edge Banding & Seals",
-          "badge": null,
-          "items": [
-            {
-              "title": "PVC Edge Banding Tape",
-              "image": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=pvc-edge-banding-tape"
-            },
-            {
-              "title": "Acrylic 3D Edge Strip",
-              "image": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=acrylic-3d-edge-strip"
-            },
-            {
-              "title": "Silicone Weatherstrip",
-              "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=silicone-weatherstrip"
-            },
-            {
-              "title": "Door Bottom Drop Seal",
-              "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-              "href": "/products?type=door-bottom-drop-seal"
             }
           ]
         }
@@ -703,40 +479,33 @@
   "bottomBar": {
     "menu": [
       {
-        "label": "VINYL FLOORING",
+        "label": "Vinyl Flooring",
         "href": "/product",
         "hasMegaMenu": true,
         "megaMenuKey": "vinylFlooring"
       },
       {
-        "label": "WALL PANELS & CEILINGS",
+        "label": "Wall Panels & Ceilings",
         "href": "/product",
         "hasMegaMenu": true,
         "megaMenuKey": "wallPanelsCeilings"
       },
       {
-        "label": "LEATHERS & WATERPROOFING MEMBRANES",
-        "href": "/product",
-        "hasMegaMenu": true,
-        "megaMenuKey": "leathersWaterproofing"
-      },
-      {
-        "label": "ROPES & NETS",
+        "label": "Ropes & Nets",
         "href": "/product",
         "hasMegaMenu": true,
         "megaMenuKey": "ropesNets"
       },
       {
-        "label": "FOAM BOARD & PROFILES",
-        "href": "/product",
-        "hasMegaMenu": true,
-        "megaMenuKey": "foamBoardProfiles"
-      },
-      {
-        "label": "RESOURCES",
+        "label": "Resources",
         "href": "/blog",
         "hasMegaMenu": true,
         "megaMenuKey": "resources"
+      },
+      {
+        "label": "Collection",
+        "href": "/product",
+        "hasMegaMenu": false
       }
     ]
   }

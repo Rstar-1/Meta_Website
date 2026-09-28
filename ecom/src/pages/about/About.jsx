@@ -7,7 +7,6 @@ import aboutBanner from '../../assets/about-banner.jpg';
 const DetailSection = lazy(() => import('./sections/DetailSection'));
 const PatchSection = lazy(() => import('../home/sections/agency/PatchSection'));
 const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
-const FeedSection = lazy(() => import('../home/sections/agency/FeedSection'));
 
 const ecomSections = [
     DetailSection,
@@ -15,16 +14,7 @@ const ecomSections = [
     OfferSection,
 ];
 
-const standardSections = [
-    DetailSection,
-    FeedSection,
-    PatchSection
-];
-
 const About = () => {
-    const isEcom = import.meta.env.VITE_ECOM === 'true';
-    const activeSections = isEcom ? ecomSections : standardSections;
-
     return (
         <>
             <SEO page="about" />
@@ -38,7 +28,7 @@ const About = () => {
                 ]}
             />
             <Suspense fallback={<Loader />}>
-                {activeSections.map((Component, index) => (
+                {ecomSections.map((Component, index) => (
                     <Component key={index} />
                 ))}
             </Suspense>

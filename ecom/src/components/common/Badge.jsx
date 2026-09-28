@@ -8,33 +8,35 @@ export const getBadgeTheme = (val) => {
         case "admin": case "administrator":
         case "inactive": case "failed": case "cancelled": case "rejected": case "expired": case "blocked": case "private":
         case "high": case "critical": case "urgent":
+        case "hot": case "sale":
             return { bg: "#fee2e2", color: "#991b1b", border: "#fca5a5" };
 
         // Green / Success / Active / Approved / User
         case "success": case "green":
         case "user": case "member": case "public":
         case "active": case "completed": case "approved": case "published": case "verified": case "delivered":
-        case "low":
+        case "low": case "certified":
             return { bg: "#dcfce3", color: "#166534", border: "#86efac" };
 
         // Amber / Warning / Pending / Review
         case "warning": case "amber": case "yellow":
         case "pending": case "processing": case "paused": case "review": case "refunded":
-        case "medium":
+        case "medium": case "popular": case "bestseller": case "best seller": case "best": case "trending":
             return { bg: "#fef3c7", color: "#b45309", border: "#fcd34d" };
 
         // Blue / Primary / Manager / Enterprise
         case "primary": case "blue":
-        case "manager": case "enterprise":
+        case "manager": case "enterprise": case "new":
             return { bg: "#eff6ff", color: "#1f5ac0", border: "#bfdbfe" };
 
         // Cyan / Info / Staff
         case "info": case "cyan": case "staff":
+        case "coming soon": case "coming-soon":
             return { bg: "#e0f2fe", color: "#0369a1", border: "#7dd3fc" };
 
         // Purple / Vendor / Partner / Premium
         case "purple": case "violet": case "indigo":
-        case "vendor": case "partner": case "premium":
+        case "vendor": case "partner": case "premium": case "featured":
             return { bg: "#ede9fe", color: "#5b21b6", border: "#c4b5fd" };
 
         // Dark / Black
@@ -70,8 +72,10 @@ export const getShapeClass = (shape) => {
 
 export const getSizeClass = (size) => {
     switch (size) {
+        case "xs":
+            return "px-8 py-2 mini-text";
         case "sm": case "mini":
-            return "px-10 py-5 mini-text";
+            return "px-10 py-4 mini-text";
         case "lg": case "large":
             return "px-17 py-6 small-text";
         case "md": default:
@@ -111,7 +115,7 @@ export const Badge = memo(({
     onRemove,
     ...props
 }) => {
-    const label = text || children;
+    const label = (text !== undefined && text !== null && text !== "") ? text : (children ?? "");
     const resolvedTheme = getBadgeTheme(color || theme || label);
     const effectiveVariant = (dot || variant === "status" || variant === "dot") ? "status" : variant;
     const sizeClass = getSizeClass(size);
