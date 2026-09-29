@@ -221,7 +221,7 @@ const CategoryVersion3 = React.memo(({ items, onCategoryClick }) => (
             }
         `}</style>
         <div className="grid-cols-3 sm-grid-cols-1 mt-30" style={{ gap: '20px' }}>
-            {items?.slice(0, 6)?.map((cat) => (
+            {items?.slice(0, 3)?.map((cat) => (
                 <div
                     key={cat.id}
                     className="category-card bg-forth rounded-5 overflow-hidden flex cursor-pointer relative"

@@ -5,6 +5,7 @@ import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
 import Badge from '../../../../components/common/Badge';
 import { useCart } from '../../../../context/CartContext';
+import Heading from '../../../../components/layout/generic/Heading';
 
 const SPACES_DATA = [
     {
@@ -86,7 +87,7 @@ const SPACES_DATA = [
     },
     {
         id: 4,
-        image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef4?auto=format&fit=crop&w=1200&q=80',
+        image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1200&q=80',
         title: 'Minimalist Bedroom Sanctuary',
         products: [
             {
@@ -138,10 +139,9 @@ const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
             }}
             onClick={(e) => e.stopPropagation()}
         >
-            {/* Header */}
             <div className="flex items-center justify-between pb-12 bordb">
                 <div className="flex items-center gap-8">
-                    <h4 className="headmini-text font-500 text-dark">Shop this look</h4>
+                    <h4 className="headmini-text font-500 text-dark capitalize">Shop this look</h4>
                     <Badge text={`${products.length} items`} size="xs" color="forth" shape="rounded" />
                 </div>
                 <Button
@@ -151,13 +151,11 @@ const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
                     iconWidth="14"
                     iconHeight="14"
                     version="icon"
-                    variant="outline"
-                    bg="transparent"
-                    color="gray"
+                    bg="forth"
+                    color="danger"
                 />
             </div>
 
-            {/* Products List */}
             <div className="grid-cols-1">
                 {products.map((p, idx) => (
                     <div
@@ -166,33 +164,33 @@ const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
                         className={`flex items-center justify-between gap-12 py-10 cursor-pointer group ${idx < products.length - 1 ? 'bordb' : ''
                             }`}
                     >
-                        <div className="flex items-center gap-12 overflow-hidden flex-1">
-                            <img
+                        <div className="flex items-center gap-12 overflow-hidden">
+                            <Image
                                 src={p.image}
                                 alt={p.name}
-                                width='50px'
-                                height='50px'
-                                className="flex object-cover rounded-5"
+                                width="45px"
+                                height="45px"
+                                className="flex object-cover rounded-5 flex-shrink-0"
+                                style={{ width: '45px', height: '45px' }}
                             />
 
-                            <div className="overflow-hidden flex-1">
-                                <p className="small-text font-600 text-dark truncate group-hover:text-primary transition-colors">
+                            <div className="overflow-hidden">
+                                <h5 className="headmini-text font-600 text-dark line-clamp1">
                                     {p.name}
-                                </p>
+                                </h5>
                                 <div className="flex items-center gap-6 mt-2">
-                                    <span className={`mini-text font-600 ${p.originalPrice ? 'text-danger' : 'text-dark'}`}>
+                                    <p className={`mini-text font-500 ${p.originalPrice ? 'text-danger' : 'text-dark'}`}>
                                         {p.price}
-                                    </span>
+                                    </p>
                                     {p.originalPrice && (
-                                        <span className="mini-text text-gray line-through font-400">
+                                        <p className="mini-text text-gray line-through font-400">
                                             {p.originalPrice}
-                                        </span>
+                                        </p>
                                     )}
                                 </div>
                             </div>
                         </div>
 
-                        {/* Circular Action Button */}
                         <Button
                             aria-label={`View ${p.name}`}
                             onClick={(e) => {
@@ -223,16 +221,14 @@ const SpaceCard = memo(({ space, isFirst, isOpen, onToggle, onProductClick }) =>
     return (
         <div
             className='rounded-10 relative overflow-hidden h-450'
-            style={{ minWidth: isFirst ? '540px' : '350px' }}
+            style={{ minWidth: isFirst ? '650px' : '390px' }}
         >
-            {/* Background Room Image */}
             <Image
                 src={space.image}
                 alt={space.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full flex object-cover"
             />
 
-            {/* Shop This Look Popup Modal */}
             {isOpen && (
                 <ShopLookPopup
                     products={space.products}
@@ -241,22 +237,16 @@ const SpaceCard = memo(({ space, isFirst, isOpen, onToggle, onProductClick }) =>
                 />
             )}
 
-            {/* Floating Tag Pill Button on Bottom Right */}
             <Badge
                 text={space.products.length}
                 icon="Bag"
-                iconSize={14}
+                iconSize={12}
                 iconStrokeWidth="2"
                 shape="pill"
                 size="md"
                 color="white"
                 onClick={onToggle}
-                className="absolute z-10 font-600 shadow cursor-pointer"
-                style={{
-                    bottom: '20px',
-                    right: '20px',
-                    boxShadow: '0 4px 14px rgba(0,0,0,0.18)'
-                }}
+                className="absolute z-10 bottom-0 right-0 m-15"
                 aria-label={`Shop ${space.products.length} items from this look`}
             />
         </div>
@@ -270,7 +260,6 @@ const FeatureSection = () => {
     const { addToCart } = useCart();
     const scrollRef = useRef(null);
 
-    // Default open on first slide as shown in user's image
     const [activeLookId, setActiveLookId] = useState(1);
     const [scrollProgress, setScrollProgress] = useState(25);
 
@@ -330,16 +319,16 @@ const FeatureSection = () => {
                     }
                 `}</style>
 
-                {/* Section Title */}
-                <h2 className="head-text font-700 text-dark mb-24">
-                    Get Inspired by Spaces
-                </h2>
+                <Heading
+                    version="v2"
+                    tag="WHAT WE PROVIDE"
+                    title="Featured Products & Popular Designs"
+                />
 
-                {/* Horizontal Slider */}
                 <div
                     ref={scrollRef}
                     onScroll={handleScroll}
-                    className="flex gap-12 overflow-auto"
+                    className="flex gap-12 overflow-auto mt-30"
                     style={{
                         scrollbarWidth: 'none',
                         msOverflowStyle: 'none',
@@ -358,7 +347,6 @@ const FeatureSection = () => {
                     ))}
                 </div>
 
-                {/* Bottom Controls: Progress Bar & Arrow Buttons (referencing FeatureSection.jsx) */}
                 <div className="flex items-center justify-between mt-24">
                     <div style={{ height: '3px' }} className="w-80 sm-w-60 bg-tertiary relative">
                         <div

@@ -5,7 +5,7 @@ import SEO from '../../seo';
 import aboutBanner from '../../assets/about-banner.jpg';
 
 const DetailSection = lazy(() => import('./sections/DetailSection'));
-const PatchSection = lazy(() => import('../home/sections/agency/PatchSection'));
+const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
 
 const ecomSections = [
