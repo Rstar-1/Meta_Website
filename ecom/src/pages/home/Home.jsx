@@ -13,11 +13,11 @@ const OfferSection = lazy(() => import('./sections/ecom/OfferSection'));
 
 const ecomSections = [
     { id: 'hero', Component: HeroBanner, minHeight: '500px' },
-    { id: 'category', Component: CategorySection, minHeight: '300px' },
+    // { id: 'category', Component: CategorySection, minHeight: '300px' },
     { id: 'product', Component: ProductSection, minHeight: '400px' },
-    // { id: 'trending', Component: TrendingSection, minHeight: '400px' },
     { id: 'about', Component: AboutSection, minHeight: '400px' },
-    { id: 'feature', Component: FeatureSection, minHeight: '400px' },
+    { id: 'trending', Component: TrendingSection, minHeight: '400px' },
+    // { id: 'feature', Component: FeatureSection, minHeight: '400px' },
     { id: 'patch', Component: PatchSection, minHeight: '300px' },
     { id: 'offer', Component: OfferSection, minHeight: '300px' }
 ];
