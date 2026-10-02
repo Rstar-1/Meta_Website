@@ -1,330 +1,269 @@
 import React, { useState, useRef, useCallback, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
 import Badge from '../../../../components/common/Badge';
-import Icon from '../../../../components/common/Icon';
+
+import Heading from '../../../../components/layout/generic/Heading';
+
 import { useCart } from '../../../../context/CartContext';
 
-const SPEAKERS_DATA = [
+const SPACES_DATA = [
     {
         id: 1,
-        name: 'Bass Wave',
-        brand: 'AUREAL',
-        price: '$4,750.00',
-        rating: 4.8,
-        image: '/images/speakers/bass_wave_silver.jpg',
-        variants: [
+        image: import.meta.env.VITE_IMAGE + "Swipebanner1.jpg",
+        title: 'Modern Living Space',
+        products: [
             {
-                id: 'silver',
-                colorName: 'Polished Silver',
-                image: '/images/speakers/bass_wave_silver.jpg',
-                thumb: '/images/speakers/bass_wave_silver.jpg'
+                id: 102,
+                name: 'Loop Sofa Armrest',
+                price: '$3,289.00',
+                originalPrice: '$3,369.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
             },
             {
-                id: 'black',
-                colorName: 'Obsidian Black',
-                image: '/images/speakers/bass_wave_black.jpg',
-                thumb: '/images/speakers/bass_wave_black.jpg'
+                id: 103,
+                name: 'Flip Table Lamp',
+                price: '$605.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product2.webp",
             },
             {
-                id: 'gold',
-                colorName: 'Champagne Gold',
-                image: '/images/speakers/bass_wave_gold.jpg',
-                thumb: '/images/speakers/bass_wave_gold.jpg'
+                id: 104,
+                name: 'Swivel Table',
+                price: '$305.00',
+                originalPrice: '$345.00',
+                image: import.meta.env.VITE_IMAGE + "Product4.webp",
             }
         ]
     },
     {
         id: 2,
-        name: 'Column Tower Duo',
-        brand: 'AUREAL',
-        price: '$3,890.00',
-        rating: 4.9,
-        image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80',
-        variants: [
+        image: import.meta.env.VITE_IMAGE + "Swipebanner2.jpg",
+        title: 'Terracotta Dining Space',
+        products: [
             {
-                id: 'midnight',
-                colorName: 'Midnight Black',
-                image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80',
-                thumb: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=120&q=80'
+                id: 201,
+                name: 'Arch Minimal Chair',
+                price: '$280.00',
+                originalPrice: '$320.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
             },
             {
-                id: 'walnut',
-                colorName: 'Walnut Wood',
-                image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80',
-                thumb: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=120&q=80'
+                id: 202,
+                name: 'Stone Cylindrical Table',
+                price: '$1,120.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product4.webp",
+            },
+            {
+                id: 203,
+                name: 'Clay Pendant Light',
+                price: '$185.00',
+                originalPrice: '$210.00',
+                image: import.meta.env.VITE_IMAGE + "Product3.webp",
             }
         ]
     },
     {
         id: 3,
-        name: 'Aura Sphere 360',
-        brand: 'AUREAL',
-        price: '$2,450.00',
-        rating: 4.7,
-        image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80',
-        variants: [
+        image: import.meta.env.VITE_IMAGE + "Swipebanner3.jpg",
+        title: 'Neutral Organic Gallery',
+        products: [
             {
-                id: 'titanium',
-                colorName: 'Titanium Gray',
-                image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80',
-                thumb: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=120&q=80'
+                id: 301,
+                name: 'Sculptural Wood Bench',
+                price: '$890.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 302,
+                name: 'Ceramic Floor Vessel',
+                price: '$145.00',
+                originalPrice: '$175.00',
+                image: import.meta.env.VITE_IMAGE + "Product2.webp",
+            }
+        ]
+    },
+    {
+        id: 4,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner4.jpg",
+        title: 'Minimalist Bedroom Sanctuary',
+        products: [
+            {
+                id: 401,
+                name: 'Linen Platform Bed',
+                price: '$1,650.00',
+                originalPrice: '$1,890.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 402,
+                name: 'Ceramic Nightstand Lamp',
+                price: '$210.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product3.webp",
+            }
+        ]
+    },
+    {
+        id: 5,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner5.jpg",
+        title: 'Scandinavian Workspace',
+        products: [
+            {
+                id: 501,
+                name: 'Solid Oak Writing Desk',
+                price: '$890.00',
+                originalPrice: '$980.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 502,
+                name: 'Ergonomic Curved Chair',
+                price: '$450.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product3.webp",
             }
         ]
     }
 ];
 
-// Interactive Living Room Slide (60% width)
-const InteractiveRoomSlide = memo(({
-    speakerVariant,
-    activeHotspot,
-    onToggleHotspot,
-    onProductClick
-}) => {
+const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
     return (
         <div
-            className="rounded-15 relative overflow-hidden flex-shrink-0 offer-slide-first"
-            style={{ height: '520px' }}
+            className="absolute rounded-10 bg-white top-0 right-0 p-12 m-20 z-20"
+            style={{
+                width: '260px',
+                maxWidth: 'calc(100% - 48px)',
+            }}
+            onClick={(e) => e.stopPropagation()}
         >
-            {/* Background Room Photo */}
+            <div className="flex items-center justify-between pb-12 bordb">
+                <div className="flex items-center gap-8">
+                    <h4 className="headmini-text font-500 text-dark capitalize">Shop this look</h4>
+                    <Badge text={`${products.length} items`} size="xs" color="forth" shape="rounded" />
+                </div>
+                <Button
+                    aria-label="Close shop look"
+                    onClick={onClose}
+                    icon="Close"
+                    iconWidth="14"
+                    iconHeight="14"
+                    version="icon"
+                    bg="forth"
+                    color="danger"
+                />
+            </div>
+
+            <div className="grid-cols-1">
+                {products.map((p, idx) => (
+                    <div
+                        key={p.id}
+                        onClick={() => onProductClick(p)}
+                        className={`flex items-center justify-between gap-12 py-10 cursor-pointer group ${idx < products.length - 1 ? 'bordb' : ''
+                            }`}
+                    >
+                        <div className="flex items-center gap-12 overflow-hidden">
+                            <Image
+                                src={p.image}
+                                alt={p.name}
+                                width="45px"
+                                height="45px"
+                                className="flex object-cover rounded-5 flex-shrink-0"
+                                style={{ width: '45px', height: '45px' }}
+                            />
+
+                            <div className="overflow-hidden">
+                                <h5 className="headmini-text font-600 text-dark line-clamp1">
+                                    {p.name}
+                                </h5>
+                                <div className="flex items-center gap-6 mt-2">
+                                    <p className={`mini-text font-500 ${p.originalPrice ? 'text-danger' : 'text-dark'}`}>
+                                        {p.price}
+                                    </p>
+                                    {p.originalPrice && (
+                                        <p className="mini-text text-gray line-through font-400">
+                                            {p.originalPrice}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+
+                        <Button
+                            aria-label={`View ${p.name}`}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onProductClick(p);
+                            }}
+                            icon="ChevronRight"
+                            iconWidth="12"
+                            iconHeight="12"
+                            iconStrokeWidth="2.5"
+                            version="icon"
+                            variant="outline"
+                            color="dark"
+                            border="gray"
+                            className="rounded-full flex-shrink-0 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-colors"
+                            style={{ width: '28px', height: '28px' }}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+});
+
+ShopLookPopup.displayName = 'ShopLookPopup';
+
+const SpaceCard = memo(({ space, isFirst, isOpen, onToggle, onProductClick }) => {
+    return (
+        <div
+            className='rounded-10 relative overflow-hidden h-450'
+            style={{ minWidth: isFirst ? '650px' : '390px' }}
+        >
             <Image
-                src="/images/speakers/living_room.jpg"
-                alt="Aureal Premium Speakers Living Room"
-                className="w-full h-full object-cover"
+                src={space.image}
+                alt={space.title}
+                className="w-full h-full flex object-cover"
             />
 
-            {/* Hotspot 1: Column Tower Speaker (Left) */}
-            <div
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onToggleHotspot(1);
-                }}
-                className="absolute z-10 cursor-pointer flex items-center justify-center group"
-                style={{ top: '52%', left: '16%', transform: 'translate(-50%, -50%)' }}
-                aria-label="View Column Tower Duo speaker"
-            >
-                <div
-                    className="rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
-                    style={{
-                        width: '32px',
-                        height: '32px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.4)',
-                        backdropFilter: 'blur(2px)'
-                    }}
-                >
-                    <div
-                        className="rounded-full bg-white shadow-md"
-                        style={{ width: '14px', height: '14px' }}
-                    />
-                </div>
-            </div>
-
-            {/* Hotspot 1 Popover Tooltip */}
-            {activeHotspot === 1 && (
-                <div
-                    className="absolute z-20 bg-white rounded-10 p-12 shadow-lg flex items-center gap-12 cursor-pointer hover:shadow-xl transition-shadow"
-                    style={{
-                        top: 'calc(52% + 22px)',
-                        left: '10%',
-                        width: '260px',
-                        maxWidth: 'calc(100% - 48px)'
-                    }}
-                    onClick={() => onProductClick(SPEAKERS_DATA[1])}
-                >
-                    <div
-                        className="absolute -top-7 left-20"
-                        style={{
-                            width: 0,
-                            height: 0,
-                            borderLeft: '7px solid transparent',
-                            borderRight: '7px solid transparent',
-                            borderBottom: '7px solid #ffffff'
-                        }}
-                    />
-                    <div className="w-50 h-50 rounded-5 bg-forth flex items-center justify-center p-4 flex-shrink-0 overflow-hidden">
-                        <img
-                            src={SPEAKERS_DATA[1].image}
-                            alt={SPEAKERS_DATA[1].name}
-                            className="w-full h-full object-contain"
-                        />
-                    </div>
-                    <div className="flex-1 overflow-hidden">
-                        <p className="small-text font-600 text-dark truncate">{SPEAKERS_DATA[1].name}</p>
-                        <p className="mini-text text-gray font-500 mt-2">{SPEAKERS_DATA[1].price}</p>
-                    </div>
-                </div>
+            {isOpen && (
+                <ShopLookPopup
+                    products={space.products}
+                    onClose={onToggle}
+                    onProductClick={onProductClick}
+                />
             )}
 
-            {/* Hotspot 2: Faceted Bass Wave Speaker (Center-Right Floor) */}
-            <div
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onToggleHotspot(2);
-                }}
-                className="absolute z-10 cursor-pointer flex items-center justify-center group"
-                style={{ top: '61%', left: '49%', transform: 'translate(-50%, -50%)' }}
-                aria-label="View Bass Wave speaker"
-            >
-                <div
-                    className="rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
-                    style={{
-                        width: '42px',
-                        height: '42px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.45)',
-                        backdropFilter: 'blur(3px)'
-                    }}
-                >
-                    <div
-                        className="rounded-full bg-white shadow-md"
-                        style={{ width: '20px', height: '20px' }}
-                    />
-                </div>
-            </div>
-
-            {/* Hotspot 2 Popover Tooltip (Connected to Floor Speaker) */}
-            {activeHotspot === 2 && (
-                <div
-                    className="absolute z-20 bg-white rounded-10 p-12 shadow-lg flex items-center gap-12 cursor-pointer hover:shadow-xl transition-shadow"
-                    style={{
-                        top: 'calc(61% + 24px)',
-                        left: '36%',
-                        width: '280px',
-                        maxWidth: 'calc(100% - 48px)'
-                    }}
-                    onClick={() => onProductClick(SPEAKERS_DATA[0])}
-                >
-                    {/* Arrow pointing up directly to the hotspot pin */}
-                    <div
-                        className="absolute -top-7 left-36"
-                        style={{
-                            width: 0,
-                            height: 0,
-                            borderLeft: '7px solid transparent',
-                            borderRight: '7px solid transparent',
-                            borderBottom: '7px solid #ffffff'
-                        }}
-                    />
-                    <div className="w-50 h-50 rounded-5 bg-forth flex items-center justify-center p-4 flex-shrink-0 overflow-hidden">
-                        <img
-                            src={speakerVariant?.image || SPEAKERS_DATA[0].image}
-                            alt="Bass Wave"
-                            className="w-full h-full object-contain"
-                        />
-                    </div>
-                    <div className="flex-1 overflow-hidden">
-                        <p className="small-text font-600 text-dark truncate">Bass Wave</p>
-                        <p className="mini-text text-gray font-500 mt-2">$4,750.00</p>
-                    </div>
-                </div>
-            )}
+            <Badge
+                text={space.products.length}
+                icon="Bag"
+                iconSize={12}
+                iconStrokeWidth="2"
+                shape="pill"
+                size="md"
+                color="white"
+                onClick={onToggle}
+                className="absolute z-10 bottom-0 right-0 m-15"
+                aria-label={`Shop ${space.products.length} items from this look`}
+            />
         </div>
     );
 });
 
-InteractiveRoomSlide.displayName = 'InteractiveRoomSlide';
-
-// Speaker Spotlight Card (40% width)
-const SpeakerSpotlightCard = memo(({
-    speaker,
-    activeColorIndex,
-    onSelectColor,
-    onProductClick
-}) => {
-    const currentVariant = speaker.variants ? speaker.variants[activeColorIndex] || speaker.variants[0] : null;
-    const displayImage = currentVariant ? currentVariant.image : speaker.image;
-
-    return (
-        <div
-            className="rounded-15 p-24 sm-p-16 justify-between relative bg-forth"
-            style={{ height: '520px' }}
-        >
-            {/* Top Rating Badge */}
-            <div className="flex items-center justify-end w-full">
-                <Badge
-                    text={String(speaker.rating || '4.8')}
-                    icon="Star"
-                    iconSize={12}
-                    iconColor="#f59e0b"
-                    color="white"
-                    shape="pill"
-                    size="xs"
-                    className="font-600 shadow-sm"
-                />
-            </div>
-
-            {/* Center Product Image */}
-            <div
-                className="flex-1 flex items-center justify-center py-16 cursor-pointer"
-                onClick={() => onProductClick(speaker)}
-            >
-                <img
-                    src={displayImage}
-                    alt={speaker.name}
-                    className="w-auto object-contain transition-transform duration-300 hover:scale-105"
-                    style={{ maxHeight: '280px' }}
-                />
-            </div>
-
-            {/* Bottom Info & Swatches */}
-            <div className="w-full">
-                <p className="mini-text font-600 text-gray uppercase tracking-wider mb-4">
-                    {speaker.brand || 'AUREAL'}
-                </p>
-                <div className="flex items-center justify-between">
-                    <h3
-                        className="headmini-text font-700 text-dark cursor-pointer hover:text-primary transition-colors"
-                        onClick={() => onProductClick(speaker)}
-                    >
-                        {speaker.name}
-                    </h3>
-                    <span className="mid-text font-700 text-dark">
-                        {speaker.price}
-                    </span>
-                </div>
-
-                {/* Color Swatches */}
-                {speaker.variants && speaker.variants.length > 0 && (
-                    <div className="flex items-center gap-8 mt-14">
-                        {speaker.variants.map((v, idx) => (
-                            <button
-                                key={v.id || idx}
-                                type="button"
-                                onClick={() => onSelectColor(idx)}
-                                aria-label={`Select ${v.colorName}`}
-                                className={`rounded-8 p-3 cursor-pointer transition-all flex items-center justify-center bg-white ${activeColorIndex === idx
-                                    ? 'border border-dark shadow-sm scale-105'
-                                    : 'border border-gray/30 hover:border-gray'
-                                    }`}
-                                style={{ width: '38px', height: '38px' }}
-                            >
-                                <img
-                                    src={v.thumb || v.image}
-                                    alt={v.colorName}
-                                    className="w-full h-full object-contain"
-                                />
-                            </button>
-                        ))}
-                    </div>
-                )}
-            </div>
-        </div>
-    );
-});
-
-SpeakerSpotlightCard.displayName = 'SpeakerSpotlightCard';
+SpaceCard.displayName = 'SpaceCard';
 
 const OfferSection = () => {
     const navigate = useNavigate();
     const { addToCart } = useCart();
     const scrollRef = useRef(null);
 
-    // Active color variant for Bass Wave speaker (0: silver, 1: black, 2: gold)
-    const [activeColorIndex, setActiveColorIndex] = useState(0);
-
-    // Default open on Hotspot 2 (floor speaker) as shown in user's image
-    const [activeHotspot, setActiveHotspot] = useState(2);
+    const [activeLookId, setActiveLookId] = useState(1);
     const [scrollProgress, setScrollProgress] = useState(25);
 
     const handleScroll = useCallback(() => {
@@ -346,115 +285,71 @@ const OfferSection = () => {
         }
     }, []);
 
-    const handleToggleHotspot = useCallback((id) => {
-        setActiveHotspot((prev) => (prev === id ? null : id));
+    const handleToggleLook = useCallback((id) => {
+        setActiveLookId((prev) => (prev === id ? null : id));
     }, []);
 
-    const handleSelectColor = useCallback((index) => {
-        setActiveColorIndex(index);
-    }, []);
-
-    const handleProductClick = useCallback((product) => {
-        addToCart(product);
-        navigate(`/product/${product.id}`, { state: { product } });
+    const handleProductClick = useCallback((p) => {
+        addToCart(p);
+        navigate(`/product/${p.id}`, { state: { product: p } });
     }, [addToCart, navigate]);
 
     return (
         <Container>
-            <div className="w-full py-50">
+            <div className="w-full py-40">
                 <style>{`
-                    .offer-slide-first {
-                        flex: 0 0 calc(60% - 12px);
-                        width: calc(60% - 12px);
+                    .trending-slide-first {
+                        flex: 0 0 calc(60% - 10px);
+                        width: calc(60% - 10px);
                         min-width: 320px;
                     }
-                    .offer-slide-other {
-                        flex: 0 0 calc(40% - 12px);
-                        width: calc(40% - 12px);
-                        min-width: 280px;
+                    .trending-slide-other {
+                        flex: 0 0 calc(40% - 10px);
+                        width: calc(40% - 10px);
+                        min-width: 260px;
                     }
                     @media (max-width: 768px) {
-                        .offer-slide-first {
+                        .trending-slide-first {
                             flex: 0 0 85% !important;
                             width: 85% !important;
                             min-width: 280px !important;
                         }
-                        .offer-slide-other {
-                            flex: 0 0 70% !important;
-                            width: 70% !important;
-                            min-width: 250px !important;
+                        .trending-slide-other {
+                            flex: 0 0 65% !important;
+                            width: 65% !important;
+                            min-width: 240px !important;
                         }
                     }
                 `}</style>
 
-                {/* Section Header */}
-                <div className="text-center mb-36">
-                    <p className="small-text font-500 text-gray uppercase tracking-wider mb-8">
-                        Premium Speakers
-                    </p>
-                    <h2 className="head-text font-700 text-dark relative inline-block">
-                        Bring Quality Sound into Your{' '}
-                        <span className="relative inline-block">
-                            Home
-                            {/* Decorative curved brush stroke underline */}
-                            <svg
-                                className="absolute left-0 -bottom-8 w-full pointer-events-none"
-                                height="14"
-                                viewBox="0 0 100 14"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M3 9C28 3 72 3 97 10C80 7 40 5 15 11"
-                                    stroke="#E59866"
-                                    strokeWidth="3.5"
-                                    strokeLinecap="round"
-                                />
-                            </svg>
-                        </span>
-                    </h2>
-                </div>
+                <Heading
+                    version="v2"
+                    tag="WHAT WE PROVIDE"
+                    title="Featured Products & Popular Designs"
+                />
 
-                {/* Horizontal Slider (60% First Slide / 40% Other Slides) */}
                 <div
                     ref={scrollRef}
                     onScroll={handleScroll}
-                    className="flex gap-12 items-start overflow-auto"
+                    className="flex gap-12 overflow-auto mt-30"
                     style={{
                         scrollbarWidth: 'none',
                         msOverflowStyle: 'none',
                         scrollBehavior: 'smooth'
                     }}
                 >
-                    {/* First Slide: Interactive Living Room Scene (60%) */}
-                    <InteractiveRoomSlide
-                        speakerVariant={SPEAKERS_DATA[0].variants[activeColorIndex]}
-                        activeHotspot={activeHotspot}
-                        onToggleHotspot={handleToggleHotspot}
-                        onProductClick={handleProductClick}
-                    />
-
-                    {/* Second Slide: Bass Wave Spotlight Card (40%) */}
-                    <SpeakerSpotlightCard
-                        speaker={SPEAKERS_DATA[0]}
-                        activeColorIndex={activeColorIndex}
-                        onSelectColor={handleSelectColor}
-                        onProductClick={handleProductClick}
-                    />
-
-                    {/* Additional Speaker Cards for continuous smooth sliding */}
-                    {SPEAKERS_DATA.slice(1).map((speaker) => (
-                        <SpeakerSpotlightCard
-                            key={speaker.id}
-                            speaker={speaker}
-                            activeColorIndex={0}
-                            onSelectColor={() => { }}
+                    {SPACES_DATA.map((space, index) => (
+                        <SpaceCard
+                            key={space.id}
+                            space={space}
+                            isFirst={index === 0}
+                            isOpen={activeLookId === space.id}
+                            onToggle={() => handleToggleLook(space.id)}
                             onProductClick={handleProductClick}
                         />
                     ))}
                 </div>
 
-                {/* Bottom Controls: Progress Bar & Arrow Buttons (referencing FeatureSection.jsx) */}
                 <div className="flex items-center justify-between mt-24">
                     <div style={{ height: '3px' }} className="w-80 sm-w-60 bg-tertiary relative">
                         <div
@@ -468,57 +363,30 @@ const OfferSection = () => {
                     </div>
 
                     <div className="flex items-center gap-12">
-                        {/* Carousel Dots Indicator */}
-                        <div className="flex items-center gap-6">
-                            <span
-                                onClick={() => scroll('left')}
-                                className={`cursor-pointer rounded-full transition-all ${scrollProgress <= 40 ? 'bg-dark' : 'bg-gray/40'
-                                    }`}
-                                style={{
-                                    width: scrollProgress <= 40 ? '16px' : '6px',
-                                    height: '6px'
-                                }}
-                                aria-label="First slide"
-                            />
-                            <span
-                                onClick={() => scroll('right')}
-                                className={`cursor-pointer rounded-full transition-all ${scrollProgress > 40 ? 'bg-dark' : 'bg-gray/40'
-                                    }`}
-                                style={{
-                                    width: scrollProgress > 40 ? '16px' : '6px',
-                                    height: '6px'
-                                }}
-                                aria-label="Next slide"
-                            />
-                        </div>
-
-                        {/* Navigation Buttons from FeatureSection.jsx */}
-                        <div className="flex items-center gap-10">
-                            <Button
-                                aria-label="Previous speaker"
-                                onClick={() => scroll('left')}
-                                icon="ArrowLeft"
-                                iconWidth="18"
-                                iconHeight="18"
-                                iconStrokeWidth="2"
-                                variant="outline"
-                                version="icon"
-                                color="primary"
-                                className="border-primary rounded-30"
-                            />
-                            <Button
-                                aria-label="Next speaker"
-                                onClick={() => scroll('right')}
-                                icon="ArrowRight"
-                                iconWidth="18"
-                                iconHeight="18"
-                                iconStrokeWidth="2"
-                                variant="outline"
-                                version="icon"
-                                color="primary"
-                                className="border-primary rounded-30"
-                            />
-                        </div>
+                        <Button
+                            aria-label="Previous spaces"
+                            onClick={() => scroll('left')}
+                            icon="ArrowLeft"
+                            iconWidth="18"
+                            iconHeight="18"
+                            iconStrokeWidth="2"
+                            variant="outline"
+                            version="icon"
+                            color="primary"
+                            className="border-primary rounded-30"
+                        />
+                        <Button
+                            aria-label="Next spaces"
+                            onClick={() => scroll('right')}
+                            icon="ArrowRight"
+                            iconWidth="18"
+                            iconHeight="18"
+                            iconStrokeWidth="2"
+                            variant="outline"
+                            version="icon"
+                            color="primary"
+                            className="border-primary rounded-30"
+                        />
                     </div>
                 </div>
             </div>

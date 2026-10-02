@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import agencyVideo from '../../../../assets/agency.mp4';
-import heroMask1 from '../../../../assets/hero-bg1-mask.png';
-import heroMask3 from '../../../../assets/hero-bg3-mask.png';
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
@@ -12,13 +9,13 @@ import { configData } from '../../../../utils/apiData';
 
 const HEIGHT_MAP = {
     sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-550' },
-    normal: { 1: 'h-650 sm-h-550', 2: 'h-550' }
+    normal: { 1: 'h-700 sm-h-550', 2: 'h-550' }
 };
 
 const HeroBackground = React.memo(() => (
     <div className='absolute top-0 left-0 w-full h-full z-10'>
         <Image
-            src={agencyVideo}
+            src={import.meta.env.VITE_IMAGE + "Hero1.mp4"}
             alt="Agency Hero Background Video"
             className='w-full h-full flex object-cover'
         />
@@ -32,13 +29,18 @@ const HeroBackground = React.memo(() => (
 ));
 
 const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) => (
-    <div className={`w-full ${isHeaderSticky ? '' : heroVersion === 1 ? 'pb-100 sm-pb-30' : 'pb-20'} relative z-20`}>
+    <div className={`w-full ${isHeaderSticky
+        ? 'pb-60'
+        : [1, 2].includes(heroVersion)
+            ? 'pb-100 sm-pb-30'
+            : 'pb-60'
+        } relative z-20`}>
         <h1 className='largemid-text text-white font-600'>
             A ERA IN
             <br />
             <span className='text-primary'>COMMUNICATION</span>
         </h1>
-        <p className='text-white headpara-text font-400 sm-mt-6 mt-12'>
+        <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12'>
             Are You Struggling To Turn Your <br />Ideas Into Something Users Love? Pixelr Designs Digital Products.
         </p>
         <Button
@@ -67,11 +69,11 @@ const BreadcrumbTab = React.memo(({ isMobile, heroVersion }) => {
                 bottom: '-5px',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                WebkitMaskImage: `url(${heroMask3})`,
+                WebkitMaskImage: `url(${import.meta.env.VITE_IMAGE + "Mask3.png"})`,
                 WebkitMaskSize: '100% 100%',
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskPosition: 'bottom center',
-                maskImage: `url(${heroMask3})`,
+                maskImage: `url(${import.meta.env.VITE_IMAGE + "Mask3.png"})`,
                 maskSize: '100% 100%',
                 maskRepeat: 'no-repeat',
                 maskPosition: 'bottom center',
@@ -105,18 +107,18 @@ const HeroBanner = React.memo(() => {
         return () => window.removeEventListener('resize', handleResize);
     }, [handleResize]);
 
-    const heightClass = HEIGHT_MAP[isHeaderSticky ? 'sticky' : 'normal']?.[heroVersion] || (isHeaderSticky ? 'h-700 sm-h-550' : 'h-550');
+    const heightClass = HEIGHT_MAP[isHeaderSticky ? 'sticky' : 'normal']?.[heroVersion] || (isHeaderSticky ? 'h-650 sm-h-550' : 'h-550');
 
     const containerStyle = useMemo(() => {
         if (heroVersion === 1) {
             const maskSize = isMobile ? '260% 100%' : '110% 100%';
             return {
-                WebkitMaskImage: `url(${heroMask1})`,
+                WebkitMaskImage: `url(${import.meta.env.VITE_IMAGE + "Mask1.png"})`,
                 WebkitMaskSize: maskSize,
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskPosition: 'center',
                 position: 'relative',
-                maskImage: `url(${heroMask1})`,
+                maskImage: `url(${import.meta.env.VITE_IMAGE + "Mask1.png"})`,
                 maskSize,
                 maskRepeat: 'no-repeat',
                 maskPosition: 'center',
@@ -130,7 +132,9 @@ const HeroBanner = React.memo(() => {
     }, [isMobile, heroVersion]);
 
     return (
-        <Container className={`${heightClass} flex items-center`} style={containerStyle}>
+        <Container className={`${heightClass} ${[1, 2].includes(heroVersion) ? 'flex items-center' : 'flex items-end'}`}
+            style={containerStyle}
+        >
             <HeroBackground />
             <HeroContent isHeaderSticky={isHeaderSticky} heroVersion={heroVersion} onGetInTouch={handleGetInTouch} />
             <BreadcrumbTab isMobile={isMobile} heroVersion={heroVersion} />

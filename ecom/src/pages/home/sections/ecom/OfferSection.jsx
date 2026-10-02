@@ -1,182 +1,397 @@
-import React from 'react';
+import React, { useState, useRef, useCallback, memo } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
+import Badge from '../../../../components/common/Badge';
 
-const offerBanners = [
+import Heading from '../../../../components/layout/generic/Heading';
+
+import { useCart } from '../../../../context/CartContext';
+
+const SPACES_DATA = [
     {
         id: 1,
-        title: 'Turn Chairs',
-        description: 'Elevate your space with 40% off our timeless designs!',
-        buttonText: 'Shop Now',
-        discountLabel: 'Save',
-        discountPercent: '40%',
-        bgColor: '#F9EAE9',
-        badgeBg: 'var(--primary)',
-        badgeColor: '#000000',
-        image: 'https://hyper-theme-demo.myshopify.com/cdn/shop/files/collection-slider-3.jpg?v=1750909889&width=600'
+        image: import.meta.env.VITE_IMAGE + "Swipebanner1.jpg",
+        title: 'Modern Living Space',
+        products: [
+            {
+                id: 102,
+                name: 'Loop Sofa Armrest',
+                price: '$3,289.00',
+                originalPrice: '$3,369.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 103,
+                name: 'Flip Table Lamp',
+                price: '$605.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product2.webp",
+            },
+            {
+                id: 104,
+                name: 'Swivel Table',
+                price: '$305.00',
+                originalPrice: '$345.00',
+                image: import.meta.env.VITE_IMAGE + "Product4.webp",
+            }
+        ]
     },
     {
         id: 2,
-        title: 'Cross Chairs',
-        description: "Get 30% off elegant, timeless seating miss out!",
-        buttonText: 'Shop Now',
-        discountLabel: 'Save',
-        discountPercent: '30%',
-        bgColor: '#E3EFE6',
-        badgeBg: 'var(--warning)',
-        badgeColor: '#FFFFFF',
-        image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80'
-    }
-];
-
-const categoryPills = [
-    {
-        id: 1,
-        name: 'Living Room',
-        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=120&q=80'
-    },
-    {
-        id: 2,
-        name: 'Planters',
-        image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=120&q=80'
+        image: import.meta.env.VITE_IMAGE + "Swipebanner2.jpg",
+        title: 'Terracotta Dining Space',
+        products: [
+            {
+                id: 201,
+                name: 'Arch Minimal Chair',
+                price: '$280.00',
+                originalPrice: '$320.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 202,
+                name: 'Stone Cylindrical Table',
+                price: '$1,120.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product4.webp",
+            },
+            {
+                id: 203,
+                name: 'Clay Pendant Light',
+                price: '$185.00',
+                originalPrice: '$210.00',
+                image: import.meta.env.VITE_IMAGE + "Product3.webp",
+            }
+        ]
     },
     {
         id: 3,
-        name: 'Gravel Rug',
-        image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=120&q=80'
+        image: import.meta.env.VITE_IMAGE + "Swipebanner3.jpg",
+        title: 'Neutral Organic Gallery',
+        products: [
+            {
+                id: 301,
+                name: 'Sculptural Wood Bench',
+                price: '$890.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 302,
+                name: 'Ceramic Floor Vessel',
+                price: '$145.00',
+                originalPrice: '$175.00',
+                image: import.meta.env.VITE_IMAGE + "Product2.webp",
+            }
+        ]
     },
     {
         id: 4,
-        name: 'Table Mirror',
-        image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=120&q=80'
+        image: import.meta.env.VITE_IMAGE + "Swipebanner4.jpg",
+        title: 'Minimalist Bedroom Sanctuary',
+        products: [
+            {
+                id: 401,
+                name: 'Linen Platform Bed',
+                price: '$1,650.00',
+                originalPrice: '$1,890.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 402,
+                name: 'Ceramic Nightstand Lamp',
+                price: '$210.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product3.webp",
+            }
+        ]
     },
     {
         id: 5,
-        name: 'Table Wears',
-        image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=120&q=80'
-    },
-    {
-        id: 6,
-        name: 'Dining Decor',
-        image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=120&q=80'
-    },
-    {
-        id: 9,
-        name: 'Living Room',
-        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=120&q=80'
-    },
-    {
-        id: 2,
-        name: 'Planters',
-        image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=120&q=80'
-    },
-    {
-        id: 3,
-        name: 'Gravel Rug',
-        image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=120&q=80'
-    },
-    {
-        id: 4,
-        name: 'Table Mirror',
-        image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=120&q=80'
+        image: import.meta.env.VITE_IMAGE + "Swipebanner5.jpg",
+        title: 'Scandinavian Workspace',
+        products: [
+            {
+                id: 501,
+                name: 'Solid Oak Writing Desk',
+                price: '$890.00',
+                originalPrice: '$980.00',
+                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+            },
+            {
+                id: 502,
+                name: 'Ergonomic Curved Chair',
+                price: '$450.00',
+                originalPrice: null,
+                image: import.meta.env.VITE_IMAGE + "Product3.webp",
+            }
+        ]
     }
 ];
 
-const OfferSection = () => {
+const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
     return (
-        <Container>
-            <div className="w-full py-50 overflow-hidden">
-                <div className="grid-cols-2 sm-grid-cols-1 gap-12">
-                    {offerBanners.map((banner) => (
-                        <div
-                            key={banner.id}
-                            style={{
-                                backgroundColor: banner.bgColor,
-                            }}
-                            className='flex items-center gap-12 p-25 sm-p-16 rounded-10'
-                        >
-                            <div className='w-50'>
-                                <h2 className='text-dark head-text font-600'>
-                                    {banner.title}
-                                </h2>
-                                <p className='small-text mt-4 text-gray'>
-                                    {banner.description}
-                                </p>
-                                <Button
-                                    text={banner.buttonText}
-                                    version="v2"
-                                    bg="dark"
-                                    color="white"
-                                    className="rounded-30 mt-20"
-                                />
-                            </div>
-                            <div className='relative w-50'>
-                                <div className='absolute top-0 right-0 rounded-full z-10 flex items-center justify-center m-10'
-                                    style={{
-                                        width: '76px',
-                                        height: '76px',
-                                        backgroundColor: banner.badgeBg,
-                                        color: banner.badgeColor,
-                                    }}
-                                >
-                                    <div className='text-center'>
-                                        <p className='mini-text text-white'>
-                                            {banner.discountLabel}
+        <div
+            className="absolute rounded-10 bg-white top-0 right-0 p-12 m-20 z-20"
+            style={{
+                width: '260px',
+                maxWidth: 'calc(100% - 48px)',
+            }}
+            onClick={(e) => e.stopPropagation()}
+        >
+            <div className="flex items-center justify-between pb-12 bordb">
+                <div className="flex items-center gap-8">
+                    <h4 className="headmini-text font-500 text-dark capitalize">Shop this look</h4>
+                    <Badge text={`${products.length} items`} size="xs" color="forth" shape="rounded" />
+                </div>
+                <Button
+                    aria-label="Close shop look"
+                    onClick={onClose}
+                    icon="Close"
+                    iconWidth="14"
+                    iconHeight="14"
+                    version="icon"
+                    bg="forth"
+                    color="danger"
+                />
+            </div>
+
+            <div className="grid-cols-1">
+                {products.map((p, idx) => (
+                    <div
+                        key={p.id}
+                        onClick={() => onProductClick(p)}
+                        className={`flex items-center justify-between gap-12 py-10 cursor-pointer group ${idx < products.length - 1 ? 'bordb' : ''
+                            }`}
+                    >
+                        <div className="flex items-center gap-12 overflow-hidden">
+                            <Image
+                                src={p.image}
+                                alt={p.name}
+                                width="45px"
+                                height="45px"
+                                className="flex object-cover rounded-5 flex-shrink-0"
+                                style={{ width: '45px', height: '45px' }}
+                            />
+
+                            <div className="overflow-hidden">
+                                <h5 className="headmini-text font-600 text-dark line-clamp1">
+                                    {p.name}
+                                </h5>
+                                <div className="flex items-center gap-6 mt-2">
+                                    <p className={`mini-text font-500 ${p.originalPrice ? 'text-danger' : 'text-dark'}`}>
+                                        {p.price}
+                                    </p>
+                                    {p.originalPrice && (
+                                        <p className="mini-text text-gray line-through font-400">
+                                            {p.originalPrice}
                                         </p>
-                                        <p className='small-text text-white font-600'>
-                                            {banner.discountPercent}
-                                        </p>
-                                    </div>
+                                    )}
                                 </div>
-                                <Image
-                                    src={banner.image}
-                                    alt={banner.title}
-                                    className='w-full h-250 sm-h-200 object-cover flex rounded-10'
-                                />
                             </div>
                         </div>
+
+                        <Button
+                            aria-label={`View ${p.name}`}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onProductClick(p);
+                            }}
+                            icon="ChevronRight"
+                            iconWidth="12"
+                            iconHeight="12"
+                            iconStrokeWidth="2.5"
+                            version="icon"
+                            variant="outline"
+                            color="dark"
+                            border="gray"
+                            className="rounded-full flex-shrink-0 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-colors"
+                            style={{ width: '28px', height: '28px' }}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+});
+
+ShopLookPopup.displayName = 'ShopLookPopup';
+
+const SpaceCard = memo(({ space, isFirst, isOpen, onToggle, onProductClick }) => {
+    return (
+        <div
+            className='rounded-10 relative overflow-hidden h-450'
+            style={{ minWidth: isFirst ? '650px' : '390px' }}
+        >
+            <Image
+                src={space.image}
+                alt={space.title}
+                className="w-full h-full flex object-cover"
+            />
+
+            {isOpen && (
+                <ShopLookPopup
+                    products={space.products}
+                    onClose={onToggle}
+                    onProductClick={onProductClick}
+                />
+            )}
+
+            <Badge
+                text={space.products.length}
+                icon="Bag"
+                iconSize={12}
+                iconStrokeWidth="2"
+                shape="pill"
+                size="md"
+                color="white"
+                onClick={onToggle}
+                className="absolute z-10 bottom-0 right-0 m-15"
+                aria-label={`Shop ${space.products.length} items from this look`}
+            />
+        </div>
+    );
+});
+
+SpaceCard.displayName = 'SpaceCard';
+
+const OfferSection = () => {
+    const navigate = useNavigate();
+    const { addToCart } = useCart();
+    const scrollRef = useRef(null);
+
+    const [activeLookId, setActiveLookId] = useState(1);
+    const [scrollProgress, setScrollProgress] = useState(25);
+
+    const handleScroll = useCallback(() => {
+        if (scrollRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+            const maxScroll = scrollWidth - clientWidth;
+            if (maxScroll > 0) {
+                const progress = Math.min(100, Math.max(25, ((scrollLeft / maxScroll) * 75) + 25));
+                setScrollProgress(progress);
+            }
+        }
+    }, []);
+
+    const scroll = useCallback((direction) => {
+        if (scrollRef.current) {
+            const slideWidth = scrollRef.current.clientWidth * 0.4;
+            const scrollAmount = direction === 'left' ? -slideWidth : slideWidth;
+            scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }, []);
+
+    const handleToggleLook = useCallback((id) => {
+        setActiveLookId((prev) => (prev === id ? null : id));
+    }, []);
+
+    const handleProductClick = useCallback((p) => {
+        addToCart(p);
+        navigate(`/product/${p.id}`, { state: { product: p } });
+    }, [addToCart, navigate]);
+
+    return (
+        <Container>
+            <div className="w-full py-40">
+                <style>{`
+                    .trending-slide-first {
+                        flex: 0 0 calc(60% - 10px);
+                        width: calc(60% - 10px);
+                        min-width: 320px;
+                    }
+                    .trending-slide-other {
+                        flex: 0 0 calc(40% - 10px);
+                        width: calc(40% - 10px);
+                        min-width: 260px;
+                    }
+                    @media (max-width: 768px) {
+                        .trending-slide-first {
+                            flex: 0 0 85% !important;
+                            width: 85% !important;
+                            min-width: 280px !important;
+                        }
+                        .trending-slide-other {
+                            flex: 0 0 65% !important;
+                            width: 65% !important;
+                            min-width: 240px !important;
+                        }
+                    }
+                `}</style>
+
+                <Heading
+                    version="v2"
+                    tag="WHAT WE PROVIDE"
+                    title="Featured Products & Popular Designs"
+                />
+
+                <div
+                    ref={scrollRef}
+                    onScroll={handleScroll}
+                    className="flex gap-12 overflow-auto mt-30"
+                    style={{
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                        scrollBehavior: 'smooth'
+                    }}
+                >
+                    {SPACES_DATA.map((space, index) => (
+                        <SpaceCard
+                            key={space.id}
+                            space={space}
+                            isFirst={index === 0}
+                            isOpen={activeLookId === space.id}
+                            onToggle={() => handleToggleLook(space.id)}
+                            onProductClick={handleProductClick}
+                        />
                     ))}
                 </div>
 
-                <div
-                    style={{
-                        scrollbarWidth: 'none',
-                        msOverflowStyle: 'none'
-                    }}
-                    className='flex items-center gap-12 mt-30 overflow-auto'
-                >
-                    {categoryPills.map((item, idx) => (
+                <div className="flex items-center justify-between mt-24">
+                    <div style={{ height: '3px' }} className="w-80 sm-w-60 bg-tertiary relative">
                         <div
-                            key={`${item.id}-${idx}`}
-                            className='flex items-center gap-10 cursor-pointer bg-white py-6 px-6 rounded-30 border-ec'
-                            style={{ minWidth: '140px' }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.borderColor = '#141414';
-                                e.currentTarget.style.transform = 'translateY(-2px)';
+                            style={{
+                                height: '3px',
+                                width: `${scrollProgress}%`,
+                                transition: 'width 0.2s ease'
                             }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.borderColor = '#EAEAEA';
-                                e.currentTarget.style.transform = 'translateY(0)';
-                            }}
-                        >
+                            className="top-0 left-0 bg-primary absolute"
+                        />
+                    </div>
 
-                            <Image
-                                src={item.image}
-                                alt={item.name}
-                                width='30px'
-                                height='30px'
-                                className='rounded-full object-cover flex'
-                            />
-                            <p className='mini-text font-500 text-dark'>
-                                {item.name}
-                            </p>
-                        </div>
-                    ))}
+                    <div className="flex items-center gap-12">
+                        <Button
+                            aria-label="Previous spaces"
+                            onClick={() => scroll('left')}
+                            icon="ArrowLeft"
+                            iconWidth="18"
+                            iconHeight="18"
+                            iconStrokeWidth="2"
+                            variant="outline"
+                            version="icon"
+                            color="primary"
+                            className="border-primary rounded-30"
+                        />
+                        <Button
+                            aria-label="Next spaces"
+                            onClick={() => scroll('right')}
+                            icon="ArrowRight"
+                            iconWidth="18"
+                            iconHeight="18"
+                            iconStrokeWidth="2"
+                            variant="outline"
+                            version="icon"
+                            color="primary"
+                            className="border-primary rounded-30"
+                        />
+                    </div>
                 </div>
             </div>
         </Container>
     );
 };
 
-export default React.memo(OfferSection);
+export default memo(OfferSection);

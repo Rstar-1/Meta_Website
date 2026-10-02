@@ -1,50 +1,27 @@
 import React, { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
+
 import { configData } from '../../../../utils/apiData';
 
-// Type 1 Images
-import heroRelicImg from '../../../../assets/hero/hero_relic_hoodie.jpg';
-import heroVintageHatImg from '../../../../assets/hero/hero_vintage_hat.jpg';
-import heroSurfingBeanieImg from '../../../../assets/hero/hero_surfing_beanie.jpg';
-import heroSeasonalSocksImg from '../../../../assets/hero/hero_seasonal_socks.jpg';
-
-// Type 2 Images
-import heroBluetoothHeadphonesImg from '../../../../assets/hero/hero_bluetooth_headphones.jpg';
-import heroSmartLightingImg from '../../../../assets/hero/hero_smart_lighting.jpg';
-import heroAppleSmartwatchImg from '../../../../assets/hero/hero_apple_smartwatch.jpg';
-
-// Type 3 Images
-import heroType3SpeakersImg from '../../../../assets/hero/type3_speaker_dark.jpg';
-import heroType3PhonesImg from '../../../../assets/hero/type3_phones.jpg';
-import heroType3AudioImg from '../../../../assets/hero/type3_audio_headphones.jpg';
-import heroType3LaptopsImg from '../../../../assets/hero/type3_laptop_clean.jpg';
-import heroType3VrGamingImg from '../../../../assets/hero/type3_vr_gaming.jpg';
-
-// Categories Images
-import catJacketImg from '../../../../assets/hero/cat_jacket.jpg';
-import catSocksImg from '../../../../assets/hero/cat_socks.jpg';
-import catHatImg from '../../../../assets/hero/cat_hat.jpg';
-import catVestImg from '../../../../assets/hero/cat_vest.jpg';
-import catSweaterImg from '../../../../assets/hero/cat_sweater.jpg';
-import catPufferImg from '../../../../assets/hero/cat_puffer.jpg';
 
 const CATEGORIES = [
-    { id: 'jackets', name: 'Jackets', image: catJacketImg, path: '/product?category=Jackets' },
-    { id: 'socks', name: 'Socks', image: catSocksImg, path: '/product?category=Socks' },
-    { id: 'hats', name: 'Hats', image: catHatImg, path: '/product?category=Hats' },
-    { id: 'hoodies', name: 'Hoodies', image: catVestImg, path: '/product?category=Hoodies' },
-    { id: 'sweaters', name: 'Sweaters', image: catSweaterImg, path: '/product?category=Sweaters' },
-    { id: 'puffers', name: 'Puffers', image: catPufferImg, path: '/product?category=Puffers' },
+    { id: 'jackets', name: 'Jackets', image: import.meta.env.VITE_IMAGE + "Clothing1.jpg", path: '/product?category=Jackets' },
+    { id: 'socks', name: 'Socks', image: import.meta.env.VITE_IMAGE + "Clothing2.jpg", path: '/product?category=Socks' },
+    { id: 'hats', name: 'Hats', image: import.meta.env.VITE_IMAGE + "Clothing3.jpg", path: '/product?category=Hats' },
+    { id: 'hoodies', name: 'Hoodies', image: import.meta.env.VITE_IMAGE + "Clothing4.jpg", path: '/product?category=Hoodies' },
+    { id: 'sweaters', name: 'Sweaters', image: import.meta.env.VITE_IMAGE + "Clothing7.jpg", path: '/product?category=Sweaters' },
+    { id: 'puffers', name: 'Puffers', image: import.meta.env.VITE_IMAGE + "Clothing6.jpg", path: '/product?category=Puffers' },
 ];
 
 /* ------------------- Type 1 Components ------------------- */
 const Type1Banners = memo(({ onNavigate }) => (
     <div className="flex gap-8 w-full">
         <div className="w-45 md-w-full sm-w-full sm-h-400 relative rounded-10 overflow-hidden bg-forth" style={{ height: '508px' }}>
-            <Image src={heroRelicImg} alt="Relic Relaxed" className="w-full h-full object-cover flex filter-b4" loading="eager" fetchPriority="high" />
+            <Image src={import.meta.env.VITE_IMAGE + "Sidebanner6.jpg"} alt="Relic Relaxed" className="w-full h-full object-cover flex filter-b4" loading="eager" fetchPriority="high" />
             <div className="absolute bottom-0 left-0 m-20">
                 <p className="para-text text-white font-500">HOLIDAY '25 COLLECTION</p>
                 <h2 className="text-white large-text font-600 mt-6 uppercase">Relic Relaxed</h2>
@@ -53,7 +30,7 @@ const Type1Banners = memo(({ onNavigate }) => (
         </div>
 
         <div className="w-25 md-w-full sm-w-full sm-h-400 relative rounded-10 overflow-hidden" style={{ height: '508px' }}>
-            <Image src={heroVintageHatImg} alt="Vintage Hats" className="w-full h-full object-cover flex filter-b4" loading="eager" />
+            <Image src={import.meta.env.VITE_IMAGE + "Sidebanner1.jpg"} alt="Vintage Hats" className="w-full h-full object-cover flex filter-b4" loading="eager" />
             <div className="absolute bottom-0 left-0 m-16">
                 <p className="para-text text-white font-500">NEW ARRIVALS</p>
                 <h2 className="text-white head-text font-600 uppercase">Vintage Hats</h2>
@@ -63,14 +40,14 @@ const Type1Banners = memo(({ onNavigate }) => (
 
         <div className="w-30 md-w-full sm-w-full grid-cols-1 gap-7">
             <div className="relative rounded-10 overflow-hidden h-250 bg-warning">
-                <Image src={heroSurfingBeanieImg} alt="Saving 40% Surfing" className="w-full h-full object-cover flex filter-b4" />
+                <Image src={import.meta.env.VITE_IMAGE + "Banner5.jpg"} alt="Saving 40% Surfing" className="w-full h-full object-cover flex filter-b4" />
                 <div className="absolute bottom-0 left-0 m-18 w-60">
                     <h3 className="text-white font-500 title-text">Saving <br />40% Surfing</h3>
                     <Button text="Shop Now" version="v2" bg="white" color="dark" className="rounded-30 mt-10" onClick={() => onNavigate('/product')} />
                 </div>
             </div>
             <div className="relative rounded-10 overflow-hidden h-250 bg-warning">
-                <Image src={heroSeasonalSocksImg} alt="Holiday Seasonal Socks" className="w-full h-full object-cover flex filter-b4" />
+                <Image src={import.meta.env.VITE_IMAGE + "Banner3.jpg"} alt="Holiday Seasonal Socks" className="w-full h-full object-cover flex filter-b4" />
                 <div className="absolute bottom-0 left-0 m-18 w-60">
                     <h3 className="text-white font-500 title-text">Holiday<br />Seasonal Socks</h3>
                     <Button text="Shop Now" version="v2" bg="white" color="dark" className="rounded-30 mt-10" onClick={() => onNavigate('/product?category=Socks')} />
@@ -85,7 +62,7 @@ Type1Banners.displayName = 'Type1Banners';
 const Type2Banners = memo(({ onNavigate }) => (
     <div className="flex gap-8 w-full">
         <div className="w-70 md-w-full sm-w-full sm-h-400 relative rounded-10 overflow-hidden bg-primary" style={{ height: '508px' }}>
-            <Image src={heroBluetoothHeadphonesImg} alt="Bluetooth Earbuds" className="w-full h-full object-cover filter-b6 flex" loading="eager" fetchPriority="high" />
+            <Image src={import.meta.env.VITE_IMAGE + "Banner1.jpg"} alt="Bluetooth Earbuds" className="w-full h-full object-cover filter-b6 flex" loading="eager" fetchPriority="high" />
             <div className="absolute bottom-0 left-0 w-full">
                 <div className='w-60 m-30'>
                     <p className="para-text text-white font-400 uppercase">New On Store</p>
@@ -97,7 +74,7 @@ const Type2Banners = memo(({ onNavigate }) => (
 
         <div className="w-30 md-w-full sm-w-full grid-cols-1 gap-7">
             <div className="relative rounded-10 overflow-hidden h-250 bg-secondary">
-                <Image src={heroSmartLightingImg} alt="Smart Lighting" className="w-full h-full object-cover filter-b4 flex" />
+                <Image src={import.meta.env.VITE_IMAGE + "Smallbanner1.jpg"} alt="Smart Lighting" className="w-full h-full object-cover filter-b4 flex" />
                 <div className="absolute bottom-0 left-0 w-full">
                     <div className='w-80 m-16'>
                         <p className="para-text text-white font-400">Starting at $100</p>
@@ -107,7 +84,7 @@ const Type2Banners = memo(({ onNavigate }) => (
                 </div>
             </div>
             <div className="relative rounded-10 overflow-hidden h-250 bg-tertiary">
-                <Image src={heroType3AudioImg} alt="Apple Ultra Smartwatch" className="w-full h-full object-cover filter-b4 flex" style={{ mixBlendMode: 'multiply', objectFit: 'contain', objectPosition: 'right center' }} />
+                <Image src={import.meta.env.VITE_IMAGE + "Smallbanner2.jpg"} alt="Apple Ultra Smartwatch" className="w-full h-full object-cover filter-b4 flex" style={{ mixBlendMode: 'multiply', objectFit: 'contain', objectPosition: 'right center' }} />
                 <div className="absolute bottom-0 left-0 w-full">
                     <div className='w-80 m-16'>
                         <p className="para-text text-white font-400">Starting at $100</p>
@@ -129,7 +106,7 @@ const Type3Banners = memo(({ onNavigate }) => (
                 onClick={() => onNavigate('/product')}
                 className="relative rounded-10 overflow-hidden cursor-pointer h-300">
                 <Image
-                    src={heroBluetoothHeadphonesImg}
+                    src={import.meta.env.VITE_IMAGE + "Smallbanner2.jpg"}
                     alt="Flagship Savings"
                     className="w-full h-full flex filter-b5 object-cover"
                     loading="eager"
@@ -166,7 +143,7 @@ const Type3Banners = memo(({ onNavigate }) => (
                     className="relative rounded-10 overflow-hidden h-250 cursor-pointer w-60"
                 >
                     <Image
-                        src={heroType3AudioImg}
+                        src={import.meta.env.VITE_IMAGE + "Smallbanner1.jpg"}
                         alt="Immerse in Virtual Reality"
                         className="w-full h-full object-cover filter-b5 flex"
                     />
@@ -185,7 +162,7 @@ const Type3Banners = memo(({ onNavigate }) => (
                     className="relative rounded-10 overflow-hidden h-250 cursor-pointer w-40"
                 >
                     <Image
-                        src={heroType3LaptopsImg}
+                        src={import.meta.env.VITE_IMAGE + "Smallbanner3.jpg"}
                         alt="Immerse in Virtual Reality"
                         className="w-full h-full object-cover filter-b5 flex"
                     />
@@ -207,7 +184,7 @@ const Type3Banners = memo(({ onNavigate }) => (
                 className="relative rounded-10 overflow-hidden h-200 cursor-pointer"
             >
                 <Image
-                    src={heroType3PhonesImg}
+                    src={import.meta.env.VITE_IMAGE + "Banner3.jpg"}
                     alt="Immerse in Virtual Reality"
                     className="w-full h-full object-cover filter-b5 flex"
                 />
@@ -226,7 +203,7 @@ const Type3Banners = memo(({ onNavigate }) => (
                 className="relative rounded-10 overflow-hidden h-350 cursor-pointer mt-8"
             >
                 <Image
-                    src={heroType3VrGamingImg}
+                    src={import.meta.env.VITE_IMAGE + "Sidebanner7.jpg"}
                     alt="Immerse in Virtual Reality"
                     className="w-full h-full object-cover filter-b5 flex"
                 />

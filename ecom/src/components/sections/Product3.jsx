@@ -1,13 +1,15 @@
 import React, { useRef, useState, useCallback, useMemo, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
 import Badge from '../../../../components/common/Badge';
 import Fields from '../../../../components/forms/Fields';
-import Heading from '../../../../components/layout/generic/Heading';
-import { useCart } from '../../../../context/CartContext';
 
+import Heading from '../../../../components/layout/generic/Heading';
+
+import { useCart } from '../../../../context/CartContext';
 
 const DEAL_PRODUCTS = [
     {
@@ -25,10 +27,10 @@ const DEAL_PRODUCTS = [
             }
         ],
         promo: 'Extra Deals Available',
-        image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=80',
+        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
         variants: [
-            'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=500&q=80'
+            import.meta.env.VITE_IMAGE + "Compare2.jpg",
+            import.meta.env.VITE_IMAGE + "Compare3.jpg"
         ]
     },
     {
@@ -40,7 +42,7 @@ const DEAL_PRODUCTS = [
         price: '$74.99',
         oldPrice: '$109.99',
         discount: '-32%',
-        image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=500&q=80'
+        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
     },
     {
         id: 3,
@@ -50,10 +52,10 @@ const DEAL_PRODUCTS = [
         ratingCount: 0,
         pricePrefix: 'From',
         price: '$599.00',
-        image: 'https://images.unsplash.com/photo-1561154464-82e9adf32764?auto=format&fit=crop&w=500&q=80',
+        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
         variants: [
-            'https://images.unsplash.com/photo-1561154464-82e9adf32764?auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=500&q=80'
+            import.meta.env.VITE_IMAGE + "Compare2.jpg",
+            import.meta.env.VITE_IMAGE + "Compare3.jpg"
         ]
     },
     {
@@ -64,11 +66,10 @@ const DEAL_PRODUCTS = [
         ratingCount: 0,
         pricePrefix: 'From',
         price: '$869.00',
-        image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80',
+        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
         variants: [
-            'https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=500&q=80'
+            import.meta.env.VITE_IMAGE + "Compare3.jpg",
+            import.meta.env.VITE_IMAGE + "Compare1.jpg"
         ]
     },
     {
@@ -80,11 +81,10 @@ const DEAL_PRODUCTS = [
         pricePrefix: 'From',
         price: '$179.00',
         promo: '5 years warranty*',
-        image: 'https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&w=500&q=80',
+        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
         variants: [
-            'https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1589365278144-c9e705f843ba?auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=500&q=80'
+            import.meta.env.VITE_IMAGE + "Compare1.jpg",
+            import.meta.env.VITE_IMAGE + "Compare3.jpg"
         ]
     },
     {
@@ -116,13 +116,11 @@ const DEAL_PRODUCTS = [
                 color: '#0369a1'
             }
         ],
-        image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80'
+        image: import.meta.env.VITE_IMAGE + "Compare3.jpg"
     }
 ];
 
-
 const featureSections = [1, 2];
-
 
 const ProductDealCard = memo(({ item, onClick }) => {
     const { addToCart } = useCart();
@@ -267,7 +265,6 @@ const ProductDealCard = memo(({ item, onClick }) => {
     );
 });
 
-
 ProductDealCard.displayName = 'ProductDealCard';
 
 const ProductSliderSection = memo(
@@ -297,7 +294,6 @@ const ProductSliderSection = memo(
 );
 
 ProductSliderSection.displayName = 'ProductSliderSection';
-
 
 const ProductSection = () => {
     const navigate = useNavigate();
@@ -405,6 +401,5 @@ const ProductSection = () => {
         </Container>
     );
 };
-
 
 export default React.memo(ProductSection);

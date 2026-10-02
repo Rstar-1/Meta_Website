@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
-import slider1 from '../../../../assets/collection-slider-1.jpg';
-import slider2 from '../../../../assets/collection-slider-2.jpg';
-import slider3 from '../../../../assets/collection-slider-3.jpg';
+
 import Heading from '../../../../components/layout/generic/Heading';
+
 import { useCart } from '../../../../context/CartContext';
 
 const products = [
@@ -17,7 +17,7 @@ const products = [
         name: 'Cross Table Bark',
         price: '$170.00',
         originalPrice: '$200.00',
-        image: slider1,
+        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
         colors: ['#A06236']
     },
     {
@@ -27,7 +27,7 @@ const products = [
         name: 'Axis Storage System',
         price: '$135.00',
         originalPrice: '$185.00',
-        image: slider2,
+        image: import.meta.env.VITE_IMAGE + "Compare2.jpg",
         colors: ['#B0997B']
     },
     {
@@ -37,7 +37,7 @@ const products = [
         name: 'Task Chair Luxe',
         price: '$559.00',
         originalPrice: '$599.00',
-        image: slider3,
+        image: import.meta.env.VITE_IMAGE + "Compare3.jpg",
         colors: ['#5A3A1E']
     },
     {
@@ -47,7 +47,7 @@ const products = [
         name: 'Cross Chair Heritage',
         price: '$589.00',
         originalPrice: '$600.00',
-        image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=500&q=80',
+        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
         colors: ['#D9D0C3', '#4A3525']
     },
     {
@@ -57,7 +57,7 @@ const products = [
         name: 'Plush Stool',
         price: '$219.00',
         originalPrice: null,
-        image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=500&q=80',
+        image: import.meta.env.VITE_IMAGE + "Compare2.jpg",
         colors: ['#E5E5E5']
     },
     {
@@ -67,7 +67,7 @@ const products = [
         name: 'Grind Vessel',
         price: '$65.00',
         originalPrice: '$100.00',
-        image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=500&q=80',
+        image: import.meta.env.VITE_IMAGE + "Compare3.jpg",
         colors: ['#2B3856', '#D6C5B3']
     }
 ];

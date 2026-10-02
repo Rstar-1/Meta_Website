@@ -1,5 +1,6 @@
 import React, { memo, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -7,33 +8,17 @@ import 'swiper/css';
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
+
 import { configData } from '../../../../utils/apiData';
 
-// Type 1 Images (Furniture)
-import scandiSofaImg from '../../../../assets/hero/scandi_sofa.jpg';
-import warmLivingImg from '../../../../assets/hero/living_room_warm.jpg';
-import modernLivingImg from '../../../../assets/hero/living_modern.jpg';
-
-// Type 2 Images (Audio Elegance)
-import audioEleganceImg from '../../../../assets/hero/audio_elegance_banner.png';
-import audioHeadphonesImg from '../../../../assets/hero/hero_bluetooth_headphones.jpg';
-import audioSpeakerImg from '../../../../assets/hero/type3_speaker_dark.jpg';
-
-// Categories Images
-import catJacketImg from '../../../../assets/hero/cat_jacket.jpg';
-import catSocksImg from '../../../../assets/hero/cat_socks.jpg';
-import catHatImg from '../../../../assets/hero/cat_hat.jpg';
-import catVestImg from '../../../../assets/hero/cat_vest.jpg';
-import catSweaterImg from '../../../../assets/hero/cat_sweater.jpg';
-import catPufferImg from '../../../../assets/hero/cat_puffer.jpg';
 
 const CATEGORIES = [
-    { id: 'jackets', name: 'Jackets', image: catJacketImg, path: '/product?category=Jackets' },
-    { id: 'socks', name: 'Socks', image: catSocksImg, path: '/product?category=Socks' },
-    { id: 'hats', name: 'Hats', image: catHatImg, path: '/product?category=Hats' },
-    { id: 'hoodies', name: 'Hoodies', image: catVestImg, path: '/product?category=Hoodies' },
-    { id: 'sweaters', name: 'Sweaters', image: catSweaterImg, path: '/product?category=Sweaters' },
-    { id: 'puffers', name: 'Puffers', image: catPufferImg, path: '/product?category=Puffers' },
+    { id: 'jackets', name: 'Jackets', image: import.meta.env.VITE_IMAGE + "Clothing1.jpg", path: '/product?category=Jackets' },
+    { id: 'socks', name: 'Socks', image: import.meta.env.VITE_IMAGE + "Clothing2.jpg", path: '/product?category=Socks' },
+    { id: 'hats', name: 'Hats', image: import.meta.env.VITE_IMAGE + "Clothing3.jpg", path: '/product?category=Hats' },
+    { id: 'hoodies', name: 'Hoodies', image: import.meta.env.VITE_IMAGE + "Clothing4.jpg", path: '/product?category=Hoodies' },
+    { id: 'sweaters', name: 'Sweaters', image: import.meta.env.VITE_IMAGE + "Clothing7.jpg", path: '/product?category=Sweaters' },
+    { id: 'puffers', name: 'Puffers', image: import.meta.env.VITE_IMAGE + "Clothing6.jpg", path: '/product?category=Puffers' },
 ];
 
 /* ------------------- Type 1 Slides ------------------- */
@@ -44,7 +29,7 @@ const TYPE1_SLIDES = [
         title: 'Modern Elegance Spoke Sofa',
         buttonText: 'Shop Collection',
         path: '/product',
-        image: scandiSofaImg,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner1.jpg",
         alt: 'Modern Elegance Spoke Sofa'
     },
     {
@@ -53,7 +38,7 @@ const TYPE1_SLIDES = [
         title: 'Nordic Lounge Interior',
         buttonText: 'Shop Collection',
         path: '/product',
-        image: warmLivingImg,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner2.jpg",
         alt: 'Nordic Lounge Interior'
     },
     {
@@ -62,7 +47,7 @@ const TYPE1_SLIDES = [
         title: 'Modern Living Space',
         buttonText: 'Shop Collection',
         path: '/product',
-        image: modernLivingImg,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner3.jpg",
         alt: 'Modern Living Space'
     }
 ];
@@ -74,7 +59,7 @@ const TYPE2_SLIDES = [
         title: 'EXPERIENCE\nUNPARALLELED AUDIO\nELEGANCE',
         buttonText: 'Shop Headphones',
         path: '/product',
-        image: modernLivingImg,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner4.jpg",
         alt: 'Experience Unparalleled Audio Elegance'
     },
     {
@@ -82,7 +67,7 @@ const TYPE2_SLIDES = [
         title: 'STUDIO FIDELITY\nCRAFTED FOR PURITY',
         buttonText: 'Shop Headphones',
         path: '/product',
-        image: audioHeadphonesImg,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner5.jpg",
         alt: 'Studio Fidelity Audio'
     },
     {
@@ -90,7 +75,7 @@ const TYPE2_SLIDES = [
         title: 'IMMERSIVE ACOUSTICS\nFOR MODERN SPACES',
         buttonText: 'Shop Speakers',
         path: '/product',
-        image: warmLivingImg,
+        image: import.meta.env.VITE_IMAGE + "Swipebanner2.jpg",
         alt: 'Immersive Acoustics'
     }
 ];
