@@ -479,26 +479,26 @@
   "bottomBar": {
     "menu": [
       {
-        "label": "Vinyl Flooring",
-        "href": "/product",
-        "hasMegaMenu": true,
-        "megaMenuKey": "vinylFlooring"
-      },
-      {
         "label": "Wall Panels & Ceilings",
-        "href": "/product",
+        "href": "/",
         "hasMegaMenu": true,
         "megaMenuKey": "wallPanelsCeilings"
       },
       {
         "label": "Ropes & Nets",
-        "href": "/product",
+        "href": "/",
         "hasMegaMenu": true,
         "megaMenuKey": "ropesNets"
       },
       {
+        "label": "Vinyl Flooring",
+        "href": "/",
+        "hasMegaMenu": true,
+        "megaMenuKey": "vinylFlooring"
+      },
+      {
         "label": "Resources",
-        "href": "/blog",
+        "href": "/",
         "hasMegaMenu": true,
         "megaMenuKey": "resources"
       },

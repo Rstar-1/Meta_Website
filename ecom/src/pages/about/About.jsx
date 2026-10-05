@@ -10,8 +10,8 @@ const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
 
 const ecomSections = [
     DetailSection,
-    PatchSection,
     OfferSection,
+    PatchSection,
 ];
 
 const About = () => {

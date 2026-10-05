@@ -8,7 +8,7 @@ import Button from '../../../../components/common/Button';
 import { configData } from '../../../../utils/apiData';
 
 const HEIGHT_MAP = {
-    sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-550' },
+    sticky: { 1: 'h-800 sm-h-550', 2: 'h-650 sm-h-550' },
     normal: { 1: 'h-700 sm-h-550', 2: 'h-550' }
 };
 
@@ -30,7 +30,7 @@ const HeroBackground = React.memo(() => (
 
 const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) => (
     <div className={`w-full ${isHeaderSticky
-        ? 'pb-60'
+        ? 'pb-100'
         : [1, 2].includes(heroVersion)
             ? 'pb-100 sm-pb-30'
             : 'pb-60'
@@ -132,7 +132,7 @@ const HeroBanner = React.memo(() => {
     }, [isMobile, heroVersion]);
 
     return (
-        <Container className={`${heightClass} ${[1, 2].includes(heroVersion) ? 'flex items-center' : 'flex items-end'}`}
+        <Container className={`${heightClass} ${[1].includes(heroVersion) ? 'flex items-center' : 'flex items-end'}`}
             style={containerStyle}
         >
             <HeroBackground />

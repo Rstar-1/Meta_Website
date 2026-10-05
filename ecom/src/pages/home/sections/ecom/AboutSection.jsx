@@ -638,7 +638,7 @@ const AboutSection = React.memo(() => {
     const headingTitle = aboutVersion === 4 ? (aboutCMS?.heading?.title || "Expert Innovative And Deliver Exceptional For NOT Solution Now.") : "Expert Innovative And Deliver Exceptional For NOT Solution Now.";
 
     return (
-        <Container>
+        <Container style={{ background: 'var(--forth)' }}>
             <div className="w-full py-50">
                 {!([5, 6].includes(aboutVersion)) && (
                     <Heading

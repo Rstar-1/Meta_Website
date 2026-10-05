@@ -290,7 +290,7 @@ const CategorySection = React.memo(() => {
 
     return (
         <Container>
-            <div className="w-full py-50">
+            <div className="w-full py-60 bordb">
                 <Heading
                     version="v1"
                     tag="WHAT WE PROVIDE"

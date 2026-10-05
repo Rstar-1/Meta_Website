@@ -248,7 +248,7 @@ const ProductSection = () => {
     const navigate = useNavigate();
 
     return (
-        <Container style={{ background: 'var(--forth)' }}>
+        <Container>
             <div className="w-full py-50">
                 <style>{`
                     .product-card .product-btn {

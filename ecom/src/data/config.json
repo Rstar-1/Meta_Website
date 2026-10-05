@@ -6,14 +6,14 @@
       "HeaderCategory": 2,
       "HeaderNavMenu": "nav",
       "HeaderSticky": true,
-      "HeaderTopBar": true,
+      "HeaderTopBar": false,
       "HeaderBottomBar": true
     }
   ],
   "HeroBanner": [
     {
       "HeroBannerVersion": 1,
-      "HeroBannerType": 1,
+      "HeroBannerType": 2,
       "HeroBannerCat": true,
       "HeroBannerText": 1,
       "HeroBannerImage": 1
@@ -21,7 +21,7 @@
   ],
   "Category": [
     {
-      "CategoryVersion": 1
+      "CategoryVersion": 3
     }
   ],
   "Product": [
@@ -71,8 +71,8 @@
   "Footer": [
     {
       "FooterVersion": 1,
-      "FooterSocial": false,
-      "FooterTopBar": false,
+      "FooterSocial": true,
+      "FooterTopBar": true,
       "FooterBottomBar": true
     }
   ]
