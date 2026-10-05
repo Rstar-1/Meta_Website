@@ -25,7 +25,7 @@ export const AccordionItem = memo(
         <div className="cursor-pointer" onClick={handleClick}>
           <div className="flex items-center w-full">
             {!isV2 && (
-              <div className="w-5">
+              <div style={{ minWidth: '60px' }}>
                 <p className="rounded-full font-500 small-text text-dark icon-lg border-ec">
                   {numStr}
                 </p>

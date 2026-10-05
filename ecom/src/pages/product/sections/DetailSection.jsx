@@ -248,7 +248,7 @@ const ProductDetailContent = () => {
                     <div className='mt-16 border-ec p-16 rounded-10 flex items-center justify-between gap-12'>
                         <div className='flex items-center gap-8'>
                             <div className='bg-tertiary icon-lg rounded-20'>
-                                <Icon name="ShoppingBag" width="22" height="22" stroke="#141414" />
+                                <Icon name="Bag" width="18" height="18" stroke="var(--primary)" />
                             </div>
                             <div>
                                 <h5 className='headmini-text text-dark font-500'>
@@ -257,14 +257,14 @@ const ProductDetailContent = () => {
                                 <p className='mini-text text-gray font-400'>Usually ready in 24 hours</p>
                             </div>
                         </div>
-                        <div className='bg-tertiary icon-lg rounded-20'>
-                            <Icon name="ChevronRight" width="20" height="20" stroke="#141414" />
+                        <div className='bg-forth icon-lg rounded-20'>
+                            <Icon name="ChevronRight" width="20" height="20" stroke="var(--gray)" />
                         </div>
                     </div>
 
                     <div className='bg-forth p-12 rounded-5 mt-12 flex items-center justify-between gap-12'>
                         <div className='flex items-center gap-8'>
-                            <Icon name="Box" width="16" height="16" stroke="#047857" />
+                            <Icon name="Box" width="16" height="16" stroke="var(--primary)" />
                             <p className='mini-text text-dark font-400'>
                                 <strong>Limited time offer:</strong> Get $20 off when you spend $1,000 or more!{' '}
                             </p>
@@ -314,12 +314,12 @@ const ProductDetailContent = () => {
                         <div className='flex items-center gap-12 mt-20'>
                             <p className='text-dark font-500 small-text'>Share:</p>
                             <div className='flex items-center gap-8'>
-                                {['Facebook', 'Twitter', 'Share2'].map((iconName, idx) => (
+                                {['Facebook', 'Twitter', 'Instagram'].map((iconName, idx) => (
                                     <div
                                         key={idx}
                                         className='icon-lg rounded-full border-ec'
                                     >
-                                        <Icon name={iconName} width="22" height="22" stroke="#141414" />
+                                        <Icon name={iconName} width="16" height="16" stroke="var(--gray)" />
                                     </div>
                                 ))}
                             </div>

@@ -257,10 +257,10 @@ const AboutVersion2 = React.memo(({ aboutSide = 'left', aboutLeft = 1, aboutRigh
                 </div>
             )}
             <div className={`flex sm-grid-cols-1 mt-30 sm-mt-14 gap-24 items-center ${isRight ? 'flex-row-reverse' : ''}`}>
-                <div className={`w-50 sm-w-full ${isRight ? 'pl-15 sm-pl-0' : 'pr-15 sm-pr-0'}`}>
+                <div className={`w-50 sm-w-full ${isRight ? 'pl-15 sm-pl-1' : 'pr-15 sm-pr-1'}`}>
                     <LeftLayout variant={aboutLeft} data={data} isStore={isStore} />
                 </div>
-                <div className={`w-50 sm-w-full ${isRight ? 'pr-15 sm-pr-0' : 'pl-15 sm-pl-0'}`}>
+                <div className={`w-50 sm-w-full ${isRight ? 'pr-15 sm-pr-1' : 'pl-15 sm-pl-1 sm-mt-20'}`}>
                     <RightLayout
                         variant={aboutRight}
                         data={data}

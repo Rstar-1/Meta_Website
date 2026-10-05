@@ -63,8 +63,8 @@ const BreadcrumbTab = React.memo(({ isMobile, heroVersion }) => {
         <div
             className="absolute z-30 flex items-center justify-center"
             style={{
-                width: isMobile ? '90%' : '450px',
-                height: isMobile ? '56px' : '68px',
+                width: isMobile ? '65%' : '450px',
+                height: isMobile ? '45px' : '68px',
                 backgroundColor: 'var(--white)',
                 bottom: '-5px',
                 left: '50%',

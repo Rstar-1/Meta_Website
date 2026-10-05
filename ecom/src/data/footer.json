@@ -2,7 +2,7 @@
   "features": [
     {
       "id": "service",
-      "icon": "Headset",
+      "icon": "Support",
       "title": "Customer Service",
       "text": "Mon-Sat, 9am-6pm EST.",
       "type": "text"
@@ -89,11 +89,6 @@
         "platform": "facebook",
         "iconName": "Facebook",
         "url": "https://www.facebook.com/share/p/1EhdBQaRw4/"
-      },
-      {
-        "platform": "x",
-        "iconName": "X",
-        "url": "https://twitter.com/ashmitaent"
       },
       {
         "platform": "instagram",
