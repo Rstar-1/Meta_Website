@@ -4,12 +4,12 @@ import Loader from '../../components/common/generic/Loader';
 import SEO from '../../seo';
 import aboutBanner from '../../assets/about-banner.jpg';
 
-const DetailSection = lazy(() => import('./sections/DetailSection'));
+const AboutSection = lazy(() => import('../home/sections/ecom/AboutSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
 
 const ecomSections = [
-    DetailSection,
+    AboutSection,
     OfferSection,
     PatchSection,
 ];

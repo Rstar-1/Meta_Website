@@ -127,7 +127,7 @@ const HeroBanner = React.memo(() => {
         return {
             position: 'relative',
             overflow: 'hidden',
-            borderRadius: '0 0 25px 25px'
+            borderRadius: isMobile ? '0 0 10px 10px' : '0 0 25px 25px'
         };
     }, [isMobile, heroVersion]);
 

@@ -213,9 +213,9 @@ const Supplier = () => {
                         </div>
                     </div>
 
-                    <div className="w-75 sm-w-full">
+                    <div className="w-75 sm-w-full sm-mt-20">
                         <Tab
-                            version="v2"
+                            version="v1"
                             tabs={[
                                 { value: 'catalog', name: 'Product Catalog', count: validProducts.length },
                                 { value: 'profile', name: 'Supplier Specifications' }
