@@ -5,7 +5,7 @@
       "HeaderType": 2,
       "HeaderCategory": 2,
       "HeaderNavMenu": "nav",
-      "HeaderSticky": false,
+      "HeaderSticky": true,
       "HeaderTopBar": true,
       "HeaderBottomBar": true
     }
@@ -13,7 +13,7 @@
   "HeroBanner": [
     {
       "HeroBannerVersion": 1,
-      "HeroBannerType": 2,
+      "HeroBannerType": 1,
       "HeroBannerCat": true,
       "HeroBannerText": 1,
       "HeroBannerImage": 1
