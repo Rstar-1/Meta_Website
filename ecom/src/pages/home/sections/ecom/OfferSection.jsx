@@ -33,7 +33,7 @@ const trendingProducts = [
 
 const OfferSection = () => {
     return (
-        <Container style={{ background: 'var(--forth)' }}>
+        <Container>
             <div className='w-full py-50'>
                 <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
                     <div className='overflow-hidden bg-forth rounded-10 relative sm-h-400' style={{ height: '612px' }}

@@ -1,4 +1,4 @@
-import { useCallback, memo } from 'react';
+import React, { useRef, useState, useCallback, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Container from '../../../../components/common/Container';
@@ -45,6 +45,24 @@ const TRENDING_ITEMS = [
         price: '$85.00',
         image: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=700&q=80',
         thumb: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=150&q=80'
+    },
+    {
+        id: 5,
+        tag: 'Modern Living',
+        title: 'Nordic Table',
+        productName: 'Elegance Material Natural',
+        price: '$240.00',
+        image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=700&q=80',
+        thumb: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=150&q=80'
+    },
+    {
+        id: 6,
+        tag: 'Contemporary',
+        title: 'Velvet Lounge',
+        productName: 'Plush Material Natural',
+        price: '$510.00',
+        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80',
+        thumb: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=150&q=80'
     }
 ];
 
@@ -69,7 +87,8 @@ const TrendingCard = memo(({ item, onSelect }) => {
     return (
         <div
             onClick={handleClick}
-            className="h-400 sm-h-350 rounded-10 relative overflow-hidden cursor-pointer w-full feature-card"
+            className="h-350 sm-h-350 rounded-10 relative overflow-hidden cursor-pointer feature-card flex-shrink-0"
+            style={{ minWidth: '280px', maxWidth: '280px' }}
         >
             <Image
                 src={item.image}
@@ -78,8 +97,8 @@ const TrendingCard = memo(({ item, onSelect }) => {
             />
 
             <div className='absolute bottom-0 left-0 w-full feature-info'>
-                <div className='px-12 mb-20 feature-data '>
-                    <p className="para-text font-400 text-white">
+                <div className='px-12 mb-20 feature-data'>
+                    <p className="small-text font-400 text-white">
                         {item.tag}
                     </p>
                     <h3 className="title-text font-600 text-white mt-3 uppercase">
@@ -96,7 +115,7 @@ const TrendingCard = memo(({ item, onSelect }) => {
                             height='45px'
                             className="flex object-cover rounded-5 w-30"
                         />
-                        <div className=" w-70">
+                        <div className="w-70">
                             <p className="small-text font-400 text-white line-clamp1">
                                 {item.productName}
                             </p>
@@ -121,6 +140,92 @@ const TrendingCard = memo(({ item, onSelect }) => {
 
 TrendingCard.displayName = 'TrendingCard';
 
+const FeatureSliderSection = ({ items, onSelect }) => {
+    const scrollRef = useRef(null);
+    const [scrollProgress, setScrollProgress] = useState(25);
+
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+            const maxScroll = scrollWidth - clientWidth;
+            if (maxScroll > 0) {
+                const progress = Math.min(100, Math.max(25, ((scrollLeft / maxScroll) * 75) + 25));
+                setScrollProgress(progress);
+            }
+        }
+    };
+
+    const scroll = (direction) => {
+        if (scrollRef.current) {
+            const scrollAmount = direction === 'left' ? -300 : 300;
+            scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <div className='mt-20'>
+            <div
+                ref={scrollRef}
+                onScroll={handleScroll}
+                style={{
+                    scrollBehavior: 'smooth',
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none'
+                }}
+                className="flex gap-12 overflow-auto"
+            >
+                {items.map((item) => (
+                    <TrendingCard
+                        key={item.id}
+                        item={item}
+                        onSelect={onSelect}
+                    />
+                ))}
+            </div>
+
+            <div className='flex items-center justify-between mt-20'>
+                <div style={{ height: '3px' }} className='w-80 sm-w-60 bg-tertiary relative'>
+                    <div
+                        style={{
+                            height: '3px',
+                            width: `${scrollProgress}%`,
+                            transition: 'width 0.2s ease'
+                        }}
+                        className='top-0 left-0 bg-primary absolute'
+                    />
+                </div>
+
+                <div className='flex items-center gap-12'>
+                    <Button
+                        aria-label="Previous Items"
+                        onClick={() => scroll('left')}
+                        icon="ArrowLeft"
+                        iconWidth="18"
+                        iconHeight="18"
+                        iconStrokeWidth="2"
+                        variant="outline"
+                        version="icon"
+                        color='primary'
+                        className="border-primary rounded-30"
+                    />
+                    <Button
+                        aria-label="Next Items"
+                        onClick={() => scroll('right')}
+                        icon="ArrowRight"
+                        iconWidth="18"
+                        iconHeight="18"
+                        iconStrokeWidth="2"
+                        variant="outline"
+                        version="icon"
+                        color='primary'
+                        className="border-primary rounded-30"
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const FeatureSection = () => {
     const navigate = useNavigate();
 
@@ -129,7 +234,7 @@ const FeatureSection = () => {
     }, [navigate]);
 
     return (
-        <Container>
+        <Container style={{ background: 'var(--forth)' }}>
             <style>{`
                     .feature-card .feature-info {
                         transform: translateY(73px);
@@ -160,15 +265,10 @@ const FeatureSection = () => {
                     actionText="Shop All Products"
                     actionLink="/products"
                 />
-                <div className="mt-20 grid-cols-4 md-grid-cols-2 sm-grid-cols-1 gap-12">
-                    {TRENDING_ITEMS.map((item) => (
-                        <TrendingCard
-                            key={item.id}
-                            item={item}
-                            onSelect={handleSelect}
-                        />
-                    ))}
-                </div>
+                <FeatureSliderSection
+                    items={TRENDING_ITEMS}
+                    onSelect={handleSelect}
+                />
             </div>
         </Container>
     );

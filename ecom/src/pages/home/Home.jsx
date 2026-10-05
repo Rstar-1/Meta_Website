@@ -16,8 +16,8 @@ const ecomSections = [
     { id: 'product', Component: ProductSection, minHeight: '400px' },
     { id: 'about', Component: AboutSection, minHeight: '400px' },
     { id: 'patch', Component: PatchSection, minHeight: '300px' },
-    { id: 'offer', Component: OfferSection, minHeight: '300px' },
     { id: 'feature', Component: FeatureSection, minHeight: '400px' },
+    { id: 'offer', Component: OfferSection, minHeight: '300px' },
 ];
 
 const SectionFallback = memo(({ minHeight = '100px' }) => (
