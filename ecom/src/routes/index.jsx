@@ -36,10 +36,7 @@ function AppRoutes() {
                     <Route path="product-detail" element={<ProductDetail />} />
                     <Route path="connect" element={<Connect />} />
                     <Route path="terms" element={<Terms />} />
-                    <Route path="terms-conditions" element={<Terms />} />
-                    <Route path="terms-and-conditions" element={<Terms />} />
                     <Route path="privacy" element={<Privacy />} />
-                    <Route path="privacy-policy" element={<Privacy />} />
                 </Route>
                 <Route path="*" element={<h2 style={{ textAlign: 'center', padding: '100px 20px' }}>404 - Page Not Found</h2>} />
             </Routes>

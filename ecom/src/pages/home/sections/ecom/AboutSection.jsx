@@ -1,6 +1,5 @@
 import React, { useCallback, useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Container from '../../../../components/common/Container';
 import Icon from '../../../../components/common/Icon';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
@@ -638,26 +637,24 @@ const AboutSection = React.memo(() => {
     const headingTitle = aboutVersion === 4 ? (aboutCMS?.heading?.title || "Expert Innovative And Deliver Exceptional For NOT Solution Now.") : "Expert Innovative And Deliver Exceptional For NOT Solution Now.";
 
     return (
-        <Container style={{ background: 'var(--forth)' }}>
-            <div className="w-full py-50">
-                {!([5, 6].includes(aboutVersion)) && (
-                    <Heading
-                        version="v1"
-                        tag={headingTag}
-                        title={headingTitle}
-                        align='left'
-                    />
-                )}
-                <ActiveVersionComponent
-                    aboutSide={aboutSide}
-                    AboutType={AboutType}
-                    aboutLeft={aboutLeft}
-                    aboutRight={aboutRight}
-                    onLearnMore={handleLearnMore}
-                    data={defaultAboutData}
+        <div className="w-full py-50">
+            {!([5, 6].includes(aboutVersion)) && (
+                <Heading
+                    version="v1"
+                    tag={headingTag}
+                    title={headingTitle}
+                    align='left'
                 />
-            </div>
-        </Container>
+            )}
+            <ActiveVersionComponent
+                aboutSide={aboutSide}
+                AboutType={AboutType}
+                aboutLeft={aboutLeft}
+                aboutRight={aboutRight}
+                onLearnMore={handleLearnMore}
+                data={defaultAboutData}
+            />
+        </div>
     );
 });
 

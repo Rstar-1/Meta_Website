@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { lazy, Suspense, memo } from 'react';
+import LazySection from '../../components/common/LazySection';
+import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
-import MediaSection from './sections/MediaSection';
 import SEO from '../../seo';
 import bannerImg from '../../assets/about-banner.jpg';
+
+const MediaSection = lazy(() => import('./sections/MediaSection'));
+
+const blogSections = [
+    {
+        id: 'media',
+        Component: MediaSection,
+        minHeight: '600px',
+        isContainer: true
+    },
+];
+
+const SectionFallback = memo(({ minHeight = '100px' }) => (
+    <div className="w-full" style={{ minHeight }} />
+));
 
 const Blog = () => {
     return (
@@ -17,9 +33,37 @@ const Blog = () => {
                     { label: 'News & Media', path: '/blog' }
                 ]}
             />
-            <MediaSection />
+            {blogSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {
+                const SectionContent = (
+                    <Suspense fallback={<SectionFallback minHeight={minHeight} />}>
+                        <Component />
+                    </Suspense>
+                );
+
+                const Content = isContainer ? (
+                    <Container className={containerClass} style={containerStyle}>
+                        {SectionContent}
+                    </Container>
+                ) : (
+                    SectionContent
+                );
+
+                return isEager ? (
+                    <React.Fragment key={id}>
+                        {Content}
+                    </React.Fragment>
+                ) : (
+                    <LazySection
+                        key={id}
+                        placeholderHeight={minHeight}
+                        placeholder={<SectionFallback minHeight={minHeight} />}
+                    >
+                        {Content}
+                    </LazySection>
+                );
+            })}
         </>
     );
 };
 
-export default Blog;
+export default memo(Blog);

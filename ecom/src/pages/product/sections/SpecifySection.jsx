@@ -1,5 +1,4 @@
 import React, { useState, useCallback, memo } from 'react';
-import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 
 const DEFAULT_PARAGRAPHS = [
@@ -47,18 +46,16 @@ const SpecifySection = ({
     }, []);
 
     return (
-        <Container version="v2">
-            <div className="w-full pb-60">
-                <div className="bg-forth p-40 sm-p-18 rounded-10">
-                    <SpecifyContent
-                        title={title}
-                        paragraphs={contentParagraphs}
-                        isExpanded={isExpanded}
-                        onToggleExpand={handleToggleExpand}
-                    />
-                </div>
+        <div className="w-full pb-60">
+            <div className="bg-forth p-40 sm-p-18 rounded-10">
+                <SpecifyContent
+                    title={title}
+                    paragraphs={contentParagraphs}
+                    isExpanded={isExpanded}
+                    onToggleExpand={handleToggleExpand}
+                />
             </div>
-        </Container>
+        </div>
     );
 };
 

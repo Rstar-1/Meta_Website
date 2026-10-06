@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useCallback, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
 import Fields from '../../../components/forms/Fields';
 
@@ -257,7 +256,7 @@ const FilterSection = () => {
     );
 
     return (
-        <Container>
+        <div className="w-full">
             <div className="w-full py-40">
                 <FilterTopBar
                     isFilterVisible={isFilterVisible}
@@ -289,7 +288,7 @@ const FilterSection = () => {
                     </div>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';
 import Button from '../../../components/common/Button';
@@ -74,7 +73,7 @@ const MediaSection = () => {
     const [searchQuery, setSearchQuery] = useState('');
 
     return (
-        <Container>
+        <div className="w-full">
             <div className='flex sm-grid-cols-1 items-start gap-12 w-full py-60'>
                 <div className='w-70 sm-w-full pr-10 sm-pr-1'>
                     {blogPosts.map((post) => (
@@ -225,7 +224,7 @@ const MediaSection = () => {
                     </div>
                 </div>
             </div>
-        </Container >
+        </div>
     );
 };
 

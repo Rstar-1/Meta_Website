@@ -706,7 +706,7 @@ const MegaMenu = React.memo(
                         </div>
                       )}
                     </div>
-                    <p className="small-text font-500 text-dark mt-6">{item.title}</p>
+                    <p className="small-text line-clamp1 font-500 text-dark mt-6">{item.title}</p>
                     {item.price && <p className="mini-text text-danger font-600 mt-1">{item.price}</p>}
                   </NavLink>
                 ))}

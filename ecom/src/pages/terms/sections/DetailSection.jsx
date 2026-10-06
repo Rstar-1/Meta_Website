@@ -1,11 +1,9 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-import Container from '../../../components/common/Container';
 
 const DetailSection = memo(() => {
     return (
-        <Container>
-            <div className="py-50">
+        <div className="py-50">
 
                 {/* Welcome */}
                 <section>
@@ -178,9 +176,7 @@ const DetailSection = memo(() => {
                         As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.
                     </p>
                 </section>
-
             </div>
-        </Container>
     );
 });
 

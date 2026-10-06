@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Container from '../../../../components/common/Container';
 import Icon from '../../../../components/common/Icon';
 import Image from '../../../../components/common/Image';
 import Heading from '../../../../components/layout/generic/Heading';
@@ -149,16 +148,14 @@ const CategorySection = React.memo(() => {
     const ActiveVersionComponent = VERSION_COMPONENTS[categoryVersion] || CategoryVersion1;
 
     return (
-        <Container>
-            <div className="w-full py-60 bordb">
-                <Heading
-                    version="v1"
-                    tag="WHAT WE PROVIDE"
-                    title="Expert Innovative And Deliver Exceptional For NOT Solution Now."
-                />
-                <ActiveVersionComponent items={categories} onCategoryClick={handleCategoryClick} />
-            </div>
-        </Container>
+        <div className="w-full py-60 bordb">
+            <Heading
+                version="v1"
+                tag="WHAT WE PROVIDE"
+                title="Expert Innovative And Deliver Exceptional For NOT Solution Now."
+            />
+            <ActiveVersionComponent items={categories} onCategoryClick={handleCategoryClick} />
+        </div>
     );
 });
 

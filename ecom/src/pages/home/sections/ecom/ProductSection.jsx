@@ -1,8 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Container from '../../../../components/common/Container';
-
 import Heading from '../../../../components/layout/generic/Heading';
 import SlideLayout from '../../../../components/layout/sections/SlideLayout';
 import CardLayout from '../../../../components/layout/sections/CardLayout';
@@ -31,45 +29,43 @@ const ProductSection = () => {
     }, [navigate]);
 
     return (
-        <Container>
-            <div className="w-full py-50">
-                <Heading
-                    version="v2"
-                    tag="SPECIAL OFFERS FOR YOU"
-                    title="Featured Products & Popular Designs"
-                    actionText="Shop All Products"
-                    actionLink="/products"
-                />
+        <div className="w-full py-50">
+            <Heading
+                version="v2"
+                tag="SPECIAL OFFERS FOR YOU"
+                title="Featured Products & Popular Designs"
+                actionText="Shop All Products"
+                actionLink="/products"
+            />
 
-                <SlideLayout
-                    items={firstRowProducts}
-                    className='py-30'
-                    renderItem={(item) => (
-                        <CardLayout
-                            key={item.id}
-                            version="product"
-                            item={item}
-                            onClick={() => handleProductClick(item)}
-                            onCategoryClick={handleCategoryClick}
-                        />
-                    )}
-                />
+            <SlideLayout
+                items={firstRowProducts}
+                className='py-30'
+                renderItem={(item) => (
+                    <CardLayout
+                        key={item.id}
+                        version="product"
+                        item={item}
+                        onClick={() => handleProductClick(item)}
+                        onCategoryClick={handleCategoryClick}
+                    />
+                )}
+            />
 
-                <SlideLayout
-                    items={secondRowProducts}
-                    className='py-10'
-                    renderItem={(item) => (
-                        <CardLayout
-                            key={item.id}
-                            version="product"
-                            item={item}
-                            onClick={() => handleProductClick(item)}
-                            onCategoryClick={handleCategoryClick}
-                        />
-                    )}
-                />
-            </div>
-        </Container>
+            <SlideLayout
+                items={secondRowProducts}
+                className='py-10'
+                renderItem={(item) => (
+                    <CardLayout
+                        key={item.id}
+                        version="product"
+                        item={item}
+                        onClick={() => handleProductClick(item)}
+                        onCategoryClick={handleCategoryClick}
+                    />
+                )}
+            />
+        </div>
     );
 };
 
