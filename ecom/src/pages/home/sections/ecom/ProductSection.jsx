@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
-
 import Heading from '../../../../components/layout/generic/Heading';
 
 import { useCart } from '../../../../context/CartContext';
+import { resolveImagePath } from '../../../../utils/imageResolver';
 import productsData from '../../../../data/product.json';
 
-const ProductCard = ({ item, onClick }) => {
+const ProductCard = ({ item, onClick, onCategoryClick }) => {
     const { addToCart } = useCart();
     const badge = item.badge || item.badges?.[0];
     const price = typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : (item.priceFormatted || item.price);
@@ -26,7 +26,7 @@ const ProductCard = ({ item, onClick }) => {
         >
             <div className="h-300 w-full overflow-hidden rounded-10 relative product-card">
                 {badge && (
-                    <div className='top-0 left-0 absolute'>
+                    <div className='top-0 left-0 absolute z-2'>
                         <p
                             className='m-12 px-12 py-1 mini-text font-400 rounded-20 text-white'
                             style={{ backgroundColor: badge.color || badge.bg || '#C8281E' }}
@@ -36,11 +36,11 @@ const ProductCard = ({ item, onClick }) => {
                     </div>
                 )}
                 <Image
-                    src={item.image}
+                    src={resolveImagePath(item.image)}
                     alt={item.name}
                     className="flex w-full h-full object-cover"
                 />
-                <div className='product-btn w-full absolute bottom-0 left-0'>
+                <div className='product-btn w-full absolute bottom-0 left-0 z-2'>
                     <div className='p-18'>
                         <Button
                             onClick={(e) => {
@@ -62,7 +62,15 @@ const ProductCard = ({ item, onClick }) => {
                 </div>
             </div>
 
-            <p className='text-gray font-500 uppercase mini-text mt-5'>
+            <p
+                onClick={(e) => {
+                    if (onCategoryClick) {
+                        e.stopPropagation();
+                        onCategoryClick(item.category || item.categoryId);
+                    }
+                }}
+                className='text-gray font-500 uppercase mini-text mt-5 hover:text-primary transition-colors'
+            >
                 {item.category}
             </p>
 
@@ -101,7 +109,7 @@ const ProductCard = ({ item, onClick }) => {
     );
 };
 
-const ProductSliderSection = ({ products, onProductClick }) => {
+const ProductSliderSection = ({ products, onProductClick, onCategoryClick }) => {
     const scrollRef = useRef(null);
     const [scrollProgress, setScrollProgress] = useState(25);
 
@@ -140,6 +148,7 @@ const ProductSliderSection = ({ products, onProductClick }) => {
                         key={item.id}
                         item={item}
                         onClick={() => onProductClick(item)}
+                        onCategoryClick={onCategoryClick}
                     />
                 ))}
             </div>
@@ -206,6 +215,10 @@ const ProductSection = () => {
         navigate(`/product/${item.id}`, { state: { product: item } });
     };
 
+    const handleCategoryClick = (cat) => {
+        navigate(`/product?category=${encodeURIComponent(cat)}`);
+    };
+
     return (
         <Container>
             <div className="w-full py-50">
@@ -241,12 +254,14 @@ const ProductSection = () => {
                 <ProductSliderSection
                     products={firstRowProducts}
                     onProductClick={handleProductClick}
+                    onCategoryClick={handleCategoryClick}
                 />
 
                 {/* Second Slider Row (Products 7 - 12) */}
                 <ProductSliderSection
                     products={secondRowProducts}
                     onProductClick={handleProductClick}
+                    onCategoryClick={handleCategoryClick}
                 />
             </div>
         </Container>

@@ -7,10 +7,12 @@ import aboutBanner from '../../assets/about-banner.jpg';
 const AboutSection = lazy(() => import('../home/sections/ecom/AboutSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
+const FeatureSection = lazy(() => import('../home/sections/ecom/FeatureSection'));
 
 const ecomSections = [
     AboutSection,
     OfferSection,
+    FeatureSection,
     PatchSection,
 ];
 

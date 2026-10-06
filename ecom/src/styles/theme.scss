@@ -326,11 +326,11 @@ input,
 
 ::-webkit-scrollbar {
     width: 0px;
-    height: 8px;
+    height: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--forth);
+    background: var(--tertiary);
 }
 
 .newscroll::-webkit-scrollbar {

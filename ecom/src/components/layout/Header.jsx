@@ -13,6 +13,102 @@ import Fields from "../forms/Fields";
 import { header, configData } from "../../utils/apiData";
 import { resolveImagePath } from "../../utils/imageResolver";
 import { useCart } from "../../context/CartContext";
+import productsData from "../../data/product.json";
+import categoriesData from "../../data/category.json";
+
+const buildDynamicMegaMenu = () => {
+  const menu = {};
+  const realProducts = (productsData || []).filter((p) => !p.isBanner);
+
+  (categoriesData || []).forEach((cat) => {
+    const key = cat.megaMenuKey || cat.slug;
+    const catProducts = realProducts.filter(
+      (p) => p.categoryId === cat.id || p.category?.toLowerCase() === cat.name.toLowerCase() || p.megaMenuKey === key
+    );
+
+    const subCatMap = new Map();
+
+    // Pre-register all defined subcategories from category.json
+    if (cat.subCategories && cat.subCategories.length > 0) {
+      cat.subCategories.forEach((sub) => {
+        const subId = typeof sub === "string" ? sub.toLowerCase().replace(/[^a-z0-9]/g, "-") : sub.id;
+        const subName = typeof sub === "string" ? sub : sub.name;
+        subCatMap.set(subId, {
+          id: subId,
+          name: subName,
+          badge: null,
+          items: [],
+        });
+      });
+    }
+
+    // Attach matching products to subcategories
+    catProducts.forEach((p) => {
+      const subId =
+        p.subCategoryId ||
+        (p.subCategory
+          ? p.subCategory.toLowerCase().replace(/[^a-z0-9]/g, "-")
+          : "all");
+      const subName = p.subCategory || p.category || cat.name;
+
+      if (!subCatMap.has(subId)) {
+        subCatMap.set(subId, {
+          id: subId,
+          name: subName,
+          badge: p.badge?.text === "Coming Soon" ? "Coming Soon" : p.badge?.text || null,
+          items: [],
+        });
+      }
+
+      subCatMap.get(subId).items.push({
+        id: p.id,
+        title: p.name,
+        name: p.name,
+        image: resolveImagePath(p.image),
+        href: `/product/${p.id}`,
+        badge: p.badge?.text,
+        price: p.priceFormatted || (p.price ? `$${p.price}` : null),
+      });
+    });
+
+    // If any subcategory has no direct products, display category sample products
+    const subCategoriesList = Array.from(subCatMap.values());
+    subCategoriesList.forEach((sub) => {
+      if (sub.items.length === 0) {
+        sub.items = catProducts.slice(0, 4).map((p) => ({
+          id: p.id,
+          title: p.name,
+          name: p.name,
+          image: resolveImagePath(p.image),
+          href: `/product/${p.id}`,
+          badge: p.badge?.text,
+          price: p.priceFormatted || (p.price ? `$${p.price}` : null),
+        }));
+      }
+    });
+
+    menu[key] = {
+      id: cat.id,
+      name: cat.name,
+      categories: subCategoriesList,
+    };
+  });
+
+  return menu;
+};
+
+const dynamicMegaMenu = buildDynamicMegaMenu();
+
+const categoryMenuItems = [
+  ...(categoriesData || []).map((cat) => ({
+    label: cat.name || cat.title,
+    href: `/product?category=${encodeURIComponent(cat.name || cat.title)}`,
+    hasMegaMenu: true,
+    megaMenuKey: cat.megaMenuKey || cat.slug,
+    badge: cat.badge || null,
+  })),
+  ...(header.bottomBar?.menu || []),
+];
 
 const headerType = configData?.Header?.HeaderType ?? configData?.Header?.[0]?.HeaderType ?? 1;
 
@@ -42,59 +138,31 @@ const CategoryClass = {
   2: "justify-start",
 }[configData?.Header?.HeaderCategory] || "justify-between";
 
-
 const HeaderTopBar = React.memo(() => {
-  if (configData?.Header?.[0]?.HeaderTopBar === false) {
-    return null;
-  }
+  if (configData?.Header?.[0]?.HeaderTopBar === false) return null;
 
   const { location: loc, email, timing } = header.topBar || {};
 
   return (
-    <Container style={{ background: 'var(--primary)' }} className="sm-hidden md-hidden">
+    <Container style={{ background: "var(--primary)" }} className="sm-hidden md-hidden">
       <div className="py-4 w-full flex items-center justify-between mini-text text-white">
         <div className="flex items-center gap-12">
           <div className="flex items-center gap-6">
-            <Icon
-              name="MapPin"
-              width="14"
-              height="14"
-              stroke="var(--white)"
-            />
-
+            <Icon name="MapPin" width="14" height="14" stroke="var(--white)" />
             <p>{loc || "Riverside Park EU-1001"}</p>
           </div>
-
           <span>|</span>
-
           <div className="flex items-center gap-6">
-            <Icon
-              name="Mail"
-              width="14"
-              height="14"
-              stroke="var(--white)"
-            />
-
-            <a
-              href={`mailto:${email || "hello@Infitech.com"}`}
-              className="text-white"
-            >
+            <Icon name="Mail" width="14" height="14" stroke="var(--white)" />
+            <a href={`mailto:${email || "hello@Infitech.com"}`} className="text-white">
               {email || "hello@Infitech.com"}
             </a>
           </div>
         </div>
 
         <div className="flex items-center gap-6">
-          <Icon
-            name="Clock"
-            width="14"
-            height="14"
-            stroke="var(--white)"
-          />
-
-          <p>
-            {timing || "Mon–Fri 09:00 AM – 06:00 PM"}
-          </p>
+          <Icon name="Clock" width="14" height="14" stroke="var(--white)" />
+          <p>{timing || "Mon–Fri 09:00 AM – 06:00 PM"}</p>
         </div>
       </div>
     </Container>
@@ -102,59 +170,36 @@ const HeaderTopBar = React.memo(() => {
 });
 
 const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
-
   const logoSrc =
     !configData?.Header?.HeaderSticky || isHeaderWhite
       ? "/src/assets/sobo_logo.webp"
       : "/src/assets/sobo_white.png";
 
   return (
-    <NavLink
-      to="/home"
-      className={LogoClass}
-      onClick={onCloseMobile}
-    >
+    <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
       <Image
         src={resolveImagePath(logoSrc)}
         alt="Infitech Logo"
         className="object-contain"
-        style={{
-          width: "auto",
-          height: "50px",
-        }}
+        style={{ width: "auto", height: "50px" }}
       />
     </NavLink>
   );
 });
 
 const HeaderNavigation = React.memo(
-  ({
-    pathname,
-    hoveredNav,
-    activeMegaMenu,
-    isHeaderWhite,
-    onNavMouseEnter,
-    onNavMouseLeave,
-  }) => {
+  ({ pathname, hoveredNav, activeMegaMenu, isHeaderWhite, onNavMouseEnter, onNavMouseLeave }) => {
     const isMegaOpen = Boolean(activeMegaMenu);
 
     return (
-      <div
-        className={`${NavigationClass} sm-hidden md-hidden flex items-center h-full gap-4`}>
+      <div className={`${NavigationClass} sm-hidden md-hidden flex items-center h-full gap-4`}>
         {header.navLinks?.map((item) => {
           const isActive = pathname === item.href;
-
-          const isHovered =
-            hoveredNav === (item.label || item.href);
-
-          const isItemMegaActive =
-            isMegaOpen &&
-            item.megaMenuKey === activeMegaMenu;
+          const isHovered = hoveredNav === (item.label || item.href);
+          const isItemMegaActive = isMegaOpen && item.megaMenuKey === activeMegaMenu;
 
           const linkColor =
-            isActive ||
-              isHovered ||
-              isItemMegaActive
+            isActive || isHovered || isItemMegaActive
               ? "var(--primary)"
               : configData?.Header?.HeaderSticky
                 ? isHeaderWhite
@@ -172,12 +217,9 @@ const HeaderNavigation = React.memo(
               <NavLink
                 to={item.href}
                 className="font-500 para-text px-16 cursor-pointer flex items-center gap-6"
-                style={{
-                  color: linkColor,
-                }}
+                style={{ color: linkColor }}
               >
                 <span>{item.label}</span>
-
                 {item.badge && (
                   <Badge
                     text={item.badge}
@@ -186,7 +228,6 @@ const HeaderNavigation = React.memo(
                     shape="pill"
                   />
                 )}
-
                 {item.hasMegaMenu && (
                   <Icon
                     name="ChevronDown"
@@ -194,12 +235,8 @@ const HeaderNavigation = React.memo(
                     height="18"
                     stroke={linkColor}
                     style={{
-                      transition:
-                        "transform 0.2s ease",
-
-                      transform: isItemMegaActive
-                        ? "rotate(180deg)"
-                        : "rotate(0deg)",
+                      transition: "transform 0.2s ease",
+                      transform: isItemMegaActive ? "rotate(180deg)" : "rotate(0deg)",
                     }}
                   />
                 )}
@@ -213,41 +250,21 @@ const HeaderNavigation = React.memo(
 );
 
 const HeaderBottomBar = React.memo(
-  ({
-    pathname,
-    hoveredNav,
-    activeMegaMenu,
-    isHeaderWhite,
-    onNavMouseEnter,
-    onNavMouseLeave,
-  }) => {
+  ({ pathname, hoveredNav, activeMegaMenu, isHeaderWhite, onNavMouseEnter, onNavMouseLeave }) => {
+    if (configData?.Header?.[0]?.HeaderBottomBar === false) return null;
 
-    if (configData?.Header?.[0]?.HeaderBottomBar === false) {
-      return null;
-    }
-
-    const menuItems = header.bottomBar?.menu || [];
-    if (!menuItems.length) {
-      return null;
-    }
+    if (!categoryMenuItems.length) return null;
 
     const isMegaOpen = Boolean(activeMegaMenu);
 
     return (
-      <div
-        className="sm-hidden md-hidden w-full"
-        style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
-      >
+      <div className="sm-hidden md-hidden w-full" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)" }}>
         <Container>
-          <div className={`${CategoryClass} flex items-center w-full py-16`} style={{ gap: '26px' }}>
-            {menuItems.map((item, idx) => {
+          <div className={`${CategoryClass} flex items-center w-full py-16 overflow-auto`} style={{ gap: "26px" }}>
+            {categoryMenuItems.map((item, idx) => {
               const isActive = pathname === item.href;
-              const isHovered =
-                hoveredNav === (item.label || item.href);
-              const isItemMegaActive =
-                isMegaOpen &&
-                item.megaMenuKey &&
-                item.megaMenuKey === activeMegaMenu;
+              const isHovered = hoveredNav === (item.label || item.href);
+              const isItemMegaActive = isMegaOpen && item.megaMenuKey && item.megaMenuKey === activeMegaMenu;
 
               const linkColor =
                 isActive || isHovered || isItemMegaActive
@@ -261,11 +278,10 @@ const HeaderBottomBar = React.memo(
               return (
                 <div
                   key={item.label || idx}
-                  onMouseEnter={() =>
-                    onNavMouseEnter(item)
-                  }
+                  onMouseEnter={() => onNavMouseEnter(item)}
                   onMouseLeave={onNavMouseLeave}
                   className="relative flex items-center h-full"
+                  style={{ minWidth: 'max-content' }}
                 >
                   <NavLink
                     to={item.href || "/product"}
@@ -288,11 +304,8 @@ const HeaderBottomBar = React.memo(
                         height="20"
                         stroke={linkColor}
                         style={{
-                          transition:
-                            "transform 0.2s ease",
-                          transform: isItemMegaActive
-                            ? "rotate(180deg)"
-                            : "rotate(0deg)",
+                          transition: "transform 0.2s ease",
+                          transform: isItemMegaActive ? "rotate(180deg)" : "rotate(0deg)",
                         }}
                       />
                     )}
@@ -319,8 +332,8 @@ const CartSidebar = React.memo(
     onRemove,
     onSetQuantity,
     onNavigate,
+    isMobile = false,
   }) => {
-
     return (
       <Modal
         type="sidebar"
@@ -341,47 +354,84 @@ const CartSidebar = React.memo(
         isOpen={isCartOpen}
         onClose={onCloseCart}
         trigger={
-          <div className="relative">
-            <Button
-              aria-label="Cart"
-              onClick={onOpenCart}
-              icon="Bag"
-              iconWidth="16"
-              iconHeight="16"
-              iconStrokeWidth="2"
-              variant="outline"
-              border={
-                configData?.Header?.HeaderSticky
-                  ? isHeaderWhite
-                    ? "primary"
-                    : "white"
-                  : "primary"
-              }
-              iconStroke={
-                configData?.Header?.HeaderSticky
-                  ? isHeaderWhite
-                    ? "var(--primary)"
-                    : "var(--white)"
-                  : "var(--primary)"
-              }
-              version="icon"
-              bg="transparent"
-              className="rounded-30 p-10"
-            />
-
-            {cartQty > 0 && (
-              <p
-                className="absolute bg-primary text-white rounded-full flex items-center justify-center"
-                style={{
-                  top: "-7px",
-                  right: "-7px",
-                  width: "20px",
-                  height: "20px",
-                  fontSize: '10px'
-                }}
-              >{cartQty}</p>
-            )}
-          </div>
+          isMobile ? (
+            <div className="relative flex items-center justify-center">
+              <Button
+                aria-label="Cart"
+                onClick={onOpenCart}
+                icon="Bag"
+                iconWidth="22"
+                iconHeight="22"
+                iconStrokeWidth="1.5"
+                iconStroke={
+                  configData?.Header?.HeaderSticky
+                    ? isHeaderWhite
+                      ? "#161616"
+                      : "#FFFFFF"
+                    : "#161616"
+                }
+                version="icon"
+                bg="transparent"
+              />
+              {cartQty > 0 && (
+                <p
+                  className="absolute bg-primary text-white rounded-full flex items-center justify-center pointer-events-none"
+                  style={{
+                    top: "-2px",
+                    right: "-2px",
+                    width: "18px",
+                    height: "18px",
+                    fontSize: "10px",
+                  }}
+                >
+                  {cartQty}
+                </p>
+              )}
+            </div>
+          ) : (
+            <div className="relative">
+              <Button
+                aria-label="Cart"
+                onClick={onOpenCart}
+                icon="Bag"
+                iconWidth="16"
+                iconHeight="16"
+                iconStrokeWidth="2"
+                variant="outline"
+                border={
+                  configData?.Header?.HeaderSticky
+                    ? isHeaderWhite
+                      ? "primary"
+                      : "white"
+                    : "primary"
+                }
+                iconStroke={
+                  configData?.Header?.HeaderSticky
+                    ? isHeaderWhite
+                      ? "var(--primary)"
+                      : "var(--white)"
+                    : "var(--primary)"
+                }
+                version="icon"
+                bg="transparent"
+                className="rounded-30 p-10"
+              />
+              {cartQty > 0 && (
+                <p
+                  className="absolute bg-primary text-white rounded-full flex items-center justify-center"
+                  style={{
+                    top: "-7px",
+                    right: "-7px",
+                    width: "20px",
+                    height: "20px",
+                    fontSize: "10px",
+                  }}
+                >
+                  {cartQty}
+                </p>
+              )}
+            </div>
+          )
         }
       >
         <div className="grid-cols-1 items-start gap-12 pb-20 mb-100 h-500 overflow-auto">
@@ -389,57 +439,36 @@ const CartSidebar = React.memo(
             {cartItems.length > 0 ? (
               <div className="grid-cols-1 gap-12 mt-10">
                 {cartItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex gap-12 items-center relative pb-20 bordb"
-                  >
+                  <div key={item.id} className="flex gap-12 items-center relative pb-20 bordb">
                     <div className="w-35 h-100px rounded-5 overflow-hidden">
                       <Image
-                        src={item.image}
+                        src={resolveImagePath(item.image)}
                         alt={item.name}
                         className="flex w-full h-full object-cover"
                       />
                     </div>
 
                     <div className="w-65">
-                      <p className="mini-text text-gray font-400">
-                        {item.category}
-                      </p>
-
-                      <h4 className="headmini-text text-dark font-600">
-                        {item.name}
-                      </h4>
+                      <p className="mini-text text-gray font-400">{item.category}</p>
+                      <h4 className="headmini-text text-dark font-600">{item.name}</h4>
 
                       <div className="flex items-center justify-between mt-5">
                         <Fields
                           type="quantity"
                           value={item.quantity}
-                          onChange={(value) =>
-                            onSetQuantity(
-                              item.id,
-                              value
-                            )
-                          }
+                          onChange={(value) => onSetQuantity(item.id, value)}
                         />
-
                         <p className="small-text font-600 text-dark">
-                          ₹{item.price * item.quantity}
+                          ${((Number(item.price) || 0) * item.quantity).toFixed(2)}
                         </p>
                       </div>
                     </div>
 
                     <div
-                      onClick={() =>
-                        onRemove(item.id)
-                      }
+                      onClick={() => onRemove(item.id)}
                       className="icon absolute top-0 right-0 cursor-pointer"
                     >
-                      <Icon
-                        name="Close"
-                        width="16"
-                        height="16"
-                        stroke="var(--danger)"
-                      />
+                      <Icon name="Close" width="16" height="16" stroke="var(--danger)" />
                     </div>
                   </div>
                 ))}
@@ -453,10 +482,7 @@ const CartSidebar = React.memo(
                   stroke="var(--primary)"
                   className="mx-auto mb-10"
                 />
-
-                <p className="small-text font-500 capitalize text-gray">
-                  Your cart is empty
-                </p>
+                <p className="small-text font-500 capitalize text-gray">Your cart is empty</p>
               </div>
             )}
           </div>
@@ -476,19 +502,18 @@ const CartSidebar = React.memo(
                 text="Explore More"
                 onClick={() => {
                   onCloseCart();
-                  onNavigate('/products');
+                  onNavigate("/products");
                 }}
                 version="v3"
                 bg="tertiary"
                 color="dark"
                 className="rounded-30 font-500"
               />
-
               <Button
                 text="Send Enquiry"
                 onClick={() => {
                   onCloseCart();
-                  onNavigate('/connect');
+                  onNavigate("/connect");
                 }}
                 version="v3"
                 bg="dark"
@@ -504,21 +529,14 @@ const CartSidebar = React.memo(
 );
 
 const HeaderActions = React.memo(
-  ({
-    isHeaderWhite,
-    isMobileOpen,
-    setIsMobileOpen,
-    cartSection,
-    onNavigate,
-  }) => {
+  ({ isHeaderWhite, isMobileOpen, setIsMobileOpen, cartSection, mobileCartSection, onNavigate }) => {
     return (
       <div className={`${ActionClass} flex justify-end`}>
-        <div className="sm-hidden md-hidden flex items-center" style={{ gap: '14px' }}>
+        <div className="sm-hidden md-hidden flex items-center" style={{ gap: "14px" }}>
           <Button
             aria-label="Call Us"
             onClick={() => {
-              window.location.href =
-                "tel:+5284567592";
+              window.location.href = "tel:+5284567592";
             }}
             icon="Phone"
             iconWidth="16"
@@ -548,9 +566,7 @@ const HeaderActions = React.memo(
 
           <Button
             text="Get A Quote"
-            onClick={() =>
-              onNavigate("/connect")
-            }
+            onClick={() => onNavigate("/connect")}
             bg="primary"
             color="white"
             border="primary"
@@ -563,56 +579,56 @@ const HeaderActions = React.memo(
           />
         </div>
 
-        <Button
-          onClick={() =>
-            setIsMobileOpen(
-              (prev) => !prev
-            )
-          }
-          aria-label="Toggle Navigation Menu"
-          className="hidden md-flex sm-flex"
-          icon={
-            isMobileOpen
-              ? "Close"
-              : "Menu"
-          }
-          iconWidth="32"
-          iconHeight="32"
-          iconStroke={
-            configData?.Header?.HeaderSticky
-              ? isHeaderWhite
-                ? "#161616"
-                : "#FFFFFF"
-              : "#161616"
-          }
-          version="icon"
-          bg="transparent"
-        />
+        <div className="hidden md-flex sm-flex items-center">
+          <Button
+            aria-label="Call Us"
+            onClick={() => {
+              window.location.href = "tel:+5284567592";
+            }}
+            icon="Phone"
+            iconWidth="22"
+            iconHeight="22"
+            iconStrokeWidth="1.5"
+            iconStroke={
+              configData?.Header?.HeaderSticky
+                ? isHeaderWhite
+                  ? "#161616"
+                  : "#FFFFFF"
+                : "#161616"
+            }
+            version="icon"
+            bg="transparent"
+          />
+
+          {mobileCartSection || cartSection}
+          <Button
+            onClick={() => setIsMobileOpen((prev) => !prev)}
+            aria-label="Toggle Navigation Menu"
+            icon={isMobileOpen ? "Close" : "Menu"}
+            iconWidth="30"
+            iconHeight="30"
+            iconStrokeWidth="1.5"
+            iconStroke={
+              configData?.Header?.HeaderSticky
+                ? isHeaderWhite
+                  ? "#161616"
+                  : "#FFFFFF"
+                : "#161616"
+            }
+            version="icon"
+            bg="transparent"
+          />
+        </div>
       </div>
     );
   }
 );
 
 const MegaMenu = React.memo(
-  ({
-    activeMegaMenu,
-    activeCategoryTab,
-    setActiveCategoryTab,
-    onClose,
-    onMouseEnter,
-    onMouseLeave,
-  }) => {
-
+  ({ activeMegaMenu, activeCategoryTab, setActiveCategoryTab, onClose, onMouseEnter, onMouseLeave }) => {
     const currentMenu = React.useMemo(() => {
-      if (!activeMegaMenu) {
-        return null;
-      }
-
-      return (
-        header.megaMenu?.[
-        activeMegaMenu
-        ] || null
-      );
+      if (!activeMegaMenu) return null;
+      return dynamicMegaMenu?.[activeMegaMenu] || null;
     }, [activeMegaMenu]);
 
     const categories = React.useMemo(() => {
@@ -620,21 +636,10 @@ const MegaMenu = React.memo(
     }, [currentMenu]);
 
     const currentCategory = React.useMemo(() => {
-      return (
-        categories.find(
-          (category) =>
-            category.id ===
-            activeCategoryTab
-        ) || categories[0]
-      );
-    }, [
-      categories,
-      activeCategoryTab,
-    ]);
+      return categories.find((c) => c.id === activeCategoryTab) || categories[0];
+    }, [categories, activeCategoryTab]);
 
-    if (!currentMenu) {
-      return null;
-    }
+    if (!currentMenu || !categories.length) return null;
 
     return (
       <Dropdown
@@ -644,52 +649,33 @@ const MegaMenu = React.memo(
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         className="w-full bg-white bordh"
-        style={{ marginTop: '-5px' }}
+        style={{ marginTop: "-5px" }}
       >
         <Container>
           <div className="flex items-start gap-12 py-20 w-full">
             <div className="grid-cols-1 w-20">
               {categories.map((cat) => {
-                const isActive =
-                  currentCategory?.id ===
-                  cat.id;
+                const isActive = currentCategory?.id === cat.id;
 
                 return (
                   <div
                     key={cat.id}
-                    onMouseEnter={() =>
-                      setActiveCategoryTab(
-                        cat.id
-                      )
-                    }
-                    onClick={() =>
-                      setActiveCategoryTab(
-                        cat.id
-                      )
-                    }
+                    onMouseEnter={() => setActiveCategoryTab(cat.id)}
+                    onClick={() => setActiveCategoryTab(cat.id)}
                     className="flex items-center justify-between p-12 rounded-5 cursor-pointer"
                     style={{
-                      backgroundColor:
-                        isActive
-                          ? "var(--forth)"
-                          : "transparent",
-
-                      color: isActive
-                        ? "var(--dark)"
-                        : "#334155",
+                      backgroundColor: isActive ? "var(--forth)" : "transparent",
+                      color: isActive ? "var(--dark)" : "#334155",
                     }}
                   >
-                    <p className="small-text font-500">
-                      {cat.name}
-                    </p>
-
+                    <p className="small-text font-500">{cat.name}</p>
                     {cat.badge && (
                       <Badge
                         text={cat.badge}
                         color={cat.badgeColor || cat.badgeTheme}
                         size="xs"
                         shape="pill"
-                        className='px-12 py-3'
+                        className="px-12 py-3"
                       />
                     )}
                   </div>
@@ -698,44 +684,34 @@ const MegaMenu = React.memo(
             </div>
 
             <div className="w-80">
-              <div
-                key={currentCategory?.id || "category-grid"}
-                className="grid-cols-4 sm-grid-cols-2 gap-12"
-              >
-                {currentCategory?.items?.map(
-                  (item, idx) => (
-                    <NavLink
-                      key={`${currentCategory?.id || "cat"}-${item.title || item.href || idx}`}
-                      to={
-                        item.href ||
-                        "/products"
-                      }
-                      onClick={onClose}
-                    >
-                      <div className="w-full rounded-5 overflow-hidden relative">
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-150 object-cover flex"
-                        />
-                        {item.badge && (
-                          <div className="absolute top-8 left-8 z-2">
-                            <Badge
-                              text={item.badge}
-                              color={item.badgeColor || item.badgeTheme}
-                              size="xs"
-                              shape="pill"
-                            />
-                          </div>
-                        )}
-                      </div>
-
-                      <p className="small-text font-500 text-dark mt-6">
-                        {item.title}
-                      </p>
-                    </NavLink>
-                  )
-                )}
+              <div key={currentCategory?.id || "category-grid"} className="grid-cols-4 sm-grid-cols-2 gap-12">
+                {currentCategory?.items?.map((item, idx) => (
+                  <NavLink
+                    key={`${currentCategory?.id || "cat"}-${item.title || item.href || idx}`}
+                    to={item.href || "/products"}
+                    onClick={onClose}
+                  >
+                    <div className="w-full rounded-5 overflow-hidden relative">
+                      <Image
+                        src={resolveImagePath(item.image)}
+                        alt={item.title}
+                        className="w-full h-150 object-cover flex hover:scale-105 transition-transform"
+                      />
+                      {item.badge && (
+                        <div className="absolute top-8 left-8 z-2">
+                          <Badge
+                            text={item.badge}
+                            color={item.badgeColor || item.badgeTheme}
+                            size="xs"
+                            shape="pill"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <p className="small-text font-500 text-dark mt-6">{item.title}</p>
+                    {item.price && <p className="mini-text text-danger font-600 mt-1">{item.price}</p>}
+                  </NavLink>
+                ))}
               </div>
             </div>
           </div>
@@ -745,156 +721,127 @@ const MegaMenu = React.memo(
   }
 );
 
-const MobileMenu = React.memo(
-  ({
-    isMobileOpen,
-    pathname,
-    onClose,
-    onNavigate,
-  }) => {
+const MobileMenu = React.memo(({ isMobileOpen, pathname, onClose, onNavigate }) => {
+  const [menuView, setMenuView] = React.useState({ level: 0 });
+
+  React.useEffect(() => {
     if (!isMobileOpen) {
-      return null;
+      setMenuView({ level: 0 });
     }
+  }, [isMobileOpen]);
 
-    return (
-      <div className="relative left-0 w-full bg-white h-600 sm-h-full sm-pb-20 overflow-auto z-99 top-0 bordh hidden md-hidden sm-grid-cols-1">
-        <div className="px-18">
-          <div className="grid-cols-1 w-full">
-            {header.navLinks?.map(
-              (item) => {
-                const isActive =
-                  pathname === item.href;
+  if (!isMobileOpen) return null;
 
-                return (
-                  <div
-                    key={item.href}
-                    className="py-12 bordb"
-                  >
+  return (
+    <div className="relative top-0 left-0 w-full bg-white h-400 bordb bordh pb-20 overflow-y-auto z-50 hidden sm-grid-cols-1">
+      {menuView.level === 0 && (
+        <div>
+          <div className="grid-cols-1 px-14">
+            {header.navLinks?.map((item) => {
+              const isActive = pathname === item.href;
+              const hasSubMenu =
+                item.hasMegaMenu &&
+                item.megaMenuKey &&
+                dynamicMegaMenu?.[item.megaMenuKey]?.categories?.length > 0;
+
+              return (
+                <div key={item.href} className="py-13 bordb">
+                  {hasSubMenu ? (
+                    <div
+                      onClick={() =>
+                        setMenuView({
+                          level: 1,
+                          title: item.label,
+                          megaKey: item.megaMenuKey,
+                          categories: dynamicMegaMenu[item.megaMenuKey]?.categories || [],
+                        })
+                      }
+                      className="flex items-center justify-between cursor-pointer"
+                    >
+                      <p
+                        className="small-text font-500 uppercase"
+                        style={{ color: isActive ? "var(--primary)" : "var(--dark)" }}
+                      >
+                        {item.label}
+                      </p>
+                      <Icon
+                        name="ChevronRight"
+                        width="18"
+                        height="18"
+                        stroke={isActive ? "var(--primary)" : "var(--dark)"}
+                      />
+                    </div>
+                  ) : (
                     <NavLink
                       to={item.href}
                       onClick={onClose}
-                      className="decoration-none flex items-center justify-between"
+                      className="flex items-center justify-between"
                     >
-                      <span
-                        className="para-text font-500 uppercase flex items-center gap-8"
-                        style={{
-                          color: isActive
-                            ? "var(--primary)"
-                            : "var(--dark)",
-
-                          letterSpacing:
-                            "0.03em",
-                        }}
+                      <p
+                        className="small-text font-500 uppercase"
+                        style={{ color: isActive ? "var(--primary)" : "var(--dark)" }}
                       >
-                        <span>{item.label}</span>
-                        {item.badge && (
-                          <Badge
-                            text={item.badge}
-                            color={item.badgeColor || item.badgeTheme}
-                            size="xs"
-                            shape="pill"
-                          />
-                        )}
-                      </span>
-
+                        {item.label}
+                      </p>
                       <Icon
                         name="ChevronRight"
-                        width="22"
-                        height="22"
-                        stroke={
-                          isActive
-                            ? "var(--primary)"
-                            : "var(--dark)"
-                        }
+                        width="18"
+                        height="18"
+                        stroke={isActive ? "var(--primary)" : "var(--dark)"}
                       />
                     </NavLink>
-
-                    {item.hasMegaMenu &&
-                      header.megaMenu?.[
-                      item.megaMenuKey
-                      ] && (
-                        <div className="pl-12 pt-8 pb-4">
-                          {header.megaMenu[
-                            item.megaMenuKey
-                          ].categories?.map(
-                            (cat) => (
-                              <NavLink
-                                key={cat.id}
-                                to={`/products?type=${cat.id}`}
-                                onClick={onClose}
-                                className="py-6 flex items-center justify-between text-muted small-text decoration-none"
-                              >
-                                <span>
-                                  {cat.name}
-                                </span>
-
-                                {cat.badge && (
-                                  <Badge
-                                    text={cat.badge}
-                                    color={cat.badgeColor || cat.badgeTheme}
-                                    size="xs"
-                                    shape="pill"
-                                  />
-                                )}
-                              </NavLink>
-                            )
-                          )}
-                        </div>
-                      )}
-                  </div>
-                );
-              }
-            )}
+                  )}
+                </div>
+              );
+            })}
           </div>
 
-          {header.bottomBar?.menu?.length > 0 && (
-            <div className="pt-16 pb-8 bordb">
-              <p
-                className="mini-text text-gray font-600 uppercase mb-8"
-                style={{ letterSpacing: "0.05em" }}
-              >
-                Categories
-              </p>
-              {header.bottomBar.menu.map((item) => (
-                <div key={item.label} className="py-6">
-                  <NavLink
-                    to={item.href || "/product"}
-                    onClick={onClose}
-                    className="decoration-none flex items-center justify-between"
-                  >
-                    <span className="para-text font-500 uppercase text-dark flex items-center gap-8">
-                      <span>{item.label}</span>
-                      {item.badge && (
-                        <Badge
-                          text={item.badge}
-                          color={item.badgeColor || item.badgeTheme}
-                          size="xs"
-                          shape="pill"
-                        />
-                      )}
-                    </span>
-                    {item.hasMegaMenu ? (
-                      <Icon
-                        name="ChevronDown"
-                        width="18"
-                        height="18"
-                        stroke="var(--dark)"
-                      />
+          {categoryMenuItems.length > 0 && (
+            <div className="py-15 bg-forth px-14">
+              {categoryMenuItems.map((item) => {
+                const hasSubMenu =
+                  item.hasMegaMenu &&
+                  item.megaMenuKey &&
+                  dynamicMegaMenu?.[item.megaMenuKey]?.categories?.length > 0;
+
+                return (
+                  <div key={item.label} className="py-16 px-14 bg-white mb-5 rounded-5">
+                    {hasSubMenu ? (
+                      <div
+                        onClick={() =>
+                          setMenuView({
+                            level: 1,
+                            title: item.label,
+                            megaKey: item.megaMenuKey,
+                            categories: dynamicMegaMenu[item.megaMenuKey]?.categories || [],
+                          })
+                        }
+                        className="flex items-center justify-between cursor-pointer"
+                      >
+                        <p className="small-text font-500 uppercase text-dark flex items-center gap-8">
+                          {item.label}
+                        </p>
+                        <Icon name="ChevronRight" width="18" height="18" stroke="var(--gray)" />
+                      </div>
                     ) : (
-                      <Icon
-                        name="ChevronRight"
-                        width="18"
-                        height="18"
-                        stroke="var(--dark)"
-                      />
+                      <NavLink
+                        to={item.href || "/product"}
+                        onClick={onClose}
+                        className="flex items-center justify-between"
+                      >
+                        <p className="small-text font-500 uppercase text-dark flex items-center gap-8">
+                          {item.label}
+                        </p>
+                        <Icon name="ChevronRight" width="18" height="18" stroke="var(--gray)" />
+                      </NavLink>
                     )}
-                  </NavLink>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           )}
 
-          <div className="w-full mt-20">
+          <div className="px-14 mt-15">
             <Button
               onClick={() => {
                 onClose();
@@ -906,15 +853,111 @@ const MobileMenu = React.memo(
               iconHeight="18"
               iconStroke="var(--white)"
               version="v3"
+              className="w-full justify-center"
             >
               Get In Touch
             </Button>
           </div>
         </div>
-      </div>
-    );
-  }
-);
+      )}
+
+      {menuView.level === 1 && (
+        <div className="w-full">
+          <div
+            onClick={() => setMenuView({ level: 0 })}
+            className="w-full flex items-center gap-4 p-16 bordb bg-forth cursor-pointer"
+          >
+            <Icon name="ChevronLeft" width="18" height="18" stroke="var(--dark)" />
+            <p className="small-text font-500 text-dark">BACK</p>
+          </div>
+
+          <div className="px-18">
+            {menuView.categories?.map((cat) => (
+              <div
+                key={cat.id || cat.name}
+                onClick={() => {
+                  if (cat.items && cat.items.length > 0) {
+                    setMenuView({
+                      level: 2,
+                      title: cat.name,
+                      items: cat.items,
+                      parentCategories: menuView.categories,
+                      megaKey: menuView.megaKey,
+                    });
+                  } else {
+                    onClose();
+                    onNavigate(cat.href || `/products?type=${cat.id}`);
+                  }
+                }}
+                className="py-18 bordb flex items-center justify-between cursor-pointer"
+              >
+                <div className="flex items-center gap-8">
+                  <p className="small-text font-500 text-dark">{cat.name}</p>
+                  {cat.badge && (
+                    <Badge color="success" shape="pill" text={cat.badge} size="xs" />
+                  )}
+                </div>
+                <Icon name="ChevronRight" width="18" height="18" stroke="var(--gray)" />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {menuView.level === 2 && (
+        <div className="w-full">
+          <div
+            onClick={() =>
+              setMenuView({
+                level: 1,
+                title: menuView.title,
+                megaKey: menuView.megaKey,
+                categories: menuView.parentCategories,
+              })
+            }
+            className="w-full flex items-center gap-4 p-16 bordb bg-forth cursor-pointer"
+          >
+            <Icon name="ChevronLeft" width="18" height="18" stroke="var(--dark)" />
+            <p className="small-text font-500 text-dark">BACK</p>
+          </div>
+
+          <div className="px-18">
+            {menuView.items?.map((item, idx) => (
+              <div
+                key={item.title || item.href || idx}
+                onClick={() => {
+                  onClose();
+                  onNavigate(
+                    item.href ||
+                    `/products?type=${item.title?.toLowerCase().replace(/\s+/g, "-")}`
+                  );
+                }}
+                className="py-18 bordb flex items-center gap-12 cursor-pointer"
+              >
+                {item.image && (
+                  <Image
+                    src={resolveImagePath(item.image)}
+                    alt={item.title}
+                    height="45px"
+                    className="w-15 object-cover flex rounded-5"
+                  />
+                )}
+                <div className="w-85">
+                  <p className="small-text font-500 text-dark line-clamp2 capitalize">
+                    {item.title}
+                  </p>
+                  {item.price && (
+                    <p className="mini-text text-danger font-600 mt-1">{item.price}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+});
 
 const Header = () => {
   const navigate = useNavigate();
@@ -924,7 +967,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [hoveredNav, setHoveredNav] = React.useState(null);
   const [activeMegaMenu, setActiveMegaMenu] = React.useState(null);
-  const [activeCategoryTab, setActiveCategoryTab] = React.useState("spc");
+  const [activeCategoryTab, setActiveCategoryTab] = React.useState(null);
 
   const megaMenuTimerRef = React.useRef(null);
 
@@ -941,24 +984,14 @@ const Header = () => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(
-        window.scrollY > 20
-      );
+      setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      { passive: true }
-    );
-
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -971,134 +1004,92 @@ const Header = () => {
   React.useEffect(() => {
     return () => {
       if (megaMenuTimerRef.current) {
-        clearTimeout(
-          megaMenuTimerRef.current
-        );
+        clearTimeout(megaMenuTimerRef.current);
       }
     };
   }, []);
 
+  const handleNavMouseEnter = React.useCallback((item) => {
+    if (megaMenuTimerRef.current) {
+      clearTimeout(megaMenuTimerRef.current);
+    }
 
-  const handleNavMouseEnter =
-    React.useCallback((item) => {
-      if (megaMenuTimerRef.current) {
-        clearTimeout(
-          megaMenuTimerRef.current
-        );
-      }
+    setHoveredNav(item.label || item.href);
 
-      setHoveredNav(item.label || item.href);
+    const targetMegaKey =
+      item.hasMegaMenu &&
+        item.megaMenuKey &&
+        dynamicMegaMenu?.[item.megaMenuKey]
+        ? item.megaMenuKey
+        : null;
 
-      const targetMegaKey =
-        item.hasMegaMenu &&
-          item.megaMenuKey &&
-          header.megaMenu?.[
-          item.megaMenuKey
-          ]
-          ? item.megaMenuKey
-          : null;
+    setActiveMegaMenu(targetMegaKey);
 
-      setActiveMegaMenu(targetMegaKey);
+    if (
+      targetMegaKey &&
+      dynamicMegaMenu?.[targetMegaKey]?.categories?.[0]?.id
+    ) {
+      setActiveCategoryTab(
+        dynamicMegaMenu[targetMegaKey].categories[0].id
+      );
+    }
+  }, []);
 
-      if (
-        targetMegaKey &&
-        header.megaMenu?.[targetMegaKey]?.categories?.[0]?.id
-      ) {
-        setActiveCategoryTab(
-          header.megaMenu[targetMegaKey].categories[0].id
-        );
-      }
-    }, []);
-
-  const handleNavMouseLeave =
-    React.useCallback(() => {
-      megaMenuTimerRef.current =
-        setTimeout(() => {
-          setActiveMegaMenu(null);
-          setHoveredNav(null);
-        }, 180);
-    }, []);
-
-  const handleMegaMenuMouseEnter =
-    React.useCallback(() => {
-      if (megaMenuTimerRef.current) {
-        clearTimeout(
-          megaMenuTimerRef.current
-        );
-      }
-    }, []);
-
-  const handleMegaMenuMouseLeave =
-    React.useCallback(() => {
-      megaMenuTimerRef.current =
-        setTimeout(() => {
-          setActiveMegaMenu(null);
-          setHoveredNav(null);
-        }, 180);
-    }, []);
-
-  const isMegaOpen =
-    Boolean(activeMegaMenu);
-
-  const isHeaderWhite =
-    isScrolled ||
-    isMobileOpen ||
-    isMegaOpen;
-
-  const headerBg = isHeaderWhite
-    ? "var(--white)"
-    : "transparent";
-
-  const headerBorder = isHeaderWhite
-    ? "1px solid var(--white)"
-    : "1px solid rgba(255, 255, 255, 0.1)";
-
-  const handleCloseMobile =
-    React.useCallback(() => {
-      setIsMobileOpen(false);
-    }, []);
-
-  const handleOpenCart =
-    React.useCallback(() => {
-      setIsCartOpen(true);
-    }, [setIsCartOpen]);
-
-  const handleCloseCart =
-    React.useCallback(() => {
-      setIsCartOpen(false);
-    }, [setIsCartOpen]);
-
-  const handleRemoveFromCart =
-    React.useCallback(
-      (id) => {
-        removeFromCart(id);
-      },
-      [removeFromCart]
-    );
-
-  const handleSetQuantity =
-    React.useCallback(
-      (id, value) => {
-        const setQty = setExactQuantity || updateQuantity;
-        if (typeof setQty === "function") {
-          setQty(id, value);
-        }
-      },
-      [setExactQuantity, updateQuantity]
-    );
-
-  const handleNavigate =
-    React.useCallback(
-      (path) => {
-        navigate(path);
-      },
-      [navigate]
-    );
-
-  const handleCloseMegaMenu =
-    React.useCallback(() => {
+  const handleNavMouseLeave = React.useCallback(() => {
+    megaMenuTimerRef.current = setTimeout(() => {
       setActiveMegaMenu(null);
-    }, []);
+      setHoveredNav(null);
+    }, 180);
+  }, []);
+
+  const handleMegaMenuMouseEnter = React.useCallback(() => {
+    if (megaMenuTimerRef.current) {
+      clearTimeout(megaMenuTimerRef.current);
+    }
+  }, []);
+
+  const handleMegaMenuMouseLeave = React.useCallback(() => {
+    megaMenuTimerRef.current = setTimeout(() => {
+      setActiveMegaMenu(null);
+      setHoveredNav(null);
+    }, 180);
+  }, []);
+
+  const isMegaOpen = Boolean(activeMegaMenu);
+  const isHeaderWhite = isScrolled || isMobileOpen || isMegaOpen;
+  const headerBg = isHeaderWhite ? "var(--white)" : "transparent";
+  const headerBorder = isHeaderWhite ? "1px solid var(--white)" : "1px solid rgba(255, 255, 255, 0.1)";
+
+  const handleCloseMobile = React.useCallback(() => {
+    setIsMobileOpen(false);
+  }, []);
+
+  const handleOpenCart = React.useCallback(() => {
+    setIsCartOpen(true);
+  }, [setIsCartOpen]);
+
+  const handleCloseCart = React.useCallback(() => {
+    setIsCartOpen(false);
+  }, [setIsCartOpen]);
+
+  const handleRemoveFromCart = React.useCallback((id) => {
+    removeFromCart(id);
+  }, [removeFromCart]);
+
+  const handleSetQuantity = React.useCallback((id, value) => {
+    const setQty = setExactQuantity || updateQuantity;
+    if (typeof setQty === "function") {
+      setQty(id, value);
+    }
+  }, [setExactQuantity, updateQuantity]);
+
+  const handleNavigate = React.useCallback((path) => {
+    navigate(path);
+  }, [navigate]);
+
+  const handleCloseMegaMenu = React.useCallback(() => {
+    setActiveMegaMenu(null);
+  }, []);
 
   return (
     <Container
@@ -1112,87 +1103,58 @@ const Header = () => {
         width: "100%",
         backgroundColor: configData?.Header?.HeaderSticky ? headerBg : "transparent",
         borderBottom: configData?.Header?.HeaderSticky ? headerBorder : "transparent",
-        transition:
-          "background-color 0.35s ease",
+        transition: "background-color 0.35s ease",
       }}
     >
       <div className="w-full relative">
         <HeaderTopBar />
 
         <Container>
-          <div
-            className="flex items-center w-full"
-            style={{
-              height: "64px"
-            }}
-          >
-            <HeaderLogo
-              isHeaderWhite={
-                isHeaderWhite
-              }
-              onCloseMobile={
-                handleCloseMobile
-              }
-            />
+          <div className="flex items-center w-full" style={{ height: "64px" }}>
+            <HeaderLogo isHeaderWhite={isHeaderWhite} onCloseMobile={handleCloseMobile} />
 
             <HeaderNavigation
-              pathname={
-                location.pathname
-              }
+              pathname={location.pathname}
               hoveredNav={hoveredNav}
-              activeMegaMenu={
-                activeMegaMenu
-              }
-              isHeaderWhite={
-                isHeaderWhite
-              }
-              onNavMouseEnter={
-                handleNavMouseEnter
-              }
-              onNavMouseLeave={
-                handleNavMouseLeave
-              }
+              activeMegaMenu={activeMegaMenu}
+              isHeaderWhite={isHeaderWhite}
+              onNavMouseEnter={handleNavMouseEnter}
+              onNavMouseLeave={handleNavMouseLeave}
             />
 
             <HeaderActions
-              isHeaderWhite={
-                isHeaderWhite
-              }
-              isMobileOpen={
-                isMobileOpen
-              }
-              setIsMobileOpen={
-                setIsMobileOpen
-              }
-              onNavigate={
-                handleNavigate
-              }
+              isHeaderWhite={isHeaderWhite}
+              isMobileOpen={isMobileOpen}
+              setIsMobileOpen={setIsMobileOpen}
+              onNavigate={handleNavigate}
               cartSection={
                 <CartSidebar
                   cartItems={cartItems}
                   cartQty={cartQty}
                   subtotal={subtotal}
-                  isCartOpen={
-                    isCartOpen
-                  }
-                  isHeaderWhite={
-                    isHeaderWhite
-                  }
-                  onOpenCart={
-                    handleOpenCart
-                  }
-                  onCloseCart={
-                    handleCloseCart
-                  }
-                  onRemove={
-                    handleRemoveFromCart
-                  }
-                  onSetQuantity={
-                    handleSetQuantity
-                  }
-                  onNavigate={
-                    handleNavigate
-                  }
+                  isCartOpen={isCartOpen}
+                  isHeaderWhite={isHeaderWhite}
+                  onOpenCart={handleOpenCart}
+                  onCloseCart={handleCloseCart}
+                  onRemove={handleRemoveFromCart}
+                  onSetQuantity={handleSetQuantity}
+                  onNavigate={handleNavigate}
+                  isMobile={false}
+                />
+              }
+              mobileCartSection={
+                <CartSidebar
+                  cartItems={cartItems}
+                  cartQty={cartQty}
+                  subtotal={subtotal}
+                  isCartOpen={isCartOpen}
+                  isHeaderWhite={isHeaderWhite}
+                  onOpenCart={handleOpenCart}
+                  onCloseCart={handleCloseCart}
+                  onRemove={handleRemoveFromCart}
+                  onSetQuantity={handleSetQuantity}
+                  onNavigate={handleNavigate}
+                  isMobile={true}
                 />
               }
             />
@@ -1209,43 +1171,23 @@ const Header = () => {
         />
 
         <MegaMenu
-          activeMegaMenu={
-            activeMegaMenu
-          }
-          activeCategoryTab={
-            activeCategoryTab
-          }
-          setActiveCategoryTab={
-            setActiveCategoryTab
-          }
-          onClose={
-            handleCloseMegaMenu
-          }
-          onMouseEnter={
-            handleMegaMenuMouseEnter
-          }
-          onMouseLeave={
-            handleMegaMenuMouseLeave
-          }
+          activeMegaMenu={activeMegaMenu}
+          activeCategoryTab={activeCategoryTab}
+          setActiveCategoryTab={setActiveCategoryTab}
+          onClose={handleCloseMegaMenu}
+          onMouseEnter={handleMegaMenuMouseEnter}
+          onMouseLeave={handleMegaMenuMouseLeave}
         />
 
         <MobileMenu
-          isMobileOpen={
-            isMobileOpen
-          }
-          pathname={
-            location.pathname
-          }
-          onClose={
-            handleCloseMobile
-          }
-          onNavigate={
-            handleNavigate
-          }
+          isMobileOpen={isMobileOpen}
+          pathname={location.pathname}
+          onClose={handleCloseMobile}
+          onNavigate={handleNavigate}
         />
       </div>
     </Container>
   );
 };
 
-export default Header;
+export default React.memo(Header);

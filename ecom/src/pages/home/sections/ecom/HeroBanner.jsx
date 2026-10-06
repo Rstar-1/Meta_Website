@@ -8,7 +8,7 @@ import Button from '../../../../components/common/Button';
 import { configData } from '../../../../utils/apiData';
 
 const HEIGHT_MAP = {
-    sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-550' },
+    sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-600' },
     normal: { 1: 'h-700 sm-h-550', 2: 'h-550' }
 };
 
@@ -30,7 +30,7 @@ const HeroBackground = React.memo(() => (
 
 const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) => (
     <div className={`w-full ${isHeaderSticky
-        ? 'pb-100'
+        ? 'pb-100 sm-pb-1'
         : [1, 2].includes(heroVersion)
             ? 'pb-100 sm-pb-30'
             : 'pb-60'
@@ -63,8 +63,8 @@ const BreadcrumbTab = React.memo(({ isMobile, heroVersion }) => {
         <div
             className="absolute z-30 flex items-center justify-center"
             style={{
-                width: isMobile ? '65%' : '450px',
-                height: isMobile ? '45px' : '68px',
+                width: isMobile ? '55%' : '450px',
+                height: isMobile ? '40px' : '68px',
                 backgroundColor: 'var(--white)',
                 bottom: '-5px',
                 left: '50%',
@@ -127,12 +127,12 @@ const HeroBanner = React.memo(() => {
         return {
             position: 'relative',
             overflow: 'hidden',
-            borderRadius: isMobile ? '0 0 10px 10px' : '0 0 25px 25px'
+            borderRadius: isMobile ? '0 0 15px 15px' : '0 0 25px 25px'
         };
     }, [isMobile, heroVersion]);
 
     return (
-        <Container className={`${heightClass} ${[1].includes(heroVersion) ? 'flex items-center' : 'flex items-end'}`}
+        <Container className={`${heightClass} ${[1].includes(heroVersion) ? 'flex items-center' : 'flex items-end sm-items-center'}`}
             style={containerStyle}
         >
             <HeroBackground />

@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "Wall Panels & Ceilings",
+    "title": "Wall Panels & Ceilings",
+    "slug": "wall-panels-ceilings",
+    "megaMenuKey": "wallPanelsCeilings",
+    "image": "Compare1.jpg",
+    "icon": "Compare1.jpg",
+    "iconName": "Layers",
+    "bgColor": "#EFF6FF",
+    "accentColor": "#2563EB",
+    "subCategories": [
+      { "id": "acoustic-panels", "name": "Acoustic Panels" },
+      { "id": "pvc-panels", "name": "PVC Wall Panels" },
+      { "id": "wpc-cladding", "name": "WPC Cladding" },
+      { "id": "ceiling-systems", "name": "Ceiling Systems" }
+    ],
+    "description": "High-performance acoustic wood panels, WPC fluted louvers, and architectural ceiling systems."
+  },
+  {
+    "id": 2,
+    "name": "Ropes & Nets",
+    "title": "Ropes & Nets",
+    "slug": "ropes-nets",
+    "megaMenuKey": "ropesNets",
+    "image": "Compare2.jpg",
+    "icon": "Compare2.jpg",
+    "iconName": "Shield",
+    "bgColor": "#ECFDF5",
+    "accentColor": "#059669",
+    "subCategories": [
+      { "id": "industrial-ropes", "name": "Industrial Ropes" },
+      { "id": "safety-nets", "name": "Safety & Debris Nets" },
+      { "id": "agri-nets", "name": "Agricultural & Shade Nets" },
+      { "id": "sports-nets", "name": "Sports Nets" }
+    ],
+    "description": "Industrial heavy-duty cordage, UV-stabilized fall safety netting, and agriculture shade mesh."
+  },
+  {
+    "id": 3,
+    "name": "Vinyl Flooring",
+    "title": "Vinyl Flooring",
+    "slug": "vinyl-flooring",
+    "megaMenuKey": "vinylFlooring",
+    "image": "Compare3.jpg",
+    "icon": "Compare3.jpg",
+    "iconName": "Box",
+    "bgColor": "#FEF2F2",
+    "accentColor": "#DC2626",
+    "subCategories": [
+      { "id": "spc", "name": "SPC" },
+      { "id": "lvt", "name": "LVT" },
+      { "id": "wpc", "name": "WPC" },
+      { "id": "sheet-vinyl", "name": "Sheet Vinyl" }
+    ],
+    "description": "Durable SPC rigid core, luxury vinyl tiles (LVT), and waterproof timber textured planks."
+  }
+]
