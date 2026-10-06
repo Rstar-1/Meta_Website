@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     pageSeoData,
     sitelinks,
@@ -39,7 +39,7 @@ const SEO = ({
     const imageUrl = customImage ? (customImage.startsWith('http') ? customImage : `${SITE_URL}${customImage}`) : `${SITE_URL}${DEFAULT_IMAGE}`;
     const activeFaqs = faqs || (page === 'home' || !page ? aeoFAQs : []);
 
-    useEffect(() => {
+    React.useEffect(() => {
         // 1. Title
         document.title = title;
 
