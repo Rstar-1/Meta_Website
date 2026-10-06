@@ -2,11 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Chatbot from './Chatbot';
-import { CartProvider } from '../../context/CartContext';
 import Button from '../common/Button';
-
-// const rawPhone = import.meta.env.VITE_SOCIAL_PHONE || (import.meta.env.VITE_PHONE ? `tel:${import.meta.env.VITE_PHONE}` : 'tel:+1234567890');
-// const phoneUrl = rawPhone.startsWith('tel:') ? rawPhone : `tel:${rawPhone}`;
 
 const socialLinks = [
     {
@@ -52,33 +48,11 @@ const socialLinks = [
         url: import.meta.env.VITE_SOCIAL_WHATSAPP || 'https://whatsapp.com/channel/0029VbD28RpKgsNusSLyup2i',
         bg: 'success',
         ariaLabel: 'WhatsApp'
-    },
-    // {
-    //     id: 'linkedin',
-    //     name: 'LinkedIn',
-    //     icon: 'LinkedIn',
-    //     width: '20',
-    //     height: '20',
-    //     fill: 'var(--white)',
-    //     url: import.meta.env.VITE_SOCIAL_LINKEDIN || 'https://linkedin.com',
-    //     bg: 'info',
-    //     ariaLabel: 'LinkedIn'
-    // },
-    // {
-    //     id: 'phone',
-    //     name: 'Call',
-    //     icon: 'Call',
-    //     width: '20',
-    //     height: '20',
-    //     fill: 'var(--white)',
-    //     url: phoneUrl,
-    //     bg: 'info',
-    //     ariaLabel: 'Call Us'
-    // }
+    }
 ];
 
 const Layout = () => (
-    <CartProvider>
+    <>
         <Header />
         <main className='w-full'>
             <Outlet />
@@ -116,7 +90,7 @@ const Layout = () => (
 
         <Chatbot />
         <Footer />
-    </CartProvider>
+    </>
 );
 
 export default Layout;

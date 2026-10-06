@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Icon from '../../common/Icon';
 import Image from '../../common/Image';
 import Button from '../../common/Button';
-import { useCart } from '../../../context/CartContext';
+import { useCart } from '../../../feature/slice/cartSlice';
 
 export const RightOperationalGrid = React.memo(({ data }) => {
     const cards = Array.isArray(data?.operationalCards) ? data.operationalCards : [];

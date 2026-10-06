@@ -12,7 +12,7 @@ import Fields from "../forms/Fields";
 
 import { header, configData } from "../../utils/apiData";
 import { resolveImagePath } from "../../utils/imageResolver";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../feature/slice/cartSlice";
 import productsData from "../../data/product.json";
 import categoriesData from "../../data/category.json";
 

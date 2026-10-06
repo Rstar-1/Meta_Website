@@ -7,7 +7,7 @@ import Button from '../../../../components/common/Button';
 
 import Heading from '../../../../components/layout/generic/Heading';
 
-import { useCart } from '../../../../context/CartContext';
+import { useCart } from '../../../../feature/slice/cartSlice';
 
 const TRENDING_ITEMS = [
     {
