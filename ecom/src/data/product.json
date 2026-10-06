@@ -27,6 +27,7 @@
     "image": "Compare1.jpg",
     "images": ["Compare1.jpg", "Compare2.jpg", "Compare3.jpg"],
     "inStock": true,
+    "trending": true,
     "stockCount": 15,
     "description": "SPC Wood Plank — stone polymer composite flooring with realistic timber texture, 100% waterproof."
   },
@@ -50,6 +51,7 @@
     "image": "Compare2.jpg",
     "images": ["Compare2.jpg", "Compare3.jpg", "Compare1.jpg"],
     "inStock": true,
+    "trending": false,
     "stockCount": 20,
     "description": "SPC Stone Tile — high durability stone finish rigid core luxury flooring."
   },
@@ -73,6 +75,7 @@
     "image": "Compare3.jpg",
     "images": ["Compare3.jpg", "Compare1.jpg", "Compare2.jpg"],
     "inStock": true,
+    "trending": false,
     "stockCount": 18,
     "description": "SPC Marble Surface — premium polished marble look with impact resistance."
   },
@@ -96,6 +99,7 @@
     "image": "Compare1.jpg",
     "images": ["Compare1.jpg", "Compare2.jpg", "Compare3.jpg"],
     "inStock": true,
+    "trending": false,
     "stockCount": 12,
     "description": "SPC Herringbone — classic herringbone pattern with click-lock waterproof system."
   },
@@ -119,6 +123,7 @@
     "image": "Compare2.jpg",
     "images": ["Compare2.jpg", "Compare1.jpg", "Compare3.jpg"],
     "inStock": true,
+    "trending": false,
     "stockCount": 25,
     "description": "LVT Wood Plank — luxury vinyl tiles with acoustic backing and stain protection."
   },
@@ -142,6 +147,7 @@
     "image": "Compare3.jpg",
     "images": ["Compare3.jpg", "Compare2.jpg", "Compare1.jpg"],
     "inStock": true,
+    "trending": true,
     "stockCount": 14,
     "description": "LVT Stone Classic — textured slate and travertine look luxury vinyl."
   },
@@ -165,6 +171,7 @@
     "image": "Compare1.jpg",
     "images": ["Compare1.jpg", "Compare2.jpg", "Compare3.jpg"],
     "inStock": true,
+    "trending": false,
     "stockCount": 10,
     "description": "WPC Fluted Louver — outdoor and indoor weather-resistant composite wall cladding."
   },
@@ -188,6 +195,7 @@
     "image": "Compare2.jpg",
     "images": ["Compare2.jpg", "Compare3.jpg", "Compare1.jpg"],
     "inStock": true,
+    "trending": true,
     "stockCount": 16,
     "description": "Fluted Acoustic Wood — natural wood veneer slats backed with acoustic recycled felt."
   },
@@ -211,6 +219,7 @@
     "image": "Compare3.jpg",
     "images": ["Compare3.jpg", "Compare1.jpg", "Compare2.jpg"],
     "inStock": true,
+    "trending": true,
     "stockCount": 22,
     "description": "Marble Finish PVC — high gloss marble effect lightweight waterproof panels."
   },
@@ -234,6 +243,7 @@
     "image": "Compare1.jpg",
     "images": ["Compare1.jpg", "Compare2.jpg", "Compare3.jpg"],
     "inStock": true,
+    "trending": false,
     "stockCount": 30,
     "description": "High-Tensile Polypropylene Rope — 3-strand floating industrial utility cordage."
   },
@@ -257,6 +267,7 @@
     "image": "Compare2.jpg",
     "images": ["Compare2.jpg", "Compare3.jpg", "Compare1.jpg"],
     "inStock": true,
+    "trending": false,
     "stockCount": 20,
     "description": "Fall Arrest Debris Net — UV-treated heavy duty perimeter construction safety netting."
   },
@@ -280,6 +291,7 @@
     "image": "Compare3.jpg",
     "images": ["Compare3.jpg", "Compare1.jpg", "Compare2.jpg"],
     "inStock": true,
+    "trending": true,
     "stockCount": 40,
     "description": "Agriculture Shade Netting — 75% shade factor virgin HDPE green mesh for horticulture."
   }

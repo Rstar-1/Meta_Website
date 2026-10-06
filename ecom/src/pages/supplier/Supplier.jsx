@@ -2,8 +2,8 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import productsData from '../../data/product.json';
 import Container from '../../components/common/Container';
-import Image from '../../components/common/Image';
 import Button from '../../components/common/Button';
+import CardLayout from '../../components/layout/sections/CardLayout';
 import Tab from '../../components/common/Tab';
 import Table from '../../components/common/Table';
 import Banner from '../../components/layout/generic/Banner';
@@ -228,43 +228,16 @@ const Supplier = () => {
                             <div className="mt-20">
                                 {validProducts.length > 0 ? (
                                     <div className="grid-cols-3 sm-grid-cols-2 gap-12">
-                                        {validProducts.map((product) => {
-                                            const formattedPrice = typeof product.price === 'number'
-                                                ? `$${product.price.toFixed(2)}`
-                                                : (product.priceFormatted || `$${product.price || 0}`);
-
-                                            return (
-                                                <div
-                                                    key={product.id}
-                                                    onClick={() => handleProductClick(product.id)}
-                                                    className="bg-forth rounded-5 overflow-hidden cursor-pointer"
-                                                >
-                                                    <div className="h-200 sm-h-150 overflow-hidden relative bg-forth">
-                                                        <Image
-                                                            src={product.image}
-                                                            alt={product.name}
-                                                            className="h-full w-full object-cover flex"
-                                                        />
-                                                    </div>
-                                                    <div className="p-12">
-                                                        <p className="mini-text text-gray uppercase font-500">
-                                                            {product.category || 'Furniture'}
-                                                        </p>
-                                                        <h4 className="headmini-text font-600 text-dark line-clamp1 uppercase">
-                                                            {product.name}
-                                                        </h4>
-                                                        <div className="flex items-center justify-between mt-8 pt-8 bordh">
-                                                            <p className="font-500 small-text text-dark">
-                                                                {formattedPrice}
-                                                            </p>
-                                                            <p className="mini-text text-primary font-500">
-                                                                View →
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            );
-                                        })}
+                                        {validProducts.map((product) => (
+                                            <CardLayout
+                                                key={product.id}
+                                                version="product"
+                                                item={product}
+                                                isFluid={true}
+                                                onClick={() => handleProductClick(product.id)}
+                                                onCategoryClick={(cat) => navigate(`/product?category=${encodeURIComponent(cat)}`)}
+                                            />
+                                        ))}
                                     </div>
                                 ) : (
                                     <div className="bg-white py-40 rounded-5 border-ec">

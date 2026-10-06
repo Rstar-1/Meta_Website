@@ -8,7 +8,7 @@ import Button from '../../../../components/common/Button';
 import { configData } from '../../../../utils/apiData';
 
 const HEIGHT_MAP = {
-    sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-600' },
+    sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-550' },
     normal: { 1: 'h-700 sm-h-550', 2: 'h-550' }
 };
 
@@ -63,8 +63,8 @@ const BreadcrumbTab = React.memo(({ isMobile, heroVersion }) => {
         <div
             className="absolute z-30 flex items-center justify-center"
             style={{
-                width: isMobile ? '55%' : '450px',
-                height: isMobile ? '40px' : '68px',
+                width: isMobile ? '60%' : '450px',
+                height: isMobile ? '50px' : '68px',
                 backgroundColor: 'var(--white)',
                 bottom: '-5px',
                 left: '50%',
@@ -127,7 +127,7 @@ const HeroBanner = React.memo(() => {
         return {
             position: 'relative',
             overflow: 'hidden',
-            borderRadius: isMobile ? '0 0 15px 15px' : '0 0 25px 25px'
+            borderRadius: isMobile ? '0 0 20px 20px' : '0 0 25px 25px'
         };
     }, [isMobile, heroVersion]);
 
