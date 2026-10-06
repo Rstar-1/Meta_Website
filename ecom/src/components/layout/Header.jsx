@@ -170,7 +170,7 @@ const HeaderTopBar = React.memo(() => {
 const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
   const logoSrc =
     !configData?.Header?.HeaderSticky || isHeaderWhite
-      ? "/src/assets/sobo_logo.webp"
+      ? "/src/assets/sobo_logo.png"
       : "/src/assets/sobo_white.png";
 
   return (
@@ -178,8 +178,8 @@ const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
       <Image
         src={resolveImagePath(logoSrc)}
         alt="Infitech Logo"
-        className="object-contain"
-        style={{ width: "auto", height: "50px" }}
+        className="object-contain w-90 sm-w-50"
+        style={{ height: "60px" }}
       />
     </NavLink>
   );

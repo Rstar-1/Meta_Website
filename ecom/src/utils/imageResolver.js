@@ -1,4 +1,4 @@
-import soboLogo from "../assets/sobo_logo.webp";
+import soboLogo from "../assets/sobo_logo.png";
 import soboWhite from "../assets/sobo_white.png";
 import aboutBanner from "../assets/about-banner.jpg";
 
@@ -53,7 +53,9 @@ export const resolveImagePath = (path) => {
   // Prepend remote CDN base if available for relative filenames (e.g. Compare1.jpg)
   if (!trimmed.startsWith("/")) {
     const base = import.meta.env.VITE_IMAGE || "";
-    return base ? `${base.replace(/\/+$/, "")}/${trimmed.replace(/^\/+/, "")}` : trimmed;
+    return base
+      ? `${base.replace(/\/+$/, "")}/${trimmed.replace(/^\/+/, "")}`
+      : trimmed;
   }
 
   return trimmed;

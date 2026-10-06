@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from '../common/Container';
 import Icon from '../common/Icon';
 import { footer, footerData, configData } from '../../utils/apiData';
@@ -111,9 +112,17 @@ const FooterNewsletter = React.memo(
         {d && (
           <p className="mini-text text-gray font-400 mt-8">
             {d.prefix}
-            <a href={d.termsUrl} className="text-gray mini-text">{d.termsLabel}</a>
+            {d.termsUrl?.startsWith('/') ? (
+              <Link to={d.termsUrl} className="text-gray mini-text hover:underline">{d.termsLabel}</Link>
+            ) : (
+              <a href={d.termsUrl || '#'} className="text-gray mini-text hover:underline">{d.termsLabel}</a>
+            )}
             {d.middle}
-            <a href={d.privacyUrl} className="text-gray mini-text">{d.privacyLabel}</a>
+            {d.privacyUrl?.startsWith('/') ? (
+              <Link to={d.privacyUrl} className="text-gray mini-text hover:underline">{d.privacyLabel}</Link>
+            ) : (
+              <a href={d.privacyUrl || '#'} className="text-gray mini-text hover:underline">{d.privacyLabel}</a>
+            )}
             {d.suffix}
           </p>
         )}
@@ -133,9 +142,15 @@ const FooterNavigation = React.memo(({ columns }) => {
           <ul className="list-none px-4 grid-cols-1 gap-8 mt-12">
             {col.links.map((link, lIdx) => (
               <li key={link.label || lIdx}>
-                <a href={link.url || '#'} className="text-gray font-400 small-text">
-                  {link.label}
-                </a>
+                {link.url?.startsWith('/') ? (
+                  <Link to={link.url} className="text-gray font-400 small-text hover:underline">
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a href={link.url || '#'} className="text-gray font-400 small-text hover:underline">
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -202,9 +217,15 @@ const FooterBottomBar = React.memo(({ bottom }) => {
         {bottom.legalLinks && (
           <div className="flex items-center gap-12">
             {bottom.legalLinks.map((item) => (
-              <a key={item.label} href={item.url || '#'} className="mini-text text-gray">
-                {item.label}
-              </a>
+              item.url?.startsWith('/') ? (
+                <Link key={item.label} to={item.url} className="mini-text text-gray hover:underline">
+                  {item.label}
+                </Link>
+              ) : (
+                <a key={item.label} href={item.url || '#'} className="mini-text text-gray hover:underline">
+                  {item.label}
+                </a>
+              )
             ))}
           </div>
         )}

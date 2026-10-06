@@ -24,10 +24,10 @@ const FeatureSection = () => {
             <div className="w-full py-50 sm-py-20">
                 <Heading
                     version="v2"
-                    tag="SPECIAL OFFERS FOR YOU"
-                    title="Featured Products & Popular Designs"
-                    actionText="Shop All Products"
-                    actionLink="/products"
+                    tag="BEST SELLING PVC STRIPS"
+                    title="Featured PVC Strip Curtains & Rolls"
+                    actionText="View All Products"
+                    actionLink="/product"
                 />
                 <SlideLayout
                     className="mt-20"

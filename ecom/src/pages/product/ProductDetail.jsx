@@ -3,6 +3,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import Banner from '../../components/layout/generic/Banner';
 import DetailSection from './sections/DetailSection';
 import SpecifySection from './sections/SpecifySection';
+import SEO from '../../seo';
 import bannerImg from '../../assets/about-banner.jpg';
 import { productsData, categoriesData } from '../../utils/apiData';
 
@@ -33,6 +34,17 @@ const ProductDetail = () => {
 
     return (
         <>
+            <SEO
+                page="productDetail"
+                title={`${productName} | Ashmita Vinyls`}
+                description={product?.desc || product?.description || `Explore ${productName} by Ashmita Vinyls. Premium quality PVC vinyl products and solutions.`}
+                path={`/product/${product?.id || id || ''}`}
+                breadcrumbs={[
+                    { label: 'Home', path: '/home' },
+                    { label: categoryName, path: `/product?category=${encodeURIComponent(categoryName)}` },
+                    { label: productName, path: `/product/${product?.id || id || ''}` }
+                ]}
+            />
             <Banner
                 title="Product Detail"
                 desc={productName}

@@ -5,7 +5,7 @@ import Container from '../../../../components/common/Container';
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
 
-import { configData } from '../../../../utils/apiData';
+import { configData, heroCMS } from '../../../../utils/apiData';
 
 const HEIGHT_MAP = {
     sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-550' },
@@ -16,7 +16,7 @@ const HeroBackground = React.memo(() => (
     <div className='absolute top-0 left-0 w-full h-full z-10'>
         <Image
             src={import.meta.env.VITE_IMAGE + "Hero1.mp4"}
-            alt="Agency Hero Background Video"
+            alt="Ashmita Vinyls PVC Strip Curtains"
             className='w-full h-full flex object-cover'
         />
         <div
@@ -36,15 +36,15 @@ const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) =
             : 'pb-60'
         } relative z-20`}>
         <h1 className='largemid-text text-white font-600'>
-            A ERA IN
+            {heroCMS?.titleLine1 || 'PREMIUM'}
             <br />
-            <span className='text-primary'>COMMUNICATION</span>
+            <span className='text-primary'>{heroCMS?.titleHighlight || 'PVC STRIP CURTAINS'}</span>
         </h1>
-        <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12'>
-            Are You Struggling To Turn Your <br />Ideas Into Something Users Love? Pixelr Designs Digital Products.
+        <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12' style={{ maxWidth: '650px' }}>
+            {heroCMS?.leftText || 'Leading manufacturer & supplier of PVC strip curtains, polar freezer rolls, and hanging hardware across India.'}
         </p>
         <Button
-            text="Get In Touch"
+            text="Get Product Quote"
             icon="ArrowUpRight"
             iconPosition="right"
             iconWidth="16"

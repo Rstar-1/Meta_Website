@@ -31,9 +31,9 @@ const SEO = ({
     faqs
 }) => {
     const config = (page && pageSeoData[page]) || {};
-    const title = customTitle || config.title || `${SITE_NAME} — AI Business Automation & Digital Growth Agency`;
-    const description = customDesc || config.description || 'inraClick combines intelligent business automation, website development, SEO, AEO, and GEO to help businesses grow.';
-    const keywords = customKeywords || config.keywords || 'inraClick, AI business automation, SEO agency Mumbai, AEO, GEO';
+    const title = customTitle || config.title || `${SITE_NAME} — PVC Vinyl Products Manufacturer in India`;
+    const description = customDesc || config.description || 'Ashmita Vinyls manufactures and supplies quality PVC vinyl products for commercial and industrial applications. Explore reliable vinyl solutions from India.';
+    const keywords = customKeywords || config.keywords || 'PVC vinyl products manufacturer India, PVC vinyl manufacturer, vinyl products supplier, Ashmita Vinyls';
     const pagePath = customPath || config.path || '';
     const canonicalUrl = `${SITE_URL}${pagePath}`;
     const imageUrl = customImage ? (customImage.startsWith('http') ? customImage : `${SITE_URL}${customImage}`) : `${SITE_URL}${DEFAULT_IMAGE}`;
@@ -100,7 +100,7 @@ const SEO = ({
             { name: 'geo.placename', content: siteGeo.placename },
             { name: 'geo.position', content: siteGeo.position },
             { name: 'ICBM', content: siteGeo.icbm },
-            { name: 'ai-content-declaration', content: 'human-directed AI workflows' }
+            { name: 'ai-content-declaration', content: 'quality-engineered PVC vinyl manufacturing' }
         ];
         geoTags.forEach(({ name, content }) => {
             updateTag(`meta[name="${name}"]`, () => document.createElement('meta'), (el) => {
@@ -117,7 +117,7 @@ const SEO = ({
                 '@id': `${SITE_URL}/#website`,
                 url: SITE_URL,
                 name: SITE_NAME,
-                description: 'AI Business Automation & Digital Growth Agency in Mumbai',
+                description: 'PVC Vinyl Products Manufacturer in India | Ashmita Vinyls',
                 publisher: { '@id': `${SITE_URL}/#organization` },
                 hasPart: sitelinks.map((link) => ({
                     '@type': 'SiteNavigationElement',
@@ -135,7 +135,7 @@ const SEO = ({
                 logo: `${SITE_URL}${DEFAULT_IMAGE}`,
                 image: imageUrl,
                 description:
-                    'inraClick is a leading AI Business Automation and Digital Growth agency in Mumbai specializing in human-led AI, web development, SEO, AEO, and performance marketing.',
+                    'Ashmita Vinyls is a leading manufacturer and supplier of PVC vinyl products, industrial vinyl, and commercial vinyl solutions in India.',
                 telephone: siteGeo.telephone,
                 email: siteGeo.email,
                 address: {
@@ -208,10 +208,10 @@ const SEO = ({
             '@graph': graph
         };
 
-        let scriptEl = document.getElementById('inraclick-seo-jsonld');
+        let scriptEl = document.getElementById('ashmita-seo-jsonld');
         if (!scriptEl) {
             scriptEl = document.createElement('script');
-            scriptEl.id = 'inraclick-seo-jsonld';
+            scriptEl.id = 'ashmita-seo-jsonld';
             scriptEl.type = 'application/ld+json';
             document.head.appendChild(scriptEl);
         }

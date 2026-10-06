@@ -7,26 +7,26 @@ import Button from '../../../../components/common/Button';
 const trendingProducts = [
     {
         id: 1,
-        title: 'Select Table Lamps',
-        subtitle: 'Get up to $100 Off',
+        title: 'Standard Clear Rolls',
+        subtitle: '200mm / 300mm / 400mm Widths',
         image: import.meta.env.VITE_IMAGE + "Product1.webp",
     },
     {
         id: 2,
-        title: 'Select Lounge Chairs',
-        subtitle: 'From $200',
+        title: 'Polar Freezer Strips',
+        subtitle: 'Sub-Zero Flexibility to -40°C',
         image: import.meta.env.VITE_IMAGE + "Product2.webp",
     },
     {
         id: 3,
-        title: 'Select Side tables',
-        subtitle: 'Get up to $1.000',
+        title: 'Double Ribbed Curtains',
+        subtitle: 'Forklift & Heavy Vehicle Traffic',
         image: import.meta.env.VITE_IMAGE + "Product3.webp",
     },
     {
         id: 4,
-        title: 'Select Home Decors',
-        subtitle: 'Buy One Get One',
+        title: 'SS 304 Mounting Tracks',
+        subtitle: 'Quick Hook-On Installation',
         image: import.meta.env.VITE_IMAGE + "Product4.webp",
     }
 ];
@@ -39,19 +39,19 @@ const OfferSection = () => {
                     <div className='overflow-hidden bg-forth rounded-10 relative sm-h-400' style={{ height: '612px' }}
                     >    <Image
                             src={import.meta.env.VITE_IMAGE + "Banner2.jpg"}
-                            alt="Dining & Kitchen"
+                            alt="PVC Strip Curtains"
                             className='h-full w-full object-cover flex filter-b5'
                         />
                         <div className='absolute bottom-0 left-0 p-20'>
                             <h4 className='large-text text-white uppercase font-600'>
-                                Difference in the Details
+                                Engineered for Performance
                             </h4>
-                            <p className='para-text text-white  tex-muted font-400 w-90 mt-2'>
-                                Highlighting the unique touches that set every piece apart, crafted to elevate your style effortlessly.
+                            <p className='para-text text-white tex-muted font-400 w-90 mt-2'>
+                                High-clarity flexible PVC strip curtains designed for maximum energy savings, dust isolation, and industrial durability.
                             </p>
 
                             <Button
-                                text="Shop Now"
+                                text="Explore Products"
                                 version="v2"
                                 bg="white"
                                 color="dark"

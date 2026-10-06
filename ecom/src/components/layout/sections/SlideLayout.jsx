@@ -1,5 +1,6 @@
 import React, { useRef, useState, useCallback, useEffect, memo } from 'react';
 import Button from '../../common/Button';
+import Heading from '../generic/Heading';
 
 export const SlideLayout = memo(({
     version = 'slide',
@@ -7,11 +8,18 @@ export const SlideLayout = memo(({
     items = [],
     renderItem,
     children,
-    gap = '12px',
-    scrollStep = 300,
-    className = 'mt-40',
+    gap = '12',
+    scrollStep = 280,
+    className = '',
     showProgress = true,
     showControls = true,
+    title,
+    tag,
+    headingVersion = 'v2',
+    header,
+    actionText,
+    actionLink,
+    btnClass = 'rounded-30',
 }) => {
     const scrollRef = useRef(null);
     const [scrollProgress, setScrollProgress] = useState(100);
@@ -61,17 +69,91 @@ export const SlideLayout = memo(({
         }
     }, [scrollStep]);
 
+    // ─── 1. Grid Version ───────────────────────────────────────────────────
     if (version === 'grid') {
         return (
             <div
                 className={`grid-cols-${col} sm-grid-cols-2 ${className || ''}`}
-                style={{ gap }}
+                style={{ gap: `${gap}px` }}
             >
                 {children || (items && renderItem && items.map((item, index) => renderItem(item, index)))}
             </div>
         );
     }
 
+    // ─── 2. Top-Button Slider Version (btnslide) ──────────────────────────
+    if (version === 'btnslide') {
+        return (
+            <div className={className}>
+                {(title || header || showControls) && (
+                    <div className="flex items-end justify-between">
+                        {header || (title ? (
+                            <Heading
+                                version={headingVersion}
+                                tag={tag}
+                                title={title}
+                                actionText={actionText}
+                                actionLink={actionLink}
+                            />
+                        ) : <div />)}
+
+                        {showControls && (
+                            <div className="flex items-center gap-8">
+                                <Button
+                                    aria-label="Previous"
+                                    icon="ChevronLeft"
+                                    version="icon"
+                                    variant="outline"
+                                    border="tertiary"
+                                    bg="transparent"
+                                    color={canScrollLeft ? 'dark' : 'gray'}
+                                    style={{
+                                        opacity: canScrollLeft ? 1 : 0.4,
+                                        cursor: canScrollLeft ? 'pointer' : 'not-allowed',
+                                        pointerEvents: canScrollLeft ? 'auto' : 'none'
+                                    }}
+                                    className={btnClass}
+                                    onClick={() => scroll('left')}
+                                />
+                                <Button
+                                    aria-label="Next"
+                                    icon="ChevronRight"
+                                    version="icon"
+                                    variant="outline"
+                                    border="tertiary"
+                                    bg="transparent"
+                                    color={canScrollRight ? 'dark' : 'gray'}
+                                    style={{
+                                        opacity: canScrollRight ? 1 : 0.4,
+                                        cursor: canScrollRight ? 'pointer' : 'not-allowed',
+                                        pointerEvents: canScrollRight ? 'auto' : 'none'
+                                    }}
+                                    className={btnClass}
+                                    onClick={() => scroll('right')}
+                                />
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                <div
+                    ref={scrollRef}
+                    onScroll={updateScrollState}
+                    style={{
+                        scrollBehavior: 'smooth',
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                        gap: `${gap}px`
+                    }}
+                    className="flex overflow-auto mt-25"
+                >
+                    {children || (items && renderItem && items.map((item, index) => renderItem(item, index)))}
+                </div>
+            </div>
+        );
+    }
+
+    // ─── 3. Default Slider with Bottom Progress & Buttons (slide) ─────────
     return (
         <div className={className}>
             <div
@@ -81,7 +163,7 @@ export const SlideLayout = memo(({
                     scrollBehavior: 'smooth',
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none',
-                    gap
+                    gap: `${gap}px`
                 }}
                 className="flex overflow-auto"
             >

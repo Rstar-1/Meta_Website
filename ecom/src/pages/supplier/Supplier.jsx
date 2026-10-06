@@ -15,18 +15,18 @@ import bannerImg from '../../assets/about-banner.jpg';
 const KNOWN_SUPPLIERS = {
     foxecom: {
         name: 'Ashmita Vinyls',
-        category: 'Modern Furniture & Home Decor',
+        category: 'PVC Strip Curtains & Industrial Barrier Systems',
         location: 'Mumbai, MH, India',
-        rating: 4.8,
-        reviews: 320,
-        established: '2019',
-        experience: '5+ Years',
+        rating: 4.9,
+        reviews: 480,
+        established: '2001',
+        experience: '25+ Years',
         gstin: '27AABCF1234F1ZX',
-        moq: '₹5,000 / 5 Units',
-        responseRate: '98%',
-        responseTime: '< 2 hrs',
-        fulfillmentRate: '99.4%',
-        about: 'FoxEcom Furnishings is a certified OEM manufacturer and bulk distributor specializing in high-grade Scandinavian chairs, luxury velvet armchairs, and modular sofas with pan-India distribution.'
+        moq: '₹3,500 / 1 Roll',
+        responseRate: '99%',
+        responseTime: '< 1 hr',
+        fulfillmentRate: '99.8%',
+        about: 'Ashmita Vinyls is a premier manufacturer and supplier of industrial PVC strip curtains, polar freezer rolls, and stainless steel mounting hardware with pan-India distribution.'
     }
 };
 

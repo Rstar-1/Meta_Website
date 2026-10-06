@@ -1,10 +1,11 @@
-import React, { memo } from 'react';
+import React, { useState, memo } from 'react';
 
 import Image from '../../common/Image';
 import Button from '../../common/Button';
+import Badge from '../../common/Badge';
+import Fields from '../../forms/Fields';
 
 import { resolveImagePath } from '../../../utils/imageResolver';
-
 import { useCart } from '../../../feature/slice/cartSlice';
 
 export const FeatureCard = memo(({
@@ -270,9 +271,181 @@ export const ProductCard = memo(({
 
 ProductCard.displayName = 'ProductCard';
 
+export const ProductCard2 = memo(({
+    item,
+    onClick,
+    onProductClick,
+    minWidth = '270px',
+    maxWidth = '270px',
+    isFluid = false
+}) => {
+    const { addToCart } = useCart();
+    const [selectedVariant, setSelectedVariant] = useState(0);
+    const handleCardClick = onClick || onProductClick;
+
+    if (!item) return null;
+
+    const activeImage = item.variants?.[selectedVariant] || item.image;
+    const price = typeof item.price === 'number'
+        ? `$${item.price.toFixed(2)}`
+        : (item.priceFormatted || item.price || '$0.00');
+    const oldPrice = item.oldPrice || item.originalPrice
+        ? (typeof (item.oldPrice || item.originalPrice) === 'number'
+            ? `$${(item.oldPrice || item.originalPrice).toFixed(2)}`
+            : (item.oldPriceFormatted || item.originalPriceFormatted || item.oldPrice || item.originalPrice))
+        : null;
+
+    return (
+        <div
+            onClick={() => handleCardClick?.(item)}
+            className={`cursor-pointer ${!isFluid ? 'flex-shrink-0' : 'w-full'}`}
+            style={!isFluid ? { minWidth, maxWidth } : undefined}
+        >
+            <style>{`
+                .product-card .product-btn {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(10px);
+                    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+                }
+                .product-card:hover .product-btn {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+                .product-card img {
+                    transition: transform 0.5s ease;
+                }
+                .product-card:hover img {
+                    transform: scale(1.04);
+                }
+            `}</style>
+            <div className="w-full h-300 rounded-5 relative overflow-hidden product-card">
+                <div className="absolute top-0 right-0 m-10 z-2">
+                    <Badge
+                        text="In stock"
+                        color="success"
+                        size="xs"
+                        shape="rounded"
+                        className="font-400"
+                    />
+                </div>
+
+                <Image
+                    src={resolveImagePath(activeImage)}
+                    alt={item.name}
+                    className="h-full w-full object-cover flex"
+                />
+
+                <div className="product-btn w-full absolute bottom-0 left-0 z-2">
+                    <div className="p-18">
+                        <Button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                addToCart(item);
+                            }}
+                            text="Add to Cart"
+                            icon="Cart"
+                            iconWidth="18"
+                            iconHeight="18"
+                            iconStrokeWidth="2"
+                            iconPosition="left"
+                            version="v3"
+                            bg="primary"
+                            color="white"
+                            className="rounded-30 w-full"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className="pt-10">
+                <p className="mini-text text-gray font-500 uppercase">
+                    {item.vendor || item.category}
+                </p>
+
+                <h3
+                    className="headmini-text text-dark font-600 line-clamp1"
+                    title={item.name}
+                >
+                    {item.name}
+                </h3>
+
+                <Fields
+                    type="rating"
+                    value={item.rating || 0}
+                    size={13}
+                    activeColor="#f59e0b"
+                    inactiveColor="#d1d5db"
+                    disabled
+                    className="mt-5"
+                />
+
+                <div className="flex items-center gap-6 mt-4 flex-wrap">
+                    <p
+                        className={`small-text font-600 ${oldPrice
+                            ? 'text-danger'
+                            : 'text-dark'
+                            }`}
+                    >
+                        {price}
+                    </p>
+
+                    {oldPrice && (
+                        <p className="mini-text text-gray line-through font-400">
+                            {oldPrice}
+                        </p>
+                    )}
+
+                    {item.discount && (
+                        <Badge
+                            text={item.discount}
+                            color="danger"
+                            size="xs"
+                            shape="rounded"
+                            className="font-500"
+                        />
+                    )}
+                </div>
+
+                {item.images?.length > 0 && (
+                    <div className="flex items-center gap-6 mt-8">
+                        {item.images.map((vUrl, vIdx) => (
+                            <div
+                                key={vIdx}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSelectedVariant(vIdx);
+                                }}
+                                className={`rounded-full cursor-pointer ${selectedVariant === vIdx
+                                    ? 'border-primary'
+                                    : 'border-gray'
+                                    }`}
+                            >
+                                <Image
+                                    width="25px"
+                                    height="25px"
+                                    src={resolveImagePath(vUrl)}
+                                    alt="click"
+                                    className="flex object-cover rounded-full p-3"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+});
+
+ProductCard2.displayName = 'ProductCard2';
+
 const CardLayout = memo(({ version = 'product', ...props }) => {
     if (version === 'feature') {
         return <FeatureCard {...props} />;
+    }
+    if (version === 'product2') {
+        return <ProductCard2 {...props} />;
     }
     return <ProductCard {...props} />;
 });

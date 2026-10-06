@@ -11,106 +11,106 @@ import { configData, aboutCMS } from '../../../../utils/apiData';
 import { resolveImagePath } from '../../../../utils/imageResolver';
 
 export const defaultAboutData = {
-    experienceYears: "30+",
-    experienceTagline: "Years of Proven Industry Excellence",
-    description: "We are a results-driven IT consulting team helping businesses experience. Scalable commercial growth.",
+    experienceYears: "25+",
+    experienceTagline: "Years of PVC Extrusion & Manufacturing Excellence",
+    description: "Ashmita Vinyls is a leading manufacturer of industrial PVC strip curtains, polar freezer rolls, and hanging hardware systems across India.",
     stats: [
-        { value: "30+", label: "Years Experience", sublabel: "Leading digital evolution" },
-        { value: "1.2k+", label: "Projects Completed", sublabel: "Delivered on schedule" },
-        { value: "50+", label: "Countries Served", sublabel: "Across the globe" },
-        { value: "99.8%", label: "Client Retention", sublabel: "Long-term partnership" }
+        { value: "25+", label: "Years Experience", sublabel: "PVC manufacturing leader" },
+        { value: "50k+", label: "Rolls Dispatched", sublabel: "Delivered across India" },
+        { value: "1.2k+", label: "Client Facilities", sublabel: "Warehouses & cold storages" },
+        { value: "99.8%", label: "Quality Rating", sublabel: "100% virgin polymer" }
     ],
     features: [
         {
-            title: "Scalable Cloud Architecture",
-            desc: "High-throughput cloud-native architectures engineered for automated scaling and sub-second global response.",
+            title: "Thermal & Dust Isolation",
+            desc: "Reduces refrigeration and air conditioning energy loss by up to 45% while blocking dust and airborne contaminants.",
             icon: "Zap",
             accentColor: "#db5e1f",
             bgColor: "#fef3ee"
         },
         {
-            title: "Enterprise Cybersecurity",
-            desc: "Bank-grade protection, continuous vulnerability monitoring, and comprehensive regulatory compliance.",
+            title: "Sub-Zero Polar Grade (-40°C)",
+            desc: "Specially compounded flexible vinyl that prevents cracking and maintains elasticity in cold rooms and blast freezers.",
             icon: "ShieldCheck",
             accentColor: "#1f5ac0",
             bgColor: "#eff6ff"
         },
         {
-            title: "Dedicated Elite Squads",
-            desc: "Senior engineering pods and strategic product managers operating seamlessly as your internal team.",
+            title: "SS 304 Mounting Systems",
+            desc: "Heavy-duty stainless steel hook-on tracks and clamp plates engineered for rapid doorway installation and individual strip replacement.",
             icon: "Users",
             accentColor: "#10b981",
             bgColor: "#ecfdf5"
         }
     ],
     operationalCards: [
-        { icon: "Zap", title: "Rapid Delivery", desc: "Agile sprint cycles reducing total time-to-market by 50%." },
-        { icon: "ShieldCheck", title: "Enterprise Security", desc: "ISO-compliant security architecture and continuous audits." },
-        { icon: "Users", title: "Dedicated Talent", desc: "Top-tier senior software engineers dedicated solely to your outcomes." },
-        { icon: "Clock", title: "24/7 Support", desc: "Round-the-clock proactive monitoring and strict SLA guarantees." }
+        { icon: "Zap", title: "Pan-India Dispatch", desc: "Ready stock of all standard roll sizes for immediate shipping." },
+        { icon: "ShieldCheck", title: "100% Virgin Grade", desc: "Non-toxic, high clarity, and UV-stabilized PVC polymer." },
+        { icon: "Users", title: "Custom Slit Sizes", desc: "Custom width, thickness, and length tailored to doorway dimensions." },
+        { icon: "Clock", title: "Direct Factory Pricing", desc: "Wholesale manufacturer pricing with bulk order discounts." }
     ],
     partnerFeatures: [
         {
             icon: "Grow",
-            title: "Strategic Financial Planning",
-            description: "Comprehensive roadmaps designed to optimize capital allocation and scale business operations."
+            title: "Energy Cost Optimization",
+            description: "Proven thermal barriers that reduce compressor workload and warehouse HVAC electricity consumption."
         },
         {
             icon: "ShieldCheck",
-            title: "Risk Management & Compliance",
-            description: "Proactive governance, regulatory adherence, and asset protection protocols."
+            title: "Quality & Safety Compliance",
+            description: "Food safe, USDA compliant, anti-insect, and flame retardant options for regulated facilities."
         },
         {
             icon: "Users",
-            title: "Dedicated Advisory Team",
-            description: "Experienced industry consultants committed to your ongoing commercial success."
+            title: "Expert Technical Support",
+            description: "Dedicated guidance on selecting optimal strip width, thickness, and overlap percentage."
         }
     ],
     storeCollection: {
-        tag: "Curated Store",
-        title: "Delivering Innovative Furniture & Modern Living Spaces.",
-        description: "Explore curated handcrafted furniture pieces designed for durability, comfort, and timeless aesthetics for contemporary interiors.",
+        tag: "PVC Strip Curtains",
+        title: "Industrial Grade PVC Strip Rolls & Installation Hardware.",
+        description: "Explore our range of standard clear, ribbed heavy-duty, polar freezer, and anti-insect amber yellow strip curtain rolls.",
         items: [
             {
-                id: 102,
-                name: "Loop Sofa Armrest",
-                category: "SOFA",
-                price: "$3,289",
-                originalPrice: "$3,369",
-                badge: "Sale",
+                id: 1,
+                name: "Standard Clear PVC Roll (200x2mm)",
+                category: "CLEAR PVC",
+                price: "₹3,850",
+                originalPrice: "₹4,500",
+                badge: "Best Seller",
                 badgeColor: "var(--danger)",
                 rating: "4.9",
                 image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=400&q=80"
             },
             {
-                id: 103,
-                name: "Spoke Sofa TonePlay",
-                category: "SOFA",
-                price: "$3,429",
-                originalPrice: "$3,599",
-                badge: "Hot",
+                id: 2,
+                name: "Double Ribbed Clear Roll (300x3mm)",
+                category: "RIBBED PVC",
+                price: "₹6,200",
+                originalPrice: "₹7,100",
+                badge: "Heavy Duty",
                 badgeColor: "#1D4ED8",
                 rating: "5.0",
                 image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80"
             },
             {
-                id: 104,
-                name: "Feast Minimal Chair",
-                category: "CHAIR",
-                price: "$390",
-                originalPrice: "$450",
-                badge: "Best",
+                id: 3,
+                name: "Polar Freezer Sub-Zero (-40°C)",
+                category: "POLAR GRADE",
+                price: "₹5,400",
+                originalPrice: "₹6,300",
+                badge: "Cold Room",
                 badgeColor: "var(--success)",
                 rating: "4.8",
                 image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=400&q=80"
             },
             {
-                id: 106,
-                name: "Leather Dining Chair",
-                category: "CHAIR",
-                price: "$290",
-                originalPrice: "$340",
-                badge: "New",
+                id: 4,
+                name: "Amber Anti-Insect Roll (200x2mm)",
+                category: "ANTI-INSECT",
+                price: "₹4,450",
+                originalPrice: "₹5,100",
+                badge: "Food Safe",
                 badgeColor: "#8b5cf6",
                 rating: "4.9",
                 image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80"
@@ -119,31 +119,31 @@ export const defaultAboutData = {
     },
     officeCards: [
         {
-            id: 'website-design',
+            id: 'pvc-extrusion',
             src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-            alt: 'Website Design & Development Agency'
+            alt: 'PVC Strip Extrusion & Manufacturing'
         },
         {
-            id: 'marketing-agency',
+            id: 'warehouse-curtains',
             src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
-            alt: 'Digital Marketing & Strategy Team',
+            alt: 'Warehouse Doorway Curtain Installation',
             hasPlayBtn: false
         },
         {
-            id: 'agency-strategy',
+            id: 'cold-storage',
             src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
-            alt: 'Creative Agency Website Strategy'
+            alt: 'Cold Storage Polar PVC Curtains'
         }
     ],
     storeCollageImages: [
-        { src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80", alt: "Modern Living Space" },
-        { src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80", alt: "Artisanal Designer Chair", grayscale: true },
-        { src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80", alt: "Contemporary Luxury Living" }
+        { src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80", alt: "Standard Clear PVC Strip Curtains" },
+        { src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80", alt: "Ribbed Heavy Duty Industrial Strips", grayscale: true },
+        { src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80", alt: "Polar Sub-Zero Cold Storage Curtains" }
     ],
     metrics: [
-        { label: 'TOTAL REVENUE', value: '+$29 B' },
-        { label: 'LOCATIONS SUPPORTED', value: '24 K+' },
-        { label: 'TOTAL NEW CUSTOMER', value: '2.6 M+' }
+        { label: 'ANNUAL ROLLS PRODUCED', value: '50 K+' },
+        { label: 'FACILITIES SERVED', value: '1.2 K+' },
+        { label: 'PAN-INDIA COVERAGE', value: '28 STATES' }
     ],
     images: {
         team: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",

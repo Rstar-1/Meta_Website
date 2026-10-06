@@ -3,8 +3,8 @@
     {
       "id": "service",
       "icon": "Support",
-      "title": "Customer Service",
-      "text": "Mon-Sat, 9am-6pm EST.",
+      "title": "Customer Support",
+      "text": "Mon-Sat, 9am-6pm IST.",
       "type": "text"
     },
     {
@@ -18,7 +18,7 @@
     {
       "id": "touch",
       "icon": "Send",
-      "title": "Get in Touch",
+      "title": "Email Us",
       "text": "kohad0681@gmail.com",
       "link": "mailto:kohad0681@gmail.com",
       "type": "link"
@@ -26,23 +26,23 @@
     {
       "id": "address",
       "icon": "MapPin",
-      "title": "Address",
+      "title": "Location",
       "text": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001",
       "type": "text"
     }
   ],
   "newsletter": {
-    "title": "Join Our Newsletter",
-    "description": "Sign up to our newsletter & receive 10% off your first order.",
-    "placeholder": "Enter your email",
-    "buttonText": "Sign Up",
+    "title": "Join Our PVC Newsletter",
+    "description": "Subscribe for technical product updates, pricing, and installation guides.",
+    "placeholder": "Enter your business email",
+    "buttonText": "Subscribe",
     "disclaimer": {
-      "prefix": "By subscribing you agree to the ",
-      "termsLabel": "Terms of Services",
-      "termsUrl": "#terms",
+      "prefix": "By subscribing you agree to our ",
+      "termsLabel": "Terms & Conditions",
+      "termsUrl": "/terms",
       "middle": " and ",
       "privacyLabel": "Privacy Policy",
-      "privacyUrl": "#privacy",
+      "privacyUrl": "/privacy",
       "suffix": "."
     }
   },
@@ -50,40 +50,40 @@
     {
       "title": "Company",
       "links": [
-        { "label": "About us", "url": "#about-us" },
-        { "label": "Contact", "url": "#contact" },
-        { "label": "FAQs", "url": "#faqs" },
-        { "label": "Blog", "url": "#blog" },
-        { "label": "Find a Store", "url": "#find-a-store" }
+        { "label": "About Us", "url": "/about" },
+        { "label": "All Products", "url": "/product" },
+        { "label": "Applications", "url": "/supplier" },
+        { "label": "Technical Guides", "url": "/blog" },
+        { "label": "Contact & Enquiry", "url": "/connect" }
       ]
     },
     {
-      "title": "Collection",
+      "title": "PVC Strip Curtains",
       "links": [
-        { "label": "Tables", "url": "#tables" },
-        { "label": "Bow Chairs", "url": "#bow-chairs" },
-        { "label": "Turn Table", "url": "#turn-table" },
-        { "label": "Turn Chair", "url": "#turn-chair" },
-        { "label": "Cross Bar Chair", "url": "#cross-bar-chair" }
+        { "label": "Standard Clear Rolls", "url": "/product" },
+        { "label": "Double Ribbed Strips", "url": "/product" },
+        { "label": "Polar Freezer Strips", "url": "/product" },
+        { "label": "Amber Anti-Insect", "url": "/product" },
+        { "label": "Welding Screen Strips", "url": "/product" }
       ]
     },
     {
-      "title": "Shop",
+      "title": "Hardware & Systems",
       "links": [
-        { "label": "Sofas", "url": "#sofas" },
-        { "label": "Outdoor", "url": "#outdoor" },
-        { "label": "Seating", "url": "#seating" },
-        { "label": "Lighting", "url": "#lighting" },
-        { "label": "Accessories", "url": "#accessories" }
+        { "label": "SS 304 Hook Tracks", "url": "/product" },
+        { "label": "GI Sliding Channels", "url": "/product" },
+        { "label": "Hanging Clamps & Clips", "url": "/product" },
+        { "label": "Anti-Static ESD Rolls", "url": "/product" },
+        { "label": "Opaque Privacy Strips", "url": "/product" }
       ]
     }
   ],
   "bottom": {
     "region": {
-      "flag": "🇺🇸",
-      "label": "United States (USD $)"
+      "flag": "🇮🇳",
+      "label": "India (INR ₹)"
     },
-    "paymentBadges": ["VISA", "MC", "AMEX", "PAYPAL", "DINERS", "DISCOVER"],
+    "paymentBadges": ["VISA", "MC", "AMEX", "UPI", "NEFT", "GPAY"],
     "socials": [
       {
         "platform": "facebook",
@@ -101,10 +101,10 @@
         "url": "https://www.youtube.com/@INRACLICK"
       }
     ],
-    "copyright": "© 2026 inraClick. All rights reserved.",
+    "copyright": "© 2026 Ashmita Vinyls Private Limited. All rights reserved.",
     "legalLinks": [
-      { "label": "Terms of Service", "url": "#terms" },
-      { "label": "Privacy Policy", "url": "#privacy" }
+      { "label": "Terms & Conditions", "url": "/terms" },
+      { "label": "Privacy Policy", "url": "/privacy" }
     ]
   }
 }

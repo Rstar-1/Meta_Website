@@ -104,7 +104,7 @@ const CategoryVersion3 = React.memo(({ items, onCategoryClick }) => (
                         </p>
                     </div>
 
-                    <div className="card-image-right w-45 sm-w-40 relative overflow-hidden rounded-5 h-200">
+                    <div className="card-image-right w-45 sm-w-40 relative overflow-hidden rounded-5 h-full">
                         <Image
                             src={resolveImagePath(cat.icon || cat.image)}
                             alt={cat.name || cat.title}

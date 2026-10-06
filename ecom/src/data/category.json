@@ -1,59 +1,59 @@
 [
   {
     "id": 1,
-    "name": "Wall Panels & Ceilings",
-    "title": "Wall Panels & Ceilings",
-    "slug": "wall-panels-ceilings",
-    "megaMenuKey": "wallPanelsCeilings",
+    "name": "Standard Clear PVC Curtains",
+    "title": "Standard Clear PVC Curtains",
+    "slug": "standard-clear-pvc",
+    "megaMenuKey": "standardClearPvc",
     "image": "Compare1.jpg",
     "icon": "Compare1.jpg",
     "iconName": "Layers",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
     "subCategories": [
-      { "id": "acoustic-panels", "name": "Acoustic Panels" },
-      { "id": "pvc-panels", "name": "PVC Wall Panels" },
-      { "id": "wpc-cladding", "name": "WPC Cladding" },
-      { "id": "ceiling-systems", "name": "Ceiling Systems" }
+      { "id": "standard-clear-200", "name": "200mm x 2mm Clear Roll" },
+      { "id": "standard-clear-300", "name": "300mm x 3mm Clear Roll" },
+      { "id": "standard-clear-400", "name": "400mm x 4mm Clear Roll" },
+      { "id": "ribbed-clear", "name": "Double Ribbed Clear Strips" }
     ],
-    "description": "High-performance acoustic wood panels, WPC fluted louvers, and architectural ceiling systems."
+    "description": "High-clarity transparent PVC strip curtains for thermal insulation, dust prevention, and warehouse doors."
   },
   {
     "id": 2,
-    "name": "Ropes & Nets",
-    "title": "Ropes & Nets",
-    "slug": "ropes-nets",
-    "megaMenuKey": "ropesNets",
+    "name": "Polar Freezer & Anti-Insect",
+    "title": "Polar Freezer & Anti-Insect",
+    "slug": "polar-anti-insect-pvc",
+    "megaMenuKey": "polarAntiInsectPvc",
     "image": "Compare2.jpg",
     "icon": "Compare2.jpg",
     "iconName": "Shield",
     "bgColor": "#ECFDF5",
     "accentColor": "#059669",
     "subCategories": [
-      { "id": "industrial-ropes", "name": "Industrial Ropes" },
-      { "id": "safety-nets", "name": "Safety & Debris Nets" },
-      { "id": "agri-nets", "name": "Agricultural & Shade Nets" },
-      { "id": "sports-nets", "name": "Sports Nets" }
+      { "id": "polar-freezer", "name": "Polar Sub-Zero (-40°C)" },
+      { "id": "anti-insect-yellow", "name": "Anti-Insect Amber Yellow" },
+      { "id": "anti-static-cleanroom", "name": "Anti-Static ESD Strips" },
+      { "id": "welding-screen", "name": "Welding Screen Strips" }
     ],
-    "description": "Industrial heavy-duty cordage, UV-stabilized fall safety netting, and agriculture shade mesh."
+    "description": "Sub-zero cold storage polar curtains, yellow insect-repellent barriers, and UV-filtering welding screens."
   },
   {
     "id": 3,
-    "name": "Vinyl Flooring",
-    "title": "Vinyl Flooring",
-    "slug": "vinyl-flooring",
-    "megaMenuKey": "vinylFlooring",
+    "name": "Mounting Hardware & Tracks",
+    "title": "Mounting Hardware & Tracks",
+    "slug": "hardware-tracks",
+    "megaMenuKey": "hardwareTracks",
     "image": "Compare3.jpg",
     "icon": "Compare3.jpg",
     "iconName": "Box",
     "bgColor": "#FEF2F2",
     "accentColor": "#DC2626",
     "subCategories": [
-      { "id": "spc", "name": "SPC" },
-      { "id": "lvt", "name": "LVT" },
-      { "id": "wpc", "name": "WPC" },
-      { "id": "sheet-vinyl", "name": "Sheet Vinyl" }
+      { "id": "ss-hook-on", "name": "SS 304 Hook-On Track" },
+      { "id": "gi-channel-track", "name": "GI Sliding Track System" },
+      { "id": "hanging-clips", "name": "Clamp Plates & Rivets" },
+      { "id": "wall-brackets", "name": "Face & Header Brackets" }
     ],
-    "description": "Durable SPC rigid core, luxury vinyl tiles (LVT), and waterproof timber textured planks."
+    "description": "Stainless steel 304 hook-on hanger systems, galvanized sliding channels, and mounting clamp hardware."
   }
 ]
