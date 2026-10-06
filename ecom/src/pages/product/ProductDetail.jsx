@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Banner from '../../components/layout/generic/Banner';
 import DetailSection from './sections/DetailSection';
+import SpecifySection from './sections/SpecifySection';
 import bannerImg from '../../assets/about-banner.jpg';
 import productsData from '../../data/product.json';
 import categoriesData from '../../data/category.json';
@@ -44,6 +45,7 @@ const ProductDetail = () => {
                 ]}
             />
             <DetailSection currentProduct={product} category={category} />
+            <SpecifySection />
         </>
     );
 };
