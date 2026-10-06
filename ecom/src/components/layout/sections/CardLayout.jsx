@@ -132,7 +132,7 @@ export const ProductCard = memo(({
         return (
             <div
                 onClick={() => handleCardClick?.(item)}
-                className="overflow-hidden rounded-10 relative h-300 sm-h-250 cursor-pointer"
+                className="overflow-hidden rounded-10 relative h-300 cursor-pointer"
                 style={!isFluid ? { minWidth, maxWidth } : undefined}
             >
                 <Image
@@ -183,7 +183,7 @@ export const ProductCard = memo(({
                     transform: scale(1.04);
                 }
             `}</style>
-            <div className="h-300 sm-h-200 w-full overflow-hidden rounded-10 relative product-card">
+            <div className="h-300 w-full overflow-hidden rounded-10 relative product-card">
                 {badge && (
                     <div className="top-0 left-0 absolute z-2">
                         <p

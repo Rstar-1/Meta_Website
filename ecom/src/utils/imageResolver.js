@@ -1,37 +1,62 @@
-import hero from "../assets/hero.png";
 import soboLogo from "../assets/sobo_logo.webp";
 import soboWhite from "../assets/sobo_white.png";
+import aboutBanner from "../assets/about-banner.jpg";
 
-const assetMap = {
-  "/src/assets/hero.png": hero,
-  "/src/assets/sobo_logo.webp": soboLogo,
-  "/src/assets/sobo_white.png": soboWhite,
-  "/sobo_logo.webp": soboLogo,
-  "/sobo_white.png": soboWhite,
-  "/sobos.png": soboWhite,
-  "sobo_logo.webp": soboLogo,
-  "sobo_white.png": soboWhite,
-};
+// Automatically index all assets in ../assets/
+const assetModules = import.meta.glob("../assets/*", {
+  eager: true,
+  import: "default",
+});
+
+const assetMap = {};
+
+Object.entries(assetModules).forEach(([path, assetUrl]) => {
+  const fileName = path.split("/").pop();
+  if (fileName) {
+    assetMap[fileName] = assetUrl;
+    assetMap[`/${fileName}`] = assetUrl;
+    assetMap[`/src/assets/${fileName}`] = assetUrl;
+    assetMap[`src/assets/${fileName}`] = assetUrl;
+    assetMap[`../assets/${fileName}`] = assetUrl;
+  }
+});
+
+// Custom aliases
+if (soboWhite) {
+  assetMap["/sobos.png"] = soboWhite;
+  assetMap["sobos.png"] = soboWhite;
+}
 
 export const resolveImagePath = (path) => {
   if (!path) return "";
-  if (typeof path === "string") {
-    if (assetMap[path] || assetMap[path.trim()]) {
-      return assetMap[path] || assetMap[path.trim()];
-    }
-    if (
-      !path.startsWith("http://") &&
-      !path.startsWith("https://") &&
-      !path.startsWith("data:") &&
-      !path.startsWith("blob:") &&
-      !path.startsWith("/")
-    ) {
-      const base = import.meta.env.VITE_IMAGE || "";
-      return base ? `${base}${path}` : path;
-    }
-    return path;
+  if (typeof path !== "string") return path;
+
+  const trimmed = path.trim();
+  if (!trimmed) return "";
+
+  // Check local assets map first
+  if (assetMap[trimmed]) {
+    return assetMap[trimmed];
   }
-  return path;
+
+  // Already a full, data, blob, or protocol-relative URL
+  if (
+    trimmed.startsWith("http://") ||
+    trimmed.startsWith("https://") ||
+    trimmed.startsWith("data:") ||
+    trimmed.startsWith("blob:") ||
+    trimmed.startsWith("//")
+  ) {
+    return trimmed;
+  }
+
+  // Prepend remote CDN base if available for relative filenames (e.g. Compare1.jpg)
+  if (!trimmed.startsWith("/")) {
+    const base = import.meta.env.VITE_IMAGE || "";
+    return base ? `${base.replace(/\/+$/, "")}/${trimmed.replace(/^\/+/, "")}` : trimmed;
+  }
+
+  return trimmed;
 };
 
-export { hero, soboLogo, soboWhite };
+export { soboLogo, soboWhite, aboutBanner };
