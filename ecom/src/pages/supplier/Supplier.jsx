@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import productsData from '../../data/product.json';
+import { productsData } from '../../utils/apiData';
 import Container from '../../components/common/Container';
 import Button from '../../components/common/Button';
 import CardLayout from '../../components/layout/sections/CardLayout';

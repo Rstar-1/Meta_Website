@@ -5,7 +5,7 @@ import Container from '../../../../components/common/Container';
 import Heading from '../../../../components/layout/generic/Heading';
 import SlideLayout from '../../../../components/layout/sections/SlideLayout';
 import CardLayout from '../../../../components/layout/sections/CardLayout';
-import productsData from '../../../../data/product.json';
+import { productsData } from '../../../../utils/apiData';
 
 const FeatureSection = () => {
     const navigate = useNavigate();

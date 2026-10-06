@@ -10,11 +10,9 @@ import Dropdown from "../common/Dropdown";
 import Badge from "../common/Badge";
 import Fields from "../forms/Fields";
 
-import { header, configData } from "../../utils/apiData";
+import { header, configData, productsData, categoriesData } from "../../utils/apiData";
 import { resolveImagePath } from "../../utils/imageResolver";
 import { useCart } from "../../feature/slice/cartSlice";
-import productsData from "../../data/product.json";
-import categoriesData from "../../data/category.json";
 
 const buildDynamicMegaMenu = () => {
   const menu = {};

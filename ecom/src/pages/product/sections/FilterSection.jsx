@@ -7,7 +7,7 @@ import Fields from '../../../components/forms/Fields';
 
 import ProductCard from '../../../components/layout/sections/CardLayout';
 
-import products from '../../../data/product.json';
+import { products } from '../../../utils/apiData';
 
 
 const SORT_OPTIONS = [

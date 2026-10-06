@@ -8,8 +8,7 @@ import Accordion from '../../../components/common/Accordion';
 import Fields from '../../../components/forms/Fields';
 import { useCart } from '../../../feature/slice/cartSlice';
 import { resolveImagePath } from '../../../utils/imageResolver';
-import productsData from '../../../data/product.json';
-import categoriesData from '../../../data/category.json';
+import { productsData, categoriesData } from '../../../utils/apiData';
 
 const defaultImages = ['Product1.jpg'];
 

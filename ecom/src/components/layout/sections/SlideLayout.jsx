@@ -2,6 +2,8 @@ import React, { useRef, useState, useCallback, useEffect, memo } from 'react';
 import Button from '../../common/Button';
 
 export const SlideLayout = memo(({
+    version = 'slide',
+    col = 4,
     items = [],
     renderItem,
     children,
@@ -34,6 +36,8 @@ export const SlideLayout = memo(({
     }, []);
 
     useEffect(() => {
+        if (version === 'grid') return;
+
         updateScrollState();
         const handleResize = () => updateScrollState();
         window.addEventListener('resize', handleResize);
@@ -48,7 +52,7 @@ export const SlideLayout = memo(({
             window.removeEventListener('resize', handleResize);
             if (resizeObserver) resizeObserver.disconnect();
         };
-    }, [items, children, updateScrollState]);
+    }, [version, items, children, updateScrollState]);
 
     const scroll = useCallback((direction) => {
         if (scrollRef.current) {
@@ -56,6 +60,17 @@ export const SlideLayout = memo(({
             scrollRef.current.scrollBy({ left: amount, behavior: 'smooth' });
         }
     }, [scrollStep]);
+
+    if (version === 'grid') {
+        return (
+            <div
+                className={`grid-cols-${col} sm-grid-cols-2 ${className || ''}`}
+                style={{ gap }}
+            >
+                {children || (items && renderItem && items.map((item, index) => renderItem(item, index)))}
+            </div>
+        );
+    }
 
     return (
         <div className={className}>

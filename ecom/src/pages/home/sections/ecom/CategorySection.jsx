@@ -6,9 +6,8 @@ import Icon from '../../../../components/common/Icon';
 import Image from '../../../../components/common/Image';
 import Heading from '../../../../components/layout/generic/Heading';
 
-import { configData } from '../../../../utils/apiData';
+import { configData, categories } from '../../../../utils/apiData';
 import { resolveImagePath } from '../../../../utils/imageResolver';
-import categories from '../../../../data/category.json';
 
 const CategoryVersion1 = React.memo(({ items, onCategoryClick }) => (
     <div className="grid-cols-6 sm-grid-cols-1 mt-30">

@@ -4,8 +4,7 @@ import Banner from '../../components/layout/generic/Banner';
 import DetailSection from './sections/DetailSection';
 import SpecifySection from './sections/SpecifySection';
 import bannerImg from '../../assets/about-banner.jpg';
-import productsData from '../../data/product.json';
-import categoriesData from '../../data/category.json';
+import { productsData, categoriesData } from '../../utils/apiData';
 
 const ProductDetail = () => {
     const { id } = useParams();

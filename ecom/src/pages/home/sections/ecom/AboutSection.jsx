@@ -182,7 +182,7 @@ const AboutVersion1 = React.memo(({ aboutSide = 'left', onLearnMore, data = defa
             style={{ gap: '24px' }}
         >
             <div className="w-40 sm-w-full">
-                <h4 className="largehead-text font-700 text-dark">{data.experienceYears}</h4>
+                <h4 className="largehead-text font-700 text-dark text-muted" style={{ webkitTextStroke: "1.5px black", webkitTextFillColor: "transparent" }}>{data.experienceYears}</h4>
                 <p className="text-gray small-text font-400 mt-2">
                     {data.description}
                 </p>
@@ -216,7 +216,7 @@ const AboutVersion1 = React.memo(({ aboutSide = 'left', onLearnMore, data = defa
                     <p className="mini-text text-gray font-400 text-center">Projects Shipped</p>
                 </div>
             </div>
-        </div>
+        </div >
     );
 });
 
