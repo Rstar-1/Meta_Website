@@ -1,4 +1,5 @@
 import React, { useState, forwardRef, useCallback } from "react";
+import { resolveImagePath } from "../../utils/imageResolver";
 
 const isVideoSrc = (url) => {
   if (!url || typeof url !== "string") return false;
@@ -20,12 +21,13 @@ export const Image = React.memo(
     preload = "metadata",
     ...props
   }) => {
-    const [prevSrc, setPrevSrc] = useState(src);
-    const [imgSrc, setImgSrc] = useState(src);
+    const resolved = resolveImagePath(src);
+    const [prevSrc, setPrevSrc] = useState(resolved);
+    const [imgSrc, setImgSrc] = useState(resolved);
 
-    if (src !== prevSrc) {
-      setPrevSrc(src);
-      setImgSrc(src);
+    if (resolved !== prevSrc) {
+      setPrevSrc(resolved);
+      setImgSrc(resolved);
     }
 
     const isEager =
@@ -39,10 +41,10 @@ export const Image = React.memo(
       }
     }, [imgSrc, fallback]);
 
-    if (isVideoSrc(src)) {
+    if (isVideoSrc(resolved)) {
       return (
         <video
-          src={src}
+          src={resolved}
           className={className}
           style={{
             aspectRatio,
@@ -101,12 +103,13 @@ export const ImageDiv = React.memo(
       },
       ref
     ) => {
-      const [prevImage, setPrevImage] = useState(image);
-      const [bgImage, setBgImage] = useState(image);
+      const resolved = resolveImagePath(image);
+      const [prevImage, setPrevImage] = useState(resolved);
+      const [bgImage, setBgImage] = useState(resolved);
 
-      if (image !== prevImage) {
-        setPrevImage(image);
-        setBgImage(image);
+      if (resolved !== prevImage) {
+        setPrevImage(resolved);
+        setBgImage(resolved);
       }
 
       const isVideo = isVideoSrc(bgImage);

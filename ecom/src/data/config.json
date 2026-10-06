@@ -72,7 +72,7 @@
     {
       "FooterVersion": 1,
       "FooterSocial": true,
-      "FooterTopBar": true,
+      "FooterTopBar": false,
       "FooterBottomBar": true
     }
   ]

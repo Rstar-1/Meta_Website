@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Container from '../../../../components/common/Container';
@@ -8,86 +8,30 @@ import Button from '../../../../components/common/Button';
 import Heading from '../../../../components/layout/generic/Heading';
 
 import { useCart } from '../../../../context/CartContext';
-
-const products = [
-    {
-        id: 1,
-        badge: { text: 'Sale', color: '#C8281E' },
-        category: 'TABLES',
-        name: 'Cross Table Bark',
-        price: '$170.00',
-        originalPrice: '$200.00',
-        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
-        colors: ['#A06236']
-    },
-    {
-        id: 2,
-        badge: { text: 'Sale', color: '#C8281E' },
-        category: 'RACK WALL',
-        name: 'Axis Storage System',
-        price: '$135.00',
-        originalPrice: '$185.00',
-        image: import.meta.env.VITE_IMAGE + "Compare2.jpg",
-        colors: ['#B0997B']
-    },
-    {
-        id: 3,
-        badge: { text: 'Sale', color: '#C8281E' },
-        category: 'CHAIRS',
-        name: 'Task Chair Luxe',
-        price: '$559.00',
-        originalPrice: '$599.00',
-        image: import.meta.env.VITE_IMAGE + "Compare3.jpg",
-        colors: ['#5A3A1E']
-    },
-    {
-        id: 4,
-        badge: { text: 'Sale', color: '#C8281E' },
-        category: 'CHAIRS',
-        name: 'Cross Chair Heritage',
-        price: '$589.00',
-        originalPrice: '$600.00',
-        image: import.meta.env.VITE_IMAGE + "Compare1.jpg",
-        colors: ['#D9D0C3', '#4A3525']
-    },
-    {
-        id: 5,
-        badge: { text: 'New', color: '#0F8354' },
-        category: 'BAR STOOLS',
-        name: 'Plush Stool',
-        price: '$219.00',
-        originalPrice: null,
-        image: import.meta.env.VITE_IMAGE + "Compare2.jpg",
-        colors: ['#E5E5E5']
-    },
-    {
-        id: 6,
-        badge: { text: 'Sale', color: '#C8281E' },
-        category: 'ACCESSORIES',
-        name: 'Grind Vessel',
-        price: '$65.00',
-        originalPrice: '$100.00',
-        image: import.meta.env.VITE_IMAGE + "Compare3.jpg",
-        colors: ['#2B3856', '#D6C5B3']
-    }
-];
-
-const featureSections = [1, 2];
+import productsData from '../../../../data/product.json';
 
 const ProductCard = ({ item, onClick }) => {
     const { addToCart } = useCart();
+    const badge = item.badge || item.badges?.[0];
+    const price = typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : (item.priceFormatted || item.price);
+    const originalPrice = item.originalPrice
+        ? (typeof item.originalPrice === 'number' ? `$${item.originalPrice.toFixed(2)}` : (item.originalPriceFormatted || item.originalPrice))
+        : null;
 
     return (
         <div
             onClick={onClick}
-            className='cursor-pointer'
+            className='cursor-pointer flex-shrink-0'
             style={{ minWidth: '270px', maxWidth: '270px' }}
         >
             <div className="h-300 w-full overflow-hidden rounded-10 relative product-card">
-                {item.badge && (
+                {badge && (
                     <div className='top-0 left-0 absolute'>
-                        <p className='m-12 bg-danger px-12 py-1 mini-text font-400 rounded-20 text-white'>
-                            {item.badge.text}
+                        <p
+                            className='m-12 px-12 py-1 mini-text font-400 rounded-20 text-white'
+                            style={{ backgroundColor: badge.color || badge.bg || '#C8281E' }}
+                        >
+                            {badge.text}
                         </p>
                     </div>
                 )}
@@ -118,8 +62,7 @@ const ProductCard = ({ item, onClick }) => {
                 </div>
             </div>
 
-            <p className='text-gray font-500 uppercase mini-text mt-5'
-            >
+            <p className='text-gray font-500 uppercase mini-text mt-5'>
                 {item.category}
             </p>
 
@@ -129,11 +72,11 @@ const ProductCard = ({ item, onClick }) => {
 
             <div className='flex items-center gap-6 mt-2'>
                 <p className='mini-text text-danger font-600'>
-                    {item.price}
+                    {price}
                 </p>
-                {item.originalPrice && (
+                {originalPrice && (
                     <p className='mini-text text-gray font-400 line-through'>
-                        {item.originalPrice}
+                        {originalPrice}
                     </p>
                 )}
             </div>
@@ -247,6 +190,22 @@ const ProductSliderSection = ({ products, onProductClick }) => {
 const ProductSection = () => {
     const navigate = useNavigate();
 
+    const allProducts = useMemo(() => {
+        return productsData.filter((p) => !p.isBanner);
+    }, []);
+
+    const firstRowProducts = useMemo(() => {
+        return allProducts.slice(0, 6);
+    }, [allProducts]);
+
+    const secondRowProducts = useMemo(() => {
+        return allProducts.length > 6 ? allProducts.slice(6, 12) : allProducts.slice(0, 6);
+    }, [allProducts]);
+
+    const handleProductClick = (item) => {
+        navigate(`/product/${item.id}`, { state: { product: item } });
+    };
+
     return (
         <Container>
             <div className="w-full py-50">
@@ -278,13 +237,17 @@ const ProductSection = () => {
                     actionLink="/products"
                 />
 
-                {featureSections.map((sectionId) => (
-                    <ProductSliderSection
-                        key={sectionId}
-                        products={products}
-                        onProductClick={(item) => navigate(`/product/${item.id}`, { state: { product: item } })}
-                    />
-                ))}
+                {/* First Slider Row (Products 1 - 6) */}
+                <ProductSliderSection
+                    products={firstRowProducts}
+                    onProductClick={handleProductClick}
+                />
+
+                {/* Second Slider Row (Products 7 - 12) */}
+                <ProductSliderSection
+                    products={secondRowProducts}
+                    onProductClick={handleProductClick}
+                />
             </div>
         </Container>
     );

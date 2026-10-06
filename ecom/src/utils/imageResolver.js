@@ -16,7 +16,20 @@ const assetMap = {
 export const resolveImagePath = (path) => {
   if (!path) return "";
   if (typeof path === "string") {
-    return assetMap[path] || assetMap[path.trim()] || path;
+    if (assetMap[path] || assetMap[path.trim()]) {
+      return assetMap[path] || assetMap[path.trim()];
+    }
+    if (
+      !path.startsWith("http://") &&
+      !path.startsWith("https://") &&
+      !path.startsWith("data:") &&
+      !path.startsWith("blob:") &&
+      !path.startsWith("/")
+    ) {
+      const base = import.meta.env.VITE_IMAGE || "";
+      return base ? `${base}${path}` : path;
+    }
+    return path;
   }
   return path;
 };
