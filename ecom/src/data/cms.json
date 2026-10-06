@@ -32,15 +32,24 @@
       "Standard Clear": [
         { "num": 1, "code": "const grade = '100% Virgin Flexible PVC'" },
         { "num": 2, "code": "const tempRange = '-15°C to +50°C'" },
-        { "num": 3, "code": "const widthOptions = ['200mm', '300mm', '400mm']" },
+        {
+          "num": 3,
+          "code": "const widthOptions = ['200mm', '300mm', '400mm']"
+        },
         { "num": 4, "code": "const transparency = 'High Optical Clarity 99%'" },
         { "num": 5, "code": "export default getStripCurtainSpec(grade)" }
       ],
       "Polar Freezer": [
         { "num": 1, "code": "const grade = 'Polar Cold-Flex Compound'" },
         { "num": 2, "code": "const tempRange = '-40°C to +15°C (Sub-Zero)'" },
-        { "num": 3, "code": "const application = 'Walk-in Freezers & Blast Chillers'" },
-        { "num": 4, "code": "const flexibility = 'Zero Cracking at Freezing Temp'" },
+        {
+          "num": 3,
+          "code": "const application = 'Walk-in Freezers & Blast Chillers'"
+        },
+        {
+          "num": 4,
+          "code": "const flexibility = 'Zero Cracking at Freezing Temp'"
+        },
         { "num": 5, "code": "return <PolarFreezerCurtain spec={grade} />" }
       ]
     },
@@ -113,7 +122,11 @@
           { "label": "100% Virgin PVC", "icon": "Box", "href": "/product" },
           { "label": "UV Stabilized", "icon": "Layers", "href": "/product" },
           { "label": "SS 304 Hardware", "icon": "Builder", "href": "/product" },
-          { "label": "Pan-India Dispatch", "icon": "Headphones", "href": "/connect" }
+          {
+            "label": "Pan-India Dispatch",
+            "icon": "Headphones",
+            "href": "/connect"
+          }
         ]
       },
       {
@@ -240,7 +253,10 @@
       ],
       "Hardware": [
         { "num": 1, "code": "const trackMaterial = 'Stainless Steel 304'" },
-        { "num": 2, "code": "const trackLengths = ['1000mm', '1200mm', '1500mm']" },
+        {
+          "num": 2,
+          "code": "const trackLengths = ['1000mm', '1200mm', '1500mm']"
+        },
         { "num": 3, "code": "const clampType = 'Hook-On Removable Plates'" },
         { "num": 4, "code": "const mounting = 'Wall & Ceiling Face Mount'" },
         { "num": 5, "code": "export const hardwareSystem = getSS304Kit()" }
@@ -395,8 +411,8 @@
     ]
   },
   "PatchSection": {
-    "badge": "INDIA'S LEADING PVC STRIP CURTAIN MANUFACTURER",
-    "title": "Manufacturing High-Clarity PVC Strip Curtains for 1,000+ Facilities Across India.",
+    "badge": "INDIA'S LEADING MANUFACTURER",
+    "title": "Manufacturing High-Clarity for Facilities Across India.",
     "description": "We deliver durable, temperature-controlling, and dust-isolating PVC curtain solutions with fast dispatch and direct factory pricing.",
     "stats": [
       {
