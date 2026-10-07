@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Heading from '../../../../components/layout/generic/Heading';
@@ -10,21 +10,21 @@ import { productsData } from '../../../../utils/apiData';
 const ProductSection = () => {
     const navigate = useNavigate();
 
-    const allProducts = useMemo(() => {
+    const allProducts = React.useMemo(() => {
         return productsData.filter((p) => !p.isBanner);
     }, []);
 
-    const firstRowProducts = useMemo(() => allProducts.slice(0, 6), [allProducts]);
-    const secondRowProducts = useMemo(
+    const firstRowProducts = React.useMemo(() => allProducts.slice(0, 6), [allProducts]);
+    const secondRowProducts = React.useMemo(
         () => (allProducts.length > 6 ? allProducts.slice(6, 12) : allProducts.slice(0, 6)),
         [allProducts]
     );
 
-    const handleProductClick = useCallback((item) => {
+    const handleProductClick = React.useCallback((item) => {
         navigate(`/product/${item.id}`, { state: { product: item } });
     }, [navigate]);
 
-    const handleCategoryClick = useCallback((cat) => {
+    const handleCategoryClick = React.useCallback((cat) => {
         navigate(`/product?category=${encodeURIComponent(cat)}`);
     }, [navigate]);
 

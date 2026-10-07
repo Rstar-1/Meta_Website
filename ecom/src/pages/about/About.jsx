@@ -5,18 +5,23 @@ import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
 import aboutBanner from '../../assets/about-banner.jpg';
 
-const AboutSection = lazy(() => import('../home/sections/ecom/AboutSection'));
+const DetailSection = lazy(() => import('./sections/DetailSection'));
 const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
-const FeatureSection = lazy(() => import('../home/sections/ecom/FeatureSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 
 const aboutSections = [
     {
         id: 'about',
-        Component: AboutSection,
+        Component: DetailSection,
         minHeight: '400px',
         isContainer: true,
         containerStyle: { background: 'var(--forth)' }
+    },
+    {
+        id: 'offer',
+        Component: OfferSection,
+        minHeight: '300px',
+        isContainer: true
     },
     {
         id: 'patch',
@@ -31,19 +36,6 @@ const aboutSections = [
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed'
         }
-    },
-    {
-        id: 'feature',
-        Component: FeatureSection,
-        minHeight: '400px',
-        isContainer: true,
-        containerStyle: { background: 'var(--forth)' }
-    },
-    {
-        id: 'offer',
-        Component: OfferSection,
-        minHeight: '300px',
-        isContainer: true
     },
 ];
 

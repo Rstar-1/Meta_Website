@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Badge from '../../../../components/common/Badge';
+
 import { patchCMS } from '../../../../utils/apiData';
 
 const PatchSection = () => {

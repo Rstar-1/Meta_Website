@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Image from '../../../../components/common/Image';
@@ -84,7 +84,7 @@ const BreadcrumbTab = React.memo(({ isMobile, heroVersion }) => {
 
 const HeroBanner = React.memo(() => {
     const navigate = useNavigate();
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = React.useState(false);
 
     const heroVersion = configData?.HeroBanner?.[0]?.HeroBannerType ?? 1;
     const isHeaderSticky = Boolean(
@@ -93,15 +93,15 @@ const HeroBanner = React.memo(() => {
         configData?.Header?.[0]?.HeaderSticky
     );
 
-    const handleResize = useCallback(() => {
+    const handleResize = React.useCallback(() => {
         setIsMobile(window.innerWidth <= 768);
     }, []);
 
-    const handleGetInTouch = useCallback(() => {
+    const handleGetInTouch = React.useCallback(() => {
         navigate('/connect');
     }, [navigate]);
 
-    useEffect(() => {
+    React.useEffect(() => {
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
@@ -109,7 +109,7 @@ const HeroBanner = React.memo(() => {
 
     const heightClass = HEIGHT_MAP[isHeaderSticky ? 'sticky' : 'normal']?.[heroVersion] || (isHeaderSticky ? 'h-650 sm-h-550' : 'h-550');
 
-    const containerStyle = useMemo(() => {
+    const containerStyle = React.useMemo(() => {
         if (heroVersion === 1) {
             const maskSize = isMobile ? '260% 100%' : '110% 100%';
             return {

@@ -434,5 +434,45 @@
         "label": "Average reduction in doorway energy loss."
       }
     ]
+  },
+  "FeedSection": {
+    "heading": {
+      "tag": "Product Protection",
+      "title": "Delivering Innovative IT",
+      "actionText": "Show All",
+      "actionLink": "/products"
+    },
+    "feedItems": [
+      {
+        "id": 1,
+        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/headphone-speaker-insta.webp?v=1739932634&width=720",
+        "products": [
+          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=100&q=80",
+          "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=100&q=80"
+        ]
+      },
+      {
+        "id": 2,
+        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/earphones-insta.webp?v=1739932644&width=720",
+        "products": [
+          "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=100&q=80"
+        ]
+      },
+      {
+        "id": 3,
+        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/headphones-insta.webp?v=1739932687&width=720",
+        "products": [
+          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=100&q=80",
+          "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=100&q=80"
+        ]
+      },
+      {
+        "id": 4,
+        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/speaker2-insta.webp?v=1739932683&width=720",
+        "products": [
+          "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?auto=format&fit=crop&w=100&q=80"
+        ]
+      }
+    ]
   }
 }

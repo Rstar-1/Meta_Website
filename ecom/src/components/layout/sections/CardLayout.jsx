@@ -1,14 +1,15 @@
-import React, { useState, memo } from 'react';
+import React from 'react';
 
 import Image from '../../common/Image';
 import Button from '../../common/Button';
 import Badge from '../../common/Badge';
+import Icon from '../../common/Icon';
 import Fields from '../../forms/Fields';
 
 import { resolveImagePath } from '../../../utils/imageResolver';
 import { useCart } from '../../../feature/slice/cartSlice';
 
-export const FeatureCard = memo(({
+export const FeatureCard = React.memo(({
     item,
     onClick,
     onSelect,
@@ -70,7 +71,7 @@ export const FeatureCard = memo(({
             <Image
                 src={resolveImagePath(item.image)}
                 alt={title}
-                className="w-full h-full object-cover flex filter-b4"
+                className="w-full h-full object-cover flex filter-b5"
             />
 
             <div className="absolute bottom-0 left-0 w-full feature-info">
@@ -115,7 +116,161 @@ export const FeatureCard = memo(({
 
 FeatureCard.displayName = 'FeatureCard';
 
-export const ProductCard = memo(({
+export const FeatureCard2 = React.memo(({
+    item,
+    onClick,
+    onSelect,
+    className = '',
+    imageHeight = 'h-250 sm-h-200'
+}) => {
+    const handleCardClick = onClick || onSelect;
+
+    if (!item) return null;
+
+    const title = item.title || item.name;
+    const description = item.description || item.subtitle;
+
+    return (
+        <div
+            onClick={() => handleCardClick?.(item)}
+            className={`w-full ${handleCardClick ? 'cursor-pointer' : ''} ${className}`.trim()}
+        >
+            <Image
+                src={resolveImagePath(item.image)}
+                alt={title || 'feature'}
+                className={`w-full ${imageHeight} object-cover flex rounded-10`}
+            />
+            <h3 className="mid-text text-dark text-center font-600 uppercase mt-16">
+                {title}
+            </h3>
+            {description && (
+                <p className="small-text text-gray text-muted font-400 mt-4 text-center">
+                    {description}
+                </p>
+            )}
+        </div>
+    );
+});
+
+FeatureCard2.displayName = 'FeatureCard2';
+
+export const FeatureCard3 = React.memo(({
+    item,
+    onClick,
+    onShopLook,
+    minWidth,
+    maxWidth,
+    className = ''
+}) => {
+    const { addToCart } = useCart();
+    const handleCardClick = onClick;
+    if (!item) return null;
+
+    const productImages = item.products || item.images?.slice(0, 2) || (item.image ? [item.image] : []);
+    const [activeImage, setActiveImage] = React.useState(item.image);
+
+    React.useEffect(() => {
+        setActiveImage(item.image);
+    }, [item.image]);
+
+    const handleShopLookClick = (e) => {
+        e.stopPropagation();
+        if (onShopLook) {
+            onShopLook(item);
+        } else {
+            addToCart(item);
+        }
+    };
+
+    const style = (minWidth || maxWidth) ? { minWidth, maxWidth } : undefined;
+
+    return (
+        <div
+            style={style}
+            className={`feed-card relative rounded-10 overflow-hidden h-400 cursor-pointer w-full ${minWidth || maxWidth ? 'flex-shrink-0' : ''} ${className}`.trim()}
+        >
+            <style>{`
+                .feed-card .shop-look-btn-wrapper {
+                    max-height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    margin-top: 0;
+                    overflow: hidden;
+                    transform: translateY(12px);
+                    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+                }
+                .feed-card:hover .shop-look-btn-wrapper {
+                    max-height: 55px;
+                    opacity: 1;
+                    visibility: visible;
+                    margin-top: 10px;
+                    transform: translateY(0);
+                }
+                .feed-card .feed-img {
+                    transition: transform 0.5s ease;
+                }
+                .feed-card:hover .feed-img {
+                    transform: scale(1.04);
+                }
+            `}</style>
+            <Image
+                src={resolveImagePath(activeImage || item.image)}
+                alt={item.title || item.name || "Instagram Feed Post"}
+                className="feed-img w-full h-full object-cover flex"
+                onClick={() => handleCardClick?.(item)}
+            />
+
+            <div className="absolute top-0 right-0">
+                <div className="bg-white rounded-full icon-lg m-15 flex items-center justify-center">
+                    <Icon name="Instagram" width="18" height="18" className="text-danger" />
+                </div>
+            </div>
+
+            <div className="absolute bottom-0 left-0 w-full">
+                <div className="p-15">
+                    {productImages.length > 0 && (
+                        <div className="flex items-center gap-12">
+                            {productImages.map((prodImg, idx) => (
+                                <div
+                                    key={idx}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setActiveImage(prodImg);
+                                    }}
+                                    className={`bg-white p-2 rounded-5 shadow-sm cursor-pointer transition-all ${
+                                        activeImage === prodImg ? 'border-primary' : 'border-transparent'
+                                    }`}
+                                >
+                                    <Image
+                                        src={resolveImagePath(prodImg)}
+                                        alt="Tagged Product"
+                                        width="50px"
+                                        height="50px"
+                                        className="flex object-cover rounded-5"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    <div className="shop-look-btn-wrapper w-full">
+                        <Button
+                            onClick={handleShopLookClick}
+                            text={item.buttonText || "Shop the Look"}
+                            version="v3"
+                            bg="white"
+                            color="dark"
+                            className="rounded-30 w-full"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+});
+
+FeatureCard3.displayName = 'FeatureCard3';
+
+export const ProductCard = React.memo(({
     item,
     onClick,
     onProductClick,
@@ -271,7 +426,7 @@ export const ProductCard = memo(({
 
 ProductCard.displayName = 'ProductCard';
 
-export const ProductCard2 = memo(({
+export const ProductCard2 = React.memo(({
     item,
     onClick,
     onProductClick,
@@ -280,7 +435,7 @@ export const ProductCard2 = memo(({
     isFluid = false
 }) => {
     const { addToCart } = useCart();
-    const [selectedVariant, setSelectedVariant] = useState(0);
+    const [selectedVariant, setSelectedVariant] = React.useState(0);
     const handleCardClick = onClick || onProductClick;
 
     if (!item) return null;
@@ -440,9 +595,15 @@ export const ProductCard2 = memo(({
 
 ProductCard2.displayName = 'ProductCard2';
 
-const CardLayout = memo(({ version = 'product', ...props }) => {
+const CardLayout = React.memo(({ version = 'product', ...props }) => {
     if (version === 'feature') {
         return <FeatureCard {...props} />;
+    }
+    if (version === 'feature2') {
+        return <FeatureCard2 {...props} />;
+    }
+    if (version === 'feature3') {
+        return <FeatureCard3 {...props} />;
     }
     if (version === 'product2') {
         return <ProductCard2 {...props} />;

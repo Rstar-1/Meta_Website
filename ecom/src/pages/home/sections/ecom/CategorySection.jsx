@@ -1,12 +1,14 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Icon from '../../../../components/common/Icon';
 import Image from '../../../../components/common/Image';
+
 import Heading from '../../../../components/layout/generic/Heading';
 
-import { configData, categories } from '../../../../utils/apiData';
 import { resolveImagePath } from '../../../../utils/imageResolver';
+
+import { configData, categories } from '../../../../utils/apiData';
 
 const CategoryVersion1 = React.memo(({ items, onCategoryClick }) => (
     <div className="grid-cols-6 sm-grid-cols-1 mt-30">
@@ -140,7 +142,7 @@ const CategorySection = React.memo(() => {
     const navigate = useNavigate();
     const categoryVersion = configData?.Category?.[0]?.CategoryVersion ?? 1;
 
-    const handleCategoryClick = useCallback((cat) => {
+    const handleCategoryClick = React.useCallback((cat) => {
         const query = typeof cat === 'object' ? (cat.name || cat.title || cat.id) : cat;
         navigate(`/product?category=${encodeURIComponent(query)}`);
     }, [navigate]);
