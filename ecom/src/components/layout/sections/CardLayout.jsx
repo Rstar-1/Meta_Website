@@ -287,7 +287,7 @@ export const ProductCard = React.memo(({
         return (
             <div
                 onClick={() => handleCardClick?.(item)}
-                className="overflow-hidden rounded-5 relative cursor-pointer"
+                className="overflow-hidden rounded-5 relative cursor-pointer sm-h-350"
                 style={{
                     ...(!isFluid ? { minWidth, maxWidth } : {}),
                     height: '386px',
@@ -342,7 +342,7 @@ export const ProductCard = React.memo(({
                     transform: scale(1.04);
                 }
             `}</style>
-            <div className="h-300 w-full overflow-hidden rounded-10 relative product-card">
+            <div className="h-300 sm-h-250 w-full overflow-hidden rounded-10 relative product-card">
                 {badge && (
                     <div className="top-0 left-0 absolute z-2">
                         <Badge
