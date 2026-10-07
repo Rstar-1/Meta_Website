@@ -2,7 +2,6 @@ import React, { lazy, Suspense, memo } from 'react';
 import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import SEO from '../../seo';
-import aboutBanner from '../../assets/about-banner.jpg';
 
 const HeroBanner = lazy(() => import('./sections/ecom/HeroBanner'));
 const CategorySection = lazy(() => import('./sections/ecom/CategorySection'));
@@ -45,7 +44,7 @@ const ecomSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${aboutBanner})`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${import.meta.env.VITE_IMAGE + "Patch1.jpg"})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

@@ -5,67 +5,43 @@ import Heading from '../../../../components/layout/generic/Heading';
 import SlideLayout from '../../../../components/layout/sections/SlideLayout';
 import CardLayout from '../../../../components/layout/sections/CardLayout';
 
-import { useCart } from '../../../../feature/slice/cartSlice';
-import { feedCMS, productsData } from '../../../../utils/apiData';
+import { productsData } from '../../../../utils/apiData';
 
 const FeatureSection = () => {
     const navigate = useNavigate();
-    const { addToCart } = useCart();
 
-    const items = productsData?.slice(0, 6) || [];
-    const heading = feedCMS?.heading || {
-        tag: 'Product Protection',
-        title: 'Delivering Innovative IT',
-        actionText: 'Show All',
-        actionLink: '/products'
-    };
+    const trendingProducts = React.useMemo(() => {
+        const filtered = productsData.filter((item) => item.trending && !item.isBanner);
+        return filtered.length > 0 ? filtered : productsData.filter((item) => !item.isBanner).slice(0, 6);
+    }, []);
 
-    const handleItemClick = React.useCallback((item) => {
-        if (item.id) {
-            navigate(`/product/${item.id}`, { state: { product: item } });
-        } else {
-            navigate('/products');
-        }
+    const handleSelect = React.useCallback((item) => {
+        navigate(`/product/${item.id}`, { state: { product: item } });
     }, [navigate]);
 
-    const handleShopLook = React.useCallback((item) => {
-        addToCart(item);
-    }, [addToCart]);
-
-    const renderItem = React.useCallback((item) => (
-        <CardLayout
-            key={item.id}
-            version="feature3"
-            minWidth='280px'
-            maxWidth='280px'
-            item={item}
-            onClick={() => handleItemClick(item)}
-            onShopLook={() => handleShopLook(item)}
-        />
-    ), [handleItemClick, handleShopLook]);
-
     return (
-        <div className="w-full py-50">
+        <div className="w-full py-50 sm-py-20">
             <Heading
                 version="v2"
-                tag={heading.tag}
-                title={heading.title}
-                actionText={heading.actionText}
-                actionLink={heading.actionLink}
+                tag="BEST SELLING PVC STRIPS"
+                title="Featured PVC Strip Curtains & Rolls"
+                actionText="View All Products"
+                actionLink="/product"
             />
-
             <SlideLayout
-                version="slide"
-                col={4}
-                gap="12"
-                className="mt-30"
-                items={items}
-                renderItem={renderItem}
+                className="mt-20"
+                items={trendingProducts}
+                renderItem={(item) => (
+                    <CardLayout
+                        key={item.id}
+                        version="feature"
+                        item={item}
+                        onSelect={handleSelect}
+                    />
+                )}
             />
         </div>
     );
 };
-
-FeatureSection.displayName = 'FeatureSection';
 
 export default React.memo(FeatureSection);

@@ -237,9 +237,8 @@ export const FeatureCard3 = React.memo(({
                                         e.stopPropagation();
                                         setActiveImage(prodImg);
                                     }}
-                                    className={`bg-white p-2 rounded-5 shadow-sm cursor-pointer transition-all ${
-                                        activeImage === prodImg ? 'border-primary' : 'border-transparent'
-                                    }`}
+                                    className={`bg-white p-2 rounded-5 shadow-sm cursor-pointer transition-all ${activeImage === prodImg ? 'border-primary' : 'border-transparent'
+                                        }`}
                                 >
                                     <Image
                                         src={resolveImagePath(prodImg)}
@@ -288,17 +287,21 @@ export const ProductCard = React.memo(({
         return (
             <div
                 onClick={() => handleCardClick?.(item)}
-                className="overflow-hidden rounded-10 relative h-300 cursor-pointer"
-                style={!isFluid ? { minWidth, maxWidth } : undefined}
+                className="overflow-hidden rounded-5 relative cursor-pointer"
+                style={{
+                    ...(!isFluid ? { minWidth, maxWidth } : {}),
+                    height: '386px',
+                }}
             >
                 <Image
                     src={resolveImagePath(item.image)}
                     alt={item.title}
-                    className="h-full w-full object-cover flex filter-b4"
+                    className="h-full w-full object-cover flex filter-b5"
                 />
                 <div className="absolute bottom-0 left-0 px-16 py-20">
-                    <p className="text-primary font-500 small-text">{item.subtitle}</p>
+                    <p className="text-primary font-500 para-text">{item.subtitle}</p>
                     <h3 className="text-white font-600 title-text mt-4">{item.title}</h3>
+                    <Button text={item.buttonText} version="v2" bg="white" color="dark" className="rounded-30 font-500 mt-12" />
                 </div>
             </div>
         );
@@ -342,12 +345,14 @@ export const ProductCard = React.memo(({
             <div className="h-300 w-full overflow-hidden rounded-10 relative product-card">
                 {badge && (
                     <div className="top-0 left-0 absolute z-2">
-                        <p
-                            className="m-12 px-12 py-1 mini-text font-400 rounded-20 text-white"
-                            style={{ backgroundColor: badge.color || badge.bg || '#C8281E' }}
-                        >
-                            {badge.text}
-                        </p>
+                        <Badge
+                            text={typeof badge === 'object' ? (badge.text || badge.label || badge.name) : badge}
+                            bg={typeof badge === 'object' ? (badge.color || badge.bg || '#C8281E') : '#C8281E'}
+                            textColor="#ffffff"
+                            shape="pill"
+                            size="xs"
+                            className="m-12"
+                        />
                     </div>
                 )}
                 <Image

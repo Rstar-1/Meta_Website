@@ -2,7 +2,6 @@ import soboLogo from "../assets/sobo_logo.png";
 import soboWhite from "../assets/sobo_white.png";
 import aboutBanner from "../assets/about-banner.jpg";
 
-// Automatically index all assets in ../assets/
 const assetModules = import.meta.glob("../assets/*", {
   eager: true,
   import: "default",
@@ -21,7 +20,6 @@ Object.entries(assetModules).forEach(([path, assetUrl]) => {
   }
 });
 
-// Custom aliases
 if (soboWhite) {
   assetMap["/sobos.png"] = soboWhite;
   assetMap["sobos.png"] = soboWhite;
@@ -34,12 +32,10 @@ export const resolveImagePath = (path) => {
   const trimmed = path.trim();
   if (!trimmed) return "";
 
-  // Check local assets map first
   if (assetMap[trimmed]) {
     return assetMap[trimmed];
   }
 
-  // Already a full, data, blob, or protocol-relative URL
   if (
     trimmed.startsWith("http://") ||
     trimmed.startsWith("https://") ||
@@ -50,7 +46,6 @@ export const resolveImagePath = (path) => {
     return trimmed;
   }
 
-  // Prepend remote CDN base if available for relative filenames (e.g. Compare1.jpg)
   if (!trimmed.startsWith("/")) {
     const base = import.meta.env.VITE_IMAGE || "";
     return base

@@ -144,7 +144,10 @@ const CategorySection = React.memo(() => {
 
     const handleCategoryClick = React.useCallback((cat) => {
         const query = typeof cat === 'object' ? (cat.name || cat.title || cat.id) : cat;
-        navigate(`/product?category=${encodeURIComponent(query)}`);
+        const catId = typeof cat === 'object' ? cat.id : undefined;
+        navigate(`/product?category=${encodeURIComponent(query)}`, {
+            state: { categoryId: catId ? String(catId) : undefined, categoryName: query }
+        });
     }, [navigate]);
 
     const ActiveVersionComponent = VERSION_COMPONENTS[categoryVersion] || CategoryVersion1;

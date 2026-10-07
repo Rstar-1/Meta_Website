@@ -36,9 +36,9 @@ const OfferSection = () => {
             <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
                 <div className='overflow-hidden bg-forth rounded-10 relative sm-h-400' style={{ height: '612px' }}
                 >    <Image
-                        src={import.meta.env.VITE_IMAGE + "Banner2.jpg"}
+                        src={import.meta.env.VITE_IMAGE + "product/Product5.jpg"}
                         alt="PVC Strip Curtains"
-                        className='h-full w-full object-cover flex filter-b5'
+                        className='h-full w-full object-cover flex filter-b4'
                     />
                     <div className='absolute bottom-0 left-0 p-20'>
                         <h4 className='large-text text-white uppercase font-600'>
@@ -50,7 +50,7 @@ const OfferSection = () => {
 
                         <Button
                             text="Explore Products"
-                            version="v2"
+                            version="v1"
                             bg="white"
                             color="dark"
                             className='mt-14 rounded-20'

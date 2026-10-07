@@ -12,13 +12,27 @@ export const sendEmail = async (data, subject, message) => {
     throw new Error(errorMsg);
   }
 
+  const phoneVal = data?.phone || data?.mobile || data?.["Phone Number"] || "";
+  const emailVal = data?.email || data?.["Email"] || "";
+  const nameVal = data?.name || data?.["Name"] || "Website Subscriber";
+  const userMsgVal = data?.message || data?.["Your message"] || "";
+
   const templateParams = {
-    subject: subject,
-    message: message,
-    from_name: data?.name || "Website Subscriber",
-    reply_to: data?.email || "",
-    to_email: import.meta.env.VITE_EMAIL,
     ...data,
+    name: nameVal,
+    from_name: nameVal,
+    user_name: nameVal,
+    email: emailVal,
+    user_email: emailVal,
+    reply_to: emailVal,
+    phone: phoneVal,
+    mobile: phoneVal,
+    phone_number: phoneVal,
+    user_phone: phoneVal,
+    subject: subject || "New Product Enquiry",
+    user_message: userMsgVal,
+    message: message || userMsgVal,
+    to_email: import.meta.env.VITE_EMAIL,
   };
 
   try {

@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import Container from '../common/Container';
 import Icon from '../common/Icon';
+
+import { showToast } from '../common/Toast';
+import { sendEmail } from '../../utils/emailsend';
 import { footer, footerData, configData } from '../../utils/apiData';
 
 const footerConfig = configData?.Footer?.[0] || configData?.Footer || {};
@@ -284,11 +288,23 @@ const Footer = () => {
   const handleEmailChange = React.useCallback((e) => setEmail(e.target.value), []);
 
   const handleSubscribe = React.useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault();
-      if (email.trim()) {
-        setIsSubscribed(true);
-        setEmail('');
+      const subscriberEmail = email.trim();
+      if (!subscriberEmail) return;
+
+      setEmail('');
+      setIsSubscribed(true);
+      showToast('Thank you for subscribing to our newsletter!', 'success');
+
+      try {
+        await sendEmail(
+          { email: subscriberEmail, name: 'Newsletter Subscriber', message: `New Newsletter Subscription: ${subscriberEmail}` },
+          'New Newsletter Subscription',
+          `New Newsletter Subscription from: ${subscriberEmail}`
+        );
+      } catch (err) {
+        console.error('Newsletter subscription error:', err);
       }
     },
     [email]

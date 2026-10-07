@@ -6,84 +6,79 @@ import Fields from '../forms/Fields';
 
 const QUICK_ACTIONS = [
     {
-        id: 'services',
-        title: 'Our Services',
-        subtitle: 'Web, UI/UX, Cloud & AI',
-        icon: 'Layers',
+        id: 'supplier',
+        title: 'Supplier',
+        subtitle: 'Verified Brands & Partners',
+        icon: 'Users',
         iconBg: '#2563eb',
-        reply: 'We specialize in end-to-end digital product design and modern engineering:\n\n• **UI/UX & Product Design**: Research, Figma design systems, wireframing, and interactive prototyping.\n• **Full-Stack Engineering**: High-performance web apps built with Next.js, React, Node.js, and TypeScript.\n• **Cloud & DevOps**: Edge deployment, scalable microservices, and CI/CD pipelines.\n• **AI & Growth Engine**: Custom LLM integration, workflow automation, and CRO optimization.\n\nWould you like to explore our service capabilities or discuss a project?',
-        cta: { text: 'Explore Services', path: '/service' }
-    },
-    {
-        id: 'portfolio',
-        title: 'Case Studies',
-        subtitle: 'Featured digital work',
-        icon: 'Sparkles',
-        iconBg: '#06b6d4',
-        reply: 'We partner with high-growth startups and global enterprises to deliver category-defining digital products:\n\n• **B2B SaaS Platforms**: High-conversion user onboarding and complex analytics dashboards.\n• **Headless E-Commerce**: Sub-second page transitions with 3D product previews.\n• **Enterprise Web Apps**: SOC-2 compliant, accessible (WCAG AA), and Lighthouse 100 performance rated.\n\nCheck out our recent client products and digital showcases!',
-        cta: { text: 'View Products & Work', path: '/product' }
-    },
-    {
-        id: 'bookdemo',
-        title: 'Book a Demo',
-        subtitle: 'Free strategy session',
-        icon: 'Calendar',
-        iconBg: '#7c3aed',
-        reply: 'Ready to build or scale your digital product? Schedule a free 30-minute discovery session with our technical leads and product architects:\n\n• Architecture review & modern tech stack assessment\n• UX heuristic audit & conversion funnel evaluation\n• MVP roadmap & sprint timeline estimation',
-        cta: { text: 'Book A Consultation', path: '/bookdemo' }
+        reply: 'We partner with certified industrial suppliers and leading manufacturers to offer premium PVC solutions:\n\n• **Certified Quality**: Food-grade, fire-retardant, polar-grade, and anti-static certified materials.\n• **Direct Wholesale**: Competitive bulk rates and custom manufacturing.\n• **Verified Distributors**: Authorized regional dealers and fast logistics dispatch.\n\nView our network of trusted suppliers and brands!',
+        cta: { text: 'View Suppliers', path: '/supplier' }
     },
     {
         id: 'contact',
         title: 'Get in Touch',
         subtitle: 'Speak with our team',
-        icon: 'Headset',
+        icon: 'Support',
         iconBg: '#059669',
-        reply: `You can reach our digital solutions desk directly:\n\n• **Email**: ${import.meta.env.VITE_EMAIL || 'connect@generictrade.com'}\n• **Phone**: ${import.meta.env.VITE_CONTACT_PHONE || import.meta.env.VITE_PHONE || '+1 888-234-1234 (Toll-Free)'}\n\nOur average turnaround time is under 15 minutes during business hours!`,
+        reply: `Reach out to our customer support and sales team directly:\n\n• **Email**: ${import.meta.env.VITE_EMAIL || 'connect@generictrade.com'}\n• **Phone**: ${import.meta.env.VITE_CONTACT_PHONE || import.meta.env.VITE_PHONE || '+1 888-234-1234 (Toll-Free)'}\n\nWe are available to help with custom measurements, quotation requests, and bulk orders!`,
         cta: { text: 'Get in Touch', path: '/connect' }
+    },
+    {
+        id: 'blogs',
+        title: 'Blogs',
+        subtitle: 'Guides & Industry Insights',
+        icon: 'Reports',
+        iconBg: '#7c3aed',
+        reply: 'Check out our expert articles, installation guides, and energy-saving tips:\n\n• **Installation Guides**: Step-by-step instructions on measuring, cutting, and mounting strip curtains.\n• **Selection Guide**: Choosing between standard, polar, ribbed, and anti-insect PVC strips.\n• **HVAC Efficiency**: How PVC thermal barriers reduce warehouse energy costs by up to 30%.\n\nRead our latest blogs and guides!',
+        cta: { text: 'Read Blogs', path: '/blog' }
+    },
+    {
+        id: 'collection',
+        title: 'Collection',
+        subtitle: 'Curtains, Hardware & Tracks',
+        icon: 'Grid',
+        iconBg: '#06b6d4',
+        reply: 'Browse our complete catalog of industrial PVC strip curtains, mounting brackets, and accessories:\n\n• **Standard Clear PVC**: High transparency for doorways, warehouses, and partitions.\n• **Polar Freezer Grade**: Remains flexible down to -40°C for cold storage & freezers.\n• **Anti-Insect Amber**: Yellow UV & bug-repelling strips for food processing & kitchens.\n• **Brackets & Tracks**: Heavy-duty stainless steel and galvanized hanging systems.\n\nExplore our full product collection!',
+        cta: { text: 'Explore Collection', path: '/product' }
     }
 ];
 
 const QUERY_RULES = [
     {
-        keywords: ['price', 'pricing', 'cost', 'rate', 'quote', 'tier', 'budget', 'estimate', 'plan', 'plans', 'sprint', 'engagement', 'model'],
-        reply: 'Our engagement models include rapid MVP sprints, monthly dedicated engineering pods, and custom enterprise scopes. You can review our transparent pricing tiers or connect with our team for a tailored proposal.',
-        cta: { text: 'View Pricing', path: '/pricing' }
-    },
-    {
-        keywords: ['service', 'services', 'capabilities', 'stack', 'tech', 'technology', 'technologies', 'develop', 'development', 'design', 'frontend', 'backend', 'ui', 'ux', 'cloud', 'ai'],
+        keywords: ['supplier', 'suppliers', 'vendor', 'vendors', 'brand', 'brands', 'manufacturer', 'manufacturers', 'partner', 'partners', 'wholesale', 'distributor'],
         reply: QUICK_ACTIONS[0].reply,
         cta: QUICK_ACTIONS[0].cta
     },
     {
-        keywords: ['portfolio', 'work', 'project', 'projects', 'product', 'products', 'case', 'study', 'showcase', 'client'],
+        keywords: ['contact', 'touch', 'phone', 'call', 'email', 'support', 'reach', 'message', 'quote', 'inquiry', 'enquiry', 'help', 'connect'],
         reply: QUICK_ACTIONS[1].reply,
         cta: QUICK_ACTIONS[1].cta
     },
     {
-        keywords: ['demo', 'book', 'meeting', 'schedule', 'session', 'consult', 'consultation', 'call', 'discovery'],
+        keywords: ['blog', 'blogs', 'article', 'articles', 'guide', 'guides', 'insight', 'insights', 'news', 'tip', 'tips', 'installation', 'install', 'maintenance'],
         reply: QUICK_ACTIONS[2].reply,
         cta: QUICK_ACTIONS[2].cta
     },
     {
-        keywords: ['contact', 'phone', 'call', 'email', 'touch', 'support', 'reach', 'message'],
+        keywords: ['collection', 'product', 'products', 'curtain', 'curtains', 'strip', 'strips', 'bracket', 'brackets', 'hardware', 'track', 'catalog', 'shop', 'item', 'items', 'door'],
         reply: QUICK_ACTIONS[3].reply,
         cta: QUICK_ACTIONS[3].cta
     },
     {
-        keywords: ['about', 'team', 'agency', 'company', 'who', 'story', 'mission'],
-        reply: 'We are a bespoke digital product agency and engineering collective. We partner with ambitious leaders to build high-performance web applications, resilient architectures, and iconic brand identities.',
-        cta: { text: 'About Our Agency', path: '/about' }
+        keywords: ['price', 'pricing', 'cost', 'rate', 'rates', 'discount', 'offer', 'budget', 'estimate'],
+        reply: 'We offer competitive factory-direct pricing on all PVC strip curtain rolls, pre-cut strips, and mounting hardware. Check our collection or contact us for a customized bulk quote.',
+        cta: { text: 'View Products & Pricing', path: '/product' }
     },
     {
-        keywords: ['blog', 'article', 'articles', 'insight', 'insights', 'news'],
-        reply: 'Check out our engineering articles, UI/UX design systems, and digital product strategies on our blog.',
-        cta: { text: 'Read Blog', path: '/blog' }
+        keywords: ['about', 'company', 'who', 'story', 'mission', 'quality'],
+        reply: 'We are a premier provider of industrial PVC strip curtains, cold storage barriers, and durable mounting hardware. We deliver high-quality, durable, and energy-efficient curtain solutions across all industries.',
+        cta: { text: 'About Us', path: '/about' }
     }
 ];
 
 const DEFAULT_REPLY = {
-    text: 'Thanks for reaching out! Our digital product strategists and engineers are here to assist. Would you like to explore our services, review client work, or book a free discovery consultation?',
-    cta: { text: 'Book A Consultation', path: '/bookdemo' }
+    text: 'Thanks for reaching out! We are here to assist you with PVC strip curtains, mounting hardware, verified suppliers, and custom orders. What would you like to know more about?',
+    cta: { text: 'Explore Collection', path: '/product' }
 };
 
 const ChatTeaser = React.memo(({ onOpen, onDismiss }) => (
@@ -119,7 +114,7 @@ const ChatTeaser = React.memo(({ onOpen, onDismiss }) => (
             />
         </div>
         <p className="mini-text text-dark font-500">
-            Hi! 👋 Planning a digital project or have questions? Let's chat!
+            Hi! 👋 Looking for PVC strip curtains or need help? Let's chat!
         </p>
     </div>
 ));
@@ -136,8 +131,8 @@ const ChatHeader = React.memo(({ onClose }) => (
                 />
             </div>
             <div>
-                <h4 className="headmini-text font-600 text-dark">Digital Agency Assistant</h4>
-                <p className="mini-text font-400 text-gray">Online • Average reply &lt; 15m</p>
+                <h4 className="headmini-text font-600 text-dark">Customer Support Assistant</h4>
+                <p className="mini-text font-400 text-gray">Online • Quick Response</p>
             </div>
         </div>
 
@@ -164,7 +159,7 @@ const ChatWelcome = React.memo(({ onActionClick }) => (
         </h2>
 
         <p className="mini-text text-gray mt-6">
-            Ask about our services, tech stack, case studies, or get in touch with our team.
+            Explore our collection, check verified suppliers, read our blogs, or get in touch.
         </p>
 
         <div className="grid-cols-2 gap-6 mt-10">

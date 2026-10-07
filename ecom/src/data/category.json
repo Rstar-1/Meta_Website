@@ -5,8 +5,8 @@
     "title": "Standard Clear PVC Curtains",
     "slug": "standard-clear-pvc",
     "megaMenuKey": "standardClearPvc",
-    "image": "Compare1.jpg",
-    "icon": "Compare1.jpg",
+    "image": "product/Product4.jpg",
+    "icon": "product/Product4.jpg",
     "iconName": "Layers",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
@@ -24,8 +24,8 @@
     "title": "Polar Freezer & Anti-Insect",
     "slug": "polar-anti-insect-pvc",
     "megaMenuKey": "polarAntiInsectPvc",
-    "image": "Compare2.jpg",
-    "icon": "Compare2.jpg",
+    "image": "product/Product5.jpg",
+    "icon": "product/Product5.jpg",
     "iconName": "Shield",
     "bgColor": "#ECFDF5",
     "accentColor": "#059669",
@@ -39,21 +39,22 @@
   },
   {
     "id": 3,
-    "name": "Mounting Hardware & Tracks",
-    "title": "Mounting Hardware & Tracks",
-    "slug": "hardware-tracks",
-    "megaMenuKey": "hardwareTracks",
-    "image": "Compare3.jpg",
-    "icon": "Compare3.jpg",
+    "name": "Brackets",
+    "title": "Brackets & Mounting Hardware",
+    "slug": "brackets",
+    "megaMenuKey": "brackets",
+    "image": "product/Product6.jpg",
+    "icon": "product/Product6.jpg",
     "iconName": "Box",
     "bgColor": "#FEF2F2",
     "accentColor": "#DC2626",
     "subCategories": [
-      { "id": "ss-hook-on", "name": "SS 304 Hook-On Track" },
-      { "id": "gi-channel-track", "name": "GI Sliding Track System" },
-      { "id": "hanging-clips", "name": "Clamp Plates & Rivets" },
-      { "id": "wall-brackets", "name": "Face & Header Brackets" }
+      { "id": "ms-mounting-brackets", "name": "Mounting Brackets (MS)" },
+      { "id": "ss202-mounting-brackets", "name": "Stainless Steel 202 (SS202)" },
+      { "id": "ss304-mounting-brackets", "name": "Stainless Steel 304 (SS304)" },
+      { "id": "magnetic-curtain-brackets", "name": "Magnetic Strip Curtain Brackets" },
+      { "id": "magnetic-curtain-bottom", "name": "Magnetic Strip Curtain Bottom" }
     ],
-    "description": "Stainless steel 304 hook-on hanger systems, galvanized sliding channels, and mounting clamp hardware."
+    "description": "Strong mounting brackets in Mild Steel, Stainless Steel (SS202 & SS304), and Magnetic strip curtain tracks and bottom holders for secure installation."
   }
 ]

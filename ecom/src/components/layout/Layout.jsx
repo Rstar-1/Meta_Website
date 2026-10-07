@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Chatbot from './Chatbot';
 import Button from '../common/Button';
+import { ToastContainer } from '../common/Toast';
 
 const socialLinks = [
     {
@@ -89,6 +90,7 @@ const Layout = () => (
         </aside>
 
         <Chatbot />
+        <ToastContainer />
         <Footer />
     </>
 );

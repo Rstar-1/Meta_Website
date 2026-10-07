@@ -1,40 +1,31 @@
-import React, { useState, useMemo, useCallback, memo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 
 import Button from '../../../components/common/Button';
 import Fields from '../../../components/forms/Fields';
-
 import ProductCard from '../../../components/layout/sections/CardLayout';
-
-import { products } from '../../../utils/apiData';
-
+import { products, categories } from '../../../utils/apiData';
 
 const SORT_OPTIONS = [
-    { label: 'Featured', value: 'featured' },
+    { label: 'Trending', value: 'trending' },
     { label: 'Price: Low to High', value: 'price-low' },
     { label: 'Price: High to Low', value: 'price-high' },
-    { label: 'Newest Arrivals', value: 'newest' }
 ];
 
-const AVAILABILITY_OPTIONS = [
-    { label: 'In Stock', value: 'in-stock' },
-    { label: 'Out of Stock', value: 'out-of-stock' }
-];
+const COLOR_NAMES_MAP = {
+    '#38bdf8': 'Sky Blue',
+    '#0284c7': 'Deep Blue',
+    '#93c5fd': 'Light Blue',
+    '#fbbf24': 'Amber Yellow',
+    '#92400e': 'Bronze Brown',
+    '#818cf8': 'Indigo',
+    '#94a3b8': 'Silver Slate',
+    '#cbd5e1': 'Light Slate',
+    '#64748b': 'Steel Gray',
+    '#1e293b': 'Dark Charcoal'
+};
 
-const COLOR_FILTERS = [
-    { name: 'Blue', color: '#60A5FA', count: 3 },
-    { name: 'Brown', color: '#9A3412', count: 1 },
-    { name: 'Charcoal', color: '#374151', count: 2 },
-    { name: 'Chocolate', color: '#451A03', count: 4 },
-    { name: 'Grey', color: '#D1D5DB', count: 2 },
-    { name: 'Light Beige', color: '#F3E8FF', count: 3 },
-    { name: 'Olive', color: '#365314', count: 3 },
-    { name: 'Red', color: '#DC2626', count: 1 },
-    { name: 'Soft Green', color: '#86EFAC', count: 3 },
-    { name: 'Yellow', color: '#FDE047', count: 2 }
-];
-
-const FilterTopBar = memo(({
+const FilterTopBar = React.memo(({
     isFilterVisible,
     totalCount,
     compareEnabled,
@@ -63,11 +54,7 @@ const FilterTopBar = memo(({
         <div className="flex items-center gap-12">
             <div className="flex items-center gap-8">
                 <p className="small-text font-500 text-dark">Compare:</p>
-                <Fields
-                    type="switch"
-                    value={compareEnabled}
-                    onChange={onCompareChange}
-                />
+                <Fields type="switch" value={compareEnabled} onChange={onCompareChange} />
             </div>
 
             <div className="flex items-center gap-8">
@@ -85,25 +72,31 @@ const FilterTopBar = memo(({
         </div>
     </div>
 ));
-
 FilterTopBar.displayName = 'FilterTopBar';
 
-const FilterSidebar = memo(({
+const FilterSidebar = React.memo(({
     availability,
     onAvailabilityChange,
+    availabilityOptions,
+    selectedCategories,
+    onCategoryChange,
+    categoryOptions,
     priceMax,
+    maxPriceLimit,
     onPriceChange,
     selectedColors,
+    colorFilters,
     onToggleColor
 }) => (
     <div className="w-20 sm-w-full">
         <div className="pr-15">
             <div className="bordb pb-20">
+                <h4 className="headmini-text font-500 text-dark mb-12">Price Range</h4>
                 <Fields
                     type="slider"
                     min={0}
-                    max={100000}
-                    step={1000}
+                    max={maxPriceLimit}
+                    step={10}
                     value={priceMax}
                     onChange={onPriceChange}
                 />
@@ -111,26 +104,35 @@ const FilterSidebar = memo(({
 
             <div className="bordb py-20">
                 <h4 className="headmini-text font-500 text-dark mb-12">Availability</h4>
-                <div className="grid-cols-1 gap-10">
-                    <Fields
-                        type="checkbox"
-                        options={AVAILABILITY_OPTIONS}
-                        position="y"
-                        value={availability}
-                        onChange={onAvailabilityChange}
-                    />
-                </div>
+                <Fields
+                    type="checkbox"
+                    options={availabilityOptions}
+                    position="y"
+                    value={availability}
+                    onChange={onAvailabilityChange}
+                />
+            </div>
+
+            <div className="bordb py-20">
+                <h4 className="headmini-text font-500 text-dark mb-12">Category</h4>
+                <Fields
+                    type="checkbox"
+                    options={categoryOptions}
+                    position="y"
+                    value={selectedCategories}
+                    onChange={onCategoryChange}
+                />
             </div>
 
             <div className="bordb py-20">
                 <h4 className="headmini-text font-500 text-dark mb-12">Color</h4>
                 <div className="flex flex-column gap-10">
-                    {COLOR_FILTERS.map((c) => {
-                        const isSelected = selectedColors.includes(c.name);
+                    {colorFilters.map((c) => {
+                        const isSelected = selectedColors.includes(c.color);
                         return (
                             <div
-                                key={c.name}
-                                onClick={() => onToggleColor(c.name)}
+                                key={c.color}
+                                onClick={() => onToggleColor(c.color)}
                                 className="flex items-center justify-between cursor-pointer"
                             >
                                 <div className="flex items-center gap-8">
@@ -138,17 +140,19 @@ const FilterSidebar = memo(({
                                         style={{
                                             width: '16px',
                                             height: '16px',
-                                            borderRadius: '3px',
+                                            borderRadius: '10px',
                                             backgroundColor: c.color,
-                                            outline: isSelected ? '2px solid #0F172A' : '1px solid rgba(0,0,0,0.15)',
-                                            outlineOffset: '1px'
+                                            outline: isSelected ? '1px solid var(--danger)' : '1px solid var(--white)',
+                                            outlineOffset: '2px'
                                         }}
                                     />
-                                    <p className={`small-text ${isSelected ? 'font-600 text-dark' : 'font-400 text-gray'}`}>
+                                    <p className={`small-text font-400 ${isSelected ? 'text-danger' : 'text-gray'}`}>
                                         {c.name}
                                     </p>
                                 </div>
-                                <p className="mini-text text-gray">{c.count}</p>
+                                <p className={`mini-text font-400 ${isSelected ? 'text-danger' : 'text-gray'}`}>
+                                    {c.count}
+                                </p>
                             </div>
                         );
                     })}
@@ -157,11 +161,10 @@ const FilterSidebar = memo(({
         </div>
     </div>
 ));
-
 FilterSidebar.displayName = 'FilterSidebar';
 
-const ProductGrid = memo(({ productsList, onProductClick }) => (
-    <div className="grid-cols-4 sm-grid-cols-2 gap-12">
+const ProductGrid = React.memo(({ productsList, isFilterVisible, onProductClick }) => (
+    <div className={`${isFilterVisible ? 'grid-cols-4' : 'grid-cols-5'} sm-grid-cols-2 gap-12`}>
         {productsList.map((item) => (
             <ProductCard
                 key={item.id}
@@ -172,124 +175,197 @@ const ProductGrid = memo(({ productsList, onProductClick }) => (
         ))}
     </div>
 ));
-
 ProductGrid.displayName = 'ProductGrid';
-
-// ─── Main Section Component ───────────────────────────────────────────
 
 const FilterSection = () => {
     const navigate = useNavigate();
-    const [compareEnabled, setCompareEnabled] = useState(false);
-    const [sortBy, setSortBy] = useState('featured');
-    const [priceMax, setPriceMax] = useState(100000);
-    const [selectedColors, setSelectedColors] = useState([]);
-    const [availability, setAvailability] = useState([]);
-    const [isFilterVisible, setIsFilterVisible] = useState(false);
+    const [searchParams] = useSearchParams();
+    const location = useLocation();
 
-    const handleToggleFilter = useCallback(() => {
-        setIsFilterVisible((prev) => !prev);
+    const maxPriceLimit = React.useMemo(() => {
+        const maxVal = Math.max(
+            ...products
+                .filter((p) => !p.isBanner && typeof p.price === 'number')
+                .map((p) => p.price),
+            300
+        );
+        return Math.ceil(maxVal / 50) * 50;
     }, []);
 
-    const handleCompareToggle = useCallback((val) => {
-        setCompareEnabled(val);
+    const [compareEnabled, setCompareEnabled] = React.useState(false);
+    const [sortBy, setSortBy] = React.useState('trending');
+    const [priceMax, setPriceMax] = React.useState(maxPriceLimit);
+    const [selectedCategories, setSelectedCategories] = React.useState([]);
+    const [selectedColors, setSelectedColors] = React.useState([]);
+    const [availability, setAvailability] = React.useState([]);
+    const [isFilterVisible, setIsFilterVisible] = React.useState(false);
+
+    React.useEffect(() => {
+        const catQuery =
+            searchParams.get('category') ||
+            searchParams.get('categoryId') ||
+            location.state?.categoryId ||
+            location.state?.categoryName ||
+            location.state?.category;
+
+        if (catQuery) {
+            const matchedCategory = (categories || []).find((c) =>
+                String(c.id).toLowerCase() === String(catQuery).toLowerCase() ||
+                (c.name && c.name.toLowerCase() === String(catQuery).toLowerCase()) ||
+                (c.title && c.title.toLowerCase() === String(catQuery).toLowerCase()) ||
+                (c.slug && c.slug.toLowerCase() === String(catQuery).toLowerCase())
+            );
+
+            if (matchedCategory) {
+                setSelectedCategories([String(matchedCategory.id)]);
+            } else {
+                setSelectedCategories([String(catQuery)]);
+            }
+            setIsFilterVisible(true);
+        }
+    }, [searchParams, location.state]);
+
+    const categoryOptions = React.useMemo(() => {
+        return (categories || []).map((cat) => {
+            const count = products.filter(
+                (p) => !p.isBanner && (String(p.categoryId) === String(cat.id) || p.category === cat.name || p.category === cat.title)
+            ).length;
+            return {
+                label: `${cat.name || cat.title}${count ? ` (${count})` : ''}`,
+                value: String(cat.id)
+            };
+        });
     }, []);
 
-    const handleSortChange = useCallback((val) => {
-        setSortBy(val);
+    const availabilityOptions = React.useMemo(() => {
+        const inStockCount = products.filter((p) => !p.isBanner && p.inStock).length;
+        const outOfStockCount = products.filter((p) => !p.isBanner && !p.inStock).length;
+        return [
+            { label: `In Stock (${inStockCount})`, value: 'in-stock' },
+            { label: `Out of Stock (${outOfStockCount})`, value: 'out-of-stock' }
+        ];
     }, []);
 
-    const handleAvailabilityChange = useCallback((val) => {
-        setAvailability(Array.isArray(val) ? val : []);
+    const colorFilters = React.useMemo(() => {
+        const counts = {};
+        products.forEach((p) => {
+            if (!p.isBanner && Array.isArray(p.colors)) {
+                p.colors.forEach((hex) => {
+                    const normalized = hex.toLowerCase();
+                    counts[normalized] = (counts[normalized] || 0) + 1;
+                });
+            }
+        });
+        return Object.entries(counts).map(([color, count]) => ({
+            color,
+            name: COLOR_NAMES_MAP[color] || color,
+            count
+        }));
     }, []);
 
-    const handlePriceChange = useCallback((val) => {
-        setPriceMax(Number(val) || 0);
-    }, []);
-
-    const handleToggleColor = useCallback((name) => {
+    const handleToggleFilter = React.useCallback(() => setIsFilterVisible((prev) => !prev), []);
+    const handleCompareToggle = React.useCallback((val) => setCompareEnabled(val), []);
+    const handleSortChange = React.useCallback((val) => setSortBy(val), []);
+    const handleAvailabilityChange = React.useCallback((val) => setAvailability(Array.isArray(val) ? val : []), []);
+    const handleCategoryChange = React.useCallback((val) => setSelectedCategories(Array.isArray(val) ? val : []), []);
+    const handlePriceChange = React.useCallback((val) => setPriceMax(Number(val) || 0), []);
+    const handleToggleColor = React.useCallback((color) => {
         setSelectedColors((prev) =>
-            prev.includes(name) ? prev.filter((c) => c !== name) : [...prev, name]
+            prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
         );
     }, []);
-
-    const handleProductClick = useCallback((item) => {
+    const handleProductClick = React.useCallback((item) => {
         navigate(`/product/${item.id}`, { state: { product: item } });
     }, [navigate]);
 
-    const filteredProducts = useMemo(() => {
+    const filteredProducts = React.useMemo(() => {
         return products
             .filter((item) => {
                 if (item.isBanner) return true;
 
-                // Availability Filter logic
                 if (availability.length === 1) {
                     if (availability.includes('in-stock') && !item.inStock) return false;
                     if (availability.includes('out-of-stock') && item.inStock) return false;
                 }
 
-                // Price Filter
+                if (selectedCategories.length > 0) {
+                    const matchesCategory = selectedCategories.some((catVal) => {
+                        const catObj = categories.find((c) => String(c.id) === String(catVal) || c.name === catVal);
+                        return (
+                            String(item.categoryId) === String(catVal) ||
+                            item.category === catVal ||
+                            (catObj && (item.category === catObj.name || item.category === catObj.title || String(item.categoryId) === String(catObj.id)))
+                        );
+                    });
+                    if (!matchesCategory) return false;
+                }
+
                 if (typeof item.price === 'number' && item.price > priceMax) return false;
 
-                // Color Filter
                 if (selectedColors.length > 0) {
-                    const hasColor = item.colors?.some((c) =>
-                        selectedColors.some(
-                            (sc) => sc.toLowerCase() === c.toLowerCase() || c.toLowerCase().includes(sc.toLowerCase())
-                        )
-                    );
+                    const hasColor = item.colors?.some((c) => selectedColors.includes(c.toLowerCase()));
                     if (!hasColor) return false;
                 }
+
                 return true;
             })
             .sort((a, b) => {
                 if (a.isBanner || b.isBanner) return 0;
+                if (sortBy === 'trending') {
+                    if (Boolean(a.trending) === Boolean(b.trending)) return (a.id || 0) - (b.id || 0);
+                    return a.trending ? -1 : 1;
+                }
                 if (sortBy === 'price-low') return (a.price || 0) - (b.price || 0);
                 if (sortBy === 'price-high') return (b.price || 0) - (a.price || 0);
-                if (sortBy === 'newest') return (b.id || 0) - (a.id || 0);
                 return 0;
             });
-    }, [availability, priceMax, selectedColors, sortBy]);
+    }, [availability, selectedCategories, priceMax, selectedColors, sortBy]);
 
-    const totalProductCount = useMemo(
+    const totalProductCount = React.useMemo(
         () => filteredProducts.filter((p) => !p.isBanner).length,
         [filteredProducts]
     );
 
     return (
-        <div className="w-full">
-            <div className="w-full py-40">
-                <FilterTopBar
-                    isFilterVisible={isFilterVisible}
-                    totalCount={totalProductCount}
-                    compareEnabled={compareEnabled}
-                    sortBy={sortBy}
-                    onToggleFilter={handleToggleFilter}
-                    onCompareChange={handleCompareToggle}
-                    onSortChange={handleSortChange}
-                />
+        <div className="w-full py-40">
+            <FilterTopBar
+                isFilterVisible={isFilterVisible}
+                totalCount={totalProductCount}
+                compareEnabled={compareEnabled}
+                sortBy={sortBy}
+                onToggleFilter={handleToggleFilter}
+                onCompareChange={handleCompareToggle}
+                onSortChange={handleSortChange}
+            />
 
-                <div className="mt-30 flex sm-grid-cols-1 items-start gap-12">
-                    {isFilterVisible && (
-                        <FilterSidebar
-                            availability={availability}
-                            onAvailabilityChange={handleAvailabilityChange}
-                            priceMax={priceMax}
-                            onPriceChange={handlePriceChange}
-                            selectedColors={selectedColors}
-                            onToggleColor={handleToggleColor}
-                        />
-                    )}
+            <div className="mt-30 flex sm-grid-cols-1 items-start gap-12">
+                {isFilterVisible && (
+                    <FilterSidebar
+                        availability={availability}
+                        onAvailabilityChange={handleAvailabilityChange}
+                        availabilityOptions={availabilityOptions}
+                        selectedCategories={selectedCategories}
+                        onCategoryChange={handleCategoryChange}
+                        categoryOptions={categoryOptions}
+                        priceMax={priceMax}
+                        maxPriceLimit={maxPriceLimit}
+                        onPriceChange={handlePriceChange}
+                        selectedColors={selectedColors}
+                        colorFilters={colorFilters}
+                        onToggleColor={handleToggleColor}
+                    />
+                )}
 
-                    <div className={isFilterVisible ? 'w-80 sm-w-full' : 'w-full'}>
-                        <ProductGrid
-                            productsList={filteredProducts}
-                            onProductClick={handleProductClick}
-                        />
-                    </div>
+                <div className={isFilterVisible ? 'w-80 sm-w-full' : 'w-full'}>
+                    <ProductGrid
+                        productsList={filteredProducts}
+                        isFilterVisible={isFilterVisible}
+                        onProductClick={handleProductClick}
+                    />
                 </div>
             </div>
         </div>
     );
 };
 
-export default memo(FilterSection);
+export default React.memo(FilterSection);

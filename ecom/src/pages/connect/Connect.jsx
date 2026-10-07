@@ -9,7 +9,12 @@ const Enquiry = lazy(() => import('./sections/Enquiry'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 
 const connectSections = [
-    { id: 'enquiry', Component: Enquiry, minHeight: '500px', isContainer: false },
+    {
+        id: 'enquiry',
+        Component: Enquiry,
+        minHeight: '500px',
+        isContainer: true
+    },
     {
         id: 'patch',
         Component: PatchSection,
@@ -32,7 +37,7 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 
 const Connect = () => {
     return (
-        <main className="w-full">
+        <>
             <SEO page="connect" />
             <Banner
                 title="Connect Us"
@@ -72,7 +77,7 @@ const Connect = () => {
                     </LazySection>
                 );
             })}
-        </main>
+        </>
     );
 };
 
