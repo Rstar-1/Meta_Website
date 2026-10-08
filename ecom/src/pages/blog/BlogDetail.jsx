@@ -46,7 +46,7 @@ const BlogDetail = () => {
             />
             <Banner
                 title="Blog Detail"
-                desc={currentBlog?.title || 'Blog Details'}
+                desc={currentBlog?.category || 'Blog Details'}
                 breadcrumbs={[
                     { label: 'Home', path: '/home' },
                     { label: 'Blog', path: '/blog' },

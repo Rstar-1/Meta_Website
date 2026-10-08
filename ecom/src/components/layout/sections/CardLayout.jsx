@@ -617,12 +617,12 @@ export const BlogCard = React.memo(({
         <article className={`mb-30 pb-30 bordb ${className}`} {...props}>
             <div
                 onClick={() => handleClick?.(blog)}
-                className={`w-full ${imageHeight} rounded-10 overflow-hidden mb-20 cursor-pointer`}
+                className={`w-full ${imageHeight} rounded-10 overflow-hidden mb-20 sm-mb-12 cursor-pointer`}
             >
                 <Image
                     src={resolveImagePath(blog.image)}
                     alt={blog.title}
-                    className="flex object-cover h-full w-full hover:scale-105 transition-transform"
+                    className="flex object-cover h-full w-full"
                 />
             </div>
 
@@ -639,7 +639,7 @@ export const BlogCard = React.memo(({
 
             <h2
                 onClick={() => handleClick?.(blog)}
-                className="text-dark font-600 head-text uppercase mt-12 cursor-pointer line-clamp2 hover:text-primary transition-colors"
+                className="text-dark font-600 head-text uppercase mt-12 sm-mt-6 cursor-pointer line-clamp2 hover:text-primary transition-colors"
             >
                 {blog.title}
             </h2>

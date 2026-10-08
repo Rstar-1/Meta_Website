@@ -196,8 +196,8 @@ const HeaderTopBar = React.memo(() => {
 const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
   const logoSrc =
     !configData?.Header?.HeaderSticky || isHeaderWhite
-      ? "/src/assets/sobo_logo.png"
-      : "/src/assets/sobo_white.png";
+      ? "sobo_logo.png"
+      : "sobo_white.png";
 
   return (
     <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>

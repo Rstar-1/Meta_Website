@@ -49,8 +49,8 @@ export const Modal = memo(
     const isFullscreen = size === "fullscreen";
 
     const wrapperClass = isSidebar || isFullscreen
-      ? "flex fixed top-0 left-0 w-full h-100 z-99"
-      : "flex items-center justify-center fixed top-0 left-0 w-full h-100 z-99 overflow-hidden";
+      ? "flex fixed top-0 left-0 w-full h-100 z-999"
+      : "flex items-center justify-center fixed top-0 left-0 w-full h-100 z-999 overflow-hidden";
 
     const wrapperStyle = useMemo(
       () =>

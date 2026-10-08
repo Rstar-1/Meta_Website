@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
 import Container from '../../../components/common/Container';
+import Button from '../../../components/common/Button';
+import Modal from '../../../components/common/Modal';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';
 import Fields from '../../../components/forms/Fields';
@@ -15,6 +17,7 @@ const MediaDetailSection = React.memo(() => {
     const navigate = useNavigate();
     const location = useLocation();
     const { id } = useParams();
+    const [isMobileCategoryOpen, setIsMobileCategoryOpen] = React.useState(false);
 
     const blogsList = React.useMemo(() => blogData || [], []);
 
@@ -38,6 +41,7 @@ const MediaDetailSection = React.memo(() => {
     }, [currentBlog]);
 
     const handleBlogClick = React.useCallback((post) => {
+        setIsMobileCategoryOpen(false);
         navigate('/blog-detail', { state: { blog: post } });
     }, [navigate]);
 
@@ -45,13 +49,30 @@ const MediaDetailSection = React.memo(() => {
 
     return (
         <Container>
-            <div className="flex sm-grid-cols-1 items-start gap-12 w-full py-60">
-                <div className="w-70 sm-w-full pr-10 sm-pr-1">
-                    <Image
-                        src={resolveImagePath(currentBlog.image)}
-                        alt={currentBlog.title}
-                        className="flex rounded-10 h-450 sm-h-300 w-full object-cover"
+            <div className="py-60">
+                {/* Mobile Category & Search Trigger */}
+                <div className="hidden sm-flex items-center justify-between mb-20">
+                    <Button
+                        onClick={() => setIsMobileCategoryOpen(true)}
+                        icon="Filter"
+                        text="Categories & Articles"
+                        iconWidth="11"
+                        iconHeight="11"
+                        version="v2"
+                        variant="outline"
+                        color="dark"
+                        bg="tertiary"
+                        className="rounded-30 font-500"
                     />
+                </div>
+
+                <div className="flex sm-grid-cols-1 items-start gap-12 w-full">
+                    <div className="w-70 sm-w-full pr-10 sm-pr-1">
+                        <Image
+                            src={resolveImagePath(currentBlog.image)}
+                            alt={currentBlog.title}
+                            className="flex rounded-10 h-450 sm-h-300 w-full object-cover"
+                        />
 
                     <div className="flex items-center flex-wrap gap-12 mt-20">
                         <div className="flex items-center gap-6">
@@ -148,7 +169,8 @@ const MediaDetailSection = React.memo(() => {
                     </div>
                 </div>
 
-                <div className="w-30 sm-w-full pl-10 sm-pl-1 sticky" style={{ top: '19%' }}>
+                {/* Desktop Sticky Sidebar */}
+                <div className="w-30 sm-hidden pl-10 overflow-auto h-500 sticky" style={{ top: '19%' }}>
                     <React.Suspense fallback={<div className="w-full h-300" />}>
                         <CategorySection
                             excludeBlogId={currentBlog.id}
@@ -156,6 +178,27 @@ const MediaDetailSection = React.memo(() => {
                         />
                     </React.Suspense>
                 </div>
+            </div>
+
+            {/* Mobile Category Sidebar Modal */}
+            <Modal
+                type="sidebar"
+                placement="left"
+                size="sm"
+                title="Categories & Articles"
+                isOpen={isMobileCategoryOpen}
+                onClose={() => setIsMobileCategoryOpen(false)}
+                footer={null}
+            >
+                <div className="py-10">
+                    <React.Suspense fallback={<div className="w-full h-300" />}>
+                        <CategorySection
+                            excludeBlogId={currentBlog.id}
+                            onBlogClick={handleBlogClick}
+                        />
+                    </React.Suspense>
+                </div>
+            </Modal>
             </div>
         </Container>
     );

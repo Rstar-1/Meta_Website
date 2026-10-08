@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 
 import Button from '../../../components/common/Button';
 import Fields from '../../../components/forms/Fields';
+import Modal from '../../../components/common/Modal';
 import ProductCard from '../../../components/layout/sections/CardLayout';
 import { products, categories } from '../../../utils/apiData';
 
@@ -12,22 +13,10 @@ const SORT_OPTIONS = [
     { label: 'Price: High to Low', value: 'price-high' },
 ];
 
-const COLOR_NAMES_MAP = {
-    '#38bdf8': 'Sky Blue',
-    '#0284c7': 'Deep Blue',
-    '#93c5fd': 'Light Blue',
-    '#fbbf24': 'Amber Yellow',
-    '#92400e': 'Bronze Brown',
-    '#818cf8': 'Indigo',
-    '#94a3b8': 'Silver Slate',
-    '#cbd5e1': 'Light Slate',
-    '#64748b': 'Steel Gray',
-    '#1e293b': 'Dark Charcoal'
-};
-
 const FilterTopBar = React.memo(({
     isFilterVisible,
     totalCount,
+    activeCount,
     compareEnabled,
     sortBy,
     onToggleFilter,
@@ -39,7 +28,7 @@ const FilterTopBar = React.memo(({
             <Button
                 onClick={onToggleFilter}
                 icon="Filter"
-                text="Filter By"
+                text={`Filter By${activeCount ? ` (${activeCount})` : ''}`}
                 iconWidth="11"
                 iconHeight="11"
                 version="v2"
@@ -74,7 +63,7 @@ const FilterTopBar = React.memo(({
 ));
 FilterTopBar.displayName = 'FilterTopBar';
 
-const FilterSidebar = React.memo(({
+const FilterSidebarContent = React.memo(({
     availability,
     onAvailabilityChange,
     availabilityOptions,
@@ -88,80 +77,78 @@ const FilterSidebar = React.memo(({
     colorFilters,
     onToggleColor
 }) => (
-    <div className="w-20 sm-w-full">
-        <div className="pr-15">
-            <div className="bordb pb-20">
-                <h4 className="headmini-text font-500 text-dark mb-12">Price Range</h4>
-                <Fields
-                    type="slider"
-                    min={0}
-                    max={maxPriceLimit}
-                    step={10}
-                    value={priceMax}
-                    onChange={onPriceChange}
-                />
-            </div>
+    <div className="pr-10">
+        <div className="bordb pb-20">
+            <h4 className="headmini-text font-500 text-dark mb-12">Price Range</h4>
+            <Fields
+                type="slider"
+                min={0}
+                max={maxPriceLimit}
+                step={10}
+                value={priceMax}
+                onChange={onPriceChange}
+            />
+        </div>
 
-            <div className="bordb py-20">
-                <h4 className="headmini-text font-500 text-dark mb-12">Availability</h4>
-                <Fields
-                    type="checkbox"
-                    options={availabilityOptions}
-                    position="y"
-                    value={availability}
-                    onChange={onAvailabilityChange}
-                />
-            </div>
+        <div className="bordb py-20">
+            <h4 className="headmini-text font-500 text-dark mb-12">Availability</h4>
+            <Fields
+                type="checkbox"
+                options={availabilityOptions}
+                position="y"
+                value={availability}
+                onChange={onAvailabilityChange}
+            />
+        </div>
 
-            <div className="bordb py-20">
-                <h4 className="headmini-text font-500 text-dark mb-12">Category</h4>
-                <Fields
-                    type="checkbox"
-                    options={categoryOptions}
-                    position="y"
-                    value={selectedCategories}
-                    onChange={onCategoryChange}
-                />
-            </div>
+        <div className="bordb py-20">
+            <h4 className="headmini-text font-500 text-dark mb-12">Category</h4>
+            <Fields
+                type="checkbox"
+                options={categoryOptions}
+                position="y"
+                value={selectedCategories}
+                onChange={onCategoryChange}
+            />
+        </div>
 
-            <div className="bordb py-20">
-                <h4 className="headmini-text font-500 text-dark mb-12">Color</h4>
-                <div className="flex flex-column gap-10">
-                    {colorFilters.map((c) => {
-                        const isSelected = selectedColors.includes(c.color);
-                        return (
-                            <div
-                                key={c.color}
-                                onClick={() => onToggleColor(c.color)}
-                                className="flex items-center justify-between cursor-pointer"
-                            >
-                                <div className="flex items-center gap-8">
-                                    <span
-                                        style={{
-                                            width: '16px',
-                                            height: '16px',
-                                            borderRadius: '10px',
-                                            backgroundColor: c.color,
-                                            outline: isSelected ? '1px solid var(--danger)' : '1px solid var(--white)',
-                                            outlineOffset: '2px'
-                                        }}
-                                    />
-                                    <p className={`small-text font-400 ${isSelected ? 'text-danger' : 'text-gray'}`}>
-                                        {c.name}
-                                    </p>
-                                </div>
-                                <p className={`mini-text font-400 ${isSelected ? 'text-danger' : 'text-gray'}`}>
-                                    {c.count}
+        <div className="py-20">
+            <h4 className="headmini-text font-500 text-dark mb-12">Color</h4>
+            <div className="flex flex-column gap-10">
+                {colorFilters.map((c) => {
+                    const isSelected = selectedColors.includes(c.color);
+                    return (
+                        <div
+                            key={c.color}
+                            onClick={() => onToggleColor(c.color)}
+                            className="flex items-center justify-between cursor-pointer"
+                        >
+                            <div className="flex items-center gap-8">
+                                <span
+                                    style={{
+                                        width: '16px',
+                                        height: '16px',
+                                        borderRadius: '10px',
+                                        backgroundColor: c.color,
+                                        outline: isSelected ? '1px solid var(--danger)' : '1px solid var(--white)',
+                                        outlineOffset: '2px'
+                                    }}
+                                />
+                                <p className={`small-text font-400 ${isSelected ? 'text-danger' : 'text-gray'}`}>
+                                    {c.name}
                                 </p>
                             </div>
-                        );
-                    })}
-                </div>
+                            <p className={`mini-text font-400 ${isSelected ? 'text-danger' : 'text-gray'}`}>
+                                {c.count}
+                            </p>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     </div>
 ));
-FilterSidebar.displayName = 'FilterSidebar';
+FilterSidebarContent.displayName = 'FilterSidebarContent';
 
 const ProductGrid = React.memo(({ productsList, isFilterVisible, onProductClick }) => (
     <div className={`${isFilterVisible ? 'grid-cols-4' : 'grid-cols-5'} sm-grid-cols-2 gap-12`}>
@@ -199,6 +186,7 @@ const FilterSection = () => {
     const [selectedColors, setSelectedColors] = React.useState([]);
     const [availability, setAvailability] = React.useState([]);
     const [isFilterVisible, setIsFilterVisible] = React.useState(false);
+    const [isMobileFilterOpen, setIsMobileFilterOpen] = React.useState(false);
 
     React.useEffect(() => {
         const catQuery =
@@ -221,7 +209,9 @@ const FilterSection = () => {
             } else {
                 setSelectedCategories([String(catQuery)]);
             }
-            setIsFilterVisible(true);
+            if (window.innerWidth > 768) {
+                setIsFilterVisible(true);
+            }
         }
     }, [searchParams, location.state]);
 
@@ -251,19 +241,28 @@ const FilterSection = () => {
         products.forEach((p) => {
             if (!p.isBanner && Array.isArray(p.colors)) {
                 p.colors.forEach((hex) => {
-                    const normalized = hex.toLowerCase();
-                    counts[normalized] = (counts[normalized] || 0) + 1;
+                    if (hex) {
+                        const normalized = hex.toLowerCase().trim();
+                        counts[normalized] = (counts[normalized] || 0) + 1;
+                    }
                 });
             }
         });
         return Object.entries(counts).map(([color, count]) => ({
             color,
-            name: COLOR_NAMES_MAP[color] || color,
+            name: color,
             count
         }));
     }, []);
 
-    const handleToggleFilter = React.useCallback(() => setIsFilterVisible((prev) => !prev), []);
+    const handleToggleFilter = React.useCallback(() => {
+        if (window.innerWidth <= 768) {
+            setIsMobileFilterOpen(true);
+        } else {
+            setIsFilterVisible((prev) => !prev);
+        }
+    }, []);
+
     const handleCompareToggle = React.useCallback((val) => setCompareEnabled(val), []);
     const handleSortChange = React.useCallback((val) => setSortBy(val), []);
     const handleAvailabilityChange = React.useCallback((val) => setAvailability(Array.isArray(val) ? val : []), []);
@@ -274,6 +273,13 @@ const FilterSection = () => {
             prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
         );
     }, []);
+    const handleResetFilters = React.useCallback(() => {
+        setPriceMax(maxPriceLimit);
+        setSelectedCategories([]);
+        setSelectedColors([]);
+        setAvailability([]);
+    }, [maxPriceLimit]);
+
     const handleProductClick = React.useCallback((item) => {
         navigate(`/product/${item.id}`, { state: { product: item } });
     }, [navigate]);
@@ -326,11 +332,36 @@ const FilterSection = () => {
         [filteredProducts]
     );
 
+    const activeFiltersCount = React.useMemo(() => {
+        return (
+            selectedCategories.length +
+            selectedColors.length +
+            availability.length +
+            (priceMax < maxPriceLimit ? 1 : 0)
+        );
+    }, [selectedCategories, selectedColors, availability, priceMax, maxPriceLimit]);
+
+    const filterProps = {
+        availability,
+        onAvailabilityChange: handleAvailabilityChange,
+        availabilityOptions,
+        selectedCategories,
+        onCategoryChange: handleCategoryChange,
+        categoryOptions,
+        priceMax,
+        maxPriceLimit,
+        onPriceChange: handlePriceChange,
+        selectedColors,
+        colorFilters,
+        onToggleColor: handleToggleColor,
+    };
+
     return (
         <div className="w-full py-40">
             <FilterTopBar
                 isFilterVisible={isFilterVisible}
                 totalCount={totalProductCount}
+                activeCount={activeFiltersCount}
                 compareEnabled={compareEnabled}
                 sortBy={sortBy}
                 onToggleFilter={handleToggleFilter}
@@ -340,20 +371,9 @@ const FilterSection = () => {
 
             <div className="mt-30 flex sm-grid-cols-1 items-start gap-12">
                 {isFilterVisible && (
-                    <FilterSidebar
-                        availability={availability}
-                        onAvailabilityChange={handleAvailabilityChange}
-                        availabilityOptions={availabilityOptions}
-                        selectedCategories={selectedCategories}
-                        onCategoryChange={handleCategoryChange}
-                        categoryOptions={categoryOptions}
-                        priceMax={priceMax}
-                        maxPriceLimit={maxPriceLimit}
-                        onPriceChange={handlePriceChange}
-                        selectedColors={selectedColors}
-                        colorFilters={colorFilters}
-                        onToggleColor={handleToggleColor}
-                    />
+                    <div className="w-20 sm-hidden overflow-auto h-500 sticky" style={{ top: '20%' }}>
+                        <FilterSidebarContent {...filterProps} />
+                    </div>
                 )}
 
                 <div className={isFilterVisible ? 'w-80 sm-w-full' : 'w-full'}>
@@ -364,6 +384,39 @@ const FilterSection = () => {
                     />
                 </div>
             </div>
+
+            {/* Mobile Responsive Filter Modal / Sidebar */}
+            <Modal
+                type="sidebar"
+                placement="left"
+                size="sm"
+                title="Filters"
+                isOpen={isMobileFilterOpen}
+                onClose={() => setIsMobileFilterOpen(false)}
+                footer={
+                    <div className="flex items-center gap-12 w-full">
+                        <Button
+                            text="Reset"
+                            version="v2"
+                            variant="outline"
+                            color="dark"
+                            className="w-50"
+                            onClick={handleResetFilters}
+                        />
+                        <Button
+                            text="Apply"
+                            version="v2"
+                            variant="primary"
+                            color="white"
+                            bg="primary"
+                            className="w-50"
+                            onClick={() => setIsMobileFilterOpen(false)}
+                        />
+                    </div>
+                }
+            >
+                <FilterSidebarContent {...filterProps} />
+            </Modal>
         </div>
     );
 };

@@ -45,6 +45,10 @@ const BREADCRUMBS = [
     { label: 'About Us', path: '/about' }
 ];
 
+const SectionFallback = memo(({ minHeight = '100px' }) => (
+    <div className="w-full" style={{ minHeight }} />
+));
+
 const About = () => {
     return (
         <main className="w-full">

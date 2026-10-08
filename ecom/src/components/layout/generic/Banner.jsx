@@ -41,7 +41,7 @@ const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage
                 ...style
             }}>
             <div className="relative w-full py-60 text-center">
-                <h2 className="text-white font-600 large-text text-center mt-40">
+                <h2 className="text-white font-600 large-text text-center uppercase mt-40">
                     {mainHeading}
                 </h2>
 

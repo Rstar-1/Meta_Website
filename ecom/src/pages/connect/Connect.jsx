@@ -37,6 +37,10 @@ const BREADCRUMBS = [
     { label: 'Connect Us', path: '/connect' }
 ];
 
+const SectionFallback = memo(({ minHeight = '100px' }) => (
+    <div className="w-full" style={{ minHeight }} />
+));
+
 const Connect = () => {
     return (
         <>
