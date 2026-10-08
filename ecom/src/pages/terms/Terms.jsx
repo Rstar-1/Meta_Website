@@ -3,7 +3,6 @@ import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
-import aboutBanner from '../../assets/about-banner.jpg';
 
 const DetailSection = lazy(() => import('./sections/DetailSection'));
 
@@ -31,7 +30,6 @@ const Terms = () => {
             <SEO page="terms" breadcrumbs={BREADCRUMBS} />
             <Banner
                 title="Terms & Conditions"
-                bgImage={aboutBanner}
                 breadcrumbs={BREADCRUMBS}
             />
             {termsSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {

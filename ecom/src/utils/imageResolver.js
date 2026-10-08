@@ -1,6 +1,5 @@
 import soboLogo from "../assets/sobo_logo.png";
 import soboWhite from "../assets/sobo_white.png";
-import aboutBanner from "../assets/about-banner.jpg";
 
 const assetModules = import.meta.glob("../assets/*", {
   eager: true,
@@ -56,4 +55,4 @@ export const resolveImagePath = (path) => {
   return trimmed;
 };
 
-export { soboLogo, soboWhite, aboutBanner };
+export { soboLogo, soboWhite };

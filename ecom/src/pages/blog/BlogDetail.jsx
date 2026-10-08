@@ -3,7 +3,6 @@ import { useLocation, useParams } from 'react-router-dom';
 import Banner from '../../components/layout/generic/Banner';
 import MediaDetailSection from './sections/MediaDetailSection';
 import SEO from '../../seo';
-import bannerImg from '../../assets/about-banner.jpg';
 import blogData from '../../data/blog.json';
 
 const BlogDetail = () => {
@@ -48,7 +47,6 @@ const BlogDetail = () => {
             <Banner
                 title="Blog Detail"
                 desc={currentBlog?.title || 'Blog Details'}
-                bgImage={bannerImg}
                 breadcrumbs={[
                     { label: 'Home', path: '/home' },
                     { label: 'Blog', path: '/blog' },

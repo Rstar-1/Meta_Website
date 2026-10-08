@@ -1,8 +1,10 @@
 import React from "react";
+
 import Container from "../../common/Container";
 import Breadcrumb from "../../common/Breadcrumb";
 import Skeleton from "../../common/Skeleton";
-import defaultBannerImg from "../../../assets/about-banner.jpg";
+
+const defaultBannerImg = `${import.meta.env.VITE_IMAGE}Banner.jpg`;
 
 const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage, image, backgroundImage }) => {
     if (loading) {
@@ -38,19 +40,6 @@ const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage
                 padding: '120px 0px 80px 0px',
                 ...style
             }}>
-            {/* <div
-                style={{
-                    position: 'absolute',
-                    bottom: '-20%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '90%',
-                    height: '450px',
-                    background: 'radial-gradient(circle, rgba(219, 94, 31, 0.24) 0%, rgba(0, 0, 0, 0) 70%)',
-                    pointerEvents: 'none',
-                    borderRadius: '50%'
-                }}
-            /> */}
             <div className="relative w-full py-60 text-center">
                 <h2 className="text-white font-600 large-text text-center mt-40">
                     {mainHeading}

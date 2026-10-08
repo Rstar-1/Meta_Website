@@ -1,6 +1,6 @@
 const SITE_URL = (import.meta.env.VITE_SITE_URL || "").replace(/\/$/, "");
 const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Ashmita Vinyls";
-const DEFAULT_IMAGE = "/sobo_logo.webp";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/sobo_logo.webp";
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 
@@ -8,21 +8,23 @@ export const siteInfo = {
   name: SITE_NAME,
   url: SITE_URL,
   description:
+    import.meta.env.VITE_SEO_DESCRIPTION ||
     "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications.",
-  phone: import.meta.env.VITE_PHONE,
-  email: import.meta.env.VITE_EMAIL,
+  phone: import.meta.env.VITE_PHONE || "07942562287",
+  email: import.meta.env.VITE_EMAIL || "info@ashmitavinyls.com",
 
   address: {
-    streetAddress: "Apollo Bandar, Colaba",
+    streetAddress: "C 304, 3rd Floor, Eastern Business District, L.B.S Marg Road, Bhandup West",
     addressLocality: "Mumbai",
     addressRegion: "Maharashtra",
-    postalCode: "400001",
+    postalCode: "400078",
     addressCountry: "IN",
+    fullAddress: import.meta.env.VITE_ADDRESS || "Ashmita Enterprises C 304, 3 Rd Floor, Eastern Business Distric, Near Mangatram Petrol Pump L.B.S Marg Road, Bhandup West, Mumbai City, Mumbai - 400078, Maharashtra, India",
   },
 
   geo: {
-    latitude: 18.922,
-    longitude: 72.8347,
+    latitude: 19.1485,
+    longitude: 72.9367,
   },
 
   sameAs: [
@@ -35,10 +37,12 @@ export const siteInfo = {
 
 export const pageSeoData = {
   home: {
-    title: "PVC Vinyl Products Manufacturer in India | Ashmita Vinyls",
+    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Manufacturer in India | Ashmita Vinyls",
     description:
+      import.meta.env.VITE_SEO_DESCRIPTION ||
       "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications across India.",
     path: "/home",
+    breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
@@ -46,6 +50,10 @@ export const pageSeoData = {
     description:
       "Learn about Ashmita Vinyls, our PVC vinyl manufacturing capabilities, quality focus and industrial solutions.",
     path: "/about",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "About Us", path: "/about" },
+    ],
   },
 
   product: {
@@ -53,6 +61,10 @@ export const pageSeoData = {
     description:
       "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
     path: "/product",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Products", path: "/product" },
+    ],
   },
 
   products: {
@@ -60,6 +72,10 @@ export const pageSeoData = {
     description:
       "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
     path: "/product",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Products", path: "/product" },
+    ],
   },
 
   productDetail: {
@@ -67,6 +83,11 @@ export const pageSeoData = {
     description:
       "Explore detailed specifications, technical parameters, and applications for PVC vinyl products by Ashmita Vinyls.",
     path: "/product-detail",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Products", path: "/product" },
+      { label: "Product Detail", path: "/product-detail" },
+    ],
   },
 
   supplier: {
@@ -74,6 +95,11 @@ export const pageSeoData = {
     description:
       "Discover industries and applications using Ashmita Vinyls PVC vinyl solutions.",
     path: "/supplier",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Products", path: "/product" },
+      { label: "Supplier Profile", path: "/supplier" },
+    ],
   },
 
   quality: {
@@ -81,6 +107,10 @@ export const pageSeoData = {
     description:
       "Explore Ashmita Vinyls manufacturing quality, infrastructure and PVC vinyl production capabilities.",
     path: "/quality",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Quality", path: "/quality" },
+    ],
   },
 
   connect: {
@@ -88,6 +118,10 @@ export const pageSeoData = {
     description:
       "Contact Ashmita Vinyls for PVC vinyl product enquiries, specifications and bulk requirements.",
     path: "/connect",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Connect Us", path: "/connect" },
+    ],
   },
 
   blog: {
@@ -95,6 +129,10 @@ export const pageSeoData = {
     description:
       "Read PVC vinyl industry news, product information, technical articles and business insights.",
     path: "/blog",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "News & Media", path: "/blog" },
+    ],
   },
 
   blogDetail: {
@@ -102,18 +140,31 @@ export const pageSeoData = {
     description:
       "Latest technical insights, case studies, and updates on PVC vinyl solutions by Ashmita Vinyls.",
     path: "/blog-detail",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "News & Media", path: "/blog" },
+      { label: "Blog Detail", path: "/blog-detail" },
+    ],
   },
 
   privacy: {
     title: "Privacy Policy | Ashmita Vinyls",
     description: "Read the Ashmita Vinyls privacy policy.",
     path: "/privacy",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Privacy Policy", path: "/privacy" },
+    ],
   },
 
   terms: {
     title: "Terms & Conditions | Ashmita Vinyls",
     description: "Read the terms and conditions of Ashmita Vinyls.",
     path: "/terms",
+    breadcrumbs: [
+      { label: "Home", path: "/home" },
+      { label: "Terms & Conditions", path: "/terms" },
+    ],
   },
 };
 

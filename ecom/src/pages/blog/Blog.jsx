@@ -3,7 +3,6 @@ import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
-import bannerImg from '../../assets/about-banner.jpg';
 
 const MediaSection = lazy(() => import('./sections/MediaSection'));
 
@@ -32,7 +31,6 @@ const Blog = () => {
             <Banner
                 title="News & Articles"
                 desc="News & Media"
-                bgImage={bannerImg}
                 breadcrumbs={BREADCRUMBS}
             />
             {blogSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {

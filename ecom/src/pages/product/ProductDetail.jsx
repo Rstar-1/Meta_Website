@@ -6,8 +6,6 @@ import DetailSection from './sections/DetailSection';
 import SpecifySection from './sections/SpecifySection';
 import SEO from '../../seo';
 
-import bannerImg from '../../assets/about-banner.jpg';
-
 import { productsData, categoriesData } from '../../utils/apiData';
 
 const ProductDetail = () => {
@@ -63,7 +61,6 @@ const ProductDetail = () => {
             <Banner
                 title="Product Detail"
                 desc={productName}
-                bgImage={bannerImg}
                 breadcrumbs={[
                     { label: 'Home', path: '/home' },
                     { label: categoryName, path: `/product?category=${encodeURIComponent(categoryName)}` },

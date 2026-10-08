@@ -3,10 +3,11 @@ import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
-import bannerImg from '../../assets/about-banner.jpg';
 
 const Enquiry = lazy(() => import('./sections/Enquiry'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
+
+const patchBannerBg = (import.meta.env.VITE_IMAGE || '') + 'Banner.jpg';
 
 const connectSections = [
     {
@@ -22,7 +23,7 @@ const connectSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${bannerImg})`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${patchBannerBg})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -43,7 +44,6 @@ const Connect = () => {
             <Banner
                 title="Connect Us"
                 desc="Get In Touch With Us"
-                bgImage={bannerImg}
                 breadcrumbs={BREADCRUMBS}
             />
             {connectSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

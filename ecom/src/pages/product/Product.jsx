@@ -3,7 +3,6 @@ import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
-import bannerImg from '../../assets/about-banner.jpg';
 
 const FilterSection = lazy(() => import('./sections/FilterSection'));
 const SpecifySection = lazy(() => import('./sections/SpecifySection'));
@@ -40,7 +39,6 @@ const Product = () => {
             <Banner
                 title="Products Collection"
                 desc="Products"
-                bgImage={bannerImg}
                 breadcrumbs={BREADCRUMBS}
             />
             {productSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle, version }) => {

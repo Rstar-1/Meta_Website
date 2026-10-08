@@ -5,35 +5,29 @@ import {
     DEFAULT_IMAGE,
     siteInfo,
     pageSeoData,
-    aeoFAQs,
     getUrl,
     getImageUrl,
 } from "./seoConfig";
 
 const setMeta = (key, value, property = false) => {
     if (!value) return;
-
     const attr = property ? "property" : "name";
     let tag = document.head.querySelector(`meta[${attr}="${key}"]`);
-
     if (!tag) {
         tag = document.createElement("meta");
         tag.setAttribute(attr, key);
         document.head.appendChild(tag);
     }
-
     tag.setAttribute("content", value);
 };
 
 const setCanonical = (url) => {
     let tag = document.head.querySelector('link[rel="canonical"]');
-
     if (!tag) {
         tag = document.createElement("link");
         tag.rel = "canonical";
         document.head.appendChild(tag);
     }
-
     tag.href = url;
 };
 
@@ -44,18 +38,10 @@ const SEO = ({
     image,
     path,
     type = "website",
-
-    // AEO
     faqs = [],
-
-    // Product SEO
     product,
-
-    // Blog SEO
     article,
-
-    // Breadcrumb SEO
-    breadcrumbs = [],
+    breadcrumbs,
 }) => {
     const config = pageSeoData[page] || {};
 
@@ -72,17 +58,16 @@ const SEO = ({
     const finalPath = path || config.path || "/";
     const canonical = getUrl(finalPath);
     const finalImage = getImageUrl(image);
+    const finalBreadcrumbs = (breadcrumbs && breadcrumbs.length > 0)
+        ? breadcrumbs
+        : (config.breadcrumbs || []);
 
     React.useEffect(() => {
         document.title = finalTitle;
 
-        /* ================= SEO ================= */
-
         setMeta("description", finalDescription);
         setMeta("robots", "index, follow, max-image-preview:large");
         setCanonical(canonical);
-
-        /* ================= Open Graph ================= */
 
         setMeta("og:site_name", SITE_NAME, true);
         setMeta("og:title", finalTitle, true);
@@ -92,18 +77,13 @@ const SEO = ({
         setMeta("og:image", finalImage, true);
         setMeta("og:image:alt", finalTitle, true);
 
-        /* ================= Twitter ================= */
-
         setMeta("twitter:card", "summary_large_image");
         setMeta("twitter:title", finalTitle);
         setMeta("twitter:description", finalDescription);
         setMeta("twitter:image", finalImage);
         setMeta("twitter:image:alt", finalTitle);
 
-        /* ================= Structured Data ================= */
-
         const graph = [
-            /* Organization / GEO */
             {
                 "@type": "Organization",
                 "@id": `${SITE_URL}/#organization`,
@@ -123,8 +103,6 @@ const SEO = ({
                 },
                 sameAs: siteInfo.sameAs,
             },
-
-            /* Website */
             {
                 "@type": "WebSite",
                 "@id": `${SITE_URL}/#website`,
@@ -134,8 +112,6 @@ const SEO = ({
                     "@id": `${SITE_URL}/#organization`,
                 },
             },
-
-            /* Current page */
             {
                 "@type": "WebPage",
                 "@id": `${canonical}#webpage`,
@@ -148,11 +124,10 @@ const SEO = ({
             },
         ];
 
-        /* ================= Breadcrumb ================= */
-        if (breadcrumbs.length) {
+        if (finalBreadcrumbs.length) {
             graph.push({
                 "@type": "BreadcrumbList",
-                itemListElement: breadcrumbs.map((item, index) => ({
+                itemListElement: finalBreadcrumbs.map((item, index) => ({
                     "@type": "ListItem",
                     position: index + 1,
                     name: item.name || item.label || `Page ${index + 1}`,
@@ -161,7 +136,6 @@ const SEO = ({
             });
         }
 
-        /* ================= AEO / FAQ ================= */
         if (faqs.length) {
             graph.push({
                 "@type": "FAQPage",
@@ -176,7 +150,6 @@ const SEO = ({
             });
         }
 
-        /* ================= Product SEO ================= */
         if (product) {
             graph.push({
                 "@type": "Product",
@@ -189,7 +162,6 @@ const SEO = ({
                     "@type": "Brand",
                     name: product.brand || SITE_NAME,
                 },
-
                 ...(product.review && {
                     review: {
                         "@type": "Review",
@@ -205,7 +177,6 @@ const SEO = ({
                         reviewBody: product.review.text,
                     },
                 }),
-
                 ...(product.price && {
                     offers: {
                         "@type": "Offer",
@@ -224,7 +195,6 @@ const SEO = ({
             });
         }
 
-        /* ================= Blog / Article SEO ================= */
         if (article) {
             graph.push({
                 "@type": "Article",
@@ -233,28 +203,21 @@ const SEO = ({
                 description: article.description || finalDescription,
                 image: [getImageUrl(article.image || image || finalImage)],
                 datePublished: article.datePublished,
-                dateModified:
-                    article.dateModified || article.datePublished,
-
+                dateModified: article.dateModified || article.datePublished,
                 author: {
                     "@type": article.authorType || "Person",
                     name: article.author || SITE_NAME,
                 },
-
                 publisher: {
                     "@id": `${SITE_URL}/#organization`,
                 },
-
                 mainEntityOfPage: {
                     "@id": `${canonical}#webpage`,
                 },
             });
         }
 
-        /* ================= JSON-LD ================= */
-
         let script = document.getElementById("site-seo-jsonld");
-
         if (!script) {
             script = document.createElement("script");
             script.id = "site-seo-jsonld";
@@ -275,15 +238,10 @@ const SEO = ({
         product,
         article,
         faqs,
-        breadcrumbs,
+        finalBreadcrumbs,
     ]);
 
     return null;
-};
-
-SEO.defaultProps = {
-    faqs: [],
-    breadcrumbs: [],
 };
 
 export default React.memo(SEO);
