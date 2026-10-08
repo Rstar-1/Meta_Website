@@ -20,17 +20,19 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
     <div className="w-full" style={{ minHeight }} />
 ));
 
+const BREADCRUMBS = [
+    { label: 'Home', path: '/home' },
+    { label: 'Privacy Policy', path: '/privacy' }
+];
+
 const Privacy = () => {
     return (
         <>
-            <SEO page="privacy" />
+            <SEO page="privacy" breadcrumbs={BREADCRUMBS} />
             <Banner
                 title="Privacy Policy"
                 bgImage={aboutBanner}
-                breadcrumbs={[
-                    { label: 'Home', path: '/home' },
-                    { label: 'Privacy Policy', path: '/privacy' }
-                ]}
+                breadcrumbs={BREADCRUMBS}
             />
             {privacySections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {
                 const SectionContent = (

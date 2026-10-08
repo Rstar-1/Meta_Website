@@ -9,22 +9,2574 @@
   },
   {
     "id": 1,
+    "name": "Transparent Standard (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Standard",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 50,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 2,
+    "name": "Transparent Standard (WSI) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Standard",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 53,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 3,
+    "name": "Transparent Reliable (WSI) - 1MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 56,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 4,
+    "name": "Transparent Reliable (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 59,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 5,
+    "name": "Transparent Reliable (WSI) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 62,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 6,
+    "name": "Transparent Reliable (WSI) - 5MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 65,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 7,
+    "name": "Transparent Reliable (WSI) - 2MM X 12\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 68,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 8,
+    "name": "Transparent Reliable (WSI) - 3MM X 12\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 71,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 9,
+    "name": "Transparent Supreme (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Supreme",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 160,
+    "priceFormatted": "₹165 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 74,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 10,
+    "name": "Transparent Supreme (WSI) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Supreme",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 160,
+    "priceFormatted": "₹165 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 77,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 11,
+    "name": "Crystal Clear (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Crystal Clear",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 165,
+    "priceFormatted": "₹170 - ₹160/kg",
+    "originalPrice": 192,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 80,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 12,
+    "name": "Crystal Clear (WSI) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Crystal Clear",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 165,
+    "priceFormatted": "₹170 - ₹160/kg",
+    "originalPrice": 192,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 83,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 13,
+    "name": "Polar Freezer (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Polar / Anti-Freeze",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 195,
+    "priceFormatted": "₹195/kg",
+    "originalPrice": 234,
+    "badge": {
+      "text": "Polar Grade",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 86,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 14,
+    "name": "Polar Freezer (WSI) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Polar / Anti-Freeze",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 195,
+    "priceFormatted": "₹195/kg",
+    "originalPrice": 234,
+    "badge": {
+      "text": "Polar Grade",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 89,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 15,
+    "name": "DOTP (Phthalate Free) (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "DOTP (Phthalate Free)",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 210,
+    "priceFormatted": "₹210/kg",
+    "originalPrice": 252,
+    "badge": {
+      "text": "Phthalate Free",
+      "color": "#10b981"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 52,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 16,
+    "name": "DOTP (Phthalate Free) (WSI) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "DOTP (Phthalate Free)",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 210,
+    "priceFormatted": "₹210/kg",
+    "originalPrice": 252,
+    "badge": {
+      "text": "Phthalate Free",
+      "color": "#10b981"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 55,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 17,
+    "name": "Opaque  Cream (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Cream",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#fde047"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 58,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 18,
+    "name": "Opaque  Cream (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Cream",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#fde047"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 61,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 19,
+    "name": "Opaque  White (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  White",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 64,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 20,
+    "name": "Opaque  White (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  White",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 67,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 21,
+    "name": "Opaque  Red (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Red",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 70,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 22,
+    "name": "Opaque  Red (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Red",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 73,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 23,
+    "name": "Red Transparent (WSI) - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Red Transparent",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 76,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 24,
+    "name": "Red Transparent (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Red Transparent",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 79,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 25,
+    "name": "Opaque  Blue (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Blue",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#0284c7"
+    ],
+    "image": "product/Product1.jpg",
+    "images": [
+      "product/Product1.jpg",
+      "product/Product1.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 82,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 26,
+    "name": "Opaque  Blue (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Blue",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#0284c7"
+    ],
+    "image": "product/Product1.jpg",
+    "images": [
+      "product/Product1.jpg",
+      "product/Product1.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 85,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 27,
+    "name": "Opaque  Black (WSI) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Black",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#1e293b"
+    ],
+    "image": "product/Product2.jpg",
+    "images": [
+      "product/Product2.jpg",
+      "product/Product2.jpg",
+      "product/Product2.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 88,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 28,
+    "name": "Opaque  Black (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Black",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "WSI",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#1e293b"
+    ],
+    "image": "product/Product2.jpg",
+    "images": [
+      "product/Product2.jpg",
+      "product/Product2.jpg",
+      "product/Product2.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 51,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 29,
+    "name": "Amber Orange Anti-Insect (WSI) - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 54,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 30,
+    "name": "Amber Orange Anti-Insect (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 57,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 31,
+    "name": "Amber Yellow Anti-Insect (WSI) - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 60,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 32,
+    "name": "Amber Yellow Anti-Insect (WSI) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "WSI",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 63,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 33,
+    "name": "Transparent (LKY) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent",
+    "vendor": "LKY",
+    "type": "PVC Strip Curtain Roll",
+    "price": 145,
+    "priceFormatted": "₹140 - ₹150/kg",
+    "originalPrice": 180,
+    "badge": {
+      "text": "LKY",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 66,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 34,
+    "name": "Transparent (LKY) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent",
+    "vendor": "LKY",
+    "type": "PVC Strip Curtain Roll",
+    "price": 145,
+    "priceFormatted": "₹140 - ₹150/kg",
+    "originalPrice": 180,
+    "badge": {
+      "text": "LKY",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 69,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 35,
+    "name": "Transparent Standard - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Standard",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 145,
+    "priceFormatted": "₹140 - ₹150/kg",
+    "originalPrice": 180,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 72,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 36,
+    "name": "Transparent Standard - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Standard",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 145,
+    "priceFormatted": "₹140 - ₹150/kg",
+    "originalPrice": 180,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 75,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 37,
+    "name": "Transparent Reliable - 1MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 78,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 38,
+    "name": "Transparent Reliable - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 81,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 39,
+    "name": "Transparent Reliable - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 84,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 40,
+    "name": "Transparent Reliable - 5MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 87,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 41,
+    "name": "Transparent Reliable - 2MM X 12\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 42,
+    "name": "Transparent Reliable - 3MM X 12\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Reliable",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 150,
+    "priceFormatted": "₹145 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 53,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 43,
+    "name": "Transparent Supreme - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Supreme",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 160,
+    "priceFormatted": "₹165 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 56,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 44,
+    "name": "Transparent Supreme - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Supreme",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 160,
+    "priceFormatted": "₹165 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 59,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 45,
+    "name": "Crystal Clear - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Crystal Clear",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 165,
+    "priceFormatted": "₹170 - ₹160/kg",
+    "originalPrice": 192,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 62,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 46,
+    "name": "Crystal Clear - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Crystal Clear",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 165,
+    "priceFormatted": "₹170 - ₹160/kg",
+    "originalPrice": 192,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 65,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 47,
+    "name": "Polar Freezer - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Polar / Anti-Freeze",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 195,
+    "priceFormatted": "₹195/kg",
+    "originalPrice": 234,
+    "badge": {
+      "text": "Polar Grade",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 68,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 48,
+    "name": "Polar Freezer - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Polar / Anti-Freeze",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 195,
+    "priceFormatted": "₹195/kg",
+    "originalPrice": 234,
+    "badge": {
+      "text": "Polar Grade",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 71,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 49,
+    "name": "DOTP (Phthalate Free) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "DOTP (Phthalate Free)",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 210,
+    "priceFormatted": "₹210/kg",
+    "originalPrice": 252,
+    "badge": {
+      "text": "Phthalate Free",
+      "color": "#10b981"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 74,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 50,
+    "name": "DOTP (Phthalate Free) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "DOTP (Phthalate Free)",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 210,
+    "priceFormatted": "₹210/kg",
+    "originalPrice": 252,
+    "badge": {
+      "text": "Phthalate Free",
+      "color": "#10b981"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 77,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 51,
+    "name": "Opaque  Cream - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Cream",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#fde047"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 80,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 52,
+    "name": "Opaque  Cream - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Cream",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#fde047"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 83,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 53,
+    "name": "Opaque  White - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  White",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 86,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 54,
+    "name": "Opaque  White - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  White",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 89,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 55,
+    "name": "Opaque  Red - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Red",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 52,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 56,
+    "name": "Opaque  Red - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Red",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 55,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 57,
+    "name": "Red Transparent - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Red Transparent",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 58,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 58,
+    "name": "Red Transparent - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Red Transparent",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 61,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 59,
+    "name": "Opaque  Blue - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Blue",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#0284c7"
+    ],
+    "image": "product/Product1.jpg",
+    "images": [
+      "product/Product1.jpg",
+      "product/Product1.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 64,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 60,
+    "name": "Opaque  Blue - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Blue",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#0284c7"
+    ],
+    "image": "product/Product1.jpg",
+    "images": [
+      "product/Product1.jpg",
+      "product/Product1.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 67,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 61,
+    "name": "Opaque  Black - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Black",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#1e293b"
+    ],
+    "image": "product/Product2.jpg",
+    "images": [
+      "product/Product2.jpg",
+      "product/Product2.jpg",
+      "product/Product2.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 70,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 62,
+    "name": "Opaque  Black - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Black",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#1e293b"
+    ],
+    "image": "product/Product2.jpg",
+    "images": [
+      "product/Product2.jpg",
+      "product/Product2.jpg",
+      "product/Product2.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 73,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 63,
+    "name": "Amber Orange Anti-Insect - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 76,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 64,
+    "name": "Amber Orange Anti-Insect - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 79,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 65,
+    "name": "Amber Yellow Anti-Insect - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 82,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 66,
+    "name": "Amber Yellow Anti-Insect - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 85,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 67,
+    "name": "Transparent Standard (Vietnam) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Standard",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 145,
+    "priceFormatted": "₹140 - ₹150/kg",
+    "originalPrice": 180,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 88,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 68,
+    "name": "Transparent Standard (Vietnam) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Standard",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 145,
+    "priceFormatted": "₹140 - ₹150/kg",
+    "originalPrice": 180,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 51,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 69,
+    "name": "Transparent Supreme (Vietnam) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Supreme",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 160,
+    "priceFormatted": "₹165 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 54,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 70,
+    "name": "Transparent Supreme (Vietnam) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Transparent Supreme",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 160,
+    "priceFormatted": "₹165 - ₹155/kg",
+    "originalPrice": 186,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 57,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 71,
+    "name": "Polar Freezer (Vietnam) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Polar / Anti-Freeze",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 195,
+    "priceFormatted": "₹195/kg",
+    "originalPrice": 234,
+    "badge": {
+      "text": "Polar Grade",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 60,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 72,
+    "name": "Polar Freezer (Vietnam) - 3MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Polar / Anti-Freeze",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 195,
+    "priceFormatted": "₹195/kg",
+    "originalPrice": 234,
+    "badge": {
+      "text": "Polar Grade",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 63,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 73,
+    "name": "Opaque  White (Vietnam) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  White",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 66,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 74,
+    "name": "Opaque  White (Vietnam) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  White",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product4.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 69,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 75,
+    "name": "Opaque  Red (Vietnam) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Red",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 72,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 76,
+    "name": "Opaque  Red (Vietnam) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Red",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 75,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 77,
+    "name": "Red Transparent (Vietnam) - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Red Transparent",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 78,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 78,
+    "name": "Red Transparent (Vietnam) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Red Transparent",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#ef4444"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product3.jpg",
+      "product/Product3.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 81,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 79,
+    "name": "Opaque  Blue (Vietnam) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Blue",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#0284c7"
+    ],
+    "image": "product/Product1.jpg",
+    "images": [
+      "product/Product1.jpg",
+      "product/Product1.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 84,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 80,
+    "name": "Opaque  Blue (Vietnam) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Blue",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#0284c7"
+    ],
+    "image": "product/Product1.jpg",
+    "images": [
+      "product/Product1.jpg",
+      "product/Product1.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 87,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 81,
+    "name": "Opaque  Black (Vietnam) - 2MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Black",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Vietnam",
+      "color": "#2563eb"
+    },
+    "colors": [
+      "#1e293b"
+    ],
+    "image": "product/Product2.jpg",
+    "images": [
+      "product/Product2.jpg",
+      "product/Product2.jpg",
+      "product/Product2.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 82,
+    "name": "Opaque  Black - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Opaque  Black",
+    "vendor": "Other Brand",
+    "type": "PVC Strip Curtain Roll",
+    "price": 170,
+    "priceFormatted": "₹165 - ₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Standard Roll",
+      "color": "#64748b"
+    },
+    "colors": [
+      "#1e293b"
+    ],
+    "image": "product/Product2.jpg",
+    "images": [
+      "product/Product2.jpg",
+      "product/Product2.jpg",
+      "product/Product2.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 53,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 83,
+    "name": "Amber Orange Anti-Insect (Vietnam) - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 56,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 84,
+    "name": "Amber Orange Anti-Insect (Vietnam) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 59,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 85,
+    "name": "Amber Yellow Anti-Insect (Vietnam) - 2 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 62,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 86,
+    "name": "Amber Yellow Anti-Insect (Vietnam) - 3 MM X 8\" X 50 Mtrs",
+    "categoryId": 1,
+    "category": "PVC strip Curtain Rolls",
+    "subCategory": "Anti-Insect Amber / Yellow",
+    "vendor": "Vietnam",
+    "type": "PVC Strip Curtain Roll",
+    "price": 143,
+    "priceFormatted": "₹140 - ₹145/kg",
+    "originalPrice": 174,
+    "badge": {
+      "text": "Anti-Insect",
+      "color": "#f59e0b"
+    },
+    "colors": [
+      "#f59e0b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 65,
+    "description": "Manufactured from premium-quality flexible PVC, WSI PVC  strip curtains offer excellent durability, transparency, and resistance to wear and tear. They help maintain temperature-controlled environments, improve workplace hygiene, and reduce energy consumption by minimizing the escape of conditioned air."
+  },
+  {
+    "id": 87,
+    "name": "Magnetic Strip Curtain Roll (WSI) - 1.8 MM X 300MM X 25 Mtrs",
+    "categoryId": 2,
+    "category": "PVC Magnetic strip Curtain Rolls",
+    "subCategory": "Transparent Magnetic Strips",
+    "vendor": "WSI",
+    "type": "PVC Magnetic Strip Curtain Roll",
+    "price": 250,
+    "priceFormatted": "₹250/kg",
+    "originalPrice": 300,
+    "badge": {
+      "text": "Magnetic",
+      "color": "#059669"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 60,
+    "description": "Designed with magnetic strips for smooth and automatic closing after passage. Provides easy access while helping control dust, insects, temperature, and airflow. Ideal for warehouses, factories and commercial areas."
+  },
+  {
+    "id": 88,
+    "name": "Magnetic Strip Curtain Roll (WSI) - 1.8 MM X 350MM X 25 Mtrs",
+    "categoryId": 2,
+    "category": "PVC Magnetic strip Curtain Rolls",
+    "subCategory": "Transparent Magnetic Strips",
+    "vendor": "WSI",
+    "type": "PVC Magnetic Strip Curtain Roll",
+    "price": 250,
+    "priceFormatted": "₹250/kg",
+    "originalPrice": 300,
+    "badge": {
+      "text": "Magnetic",
+      "color": "#059669"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "product/Product5.jpg",
+      "product/Product5.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 65,
+    "description": "Designed with magnetic strips for smooth and automatic closing after passage. Provides easy access while helping control dust, insects, temperature, and airflow. Ideal for warehouses, factories and commercial areas."
+  },
+  {
+    "id": 89,
     "name": "Mounting Brackets (MS) - White (20.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Mounting Brackets (MS)",
-    "subCategoryId": "ms-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "Mounting Bracket",
     "price": 195,
     "priceFormatted": "₹195/set",
     "originalPrice": 240,
-    "originalPriceFormatted": "₹240/set",
     "badge": {
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -37,23 +2589,23 @@
     "description": "Strong Mounting Brackets (MS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 2,
+    "id": 90,
     "name": "Mounting Brackets (MS) - White (38.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Mounting Brackets (MS)",
-    "subCategoryId": "ms-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "Mounting Bracket",
     "price": 355,
     "priceFormatted": "₹355/set",
     "originalPrice": 420,
-    "originalPriceFormatted": "₹420/set",
     "badge": {
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -66,23 +2618,23 @@
     "description": "Strong Mounting Brackets (MS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 3,
+    "id": 91,
     "name": "Mounting Brackets (MS) - Grey (20.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Mounting Brackets (MS)",
-    "subCategoryId": "ms-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "Mounting Bracket",
     "price": 195,
     "priceFormatted": "₹195/set",
     "originalPrice": 240,
-    "originalPriceFormatted": "₹240/set",
     "badge": {
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -95,23 +2647,23 @@
     "description": "Strong Mounting Brackets (MS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 4,
+    "id": 92,
     "name": "Mounting Brackets (MS) - Grey (38.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Mounting Brackets (MS)",
-    "subCategoryId": "ms-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "Mounting Bracket",
     "price": 355,
     "priceFormatted": "₹355/set",
     "originalPrice": 420,
-    "originalPriceFormatted": "₹420/set",
     "badge": {
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -124,23 +2676,23 @@
     "description": "Strong Mounting Brackets (MS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 5,
+    "id": 93,
     "name": "Stainless Steel 202 (SS202) Mounting Brackets (20.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Stainless Steel 202 (SS202)",
-    "subCategoryId": "ss202-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "SS Bracket",
     "price": 273,
     "priceFormatted": "₹273/set",
     "originalPrice": 330,
-    "originalPriceFormatted": "₹330/set",
     "badge": {
       "text": "SS 202",
       "color": "#0284c7"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -153,23 +2705,23 @@
     "description": "Strong Mounting Brackets (SS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 6,
+    "id": 94,
     "name": "Stainless Steel 202 (SS202) Mounting Brackets (38.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Stainless Steel 202 (SS202)",
-    "subCategoryId": "ss202-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "SS Bracket",
     "price": 527,
     "priceFormatted": "₹527/set",
     "originalPrice": 620,
-    "originalPriceFormatted": "₹620/set",
     "badge": {
       "text": "SS 202",
       "color": "#0284c7"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -182,23 +2734,23 @@
     "description": "Strong Mounting Brackets (SS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 7,
+    "id": 95,
     "name": "Stainless Steel 304 (SS304) Mounting Brackets (20.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Stainless Steel 304 (SS304)",
-    "subCategoryId": "ss304-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "SS Bracket",
     "price": 374,
     "priceFormatted": "₹374/set",
     "originalPrice": 450,
-    "originalPriceFormatted": "₹450/set",
     "badge": {
       "text": "SS 304",
       "color": "#059669"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -211,23 +2763,23 @@
     "description": "Strong Mounting Brackets (SS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 8,
+    "id": 96,
     "name": "Stainless Steel 304 (SS304) Mounting Brackets (38.5\")",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Stainless Steel 304 (SS304)",
-    "subCategoryId": "ss304-mounting-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "SS Bracket",
     "price": 730,
     "priceFormatted": "₹730/set",
     "originalPrice": 850,
-    "originalPriceFormatted": "₹850/set",
     "badge": {
       "text": "SS 304",
       "color": "#059669"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -240,23 +2792,23 @@
     "description": "Strong Mounting Brackets (SS) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 9,
+    "id": 97,
     "name": "Galvanised Steel Magnetic Track (300 MM)",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Magnetic Strip Curtain Brackets",
-    "subCategoryId": "magnetic-curtain-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "Magnetic Track",
     "price": 375,
     "priceFormatted": "₹375/track",
     "originalPrice": 450,
-    "originalPriceFormatted": "₹450/track",
     "badge": {
       "text": "Magnetic Track",
       "color": "#2563eb"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -269,23 +2821,23 @@
     "description": "Strong Galvanised Steel (300 MM) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 10,
+    "id": 98,
     "name": "Galvanised Steel Magnetic Track (350 MM)",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Magnetic Strip Curtain Brackets",
-    "subCategoryId": "magnetic-curtain-brackets",
     "vendor": "Ashmita Vinyls",
     "type": "Magnetic Track",
     "price": 375,
     "priceFormatted": "₹375/track",
     "originalPrice": 450,
-    "originalPriceFormatted": "₹450/track",
     "badge": {
       "text": "Magnetic Track",
       "color": "#2563eb"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -298,23 +2850,23 @@
     "description": "Strong Galvanised Steel (350 MM) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 11,
+    "id": 99,
     "name": "Magnetic Strip Curtain Plastic Bottom (300 MM)",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Magnetic Strip Curtain Bottom",
-    "subCategoryId": "magnetic-curtain-bottom",
     "vendor": "Ashmita Vinyls",
     "type": "Plastic Bottom",
     "price": 45,
     "priceFormatted": "₹45/set",
     "originalPrice": 65,
-    "originalPriceFormatted": "₹65/set",
     "badge": {
       "text": "Bottom Holder",
       "color": "#f59e0b"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -327,23 +2879,23 @@
     "description": "Strong Plastic Bottom (300 MM) designed for secure and easy installation of PVC strip curtains. They provide firm support and proper alignment, making them suitable for industrial, commercial, and warehouse applications."
   },
   {
-    "id": 12,
+    "id": 100,
     "name": "Magnetic Strip Curtain Plastic Bottom (350 MM)",
     "categoryId": 3,
     "category": "Brackets",
     "subCategory": "Magnetic Strip Curtain Bottom",
-    "subCategoryId": "magnetic-curtain-bottom",
     "vendor": "Ashmita Vinyls",
     "type": "Plastic Bottom",
     "price": 52,
     "priceFormatted": "₹52/set",
     "originalPrice": 75,
-    "originalPriceFormatted": "₹75/set",
     "badge": {
       "text": "Bottom Holder",
       "color": "#f59e0b"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",

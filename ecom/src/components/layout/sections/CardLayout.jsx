@@ -598,9 +598,76 @@ export const ProductCard2 = React.memo(({
     );
 });
 
-ProductCard2.displayName = 'ProductCard2';
+export const BlogCard = React.memo(({
+    item,
+    post,
+    data,
+    onClick,
+    onSelect,
+    className = '',
+    imageHeight = 'h-450 sm-h-250',
+    ...props
+}) => {
+    const blog = item || post || data;
+    const handleClick = onClick || onSelect;
+
+    if (!blog) return null;
+
+    return (
+        <article className={`mb-30 pb-30 bordb ${className}`} {...props}>
+            <div
+                onClick={() => handleClick?.(blog)}
+                className={`w-full ${imageHeight} rounded-10 overflow-hidden mb-20 cursor-pointer`}
+            >
+                <Image
+                    src={resolveImagePath(blog.image)}
+                    alt={blog.title}
+                    className="flex object-cover h-full w-full hover:scale-105 transition-transform"
+                />
+            </div>
+
+            <div className="flex items-center gap-12">
+                <div className="flex items-center gap-6">
+                    <Icon name="Customers" width="14" height="14" stroke="var(--gray)" />
+                    <p className="small-text text-gray font-500">{blog.date}</p>
+                </div>
+                <div className="flex items-center gap-6 ml-10">
+                    <Icon name="WhatsApp" width="14" height="14" stroke="var(--gray)" />
+                    <p className="small-text text-gray font-500">{blog.comments || '12 Comments'}</p>
+                </div>
+            </div>
+
+            <h2
+                onClick={() => handleClick?.(blog)}
+                className="text-dark font-600 head-text uppercase mt-12 cursor-pointer line-clamp2 hover:text-primary transition-colors"
+            >
+                {blog.title}
+            </h2>
+
+            <p className="text-gray font-400 para-text line-clamp3 mt-6">
+                {blog.excerpt || blog.description}
+            </p>
+
+            <Button
+                text="Read More"
+                version="v2"
+                bg="primary"
+                color="white"
+                icon="ArrowUpRight"
+                iconPosition="right"
+                className="rounded-30 mt-16"
+                onClick={() => handleClick?.(blog)}
+            />
+        </article>
+    );
+});
+
+BlogCard.displayName = 'BlogCard';
 
 const CardLayout = React.memo(({ version = 'product', ...props }) => {
+    if (version === 'blog') {
+        return <BlogCard {...props} />;
+    }
     if (version === 'feature') {
         return <FeatureCard {...props} />;
     }

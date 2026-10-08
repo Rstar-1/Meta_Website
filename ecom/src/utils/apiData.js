@@ -4,6 +4,7 @@ import cmsData from "../data/cms.json";
 import rawConfigData from "../data/config.json";
 import productsData from "../data/product.json";
 import categoriesData from "../data/category.json";
+import blogData from "../data/blog.json";
 
 const header = {
     ...headerData,
@@ -52,7 +53,9 @@ export {
     productsData,
     productsData as products,
     categoriesData,
-    categoriesData as categories
+    categoriesData as categories,
+    blogData,
+    blogData as blogs
 };
 
 export default {
@@ -61,5 +64,6 @@ export default {
     cmsData,
     configData,
     productsData,
-    categoriesData
+    categoriesData,
+    blogData
 };

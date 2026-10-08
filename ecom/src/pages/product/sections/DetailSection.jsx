@@ -1,14 +1,20 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
+
 import Container from '../../../components/common/Container';
 import Image from '../../../components/common/Image';
 import Icon from '../../../components/common/Icon';
 import Button from '../../../components/common/Button';
 import Accordion from '../../../components/common/Accordion';
 import Fields from '../../../components/forms/Fields';
+import Badge from '../../../components/common/Badge';
+import Magnify from '../../../components/common/Magnify';
+
 import { useCart } from '../../../feature/slice/cartSlice';
 import { resolveImagePath } from '../../../utils/imageResolver';
 import { productsData, categoriesData } from '../../../utils/apiData';
+
+const isMagnifyEnabled = import.meta.env.VITE_MAGNIFY === 'true' || import.meta.env.VITE_MAGNIFY === true;
 
 const defaultImages = ['Product1.jpg'];
 
@@ -116,30 +122,48 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                             ))}
                         </div>
                         <div className='w-85 sm-w-75'>
-                            <Image
-                                src={resolveImagePath(productImages[selectedImgIdx])}
-                                alt={product?.name || "Main Product"}
-                                className='w-full h-500 sm-h-350 object-cover flex rounded-10'
-                            />
+                            {isMagnifyEnabled ? (
+                                <Magnify
+                                    src={resolveImagePath(productImages[selectedImgIdx])}
+                                    alt={product?.name || "Main Product"}
+                                    width="100%"
+                                    height="500px"
+                                    borderRadius="10px"
+                                    zoomPosition="inside"
+                                    zoomScale={2}
+                                    className="w-full h-500 sm-h-350 rounded-10 overflow-hidden"
+                                    imgClassName="w-full h-full object-cover rounded-10"
+                                />
+                            ) : (
+                                <Image
+                                    src={resolveImagePath(productImages[selectedImgIdx])}
+                                    alt={product?.name || "Main Product"}
+                                    className='w-full h-500 sm-h-350 object-cover flex rounded-10'
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
 
                 <div className='pl-10 sm-pl-1 w-90 sm-w-full sm-mt-20'>
                     {activeCategory && (
-                        <p
-                            onClick={() => navigate(`/product?category=${encodeURIComponent(activeCategory.name)}`)}
-                            className='mini-text text-primary font-600 uppercase cursor-pointer hover:underline mb-4'
-                        >
-                            {activeCategory.name}
-                        </p>
+                        <div className="mb-8">
+                            <Badge
+                                text={activeCategory.name}
+                                color="primary"
+                                size="md"
+                                shape="pill"
+                                className="uppercase font-600 cursor-pointer"
+                                onClick={() => navigate(`/product?category=${encodeURIComponent(activeCategory.name)}`)}
+                            />
+                        </div>
                     )}
 
-                    <h2 className='head-text text-dark font-600 capitalize'>
+                    <h2 className='head-text text-dark font-600 uppercase my-10 sm-my-6'>
                         {product?.name || product?.title || 'Product'}
                     </h2>
                     <p className='text-gray mini-text font-400'>
-                        Vendor: <span className='text-primary font-600'>{product?.vendor || 'FoxEcom'}</span> | Type: <span className='text-primary font-600'>{product?.type || 'Standard'}</span>
+                        Vendor: <span className='text-primary font-600'>{import.meta.env.VITE_SITE_NAME}</span> | Type: <span className='text-primary font-600'>{product?.type || 'Standard'}</span>
                     </p>
                     <p className='text-dark headpara-text font-700 mt-12'>
                         {product?.priceFormatted || (product?.price ? `$${product.price}` : '$0.00')}

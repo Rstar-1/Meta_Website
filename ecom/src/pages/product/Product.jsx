@@ -36,7 +36,7 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 const Product = () => {
     return (
         <>
-            <SEO page="product" />
+            <SEO page="product" breadcrumbs={BREADCRUMBS} />
             <Banner
                 title="Products Collection"
                 desc="Products"

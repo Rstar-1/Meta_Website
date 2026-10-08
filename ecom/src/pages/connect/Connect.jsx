@@ -31,22 +31,20 @@ const connectSections = [
     },
 ];
 
-const SectionFallback = memo(({ minHeight = '100px' }) => (
-    <div className="w-full" style={{ minHeight }} />
-));
+const BREADCRUMBS = [
+    { label: 'Home', path: '/home' },
+    { label: 'Connect Us', path: '/connect' }
+];
 
 const Connect = () => {
     return (
         <>
-            <SEO page="connect" />
+            <SEO page="connect" breadcrumbs={BREADCRUMBS} />
             <Banner
                 title="Connect Us"
                 desc="Get In Touch With Us"
                 bgImage={bannerImg}
-                breadcrumbs={[
-                    { label: 'Home', path: '/home' },
-                    { label: 'Connect Us', path: '/connect' }
-                ]}
+                breadcrumbs={BREADCRUMBS}
             />
             {connectSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {
                 const SectionContent = (

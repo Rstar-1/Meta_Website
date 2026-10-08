@@ -8,11 +8,9 @@ import bannerImg from '../../assets/about-banner.jpg';
 
 const SupplierSection = lazy(() => import('./sections/SupplierSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
-const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
 
 const supplierSections = [
     { id: 'supplier', Component: SupplierSection, minHeight: '600px', isContainer: false },
-    { id: 'offer', Component: OfferSection, minHeight: '300px', isContainer: true },
     {
         id: 'patch',
         Component: PatchSection,
@@ -46,21 +44,25 @@ const Supplier = () => {
             : 'Ashmita Vinyls');
     }, [brandKey, brandName]);
 
+    const breadcrumbs = useMemo(() => [
+        { label: 'Home', path: '/home' },
+        { label: 'Products', path: '/products' },
+        { label: displayName, path: `/supplier/${brandKey}` }
+    ], [displayName, brandKey]);
+
     return (
         <main className="w-full">
             <SEO
                 title={`${displayName} — Verified Supplier Profile`}
                 description={`Explore verified supplier profile, catalog, and wholesale pricing for ${displayName}.`}
+                path={`/supplier/${brandKey}`}
+                breadcrumbs={breadcrumbs}
             />
             <Banner
                 title={displayName}
                 desc="Verified Supplier Profile"
                 bgImage={bannerImg}
-                breadcrumbs={[
-                    { label: 'Home', path: '/home' },
-                    { label: 'Products', path: '/products' },
-                    { label: displayName }
-                ]}
+                breadcrumbs={breadcrumbs}
             />
             {supplierSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {
                 const SectionContent = (

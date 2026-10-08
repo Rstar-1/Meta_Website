@@ -1,4 +1,4 @@
-# robots.txt for inraClick (https://inraclick.com)
+# robots.txt for Ashmita Vinyls (https://ashmitavinyls.com)
 User-agent: *
 Allow: /
 
@@ -31,4 +31,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap
-Sitemap: https://inraclick.com/sitemap.xml
+Sitemap: https://ashmitavinyls.com/sitemap.xml

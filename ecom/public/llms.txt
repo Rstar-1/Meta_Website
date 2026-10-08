@@ -1,27 +1,25 @@
-# inraClick
+# Ashmita Vinyls
 
-> AI Business Automation & Digital Growth Solutions agency headquartered in Apollo Bandar, Colaba, Mumbai, Maharashtra, India. inraClick empowers modern enterprises by combining human-led AI workflows, custom website development, SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), and performance marketing.
+> Premier PVC vinyl products manufacturer and supplier based in Mumbai, Maharashtra, India. Ashmita Vinyls specializes in manufacturing and distributing industrial PVC strip curtains, polar freezer curtains, anti-insect amber yellow strip rolls, phthalate-free DOTP vinyl strips, welding screen curtains, and stainless steel (SS304/SS202) mounting hardware for warehouses, cold chains, pharmaceutical cleanrooms, and food processing facilities across India.
 
 ## Core Pages
 
-- [Home](https://inraclick.com/): Intelligent AI business automation platform and digital growth ecosystems.
-- [About Us](https://inraclick.com/about): Our story, mission, and human-led artificial intelligence philosophy.
-- [Services](https://inraclick.com/service): Comprehensive digital services including AI + Human Collaboration, Digital Business Intelligence, SEO & Organic Reach, Smart Promotion Tools, Privacy Systems, and Business Growth Automation.
-- [Products](https://inraclick.com/products): Intelligent business automation products and enterprise tools.
-- [News & Blog](https://inraclick.com/blog): Industry insights on AI workflows, SEO, AEO, GEO, and digital innovation.
-- [Book a Demo](https://inraclick.com/bookdemo): Schedule a personalized live demonstration of inraClick automation tools.
-- [Connect / Contact](https://inraclick.com/connect): Contact our Mumbai office in Colaba for custom inquiries and partnerships.
+- [Home](https://ashmitavinyls.com/): Leading PVC vinyl products manufacturer, industrial curtains, and custom commercial solutions.
+- [About Us](https://ashmitavinyls.com/about): Our manufacturing heritage, quality control standards, and industrial capabilities.
+- [Products](https://ashmitavinyls.com/product): Comprehensive catalog of transparent standard PVC rolls, polar grade vinyl, ribbed curtains, opaque strips, and mounting brackets.
+- [Applications & Industries](https://ashmitavinyls.com/supplier): Sector-specific PVC curtain solutions for warehousing, logistics, cold storage, food processing, and manufacturing plants.
+- [News & Blog](https://ashmitavinyls.com/blog): Technical buying guides, thermal efficiency studies, maintenance routines, and PVC industry trends.
+- [Connect / Contact](https://ashmitavinyls.com/connect): Get in touch for B2B wholesale pricing, custom dimension orders, and technical specifications.
 
-## Services Breakdown
+## Product Categories Breakdown
 
-- [AI + Human Collaboration](https://inraclick.com/service): AI as an intelligent guide that empowers humans and streamlines digital workflows.
-- [Digital Business Intelligence](https://inraclick.com/service): Predictive systems, automated data intelligence, and scalable tech infrastructure.
-- [SEO & Organic Reach](https://inraclick.com/service): Technical SEO, AEO, and sustainable organic website traffic growth.
-- [Smart Promotion Tools](https://inraclick.com/service): Algorithmic campaigns, multi-channel marketing, and conversion optimization.
-- [Privacy & Secure Digital Systems](https://inraclick.com/service): Data privacy compliance, encryption, and secure cloud backend systems.
-- [Business Growth & Automation](https://inraclick.com/service): Measurable ROI, scalable digital solutions, and automated workflows.
+- [PVC Strip Curtain Rolls](https://ashmitavinyls.com/product): Standard transparent, transparent supreme, and crystal clear vinyl rolls (2mm, 3mm, 5mm thickness in 8" and 12" widths).
+- [Polar Freezer Grade Rolls](https://ashmitavinyls.com/product): Sub-zero flexible PVC strip curtains engineered for blast freezers and cold rooms operating down to -40°C.
+- [Anti-Insect Amber PVC Rolls](https://ashmitavinyls.com/product): Yellow wavelength optical repellent and citronella infused strip curtains for food processing and hygiene zones.
+- [Phthalate-Free (DOTP) PVC Rolls](https://ashmitavinyls.com/product): Safe, eco-compliant, non-toxic vinyl curtains for pharmaceutical and food-grade cleanrooms.
+- [Mounting Brackets & Tracks](https://ashmitavinyls.com/product): Stainless steel SS304, SS202 hook-on hanging tracks, clamp sets, and magnetic curtain hardware.
 
-## Optional
+## Optional & Machine-Readable
 
-- [Full LLM Details](https://inraclick.com/llms-full.txt): Extended documentation and knowledge base for LLM reasoning.
-- [XML Sitemap](https://inraclick.com/sitemap.xml): Complete machine-readable URL list.
+- [Full LLM Documentation](https://ashmitavinyls.com/llms-full.txt): Comprehensive knowledge base and technical specifications for LLM and AI search agents.
+- [XML Sitemap](https://ashmitavinyls.com/sitemap.xml): Machine-readable XML sitemap indexing all site pages and technical articles.

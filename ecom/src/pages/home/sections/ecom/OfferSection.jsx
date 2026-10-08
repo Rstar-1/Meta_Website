@@ -36,7 +36,7 @@ const OfferSection = () => {
             <div className='grid-cols-2 sm-grid-cols-1 gap-12'>
                 <div className='overflow-hidden bg-forth rounded-10 relative sm-h-400' style={{ height: '612px' }}
                 >    <Image
-                        src={import.meta.env.VITE_IMAGE + "product/Product5.jpg"}
+                        src={import.meta.env.VITE_IMAGE + "blog/Blog2.jpg"}
                         alt="PVC Strip Curtains"
                         className='h-full w-full object-cover flex filter-b4'
                     />

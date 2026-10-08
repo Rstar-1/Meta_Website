@@ -20,17 +20,19 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
     <div className="w-full" style={{ minHeight }} />
 ));
 
+const BREADCRUMBS = [
+    { label: 'Home', path: '/home' },
+    { label: 'Terms & Conditions', path: '/terms' }
+];
+
 const Terms = () => {
     return (
         <>
-            <SEO page="terms" />
+            <SEO page="terms" breadcrumbs={BREADCRUMBS} />
             <Banner
                 title="Terms & Conditions"
                 bgImage={aboutBanner}
-                breadcrumbs={[
-                    { label: 'Home', path: '/home' },
-                    { label: 'Terms & Conditions', path: '/terms' }
-                ]}
+                breadcrumbs={BREADCRUMBS}
             />
             {termsSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {
                 const SectionContent = (

@@ -21,56 +21,80 @@ const buildDynamicMegaMenu = () => {
   (categoriesData || []).forEach((cat) => {
     const key = cat.megaMenuKey || cat.slug;
     const catProducts = realProducts.filter(
-      (p) => p.categoryId === cat.id || p.category?.toLowerCase() === cat.name.toLowerCase() || p.megaMenuKey === key
+      (p) => p.categoryId === cat.id || p.category?.toLowerCase() === cat.name?.toLowerCase() || p.megaMenuKey === key
     );
 
     const subCatMap = new Map();
 
-    // Pre-register all defined subcategories from category.json
-    if (cat.subCategories && cat.subCategories.length > 0) {
-      cat.subCategories.forEach((sub) => {
-        const subId = typeof sub === "string" ? sub.toLowerCase().replace(/[^a-z0-9]/g, "-") : sub.id;
-        const subName = typeof sub === "string" ? sub : sub.name;
-        subCatMap.set(subId, {
-          id: subId,
-          name: subName,
-          badge: null,
-          items: [],
-        });
-      });
-    }
+    // Pre-register exactly up to 4 defined subcategories from category.json
+    const definedSubCategories = (cat.subCategories && cat.subCategories.length > 0)
+      ? cat.subCategories.slice(0, 4)
+      : [];
 
-    // Attach matching products to subcategories
-    catProducts.forEach((p) => {
-      const subId =
-        p.subCategoryId ||
-        (p.subCategory
-          ? p.subCategory.toLowerCase().replace(/[^a-z0-9]/g, "-")
-          : "all");
-      const subName = p.subCategory || p.category || cat.name;
-
-      if (!subCatMap.has(subId)) {
-        subCatMap.set(subId, {
-          id: subId,
-          name: subName,
-          badge: p.badge?.text === "Coming Soon" ? "Coming Soon" : p.badge?.text || null,
-          items: [],
-        });
-      }
-
-      subCatMap.get(subId).items.push({
-        id: p.id,
-        title: p.name,
-        name: p.name,
-        image: resolveImagePath(p.image),
-        href: `/product/${p.id}`,
-        badge: p.badge?.text,
-        price: p.priceFormatted || (p.price ? `$${p.price}` : null),
+    definedSubCategories.forEach((sub) => {
+      const subId = typeof sub === "string" ? sub.toLowerCase().replace(/[^a-z0-9]/g, "-") : String(sub.id);
+      const subName = typeof sub === "string" ? sub : sub.name;
+      subCatMap.set(subId, {
+        id: subId,
+        name: subName,
+        badge: null,
+        items: [],
       });
     });
 
-    // If any subcategory has no direct products, display category sample products
-    const subCategoriesList = Array.from(subCatMap.values());
+    // Attach matching products to defined subcategories (max 4 per subcategory)
+    catProducts.forEach((p) => {
+      const pSubId = p.subCategoryId ? String(p.subCategoryId).toLowerCase() : "";
+      const pSubName = (p.subCategory || "").toLowerCase();
+      const pName = (p.name || "").toLowerCase();
+
+      // Find matching registered subcategory
+      let targetSubId = null;
+      for (const [subId, subData] of subCatMap.entries()) {
+        const sName = subData.name.toLowerCase();
+        if (
+          pSubId === subId.toLowerCase() ||
+          pSubName === sName ||
+          pSubName.includes(sName) ||
+          sName.includes(pSubName) ||
+          pName.includes(sName)
+        ) {
+          targetSubId = subId;
+          break;
+        }
+      }
+
+      // If no pre-registered subcategories existed, allow registering up to 4
+      if (!targetSubId && subCatMap.size < 4) {
+        const newSubId = p.subCategoryId || (p.subCategory ? p.subCategory.toLowerCase().replace(/[^a-z0-9]/g, "-") : `sub-${subCatMap.size + 1}`);
+        const newSubName = p.subCategory || p.name;
+        subCatMap.set(newSubId, {
+          id: newSubId,
+          name: newSubName,
+          badge: p.badge?.text === "Coming Soon" ? "Coming Soon" : p.badge?.text || null,
+          items: [],
+        });
+        targetSubId = newSubId;
+      }
+
+      if (targetSubId && subCatMap.has(targetSubId)) {
+        const subObj = subCatMap.get(targetSubId);
+        if (subObj.items.length < 4) {
+          subObj.items.push({
+            id: p.id,
+            title: p.name,
+            name: p.name,
+            image: resolveImagePath(p.image),
+            href: `/product/${p.id}`,
+            badge: p.badge?.text,
+            price: p.priceFormatted || (p.price ? `₹${p.price}` : null),
+          });
+        }
+      }
+    });
+
+    // Fallback: If any subcategory has no direct products, fill up to 4 from category products
+    const subCategoriesList = Array.from(subCatMap.values()).slice(0, 4);
     subCategoriesList.forEach((sub) => {
       if (sub.items.length === 0) {
         sub.items = catProducts.slice(0, 4).map((p) => ({
@@ -80,8 +104,10 @@ const buildDynamicMegaMenu = () => {
           image: resolveImagePath(p.image),
           href: `/product/${p.id}`,
           badge: p.badge?.text,
-          price: p.priceFormatted || (p.price ? `$${p.price}` : null),
+          price: p.priceFormatted || (p.price ? `₹${p.price}` : null),
         }));
+      } else if (sub.items.length > 4) {
+        sub.items = sub.items.slice(0, 4);
       }
     });
 
@@ -448,23 +474,23 @@ const CartSidebar = React.memo(
 
                     <div className="w-65">
                       <p className="mini-text text-gray font-400">{item.category}</p>
-                      <h4 className="headmini-text text-dark font-600">{item.name}</h4>
+                      <h4 className="headmini-text text-dark font-600 line-clamp1">{item.name}</h4>
 
-                      <div className="flex items-center justify-between mt-5">
+                      <div className="flex items-end justify-between mt-5">
                         <Fields
                           type="quantity"
                           value={item.quantity}
                           onChange={(value) => onSetQuantity(item.id, value)}
                         />
-                        <p className="small-text font-600 text-dark">
-                          ${((Number(item.price) || 0) * item.quantity).toFixed(2)}
+                        <p className="small-text font-600 text-danger">
+                          ₹{((Number(item.price) || 0) * item.quantity).toFixed(2)}
                         </p>
                       </div>
                     </div>
 
                     <div
                       onClick={() => onRemove(item.id)}
-                      className="icon absolute top-0 right-0 cursor-pointer"
+                      className="absolute top-0 right-0 cursor-pointer"
                     >
                       <Icon name="Close" width="16" height="16" stroke="var(--danger)" />
                     </div>
@@ -630,7 +656,7 @@ const MegaMenu = React.memo(
     }, [activeMegaMenu]);
 
     const categories = React.useMemo(() => {
-      return currentMenu?.categories || [];
+      return (currentMenu?.categories || []).slice(0, 4);
     }, [currentMenu]);
 
     const currentCategory = React.useMemo(() => {
@@ -683,7 +709,7 @@ const MegaMenu = React.memo(
 
             <div className="w-80">
               <div key={currentCategory?.id || "category-grid"} className="grid-cols-4 sm-grid-cols-2 gap-12">
-                {currentCategory?.items?.map((item, idx) => (
+                {currentCategory?.items?.slice(0, 4)?.map((item, idx) => (
                   <NavLink
                     key={`${currentCategory?.id || "cat"}-${item.title || item.href || idx}`}
                     to={item.href || "/products"}

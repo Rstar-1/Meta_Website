@@ -39,22 +39,20 @@ const aboutSections = [
     },
 ];
 
-const SectionFallback = memo(({ minHeight = '100px' }) => (
-    <div className="w-full" style={{ minHeight }} />
-));
+const BREADCRUMBS = [
+    { label: 'Home', path: '/home' },
+    { label: 'About Us', path: '/about' }
+];
 
 const About = () => {
     return (
         <main className="w-full">
-            <SEO page="about" />
+            <SEO page="about" breadcrumbs={BREADCRUMBS} />
             <Banner
                 title="About Us"
                 desc="About Our Story"
                 bgImage={aboutBanner}
-                breadcrumbs={[
-                    { label: 'Home', path: '/home' },
-                    { label: 'About Us', path: '/about' }
-                ]}
+                breadcrumbs={BREADCRUMBS}
             />
             {aboutSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {
                 const SectionContent = (

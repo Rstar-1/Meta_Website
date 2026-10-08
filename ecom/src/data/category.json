@@ -1,59 +1,85 @@
 [
   {
     "id": 1,
-    "name": "Standard Clear PVC Curtains",
-    "title": "Standard Clear PVC Curtains",
-    "slug": "standard-clear-pvc",
-    "megaMenuKey": "standardClearPvc",
-    "image": "product/Product4.jpg",
+    "name": "PVC strip Curtain Rolls",
+    "slug": "pvc-strip-curtain-rolls",
     "icon": "product/Product4.jpg",
     "iconName": "Layers",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
     "subCategories": [
-      { "id": "standard-clear-200", "name": "200mm x 2mm Clear Roll" },
-      { "id": "standard-clear-300", "name": "300mm x 3mm Clear Roll" },
-      { "id": "standard-clear-400", "name": "400mm x 4mm Clear Roll" },
-      { "id": "ribbed-clear", "name": "Double Ribbed Clear Strips" }
+      {
+        "id": "standard-clear",
+        "name": "Transparent Standard"
+      },
+      {
+        "id": "reliable-clear",
+        "name": "Transparent Reliable"
+      },
+      {
+        "id": "polar-freezer",
+        "name": "Polar / Anti-Freeze"
+      },
+      {
+        "id": "anti-insect-yellow",
+        "name": "Anti-Insect Amber / Yellow"
+      }
     ],
-    "description": "High-clarity transparent PVC strip curtains for thermal insulation, dust prevention, and warehouse doors."
+    "description": "High-durability PVC strip curtain rolls for temperature control, cleanrooms, warehouses, and dust prevention."
   },
   {
     "id": 2,
-    "name": "Polar Freezer & Anti-Insect",
-    "title": "Polar Freezer & Anti-Insect",
-    "slug": "polar-anti-insect-pvc",
-    "megaMenuKey": "polarAntiInsectPvc",
-    "image": "product/Product5.jpg",
+    "name": "PVC Magnetic strip Curtain Rolls",
+    "slug": "pvc-magnetic-strip-curtain-rolls",
     "icon": "product/Product5.jpg",
     "iconName": "Shield",
     "bgColor": "#ECFDF5",
     "accentColor": "#059669",
     "subCategories": [
-      { "id": "polar-freezer", "name": "Polar Sub-Zero (-40°C)" },
-      { "id": "anti-insect-yellow", "name": "Anti-Insect Amber Yellow" },
-      { "id": "anti-static-cleanroom", "name": "Anti-Static ESD Strips" },
-      { "id": "welding-screen", "name": "Welding Screen Strips" }
+      {
+        "id": "magnetic-transparent",
+        "name": "Transparent Magnetic Strips"
+      },
+      {
+        "id": "magnetic-polar",
+        "name": "Polar Magnetic Strips"
+      },
+      {
+        "id": "magnetic-anti-insect",
+        "name": "Anti-Insect Magnetic Strips"
+      },
+      {
+        "id": "magnetic-door-kits",
+        "name": "Magnetic Curtain Door Kits"
+      }
     ],
-    "description": "Sub-zero cold storage polar curtains, yellow insect-repellent barriers, and UV-filtering welding screens."
+    "description": "Hands-free automatic magnetic sealing PVC strip curtains for rapid closure, cold storage, and pest control."
   },
   {
     "id": 3,
     "name": "Brackets",
-    "title": "Brackets & Mounting Hardware",
     "slug": "brackets",
-    "megaMenuKey": "brackets",
-    "image": "product/Product6.jpg",
-    "icon": "product/Product6.jpg",
+    "icon": "product/Product7.jpg",
     "iconName": "Box",
     "bgColor": "#FEF2F2",
     "accentColor": "#DC2626",
     "subCategories": [
-      { "id": "ms-mounting-brackets", "name": "Mounting Brackets (MS)" },
-      { "id": "ss202-mounting-brackets", "name": "Stainless Steel 202 (SS202)" },
-      { "id": "ss304-mounting-brackets", "name": "Stainless Steel 304 (SS304)" },
-      { "id": "magnetic-curtain-brackets", "name": "Magnetic Strip Curtain Brackets" },
-      { "id": "magnetic-curtain-bottom", "name": "Magnetic Strip Curtain Bottom" }
+      {
+        "id": "ms-mounting-brackets",
+        "name": "Mounting Brackets (MS)"
+      },
+      {
+        "id": "ss202-mounting-brackets",
+        "name": "Stainless Steel 202 (SS202)"
+      },
+      {
+        "id": "ss304-mounting-brackets",
+        "name": "Stainless Steel 304 (SS304)"
+      },
+      {
+        "id": "magnetic-curtain-brackets",
+        "name": "Magnetic Tracks & Bottom"
+      }
     ],
     "description": "Strong mounting brackets in Mild Steel, Stainless Steel (SS202 & SS304), and Magnetic strip curtain tracks and bottom holders for secure installation."
   }

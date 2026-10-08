@@ -102,7 +102,7 @@ const SupplierSection = () => {
     return (
         <Container>
             <div className="flex sm-grid-cols-1 gap-12 items-start w-full py-40">
-                <div className="w-25 sm-w-full grid-cols-1 gap-12">
+                <div className="w-25 sm-w-full grid-cols-1 gap-12 sticky" style={{ top: '20%' }}>
                     <div className="bg-white border-ec p-10 rounded-5">
                         <div className="flex items-center gap-12 bordb pb-16">
                             <div className="bg-light-primary rounded-full icon-lg">
