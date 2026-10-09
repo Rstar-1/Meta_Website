@@ -63,7 +63,7 @@ const CategorySection = React.memo(({
     }, [onSearchChange, navigate]);
 
     return (
-        <aside className="w-full">
+        <aside className="w-full pb-50 sm-pb-5">
             <div className="mb-25 bg-forth rounded-10 p-15">
                 <Fields
                     type="input"

@@ -70,6 +70,9 @@ const FilterSidebarContent = React.memo(({
     selectedCategories,
     onCategoryChange,
     categoryOptions,
+    selectedBrands,
+    onBrandChange,
+    brandOptions,
     priceMax,
     maxPriceLimit,
     onPriceChange,
@@ -77,7 +80,7 @@ const FilterSidebarContent = React.memo(({
     colorFilters,
     onToggleColor
 }) => (
-    <div className="pr-10">
+    <div className="pr-10 pl-5 pb-50 sm-pb-5">
         <div className="bordb pb-20">
             <h4 className="headmini-text font-500 text-dark mb-12">Price Range</h4>
             <Fields
@@ -109,6 +112,17 @@ const FilterSidebarContent = React.memo(({
                 position="y"
                 value={selectedCategories}
                 onChange={onCategoryChange}
+            />
+        </div>
+
+        <div className="bordb py-20">
+            <h4 className="headmini-text font-500 text-dark mb-12">Brand</h4>
+            <Fields
+                type="checkbox"
+                options={brandOptions}
+                position="y"
+                value={selectedBrands}
+                onChange={onBrandChange}
             />
         </div>
 
@@ -183,6 +197,7 @@ const FilterSection = () => {
     const [sortBy, setSortBy] = React.useState('trending');
     const [priceMax, setPriceMax] = React.useState(maxPriceLimit);
     const [selectedCategories, setSelectedCategories] = React.useState([]);
+    const [selectedBrands, setSelectedBrands] = React.useState([]);
     const [selectedColors, setSelectedColors] = React.useState([]);
     const [availability, setAvailability] = React.useState([]);
     const [isFilterVisible, setIsFilterVisible] = React.useState(false);
@@ -227,6 +242,20 @@ const FilterSection = () => {
         });
     }, []);
 
+    const brandOptions = React.useMemo(() => {
+        const counts = {};
+        products.forEach((p) => {
+            if (!p.isBanner) {
+                const b = p.brand || p.vendor || 'Others';
+                counts[b] = (counts[b] || 0) + 1;
+            }
+        });
+        return Object.entries(counts).map(([brand, count]) => ({
+            label: `${brand} (${count})`,
+            value: brand
+        }));
+    }, []);
+
     const availabilityOptions = React.useMemo(() => {
         const inStockCount = products.filter((p) => !p.isBanner && p.inStock).length;
         const outOfStockCount = products.filter((p) => !p.isBanner && !p.inStock).length;
@@ -267,6 +296,7 @@ const FilterSection = () => {
     const handleSortChange = React.useCallback((val) => setSortBy(val), []);
     const handleAvailabilityChange = React.useCallback((val) => setAvailability(Array.isArray(val) ? val : []), []);
     const handleCategoryChange = React.useCallback((val) => setSelectedCategories(Array.isArray(val) ? val : []), []);
+    const handleBrandChange = React.useCallback((val) => setSelectedBrands(Array.isArray(val) ? val : []), []);
     const handlePriceChange = React.useCallback((val) => setPriceMax(Number(val) || 0), []);
     const handleToggleColor = React.useCallback((color) => {
         setSelectedColors((prev) =>
@@ -276,6 +306,7 @@ const FilterSection = () => {
     const handleResetFilters = React.useCallback(() => {
         setPriceMax(maxPriceLimit);
         setSelectedCategories([]);
+        setSelectedBrands([]);
         setSelectedColors([]);
         setAvailability([]);
     }, [maxPriceLimit]);
@@ -306,6 +337,11 @@ const FilterSection = () => {
                     if (!matchesCategory) return false;
                 }
 
+                if (selectedBrands.length > 0) {
+                    const itemBrand = item.brand || item.vendor || 'Others';
+                    if (!selectedBrands.includes(itemBrand)) return false;
+                }
+
                 if (typeof item.price === 'number' && item.price > priceMax) return false;
 
                 if (selectedColors.length > 0) {
@@ -325,7 +361,7 @@ const FilterSection = () => {
                 if (sortBy === 'price-high') return (b.price || 0) - (a.price || 0);
                 return 0;
             });
-    }, [availability, selectedCategories, priceMax, selectedColors, sortBy]);
+    }, [availability, selectedCategories, selectedBrands, priceMax, selectedColors, sortBy]);
 
     const totalProductCount = React.useMemo(
         () => filteredProducts.filter((p) => !p.isBanner).length,
@@ -335,11 +371,12 @@ const FilterSection = () => {
     const activeFiltersCount = React.useMemo(() => {
         return (
             selectedCategories.length +
+            selectedBrands.length +
             selectedColors.length +
             availability.length +
             (priceMax < maxPriceLimit ? 1 : 0)
         );
-    }, [selectedCategories, selectedColors, availability, priceMax, maxPriceLimit]);
+    }, [selectedCategories, selectedBrands, selectedColors, availability, priceMax, maxPriceLimit]);
 
     const filterProps = {
         availability,
@@ -348,6 +385,9 @@ const FilterSection = () => {
         selectedCategories,
         onCategoryChange: handleCategoryChange,
         categoryOptions,
+        selectedBrands,
+        onBrandChange: handleBrandChange,
+        brandOptions,
         priceMax,
         maxPriceLimit,
         onPriceChange: handlePriceChange,
@@ -371,7 +411,7 @@ const FilterSection = () => {
 
             <div className="mt-30 flex sm-grid-cols-1 items-start gap-12">
                 {isFilterVisible && (
-                    <div className="w-20 sm-hidden overflow-auto h-500 sticky" style={{ top: '20%' }}>
+                    <div className="w-20 sm-hidden overflow-auto h-550 sticky" style={{ top: '20%' }}>
                         <FilterSidebarContent {...filterProps} />
                     </div>
                 )}

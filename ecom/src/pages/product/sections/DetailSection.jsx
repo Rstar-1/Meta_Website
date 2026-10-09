@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 
 import Container from '../../../components/common/Container';
@@ -9,6 +9,7 @@ import Accordion from '../../../components/common/Accordion';
 import Fields from '../../../components/forms/Fields';
 import Badge from '../../../components/common/Badge';
 import Magnify from '../../../components/common/Magnify';
+import EnquiryModal from '../../../components/layout/generic/Enquiy';
 
 import { useCart } from '../../../feature/slice/cartSlice';
 import { resolveImagePath } from '../../../utils/imageResolver';
@@ -45,11 +46,24 @@ const ProductDetailContent = ({ currentProduct, category }) => {
     const [selectedImgIdx, setSelectedImgIdx] = useState(0);
     const [selectedColor, setSelectedColor] = useState('Default');
     const [quantity, setQuantity] = useState(1);
+    const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+
+    const handleOpenEnquiry = useCallback(() => setIsEnquiryOpen(true), []);
+    const handleCloseEnquiry = useCallback(() => setIsEnquiryOpen(false), []);
+
+    const handleEnquiryQuantityChange = useCallback((_, val) => {
+        setQuantity(Math.max(1, Number(val) || 1));
+    }, []);
 
     const product = useMemo(() => {
-        if (currentProduct) return currentProduct;
-        const fromState = location.state?.product;
-        if (fromState) return fromState;
+        let baseProduct = currentProduct || location.state?.product;
+        if (baseProduct && baseProduct.id) {
+            const fresh = productsData.find((x) => String(x.id) === String(baseProduct.id));
+            if (fresh) {
+                return { ...fresh, ...baseProduct, specifications: fresh.specifications || baseProduct.specifications };
+            }
+            return baseProduct;
+        }
         if (id) {
             const found = productsData.find((x) => String(x.id) === String(id));
             if (found) return found;
@@ -101,6 +115,20 @@ const ProductDetailContent = ({ currentProduct, category }) => {
             .slice(0, 3);
     }, [product]);
 
+    const enquiryItems = useMemo(() => {
+        if (!product) return [];
+        return [
+            {
+                id: product.id || 1,
+                name: product.name || product.title || 'Product',
+                category: activeCategory?.name || product.category || product.type || 'Product',
+                price: Number(product.price) || 0,
+                quantity: quantity,
+                image: productImages[selectedImgIdx] || product.image,
+            }
+        ];
+    }, [product, activeCategory, quantity, productImages, selectedImgIdx]);
+
     return (
         <Container>
             <div className='py-50 w-full grid-cols-2 sm-grid-cols-1 gap-12'>
@@ -143,6 +171,18 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                             )}
                         </div>
                     </div>
+                    {product?.specifications && product.specifications.length > 0 && (
+                        <div className='sm-mt-16 mt-10'>
+                            <div className='grid-cols-2 gap-12'>
+                                {product.specifications.map((item, idx) => (
+                                    <div className='bordb p-10' key={idx}>
+                                        <h6 className='headmini-text text-dark font-500'>{item.name}</h6>
+                                        <p className='text-gray mini-text font-400'>{item.spec}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <div className='pl-10 sm-pl-1 w-90 sm-w-full sm-mt-20'>
@@ -163,7 +203,7 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                         {product?.name || product?.title || 'Product'}
                     </h2>
                     <p className='text-gray mini-text font-400'>
-                        Vendor: <span className='text-primary font-600'>{import.meta.env.VITE_SITE_NAME}</span> | Type: <span className='text-primary font-600'>{product?.type || 'Standard'}</span>
+                        Vendor: <span className='text-primary font-600'>{import.meta.env.VITE_SITE_NAME}</span> | Brand: <span className='text-primary font-600'>{product?.brand || 'Others'}</span>
                     </p>
                     <p className='text-dark headpara-text font-700 mt-12'>
                         {product?.priceFormatted || (product?.price ? `$${product.price}` : '$0.00')}
@@ -188,8 +228,8 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                         <p className='mini-text text-primary font-500'>
                             {product?.stockCount ? `Hurry up, only ${product.stockCount} items left in stock.` : 'In stock'}
                         </p>
-                        <div style={{ width: '100%', height: '4px', backgroundColor: '#E5E7EB', borderRadius: '4px', overflow: 'hidden' }} className='mt-8'>
-                            <div style={{ width: `${Math.min(100, Math.round((product?.stockCount || 10) / 30 * 100))}%`, height: '100%', backgroundColor: '#10B981' }} />
+                        <div style={{ width: '100%', height: '4px', backgroundColor: 'var(--forth)', borderRadius: '4px', overflow: 'hidden' }} className='mt-8'>
+                            <div style={{ width: `${Math.min(100, Math.max(0, Math.round((product?.stockCount || 10) / 100 * 100)))}%`, height: '100%', backgroundColor: 'var(--primary)' }} />
                         </div>
                     </div>
 
@@ -242,10 +282,7 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                             color="dark"
                         />
                         <Button
-                            onClick={() => {
-                                handleAddToCart();
-                                navigate('/cart');
-                            }}
+                            onClick={handleOpenEnquiry}
                             text="Buy It Now"
                             version="v3"
                             bg="primary"
@@ -295,6 +332,13 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                     </div>
                 </div>
             </div>
+
+            <EnquiryModal
+                isOpen={isEnquiryOpen}
+                onClose={handleCloseEnquiry}
+                items={enquiryItems}
+                onSetQuantity={handleEnquiryQuantityChange}
+            />
         </Container>
     );
 };

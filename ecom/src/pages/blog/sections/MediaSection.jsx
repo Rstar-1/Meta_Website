@@ -110,15 +110,13 @@ const MediaSection = React.memo(() => {
                     )}
                 </div>
 
-                {/* Desktop Sticky Sidebar */}
-                <div className="w-30 sm-hidden pl-10 overflow-auto h-500 sticky" style={{ top: '19%' }}>
+                <div className="w-30 sm-hidden pl-10 overflow-auto h-550 sticky" style={{ top: '19%' }}>
                     <React.Suspense fallback={<div className="w-full h-300" />}>
                         <CategorySection {...categoryProps} />
                     </React.Suspense>
                 </div>
             </div>
 
-            {/* Mobile Category Sidebar Modal */}
             <Modal
                 type="sidebar"
                 placement="left"

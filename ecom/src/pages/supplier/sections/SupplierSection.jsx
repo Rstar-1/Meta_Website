@@ -102,85 +102,87 @@ const SupplierSection = () => {
     return (
         <Container>
             <div className="flex sm-grid-cols-1 gap-12 items-start w-full py-40">
-                <div className="w-25 sm-w-full grid-cols-1 gap-12 sticky" style={{ top: '20%' }}>
-                    <div className="bg-white border-ec p-10 rounded-5">
-                        <div className="flex items-center gap-12 bordb pb-16">
-                            <div className="bg-light-primary rounded-full icon-lg">
-                                <p className="font-600 text-primary para-text">
-                                    {supplierInfo.name.charAt(0)}
-                                </p>
-                            </div>
-                            <div>
-                                <h3 className="text-dark headmini-text font-600">{supplierInfo.name}</h3>
-                                <p className='mini-text text-success font-500'>✓ Verified Partner</p>
-                            </div>
-                        </div>
-
-                        {/* Ratings & Quick Score */}
-                        <div className="flex items-center justify-between mt-12 bg-forth p-10 rounded-8">
-                            <div className="flex items-center gap-6">
-                                <span className="font-600 text-dark small-text">{supplierInfo.rating}</span>
-                                <span className="text-warning mini-text">★★★★★</span>
-                            </div>
-                            <span className="text-gray mini-text font-500">
-                                ({supplierInfo.reviews} Reviews)
-                            </span>
-                        </div>
-
-                        {/* Quick Metrics Grid */}
-                        <div className="grid-cols-2 gap-8 mt-12">
-                            <div className="bg-forth p-10 rounded-8 text-center">
-                                <p className="mini-text text-gray m-0">Response Time</p>
-                                <p className="small-text font-600 text-dark m-0 mt-2">{supplierInfo.responseTime}</p>
-                            </div>
-                            <div className="bg-forth p-10 rounded-8 text-center">
-                                <p className="mini-text text-gray m-0">Fulfillment</p>
-                                <p className="small-text font-600 text-success m-0 mt-2">{supplierInfo.fulfillmentRate}</p>
-                            </div>
-                        </div>
-
-                        {/* Compact Info List */}
-                        <div className="flex flex-column gap-10 mt-16 bordt pt-16">
-                            <div className="flex items-center gap-8">
-                                <span className="mini-text">📍</span>
-                                <p className="text-gray mini-text font-500 m-0">{supplierInfo.location}</p>
-                            </div>
-                            <div className="flex items-center gap-8">
-                                <span className="mini-text">📦</span>
-                                <p className="text-gray mini-text font-500 m-0">MOQ: {supplierInfo.moq}</p>
-                            </div>
-                            <div className="flex items-center gap-8">
-                                <span className="mini-text">📋</span>
-                                <p className="text-gray mini-text font-500 m-0">GST: {supplierInfo.gstin}</p>
-                            </div>
-                            <div className="flex items-center gap-8">
-                                <span className="mini-text">🕒</span>
-                                <p className="text-gray mini-text font-500 m-0">Experience: {supplierInfo.experience}</p>
-                            </div>
-                        </div>
-
-                        {/* Contact Action */}
-                        <div className="mt-16">
-                            <Button
-                                text="Request B2B Quote"
-                                variant="primary"
-                                onClick={handleConnectClick}
-                                version='v3'
-                            />
-                        </div>
-                    </div>
-
-                    <div className="bg-white border-ec p-10 rounded-5">
-                        <h4 className="headmini-text font-600 text-dark pb-8 bordb m-0">
-                            Trust & Quality Assurance
-                        </h4>
-                        <div className="flex flex-column gap-10 mt-12">
-                            {TRUST_POINTS.map((point, idx) => (
-                                <div key={idx} className="flex items-center gap-8 mini-text text-gray font-500">
-                                    <span className="text-success font-600">✓</span>
-                                    <span>{point}</span>
+                <div className="w-25 sm-w-full grid-cols-1 gap-12 h-550 overflow-auto sticky" style={{ top: '20%' }}>
+                    <div className='pb-50 sm-pb-5'>
+                        <div className="bg-white border-ec p-10 rounded-5">
+                            <div className="flex items-center gap-12 bordb pb-16">
+                                <div className="bg-light-primary rounded-full icon-lg">
+                                    <p className="font-600 text-primary para-text">
+                                        {supplierInfo.name.charAt(0)}
+                                    </p>
                                 </div>
-                            ))}
+                                <div>
+                                    <h3 className="text-dark headmini-text font-600">{supplierInfo.name}</h3>
+                                    <p className='mini-text text-success font-500'>✓ Verified Partner</p>
+                                </div>
+                            </div>
+
+                            {/* Ratings & Quick Score */}
+                            <div className="flex items-center justify-between mt-12 bg-forth p-10 rounded-8">
+                                <div className="flex items-center gap-6">
+                                    <span className="font-600 text-dark small-text">{supplierInfo.rating}</span>
+                                    <span className="text-warning mini-text">★★★★★</span>
+                                </div>
+                                <span className="text-gray mini-text font-500">
+                                    ({supplierInfo.reviews} Reviews)
+                                </span>
+                            </div>
+
+                            {/* Quick Metrics Grid */}
+                            <div className="grid-cols-2 gap-8 mt-12">
+                                <div className="bg-forth p-10 rounded-8 text-center">
+                                    <p className="mini-text text-gray m-0">Response Time</p>
+                                    <p className="small-text font-600 text-dark m-0 mt-2">{supplierInfo.responseTime}</p>
+                                </div>
+                                <div className="bg-forth p-10 rounded-8 text-center">
+                                    <p className="mini-text text-gray m-0">Fulfillment</p>
+                                    <p className="small-text font-600 text-success m-0 mt-2">{supplierInfo.fulfillmentRate}</p>
+                                </div>
+                            </div>
+
+                            {/* Compact Info List */}
+                            <div className="flex flex-column gap-10 mt-16 bordt pt-16">
+                                <div className="flex items-center gap-8">
+                                    <span className="mini-text">📍</span>
+                                    <p className="text-gray mini-text font-500 m-0">{supplierInfo.location}</p>
+                                </div>
+                                <div className="flex items-center gap-8">
+                                    <span className="mini-text">📦</span>
+                                    <p className="text-gray mini-text font-500 m-0">MOQ: {supplierInfo.moq}</p>
+                                </div>
+                                <div className="flex items-center gap-8">
+                                    <span className="mini-text">📋</span>
+                                    <p className="text-gray mini-text font-500 m-0">GST: {supplierInfo.gstin}</p>
+                                </div>
+                                <div className="flex items-center gap-8">
+                                    <span className="mini-text">🕒</span>
+                                    <p className="text-gray mini-text font-500 m-0">Experience: {supplierInfo.experience}</p>
+                                </div>
+                            </div>
+
+                            {/* Contact Action */}
+                            <div className="mt-16">
+                                <Button
+                                    text="Request B2B Quote"
+                                    variant="primary"
+                                    onClick={handleConnectClick}
+                                    version='v3'
+                                />
+                            </div>
+                        </div>
+
+                        <div className="bg-white border-ec p-10 rounded-5">
+                            <h4 className="headmini-text font-600 text-dark pb-8 bordb m-0">
+                                Trust & Quality Assurance
+                            </h4>
+                            <div className="flex flex-column gap-10 mt-12">
+                                {TRUST_POINTS.map((point, idx) => (
+                                    <div key={idx} className="flex items-center gap-8 mini-text text-gray font-500">
+                                        <span className="text-success font-600">✓</span>
+                                        <span>{point}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

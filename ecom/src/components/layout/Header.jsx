@@ -9,6 +9,7 @@ import Modal from "../common/Modal";
 import Dropdown from "../common/Dropdown";
 import Badge from "../common/Badge";
 import Fields from "../forms/Fields";
+import EnquiryModal from "./generic/Enquiy";
 
 import { header, configData, productsData, categoriesData } from "../../utils/apiData";
 import { resolveImagePath } from "../../utils/imageResolver";
@@ -353,6 +354,7 @@ const CartSidebar = React.memo(
     isHeaderWhite,
     onOpenCart,
     onCloseCart,
+    onOpenEnquiryModal,
     onRemove,
     onSetQuantity,
     onNavigate,
@@ -537,7 +539,11 @@ const CartSidebar = React.memo(
                 text="Send Enquiry"
                 onClick={() => {
                   onCloseCart();
-                  onNavigate("/connect");
+                  if (onOpenEnquiryModal) {
+                    onOpenEnquiryModal();
+                  } else {
+                    onNavigate("/connect");
+                  }
                 }}
                 version="v3"
                 bg="dark"
@@ -552,8 +558,17 @@ const CartSidebar = React.memo(
   }
 );
 
+
+
 const HeaderActions = React.memo(
-  ({ isHeaderWhite, isMobileOpen, setIsMobileOpen, cartSection, mobileCartSection, onNavigate }) => {
+  ({
+    isHeaderWhite,
+    isMobileOpen,
+    setIsMobileOpen,
+    cartSection,
+    mobileCartSection,
+    onNavigate,
+  }) => {
     return (
       <div className={`${ActionClass} flex justify-end`}>
         <div className="sm-hidden md-hidden flex items-center" style={{ gap: "14px" }}>
@@ -1084,6 +1099,8 @@ const Header = () => {
   const headerBg = isHeaderWhite ? "var(--white)" : "transparent";
   const headerBorder = isHeaderWhite ? "1px solid var(--white)" : "1px solid rgba(255, 255, 255, 0.1)";
 
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = React.useState(false);
+
   const handleCloseMobile = React.useCallback(() => {
     setIsMobileOpen(false);
   }, []);
@@ -1095,6 +1112,14 @@ const Header = () => {
   const handleCloseCart = React.useCallback(() => {
     setIsCartOpen(false);
   }, [setIsCartOpen]);
+
+  const handleOpenEnquiryModal = React.useCallback(() => {
+    setIsEnquiryModalOpen(true);
+  }, []);
+
+  const handleCloseEnquiryModal = React.useCallback(() => {
+    setIsEnquiryModalOpen(false);
+  }, []);
 
   const handleRemoveFromCart = React.useCallback((id) => {
     removeFromCart(id);
@@ -1151,6 +1176,7 @@ const Header = () => {
               isMobileOpen={isMobileOpen}
               setIsMobileOpen={setIsMobileOpen}
               onNavigate={handleNavigate}
+              onOpenEnquiryModal={handleOpenEnquiryModal}
               cartSection={
                 <CartSidebar
                   cartItems={cartItems}
@@ -1160,6 +1186,7 @@ const Header = () => {
                   isHeaderWhite={isHeaderWhite}
                   onOpenCart={handleOpenCart}
                   onCloseCart={handleCloseCart}
+                  onOpenEnquiryModal={handleOpenEnquiryModal}
                   onRemove={handleRemoveFromCart}
                   onSetQuantity={handleSetQuantity}
                   onNavigate={handleNavigate}
@@ -1175,6 +1202,7 @@ const Header = () => {
                   isHeaderWhite={isHeaderWhite}
                   onOpenCart={handleOpenCart}
                   onCloseCart={handleCloseCart}
+                  onOpenEnquiryModal={handleOpenEnquiryModal}
                   onRemove={handleRemoveFromCart}
                   onSetQuantity={handleSetQuantity}
                   onNavigate={handleNavigate}
@@ -1208,6 +1236,14 @@ const Header = () => {
           pathname={location.pathname}
           onClose={handleCloseMobile}
           onNavigate={handleNavigate}
+        />
+
+        <EnquiryModal
+          isOpen={isEnquiryModalOpen}
+          onClose={handleCloseEnquiryModal}
+          cartItems={cartItems}
+          onSetQuantity={handleSetQuantity}
+          onRemove={handleRemoveFromCart}
         />
       </div>
     </Container>

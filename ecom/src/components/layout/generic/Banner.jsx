@@ -11,7 +11,7 @@ const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage
         return <Skeleton variant="banner" style={style} />;
     }
 
-    const mainHeading = desc || title || "Banner";
+    const mainHeading = title || "Banner";
     const bannerImg = bgImage || backgroundImage || image || defaultBannerImg;
     const bannerBackground = bannerImg
         ? (bannerImg.includes('gradient') || bannerImg.startsWith('url(')

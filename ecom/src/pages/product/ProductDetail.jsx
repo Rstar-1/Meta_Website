@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { lazy, Suspense, memo, useMemo } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 
+import LazySection from '../../components/common/LazySection';
+import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
-import DetailSection from './sections/DetailSection';
-import SpecifySection from './sections/SpecifySection';
 import SEO from '../../seo';
 
 import { productsData, categoriesData } from '../../utils/apiData';
+
+const DetailSection = lazy(() => import('./sections/DetailSection'));
+const SpecifySection = lazy(() => import('./sections/SpecifySection'));
+
+const productDetailSections = [
+    {
+        id: 'detail',
+        Component: DetailSection,
+        minHeight: '600px',
+        isContainer: false,
+        isEager: true,
+    },
+    {
+        id: 'specify',
+        Component: SpecifySection,
+        minHeight: '400px',
+        isContainer: true,
+    },
+];
+
+const SectionFallback = memo(({ minHeight = '100px' }) => (
+    <div className="w-full" style={{ minHeight }} />
+));
 
 const ProductDetail = () => {
     const { id } = useParams();
     const location = useLocation();
 
-    const product = React.useMemo(() => {
+    const product = useMemo(() => {
         const fromState = location.state?.product;
         if (fromState) return fromState;
         if (id) {
@@ -22,7 +45,7 @@ const ProductDetail = () => {
         return productsData.find((p) => !p.isBanner) || productsData[0];
     }, [id, location.state]);
 
-    const category = React.useMemo(() => {
+    const category = useMemo(() => {
         if (!product) return null;
         if (product.categoryId) {
             return categoriesData.find((c) => c.id === product.categoryId) || null;
@@ -32,6 +55,12 @@ const ProductDetail = () => {
 
     const categoryName = category?.name || product?.category || 'Products';
     const productName = product?.name || product?.title || 'Product Detail';
+
+    const breadcrumbs = useMemo(() => [
+        { label: 'Home', path: '/home' },
+        { label: categoryName, path: `/product?category=${encodeURIComponent(categoryName)}` },
+        { label: productName, path: `/product/${product?.id || id || ''}` }
+    ], [categoryName, productName, product?.id, id]);
 
     return (
         <>
@@ -52,25 +81,44 @@ const ProductDetail = () => {
                     sku: `AV-${product?.id || id}`,
                     brand: product?.vendor || 'Ashmita Vinyls',
                 }}
-                breadcrumbs={[
-                    { label: 'Home', path: '/home' },
-                    { label: categoryName, path: `/product?category=${encodeURIComponent(categoryName)}` },
-                    { label: productName, path: `/product/${product?.id || id || ''}` }
-                ]}
+                breadcrumbs={breadcrumbs}
             />
             <Banner
-                title="Product Detail"
+                title="Product Overview"
                 desc={productName}
-                breadcrumbs={[
-                    { label: 'Home', path: '/home' },
-                    { label: categoryName, path: `/product?category=${encodeURIComponent(categoryName)}` },
-                    { label: productName, path: `/product/${product?.id || id || ''}` }
-                ]}
+                breadcrumbs={breadcrumbs}
             />
-            <DetailSection currentProduct={product} category={category} />
-            <SpecifySection />
+            {productDetailSections.map(({ id: sectionId, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle, version }) => {
+                const SectionContent = (
+                    <Suspense fallback={<SectionFallback minHeight={minHeight} />}>
+                        <Component currentProduct={product} category={category} />
+                    </Suspense>
+                );
+
+                const Content = isContainer ? (
+                    <Container className={containerClass} style={containerStyle} version={version}>
+                        {SectionContent}
+                    </Container>
+                ) : (
+                    SectionContent
+                );
+
+                return isEager ? (
+                    <React.Fragment key={sectionId}>
+                        {Content}
+                    </React.Fragment>
+                ) : (
+                    <LazySection
+                        key={sectionId}
+                        placeholderHeight={minHeight}
+                        placeholder={<SectionFallback minHeight={minHeight} />}
+                    >
+                        {Content}
+                    </LazySection>
+                );
+            })}
         </>
     );
 };
 
-export default React.memo(ProductDetail);
+export default memo(ProductDetail);

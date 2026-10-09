@@ -6,14 +6,19 @@ import SEO from '../../seo';
 
 const DetailSection = lazy(() => import('./sections/DetailSection'));
 const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
+const FeatureSection = lazy(() => import('../home/sections/ecom/FeatureSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
-
-const patchBannerBg = (import.meta.env.VITE_IMAGE || '') + 'Banner.jpg';
 
 const aboutSections = [
     {
         id: 'about',
         Component: DetailSection,
+        minHeight: '400px',
+        isContainer: true,
+    },
+    {
+        id: 'feature',
+        Component: FeatureSection,
         minHeight: '400px',
         isContainer: true,
         containerStyle: { background: 'var(--forth)' }
@@ -31,7 +36,7 @@ const aboutSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${patchBannerBg})`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${import.meta.env.VITE_IMAGE + "Patch1.jpg"})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

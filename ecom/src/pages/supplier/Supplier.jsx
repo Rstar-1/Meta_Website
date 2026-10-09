@@ -8,8 +8,6 @@ import SEO from '../../seo';
 const SupplierSection = lazy(() => import('./sections/SupplierSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 
-const patchBannerBg = (import.meta.env.VITE_IMAGE || '') + 'Banner.jpg';
-
 const supplierSections = [
     { id: 'supplier', Component: SupplierSection, minHeight: '600px', isContainer: false },
     {
@@ -19,7 +17,7 @@ const supplierSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${patchBannerBg})`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${import.meta.env.VITE_IMAGE + "Patch1.jpg"})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -52,7 +50,7 @@ const Supplier = () => {
     ], [displayName, brandKey]);
 
     return (
-        <main className="w-full">
+        <>
             <SEO
                 title={`${displayName} — Verified Supplier Profile`}
                 description={`Explore verified supplier profile, catalog, and wholesale pricing for ${displayName}.`}
@@ -93,7 +91,7 @@ const Supplier = () => {
                     </LazySection>
                 );
             })}
-        </main>
+        </>
     );
 };
 

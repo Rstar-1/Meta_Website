@@ -19,7 +19,6 @@ const productSections = [
         Component: SpecifySection,
         minHeight: '400px',
         isContainer: true,
-        version: 'v2'
     },
 ];
 

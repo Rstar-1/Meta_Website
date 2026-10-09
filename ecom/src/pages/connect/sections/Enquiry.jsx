@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import Icon from '../../../components/common/Icon';
 import FormBuilder from '../../../components/forms/FormBuilder';
@@ -104,8 +103,7 @@ const ContactItem = React.memo(({ item }) => (
 
 ContactItem.displayName = 'ContactItem';
 
-const Enquiry = React.memo(({ isCart = false, onClearCart }) => {
-    const navigate = useNavigate();
+const Enquiry = React.memo(() => {
     const [formKey, setFormKey] = React.useState(0);
 
     const handleFormSubmit = React.useCallback(async (data) => {
@@ -125,18 +123,7 @@ const Enquiry = React.memo(({ isCart = false, onClearCart }) => {
         } catch (err) {
             console.error('Enquiry email delivery issue:', err);
         }
-
-        if (isCart) {
-            const currentCart = getCart();
-            if (currentCart?.length > 0) {
-                localStorage.setItem('order_products', JSON.stringify(currentCart));
-            }
-            setTimeout(() => {
-                onClearCart?.();
-                navigate('/order');
-            }, 1200);
-        }
-    }, [isCart, onClearCart, navigate]);
+    }, []);
 
     return (
         <div className="flex sm-grid-cols-1 items-start gap-12 py-60">
