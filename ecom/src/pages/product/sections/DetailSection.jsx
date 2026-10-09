@@ -9,6 +9,7 @@ import Accordion from '../../../components/common/Accordion';
 import Fields from '../../../components/forms/Fields';
 import Badge from '../../../components/common/Badge';
 import Magnify from '../../../components/common/Magnify';
+import Modal from '../../../components/common/Modal';
 import EnquiryModal from '../../../components/layout/generic/Enquiy';
 
 import { useCart } from '../../../feature/slice/cartSlice';
@@ -47,6 +48,7 @@ const ProductDetailContent = ({ currentProduct, category }) => {
     const [selectedColor, setSelectedColor] = useState('Default');
     const [quantity, setQuantity] = useState(1);
     const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+    const [isPackagingModalOpen, setIsPackagingModalOpen] = useState(false);
 
     const handleOpenEnquiry = useCallback(() => setIsEnquiryOpen(true), []);
     const handleCloseEnquiry = useCallback(() => setIsEnquiryOpen(false), []);
@@ -79,6 +81,18 @@ const ProductDetailContent = ({ currentProduct, category }) => {
         }
         return categoriesData.find((c) => c.name.toLowerCase() === product.category?.toLowerCase()) || null;
     }, [category, product]);
+
+    const isPvcStripCurtains = useMemo(() => {
+        const slug = activeCategory?.slug || '';
+        const catName = (product?.category || activeCategory?.name || '').toLowerCase();
+        return (
+            slug === 'pvc-strip-curtain-rolls' ||
+            slug === 'standard-clear-pvc' ||
+            product?.categoryId === 1 ||
+            activeCategory?.id === 1 ||
+            catName.includes('pvc strip curtain roll')
+        );
+    }, [activeCategory, product]);
 
     const productImages = useMemo(() => {
         if (!product) return defaultImages;
@@ -129,6 +143,40 @@ const ProductDetailContent = ({ currentProduct, category }) => {
         ];
     }, [product, activeCategory, quantity, productImages, selectedImgIdx]);
 
+    const handleShare = useCallback((platform) => {
+        const origin = window.location.origin;
+        const productId = product?.id;
+        const shareUrl = `${origin}/product/${productId || ''}`;
+        const shareTitle = product?.name || product?.title || 'Check out this product';
+
+        switch (platform) {
+            case 'Facebook':
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
+                break;
+            case 'WhatsApp':
+                window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`${shareTitle} - ${shareUrl}`)}`, '_blank', 'noopener,noreferrer');
+                break;
+            case 'Instagram':
+                if (navigator.share) {
+                    navigator.share({
+                        title: shareTitle,
+                        url: shareUrl,
+                    }).catch(() => { });
+                } else if (navigator.clipboard) {
+                    navigator.clipboard.writeText(shareUrl).then(() => {
+                        window.open('https://www.instagram.com', '_blank', 'noopener,noreferrer');
+                    }).catch(() => {
+                        window.open('https://www.instagram.com', '_blank', 'noopener,noreferrer');
+                    });
+                } else {
+                    window.open('https://www.instagram.com', '_blank', 'noopener,noreferrer');
+                }
+                break;
+            default:
+                break;
+        }
+    }, [product]);
+
     return (
         <Container>
             <div className='py-50 w-full grid-cols-2 sm-grid-cols-1 gap-12'>
@@ -171,18 +219,6 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                             )}
                         </div>
                     </div>
-                    {product?.specifications && product.specifications.length > 0 && (
-                        <div className='sm-mt-16 mt-10'>
-                            <div className='grid-cols-2 gap-12'>
-                                {product.specifications.map((item, idx) => (
-                                    <div className='bordb p-10' key={idx}>
-                                        <h6 className='headmini-text text-dark font-500'>{item.name}</h6>
-                                        <p className='text-gray mini-text font-400'>{item.spec}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
                 </div>
 
                 <div className='pl-10 sm-pl-1 w-90 sm-w-full sm-mt-20'>
@@ -290,19 +326,38 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                         />
                     </div>
 
-                    <div className='mt-20 grid-cols-1 gap-12'>
-                        <div className='flex items-center gap-8'>
-                            <Icon name="Truck" width="16" height="16" stroke="#444444" />
-                            <p className='small-text text-dark font-400'>Free International Shipping over $500</p>
-                        </div>
-                        <div className='flex items-center gap-8'>
-                            <Icon name="RotateCcw" width="16" height="16" stroke="#444444" />
-                            <p className='small-text text-dark font-400'>Free Returns Within 30 days</p>
+                    <div className="flex gap-10 items-center mt-16">
+                        <p className="small-text text-gray font-500">Share:</p>
+                        <div className="flex gap-10 items-center">
+                            {['Facebook', 'WhatsApp', 'Instagram'].map((iconName, idx) => (
+                                <div
+                                    key={idx}
+                                    onClick={() => handleShare(iconName)}
+                                    className="cursor-pointer hover:opacity-80 flex items-center justify-center p-6 bg-forth rounded-full transition-all"
+                                    title={`Share on ${iconName}`}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => e.key === 'Enter' && handleShare(iconName)}
+                                >
+                                    <Icon name={iconName} width="16" height="16" />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
 
                 <div className='pr-10 sm-pr-1 mt-20'>
+                    {product?.specifications && product.specifications.length > 0 && (
+                        <div className='grid-cols-2 gap-12 mb-20'>
+                            {product.specifications.map((item, idx) => (
+                                <div className='bordb p-10' key={idx}>
+                                    <h6 className='headmini-text text-dark font-500'>{item.name}</h6>
+                                    <p className='text-gray mini-text font-400'>{item.spec}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
                     <Accordion items={accordionItems} />
 
                     <div className='bg-tertiary p-20 rounded-10 mt-20'>
@@ -314,22 +369,56 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                 </div>
 
                 <div className='pl-10 sm-pl-1 w-90 sm-w-full mt-20'>
-                    <h3 className='title-text text-muted text-dark font-600 uppercase bordb pb-10'>Trending Products</h3>
-                    <div className='grid-cols-3 gap-12 mt-16'>
-                        {trendingProducts.map((p) => (
-                            <div key={p.id} className="cursor-pointer" onClick={() => navigate(`/product/${p.id}`, { state: { product: p } })}>
-                                <div className="rounded-10 overflow-hidden h-200">
-                                    <Image
-                                        src={resolveImagePath(p.image)}
-                                        alt={p.name}
-                                        className='w-full h-full object-cover flex'
-                                    />
+                    <div>
+                        <h3 className='title-text text-muted text-dark font-600 uppercase'>Trending Products</h3>
+                        <div className='grid-cols-3 sm-grid-cols-2 gap-12 mt-12'>
+                            {trendingProducts.map((p) => (
+                                <div key={p.id} className="cursor-pointer" onClick={() => navigate(`/product/${p.id}`, { state: { product: p } })}>
+                                    <div className="rounded-10 overflow-hidden h-200">
+                                        <Image
+                                            src={resolveImagePath(p.image)}
+                                            alt={p.name}
+                                            className='w-full h-full object-cover flex'
+                                        />
+                                    </div>
+                                    <h4 className='headmini-text text-dark font-600 mt-8 line-clamp1'>{p.name}</h4>
+                                    <p className='mini-text text-gray font-600 mt-2'>{p.priceFormatted || `$${p.price}`}</p>
                                 </div>
-                                <h4 className='headmini-text text-dark font-600 mt-8 line-clamp1'>{p.name}</h4>
-                                <p className='mini-text text-gray font-600 mt-2'>{p.priceFormatted || `$${p.price}`}</p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
+                    {isPvcStripCurtains && (
+                        <div className='mt-30'>
+                            <div className='flex items-center justify-between'>
+                                <h3 className='title-text text-dark font-600 uppercase'>Packaging Products</h3>
+                                <div
+                                    className="icon-lg cursor-pointer bg-primary rounded-full"
+                                    onClick={() => setIsPackagingModalOpen(true)}
+                                    title="Watch Packaging Video"
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => e.key === 'Enter' && setIsPackagingModalOpen(true)}
+                                >
+                                    <Icon name="Play" width="14" height="14" fill="var(--white)" />
+                                </div>
+                            </div>
+                            <div className='grid-cols-3 sm-grid-cols-2 gap-12 mt-8'>
+                                {['Package1.jpeg', 'Package2.jpeg'].map((img, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="rounded-10 overflow-hidden h-200"
+                                        title="Click to view packaging video"
+                                    >
+                                        <Image
+                                            src={resolveImagePath(img)}
+                                            alt={`Packaging ${idx + 1}`}
+                                            className='w-full h-full object-cover flex'
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
 
@@ -339,6 +428,22 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                 items={enquiryItems}
                 onSetQuantity={handleEnquiryQuantityChange}
             />
+
+            <Modal
+                isOpen={isPackagingModalOpen}
+                onClose={() => setIsPackagingModalOpen(false)}
+                title="Packaging Demonstration"
+                size="lg"
+            >
+                <div className="rounded-10 overflow-hidden bg-dark">
+                    <Image
+                        src="Packaging.mp4"
+                        controls
+                        autoPlay
+                        className="w-full h-400 sm-h-250 object-contain"
+                    />
+                </div>
+            </Modal>
         </Container>
     );
 };

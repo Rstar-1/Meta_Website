@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useLocation, useParams, useSearchParams } from 'react-router-dom';
 
 import Container from '../../../components/common/Container';
 import Button from '../../../components/common/Button';
@@ -17,18 +17,20 @@ const MediaDetailSection = React.memo(() => {
     const navigate = useNavigate();
     const location = useLocation();
     const { id } = useParams();
+    const [searchParams] = useSearchParams();
     const [isMobileCategoryOpen, setIsMobileCategoryOpen] = React.useState(false);
 
     const blogsList = React.useMemo(() => blogData || [], []);
 
     const currentBlog = React.useMemo(() => {
         if (location.state?.blog) return location.state.blog;
-        if (id) {
-            const found = blogsList.find((b) => String(b.id) === String(id) || b.slug === id);
+        const blogParam = id || searchParams.get('id') || searchParams.get('slug');
+        if (blogParam) {
+            const found = blogsList.find((b) => String(b.id) === String(blogParam) || b.slug === blogParam);
             if (found) return found;
         }
         return blogsList[0] || null;
-    }, [location.state, id, blogsList]);
+    }, [location.state, id, searchParams, blogsList]);
 
     const [comments, setComments] = React.useState([]);
 
@@ -42,8 +44,42 @@ const MediaDetailSection = React.memo(() => {
 
     const handleBlogClick = React.useCallback((post) => {
         setIsMobileCategoryOpen(false);
-        navigate('/blog-detail', { state: { blog: post } });
+        navigate(`/blog-detail?id=${post.id || post.slug}`, { state: { blog: post } });
     }, [navigate]);
+
+    const handleShare = React.useCallback((platform) => {
+        const origin = window.location.origin;
+        const blogId = currentBlog?.id || currentBlog?.slug;
+        const shareUrl = `${origin}/blog-detail${blogId ? `?id=${blogId}` : ''}`;
+        const shareTitle = currentBlog?.title || 'Check out this article';
+
+        switch (platform) {
+            case 'Facebook':
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
+                break;
+            case 'WhatsApp':
+                window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`${shareTitle} - ${shareUrl}`)}`, '_blank', 'noopener,noreferrer');
+                break;
+            case 'Instagram':
+                if (navigator.share) {
+                    navigator.share({
+                        title: shareTitle,
+                        url: shareUrl,
+                    }).catch(() => {});
+                } else if (navigator.clipboard) {
+                    navigator.clipboard.writeText(shareUrl).then(() => {
+                        window.open('https://www.instagram.com', '_blank', 'noopener,noreferrer');
+                    }).catch(() => {
+                        window.open('https://www.instagram.com', '_blank', 'noopener,noreferrer');
+                    });
+                } else {
+                    window.open('https://www.instagram.com', '_blank', 'noopener,noreferrer');
+                }
+                break;
+            default:
+                break;
+        }
+    }, [currentBlog]);
 
     if (!currentBlog) return null;
 
@@ -124,10 +160,18 @@ const MediaDetailSection = React.memo(() => {
                                 ))}
                             </div>
 
-                            <div className="flex gap-8 items-center">
-                                {['Facebook', 'WhatsApp'].map((iconName, idx) => (
-                                    <div key={idx} className="cursor-pointer hover:opacity-80">
-                                        <Icon name={iconName} width="15" height="15" />
+                            <div className="flex gap-10 items-center">
+                                {['Facebook', 'WhatsApp', 'Instagram'].map((iconName, idx) => (
+                                    <div
+                                        key={idx}
+                                        onClick={() => handleShare(iconName)}
+                                        className="cursor-pointer hover:opacity-80 flex items-center justify-center p-4 transition-all"
+                                        title={`Share on ${iconName}`}
+                                        role="button"
+                                        tabIndex={0}
+                                        onKeyDown={(e) => e.key === 'Enter' && handleShare(iconName)}
+                                    >
+                                        <Icon name={iconName} width="16" height="16" />
                                     </div>
                                 ))}
                             </div>
@@ -178,7 +222,6 @@ const MediaDetailSection = React.memo(() => {
                     </div>
                 </div>
 
-                {/* Mobile Category Sidebar Modal */}
                 <Modal
                     type="sidebar"
                     placement="left"
