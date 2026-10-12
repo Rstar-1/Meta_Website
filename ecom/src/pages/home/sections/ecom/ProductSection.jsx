@@ -34,17 +34,16 @@ const ProductSection = () => {
                 version="v2"
                 tag="SPECIAL OFFERS FOR YOU"
                 title="FEATURED PRODUCTS & POPULAR DESIGNS"
-                actionText="SHOP ALL PRODUCTS"
-                actionLink="/products"
             />
 
             <SlideLayout
                 items={firstRowProducts}
                 className='py-30'
+                version='btnslide'
                 renderItem={(item) => (
                     <CardLayout
                         key={item.id}
-                        version="product"
+                        version="product2"
                         item={item}
                         onClick={() => handleProductClick(item)}
                         onCategoryClick={handleCategoryClick}
@@ -55,10 +54,11 @@ const ProductSection = () => {
             <SlideLayout
                 items={secondRowProducts}
                 className='py-10'
+                version='btnslide'
                 renderItem={(item) => (
                     <CardLayout
                         key={item.id}
-                        version="product"
+                        version="product2"
                         item={item}
                         onClick={() => handleProductClick(item)}
                         onCategoryClick={handleCategoryClick}
