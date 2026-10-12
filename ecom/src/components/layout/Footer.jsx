@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Container from '../common/Container';
 import Icon from '../common/Icon';
+import Button from '../common/Button';
+import Fields from '../forms/Fields';
 
 import { showToast } from '../common/Toast';
 import { sendEmail } from '../../utils/emailsend';
@@ -76,40 +78,24 @@ const FooterNewsletter = React.memo(
         <h3 className="head-text text-dark font-600">{title}</h3>
         <p className="small-text text-gray font-400 mt-4">{description}</p>
 
-        <form onSubmit={onSubscribe} className="flex items-center gap-12 w-95 sm-w-80 sm-mt-20 mt-30">
-          <input
+        <form onSubmit={onSubscribe} className="flex items-center gap-12 w-90 sm-w-80 mt-20">
+          <Fields
             type="email"
+            version="v2"
             value={email}
             onChange={onEmailChange}
             placeholder={placeholder}
             required
-            className="outline-none"
-            style={{
-              backgroundColor: '#F1F5F9',
-              border: 'none',
-              borderRadius: '30px',
-              padding: '14px 22px',
-              fontSize: '14px',
-              flex: 1,
-              color: '#0F172A',
-            }}
+            className="w-90 border-ec"
           />
-          <button
+          <Button
             type="submit"
-            className="cursor-pointer font-600 transition-all"
-            style={{
-              backgroundColor: '#0F172A',
-              color: '#FFFFFF',
-              borderRadius: '30px',
-              padding: '14px 28px',
-              fontSize: '14px',
-              border: 'none',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-          >
-            {isSubscribed ? 'Subscribed!' : buttonText}
-          </button>
+            text={isSubscribed ? 'Subscribed!' : buttonText}
+            bg="dark"
+            color="white"
+            version="v1"
+            className="rounded-30 font-500"
+          />
         </form>
 
         {d && (
@@ -292,7 +278,10 @@ const Footer = () => {
     });
   }, [features, displayPhone, phoneHref, envEmail, emailHref, envAddress]);
 
-  const handleEmailChange = React.useCallback((e) => setEmail(e.target.value), []);
+  const handleEmailChange = React.useCallback((val) => {
+    const nextVal = typeof val === 'object' && val?.target ? val.target.value : val;
+    setEmail(nextVal ?? '');
+  }, []);
 
   const handleSubscribe = React.useCallback(
     async (e) => {
