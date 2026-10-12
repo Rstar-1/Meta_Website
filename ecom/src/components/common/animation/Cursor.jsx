@@ -17,20 +17,41 @@ const Cursor = () => {
 
         if (checkMobile()) return;
 
+        const isExcluded = (target) => {
+            if (!target) return false;
+            return !!target.closest(
+                'input, textarea, select, [contenteditable="true"], [data-no-cursor]'
+            );
+        };
+
         const onMouseMove = (e) => {
+            if (isExcluded(e.target)) {
+                if (isVisible) setIsVisible(false);
+                return;
+            }
             mouseRef.current = { x: e.clientX, y: e.clientY };
             if (!isVisible) setIsVisible(true);
         };
 
         const onMouseOver = (e) => {
             const target = e.target;
-            if (!target) return;
+            if (!target || isExcluded(target)) {
+                setIsVisible(false);
+                return;
+            }
             const isInteractive = !!target.closest(
-                'a, button, input, select, textarea, label, summary, [role="button"], [role="tab"], .interactive, [class*="cursor-pointer"]'
+                'a, button, label, summary, [role="button"], [role="tab"], .interactive, [class*="cursor-pointer"]'
             );
             if (isHoveredRef.current !== isInteractive) {
                 isHoveredRef.current = isInteractive;
                 setIsHovered(isInteractive);
+            }
+        };
+
+        const onKeyDown = () => {
+            const active = document.activeElement;
+            if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) {
+                setIsVisible(false);
             }
         };
 
@@ -39,6 +60,7 @@ const Cursor = () => {
 
         window.addEventListener('mousemove', onMouseMove, { passive: true });
         window.addEventListener('mouseover', onMouseOver, { passive: true });
+        window.addEventListener('keydown', onKeyDown, { passive: true });
         document.addEventListener('mouseleave', onMouseLeave);
         document.addEventListener('mouseenter', onMouseEnter);
 
@@ -65,11 +87,12 @@ const Cursor = () => {
         return () => {
             window.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('mouseover', onMouseOver);
+            window.removeEventListener('keydown', onKeyDown);
             document.removeEventListener('mouseleave', onMouseLeave);
             document.removeEventListener('mouseenter', onMouseEnter);
             cancelAnimationFrame(rafId);
         };
-    }, []);
+    }, [isVisible]);
 
     if (!isVisible) return null;
 

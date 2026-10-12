@@ -31,7 +31,11 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 ));
 
 const KNOWN_NAMES = {
-    foxecom: 'Ashmita Vinyls'
+    foxecom: 'Ashmita Enterprises',
+    ashmita: 'Ashmita Enterprises',
+    ashmitaenterprises: 'Ashmita Enterprises',
+    ashmitavinyls: 'Ashmita Enterprises',
+    wsi: 'W. S. I (Ashmita Enterprises)'
 };
 
 const Supplier = () => {
@@ -40,7 +44,7 @@ const Supplier = () => {
     const displayName = useMemo(() => {
         return KNOWN_NAMES[brandKey] || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'Ashmita Vinyls');
+            : 'Ashmita Enterprises');
     }, [brandKey, brandName]);
 
     const breadcrumbs = useMemo(() => [
@@ -52,20 +56,20 @@ const Supplier = () => {
     return (
         <>
             <SEO
-                title={`${displayName} — Verified Supplier Profile`}
-                description={`Explore verified supplier profile, catalog, and wholesale pricing for ${displayName}.`}
+                title="Ashmita Enterprises - Exporter & Trader - Retailer of PVC Strip Curtains from Mumbai"
+                description="PVC Strip Curtains, PVC Roll & PVC Sheet Exporter & Trader - Retailer offered by Ashmita Enterprises from Mumbai, Maharashtra, India. GST: 27ABLPY9708M1ZK. Call 07942562287."
                 path={`/supplier/${brandKey}`}
                 breadcrumbs={breadcrumbs}
             />
             <Banner
                 title={displayName}
-                desc="Verified Supplier Profile"
+                desc="Exporter & Trader — Retailer of PVC Strip Curtains from Mumbai, Maharashtra"
                 breadcrumbs={breadcrumbs}
             />
             {supplierSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {
                 const SectionContent = (
                     <Suspense fallback={<SectionFallback minHeight={minHeight} />}>
-                        <Component />
+                        <Component supplierName={displayName} brandKey={brandKey} />
                     </Suspense>
                 );
 

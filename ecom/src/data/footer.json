@@ -32,7 +32,7 @@
     }
   ],
   "newsletter": {
-    "title": "Join Our PVC Newsletter",
+    "title": "Join Us",
     "description": "Subscribe for technical product updates, pricing, and installation guides.",
     "placeholder": "Enter your business email",
     "buttonText": "Subscribe",
@@ -60,21 +60,21 @@
     {
       "title": "PVC Strip Curtains",
       "links": [
-        { "label": "Standard Clear Rolls", "url": "/product" },
-        { "label": "Double Ribbed Strips", "url": "/product" },
-        { "label": "Polar Freezer Strips", "url": "/product" },
-        { "label": "Amber Anti-Insect", "url": "/product" },
-        { "label": "Welding Screen Strips", "url": "/product" }
+        { "label": "Transparent Standard", "url": "/product/1" },
+        { "label": "Transparent Reliable", "url": "/product/3" },
+        { "label": "Transparent Supreme", "url": "/product/9" },
+        { "label": "Crystal Clear", "url": "/product/11" },
+        { "label": "Polar Freezer", "url": "/product/13" }
       ]
     },
     {
-      "title": "Hardware & Systems",
+      "title": "Brackets",
       "links": [
-        { "label": "SS 304 Hook Tracks", "url": "/product" },
-        { "label": "GI Sliding Channels", "url": "/product" },
-        { "label": "Hanging Clamps & Clips", "url": "/product" },
-        { "label": "Anti-Static ESD Rolls", "url": "/product" },
-        { "label": "Opaque Privacy Strips", "url": "/product" }
+        { "label": "MS Brackets (White)", "url": "/product/89" },
+        { "label": "MS Brackets (Grey)", "url": "/product/91" },
+        { "label": "SS 202 Mounting Brackets", "url": "/product/93" },
+        { "label": "SS 304 Mounting Brackets", "url": "/product/95" },
+        { "label": "Galvanised Magnetic Track", "url": "/product/97" }
       ]
     }
   ],

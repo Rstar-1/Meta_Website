@@ -2,10 +2,9 @@
   {
     "id": 101,
     "isBanner": true,
-    "title": "GET FLAT DISCOUNT 10%",
-    "subtitle": "USE CODE: SAVE10",
-    "buttonText": "Explore Range",
-    "image": "Offers.jpg",
+    "title": "SMART PVC. BETTER LIVING.",
+    "subtitle": "DESIGNED TO IMPRESS",
+    "image": "blog/Blog10.jpg",
     "brand": "Others"
   },
   {
@@ -23,15 +22,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide1.png",
+    "images": ["sides/slide1.png", "sides/slide2.png"],
     "inStock": true,
     "trending": true,
     "stockCount": 50,
@@ -129,15 +122,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide2.png",
+    "images": ["sides/slide1.png", "sides/slide3.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 53,
@@ -235,15 +222,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide3.png",
+    "images": ["sides/slide4.png", "sides/slide2.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 56,
@@ -341,15 +322,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide4.png",
+    "images": ["sides/slide3.png", "sides/slide2.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 59,
@@ -447,15 +422,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide5.png",
+    "images": ["sides/slide1.png", "sides/slide4.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 62,
@@ -553,15 +522,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide6.png",
+    "images": ["sides/slide1.png", "sides/slide2.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 65,
@@ -659,15 +622,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide3.png",
+    "images": ["sides/slide1.png", "sides/slide2.png"],
     "inStock": true,
     "trending": true,
     "stockCount": 68,
@@ -765,15 +722,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide1.png",
+    "images": ["sides/slide1.png", "sides/slide2.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 71,
@@ -871,15 +822,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide2.png",
+    "images": ["sides/slide4.png", "sides/slide2.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 74,
@@ -977,15 +922,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide3.png",
+    "images": ["sides/slide5.png", "sides/slide6.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 77,
@@ -1083,15 +1022,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide2.png",
+    "images": ["sides/slide1.png", "sides/slide5.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 80,
@@ -1189,15 +1122,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide4.png",
+    "images": ["sides/slide1.png", "sides/slide4.png"],
     "inStock": true,
     "trending": false,
     "stockCount": 83,
@@ -1295,15 +1222,9 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide6.png",
+    "images": ["sides/slide1.png", "sides/slide2.png"],
     "inStock": true,
     "trending": true,
     "stockCount": 86,
@@ -1401,9 +1322,7 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1507,9 +1426,7 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1613,9 +1530,7 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1719,9 +1634,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#fde047"
-    ],
+    "colors": ["#fde047"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1825,9 +1738,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#fde047"
-    ],
+    "colors": ["#fde047"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1931,15 +1842,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
-    "image": "product/Product4.jpg",
-    "images": [
-      "product/Product4.jpg",
-      "product/Product4.jpg",
-      "product/Product4.jpg"
-    ],
+    "colors": ["#f8fafc"],
+    "image": "sides/slide2.png",
+    "images": ["sides/slide1.png", "sides/slide2.png"],
     "inStock": true,
     "trending": true,
     "stockCount": 64,
@@ -2037,9 +1942,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -2143,9 +2046,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2249,9 +2150,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2355,9 +2254,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2461,9 +2358,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2567,15 +2462,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#0284c7"
-    ],
-    "image": "product/Product1.jpg",
-    "images": [
-      "product/Product1.jpg",
-      "product/Product1.jpg",
-      "product/Product1.jpg"
-    ],
+    "colors": ["#0284c7"],
+    "image": "sides/slide3.png",
+    "images": ["sides/slide1.png", "sides/slide2.png"],
     "inStock": true,
     "trending": true,
     "stockCount": 82,
@@ -2673,9 +2562,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#0284c7"
-    ],
+    "colors": ["#0284c7"],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -2779,9 +2666,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -2885,9 +2770,7 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -2991,9 +2874,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -3097,9 +2978,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -3203,9 +3082,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -3309,9 +3186,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -3415,9 +3290,7 @@
       "text": "LKY",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3521,9 +3394,7 @@
       "text": "LKY",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3627,9 +3498,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3733,9 +3602,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3839,9 +3706,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3945,9 +3810,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4051,9 +3914,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4157,9 +4018,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4263,9 +4122,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4369,9 +4226,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4475,9 +4330,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4581,9 +4434,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4687,9 +4538,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4793,9 +4642,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4899,9 +4746,7 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5005,9 +4850,7 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5111,9 +4954,7 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5217,9 +5058,7 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5323,9 +5162,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#fde047"
-    ],
+    "colors": ["#fde047"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5429,9 +5266,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#fde047"
-    ],
+    "colors": ["#fde047"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5535,9 +5370,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5641,9 +5474,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5747,9 +5578,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -5853,9 +5682,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -5959,9 +5786,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -6065,9 +5890,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -6171,9 +5994,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#0284c7"
-    ],
+    "colors": ["#0284c7"],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -6277,9 +6098,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#0284c7"
-    ],
+    "colors": ["#0284c7"],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -6383,9 +6202,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -6489,9 +6306,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -6595,9 +6410,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -6701,9 +6514,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -6807,9 +6618,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -6913,9 +6722,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -7019,9 +6826,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7125,9 +6930,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7231,9 +7034,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7337,9 +7138,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7443,9 +7242,7 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7549,9 +7346,7 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7655,9 +7450,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7761,9 +7554,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7867,9 +7658,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -7973,9 +7762,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -8079,9 +7866,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -8185,9 +7970,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ef4444"
-    ],
+    "colors": ["#ef4444"],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -8291,9 +8074,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#0284c7"
-    ],
+    "colors": ["#0284c7"],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -8397,9 +8178,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#0284c7"
-    ],
+    "colors": ["#0284c7"],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -8503,9 +8282,7 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -8609,9 +8386,7 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -8715,9 +8490,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -8821,9 +8594,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -8927,9 +8698,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -9033,9 +8802,7 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#f59e0b"
-    ],
+    "colors": ["#f59e0b"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -9140,9 +8907,7 @@
       "text": "Magnetic",
       "color": "#059669"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -9247,9 +9012,7 @@
       "text": "Magnetic",
       "color": "#059669"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -9353,9 +9116,7 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9427,9 +9188,7 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9501,9 +9260,7 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": [
-      "#64748b"
-    ],
+    "colors": ["#64748b"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9575,9 +9332,7 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": [
-      "#64748b"
-    ],
+    "colors": ["#64748b"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9649,9 +9404,7 @@
       "text": "SS 202",
       "color": "#0284c7"
     },
-    "colors": [
-      "#94a3b8"
-    ],
+    "colors": ["#94a3b8"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9723,9 +9476,7 @@
       "text": "SS 202",
       "color": "#0284c7"
     },
-    "colors": [
-      "#94a3b8"
-    ],
+    "colors": ["#94a3b8"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9797,9 +9548,7 @@
       "text": "SS 304",
       "color": "#059669"
     },
-    "colors": [
-      "#94a3b8"
-    ],
+    "colors": ["#94a3b8"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9871,9 +9620,7 @@
       "text": "SS 304",
       "color": "#059669"
     },
-    "colors": [
-      "#94a3b8"
-    ],
+    "colors": ["#94a3b8"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9945,9 +9692,7 @@
       "text": "Magnetic Track",
       "color": "#2563eb"
     },
-    "colors": [
-      "#64748b"
-    ],
+    "colors": ["#64748b"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -10019,9 +9764,7 @@
       "text": "Magnetic Track",
       "color": "#2563eb"
     },
-    "colors": [
-      "#64748b"
-    ],
+    "colors": ["#64748b"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -10093,9 +9836,7 @@
       "text": "Bottom Holder",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -10167,9 +9908,7 @@
       "text": "Bottom Holder",
       "color": "#f59e0b"
     },
-    "colors": [
-      "#1e293b"
-    ],
+    "colors": ["#1e293b"],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",

@@ -286,7 +286,6 @@ export const ProductCard = React.memo(({
     if (item.isBanner) {
         return (
             <div
-                onClick={() => handleCardClick?.(item)}
                 className="overflow-hidden rounded-5 relative cursor-pointer sm-h-350"
                 style={{
                     ...(!isFluid ? { minWidth, maxWidth } : {}),
@@ -301,7 +300,6 @@ export const ProductCard = React.memo(({
                 <div className="absolute bottom-0 left-0 px-16 py-20">
                     <p className="text-primary font-500 para-text">{item.subtitle}</p>
                     <h3 className="text-white font-600 title-text mt-4">{item.title}</h3>
-                    <Button text={item.buttonText} version="v2" bg="white" color="dark" className="rounded-30 font-500 mt-12" />
                 </div>
             </div>
         );
@@ -309,12 +307,12 @@ export const ProductCard = React.memo(({
 
     const badge = item.badge || item.badges?.[0];
     const price = typeof item.price === 'number'
-        ? `$${item.price.toFixed(2)}`
-        : (item.priceFormatted || `$${item.price || 0}`);
+        ? `₹${item.price.toFixed(2)}`
+        : (item.priceFormatted || `₹${item.price || 0}`);
     const originalPrice = item.originalPrice
         ? (typeof item.originalPrice === 'number'
-            ? `$${item.originalPrice.toFixed(2)}`
-            : (item.originalPriceFormatted || `$${item.originalPrice}`))
+            ? `₹${item.originalPrice.toFixed(2)}`
+            : (item.originalPriceFormatted || `₹${item.originalPrice}`))
         : null;
 
     return (

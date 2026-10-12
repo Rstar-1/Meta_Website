@@ -5,7 +5,14 @@ export default defineConfig({
   envPrefix: ["VITE_", "ECOM", "PRIVACY"],
   plugins: [react()],
   server: {
-    host: true,
+    host: "0.0.0.0",
+    port: 5173,
+    strictPort: true,
+    allowedHosts: true,
+    cors: true,
+    hmr: {
+      clientPort: 5173,
+    },
   },
   build: {
     sourcemap: false,

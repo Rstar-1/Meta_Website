@@ -14,6 +14,7 @@ import EnquiryModal from "./generic/Enquiy";
 import { header, configData, productsData, categoriesData } from "../../utils/apiData";
 import { resolveImagePath } from "../../utils/imageResolver";
 import { useCart } from "../../feature/slice/cartSlice";
+import { ALL_LANGUAGES, changeWebsiteLanguage, getSavedLanguage } from "../../utils/i18n";
 
 const buildDynamicMegaMenu = () => {
   const menu = {};
@@ -215,6 +216,18 @@ const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
 const HeaderNavigation = React.memo(
   ({ pathname, hoveredNav, activeMegaMenu, isHeaderWhite, onNavMouseEnter, onNavMouseLeave }) => {
     const isMegaOpen = Boolean(activeMegaMenu);
+    const [isLangOpen, setIsLangOpen] = React.useState(false);
+    const langTriggerRef = React.useRef(null);
+
+    const currentCode = getSavedLanguage();
+    const currentLang =
+      ALL_LANGUAGES.find((l) => l.code === currentCode) || ALL_LANGUAGES[0];
+
+    const navBaseColor = configData?.Header?.HeaderSticky
+      ? isHeaderWhite
+        ? "var(--dark)"
+        : "var(--white)"
+      : "var(--dark)";
 
     return (
       <div className={`${NavigationClass} sm-hidden md-hidden flex items-center h-full gap-4`}>
@@ -226,11 +239,7 @@ const HeaderNavigation = React.memo(
           const linkColor =
             isActive || isHovered || isItemMegaActive
               ? "var(--primary)"
-              : configData?.Header?.HeaderSticky
-                ? isHeaderWhite
-                  ? "var(--dark)"
-                  : "var(--white)"
-                : "var(--dark)";
+              : navBaseColor;
 
           return (
             <div
@@ -269,6 +278,68 @@ const HeaderNavigation = React.memo(
             </div>
           );
         })}
+
+        {/* 🌐 Global Language Selector Dropdown */}
+        <div className="relative flex items-center h-full">
+          <div
+            ref={langTriggerRef}
+            onClick={() => setIsLangOpen((prev) => !prev)}
+            className="font-500 para-text px-14 cursor-pointer flex items-center gap-6 select-none"
+            style={{ color: isLangOpen ? "var(--primary)" : navBaseColor }}
+            title="Language"
+          >
+            <Icon name="Globe" width="16" height="16" stroke={isLangOpen ? "var(--primary)" : navBaseColor} />
+            <span>{currentLang.nativeName}</span>
+            <Icon
+              name="ChevronDown"
+              width="14"
+              height="14"
+              stroke={isLangOpen ? "var(--primary)" : navBaseColor}
+              style={{
+                transition: "transform 0.2s ease",
+                transform: isLangOpen ? "rotate(180deg)" : "rotate(0deg)",
+              }}
+            />
+          </div>
+
+          <Dropdown
+            isOpen={isLangOpen}
+            onClose={() => setIsLangOpen(false)}
+            triggerRef={langTriggerRef}
+            align="right"
+            minWidth="180px"
+            style={{ maxHeight: "300px", overflowY: "auto" }}
+            className="rounded-5 b-shadow border-ec py-4"
+          >
+            <div className="grid-cols-1">
+              {ALL_LANGUAGES.map((lang) => {
+                const isSelected = currentLang.code === lang.code;
+                return (
+                  <div
+                    key={lang.code}
+                    onClick={() => {
+                      changeWebsiteLanguage(lang.code);
+                      setIsLangOpen(false);
+                    }}
+                    className={`px-14 py-8 cursor-pointer flex items-center justify-between transition-colors ${
+                      isSelected ? "bg-forth text-primary font-600" : "text-dark hover:bg-forth"
+                    }`}
+                  >
+                    <div className="flex items-center gap-8">
+                      <span className="mini-text font-600 px-4 py-2 rounded-3 bg-forth text-gray">
+                        {lang.flag}
+                      </span>
+                      <span className="small-text">{lang.nativeName}</span>
+                    </div>
+                    {isSelected && (
+                      <Icon name="Check" width="14" height="14" stroke="var(--primary)" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </Dropdown>
+        </div>
       </div>
     );
   }
@@ -557,8 +628,6 @@ const CartSidebar = React.memo(
     );
   }
 );
-
-
 
 const HeaderActions = React.memo(
   ({

@@ -6,7 +6,7 @@ import Icon from '../common/Icon';
 
 import { showToast } from '../common/Toast';
 import { sendEmail } from '../../utils/emailsend';
-import { footer, footerData, configData } from '../../utils/apiData';
+import { footer, footerData, configData, productsData } from '../../utils/apiData';
 
 const footerConfig = configData?.Footer?.[0] || configData?.Footer || {};
 const isVisible = (val) => val !== false;
@@ -72,7 +72,7 @@ const FooterNewsletter = React.memo(
     const { title, description, placeholder, buttonText, disclaimer: d } = newsletter;
 
     return (
-      <div className="w-45 sm-w-full">
+      <div className="w-40 sm-w-full">
         <h3 className="head-text text-dark font-600">{title}</h3>
         <p className="small-text text-gray font-400 mt-4">{description}</p>
 
@@ -139,7 +139,7 @@ const FooterNavigation = React.memo(({ columns }) => {
   if (!columns?.length) return null;
 
   return (
-    <div className="w-45 sm-w-full grid-cols-3 sm-pl-1 gap-12 sm-mt-12">
+    <div className="w-55 sm-w-full grid-cols-3 sm-pl-1 gap-14 sm-mt-12">
       {columns.map((col, cIdx) => (
         <div key={col.title || cIdx}>
           <h4 className="mid-text text-dark font-600">{col.title}</h4>
@@ -147,11 +147,19 @@ const FooterNavigation = React.memo(({ columns }) => {
             {col.links.map((link, lIdx) => (
               <li key={link.label || lIdx}>
                 {link.url?.startsWith('/') ? (
-                  <Link to={link.url} className="text-gray font-400 small-text hover:underline">
+                  <Link
+                    to={link.url}
+                    title={link.fullTitle || link.label}
+                    className="text-gray font-400 small-text line-clamp1 hover:underline"
+                  >
                     {link.label}
                   </Link>
                 ) : (
-                  <a href={link.url || '#'} className="text-gray font-400 small-text hover:underline">
+                  <a
+                    href={link.url || '#'}
+                    title={link.fullTitle || link.label}
+                    className="text-gray font-400 small-text line-clamp1 hover:underline"
+                  >
                     {link.label}
                   </a>
                 )}
@@ -310,6 +318,73 @@ const Footer = () => {
     [email]
   );
 
+  const resolvedColumns = React.useMemo(() => {
+    const realProducts = (productsData || []).filter((p) => !p.isBanner);
+
+    const formatBracketName = (name) => {
+      if (!name) return '';
+      return name
+        .replace(/^Mounting Brackets \(MS\) - White/i, 'MS Brackets (White)')
+        .replace(/^Mounting Brackets \(MS\) - Grey/i, 'MS Brackets (Grey)')
+        .replace(/^Stainless Steel 202 \(SS202\) Mounting Brackets/i, 'SS 202 Mounting Brackets')
+        .replace(/^Stainless Steel 304 \(SS304\) Mounting Brackets/i, 'SS 304 Mounting Brackets')
+        .replace(/^Galvanised Steel Magnetic Track/i, 'Galvanised Magnetic Track')
+        .replace(/^Magnetic Strip Curtain Plastic Bottom/i, 'Magnetic Plastic Bottom');
+    };
+
+    const getTopProducts = (filterFn, limit = 5, isBracket = false) => {
+      const list = [];
+      const seen = new Set();
+      for (const p of realProducts) {
+        if (filterFn(p) && !seen.has(p.name)) {
+          seen.add(p.name);
+          list.push({
+            label: isBracket ? formatBracketName(p.name) : p.name,
+            fullTitle: p.name,
+            url: `/product/${p.id}`
+          });
+          if (list.length === limit) break;
+        }
+      }
+      return list;
+    };
+
+    const companyCol = columns?.find((c) => c.title?.toLowerCase() === 'company') || {
+      title: 'Company',
+      links: [
+        { label: 'About Us', url: '/about' },
+        { label: 'All Products', url: '/product' },
+        { label: 'Applications', url: '/supplier' },
+        { label: 'Technical Guides', url: '/blog' },
+        { label: 'Contact & Enquiry', url: '/connect' }
+      ]
+    };
+
+    const pvcProducts = getTopProducts(
+      (p) => p.categoryId === 1 || p.category?.toLowerCase().includes('curtain'),
+      5,
+      false
+    );
+
+    const bracketProducts = getTopProducts(
+      (p) => p.categoryId === 3 || p.category?.toLowerCase() === 'brackets' || p.category?.toLowerCase().includes('bracket'),
+      5,
+      true
+    );
+
+    return [
+      companyCol,
+      {
+        title: 'PVC Strip Curtains',
+        links: pvcProducts.length > 0 ? pvcProducts : (columns?.[1]?.links || []).slice(0, 5)
+      },
+      {
+        title: 'Brackets',
+        links: bracketProducts.length > 0 ? bracketProducts : (columns?.[2]?.links || []).slice(0, 5)
+      }
+    ];
+  }, [columns]);
+
   return (
     <Container style={{ background: 'var(--forth)' }}>
       <div className="py-30 w-full">
@@ -323,7 +398,7 @@ const Footer = () => {
             onEmailChange={handleEmailChange}
             onSubscribe={handleSubscribe}
           />
-          <FooterNavigation columns={columns} />
+          <FooterNavigation columns={resolvedColumns} />
         </div>
 
         <FooterBottomBar bottom={bottom} />

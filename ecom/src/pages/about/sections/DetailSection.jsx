@@ -2,25 +2,25 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Image from '../../../components/common/Image';
-import Button from '../../../components/common/Button';
 import Badge from '../../../components/common/Badge';
+
 import { resolveImagePath } from '../../../utils/imageResolver';
 
 const thumbnails = [
     {
         id: 1,
         title: 'Standard Clear PVC Roll',
-        image: resolveImagePath('Product4.jpg')
+        image: resolveImagePath('sides/insta1.png')
     },
     {
         id: 2,
         title: 'Polar Anti-Insect Amber Roll',
-        image: resolveImagePath('Product5.jpg')
+        image: resolveImagePath('sides/insta2.png')
     },
     {
         id: 3,
         title: 'Heavy Duty Ribbed Strip',
-        image: resolveImagePath('Product3.jpg')
+        image: resolveImagePath('sides/insta3.png')
     }
 ];
 
@@ -49,35 +49,26 @@ const DetailSection = React.memo(() => {
                         We are a results-driven team helping businesses unlock efficiency, scale operations, and improve customer experience.
                     </p>
 
-                    <div className="grid-cols-3 gap-12 mt-20 w-90 sm-w-full">
+                    <div className="grid-cols-3 gap-12 mt-30 w-95">
                         {thumbnails.map((item) => (
                             <div
                                 key={item.id}
-                                className='w-full h-200 rounded-5 bg-forth overflow-hidden'
+                                className='w-full h-250 rounded-5 bg-forth overflow-hidden'
                                 onClick={() => navigate('/products')}
                             >
                                 <Image
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-contain flex"
+                                    className="w-full h-full object-cover flex"
                                 />
                             </div>
                         ))}
                     </div>
-
-                    <Button
-                        text="Shop Collection"
-                        version="v1"
-                        bg="dark"
-                        color="white"
-                        className="rounded-30 font-500 mt-28"
-                        onClick={() => navigate('/products')}
-                    />
                 </div>
 
                 <div className="w-full h-550 sm-h-350 rounded-10 overflow-hidden">
                     <Image
-                        src={resolveImagePath('blog/Blog2.jpg')}
+                        src={resolveImagePath('blog/Blog4.jpg')}
                         alt="Collection Showcase"
                         className="w-full h-full object-cover flex"
                     />
