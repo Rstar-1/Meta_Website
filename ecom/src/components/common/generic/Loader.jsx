@@ -53,7 +53,7 @@ const Loader = React.memo(() => {
           letterSpacing: "0.3em",
         }}
       >
-        ASHMITA
+        VINYLS
       </p>
 
       <style>
