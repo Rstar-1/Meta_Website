@@ -24,7 +24,7 @@ const Loader = React.memo(() => {
             width: "4rem",
             height: "4rem",
             border: "2px solid rgba(255, 107, 0, 0.1)",
-            borderTop: "2px solid #ff6b00",
+            borderTop: "2px solid var(--primary)",
             borderRadius: "50%",
             animation: "spin 1s cubic-bezier(0.16, 1, 0.3, 1) infinite",
           }}
@@ -37,11 +37,11 @@ const Loader = React.memo(() => {
             transform: "translate(-50%, -50%)",
             fontSize: "10px",
             fontWeight: "900",
-            color: "#ff6b00",
+            color: "var(--primary)",
             letterSpacing: "0.2em",
           }}
         >
-          IOM
+          ASH
         </div>
       </div>
       <p
@@ -53,7 +53,7 @@ const Loader = React.memo(() => {
           letterSpacing: "0.3em",
         }}
       >
-        KAIAOM
+        ASHMITA
       </p>
 
       <style>

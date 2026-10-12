@@ -74,7 +74,7 @@ const OfferSection = () => {
                         />
                         <div className='absolute bottom-0 left-0 w-full text-center'>
                             <div className='p-14 sm-p-5'>
-                                <h4 className='mid-text text-dark font-600 '>
+                                <h4 className='headmini-text text-dark font-600 '>
                                     {item.title}
                                 </h4>
                                 <p className='mini-text text-gray font-400 mt-2'>

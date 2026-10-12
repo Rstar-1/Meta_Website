@@ -76,7 +76,7 @@ const FooterNewsletter = React.memo(
         <h3 className="head-text text-dark font-600">{title}</h3>
         <p className="small-text text-gray font-400 mt-4">{description}</p>
 
-        <form onSubmit={onSubscribe} className="flex items-center gap-12 w-90 sm-w-full sm-mt-20 mt-30">
+        <form onSubmit={onSubscribe} className="flex items-center gap-12 w-95 sm-w-80 sm-mt-20 mt-30">
           <input
             type="email"
             value={email}
@@ -91,7 +91,6 @@ const FooterNewsletter = React.memo(
               padding: '14px 22px',
               fontSize: '14px',
               flex: 1,
-              minWidth: '220px',
               color: '#0F172A',
             }}
           />

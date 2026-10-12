@@ -16,6 +16,16 @@ import { resolveImagePath } from "../../utils/imageResolver";
 import { useCart } from "../../feature/slice/cartSlice";
 import { ALL_LANGUAGES, changeWebsiteLanguage, getSavedLanguage } from "../../utils/i18n";
 
+const formatMegaProduct = (p) => ({
+  id: p.id,
+  title: p.name,
+  name: p.name,
+  image: resolveImagePath(p.image),
+  href: `/product/${p.id}`,
+  badge: p.badge?.text,
+  price: p.priceFormatted || (p.price ? `₹${p.price}` : null),
+});
+
 const buildDynamicMegaMenu = () => {
   const menu = {};
   const realProducts = (productsData || []).filter((p) => !p.isBanner);
@@ -27,8 +37,6 @@ const buildDynamicMegaMenu = () => {
     );
 
     const subCatMap = new Map();
-
-    // Pre-register exactly up to 4 defined subcategories from category.json
     const definedSubCategories = (cat.subCategories && cat.subCategories.length > 0)
       ? cat.subCategories.slice(0, 4)
       : [];
@@ -36,21 +44,14 @@ const buildDynamicMegaMenu = () => {
     definedSubCategories.forEach((sub) => {
       const subId = typeof sub === "string" ? sub.toLowerCase().replace(/[^a-z0-9]/g, "-") : String(sub.id);
       const subName = typeof sub === "string" ? sub : sub.name;
-      subCatMap.set(subId, {
-        id: subId,
-        name: subName,
-        badge: null,
-        items: [],
-      });
+      subCatMap.set(subId, { id: subId, name: subName, badge: null, items: [] });
     });
 
-    // Attach matching products to defined subcategories (max 4 per subcategory)
     catProducts.forEach((p) => {
       const pSubId = p.subCategoryId ? String(p.subCategoryId).toLowerCase() : "";
       const pSubName = (p.subCategory || "").toLowerCase();
       const pName = (p.name || "").toLowerCase();
 
-      // Find matching registered subcategory
       let targetSubId = null;
       for (const [subId, subData] of subCatMap.entries()) {
         const sName = subData.name.toLowerCase();
@@ -66,58 +67,34 @@ const buildDynamicMegaMenu = () => {
         }
       }
 
-      // If no pre-registered subcategories existed, allow registering up to 4
       if (!targetSubId && subCatMap.size < 4) {
-        const newSubId = p.subCategoryId || (p.subCategory ? p.subCategory.toLowerCase().replace(/[^a-z0-9]/g, "-") : `sub-${subCatMap.size + 1}`);
-        const newSubName = p.subCategory || p.name;
-        subCatMap.set(newSubId, {
-          id: newSubId,
-          name: newSubName,
+        targetSubId = p.subCategoryId || (p.subCategory ? p.subCategory.toLowerCase().replace(/[^a-z0-9]/g, "-") : `sub-${subCatMap.size + 1}`);
+        subCatMap.set(targetSubId, {
+          id: targetSubId,
+          name: p.subCategory || p.name,
           badge: p.badge?.text === "Coming Soon" ? "Coming Soon" : p.badge?.text || null,
           items: [],
         });
-        targetSubId = newSubId;
       }
 
       if (targetSubId && subCatMap.has(targetSubId)) {
         const subObj = subCatMap.get(targetSubId);
         if (subObj.items.length < 4) {
-          subObj.items.push({
-            id: p.id,
-            title: p.name,
-            name: p.name,
-            image: resolveImagePath(p.image),
-            href: `/product/${p.id}`,
-            badge: p.badge?.text,
-            price: p.priceFormatted || (p.price ? `₹${p.price}` : null),
-          });
+          subObj.items.push(formatMegaProduct(p));
         }
       }
     });
 
-    // Fallback: If any subcategory has no direct products, fill up to 4 from category products
     const subCategoriesList = Array.from(subCatMap.values()).slice(0, 4);
     subCategoriesList.forEach((sub) => {
-      if (sub.items.length === 0) {
-        sub.items = catProducts.slice(0, 4).map((p) => ({
-          id: p.id,
-          title: p.name,
-          name: p.name,
-          image: resolveImagePath(p.image),
-          href: `/product/${p.id}`,
-          badge: p.badge?.text,
-          price: p.priceFormatted || (p.price ? `₹${p.price}` : null),
-        }));
+      if (!sub.items.length) {
+        sub.items = catProducts.slice(0, 4).map(formatMegaProduct);
       } else if (sub.items.length > 4) {
         sub.items = sub.items.slice(0, 4);
       }
     });
 
-    menu[key] = {
-      id: cat.id,
-      name: cat.name,
-      categories: subCategoriesList,
-    };
+    menu[key] = { id: cat.id, name: cat.name, categories: subCategoriesList };
   });
 
   return menu;
@@ -137,6 +114,7 @@ const categoryMenuItems = [
 ];
 
 const headerType = configData?.Header?.HeaderType ?? configData?.Header?.[0]?.HeaderType ?? 1;
+const isStickyConfig = Boolean(configData?.Header?.HeaderSticky);
 
 const LogoClass = {
   1: "w-25 sm-w-85",
@@ -164,9 +142,15 @@ const CategoryClass = {
   2: "justify-start",
 }[configData?.Header?.HeaderCategory] || "justify-between";
 
+const getNavColor = (isHeaderWhite, isActive = false) => {
+  if (isActive) return "var(--primary)";
+  return !isStickyConfig || isHeaderWhite ? "var(--dark)" : "var(--white)";
+};
+
+const getIconColor = (isHeaderWhite) => (!isStickyConfig || isHeaderWhite ? "#161616" : "#FFFFFF");
+
 const HeaderTopBar = React.memo(() => {
   if (configData?.Header?.[0]?.HeaderTopBar === false) return null;
-
   const { location: loc, email, timing } = header.topBar || {};
 
   return (
@@ -194,227 +178,231 @@ const HeaderTopBar = React.memo(() => {
     </Container>
   );
 });
+HeaderTopBar.displayName = "HeaderTopBar";
 
-const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
-  const logoSrc =
-    !configData?.Header?.HeaderSticky || isHeaderWhite
-      ? "sobo_logo.png"
-      : "sobo_white.png";
+const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => (
+  <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
+    <Image
+      src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "sobo_logo.png" : "sobo_white.png")}
+      alt="Infitech Logo"
+      className="object-contain w-90 sm-w-50"
+      style={{ height: "60px" }}
+    />
+  </NavLink>
+));
+HeaderLogo.displayName = "HeaderLogo";
+
+const LanguageDropdown = React.memo(({ isHeaderWhite, align = "right", className = "", showFlagOnMobile = true }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const triggerRef = React.useRef(null);
+  const currentCode = getSavedLanguage();
+  const currentLang = ALL_LANGUAGES.find((l) => l.code === currentCode) || ALL_LANGUAGES[0];
+  const color = isOpen ? "var(--primary)" : getNavColor(isHeaderWhite, false);
 
   return (
-    <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
-      <Image
-        src={resolveImagePath(logoSrc)}
-        alt="Infitech Logo"
-        className="object-contain w-90 sm-w-50"
-        style={{ height: "60px" }}
-      />
-    </NavLink>
+    <div className={`relative flex items-center ${className}`}>
+      <div
+        ref={triggerRef}
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="font-500 para-text px-10 sm-px-4 cursor-pointer flex items-center gap-6 select-none"
+        style={{ color }}
+        title="Language"
+      >
+        <Icon name="Globe" width="16" height="16" stroke={color} />
+        {showFlagOnMobile ? (
+          <>
+            <span className="sm-hidden">{currentLang.nativeName}</span>
+            <span className="hidden sm-inline mini-text font-600 uppercase px-4 py-2 rounded-3 bg-forth text-gray">
+              {currentLang.flag}
+            </span>
+          </>
+        ) : (
+          <span>{currentLang.nativeName}</span>
+        )}
+        <Icon
+          name="ChevronDown"
+          width="13"
+          height="13"
+          stroke={color}
+          style={{
+            transition: "transform 0.2s ease",
+            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+          }}
+        />
+      </div>
+
+      <Dropdown
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+        align={align}
+        minWidth="180px"
+        style={{ maxHeight: "300px", overflowY: "auto" }}
+        className="rounded-5 b-shadow border-ec py-4"
+      >
+        <div className="grid-cols-1">
+          {ALL_LANGUAGES.map((lang) => {
+            const isSelected = currentLang.code === lang.code;
+            return (
+              <div
+                key={lang.code}
+                onClick={() => {
+                  changeWebsiteLanguage(lang.code);
+                  setIsOpen(false);
+                }}
+                className={`px-14 py-8 cursor-pointer flex items-center justify-between transition-colors ${isSelected ? "bg-forth text-primary font-600" : "text-dark hover:bg-forth"
+                  }`}
+              >
+                <div className="flex items-center gap-8">
+                  <span className="mini-text font-600 px-4 py-2 rounded-3 bg-forth text-gray">{lang.flag}</span>
+                  <span className="small-text">{lang.nativeName}</span>
+                </div>
+                {isSelected && <Icon name="Check" width="14" height="14" stroke="var(--primary)" />}
+              </div>
+            );
+          })}
+        </div>
+      </Dropdown>
+    </div>
   );
 });
+LanguageDropdown.displayName = "LanguageDropdown";
 
-const HeaderNavigation = React.memo(
-  ({ pathname, hoveredNav, activeMegaMenu, isHeaderWhite, onNavMouseEnter, onNavMouseLeave }) => {
-    const isMegaOpen = Boolean(activeMegaMenu);
-    const [isLangOpen, setIsLangOpen] = React.useState(false);
-    const langTriggerRef = React.useRef(null);
-
-    const currentCode = getSavedLanguage();
-    const currentLang =
-      ALL_LANGUAGES.find((l) => l.code === currentCode) || ALL_LANGUAGES[0];
-
-    const navBaseColor = configData?.Header?.HeaderSticky
-      ? isHeaderWhite
-        ? "var(--dark)"
-        : "var(--white)"
-      : "var(--dark)";
+const NavItem = React.memo(
+  ({
+    item,
+    pathname,
+    hoveredNav,
+    activeMegaMenu,
+    isHeaderWhite,
+    onMouseEnter,
+    onMouseLeave,
+    textClass = "para-text px-16",
+    iconSize = "18",
+    isBottom = false,
+  }) => {
+    const isActive = pathname === item.href;
+    const isHovered = hoveredNav === (item.label || item.href);
+    const isItemMegaActive = Boolean(activeMegaMenu) && item.megaMenuKey && item.megaMenuKey === activeMegaMenu;
+    const linkColor = getNavColor(isHeaderWhite, isActive || isHovered || isItemMegaActive);
 
     return (
-      <div className={`${NavigationClass} sm-hidden md-hidden flex items-center h-full gap-4`}>
-        {header.navLinks?.map((item) => {
-          const isActive = pathname === item.href;
-          const isHovered = hoveredNav === (item.label || item.href);
-          const isItemMegaActive = isMegaOpen && item.megaMenuKey === activeMegaMenu;
-
-          const linkColor =
-            isActive || isHovered || isItemMegaActive
-              ? "var(--primary)"
-              : navBaseColor;
-
-          return (
-            <div
-              key={item.href}
-              onMouseEnter={() => onNavMouseEnter(item)}
-              onMouseLeave={onNavMouseLeave}
-              className="relative flex items-center h-full"
-            >
-              <NavLink
-                to={item.href}
-                className="font-500 para-text px-16 cursor-pointer flex items-center gap-6"
-                style={{ color: linkColor }}
-              >
-                <span>{item.label}</span>
-                {item.badge && (
-                  <Badge
-                    text={item.badge}
-                    color={item.badgeColor || item.badgeTheme}
-                    size="xs"
-                    shape="pill"
-                  />
-                )}
-                {item.hasMegaMenu && (
-                  <Icon
-                    name="ChevronDown"
-                    width="18"
-                    height="18"
-                    stroke={linkColor}
-                    style={{
-                      transition: "transform 0.2s ease",
-                      transform: isItemMegaActive ? "rotate(180deg)" : "rotate(0deg)",
-                    }}
-                  />
-                )}
-              </NavLink>
-            </div>
-          );
-        })}
-
-        {/* 🌐 Global Language Selector Dropdown */}
-        <div className="relative flex items-center h-full">
-          <div
-            ref={langTriggerRef}
-            onClick={() => setIsLangOpen((prev) => !prev)}
-            className="font-500 para-text px-14 cursor-pointer flex items-center gap-6 select-none"
-            style={{ color: isLangOpen ? "var(--primary)" : navBaseColor }}
-            title="Language"
-          >
-            <Icon name="Globe" width="16" height="16" stroke={isLangOpen ? "var(--primary)" : navBaseColor} />
-            <span>{currentLang.nativeName}</span>
+      <div
+        onMouseEnter={() => onMouseEnter(item)}
+        onMouseLeave={onMouseLeave}
+        className="relative flex items-center h-full"
+        style={isBottom ? { minWidth: "max-content" } : undefined}
+      >
+        <NavLink
+          to={item.href || "/product"}
+          className={`font-500 cursor-pointer flex items-center gap-6 ${textClass}`}
+          style={{ color: linkColor }}
+        >
+          <span>{item.label}</span>
+          {item.badge && <Badge text={item.badge} color={item.badgeColor || item.badgeTheme} size="xs" shape="pill" />}
+          {item.hasMegaMenu && (
             <Icon
               name="ChevronDown"
-              width="14"
-              height="14"
-              stroke={isLangOpen ? "var(--primary)" : navBaseColor}
+              width={iconSize}
+              height={iconSize}
+              stroke={linkColor}
               style={{
                 transition: "transform 0.2s ease",
-                transform: isLangOpen ? "rotate(180deg)" : "rotate(0deg)",
+                transform: isItemMegaActive ? "rotate(180deg)" : "rotate(0deg)",
               }}
             />
-          </div>
-
-          <Dropdown
-            isOpen={isLangOpen}
-            onClose={() => setIsLangOpen(false)}
-            triggerRef={langTriggerRef}
-            align="right"
-            minWidth="180px"
-            style={{ maxHeight: "300px", overflowY: "auto" }}
-            className="rounded-5 b-shadow border-ec py-4"
-          >
-            <div className="grid-cols-1">
-              {ALL_LANGUAGES.map((lang) => {
-                const isSelected = currentLang.code === lang.code;
-                return (
-                  <div
-                    key={lang.code}
-                    onClick={() => {
-                      changeWebsiteLanguage(lang.code);
-                      setIsLangOpen(false);
-                    }}
-                    className={`px-14 py-8 cursor-pointer flex items-center justify-between transition-colors ${
-                      isSelected ? "bg-forth text-primary font-600" : "text-dark hover:bg-forth"
-                    }`}
-                  >
-                    <div className="flex items-center gap-8">
-                      <span className="mini-text font-600 px-4 py-2 rounded-3 bg-forth text-gray">
-                        {lang.flag}
-                      </span>
-                      <span className="small-text">{lang.nativeName}</span>
-                    </div>
-                    {isSelected && (
-                      <Icon name="Check" width="14" height="14" stroke="var(--primary)" />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </Dropdown>
-        </div>
+          )}
+        </NavLink>
       </div>
     );
   }
 );
+NavItem.displayName = "NavItem";
+
+const HeaderNavigation = React.memo(
+  ({ pathname, hoveredNav, activeMegaMenu, isHeaderWhite, onNavMouseEnter, onNavMouseLeave }) => (
+    <div className={`${NavigationClass} sm-hidden md-hidden flex items-center h-full gap-4`}>
+      {header.navLinks?.map((item) => (
+        <NavItem
+          key={item.href}
+          item={item}
+          pathname={pathname}
+          hoveredNav={hoveredNav}
+          activeMegaMenu={activeMegaMenu}
+          isHeaderWhite={isHeaderWhite}
+          onMouseEnter={onNavMouseEnter}
+          onMouseLeave={onNavMouseLeave}
+        />
+      ))}
+      <LanguageDropdown isHeaderWhite={isHeaderWhite} align="right" />
+    </div>
+  )
+);
+HeaderNavigation.displayName = "HeaderNavigation";
 
 const HeaderBottomBar = React.memo(
   ({ pathname, hoveredNav, activeMegaMenu, isHeaderWhite, onNavMouseEnter, onNavMouseLeave }) => {
-    if (configData?.Header?.[0]?.HeaderBottomBar === false) return null;
-
-    if (!categoryMenuItems.length) return null;
-
-    const isMegaOpen = Boolean(activeMegaMenu);
+    if (configData?.Header?.[0]?.HeaderBottomBar === false || !categoryMenuItems.length) return null;
 
     return (
       <div className="sm-hidden md-hidden w-full" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)" }}>
         <Container>
           <div className={`${CategoryClass} flex items-center w-full py-16 overflow-auto`} style={{ gap: "26px" }}>
-            {categoryMenuItems.map((item, idx) => {
-              const isActive = pathname === item.href;
-              const isHovered = hoveredNav === (item.label || item.href);
-              const isItemMegaActive = isMegaOpen && item.megaMenuKey && item.megaMenuKey === activeMegaMenu;
-
-              const linkColor =
-                isActive || isHovered || isItemMegaActive
-                  ? "var(--primary)"
-                  : configData?.Header?.HeaderSticky
-                    ? isHeaderWhite
-                      ? "var(--dark)"
-                      : "var(--white)"
-                    : "var(--dark)";
-
-              return (
-                <div
-                  key={item.label || idx}
-                  onMouseEnter={() => onNavMouseEnter(item)}
-                  onMouseLeave={onNavMouseLeave}
-                  className="relative flex items-center h-full"
-                  style={{ minWidth: 'max-content' }}
-                >
-                  <NavLink
-                    to={item.href || "/product"}
-                    className="font-500 small-text capitalize cursor-pointer flex items-center gap-6"
-                    style={{ color: linkColor }}
-                  >
-                    <span>{item.label}</span>
-                    {item.badge && (
-                      <Badge
-                        text={item.badge}
-                        color={item.badgeColor || item.badgeTheme}
-                        size="xs"
-                        shape="pill"
-                      />
-                    )}
-                    {item.hasMegaMenu && (
-                      <Icon
-                        name="ChevronDown"
-                        width="20"
-                        height="20"
-                        stroke={linkColor}
-                        style={{
-                          transition: "transform 0.2s ease",
-                          transform: isItemMegaActive ? "rotate(180deg)" : "rotate(0deg)",
-                        }}
-                      />
-                    )}
-                  </NavLink>
-                </div>
-              );
-            })}
+            {categoryMenuItems.map((item, idx) => (
+              <NavItem
+                key={item.label || idx}
+                item={item}
+                pathname={pathname}
+                hoveredNav={hoveredNav}
+                activeMegaMenu={activeMegaMenu}
+                isHeaderWhite={isHeaderWhite}
+                onMouseEnter={onNavMouseEnter}
+                onMouseLeave={onNavMouseLeave}
+                textClass="small-text capitalize"
+                iconSize="20"
+                isBottom
+              />
+            ))}
           </div>
         </Container>
       </div>
     );
   }
 );
+HeaderBottomBar.displayName = "HeaderBottomBar";
+
+const CartButton = React.memo(({ isMobile, cartQty, onOpenCart, isHeaderWhite }) => (
+  <div className={`relative ${isMobile ? "flex items-center justify-center" : ""}`}>
+    <Button
+      aria-label="Cart"
+      onClick={onOpenCart}
+      icon="Bag"
+      iconWidth={isMobile ? "22" : "16"}
+      iconHeight={isMobile ? "22" : "16"}
+      iconStrokeWidth={isMobile ? "1.5" : "2"}
+      variant={isMobile ? undefined : "outline"}
+      border={isMobile ? undefined : (!isStickyConfig || isHeaderWhite ? "primary" : "white")}
+      iconStroke={isMobile ? getIconColor(isHeaderWhite) : getNavColor(isHeaderWhite, isHeaderWhite)}
+      version="icon"
+      bg="transparent"
+      className={isMobile ? "" : "rounded-30 p-10"}
+    />
+    {cartQty > 0 && (
+      <p
+        className={`absolute bg-primary text-white rounded-full flex items-center justify-center ${isMobile ? "pointer-events-none" : ""
+          }`}
+        style={
+          isMobile
+            ? { top: "-2px", right: "-2px", width: "18px", height: "18px", fontSize: "10px" }
+            : { top: "-7px", right: "-7px", width: "20px", height: "20px", fontSize: "10px" }
+        }
+      >
+        {cartQty}
+      </p>
+    )}
+  </div>
+));
+CartButton.displayName = "CartButton";
 
 const CartSidebar = React.memo(
   ({
@@ -422,315 +410,172 @@ const CartSidebar = React.memo(
     cartQty,
     subtotal,
     isCartOpen,
-    isHeaderWhite,
-    onOpenCart,
     onCloseCart,
     onOpenEnquiryModal,
     onRemove,
     onSetQuantity,
     onNavigate,
-    isMobile = false,
-  }) => {
-    return (
-      <Modal
-        type="sidebar"
-        placement="right"
-        size="sm"
-        title={
-          <div className="flex items-center gap-8">
-            <span>Your cart</span>
-            <Badge
-              text={cartQty}
-              color={cartQty > 0 ? "primary" : "secondary"}
-              size="sm"
-              shape="pill"
+  }) => (
+    <Modal
+      type="sidebar"
+      placement="right"
+      size="sm"
+      title={
+        <div className="flex items-center gap-8">
+          <span>Your cart</span>
+          <Badge text={cartQty} color={cartQty > 0 ? "primary" : "secondary"} size="sm" shape="pill" />
+        </div>
+      }
+      footer={null}
+      isOpen={isCartOpen}
+      onClose={onCloseCart}
+    >
+      <div className="grid-cols-1 items-start gap-12 pb-20 mb-100 h-500 overflow-auto">
+        {cartItems.length > 0 ? (
+          <div className="grid-cols-1 gap-12 mt-10">
+            {cartItems.map((item) => (
+              <div key={item.id} className="flex gap-12 items-center relative pb-20 bordb">
+                <div className="w-35 h-100px rounded-5 overflow-hidden">
+                  <Image src={resolveImagePath(item.image)} alt={item.name} className="flex w-full h-full object-cover" />
+                </div>
+
+                <div className="w-65">
+                  <p className="mini-text text-gray font-400">{item.category}</p>
+                  <h4 className="headmini-text text-dark font-600 line-clamp1">{item.name}</h4>
+
+                  <div className="flex items-end justify-between mt-5">
+                    <Fields type="quantity" value={item.quantity} onChange={(val) => onSetQuantity(item.id, val)} />
+                    <p className="small-text font-600 text-danger">₹{((Number(item.price) || 0) * item.quantity).toFixed(2)}</p>
+                  </div>
+                </div>
+
+                <div onClick={() => onRemove(item.id)} className="absolute top-0 right-0 cursor-pointer">
+                  <Icon name="Close" width="16" height="16" stroke="var(--danger)" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-40 bg-forth">
+            <Icon name="Bag" width="48" height="48" stroke="var(--primary)" className="mx-auto mb-10" />
+            <p className="small-text font-500 capitalize text-gray">Your cart is empty</p>
+          </div>
+        )}
+      </div>
+
+      <div className="fixed bottom-0 left-0 w-full bg-forth">
+        <div className="p-15">
+          <div className="flex items-end w-full">
+            <div className="w-80">
+              <h4 className="mid-text text-dark font-600">Estimated total</h4>
+              <p className="mini-text text-gray">Taxes and shipping at checkout</p>
+            </div>
+            <p className="small-text text-dark font-600 w-20 text-right">${subtotal.toFixed(2)}</p>
+          </div>
+          <div className="grid-cols-2 gap-12 mt-12">
+            <Button
+              text="Explore More"
+              onClick={() => {
+                onCloseCart();
+                onNavigate("/products");
+              }}
+              version="v3"
+              bg="tertiary"
+              color="dark"
+              className="rounded-30 font-500"
+            />
+            <Button
+              text="Send Enquiry"
+              onClick={() => {
+                onCloseCart();
+                if (onOpenEnquiryModal) onOpenEnquiryModal();
+                else onNavigate("/connect");
+              }}
+              version="v3"
+              bg="dark"
+              color="white"
+              className="rounded-30 font-500"
             />
           </div>
-        }
-        footer={null}
-        isOpen={isCartOpen}
-        onClose={onCloseCart}
-        trigger={
-          isMobile ? (
-            <div className="relative flex items-center justify-center">
-              <Button
-                aria-label="Cart"
-                onClick={onOpenCart}
-                icon="Bag"
-                iconWidth="22"
-                iconHeight="22"
-                iconStrokeWidth="1.5"
-                iconStroke={
-                  configData?.Header?.HeaderSticky
-                    ? isHeaderWhite
-                      ? "#161616"
-                      : "#FFFFFF"
-                    : "#161616"
-                }
-                version="icon"
-                bg="transparent"
-              />
-              {cartQty > 0 && (
-                <p
-                  className="absolute bg-primary text-white rounded-full flex items-center justify-center pointer-events-none"
-                  style={{
-                    top: "-2px",
-                    right: "-2px",
-                    width: "18px",
-                    height: "18px",
-                    fontSize: "10px",
-                  }}
-                >
-                  {cartQty}
-                </p>
-              )}
-            </div>
-          ) : (
-            <div className="relative">
-              <Button
-                aria-label="Cart"
-                onClick={onOpenCart}
-                icon="Bag"
-                iconWidth="16"
-                iconHeight="16"
-                iconStrokeWidth="2"
-                variant="outline"
-                border={
-                  configData?.Header?.HeaderSticky
-                    ? isHeaderWhite
-                      ? "primary"
-                      : "white"
-                    : "primary"
-                }
-                iconStroke={
-                  configData?.Header?.HeaderSticky
-                    ? isHeaderWhite
-                      ? "var(--primary)"
-                      : "var(--white)"
-                    : "var(--primary)"
-                }
-                version="icon"
-                bg="transparent"
-                className="rounded-30 p-10"
-              />
-              {cartQty > 0 && (
-                <p
-                  className="absolute bg-primary text-white rounded-full flex items-center justify-center"
-                  style={{
-                    top: "-7px",
-                    right: "-7px",
-                    width: "20px",
-                    height: "20px",
-                    fontSize: "10px",
-                  }}
-                >
-                  {cartQty}
-                </p>
-              )}
-            </div>
-          )
-        }
-      >
-        <div className="grid-cols-1 items-start gap-12 pb-20 mb-100 h-500 overflow-auto">
-          <div>
-            {cartItems.length > 0 ? (
-              <div className="grid-cols-1 gap-12 mt-10">
-                {cartItems.map((item) => (
-                  <div key={item.id} className="flex gap-12 items-center relative pb-20 bordb">
-                    <div className="w-35 h-100px rounded-5 overflow-hidden">
-                      <Image
-                        src={resolveImagePath(item.image)}
-                        alt={item.name}
-                        className="flex w-full h-full object-cover"
-                      />
-                    </div>
-
-                    <div className="w-65">
-                      <p className="mini-text text-gray font-400">{item.category}</p>
-                      <h4 className="headmini-text text-dark font-600 line-clamp1">{item.name}</h4>
-
-                      <div className="flex items-end justify-between mt-5">
-                        <Fields
-                          type="quantity"
-                          value={item.quantity}
-                          onChange={(value) => onSetQuantity(item.id, value)}
-                        />
-                        <p className="small-text font-600 text-danger">
-                          ₹{((Number(item.price) || 0) * item.quantity).toFixed(2)}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      onClick={() => onRemove(item.id)}
-                      className="absolute top-0 right-0 cursor-pointer"
-                    >
-                      <Icon name="Close" width="16" height="16" stroke="var(--danger)" />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-40 bg-forth">
-                <Icon
-                  name="Bag"
-                  width="48"
-                  height="48"
-                  stroke="var(--primary)"
-                  className="mx-auto mb-10"
-                />
-                <p className="small-text font-500 capitalize text-gray">Your cart is empty</p>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="fixed bottom-0 left-0 w-full bg-forth">
-          <div className="p-15">
-            <div className="flex items-end w-full">
-              <div className="w-80">
-                <h4 className="mid-text text-dark font-600">Estimated total</h4>
-                <p className="mini-text text-gray">Taxes and shipping at checkout</p>
-              </div>
-              <p className="small-text text-dark font-600 w-20 text-right">${subtotal.toFixed(2)}</p>
-            </div>
-            <div className="grid-cols-2 gap-12 mt-12">
-              <Button
-                text="Explore More"
-                onClick={() => {
-                  onCloseCart();
-                  onNavigate("/products");
-                }}
-                version="v3"
-                bg="tertiary"
-                color="dark"
-                className="rounded-30 font-500"
-              />
-              <Button
-                text="Send Enquiry"
-                onClick={() => {
-                  onCloseCart();
-                  if (onOpenEnquiryModal) {
-                    onOpenEnquiryModal();
-                  } else {
-                    onNavigate("/connect");
-                  }
-                }}
-                version="v3"
-                bg="dark"
-                color="white"
-                className="rounded-30 font-500"
-              />
-            </div>
-          </div>
-        </div>
-      </Modal>
-    );
-  }
-);
-
-const HeaderActions = React.memo(
-  ({
-    isHeaderWhite,
-    isMobileOpen,
-    setIsMobileOpen,
-    cartSection,
-    mobileCartSection,
-    onNavigate,
-  }) => {
-    return (
-      <div className={`${ActionClass} flex justify-end`}>
-        <div className="sm-hidden md-hidden flex items-center" style={{ gap: "14px" }}>
-          <Button
-            aria-label="Call Us"
-            onClick={() => {
-              window.location.href = "tel:+5284567592";
-            }}
-            icon="Phone"
-            iconWidth="16"
-            iconHeight="16"
-            iconStrokeWidth="2"
-            variant="outline"
-            border={
-              configData?.Header?.HeaderSticky
-                ? isHeaderWhite
-                  ? "primary"
-                  : "white"
-                : "primary"
-            }
-            iconStroke={
-              configData?.Header?.HeaderSticky
-                ? isHeaderWhite
-                  ? "var(--primary)"
-                  : "var(--white)"
-                : "var(--primary)"
-            }
-            version="icon"
-            bg="transparent"
-            className="rounded-30 p-10"
-          />
-
-          {cartSection}
-
-          <Button
-            text="Get A Quote"
-            onClick={() => onNavigate("/connect")}
-            bg="primary"
-            color="white"
-            border="primary"
-            icon={configData?.Header?.HeaderType === 4 ? "" : "ArrowRight"}
-            iconPosition="right"
-            iconWidth="16"
-            iconHeight="16"
-            version="v1"
-            className="rounded-30"
-          />
-        </div>
-
-        <div className="hidden md-flex sm-flex items-center">
-          <Button
-            aria-label="Call Us"
-            onClick={() => {
-              window.location.href = "tel:+5284567592";
-            }}
-            icon="Phone"
-            iconWidth="22"
-            iconHeight="22"
-            iconStrokeWidth="1.5"
-            iconStroke={
-              configData?.Header?.HeaderSticky
-                ? isHeaderWhite
-                  ? "#161616"
-                  : "#FFFFFF"
-                : "#161616"
-            }
-            version="icon"
-            bg="transparent"
-          />
-
-          {mobileCartSection || cartSection}
-          <Button
-            onClick={() => setIsMobileOpen((prev) => !prev)}
-            aria-label="Toggle Navigation Menu"
-            icon={isMobileOpen ? "Close" : "Menu"}
-            iconWidth="30"
-            iconHeight="30"
-            iconStrokeWidth="1.5"
-            iconStroke={
-              configData?.Header?.HeaderSticky
-                ? isHeaderWhite
-                  ? "#161616"
-                  : "#FFFFFF"
-                : "#161616"
-            }
-            version="icon"
-            bg="transparent"
-          />
         </div>
       </div>
-    );
-  }
+    </Modal>
+  )
 );
+CartSidebar.displayName = "CartSidebar";
+
+const HeaderActions = React.memo(({ isHeaderWhite, isMobileOpen, setIsMobileOpen, onNavigate, cartQty, onOpenCart }) => {
+  const phone = import.meta.env.VITE_PHONE || "07942562287";
+  const handleCall = () => {
+    window.location.href = `tel:${phone}`;
+  };
+
+  return (
+    <div className={`${ActionClass} flex justify-end`}>
+      <div className="sm-hidden md-hidden flex items-center" style={{ gap: "14px" }}>
+        <Button
+          aria-label="Call Us"
+          onClick={handleCall}
+          icon="Phone"
+          iconWidth="16"
+          iconHeight="16"
+          iconStrokeWidth="2"
+          variant="outline"
+          border={!isStickyConfig || isHeaderWhite ? "primary" : "white"}
+          iconStroke={getNavColor(isHeaderWhite, isHeaderWhite)}
+          version="icon"
+          bg="transparent"
+          className="rounded-30 p-10"
+        />
+
+        <CartButton isMobile={false} cartQty={cartQty} onOpenCart={onOpenCart} isHeaderWhite={isHeaderWhite} />
+
+        <Button
+          text="Get A Quote"
+          onClick={() => onNavigate("/connect")}
+          bg="primary"
+          color="white"
+          border="primary"
+          icon={configData?.Header?.HeaderType === 4 ? "" : "ArrowRight"}
+          iconPosition="right"
+          iconWidth="16"
+          iconHeight="16"
+          version="v1"
+          className="rounded-30"
+        />
+      </div>
+
+      <div className="hidden md-flex sm-flex items-center gap-4">
+        <Button
+          aria-label="Call Us"
+          onClick={handleCall}
+          icon="Phone"
+          iconWidth="22"
+          iconHeight="22"
+          iconStrokeWidth="1.5"
+          iconStroke={getIconColor(isHeaderWhite)}
+          version="icon"
+          bg="transparent"
+        />
+
+        <CartButton isMobile={true} cartQty={cartQty} onOpenCart={onOpenCart} isHeaderWhite={isHeaderWhite} />
+
+        <Button
+          onClick={() => setIsMobileOpen((prev) => !prev)}
+          aria-label="Toggle Navigation Menu"
+          icon={isMobileOpen ? "Close" : "Menu"}
+          iconWidth="30"
+          iconHeight="30"
+          iconStrokeWidth="1.5"
+          iconStroke={getIconColor(isHeaderWhite)}
+          version="icon"
+          bg="transparent"
+        />
+      </div>
+    </div>
+  );
+});
+HeaderActions.displayName = "HeaderActions";
 
 const MegaMenu = React.memo(
   ({ activeMegaMenu, activeCategoryTab, setActiveCategoryTab, onClose, onMouseEnter, onMouseLeave }) => {
@@ -739,13 +584,12 @@ const MegaMenu = React.memo(
       return dynamicMegaMenu?.[activeMegaMenu] || null;
     }, [activeMegaMenu]);
 
-    const categories = React.useMemo(() => {
-      return (currentMenu?.categories || []).slice(0, 4);
-    }, [currentMenu]);
+    const categories = React.useMemo(() => (currentMenu?.categories || []).slice(0, 4), [currentMenu]);
 
-    const currentCategory = React.useMemo(() => {
-      return categories.find((c) => c.id === activeCategoryTab) || categories[0];
-    }, [categories, activeCategoryTab]);
+    const currentCategory = React.useMemo(
+      () => categories.find((c) => c.id === activeCategoryTab) || categories[0],
+      [categories, activeCategoryTab]
+    );
 
     if (!currentMenu || !categories.length) return null;
 
@@ -807,12 +651,7 @@ const MegaMenu = React.memo(
                       />
                       {item.badge && (
                         <div className="absolute top-8 left-8 z-2">
-                          <Badge
-                            text={item.badge}
-                            color={item.badgeColor || item.badgeTheme}
-                            size="xs"
-                            shape="pill"
-                          />
+                          <Badge text={item.badge} color={item.badgeColor || item.badgeTheme} size="xs" shape="pill" />
                         </div>
                       )}
                     </div>
@@ -828,124 +667,81 @@ const MegaMenu = React.memo(
     );
   }
 );
+MegaMenu.displayName = "MegaMenu";
 
 const MobileMenu = React.memo(({ isMobileOpen, pathname, onClose, onNavigate }) => {
   const [menuView, setMenuView] = React.useState({ level: 0 });
 
   React.useEffect(() => {
-    if (!isMobileOpen) {
-      setMenuView({ level: 0 });
-    }
+    if (!isMobileOpen) setMenuView({ level: 0 });
   }, [isMobileOpen]);
 
   if (!isMobileOpen) return null;
+
+  const renderMobileNavItem = (item, isNavCategory = false) => {
+    const isActive = pathname === item.href;
+    const hasSubMenu =
+      item.hasMegaMenu &&
+      item.megaMenuKey &&
+      dynamicMegaMenu?.[item.megaMenuKey]?.categories?.length > 0;
+
+    const content = (
+      <>
+        <p
+          className={`small-text font-500 uppercase ${isNavCategory ? "text-dark flex items-center gap-8" : ""}`}
+          style={!isNavCategory ? { color: isActive ? "var(--primary)" : "var(--dark)" } : undefined}
+        >
+          {item.label}
+        </p>
+        <Icon
+          name="ChevronRight"
+          width="18"
+          height="18"
+          stroke={isNavCategory ? "var(--gray)" : isActive ? "var(--primary)" : "var(--dark)"}
+        />
+      </>
+    );
+
+    return (
+      <div key={item.label || item.href} className={isNavCategory ? "py-16 px-14 bg-white mb-5 rounded-5" : "py-13 bordb"}>
+        {hasSubMenu ? (
+          <div
+            onClick={() =>
+              setMenuView({
+                level: 1,
+                title: item.label,
+                megaKey: item.megaMenuKey,
+                categories: dynamicMegaMenu[item.megaMenuKey]?.categories || [],
+              })
+            }
+            className="flex items-center justify-between cursor-pointer"
+          >
+            {content}
+          </div>
+        ) : (
+          <NavLink to={item.href || "/product"} onClick={onClose} className="flex items-center justify-between">
+            {content}
+          </NavLink>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="relative top-0 left-0 w-full bg-white h-400 bordb bordh pb-20 overflow-y-auto z-50 hidden sm-grid-cols-1">
       {menuView.level === 0 && (
         <div>
+          <div className="px-14 py-10 bordb flex items-center justify-between bg-forth">
+            <span className="small-text font-500 text-dark">Language:</span>
+            <LanguageDropdown isHeaderWhite={true} align="right" showFlagOnMobile={false} />
+          </div>
           <div className="grid-cols-1 px-14">
-            {header.navLinks?.map((item) => {
-              const isActive = pathname === item.href;
-              const hasSubMenu =
-                item.hasMegaMenu &&
-                item.megaMenuKey &&
-                dynamicMegaMenu?.[item.megaMenuKey]?.categories?.length > 0;
-
-              return (
-                <div key={item.href} className="py-13 bordb">
-                  {hasSubMenu ? (
-                    <div
-                      onClick={() =>
-                        setMenuView({
-                          level: 1,
-                          title: item.label,
-                          megaKey: item.megaMenuKey,
-                          categories: dynamicMegaMenu[item.megaMenuKey]?.categories || [],
-                        })
-                      }
-                      className="flex items-center justify-between cursor-pointer"
-                    >
-                      <p
-                        className="small-text font-500 uppercase"
-                        style={{ color: isActive ? "var(--primary)" : "var(--dark)" }}
-                      >
-                        {item.label}
-                      </p>
-                      <Icon
-                        name="ChevronRight"
-                        width="18"
-                        height="18"
-                        stroke={isActive ? "var(--primary)" : "var(--dark)"}
-                      />
-                    </div>
-                  ) : (
-                    <NavLink
-                      to={item.href}
-                      onClick={onClose}
-                      className="flex items-center justify-between"
-                    >
-                      <p
-                        className="small-text font-500 uppercase"
-                        style={{ color: isActive ? "var(--primary)" : "var(--dark)" }}
-                      >
-                        {item.label}
-                      </p>
-                      <Icon
-                        name="ChevronRight"
-                        width="18"
-                        height="18"
-                        stroke={isActive ? "var(--primary)" : "var(--dark)"}
-                      />
-                    </NavLink>
-                  )}
-                </div>
-              );
-            })}
+            {header.navLinks?.map((item) => renderMobileNavItem(item, false))}
           </div>
 
           {categoryMenuItems.length > 0 && (
             <div className="py-15 bg-forth px-14">
-              {categoryMenuItems.map((item) => {
-                const hasSubMenu =
-                  item.hasMegaMenu &&
-                  item.megaMenuKey &&
-                  dynamicMegaMenu?.[item.megaMenuKey]?.categories?.length > 0;
-
-                return (
-                  <div key={item.label} className="py-16 px-14 bg-white mb-5 rounded-5">
-                    {hasSubMenu ? (
-                      <div
-                        onClick={() =>
-                          setMenuView({
-                            level: 1,
-                            title: item.label,
-                            megaKey: item.megaMenuKey,
-                            categories: dynamicMegaMenu[item.megaMenuKey]?.categories || [],
-                          })
-                        }
-                        className="flex items-center justify-between cursor-pointer"
-                      >
-                        <p className="small-text font-500 uppercase text-dark flex items-center gap-8">
-                          {item.label}
-                        </p>
-                        <Icon name="ChevronRight" width="18" height="18" stroke="var(--gray)" />
-                      </div>
-                    ) : (
-                      <NavLink
-                        to={item.href || "/product"}
-                        onClick={onClose}
-                        className="flex items-center justify-between"
-                      >
-                        <p className="small-text font-500 uppercase text-dark flex items-center gap-8">
-                          {item.label}
-                        </p>
-                        <Icon name="ChevronRight" width="18" height="18" stroke="var(--gray)" />
-                      </NavLink>
-                    )}
-                  </div>
-                );
-              })}
+              {categoryMenuItems.map((item) => renderMobileNavItem(item, true))}
             </div>
           )}
 
@@ -1001,9 +797,7 @@ const MobileMenu = React.memo(({ isMobileOpen, pathname, onClose, onNavigate }) 
               >
                 <div className="flex items-center gap-8">
                   <p className="small-text font-500 text-dark">{cat.name}</p>
-                  {cat.badge && (
-                    <Badge color="success" shape="pill" text={cat.badge} size="xs" />
-                  )}
+                  {cat.badge && <Badge color="success" shape="pill" text={cat.badge} size="xs" />}
                 </div>
                 <Icon name="ChevronRight" width="18" height="18" stroke="var(--gray)" />
               </div>
@@ -1035,10 +829,7 @@ const MobileMenu = React.memo(({ isMobileOpen, pathname, onClose, onNavigate }) 
                 key={item.title || item.href || idx}
                 onClick={() => {
                   onClose();
-                  onNavigate(
-                    item.href ||
-                    `/products?type=${item.title?.toLowerCase().replace(/\s+/g, "-")}`
-                  );
+                  onNavigate(item.href || `/products?type=${item.title?.toLowerCase().replace(/\s+/g, "-")}`);
                 }}
                 className="py-18 bordb flex items-center gap-12 cursor-pointer"
               >
@@ -1051,12 +842,8 @@ const MobileMenu = React.memo(({ isMobileOpen, pathname, onClose, onNavigate }) 
                   />
                 )}
                 <div className="w-85">
-                  <p className="small-text font-500 text-dark line-clamp2 capitalize">
-                    {item.title}
-                  </p>
-                  {item.price && (
-                    <p className="mini-text text-danger font-600 mt-1">{item.price}</p>
-                  )}
+                  <p className="small-text font-500 text-dark line-clamp2 capitalize">{item.title}</p>
+                  {item.price && <p className="mini-text text-danger font-600 mt-1">{item.price}</p>}
                 </div>
               </div>
             ))}
@@ -1066,6 +853,7 @@ const MobileMenu = React.memo(({ isMobileOpen, pathname, onClose, onNavigate }) 
     </div>
   );
 });
+MobileMenu.displayName = "MobileMenu";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -1076,6 +864,7 @@ const Header = () => {
   const [hoveredNav, setHoveredNav] = React.useState(null);
   const [activeMegaMenu, setActiveMegaMenu] = React.useState(null);
   const [activeCategoryTab, setActiveCategoryTab] = React.useState(null);
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = React.useState(false);
 
   const megaMenuTimerRef = React.useRef(null);
 
@@ -1091,16 +880,10 @@ const Header = () => {
   } = useCart();
 
   React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   React.useEffect(() => {
@@ -1111,35 +894,22 @@ const Header = () => {
 
   React.useEffect(() => {
     return () => {
-      if (megaMenuTimerRef.current) {
-        clearTimeout(megaMenuTimerRef.current);
-      }
+      if (megaMenuTimerRef.current) clearTimeout(megaMenuTimerRef.current);
     };
   }, []);
 
   const handleNavMouseEnter = React.useCallback((item) => {
-    if (megaMenuTimerRef.current) {
-      clearTimeout(megaMenuTimerRef.current);
-    }
-
+    if (megaMenuTimerRef.current) clearTimeout(megaMenuTimerRef.current);
     setHoveredNav(item.label || item.href);
 
     const targetMegaKey =
-      item.hasMegaMenu &&
-        item.megaMenuKey &&
-        dynamicMegaMenu?.[item.megaMenuKey]
+      item.hasMegaMenu && item.megaMenuKey && dynamicMegaMenu?.[item.megaMenuKey]
         ? item.megaMenuKey
         : null;
 
     setActiveMegaMenu(targetMegaKey);
-
-    if (
-      targetMegaKey &&
-      dynamicMegaMenu?.[targetMegaKey]?.categories?.[0]?.id
-    ) {
-      setActiveCategoryTab(
-        dynamicMegaMenu[targetMegaKey].categories[0].id
-      );
+    if (targetMegaKey && dynamicMegaMenu?.[targetMegaKey]?.categories?.[0]?.id) {
+      setActiveCategoryTab(dynamicMegaMenu[targetMegaKey].categories[0].id);
     }
   }, []);
 
@@ -1151,9 +921,7 @@ const Header = () => {
   }, []);
 
   const handleMegaMenuMouseEnter = React.useCallback(() => {
-    if (megaMenuTimerRef.current) {
-      clearTimeout(megaMenuTimerRef.current);
-    }
+    if (megaMenuTimerRef.current) clearTimeout(megaMenuTimerRef.current);
   }, []);
 
   const handleMegaMenuMouseLeave = React.useCallback(() => {
@@ -1168,59 +936,32 @@ const Header = () => {
   const headerBg = isHeaderWhite ? "var(--white)" : "transparent";
   const headerBorder = isHeaderWhite ? "1px solid var(--white)" : "1px solid rgba(255, 255, 255, 0.1)";
 
-  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = React.useState(false);
+  const handleCloseMobile = React.useCallback(() => setIsMobileOpen(false), []);
+  const handleOpenCart = React.useCallback(() => setIsCartOpen(true), [setIsCartOpen]);
+  const handleCloseCart = React.useCallback(() => setIsCartOpen(false), [setIsCartOpen]);
+  const handleOpenEnquiryModal = React.useCallback(() => setIsEnquiryModalOpen(true), []);
+  const handleCloseEnquiryModal = React.useCallback(() => setIsEnquiryModalOpen(false), []);
 
-  const handleCloseMobile = React.useCallback(() => {
-    setIsMobileOpen(false);
-  }, []);
-
-  const handleOpenCart = React.useCallback(() => {
-    setIsCartOpen(true);
-  }, [setIsCartOpen]);
-
-  const handleCloseCart = React.useCallback(() => {
-    setIsCartOpen(false);
-  }, [setIsCartOpen]);
-
-  const handleOpenEnquiryModal = React.useCallback(() => {
-    setIsEnquiryModalOpen(true);
-  }, []);
-
-  const handleCloseEnquiryModal = React.useCallback(() => {
-    setIsEnquiryModalOpen(false);
-  }, []);
-
-  const handleRemoveFromCart = React.useCallback((id) => {
-    removeFromCart(id);
-  }, [removeFromCart]);
-
-  const handleSetQuantity = React.useCallback((id, value) => {
-    const setQty = setExactQuantity || updateQuantity;
-    if (typeof setQty === "function") {
-      setQty(id, value);
-    }
-  }, [setExactQuantity, updateQuantity]);
-
-  const handleNavigate = React.useCallback((path) => {
-    navigate(path);
-  }, [navigate]);
-
-  const handleCloseMegaMenu = React.useCallback(() => {
-    setActiveMegaMenu(null);
-  }, []);
+  const handleSetQuantity = React.useCallback(
+    (id, value) => {
+      const setQty = setExactQuantity || updateQuantity;
+      if (typeof setQty === "function") setQty(id, value);
+    },
+    [setExactQuantity, updateQuantity]
+  );
 
   return (
     <Container
       as="header"
       version="v0"
       style={{
-        position: configData?.Header?.HeaderSticky ? "fixed" : "relative",
+        position: isStickyConfig ? "fixed" : "relative",
         top: 0,
         left: 0,
         zIndex: 1000,
         width: "100%",
-        backgroundColor: configData?.Header?.HeaderSticky ? headerBg : "transparent",
-        borderBottom: configData?.Header?.HeaderSticky ? headerBorder : "transparent",
+        backgroundColor: isStickyConfig ? headerBg : "transparent",
+        borderBottom: isStickyConfig ? headerBorder : "transparent",
         transition: "background-color 0.35s ease",
       }}
     >
@@ -1244,40 +985,9 @@ const Header = () => {
               isHeaderWhite={isHeaderWhite}
               isMobileOpen={isMobileOpen}
               setIsMobileOpen={setIsMobileOpen}
-              onNavigate={handleNavigate}
-              onOpenEnquiryModal={handleOpenEnquiryModal}
-              cartSection={
-                <CartSidebar
-                  cartItems={cartItems}
-                  cartQty={cartQty}
-                  subtotal={subtotal}
-                  isCartOpen={isCartOpen}
-                  isHeaderWhite={isHeaderWhite}
-                  onOpenCart={handleOpenCart}
-                  onCloseCart={handleCloseCart}
-                  onOpenEnquiryModal={handleOpenEnquiryModal}
-                  onRemove={handleRemoveFromCart}
-                  onSetQuantity={handleSetQuantity}
-                  onNavigate={handleNavigate}
-                  isMobile={false}
-                />
-              }
-              mobileCartSection={
-                <CartSidebar
-                  cartItems={cartItems}
-                  cartQty={cartQty}
-                  subtotal={subtotal}
-                  isCartOpen={isCartOpen}
-                  isHeaderWhite={isHeaderWhite}
-                  onOpenCart={handleOpenCart}
-                  onCloseCart={handleCloseCart}
-                  onOpenEnquiryModal={handleOpenEnquiryModal}
-                  onRemove={handleRemoveFromCart}
-                  onSetQuantity={handleSetQuantity}
-                  onNavigate={handleNavigate}
-                  isMobile={true}
-                />
-              }
+              onNavigate={navigate}
+              cartQty={cartQty}
+              onOpenCart={handleOpenCart}
             />
           </div>
         </Container>
@@ -1295,7 +1005,7 @@ const Header = () => {
           activeMegaMenu={activeMegaMenu}
           activeCategoryTab={activeCategoryTab}
           setActiveCategoryTab={setActiveCategoryTab}
-          onClose={handleCloseMegaMenu}
+          onClose={() => setActiveMegaMenu(null)}
           onMouseEnter={handleMegaMenuMouseEnter}
           onMouseLeave={handleMegaMenuMouseLeave}
         />
@@ -1304,7 +1014,19 @@ const Header = () => {
           isMobileOpen={isMobileOpen}
           pathname={location.pathname}
           onClose={handleCloseMobile}
-          onNavigate={handleNavigate}
+          onNavigate={navigate}
+        />
+
+        <CartSidebar
+          cartItems={cartItems}
+          cartQty={cartQty}
+          subtotal={subtotal}
+          isCartOpen={isCartOpen}
+          onCloseCart={handleCloseCart}
+          onOpenEnquiryModal={handleOpenEnquiryModal}
+          onRemove={removeFromCart}
+          onSetQuantity={handleSetQuantity}
+          onNavigate={navigate}
         />
 
         <EnquiryModal
@@ -1312,7 +1034,7 @@ const Header = () => {
           onClose={handleCloseEnquiryModal}
           cartItems={cartItems}
           onSetQuantity={handleSetQuantity}
-          onRemove={handleRemoveFromCart}
+          onRemove={removeFromCart}
         />
       </div>
     </Container>
