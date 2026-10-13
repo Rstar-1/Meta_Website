@@ -115,9 +115,8 @@ const CategorySection = React.memo(({
                             <div
                                 key={idx}
                                 onClick={() => handleCategoryClick(cat.name)}
-                                className={`rounded-5 p-15 flex justify-between items-center cursor-pointer transition-colors ${
-                                    isSelected ? 'bg-primary text-white' : 'bg-forth text-dark hover:bg-white'
-                                }`}
+                                className={`rounded-5 p-15 flex justify-between items-center cursor-pointer transition-colors ${isSelected ? 'bg-primary text-white' : 'bg-forth text-dark hover:bg-white'
+                                    }`}
                             >
                                 <h5 className={`headmini-text font-500 ${isSelected ? 'text-white' : 'text-dark'}`}>
                                     {cat.name}
@@ -163,89 +162,6 @@ const CategorySection = React.memo(({
                             </div>
                         </div>
                     ))}
-                </div>
-            </div>
-
-            {/* Factory Swatch Colors Widget */}
-            <div className="mb-25 p-18 bg-forth rounded-10">
-                <div className="flex items-center justify-between mb-12">
-                    <h5 className="text-dark mid-text font-600">
-                        Available Swatch Colors
-                    </h5>
-                    <span className="mini-text text-primary font-600">
-                        In Stock
-                    </span>
-                </div>
-                <div className="flex flex-wrap gap-8 items-center">
-                    {CARPET_SWATCH_COLORS.map((swatch, idx) => (
-                        <div
-                            key={idx}
-                            className="flex items-center gap-6 px-10 py-6 bg-white rounded-20 border border-gray-100 cursor-pointer hover:shadow-sm transition-shadow"
-                            onClick={() => handleSearch(swatch.name)}
-                            title={`${swatch.name} (${swatch.type})`}
-                        >
-                            <span
-                                className="w-12 h-12 rounded-full inline-block border border-gray-300"
-                                style={{ backgroundColor: swatch.hex, width: '12px', height: '12px' }}
-                            />
-                            <span className="mini-text font-500 text-dark">
-                                {swatch.name}
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Popular Carpet Tags */}
-            <div className="mb-25">
-                <h4 className="text-dark mid-text font-600 mb-12">
-                    Popular Flooring Tags
-                </h4>
-                <div className="flex flex-wrap gap-6">
-                    {POPULAR_CARPET_TAGS.map((tag, idx) => (
-                        <span
-                            key={idx}
-                            onClick={() => handleTagClick(tag)}
-                            className="px-12 py-6 bg-forth hover:bg-primary hover:text-white rounded-20 small-text font-500 text-dark cursor-pointer transition-colors"
-                        >
-                            #{tag}
-                        </span>
-                    ))}
-                </div>
-            </div>
-
-            {/* United Brothers Factory Promo Card */}
-            <div className="relative rounded-10 overflow-hidden bg-dark text-white p-20 shadow-md">
-                <div className="absolute inset-0 z-0 opacity-25">
-                    <Image
-                        src={resolveImagePath('/products/spaces/living_room.webp')}
-                        alt="United Brothers Flooring"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-                <div className="relative z-10">
-                    <Badge
-                        text="UNITED BROTHERS"
-                        color="white"
-                        bg="primary"
-                        size="sm"
-                        shape="pill"
-                        className="mb-10 font-600"
-                    />
-                    <h4 className="title-text font-700 leading-tight mb-8">
-                        Looking for Wholesale Carpet Rolls or Rugs?
-                    </h4>
-                    <p className="small-text text-gray-200 opacity-90 mb-16 leading-relaxed">
-                        Direct manufacturer pricing on Dilour automotive rolls, ribbed commercial carpets, and 1800 GSM luxury poly shrink rugs.
-                    </p>
-                    <Button
-                        text="Explore All Products"
-                        version="v1"
-                        bg="primary"
-                        color="white"
-                        className="w-full rounded-20 font-600 small-text py-10"
-                        onClick={() => navigate('/product')}
-                    />
                 </div>
             </div>
         </aside>

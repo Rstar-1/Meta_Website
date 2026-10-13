@@ -16,59 +16,32 @@ const AboutSection = memo(() => {
 
     return (
         <div className="w-full py-60">
-            <div className="grid-cols-2 sm-grid-cols-1 items-center gap-30">
+            <div className="grid-cols-2 sm-grid-cols-1 items-center gap-12">
                 {/* Left Content Column */}
                 <div>
-                    <p className="text-primary font-600 mini-text uppercase tracking-wider mb-12">
+                    <p className="text-primary font-600 small-text uppercase mb-12">
                         Your Trusted Shipping Partner
                     </p>
 
-                    <h2 className="head-text font-700 text-dark" style={{ fontSize: '38px', lineHeight: '1.2' }}>
+                    <h2 className="large-text font-700 text-dark uppercase">
                         Expert Ship Freight Services, Deliver Worldwide with Ease
                     </h2>
-
-                    <div className="flex items-center gap-24 mt-30 sm-flex-col sm-items-start">
-                        <Button
-                            text="Get Started Now"
-                            version="v1"
-                            bg="primary"
-                            color="white"
-                            className="rounded-30 font-500"
-                            onClick={handleGetStarted}
-                        />
-
-                        <div className="flex items-center gap-12">
-                            <div className="flex items-center">
-                                {AVATARS.map((src, idx) => (
-                                    <Image
-                                        key={idx}
-                                        src={src}
-                                        alt={`Client ${idx + 1}`}
-                                        width="38px"
-                                        height="38px"
-                                        className={`rounded-full object-cover border-2 border-white flex ${idx > 0 ? '-ml-10' : ''}`}
-                                        style={{ width: '38px', height: '38px' }}
-                                    />
-                                ))}
-                            </div>
-                            <div>
-                                <h4 className="mid-text font-700 text-dark leading-none">23k</h4>
-                                <p className="mini-text text-gray font-400 capitalize mt-2">
-                                    successful shipments
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="w-full bordb my-28" />
-
-                    <p className="small-text text-gray font-400 leading-relaxed" style={{ maxWidth: '520px' }}>
+                    <p className="para-text text-gray font-400 mt-12">
                         We specialize in global ocean freight solutions, offering full container load, less than container load, and bulk cargo shipping. With our trusted carrier network and years of expertise, we guarantee smooth operations, reliable schedules, and cost-effective delivery for businesses of all sizes.
                     </p>
+
+                    <Button
+                        text="Get Started Now"
+                        version="v1"
+                        bg="primary"
+                        color="white"
+                        className="rounded-30 font-500 mt-36"
+                        onClick={handleGetStarted}
+                    />
+
                 </div>
 
-                {/* Right Visual Card with Badge */}
-                <div className="relative rounded-20 overflow-hidden h-500 sm-h-360 w-full">
+                <div className="relative rounded-10 overflow-hidden h-500 sm-h-360 w-full sm-mt-16">
                     <Image
                         src="https://madebydesignesia.com/themes/logixpress/images/misc/s3.webp"
                         alt="Ship Freight Services"

@@ -183,8 +183,8 @@ HeaderTopBar.displayName = "HeaderTopBar";
 const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => (
   <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
     <Image
-      src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "sobo_logo.png" : "sobo_white.png")}
-      alt="Infitech Logo"
+      src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "/united_brothers_color.png" : "/united_brothers_white.png")}
+      alt="United Brothers Logo"
       className="object-contain w-90 sm-w-50"
       style={{ height: "60px" }}
     />

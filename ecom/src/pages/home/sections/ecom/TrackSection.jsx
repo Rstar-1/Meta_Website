@@ -35,45 +35,45 @@ const TrackSection = memo(() => {
     return (
         <div className="w-full py-40">
             <style>{`
-                .track-input input {
+                .track-order-input input {
                     background-color: transparent !important;
                     border: none !important;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.45) !important;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
                     border-radius: 0 !important;
                     color: #ffffff !important;
-                    padding: 10px 0 !important;
+                    padding: 8px 0 !important;
                     text-indent: 0 !important;
                     font-size: 15px !important;
+                    box-shadow: none !important;
                 }
-                .track-input input::placeholder {
+                .track-order-input input::placeholder {
                     color: rgba(255, 255, 255, 0.75) !important;
                 }
-                .track-input input:focus {
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.9) !important;
+                .track-order-input input:focus {
+                    background-color: transparent !important;
+                    color: #ffffff !important;
+                    border-bottom: 1px solid #ffffff !important;
+                    outline: none !important;
+                    box-shadow: none !important;
                 }
             `}</style>
 
-            {/* Top Video Banner */}
             <div
-                className="relative rounded-20 overflow-hidden w-full h-420 sm-h-240 cursor-pointer group"
+                className="relative rounded-20 overflow-hidden w-full h-450 sm-h-250 cursor-pointer group"
                 onClick={handleOpenVideo}
+                role="button"
+                tabIndex={0}
             >
                 <Image
                     src="https://madebydesignesia.com/themes/logixpress/images/background/2.webp"
                     alt="Cargo Port Container Shipping"
-                    className="w-full h-full object-cover flex group-hover:scale-105 transition-transform"
+                    className="w-full h-full object-cover flex filter-b4 transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                 />
 
-                <div className="absolute inset-0 bg-dark opacity-25 group-hover:opacity-35 transition-opacity" />
-
-                <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                <div className="absolute top-0 left-0 h-full w-full flex items-center justify-center z-10">
                     <div
-                        className="w-70 h-70 sm-w-50 sm-h-50 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all shadow-2xl"
-                        style={{
-                            backgroundColor: 'rgba(15, 23, 42, 0.85)',
-                            backdropFilter: 'blur(6px)',
-                        }}
+                        className="icon-lg bg-primary rounded-full"
                     >
                         <Icon
                             name="Play"
@@ -87,7 +87,6 @@ const TrackSection = memo(() => {
                 </div>
             </div>
 
-            {/* Video Modal Popup */}
             {isVideoOpen && (
                 <Modal
                     isOpen={isVideoOpen}
@@ -109,71 +108,55 @@ const TrackSection = memo(() => {
                 </Modal>
             )}
 
-            {/* Bottom 2 Columns Grid */}
-            <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-20 items-stretch">
-                {/* Left Card: Quick Tracking */}
+            <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-20">
                 <div
-                    className="rounded-20 p-40 sm-p-24 relative overflow-hidden justify-between text-white h-full"
-                    style={{
-                        backgroundColor: 'var(--primary, #ff6b00)',
-                        minHeight: '480px',
-                    }}
+                    className="rounded-10 relative overflow-hidden text-white bg-primary h-400"
                 >
-                    <div className="relative z-10">
-                        <p className="mini-text uppercase tracking-wider font-500 text-white text-opacity-90 mb-6">
+                    {/* Top Content: Headings & Form */}
+                    <div className="relative z-10  p-30 sm-p-24">
+                        <p className="small-text uppercase font-500 text-white">
                             Track Your Package
                         </p>
-                        <h3 className="large-text sm-large-text font-700 text-white leading-tight">
+                        <h3 className="head-text font-600 text-white uppercase">
                             Quick Tracking
                         </h3>
 
-                        {/* Tracking Form with Fields & Button */}
-                        <form onSubmit={handleTrack} className="flex items-center gap-12 mt-28 w-full">
-                            <div className="flex-1 track-input">
-                                <Fields
-                                    type="text"
-                                    value={trackingNumber}
-                                    onChange={handleInputChange}
-                                    placeholder="enter your order number here..."
-                                    outline={false}
-                                    border={false}
-                                    className="w-full text-white"
-                                />
-                            </div>
+                        <form onSubmit={handleTrack} className="flex items-center gap-14 mt-10 w-full gap-12">
+                            <Fields
+                                type="input"
+                                value={trackingNumber}
+                                onChange={handleInputChange}
+                                placeholder="enter your order number here..."
+                                outline={false}
+                                border={false}
+                                className="w-70"
+                            />
                             <Button
                                 type="submit"
                                 text="Track It"
-                                version="v1"
+                                version="v2"
                                 bg="white"
-                                color="dark"
-                                className="rounded-30 font-600 flex-shrink-0"
-                                style={{ padding: '10px 24px', fontSize: '14px' }}
+                                color="primary"
+                                className="rounded-5 py-12 font-600 w-30"
                             />
                         </form>
+
+                        <p className="para-text text-white font-400 mt-16">
+                            Track your package with our trusted logistics service. From pickup to delivery, we provide updates, secure handling, and visibility so your shipment arrives safely and on time.
+                        </p>
                     </div>
 
                     {/* Dotted World Map Graphic */}
                     <Image
                         src="https://madebydesignesia.com/themes/logixpress/images/misc/c2.webp"
                         alt="Global Coverage Map"
-                        className="absolute bottom-0 right-0 pointer-events-none flex"
-                        style={{ width: '55%', opacity: 0.28, zIndex: 1 }}
+                        className="absolute bottom-0 right-0 h-150 flex"
                         loading="lazy"
                     />
-
-                    {/* Bottom Explanatory Paragraph */}
-                    <p
-                        className="small-text text-white text-opacity-95 font-400 mt-40 max-w-md relative z-10 leading-relaxed"
-                        style={{ maxWidth: '420px' }}
-                    >
-                        Track your package with our trusted logistics service. From pickup to delivery, we provide updates, secure handling, and visibility so your shipment arrives safely and on time.
-                    </p>
                 </div>
 
-                {/* Right Card: Customer Testimonial */}
                 <div
-                    className="rounded-20 overflow-hidden relative w-full h-full justify-end"
-                    style={{ minHeight: '480px' }}
+                    className="rounded-10 relative overflow-hidden h-400"
                 >
                     <Image
                         src="https://madebydesignesia.com/themes/logixpress/images/misc/s5.webp"
@@ -184,14 +167,16 @@ const TrackSection = memo(() => {
 
                     {/* Translucent Overlaid Testimonial Card */}
                     <div
-                        className="relative z-10 m-20 sm-m-12 p-24 sm-p-16 rounded-16 text-white"
+                        className="relative z-10 m-20 sm-m-12 p-24 sm-p-16 text-white"
                         style={{
-                            backgroundColor: 'rgba(15, 23, 42, 0.85)',
-                            backdropFilter: 'blur(12px)',
-                            border: '1px solid rgba(255, 255, 255, 0.12)',
+                            backgroundColor: 'rgba(15, 23, 42, 0.84)',
+                            backdropFilter: 'blur(16px)',
+                            WebkitBackdropFilter: 'blur(16px)',
+                            border: '1px solid rgba(255, 255, 255, 0.14)',
+                            borderRadius: '16px',
                         }}
                     >
-                        <p className="mini-text text-white text-opacity-90 leading-relaxed font-400 mb-18">
+                        <p className="para-text text-white font-400 mb-16">
                             &ldquo;We&apos;ve trusted this logistics company for years, and they never disappoint. Every shipment is handled with care, delivered on time, and supported with clear tracking. Their team makes global shipping simple, reliable, and stress-free for our business.&rdquo;
                         </p>
 
@@ -200,8 +185,6 @@ const TrackSection = memo(() => {
                                 <Image
                                     src="https://madebydesignesia.com/themes/logixpress/images/testimonial/1.webp"
                                     alt="Sarah Johnson"
-                                    width="42px"
-                                    height="42px"
                                     className="rounded-full object-cover border border-white border-opacity-30 flex-shrink-0"
                                     style={{ width: '42px', height: '42px' }}
                                 />
@@ -209,7 +192,7 @@ const TrackSection = memo(() => {
                                     <h5 className="headmini-text font-600 text-white leading-none">
                                         Sarah Johnson
                                     </h5>
-                                    <p className="mini-text text-gray font-400 mt-4">
+                                    <p className="mini-text font-400 mt-4 text-white opacity-70">
                                         Store Owner
                                     </p>
                                 </div>
@@ -217,15 +200,15 @@ const TrackSection = memo(() => {
 
                             <span
                                 style={{
-                                    fontSize: '32px',
-                                    color: 'var(--primary, #ff6b00)',
+                                    fontSize: '34px',
+                                    color: '#ff5500',
                                     lineHeight: 0.5,
                                     fontFamily: 'serif',
                                     fontWeight: 'bold',
                                     letterSpacing: '-2px',
                                 }}
                             >
-                                &rdquo;&rdquo;
+                                &#8221;&#8221;
                             </span>
                         </div>
                     </div>

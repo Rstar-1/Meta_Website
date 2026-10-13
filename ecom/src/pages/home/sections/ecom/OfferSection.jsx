@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, memo } from 'react';
+import React, { useState, useRef, useCallback, memo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Container from '../../../../components/common/Container';
@@ -198,7 +198,7 @@ const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
                                 style={{ width: '45px', height: '45px' }}
                             />
 
-                            <div className="overflow-hidden">
+                            <div className="overflow-hidden w-85">
                                 <h5 className="headmini-text font-600 text-dark line-clamp1">
                                     {p.name}
                                 </h5>
@@ -241,11 +241,17 @@ const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
 
 ShopLookPopup.displayName = 'ShopLookPopup';
 
-const SpaceCard = memo(({ space, isFirst, isOpen, onToggle, onProductClick }) => {
+const SpaceCard = memo(({ space, isFirst, isMobile, isOpen, onToggle, onProductClick }) => {
+    const isMob = isMobile ?? (typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+
     return (
         <div
-            className='rounded-10 relative overflow-hidden h-450'
-            style={{ minWidth: isFirst ? '650px' : '390px' }}
+            className='rounded-10 relative overflow-hidden h-450 sm-h-400'
+            style={{
+                minWidth: isMob
+                    ? (isFirst ? '360px' : '340px')
+                    : (isFirst ? '650px' : '390px')
+            }}
         >
             <Image
                 src={space.image}
@@ -286,6 +292,13 @@ const OfferSection = () => {
 
     const [activeLookId, setActiveLookId] = useState(1);
     const [scrollProgress, setScrollProgress] = useState(25);
+    const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 768 : false));
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleScroll = useCallback(() => {
         if (scrollRef.current) {
@@ -363,6 +376,7 @@ const OfferSection = () => {
                         key={space.id}
                         space={space}
                         isFirst={index === 0}
+                        isMobile={isMobile}
                         isOpen={activeLookId === space.id}
                         onToggle={() => handleToggleLook(space.id)}
                         onProductClick={handleProductClick}

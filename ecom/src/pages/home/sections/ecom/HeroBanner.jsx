@@ -27,7 +27,7 @@ const TYPE1_SLIDES = [
         id: 1,
         tag: 'Modern Elegance',
         title: 'Modern Elegance Spoke Sofa',
-        buttonText: 'Shop Collection',
+        buttonText: 'Explore Collection',
         path: '/product',
         image: import.meta.env.VITE_IMAGE + "Hero1.mp4",
         alt: 'Modern Elegance Spoke Sofa'
@@ -36,7 +36,7 @@ const TYPE1_SLIDES = [
         id: 2,
         tag: 'Timeless Living',
         title: 'Nordic Lounge Interior',
-        buttonText: 'Shop Collection',
+        buttonText: 'Explore Collection',
         path: '/product',
         image: import.meta.env.VITE_IMAGE + "Hero2.mp4",
         alt: 'Nordic Lounge Interior'
@@ -48,7 +48,7 @@ const TYPE2_SLIDES = [
     {
         id: 1,
         title: 'EXPERIENCE\nUNPARALLELED AUDIO\nELEGANCE',
-        buttonText: 'Shop Headphones',
+        buttonText: 'Explore Collection',
         path: '/product',
         image: import.meta.env.VITE_IMAGE + "Hero1.mp4",
         alt: 'Experience Unparalleled Audio Elegance'
@@ -56,7 +56,7 @@ const TYPE2_SLIDES = [
     {
         id: 2,
         title: 'STUDIO FIDELITY\nCRAFTED FOR PURITY',
-        buttonText: 'Shop Headphones',
+        buttonText: 'Explore Collection',
         path: '/product',
         image: import.meta.env.VITE_IMAGE + "Hero2.mp4",
         alt: 'Studio Fidelity Audio'
@@ -153,9 +153,9 @@ const Type2SlideItem = memo(({ slide, onNavigate }) => {
             <Image src={slide.image} alt={slide.alt} className="w-full h-full object-cover filter-b5 flex" loading="eager" />
             <div className='absolute bottom-0 left-0 w-full z-20'>
                 <Container>
-                    <div className='flex items-end justify-between w-full pb-80'>
+                    <div className='flex sm-grid-cols-1 items-end justify-between w-full pb-80'>
                         <h2
-                            className="text-white font-600 large-text uppercase w-50"
+                            className="text-white font-600 large-text uppercase w-50 sm-w-full"
                         >
                             {slide.title}
                         </h2>
@@ -165,7 +165,7 @@ const Type2SlideItem = memo(({ slide, onNavigate }) => {
                             version="v1"
                             bg="white"
                             color="dark"
-                            className='rounded-30 font-500'
+                            className='rounded-30 font-500 w-max sm-mt-16'
                             onClick={handleButtonClick}
                         />
                     </div>

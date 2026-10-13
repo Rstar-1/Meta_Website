@@ -3,8 +3,9 @@ import React from "react";
 import Container from "../../common/Container";
 import Breadcrumb from "../../common/Breadcrumb";
 import Skeleton from "../../common/Skeleton";
+import { resolveImagePath, carpetBanner } from "../../../utils/imageResolver";
 
-const defaultBannerImg = `${import.meta.env.VITE_IMAGE}Banner.jpg`;
+const defaultBannerImg = carpetBanner;
 
 const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage, image, backgroundImage }) => {
     if (loading) {
@@ -12,12 +13,13 @@ const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage
     }
 
     const mainHeading = title || "Banner";
-    const bannerImg = bgImage || backgroundImage || image || defaultBannerImg;
+    const rawImg = bgImage || backgroundImage || image || defaultBannerImg;
+    const bannerImg = resolveImagePath(rawImg);
     const bannerBackground = bannerImg
         ? (bannerImg.includes('gradient') || bannerImg.startsWith('url(')
             ? bannerImg
-            : `linear-gradient(rgba(10, 15, 25, 0.75), rgba(10, 15, 25, 0.85)), url(${bannerImg}) center/cover no-repeat`)
-        : 'radial-gradient(ellipse at 50% 50%, #2e0f06ff 0%, #6b3620ff 55%, #311106ff 100%)';
+            : `linear-gradient(rgba(10, 15, 25, 0.72), rgba(10, 15, 25, 0.82)), url(${bannerImg}) center/cover no-repeat`)
+        : `linear-gradient(rgba(10, 15, 25, 0.72), rgba(10, 15, 25, 0.82)), url(${carpetBanner}) center/cover no-repeat`;
 
     const itemsList = productData
         ? [
@@ -33,7 +35,6 @@ const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage
             ];
 
     return (
-
         <Container className="relative"
             style={{
                 background: bannerBackground,
@@ -45,6 +46,12 @@ const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage
                     {mainHeading}
                 </h2>
 
+                {desc && (
+                    <p className="para-text text-white opacity-85 mt-8 max-w-600 mx-auto">
+                        {desc}
+                    </p>
+                )}
+
                 <div className="mt-8 flex justify-center">
                     <Breadcrumb items={itemsList} className="justify-center" />
                 </div>
@@ -53,4 +60,4 @@ const Banner = ({ title, desc, style, breadcrumbs, productData, loading, bgImage
     );
 };
 
-export default Banner;
+export default React.memo(Banner);

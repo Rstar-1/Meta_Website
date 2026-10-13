@@ -6,6 +6,7 @@ import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
 import blogData from '../../data/blog.json';
+import { carpetPatchBanner } from '../../utils/imageResolver';
 
 const MediaDetailSection = lazy(() => import('./sections/MediaDetailSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
@@ -24,7 +25,7 @@ const blogDetailSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${import.meta.env.VITE_IMAGE + 'Patch1.jpg'})`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${carpetPatchBanner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

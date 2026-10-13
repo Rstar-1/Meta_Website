@@ -1,6 +1,6 @@
 const SITE_URL = (import.meta.env.VITE_SITE_URL || "").replace(/\/$/, "");
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Ashmita Vinyls";
-const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/sobo_logo.webp";
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || "United Brothers";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/united_brothers_color.png";
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 

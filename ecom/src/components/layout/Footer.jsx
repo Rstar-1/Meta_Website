@@ -309,25 +309,14 @@ const Footer = () => {
   const resolvedColumns = React.useMemo(() => {
     const realProducts = (productsData || []).filter((p) => !p.isBanner);
 
-    const formatBracketName = (name) => {
-      if (!name) return '';
-      return name
-        .replace(/^Mounting Brackets \(MS\) - White/i, 'MS Brackets (White)')
-        .replace(/^Mounting Brackets \(MS\) - Grey/i, 'MS Brackets (Grey)')
-        .replace(/^Stainless Steel 202 \(SS202\) Mounting Brackets/i, 'SS 202 Mounting Brackets')
-        .replace(/^Stainless Steel 304 \(SS304\) Mounting Brackets/i, 'SS 304 Mounting Brackets')
-        .replace(/^Galvanised Steel Magnetic Track/i, 'Galvanised Magnetic Track')
-        .replace(/^Magnetic Strip Curtain Plastic Bottom/i, 'Magnetic Plastic Bottom');
-    };
-
-    const getTopProducts = (filterFn, limit = 5, isBracket = false) => {
+    const getTopProducts = (filterFn, limit = 5) => {
       const list = [];
       const seen = new Set();
       for (const p of realProducts) {
         if (filterFn(p) && !seen.has(p.name)) {
           seen.add(p.name);
           list.push({
-            label: isBracket ? formatBracketName(p.name) : p.name,
+            label: p.name,
             fullTitle: p.name,
             url: `/product/${p.id}`
           });
@@ -342,33 +331,39 @@ const Footer = () => {
       links: [
         { label: 'About Us', url: '/about' },
         { label: 'All Products', url: '/product' },
-        { label: 'Applications', url: '/supplier' },
-        { label: 'Technical Guides', url: '/blog' },
+        { label: 'Find A Store', url: '/supplier' },
+        { label: 'Flooring Insights', url: '/blog' },
         { label: 'Contact & Enquiry', url: '/connect' }
       ]
     };
 
-    const pvcProducts = getTopProducts(
-      (p) => p.categoryId === 1 || p.category?.toLowerCase().includes('curtain'),
-      5,
-      false
+    const carpetProducts = getTopProducts(
+      (p) =>
+        p.categoryId === 1 ||
+        p.categoryId === 2 ||
+        p.category?.toLowerCase().includes('dilour') ||
+        p.category?.toLowerCase().includes('rib'),
+      5
     );
 
-    const bracketProducts = getTopProducts(
-      (p) => p.categoryId === 3 || p.category?.toLowerCase() === 'brackets' || p.category?.toLowerCase().includes('bracket'),
-      5,
-      true
+    const rugProducts = getTopProducts(
+      (p) =>
+        p.categoryId === 3 ||
+        p.category?.toLowerCase().includes('rug') ||
+        p.name?.toLowerCase().includes('poly shrink') ||
+        p.name?.toLowerCase().includes('shalimar'),
+      5
     );
 
     return [
       companyCol,
       {
-        title: 'PVC Strip Curtains',
-        links: pvcProducts.length > 0 ? pvcProducts : (columns?.[1]?.links || []).slice(0, 5)
+        title: 'Dilour & Ribs Carpets',
+        links: carpetProducts.length > 0 ? carpetProducts : (columns?.[1]?.links || [])
       },
       {
-        title: 'Brackets',
-        links: bracketProducts.length > 0 ? bracketProducts : (columns?.[2]?.links || []).slice(0, 5)
+        title: 'Poly Shrink & Shalimar Rugs',
+        links: rugProducts.length > 0 ? rugProducts : (columns?.[2]?.links || [])
       }
     ];
   }, [columns]);
