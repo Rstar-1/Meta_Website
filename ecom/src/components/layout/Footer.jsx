@@ -309,14 +309,14 @@ const Footer = () => {
   const resolvedColumns = React.useMemo(() => {
     const realProducts = (productsData || []).filter((p) => !p.isBanner);
 
-    const getTopProducts = (filterFn, limit = 5) => {
+    const getTopProducts = (filterFn, limit = 5, labelFormatter = null) => {
       const list = [];
       const seen = new Set();
       for (const p of realProducts) {
         if (filterFn(p) && !seen.has(p.name)) {
           seen.add(p.name);
           list.push({
-            label: p.name,
+            label: labelFormatter ? labelFormatter(p.name) : p.name,
             fullTitle: p.name,
             url: `/product/${p.id}`
           });
@@ -337,23 +337,40 @@ const Footer = () => {
       ]
     };
 
-    const carpetProducts = getTopProducts(
-      (p) =>
-        p.categoryId === 1 ||
-        p.categoryId === 2 ||
-        p.category?.toLowerCase().includes('dilour') ||
-        p.category?.toLowerCase().includes('rib'),
-      5
+    const dilourProducts = getTopProducts(
+      (p) => p.categoryId === 1 || p.category?.toLowerCase().includes('dilour'),
+      3
     );
+    const ribsProducts = getTopProducts(
+      (p) => p.categoryId === 2 || p.category?.toLowerCase().includes('rib'),
+      2
+    );
+    const combinedCarpets = [...dilourProducts, ...ribsProducts];
+    const carpetProducts = combinedCarpets.length > 0
+      ? combinedCarpets
+      : getTopProducts((p) => p.categoryId === 1 || p.categoryId === 2, 5);
 
-    const rugProducts = getTopProducts(
-      (p) =>
-        p.categoryId === 3 ||
-        p.category?.toLowerCase().includes('rug') ||
-        p.name?.toLowerCase().includes('poly shrink') ||
-        p.name?.toLowerCase().includes('shalimar'),
-      5
+    const formatRugName = (name) => {
+      if (!name) return '';
+      if (name.startsWith('New Age Poly Shrink Rug - ')) {
+        return `Poly Shrink: ${name.replace('New Age Poly Shrink Rug - ', '').trim()}`;
+      }
+      return name;
+    };
+
+    const polyShrinkProducts = getTopProducts(
+      (p) => p.categoryId === 3 && (p.name?.toLowerCase().includes('poly shrink') || p.subCategory?.toLowerCase().includes('poly')),
+      3,
+      formatRugName
     );
+    const shalimarProducts = getTopProducts(
+      (p) => p.categoryId === 3 && (p.name?.toLowerCase().includes('shalimar') || p.subCategory?.toLowerCase().includes('shalimar')),
+      2
+    );
+    const combinedRugs = [...polyShrinkProducts, ...shalimarProducts];
+    const rugProducts = combinedRugs.length > 0
+      ? combinedRugs
+      : getTopProducts((p) => p.categoryId === 3, 5, formatRugName);
 
     return [
       companyCol,

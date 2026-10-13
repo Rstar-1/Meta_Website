@@ -387,38 +387,6 @@ const ProductDetailContent = ({ currentProduct, category }) => {
                             ))}
                         </div>
                     </div>
-                    {isPvcStripCurtains && (
-                        <div className='mt-30'>
-                            <div className='flex items-center justify-between'>
-                                <h3 className='title-text text-dark font-600 uppercase'>Packaging Products</h3>
-                                <div
-                                    className="icon-lg cursor-pointer bg-primary rounded-full"
-                                    onClick={() => setIsPackagingModalOpen(true)}
-                                    title="Watch Packaging Video"
-                                    role="button"
-                                    tabIndex={0}
-                                    onKeyDown={(e) => e.key === 'Enter' && setIsPackagingModalOpen(true)}
-                                >
-                                    <Icon name="Play" width="14" height="14" fill="var(--white)" />
-                                </div>
-                            </div>
-                            <div className='grid-cols-3 sm-grid-cols-2 gap-12 mt-8'>
-                                {['Package1.jpeg', 'Package2.jpeg'].map((img, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="rounded-10 overflow-hidden h-200"
-                                        title="Click to view packaging video"
-                                    >
-                                        <Image
-                                            src={resolveImagePath(img)}
-                                            alt={`Packaging ${idx + 1}`}
-                                            className='w-full h-full object-cover flex'
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
                 </div>
             </div>
 
