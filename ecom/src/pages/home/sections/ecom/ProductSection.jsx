@@ -29,17 +29,14 @@ const ProductSection = () => {
     }, [navigate]);
 
     return (
-        <div className="w-full py-50">
-            <Heading
-                version="v2"
-                tag="SPECIAL OFFERS FOR YOU"
-                title="FEATURED PRODUCTS & POPULAR DESIGNS"
-            />
+        <div className="w-full py-10">
 
             <SlideLayout
                 items={firstRowProducts}
                 className='py-30'
                 version='btnslide'
+                tag=""
+                title="FEATURED PRODUCTS & POPULAR DESIGNS"
                 renderItem={(item) => (
                     <CardLayout
                         key={item.id}
@@ -55,6 +52,8 @@ const ProductSection = () => {
                 items={secondRowProducts}
                 className='py-10'
                 version='btnslide'
+                tag=""
+                title="FEATURED PRODUCTS & POPULAR DESIGNS"
                 renderItem={(item) => (
                     <CardLayout
                         key={item.id}

@@ -1,70 +1,68 @@
 {
   "HeroSections": {
     "titleLine1": "PREMIUM",
-    "titleLine2": "INDUSTRIAL",
-    "titleHighlight": "PVC STRIP CURTAINS",
+    "titleLine2": "LUXURY & NON-WOVEN",
+    "titleHighlight": "CARPETS & WOVEN RUGS",
     "agencyTitle": "MANUFACTURER",
-    "leftText": "Leading manufacturer & supplier of PVC strip curtains, polar freezer rolls, and hanging hardware across India.",
-    "rightText": "Energy-saving thermal insulation, dust & noise control, and durable doorway barriers for cold storage and factories."
+    "leftText": "United Brothers — Ahmedabad's premier manufacturer & wholesale distributor of Dilour non-woven carpets, Ribs carpets, and 1800 GSM Poly Shrink rugs.",
+    "rightText": "Engineered for luxury residential living, automotive cabin interiors, and heavy-duty commercial corridors with unmatched acoustic comfort and lasting durability."
   },
   "AboutSections": {
     "heading": {
       "tag": "MANUFACTURING EXCELLENCE",
-      "title": "High-Clarity PVC Strip Curtains & Industrial Barrier Solutions"
+      "title": "Master-Crafted Dilour Carpets, Ribs Non-Woven & 1800 GSM Woven Rugs"
     },
     "crafter": {
-      "title": "Custom PVC Curtains",
-      "subtitle": "Precision extruded for thermal and dust protection",
-      "buttonText": "< View PVC Products />",
+      "title": "Bespoke Carpets & Luxury Rugs",
+      "subtitle": "Precision needle-punch non-woven technology & high-density shrink weaving",
+      "buttonText": "< View Carpet Collections />",
       "features": [
         {
-          "title": "Thermal & Energy Savings",
-          "description": "Reduce air conditioning and refrigeration energy loss by up to 45% with virgin-grade flexible PVC strips."
+          "title": "Acoustic Damping & Cushioning",
+          "description": "Reduce airborne reverberation, footstep noise, and vehicle road drone by up to 35% with high-density fiber matrices."
         },
         {
-          "title": "Complete Mounting Hardware",
-          "description": "Ready-to-install Stainless Steel 304 hook-on tracks and sliding systems for quick doorway mounting."
+          "title": "Zero-Fray & Anti-Slip Durability",
+          "description": "Precision needle-punched backing allows custom cutting without edge unraveling, ideal for vehicle cabins and busy corridors."
         }
       ]
     },
-    "platforms": ["Standard Clear", "Polar Freezer"],
+    "platforms": ["Dilour & Ribs Non-Woven", "1800 GSM Poly Shrink Rugs", "Shalimar Designer Weaves"],
     "codeSnippets": {
-      "Standard Clear": [
-        { "num": 1, "code": "const grade = '100% Virgin Flexible PVC'" },
-        { "num": 2, "code": "const tempRange = '-15°C to +50°C'" },
-        {
-          "num": 3,
-          "code": "const widthOptions = ['200mm', '300mm', '400mm']"
-        },
-        { "num": 4, "code": "const transparency = 'High Optical Clarity 99%'" },
-        { "num": 5, "code": "export default getStripCurtainSpec(grade)" }
+      "Dilour & Ribs Non-Woven": [
+        { "num": 1, "code": "const composition = '100% Virgin Synthetic Fiber'" },
+        { "num": 2, "code": "const surfaceType = 'Cut-Pile Velour & Linear Ribbed'" },
+        { "num": 3, "code": "const rollWidth = ['2.0m', '3.66m', '4.0m Master Rolls']" },
+        { "num": 4, "code": "const acousticAbsorption = 'NRC 0.35 Sound Damping'" },
+        { "num": 5, "code": "export default getAutomotiveCarpetSpec()" }
       ],
-      "Polar Freezer": [
-        { "num": 1, "code": "const grade = 'Polar Cold-Flex Compound'" },
-        { "num": 2, "code": "const tempRange = '-40°C to +15°C (Sub-Zero)'" },
-        {
-          "num": 3,
-          "code": "const application = 'Walk-in Freezers & Blast Chillers'"
-        },
-        {
-          "num": 4,
-          "code": "const flexibility = 'Zero Cracking at Freezing Temp'"
-        },
-        { "num": 5, "code": "return <PolarFreezerCurtain spec={grade} />" }
+      "1800 GSM Poly Shrink Rugs": [
+        { "num": 1, "code": "const density = '1800 GSM Ultra-Dense High Pile'" },
+        { "num": 2, "code": "const weaveTechnology = 'Thermal Shrink 3D Dimension'" },
+        { "num": 3, "code": "const backing = 'Integrated Heavy Self-Backing'" },
+        { "num": 4, "code": "const stainResistance = 'Oleophobic Soil-Shield Weave'" },
+        { "num": 5, "code": "return <PolyShrinkLuxuryRug spec={density} />" }
+      ],
+      "Shalimar Designer Weaves": [
+        { "num": 1, "code": "const yarn = 'Lustrous Color-Fast Polyester Weft'" },
+        { "num": 2, "code": "const pattern = 'Heritage Persian & Modern Geometric'" },
+        { "num": 3, "code": "const pileHeight = '12mm High-Low Sculpted Feel'" },
+        { "num": 4, "code": "const maintenance = 'Spot Cleanable & Vacuum Friendly'" },
+        { "num": 5, "code": "export const shalimarCollection = getShalimarCatalog()" }
       ]
     },
     "racers": [
       {
         "id": 1,
-        "title": "Direct Factory Pricing",
-        "subtitle": "Ready stock for immediate dispatch",
-        "description": "Bulk inventory of standard clear, double ribbed, polar freezer, and anti-insect amber yellow rolls shipped pan-India."
+        "title": "Direct Factory Wholesale",
+        "subtitle": "Ready inventory in Ahmedabad for immediate pan-India dispatch",
+        "description": "Vast ready stock of Dilour (Black, Grey, Beige, Brown, Red), Ribs, and Poly Shrink rug sizes shipped nationwide."
       },
       {
         "id": 2,
-        "title": "100% Virgin PVC Grade",
-        "subtitle": "UV-treated, non-toxic & shatterproof",
-        "description": "Engineered for food processing, pharma cleanrooms, warehouses, and heavy-traffic industrial loading docks."
+        "title": "Commercial & Automotive Grade",
+        "subtitle": "UV-treated, non-shedding, flame-resistant & odorless",
+        "description": "Engineered for vehicle OEM fitments, car trimmers, hotel suites, corporate corridors, and modern luxury living rooms."
       }
     ]
   },
@@ -73,206 +71,199 @@
       {
         "id": "sizing",
         "step": 1,
-        "tag": "01 / Doorway Sizing & Grade Selection",
+        "tag": "01 / Fiber Selection & Density Sizing",
         "color": "#3b82f6",
         "glowColor": "rgba(59, 130, 246, 0.48)",
         "icon": "Feather",
-        "headingMain": "Tailored PVC Strip Sizing &",
-        "headingHighlight": "Optimal Overlap",
-        "description": "We assist in choosing the right strip width (200mm/300mm/400mm) and overlap percentage for maximum thermal and dust isolation.",
-        "ctaText": "Enquire about sizing",
+        "headingMain": "Tailored Carpet Pile Height &",
+        "headingHighlight": "Acoustic Density",
+        "description": "We assist in selecting the ideal carpet GSM (1800 GSM poly shrink, needle-punch dilour, or ribbed anti-slip) to match foot traffic and aesthetic demands.",
+        "ctaText": "Enquire about custom sizes",
         "ctaLink": "/connect",
         "hasTopCta": true,
         "tabs": [
-          { "label": "Cold Storage", "value": "ColdStorage" },
-          { "label": "Food Processing", "value": "Food" },
-          { "label": "Warehouses", "value": "Warehouse" },
-          { "label": "Cleanrooms", "value": "Cleanroom" },
-          { "label": "Welding Bays", "value": "Welding" },
-          { "label": "Supermarkets", "value": "Supermarket" }
+          { "label": "Residential Living", "value": "Residential" },
+          { "label": "Automotive Cabins", "value": "Automotive" },
+          { "label": "Commercial Corridors", "value": "Commercial" },
+          { "label": "Banquet Halls", "value": "Banquet" },
+          { "label": "Corporate Offices", "value": "Office" },
+          { "label": "Hospitality Suites", "value": "Hospitality" }
         ],
         "collaboration": {
-          "title": "Select the perfect PVC strip curtain grade and overlap specification for your facility.",
-          "titleHighlight": "for maximum thermal and dust isolation",
+          "title": "Select the perfect carpet grade and texture specification for your space.",
+          "titleHighlight": "for maximum barefoot comfort and lasting endurance",
           "items": [
-            "Standard clear & double ribbed rolls",
-            "Polar freezer sub-zero strips (-40°C)",
-            "Anti-insect amber yellow barrier strips",
-            "SS 304 hook-on mounting hardware"
+            "Needle-punch non-woven Dilour rolls (5 curated shades)",
+            "Anti-slip grooved Ribs carpets for high-traffic zones",
+            "1800 GSM New Poly Shrink luxury 3D rugs",
+            "Shalimar classic and contemporary Persian rugs"
           ],
-          "buttonText": "Request Product Quote",
-          "linkText": "Explore full PVC range"
+          "buttonText": "Request Carpet Swatch Kit",
+          "linkText": "Explore full carpet & rug catalog"
         }
       },
       {
         "id": "manufacturing",
         "step": 2,
-        "tag": "02 / Precision Extrusion & Slitting",
+        "tag": "02 / Precision Tufting & Thermal Shrink Weaving",
         "color": "#22c55e",
         "glowColor": "rgba(34, 197, 94, 0.48)",
         "icon": "Code",
-        "headingMain": "Virgin-Grade Extrusions with Maximum Clarity & Tear Resistance",
-        "headingHighlight": "Quality Manufacturing",
-        "description": "Manufactured using premium flexible PVC polymers with UV stabilizers, ensuring long service life and high transparency.",
+        "headingMain": "High-Density Weaves with 3D Dimensional Relief &",
+        "headingHighlight": "Self-Backing Quality",
+        "description": "Manufactured using state-of-the-art needle-punch looms and thermal shrink finishing, ensuring high pile rebound, stain resistance, and zero fraying.",
         "ctaText": "View Product Catalog",
         "ctaLink": "/product",
         "hasTopCta": true,
-        "codeIntro": "Engineered PVC specifications and technical parameters:_",
+        "codeIntro": "Engineered carpet specifications and technical parameters:_",
         "tools": [
-          { "label": "100% Virgin PVC", "icon": "Box", "href": "/product" },
-          { "label": "UV Stabilized", "icon": "Layers", "href": "/product" },
-          { "label": "SS 304 Hardware", "icon": "Builder", "href": "/product" },
-          {
-            "label": "Pan-India Dispatch",
-            "icon": "Headphones",
-            "href": "/connect"
-          }
+          { "label": "1800 GSM High Pile", "icon": "Box", "href": "/product" },
+          { "label": "Needle-Punch Non-Woven", "icon": "Layers", "href": "/product" },
+          { "label": "Acoustic Backing", "icon": "Builder", "href": "/product" },
+          { "label": "Pan-India Dispatch", "icon": "Headphones", "href": "/connect" }
         ]
       },
       {
         "id": "installation",
         "step": 3,
-        "tag": "03 / Simple Hook-On Installation",
+        "tag": "03 / Seamless Laying & Zero Fray Installation",
         "color": "#db5e1f",
         "glowColor": "rgba(219, 94, 31, 0.48)",
         "icon": "PaperPlane",
-        "headingMain": "Universal SS 304 Tracks, Rapid Mounting &",
-        "headingHighlight": "Zero Maintenance",
-        "description": "Pre-clamped PVC strips hook easily onto universal wall/ceiling tracks in minutes with no special tools required.",
+        "headingMain": "Effortless Cutting, Moldable Contours &",
+        "headingHighlight": "Anti-Slip Stability",
+        "description": "Flexible non-woven backing molds to vehicle footwells and flat floors without edge unraveling or corner curling.",
         "ctaText": "",
         "ctaLink": "",
         "hasTopCta": false
       }
     ],
     "industryTabsData": {
-      "ColdStorage": {
-        "title": "Sub-zero polar grade",
-        "keyword": "Cold Storage Curtains",
-        "titleEnd": "that retain freezer temperatures down to -40°C",
-        "description": "Prevents frost build-up, maintains compressor efficiency, and allows seamless pallet and pedestrian movement.",
+      "Residential": {
+        "title": "1800 GSM 3D Woven",
+        "keyword": "Poly Shrink Luxury Rugs",
+        "titleEnd": "that bring warmth, texture, and barefoot comfort to living rooms",
+        "description": "Multi-level sculpted textures create dramatic visual depth while dense polyester yarns resist spills, stains, and daily family wear.",
         "bullets": [
-          "Crack-resistant at -40°C",
-          "Reduces freezer energy costs",
-          "High optical transparency",
-          "Fast hook-on track replacement"
+          "1800 GSM ultra-dense pile",
+          "Stain and water-resistant fibers",
+          "Integrated heavy self-backing",
+          "Sculpted 3D geometric patterns"
         ],
-        "cta": "View Polar Curtains",
-        "badge": "Polar Grade",
-        "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80"
+        "cta": "View Living Room Rugs",
+        "badge": "1800 GSM Luxury",
+        "image": "/products/spaces/living_room.webp"
       },
-      "Food": {
-        "title": "Amber yellow",
-        "keyword": "Anti-Insect Curtains",
-        "titleEnd": "for food processing and packaging plants",
-        "description": "Emits special yellow wavelength that deters flying insects and pests while meeting strict hygiene compliance.",
+      "Automotive": {
+        "title": "Needle-punch velour",
+        "keyword": "Automotive Dilour Carpets",
+        "titleEnd": "for premium car passenger cabins and boot linings",
+        "description": "Damps road drone and chassis vibration while molding easily around curves, wheel arches, and footrest contours without edge fraying.",
         "bullets": [
-          "Repels flying insects & pests",
-          "USDA / FDA compliant material",
-          "Easy to wash and sanitize",
-          "Available in smooth and ribbed"
+          "35% road noise reduction",
+          "Cut-edge fray resistant",
+          "Available in 5 classic automotive shades",
+          "Easy to vacuum and pressure clean"
         ],
-        "cta": "View Insect Curtains",
-        "badge": "Food Safe",
-        "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
+        "cta": "View Automotive Carpets",
+        "badge": "Automotive OEM Grade",
+        "image": "/products/spaces/auto_interior.webp"
       },
-      "Warehouse": {
-        "title": "Double ribbed",
-        "keyword": "Heavy-Duty Curtains",
-        "titleEnd": "for busy forklift and loading bay doorways",
-        "description": "Raised ribs absorb vehicle impact and prevent scratches on the optical viewing area for long-lasting clarity.",
+      "Commercial": {
+        "title": "Anti-slip grooved",
+        "keyword": "Commercial Ribs Carpets",
+        "titleEnd": "for high-traffic corridors, stairs, and entryways",
+        "description": "Heavy-duty parallel ribs scrape soil and dirt off shoes, providing traction and keeping high-traffic facilities pristine.",
         "bullets": [
-          "Withstands forklift abrasion",
-          "Controls warehouse dust & wind",
-          "Reduces ambient factory noise",
-          "Easy individual strip replacement"
+          "Superior anti-slip traction",
+          "Scrapes soil and moisture",
+          "Withstands heavy wheeled carts",
+          "Durable needle-punch structure"
         ],
-        "cta": "View Ribbed Curtains",
-        "badge": "Heavy Duty",
-        "image": "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=600&q=80"
+        "cta": "View Ribs Carpets",
+        "badge": "Heavy Commercial",
+        "image": "/products/spaces/office_corridor.webp"
       },
-      "Cleanroom": {
-        "title": "Static-dissipative",
-        "keyword": "Anti-Static ESD Curtains",
-        "titleEnd": "for electronics and pharmaceutical cleanrooms",
-        "description": "Prevents static charge accumulation and shields sensitive electronic components from airborne dust.",
+      "Banquet": {
+        "title": "Lustrous heritage",
+        "keyword": "Shalimar Designer Rugs",
+        "titleEnd": "for grand reception halls, ballrooms, and luxury hotel suites",
+        "description": "Rich traditional and transitional woven patterns that deliver five-star elegance with easy spot-cleaning and fade resistance.",
         "bullets": [
-          "Surface resistivity 10^9 to 10^11 Ω",
-          "Dust-free cleanroom grade",
-          "Non-sticky smooth finish",
-          "Flame-retardant formulation"
+          "Ornate Persian and modern motifs",
+          "Colorfast vibrant yarn dyes",
+          "Smooth vacuum-friendly pile",
+          "High foot-traffic durability"
         ],
-        "cta": "View ESD Curtains",
-        "badge": "ESD Safe",
-        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+        "cta": "View Shalimar Rugs",
+        "badge": "Designer Weave",
+        "image": "/products/spaces/dining_salon.webp"
       },
-      "Welding": {
-        "title": "UV-blocking",
-        "keyword": "Welding Screen Curtains",
-        "titleEnd": "for fabrication shops and welding enclosures",
-        "description": "Filters harmful UV radiation and welding flash sparks while providing visible safety monitoring.",
+      "Office": {
+        "title": "Acoustic-enhancing",
+        "keyword": "Executive Floor Carpets",
+        "titleEnd": "for boardrooms, open workstations, and conference rooms",
+        "description": "Absorbs ambient office chatter and footstep noise, fostering a quiet, productive, and aesthetically refined corporate atmosphere.",
         "bullets": [
-          "Compliant with welding safety norms",
-          "Filters UV & infrared flash",
-          "Fire retardant bronze & green",
-          "Protects surrounding workers"
+          "Reduces ambient reverberation",
+          "Castor-chair roll resistant",
+          "Low VOC indoor air safety",
+          "Seamless modular appearance"
         ],
-        "cta": "View Welding Curtains",
-        "badge": "Welding Safety",
-        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+        "cta": "View Office Flooring",
+        "badge": "Acoustic Grade",
+        "image": "/products/spaces/bedroom_retreat.webp"
       },
-      "Supermarket": {
-        "title": "High-clarity",
-        "keyword": "Standard Clear Curtains",
-        "titleEnd": "for supermarkets and retail walk-in coolers",
-        "description": "Clear transparent strips that keep cool air in retail display areas and separate stock rooms from customer aisles.",
+      "Hospitality": {
+        "title": "Plush cut-pile",
+        "keyword": "Boutique Hotel Flooring",
+        "titleEnd": "for premium guest suites, lounges, and penthouse retreats",
+        "description": "Deep pile softness that envelops guests in comfort while enduring frequent professional cleaning cycles.",
         "bullets": [
-          "99% light transmission",
-          "Rounded safety edge strips",
-          "Reduces AC cooling loss",
-          "Lightweight and easy to walk through"
+          "Plush underfoot sensation",
+          "Hypoallergenic non-shedding fibers",
+          "Flame-retardant treated",
+          "Custom wholesale roll lengths"
         ],
-        "cta": "View Clear Curtains",
-        "badge": "Standard Clear",
-        "image": "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80"
+        "cta": "View Hospitality Carpets",
+        "badge": "Five-Star Luxury",
+        "image": "/products/spaces/living_room.webp"
       }
     },
     "platformCodeSnippets": {
-      "Standard Clear": [
-        { "num": 1, "code": "const rollWidth = '200mm | 300mm | 400mm'" },
-        { "num": 2, "code": "const thickness = '2mm | 3mm | 4mm'" },
-        { "num": 3, "code": "const rollLength = '50 Meters Standard'" },
-        { "num": 4, "code": "const material = 'Virgin Grade Transparent PVC'" },
-        { "num": 5, "code": "return generateCustomCurtainCut(spec)" }
+      "Dilour & Ribs Non-Woven": [
+        { "num": 1, "code": "const rollWidth = '2.00m | 3.66m | 4.00m'" },
+        { "num": 2, "code": "const thickness = '2.5mm to 4.5mm'" },
+        { "num": 3, "code": "const rollLength = '30m to 50m Master Rolls'" },
+        { "num": 4, "code": "const colors = ['Black', 'Grey', 'Beige', 'Brown', 'Red']" },
+        { "num": 5, "code": "return generateCustomCarpetCut(spec)" }
       ],
-      "Polar Grade": [
-        { "num": 1, "code": "const tempLimit = '-40°C Cold Flexibility'" },
-        { "num": 2, "code": "const application = 'Cold Rooms & Freezers'" },
-        { "num": 3, "code": "const hardness = 'Shore A 65 Soft Compound'" },
-        { "num": 4, "code": "const clarity = 'Clear Blue Tint Finish'" },
-        { "num": 5, "code": "return deployPolarFreezerSystem()" }
+      "1800 GSM Poly Shrink Rugs": [
+        { "num": 1, "code": "const gsm = '1800 GSM High Density'" },
+        { "num": 2, "code": "const technique = 'Thermal Poly Shrink 3D Weave'" },
+        { "num": 3, "code": "const sizes = ['4x6 ft', '5x7 ft', '6x9 ft', '8x10 ft']" },
+        { "num": 4, "code": "const backing = 'Self-Backing Non-Slip Anchor'" },
+        { "num": 5, "code": "return deployPolyShrinkRugs()" }
       ],
-      "Hardware": [
-        { "num": 1, "code": "const trackMaterial = 'Stainless Steel 304'" },
-        {
-          "num": 2,
-          "code": "const trackLengths = ['1000mm', '1200mm', '1500mm']"
-        },
-        { "num": 3, "code": "const clampType = 'Hook-On Removable Plates'" },
-        { "num": 4, "code": "const mounting = 'Wall & Ceiling Face Mount'" },
-        { "num": 5, "code": "export const hardwareSystem = getSS304Kit()" }
+      "Shalimar Designer Weaves": [
+        { "num": 1, "code": "const weave = 'Precision Jacquard Woven Rug'" },
+        { "num": 2, "code": "const pileType = 'Soft Touch Polyester High-Low'" },
+        { "num": 3, "code": "const style = 'Persian Traditional & Modern Minimalist'" },
+        { "num": 4, "code": "const washCare = 'Stain Resistant & Spot Cleanable'" },
+        { "num": 5, "code": "export const shalimarCollection = getShalimarCatalog()" }
       ]
     },
     "securityCard": {
-      "title": "Industrial Standards, UV Protection & Food Safety",
-      "description": "Our PVC strip curtains are manufactured from 100% virgin flexible polymer, offering UV stabilization, tear resistance, and compliance for food processing and industrial zones.",
-      "ctaText": "View Quality Standards"
+      "title": "ISO Quality Standards, Fire Resistance & Eco-Friendly Fibers",
+      "description": "Our carpets and rugs are manufactured from 100% virgin synthetic fibers, offering UV color-fastness, non-shedding durability, and certified indoor air quality standards.",
+      "ctaText": "View Carpet Certifications"
     },
     "businessMetricsCard": {
-      "title": "Trusted by 1,000+ Industrial Facilities in India",
-      "ctaText": "Request Bulk Pricing",
+      "title": "Trusted by 1,000+ Architects, Showrooms & Trimmers in India",
+      "ctaText": "Request Wholesale Price List",
       "metrics": [
-        { "value": "1000+", "label": "Client Facilities" },
-        { "value": "45%", "label": "Energy Cost Savings" },
+        { "value": "1000+", "label": "Projects & Trimmers" },
+        { "value": "1800", "label": "GSM Ultra-Dense Rugs" },
         { "value": "99.8%", "label": "On-Time Dispatch" }
       ]
     },
@@ -280,198 +271,163 @@
       {
         "value": "100",
         "plus": "%",
-        "label": "Virgin PVC Material",
+        "label": "Virgin Synthetic Fiber",
         "icon": "Award"
       },
       {
-        "value": "45",
+        "value": "35",
         "plus": "%",
-        "label": "Thermal Cost Savings",
+        "label": "Acoustic Noise Damping",
         "icon": "TrendingUp"
       },
       {
         "value": "24",
         "plus": "h",
-        "label": "Dispatch SLA",
+        "label": "Dispatch from Ahmedabad",
         "icon": "Clock"
       },
       {
-        "value": "50",
-        "plus": "m",
-        "label": "Standard Roll Length",
+        "value": "78",
+        "plus": "+",
+        "label": "Carpet & Rug Varieties",
         "icon": "Box"
       }
     ]
   },
   "FeedSection": {
     "heading": {
-      "tag": "PVC APPLICATIONS & INSTALLATIONS",
-      "title": "Recent Doorway & Warehouse Installations",
-      "actionText": "View All Products"
+      "tag": "CARPET INSPIRATION & SPACES",
+      "title": "Recent Living Room, Office & Automotive Installations",
+      "actionText": "View All Carpets",
+      "actionLink": "/product"
     },
-    "buttonText": "View Product",
+    "buttonText": "View Carpet",
     "feedItems": [
       {
         "id": 1,
-        "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=720&q=80",
+        "image": "/products/spaces/living_room.webp",
         "products": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=100&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=100&q=80"
+          "/products/rugs/poly_shrink_p1_1.webp",
+          "/products/rugs/poly_shrink_p2_1.webp"
         ]
       },
       {
         "id": 2,
-        "image": "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=720&q=80",
+        "image": "/products/spaces/auto_interior.webp",
         "products": [
-          "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=100&q=80"
+          "/products/dilour_black.jpg",
+          "/products/dilour_grey.jpg"
         ]
       },
       {
         "id": 3,
-        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=720&q=80",
+        "image": "/products/spaces/office_corridor.webp",
         "products": [
-          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=100&q=80",
-          "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=100&q=80"
+          "/products/ribs_black.jpg",
+          "/products/ribs_grey.jpg"
         ]
       },
       {
         "id": 4,
-        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=720&q=80",
+        "image": "/products/spaces/dining_salon.webp",
         "products": [
-          "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?auto=format&fit=crop&w=100&q=80"
+          "/products/shalimar/shalimar_p1_1.webp",
+          "/products/shalimar/shalimar_p2_1.webp"
         ]
       },
       {
         "id": 5,
-        "image": "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=720&q=80",
+        "image": "/products/spaces/bedroom_retreat.webp",
         "products": [
-          "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=100&q=80"
+          "/products/rugs/poly_shrink_p3_1.webp",
+          "/products/rugs/poly_shrink_p4_1.webp"
         ]
       },
       {
         "id": 6,
-        "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=720&q=80",
+        "image": "/products/catalogue_full.png",
         "products": [
-          "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=100&q=80"
+          "/products/dilour_red.jpg",
+          "/products/ribs_red.jpg"
         ]
       }
     ]
   },
   "BlogSection": {
     "heading": {
-      "tag": "TECHNICAL GUIDES & NEWS",
-      "title": "PVC Strip Curtains Insights & Guides",
+      "tag": "FLOORING EXPERTISE & TRENDS",
+      "title": "United Brothers Carpets & Rugs Insights",
       "actionText": "View All Articles"
     },
     "featuredPost": {
       "id": 1,
-      "tag": "Energy Efficiency",
-      "tagBg": "#3b82f6",
-      "date": "March 12, 2026",
-      "comments": "4 comments",
-      "title": "How PVC Strip Curtains Slash Energy Bills in Cold Storages & Warehouses",
-      "description": "Learn how installing flexible PVC strip curtains minimizes thermal transfer, prevents compressor overload, and reduces commercial AC costs by up to 45%.",
-      "image": "https://www.esenceweb.com/backend/uploads/shopify-v-ecommerce-website-development-blog.png",
+      "tag": "Luxury Rugs",
+      "tagBg": "#2563eb",
+      "date": "October 08, 2026",
+      "comments": "18 comments",
+      "title": "The Complete Guide to 1800 GSM Poly Shrink Rugs: Texture, Durability & Luxury Underfoot",
+      "description": "Explore how 1800 GSM high-pile poly shrink technology creates stunning dimensional 3D textures, self-backing stability, and enduring softness for contemporary residences.",
+      "image": "/products/spaces/living_room.webp",
       "buttonText": "Read Guide"
     },
     "secondaryPosts": [
       {
         "id": 2,
-        "tag": "Installation Guide",
+        "tag": "Automotive Flooring",
         "tagBg": "#EE6A2B",
-        "date": "February 28, 2026",
-        "comments": "8 comments",
-        "title": "Selecting the Right Strip Overlap Percentage for High-Wind Doorways",
-        "description": "A comprehensive guide on choosing between 33%, 50%, and 67% overlap to withstand outdoor wind currents and forklift traffic.",
-        "image": "https://www.esenceweb.com/backend/uploads/Business-Automation-Software-Development-Company-blog.png",
+        "date": "October 02, 2026",
+        "comments": "24 comments",
+        "title": "Why Non-Woven Dilour Carpets Excel in Automotive Interiors & Trunk Linings",
+        "description": "An engineering overview of needle-punch dilour non-woven carpet rolls: acoustic damping, moldable flexibility, and heavy-duty wear resistance for vehicles.",
+        "image": "/products/spaces/auto_interior.webp",
         "buttonText": "Read Guide"
       },
       {
         "id": 3,
-        "tag": "Food Hygiene",
-        "tagBg": "#22c55e",
-        "date": "February 15, 2026",
-        "comments": "3 comments",
-        "title": "Why Food Processing Plants Choose Amber Anti-Insect PVC Curtains",
-        "description": "Understand the optical spectrum science behind amber yellow PVC strips and how they deter flying pests without chemical repellents.",
-        "image": "https://www.esenceweb.com/backend/uploads/custom-website-development-vs-template-website-development-blog.png",
+        "tag": "Commercial Corridors",
+        "tagBg": "#059669",
+        "date": "September 24, 2026",
+        "comments": "12 comments",
+        "title": "Ribs Carpets vs Flat Weave: Traction, Dirt Scraping & Longevity in Busy Entrances",
+        "description": "Discover why parallel-ribbed needle-punch carpets are the industry standard for high-traffic office hallways, showrooms, and commercial lobbies.",
+        "image": "/products/spaces/office_corridor.webp",
         "buttonText": "Read Guide"
       },
       {
         "id": 4,
-        "tag": "Maintenance",
-        "tagBg": "#22c55e",
-        "date": "February 10, 2026",
-        "comments": "2 comments",
-        "title": "Cleaning and Maintenance Tips for Long-Lasting Clear PVC Strips",
-        "description": "Best practices for cleaning industrial PVC strip curtains with mild soapy water to preserve clarity and prevent hazing.",
-        "image": "https://www.esenceweb.com/backend/uploads/mobile-friendly-website-design-services-in-pune.png",
+        "tag": "Traditional Weaves",
+        "tagBg": "#7c3aed",
+        "date": "September 18, 2026",
+        "comments": "15 comments",
+        "title": "Styling Modern Living Spaces with Shalimar Heritage Woven Rugs",
+        "description": "Mastering the balance between traditional motifs and contemporary minimalist furniture with Shalimar woven rug collections.",
+        "image": "/products/spaces/dining_salon.webp",
         "buttonText": "Read Guide"
       }
     ]
   },
   "PatchSection": {
-    "badge": "INDIA'S LEADING MANUFACTURER",
-    "title": "Manufacturing High-Clarity for Facilities Across India.",
-    "description": "We deliver durable, temperature-controlling, and dust-isolating PVC curtain solutions with fast dispatch and direct factory pricing.",
+    "badge": "AHMEDABAD'S PREMIER MANUFACTURER",
+    "title": "Crafting Luxury Carpets & Non-Woven Flooring for Homes, Vehicles & Offices Across India.",
+    "description": "United Brothers delivers precision-tufted Dilour carpets, heavy-duty Ribs rolls, and 1800 GSM Poly Shrink rugs with direct factory pricing and immediate pan-India dispatch.",
     "stats": [
       {
         "id": 1,
         "value": "1000",
         "symbol": "+",
-        "label": "Industrial facilities served across India."
+        "label": "Distributors, car trimmers & interior designers served."
       },
       {
         "id": 2,
+        "value": "1800",
+        "symbol": "GSM",
+        "label": "High-density woven poly shrink rug craftsmanship."
+      },
+      {
+        "id": 3,
         "value": "100",
         "symbol": "%",
-        "label": "Virgin-grade flexible PVC polymer."
-      },
-      {
-        "id": 3,
-        "value": "45",
-        "symbol": "%",
-        "label": "Average reduction in doorway energy loss."
-      }
-    ]
-  },
-  "FeedSection": {
-    "heading": {
-      "tag": "Product Protection",
-      "title": "Delivering Innovative IT",
-      "actionText": "Show All",
-      "actionLink": "/products"
-    },
-    "feedItems": [
-      {
-        "id": 1,
-        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/headphone-speaker-insta.webp?v=1739932634&width=720",
-        "products": [
-          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=100&q=80",
-          "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=100&q=80"
-        ]
-      },
-      {
-        "id": 2,
-        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/earphones-insta.webp?v=1739932644&width=720",
-        "products": [
-          "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=100&q=80"
-        ]
-      },
-      {
-        "id": 3,
-        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/headphones-insta.webp?v=1739932687&width=720",
-        "products": [
-          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=100&q=80",
-          "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=100&q=80"
-        ]
-      },
-      {
-        "id": 4,
-        "image": "https://concept-theme-tech.myshopify.com/cdn/shop/files/speaker2-insta.webp?v=1739932683&width=720",
-        "products": [
-          "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?auto=format&fit=crop&w=100&q=80"
-        ]
+        "label": "Virgin synthetic fiber with anti-fray durability."
       }
     ]
   }

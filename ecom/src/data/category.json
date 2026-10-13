@@ -1,74 +1,86 @@
 [
   {
     "id": 1,
-    "name": "PVC strip Curtain Rolls",
-    "slug": "pvc-strip-curtain-rolls",
-    "icon": "product/Product4.jpg",
+    "name": "Dilour Carpets",
+    "slug": "dilour-carpets",
+    "icon": "/products/dilour_car.jpg",
     "iconName": "Layers",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
     "subCategories": [
       {
-        "id": "standard-clear",
-        "name": "Transparent Standard"
+        "id": "automotive-dilour",
+        "name": "Automotive Dilour"
       },
       {
-        "id": "reliable-clear",
-        "name": "Transparent Reliable"
+        "id": "home-commercial-dilour",
+        "name": "Home & Commercial Dilour"
       },
       {
-        "id": "polar-freezer",
-        "name": "Polar / Anti-Freeze"
+        "id": "non-woven-carpets",
+        "name": "Non-Woven Carpets"
       },
       {
-        "id": "anti-insect-yellow",
-        "name": "Anti-Insect Amber / Yellow"
+        "id": "acoustic-dilour",
+        "name": "Acoustic Insulation"
       }
     ],
-    "description": "High-durability PVC strip curtain rolls for temperature control, cleanrooms, warehouses, and dust prevention."
+    "description": "High-quality non-woven carpets designed for automotive interiors and flooring applications. Offers excellent comfort, insulation and sound absorption."
   },
   {
     "id": 2,
-    "name": "PVC Magnetic strip Curtain Rolls",
-    "slug": "pvc-magnetic-strip-curtain-rolls",
-    "icon": "product/Product5.jpg",
+    "name": "Ribs Carpets",
+    "slug": "ribs-carpets",
+    "icon": "/products/ribs_car.jpg",
     "iconName": "Shield",
     "bgColor": "#ECFDF5",
     "accentColor": "#059669",
     "subCategories": [
       {
-        "id": "magnetic-transparent",
-        "name": "Transparent Magnetic Strips"
+        "id": "automotive-ribs",
+        "name": "Automotive Ribs"
+      },
+      {
+        "id": "anti-slip-ribs",
+        "name": "Anti-Slip Ribbed"
+      },
+      {
+        "id": "commercial-ribs",
+        "name": "Commercial Floor Ribs"
+      },
+      {
+        "id": "heavy-duty-ribs",
+        "name": "Heavy Duty Ribs"
       }
     ],
-    "description": "Hands-free automatic magnetic sealing PVC strip curtains for rapid closure, cold storage, and pest control."
+    "description": "Ribbed surface carpets provide superior grip, durability and easy cleaning with anti-slip backing. Perfect for automotive and commercial use."
   },
   {
     "id": 3,
-    "name": "Brackets",
-    "slug": "brackets",
-    "icon": "product/Product7.jpg",
+    "name": "Rugs",
+    "slug": "rugs",
+    "icon": "/products/rugs/poly_shrink_p1_1.webp",
     "iconName": "Box",
     "bgColor": "#FEF2F2",
     "accentColor": "#DC2626",
     "subCategories": [
       {
-        "id": "ms-mounting-brackets",
-        "name": "Mounting Brackets (MS)"
+        "id": "poly-shrink-rugs",
+        "name": "New Poly Shrink Rugs"
       },
       {
-        "id": "ss202-mounting-brackets",
-        "name": "Stainless Steel 202 (SS202)"
+        "id": "shalimar-rugs",
+        "name": "Shalimar Rugs"
       },
       {
-        "id": "ss304-mounting-brackets",
-        "name": "Stainless Steel 304 (SS304)"
+        "id": "modern-geometric-rugs",
+        "name": "Modern & Geometric"
       },
       {
-        "id": "magnetic-curtain-brackets",
-        "name": "Magnetic Tracks & Bottom"
+        "id": "traditional-shaggy-rugs",
+        "name": "Traditional & Shaggy"
       }
     ],
-    "description": "Strong mounting brackets in Mild Steel, Stainless Steel (SS202 & SS304), and Magnetic strip curtain tracks and bottom holders for secure installation."
+    "description": "Modern and classic rugs adding warmth and style. Featuring 1800 GSM High Pile Poly Shrink Woven Rugs and Shalimar Designer Collections."
   }
 ]

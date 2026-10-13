@@ -125,9 +125,9 @@ export const pageSeoData = {
   },
 
   blog: {
-    title: "PVC Vinyl News & Industry Insights | Ashmita Vinyls",
+    title: "Carpets, Rugs & Flooring Insights | United Brothers",
     description:
-      "Read PVC vinyl industry news, product information, technical articles and business insights.",
+      "Read expert guides on 1800 GSM poly shrink rugs, dilour & ribs carpets, interior styling, and commercial flooring solutions by United Brothers.",
     path: "/blog",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -136,9 +136,9 @@ export const pageSeoData = {
   },
 
   blogDetail: {
-    title: "PVC Vinyl News & Articles | Ashmita Vinyls",
+    title: "Carpets & Rugs Articles | United Brothers",
     description:
-      "Latest technical insights, case studies, and updates on PVC vinyl solutions by Ashmita Vinyls.",
+      "Latest technical insights, styling guides, and care updates on carpets and luxury woven rugs by United Brothers.",
     path: "/blog-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },

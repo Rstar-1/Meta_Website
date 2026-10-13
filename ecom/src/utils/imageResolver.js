@@ -17,6 +17,10 @@ export const resolveImagePath = (path) => {
     return trimmed;
   }
 
+  if (trimmed.startsWith('/products/') || trimmed.startsWith('products/')) {
+    return trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+  }
+
   const base = VITE_IMAGE.replace(/\/+$/, '');
   const cleanPath = trimmed
     .replace(/^(\.\.\/|\.\/)+assets\//, '')

@@ -29,7 +29,7 @@ const TYPE1_SLIDES = [
         title: 'Modern Elegance Spoke Sofa',
         buttonText: 'Shop Collection',
         path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Banner1.webp",
+        image: import.meta.env.VITE_IMAGE + "Hero1.mp4",
         alt: 'Modern Elegance Spoke Sofa'
     },
     {
@@ -38,7 +38,7 @@ const TYPE1_SLIDES = [
         title: 'Nordic Lounge Interior',
         buttonText: 'Shop Collection',
         path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Banner2.webp",
+        image: import.meta.env.VITE_IMAGE + "Hero2.mp4",
         alt: 'Nordic Lounge Interior'
     }
 ];
@@ -50,7 +50,7 @@ const TYPE2_SLIDES = [
         title: 'EXPERIENCE\nUNPARALLELED AUDIO\nELEGANCE',
         buttonText: 'Shop Headphones',
         path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Banner1.webp",
+        image: import.meta.env.VITE_IMAGE + "Hero1.mp4",
         alt: 'Experience Unparalleled Audio Elegance'
     },
     {
@@ -58,7 +58,7 @@ const TYPE2_SLIDES = [
         title: 'STUDIO FIDELITY\nCRAFTED FOR PURITY',
         buttonText: 'Shop Headphones',
         path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Banner2.webp",
+        image: import.meta.env.VITE_IMAGE + "Hero2.mp4",
         alt: 'Studio Fidelity Audio'
     }
 ];

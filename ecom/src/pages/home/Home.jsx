@@ -29,7 +29,8 @@ const ecomSections = [
         id: 'product',
         Component: ProductSection,
         minHeight: '400px',
-        isContainer: true
+        isContainer: true,
+        containerStyle: { background: 'var(--forth)' }
     },
     {
         id: 'about',

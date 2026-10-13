@@ -8,15 +8,15 @@ import { resolveImagePath } from '../../../../utils/imageResolver';
 import { categories } from '../../../../utils/apiData';
 
 const CATEGORY_IMAGES = [
-    'https://madebydesignesia.com/themes/logixpress/images/misc/s1.webp',
-    'https://madebydesignesia.com/themes/logixpress/images/misc/s2.webp',
-    'https://madebydesignesia.com/themes/logixpress/images/misc/s3.webp',
+    '/products/spaces/auto_interior.webp',
+    '/products/spaces/office_corridor.webp',
+    '/products/spaces/living_room.webp',
 ];
 
 const CategoryCard = memo(({ cat, index, onClick }) => {
     const isMiddle = index === 1;
-    const badgeNumber = cat.badgeNumber || (isMiddle ? '15' : null);
-    const badgeText = cat.badgeText || (isMiddle ? 'Years of Experience' : null);
+    const badgeNumber = cat.badgeNumber || (isMiddle ? '20+' : null);
+    const badgeText = cat.badgeText || (isMiddle ? 'Years of Manufacturing' : null);
     const imgSrc = CATEGORY_IMAGES[index] || resolveImagePath(cat.image || cat.icon);
 
     return (

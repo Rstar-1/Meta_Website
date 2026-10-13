@@ -50,8 +50,8 @@ const BlogDetail = () => {
         return blogData?.[0] || null;
     }, [location.state, id]);
 
-    const title = currentBlog?.title ? `${currentBlog.title} | Ashmita Vinyls` : 'Blog Detail | Ashmita Vinyls';
-    const description = currentBlog?.excerpt || currentBlog?.content?.slice(0, 160) || 'Read our latest blog post on PVC vinyl solutions.';
+    const title = currentBlog?.title ? `${currentBlog.title} | United Brothers` : 'Blog Detail | United Brothers';
+    const description = currentBlog?.excerpt || currentBlog?.content?.slice(0, 160) || 'Read our latest blog post on carpets, rugs and flooring solutions by United Brothers.';
     const path = currentBlog?.slug ? `/blog/${currentBlog.slug}` : '/blog-detail';
 
     const breadcrumbs = useMemo(() => [

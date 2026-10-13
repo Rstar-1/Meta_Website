@@ -42,29 +42,29 @@ const ENQUIRY_FIELDS = [
 const CONTACT_DETAILS = [
     {
         icon: 'MapPin',
-        title: 'ADDRESS',
-        desc: import.meta.env.VITE_ADDRESS,
-        sub: ''
+        title: 'Office Address',
+        desc: import.meta.env.VITE_ADDRESS || 'Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad',
+        sub: 'Gujarat, India'
     },
     {
         icon: 'Phone',
         title: 'Call Us',
-        desc: import.meta.env.VITE_PHONE,
-        link: `tel:${(import.meta.env.VITE_PHONE || '').replace(/[^\d+]/g, '')}`,
-        sub: ''
+        desc: import.meta.env.VITE_PHONE || '+91 84548 38638',
+        link: `tel:${(import.meta.env.VITE_PHONE || '+918454838638').replace(/[^\d+]/g, '')}`,
+        sub: 'Contact Person: Julie Shah'
     },
     {
         icon: 'Mail',
         title: 'Email Us',
-        desc: import.meta.env.VITE_EMAIL,
-        link: `mailto:${import.meta.env.VITE_EMAIL || ''}`,
-        sub: ''
+        desc: import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com',
+        link: `mailto:${import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com'}`,
+        sub: 'PAN: AAJFU3175H | GST: Applied'
     },
     {
         icon: 'Clock',
         title: 'Working Hours',
-        desc: import.meta.env.VITE_WORKING_HOURS,
-        sub: import.meta.env.VITE_WEEKEND_HOURS
+        desc: import.meta.env.VITE_WORKING_HOURS || 'Mon to Sat: 9:00 AM - 7:00 PM',
+        sub: import.meta.env.VITE_WEEKEND_HOURS || 'Sun: Closed'
     }
 ];
 
@@ -132,8 +132,8 @@ const Enquiry = React.memo(() => {
                     version="v2"
                     tag="GET IN TOUCH"
                     tagIcon="Phone"
-                    title="Contact Us"
-                    subtitle="Have a project in mind, need technical consultation, or have an inquiry? Reach out to our team."
+                    title="Contact United Brothers"
+                    subtitle="Have a flooring project in mind, need custom carpet sizing, or require bulk rug catalog samples? Reach out to Julie Shah & our team."
                     className="mb-20"
                 />
 
@@ -157,8 +157,8 @@ const Enquiry = React.memo(() => {
                 <Heading
                     version="v2"
                     tag=""
-                    title={import.meta.env.VITE_SUPPORT_TITLE || "Need Help?"}
-                    subtitle={import.meta.env.VITE_SUPPORT_SUBTITLE || "To us, design has a broader purpose and as you can read about on this website, we are on a mission."}
+                    title={import.meta.env.VITE_SUPPORT_TITLE || "Flooring Solutions Support"}
+                    subtitle={import.meta.env.VITE_SUPPORT_SUBTITLE || "Better Floors, Brighter Spaces — Dilour Carpets, Ribs Carpets, and Luxury Rugs direct from United Brothers Ahmedabad."}
                     className="mb-20"
                 />
 

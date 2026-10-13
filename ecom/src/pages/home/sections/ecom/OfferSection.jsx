@@ -13,120 +13,141 @@ import { useCart } from '../../../../feature/slice/cartSlice';
 const SPACES_DATA = [
     {
         id: 1,
-        image: import.meta.env.VITE_IMAGE + "Banner1.webp",
-        title: 'Modern Living Space',
+        image: "/products/spaces/living_room.webp",
+        title: "1800 GSM Poly Shrink Living Space",
         products: [
             {
-                id: 102,
-                name: 'Loop Sofa Armrest',
-                price: '$3,289.00',
-                originalPrice: '$3,369.00',
-                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+                id: 15,
+                name: "New Age Poly Shrink Rug - Abstract Linear",
+                price: "₹1,250/sq mtr",
+                originalPrice: "₹1,650/sq mtr",
+                image: "/products/rugs/poly_shrink_p1_1.webp"
             },
             {
-                id: 103,
-                name: 'Flip Table Lamp',
-                price: '$605.00',
+                id: 16,
+                name: "New Age Poly Shrink Rug - Honeycomb Hexagon",
+                price: "₹1,250/sq mtr",
                 originalPrice: null,
-                image: import.meta.env.VITE_IMAGE + "Product2.webp",
+                image: "/products/rugs/poly_shrink_p2_1.webp"
             },
             {
-                id: 104,
-                name: 'Swivel Table',
-                price: '$305.00',
-                originalPrice: '$345.00',
-                image: import.meta.env.VITE_IMAGE + "Product4.webp",
+                id: 19,
+                name: "New Age Poly Shrink Rug - Stepped Border",
+                price: "₹1,250/sq mtr",
+                originalPrice: "₹1,650/sq mtr",
+                image: "/products/rugs/poly_shrink_p5_1.webp"
             }
         ]
     },
     {
         id: 2,
-        image: import.meta.env.VITE_IMAGE + "Banner2.webp",
-        title: 'Terracotta Dining Space',
+        image: "/products/spaces/auto_interior.webp",
+        title: "Automotive Cabin & Trunk Flooring",
         products: [
             {
-                id: 201,
-                name: 'Arch Minimal Chair',
-                price: '$280.00',
-                originalPrice: '$320.00',
-                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+                id: 1,
+                name: "Black Dilour Carpet",
+                price: "₹380/sq mtr",
+                originalPrice: "₹480/sq mtr",
+                image: "/products/dilour_black.jpg"
             },
             {
-                id: 202,
-                name: 'Stone Cylindrical Table',
-                price: '$1,120.00',
-                originalPrice: null,
-                image: import.meta.env.VITE_IMAGE + "Product4.webp",
+                id: 9,
+                name: "Black Ribs Carpet",
+                price: "₹320/sq mtr",
+                originalPrice: "₹420/sq mtr",
+                image: "/products/ribs_black.jpg"
             },
             {
-                id: 203,
-                name: 'Clay Pendant Light',
-                price: '$185.00',
-                originalPrice: '$210.00',
-                image: import.meta.env.VITE_IMAGE + "Product3.webp",
+                id: 6,
+                name: "Premium Automotive Interior Dilour",
+                price: "₹420/sq mtr",
+                originalPrice: "₹520/sq mtr",
+                image: "/products/dilour_car.jpg"
             }
         ]
     },
     {
         id: 3,
-        image: import.meta.env.VITE_IMAGE + "Banner1.webp",
-        title: 'Neutral Organic Gallery',
+        image: "/products/spaces/office_corridor.webp",
+        title: "Commercial Anti-Slip Corridors",
         products: [
             {
-                id: 301,
-                name: 'Sculptural Wood Bench',
-                price: '$890.00',
+                id: 10,
+                name: "Grey Ribs Carpet",
+                price: "₹320/sq mtr",
                 originalPrice: null,
-                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+                image: "/products/ribs_grey.jpg"
             },
             {
-                id: 302,
-                name: 'Ceramic Floor Vessel',
-                price: '$145.00',
-                originalPrice: '$175.00',
-                image: import.meta.env.VITE_IMAGE + "Product2.webp",
+                id: 13,
+                name: "Heavy Duty Commercial Anti-Slip Ribs",
+                price: "₹360/sq mtr",
+                originalPrice: "₹460/sq mtr",
+                image: "/products/ribs_car.jpg"
+            },
+            {
+                id: 2,
+                name: "Grey Dilour Carpet",
+                price: "₹380/sq mtr",
+                originalPrice: "₹480/sq mtr",
+                image: "/products/dilour_grey.jpg"
             }
         ]
     },
     {
         id: 4,
-        image: import.meta.env.VITE_IMAGE + "Banner2.webp",
-        title: 'Minimalist Bedroom Sanctuary',
+        image: "/products/spaces/dining_salon.webp",
+        title: "Shalimar Luxury Woven Dining Salon",
         products: [
             {
-                id: 401,
-                name: 'Linen Platform Bed',
-                price: '$1,650.00',
-                originalPrice: '$1,890.00',
-                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+                id: 45,
+                name: "Shalimar Rug 24030 - Beige (182x270 cm)",
+                price: "₹8,500/piece",
+                originalPrice: "₹11,000/piece",
+                image: "/products/shalimar/shalimar_p1_1.webp"
             },
             {
-                id: 402,
-                name: 'Ceramic Nightstand Lamp',
-                price: '$210.00',
+                id: 46,
+                name: "Shalimar Rug 24031 - Grey (182x270 cm)",
+                price: "₹8,500/piece",
                 originalPrice: null,
-                image: import.meta.env.VITE_IMAGE + "Product3.webp",
+                image: "/products/shalimar/shalimar_p1_2.webp"
+            },
+            {
+                id: 48,
+                name: "Shalimar Rug 24031 - Steel Blue",
+                price: "₹8,500/piece",
+                originalPrice: "₹11,000/piece",
+                image: "/products/shalimar/shalimar_p1_4.webp"
             }
         ]
     },
     {
         id: 5,
-        image: import.meta.env.VITE_IMAGE + "Banner1.webp",
-        title: 'Scandinavian Workspace',
+        image: "/products/spaces/bedroom_retreat.webp",
+        title: "Minimalist Plush Bedroom Sanctuary",
         products: [
             {
-                id: 501,
-                name: 'Solid Oak Writing Desk',
-                price: '$890.00',
-                originalPrice: '$980.00',
-                image: import.meta.env.VITE_IMAGE + "Product1.webp",
+                id: 35,
+                name: "New Age Poly Shrink Rug - Pure Ivory",
+                price: "₹1,250/sq mtr",
+                originalPrice: "₹1,650/sq mtr",
+                image: "/products/rugs/poly_shrink_p21_1.webp"
             },
             {
-                id: 502,
-                name: 'Ergonomic Curved Chair',
-                price: '$450.00',
+                id: 3,
+                name: "Beige Dilour Carpet",
+                price: "₹380/sq mtr",
                 originalPrice: null,
-                image: import.meta.env.VITE_IMAGE + "Product3.webp",
+                image: "/products/dilour_beige.jpg"
+            },
+            {
+                id: 76,
+                name: "Plush Comfort Shaggy Area Rug",
+                price: "₹4,800/piece",
+                originalPrice: "₹6,500/piece",
+                image: "/products/rugs_shaggy.jpg"
             }
         ]
     }
@@ -323,8 +344,8 @@ const OfferSection = () => {
 
             <Heading
                 version="v2"
-                tag="WHAT WE PROVIDE"
-                title="Featured Products & Popular Designs"
+                tag="CURATED SPACES & INSPIRATION"
+                title="Styled Spaces & Flooring Collections"
             />
 
             <div

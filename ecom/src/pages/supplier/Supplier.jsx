@@ -31,20 +31,22 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 ));
 
 const KNOWN_NAMES = {
-    foxecom: 'Ashmita Enterprises',
-    ashmita: 'Ashmita Enterprises',
-    ashmitaenterprises: 'Ashmita Enterprises',
-    ashmitavinyls: 'Ashmita Enterprises',
-    wsi: 'W. S. I (Ashmita Enterprises)'
+    foxecom: 'United Brothers',
+    united: 'United Brothers',
+    unitedbrothers: 'United Brothers',
+    ashmita: 'United Brothers',
+    ashmitaenterprises: 'United Brothers',
+    ashmitavinyls: 'United Brothers',
+    wsi: 'United Brothers'
 };
 
 const Supplier = () => {
     const { brandName } = useParams();
-    const brandKey = (brandName || 'foxecom').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brandKey = (brandName || 'unitedbrothers').toLowerCase().replace(/[^a-z0-9]/g, '');
     const displayName = useMemo(() => {
         return KNOWN_NAMES[brandKey] || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'Ashmita Enterprises');
+            : 'United Brothers');
     }, [brandKey, brandName]);
 
     const breadcrumbs = useMemo(() => [
@@ -56,14 +58,14 @@ const Supplier = () => {
     return (
         <>
             <SEO
-                title="Ashmita Enterprises - Exporter & Trader - Retailer of PVC Strip Curtains from Mumbai"
-                description="PVC Strip Curtains, PVC Roll & PVC Sheet Exporter & Trader - Retailer offered by Ashmita Enterprises from Mumbai, Maharashtra, India. GST: 27ABLPY9708M1ZK. Call 07942562287."
+                title="United Brothers - Quality Flooring Solutions | Ahmedabad, Gujarat"
+                description="Manufacturer & Supplier of Dilour Carpets, Ribs Carpets, New Poly Shrink Rugs & Shalimar Rugs. Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad. Contact: +91 84548 38638."
                 path={`/supplier/${brandKey}`}
                 breadcrumbs={breadcrumbs}
             />
             <Banner
                 title={displayName}
-                desc="Exporter & Trader — Retailer of PVC Strip Curtains from Mumbai, Maharashtra"
+                desc="Quality Flooring Solutions — Better Floors Brighter Spaces | Ahmedabad, Gujarat"
                 breadcrumbs={breadcrumbs}
             />
             {supplierSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

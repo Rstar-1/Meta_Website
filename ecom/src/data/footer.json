@@ -4,36 +4,36 @@
       "id": "service",
       "icon": "Support",
       "title": "Customer Support",
-      "text": "Mon-Sat, 9am-6pm IST.",
+      "text": "Mon-Sat, 9am-7pm IST.",
       "type": "text"
     },
     {
       "id": "call",
       "icon": "Phone",
       "title": "Call Us",
-      "text": "+91 7015163045",
-      "link": "tel:7015163045",
+      "text": "+91 84548 38638",
+      "link": "tel:8454838638",
       "type": "text"
     },
     {
       "id": "touch",
       "icon": "Send",
       "title": "Email Us",
-      "text": "kohad0681@gmail.com",
-      "link": "mailto:kohad0681@gmail.com",
+      "text": "unitedbrothers879@gmail.com",
+      "link": "mailto:unitedbrothers879@gmail.com",
       "type": "link"
     },
     {
       "id": "address",
       "icon": "MapPin",
       "title": "Location",
-      "text": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001",
+      "text": "Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad",
       "type": "text"
     }
   ],
   "newsletter": {
     "title": "Join Us",
-    "description": "Get PVC updates, prices, and installation tips.",
+    "description": "Get latest flooring updates, carpets, and rug collection catalogues.",
     "placeholder": "Enter your business email",
     "buttonText": "Subscribe",
     "disclaimer": {
@@ -52,29 +52,29 @@
       "links": [
         { "label": "About Us", "url": "/about" },
         { "label": "All Products", "url": "/product" },
-        { "label": "Applications", "url": "/supplier" },
+        { "label": "Find A Store", "url": "/supplier" },
         { "label": "Technical Guides", "url": "/blog" },
         { "label": "Contact & Enquiry", "url": "/connect" }
       ]
     },
     {
-      "title": "PVC Strip Curtains",
+      "title": "Dilour & Ribs Carpets",
       "links": [
-        { "label": "Transparent Standard", "url": "/product/1" },
-        { "label": "Transparent Reliable", "url": "/product/3" },
-        { "label": "Transparent Supreme", "url": "/product/9" },
-        { "label": "Crystal Clear", "url": "/product/11" },
-        { "label": "Polar Freezer", "url": "/product/13" }
+        { "label": "Black Dilour Carpet", "url": "/product/1" },
+        { "label": "Grey Dilour Carpet", "url": "/product/2" },
+        { "label": "Beige Dilour Carpet", "url": "/product/3" },
+        { "label": "Black Ribs Carpet", "url": "/product/6" },
+        { "label": "Red Ribs Carpet", "url": "/product/9" }
       ]
     },
     {
-      "title": "Brackets",
+      "title": "Designer Rugs",
       "links": [
-        { "label": "MS Brackets (White)", "url": "/product/89" },
-        { "label": "MS Brackets (Grey)", "url": "/product/91" },
-        { "label": "SS 202 Mounting Brackets", "url": "/product/93" },
-        { "label": "SS 304 Mounting Brackets", "url": "/product/95" },
-        { "label": "Galvanised Magnetic Track", "url": "/product/97" }
+        { "label": "New Poly Shrink Rug - Design 1", "url": "/product/10" },
+        { "label": "New Poly Shrink Rug - Design 5", "url": "/product/14" },
+        { "label": "Shalimar Rug - Design 1", "url": "/product/40" },
+        { "label": "Shalimar Rug - Design 10", "url": "/product/49" },
+        { "label": "All Area Rugs", "url": "/product?category=Rugs" }
       ]
     }
   ],
@@ -88,20 +88,20 @@
       {
         "platform": "facebook",
         "iconName": "Facebook",
-        "url": "https://www.facebook.com/share/p/1EhdBQaRw4/"
+        "url": "https://www.facebook.com/"
       },
       {
         "platform": "instagram",
         "iconName": "Instagram",
-        "url": "https://www.instagram.com/inraclick/"
+        "url": "https://www.instagram.com/"
       },
       {
         "platform": "youtube",
         "iconName": "YouTube",
-        "url": "https://www.youtube.com/@INRACLICK"
+        "url": "https://www.youtube.com/"
       }
     ],
-    "copyright": "© 2026 Ashmita Vinyls Private Limited. All rights reserved.",
+    "copyright": "© 2026 United Brothers. All rights reserved.",
     "legalLinks": [
       { "label": "Terms & Conditions", "url": "/terms" },
       { "label": "Privacy Policy", "url": "/privacy" }

@@ -7,47 +7,48 @@ import CardLayout from '../../../components/layout/sections/CardLayout';
 import Tab from '../../../components/common/Tab';
 import Table from '../../../components/common/Table';
 
-const ASHMITA_ENTERPRISES_DATA = {
-    name: 'Ashmita Enterprises',
-    tagline: 'Exporter & Trader — Retailer of PVC Strip Curtains from Mumbai',
-    category: 'PVC Strip Curtains, PVC Rolls, PVC Sheets & Mounting Brackets',
-    location: 'Bhandup West, Mumbai, Maharashtra - 400078',
-    fullAddress: 'C 304, 3rd Floor, Eastern Business District, Near Mangatram Petrol Pump, L.B.S Marg Road, Bhandup West, Mumbai City, Maharashtra - 400078, India',
-    phone: '07942562287',
-    phoneFormatted: '+91 7942562287',
-    rating: 4.3,
-    reviews: 72,
-    established: '2010',
-    experience: '15+ Years',
-    legalStatus: 'Proprietorship Firm',
-    natureOfBusiness: 'Importer, Exporter, Wholesaler, Trader & Retailer',
-    gstin: '27ABLPY9708M1ZK',
-    moq: '1 Roll / 50 Mtrs',
-    responseRate: '92%',
-    responseTime: '< 2 hrs',
-    fulfillmentRate: '99.5%',
-    trustBadge: 'TrustSEAL Verified & Payment Protected',
-    about: 'Established in 2010 at Bhandup West, Mumbai, Maharashtra, Ashmita Enterprises is a Proprietor-based firm, engaged as the foremost Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, and Mounting Brackets. These products are highly demanded by customers across India for their low maintenance, optical clarity, temperature control, fine finishing, high functioning, superior durability, and longer service life.'
+const UNITED_BROTHERS_DATA = {
+    name: 'United Brothers',
+    tagline: 'Quality Flooring Solutions — Better Floors Brighter Spaces',
+    category: 'Dilour Carpets, Ribs Carpets, New Poly Shrink Rugs & Shalimar Rugs',
+    location: 'Vasna, Ahmedabad, Gujarat',
+    fullAddress: 'Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad, Gujarat, India',
+    phone: '8454838638',
+    phoneFormatted: '+91 84548 38638',
+    contactPerson: 'Julie Shah',
+    email: 'unitedbrothers879@gmail.com',
+    rating: 4.8,
+    reviews: 86,
+    established: '2015',
+    experience: '10+ Years',
+    legalStatus: 'Registered Enterprise',
+    natureOfBusiness: 'Manufacturer, Wholesaler, Trader & Exporter',
+    panNo: 'AAJFU3175H',
+    gstin: 'Applied (PAN: AAJFU3175H)',
+    moq: '1 Roll / 10 Rugs',
+    responseRate: '98%',
+    responseTime: '< 1 hr',
+    fulfillmentRate: '99.8%',
+    trustBadge: 'Verified Supplier & Quality Assured Flooring',
+    about: 'United Brothers is a premier provider of high-grade flooring solutions based in Ahmedabad, Gujarat. We specialize in Dilour Carpets, Ribs Carpets, 1800 GSM New Poly Shrink Rugs, and Shalimar Woven Rugs for automotive interiors, residential spaces, and commercial facilities. We are committed to exceptional craftsmanship, acoustic comfort, superior durability, and modern aesthetic elegance.'
 };
 
 const KNOWN_SUPPLIERS = {
-    foxecom: ASHMITA_ENTERPRISES_DATA,
-    ashmita: ASHMITA_ENTERPRISES_DATA,
-    ashmitaenterprises: ASHMITA_ENTERPRISES_DATA,
-    ashmitavinyls: ASHMITA_ENTERPRISES_DATA,
-    wsi: {
-        ...ASHMITA_ENTERPRISES_DATA,
-        name: 'W. S. I (Ashmita Enterprises)',
-        category: 'W. S. I Heavy-Duty PVC Strip Curtain Rolls & Hanging Systems'
-    }
+    foxecom: UNITED_BROTHERS_DATA,
+    unitedbrothers: UNITED_BROTHERS_DATA,
+    united: UNITED_BROTHERS_DATA,
+    ashmita: UNITED_BROTHERS_DATA,
+    ashmitaenterprises: UNITED_BROTHERS_DATA,
+    ashmitavinyls: UNITED_BROTHERS_DATA,
+    wsi: UNITED_BROTHERS_DATA
 };
 
 const TRUST_POINTS = [
-    'IndiaMART TrustSEAL Verified & Payment Protected',
-    'GST Registered: 27ABLPY9708M1ZK (Input Tax Credit)',
-    '100% Virgin Grade Flexible Polyvinyl Chloride (PVC)',
-    'Pan-India Safe Cargo Dispatch from Mumbai Central Hub',
-    'Direct Importer & Wholesale B2B Tier Pricing'
+    'PAN Registered: AAJFU3175H | GST Status: Applied',
+    'Premium 1800 GSM 100% Polyester Poly Shrink Technology',
+    'Heavy-Duty Automotive & Commercial Dilour & Ribs Carpets',
+    'Pan-India Safe Cargo Dispatch from Ahmedabad Central Hub',
+    'Direct Factory Wholesale Pricing & Extensive Ready Stock'
 ];
 
 const SPEC_COLUMNS = [
@@ -57,40 +58,40 @@ const SPEC_COLUMNS = [
 
 const PRODUCT_CATEGORIES_RANGE = [
     {
-        title: 'PVC Strip Curtains',
-        count: '11+ Variants',
-        desc: 'W. S. I PVC Strip Curtain Roll, Opaque Black PVC Strips, Red Welding Grade, Yellow Anti-Insect Amber, and Sub-Zero Polar Freezer Grade.',
-        highlight: 'Thermal insulation, 45% HVAC energy savings, high optical clarity.'
+        title: 'Dilour Carpets',
+        count: '5 Color Options',
+        desc: 'Premium soft, durable, stylish non-woven dilour carpets engineered for automotive interiors, car trunk lining, and home flooring.',
+        highlight: 'Acoustic sound absorption, thermal insulation, luxury velour finish in Black, Grey, Beige, Brown & Red.'
     },
     {
-        title: 'PVC Rolls & Films',
-        count: '7+ Variants',
-        desc: 'DGT Clear Transparent PVC Roll, Soft PVC Roll, Plain PVC Roll, PVC Mattress Film, and Super Clear PVC Flexible Film.',
-        highlight: 'Non-toxic, UV-stabilized, flexible thickness from 1mm to 5mm.'
+        title: 'Ribs Carpets',
+        count: '4 Color Options',
+        desc: 'Strong, anti-slip, long-lasting ribbed surface carpets designed for vehicle flooring, footwells, and commercial spaces.',
+        highlight: 'High traction, dirt-trapping grooved channels, heavy abrasion resistance in Black, Grey, Brown & Red.'
     },
     {
-        title: 'PVC Sheets',
-        count: '7+ Variants',
-        desc: 'PVC Clear Sheet, Soft PVC Sheet, Shamita Clear Transparent PVC Roll, PVC Flexible Clear Sheet, and Plain PVC Clear Sheet.',
-        highlight: 'Excellent chemical resistance, high impact strength, and uniform gauge.'
+        title: 'New Poly Shrink Rugs',
+        count: '30 Design Collections',
+        desc: '1800 GSM, 100% Polyester high pile shrink woven rugs with self backing, modern 3D shrink texture effect.',
+        highlight: 'Plush underfoot comfort, non-shedding, luxury embossed finish in multiple room sizes.'
     },
     {
-        title: 'Plastic & Industrial Curtains',
-        count: '5+ Variants',
-        desc: 'PVC AC Curtain, Anti-Insect Amber Curtain, Cold Storage Blast Freezer Curtains, and Magnetic PVC Strip Curtains.',
-        highlight: 'Pest prevention, acoustic noise reduction, and hygienic dust isolation.'
+        title: 'Shalimar Rugs',
+        count: '74 Design Collections',
+        desc: 'Exquisite 182 x 270 cm & 183 x 270 cm woven area rugs blending traditional artistry with contemporary living aesthetics.',
+        highlight: 'Intricate patterns, vibrant color fastness, anti-fray bound edges.'
     },
     {
-        title: 'Mounting Brackets & Hardware',
-        count: 'Ready Stock',
-        desc: 'Stainless Steel (SS 304) Strip Curtains Hangers, Hook-on Mounting Tracks, and Clamp Plates for wall & ceiling doorway mounting.',
-        highlight: 'Zero rust, rapid individual strip replacement, heavy-duty durability.'
+        title: 'Modern & Geometric Rugs',
+        count: 'Full Range',
+        desc: 'Abstract and geometric pattern rugs tailored for contemporary living rooms, bedrooms, and executive offices.',
+        highlight: 'Minimalist lines, balanced color palettes, easy maintenance.'
     },
     {
-        title: 'Specialty Colored & Shield Films',
-        count: 'Custom Slit',
-        desc: 'PVC Rainbow Clear Sheet, Fluorescent Super Clear PVC Rolls, and Covid Isolation Partition Curtains.',
-        highlight: 'Safety demarcation, tinted glare reduction, and custom doorway fit.'
+        title: 'Traditional & Shaggy Rugs',
+        count: 'Full Range',
+        desc: 'Heritage motifs and ultra-soft shaggy deep-pile rugs for warm, luxurious interiors.',
+        highlight: 'Classic timeless appeal, ultra-dense fibers, maximum barefoot comfort.'
     }
 ];
 
@@ -99,13 +100,13 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('catalog');
 
-    const brandKey = (propBrandKey || brandName || 'foxecom').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brandKey = (propBrandKey || brandName || 'unitedbrothers').toLowerCase().replace(/[^a-z0-9]/g, '');
 
     const supplierInfo = useMemo(() => {
-        const found = KNOWN_SUPPLIERS[brandKey] || ASHMITA_ENTERPRISES_DATA;
+        const found = KNOWN_SUPPLIERS[brandKey] || UNITED_BROTHERS_DATA;
         const displayName = supplierName || found.name || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'Ashmita Enterprises');
+            : 'United Brothers');
 
         return {
             ...found,
@@ -130,15 +131,16 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
     const specData = useMemo(() => [
         { id: 1, field: 'Company Name', value: supplierInfo.name },
         { id: 2, field: 'Nature of Business', value: supplierInfo.natureOfBusiness },
-        { id: 3, field: 'Legal Status', value: supplierInfo.legalStatus },
-        { id: 4, field: 'Year of Establishment', value: `${supplierInfo.established} (${supplierInfo.experience})` },
-        { id: 5, field: 'GSTIN Registration', value: `${supplierInfo.gstin} (Verified Active)` },
-        { id: 6, field: 'Registered Address', value: supplierInfo.fullAddress },
-        { id: 7, field: 'Primary Helpline', value: `${supplierInfo.phoneFormatted} (${supplierInfo.responseRate} Response Rate)` },
-        { id: 8, field: 'Verification & Trust', value: supplierInfo.trustBadge },
-        { id: 9, field: 'Product Category Focus', value: supplierInfo.category },
-        { id: 10, field: 'Minimum Order Quantity (MOQ)', value: supplierInfo.moq },
-        { id: 11, field: 'Dispatched Hub', value: 'Bhandup West, Mumbai Central Dispatch Center' }
+        { id: 3, field: 'Contact Person', value: supplierInfo.contactPerson || 'Julie Shah' },
+        { id: 4, field: 'PAN Number', value: `${supplierInfo.panNo || 'AAJFU3175H'} (Registered)` },
+        { id: 5, field: 'GST Status', value: `${supplierInfo.gstin} (Registration in progress)` },
+        { id: 6, field: 'Year of Establishment', value: `${supplierInfo.established} (${supplierInfo.experience})` },
+        { id: 7, field: 'Registered Address', value: supplierInfo.fullAddress },
+        { id: 8, field: 'Primary Helpline', value: `${supplierInfo.phoneFormatted} (${supplierInfo.responseRate} Response Rate)` },
+        { id: 9, field: 'Verification & Quality', value: supplierInfo.trustBadge },
+        { id: 10, field: 'Product Category Focus', value: supplierInfo.category },
+        { id: 11, field: 'Minimum Order Quantity (MOQ)', value: supplierInfo.moq },
+        { id: 12, field: 'Dispatched Hub', value: 'Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad Hub' }
     ], [supplierInfo]);
 
     const handleProductClick = useCallback((id) => {
@@ -285,7 +287,7 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
                                         About {supplierInfo.name}
                                     </h4>
                                     <span className="mini-text bg-forth px-10 py-4 rounded-20 text-gray font-500">
-                                        Established 2010 • Mumbai, Maharashtra
+                                        Established 2015 • Ahmedabad, Gujarat
                                     </span>
                                 </div>
                                 <p className="small-text text-gray font-400 m-0 leading-relaxed">
@@ -309,19 +311,19 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
                                 <div className="bg-forth p-20 rounded-5">
                                     <h5 className="headmini-text font-600 text-dark m-0">🚀 Pan-India Dispatch</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Direct express cargo shipping from our central Bhandup West, Mumbai warehouse across all states in India.
+                                        Direct express cargo shipping from our central Vasna, Ahmedabad warehouse across all states in India.
                                     </p>
                                 </div>
                                 <div className="bg-forth p-20 rounded-5">
-                                    <h5 className="headmini-text font-600 text-dark m-0">🏭 Importer & Wholesaler</h5>
+                                    <h5 className="headmini-text font-600 text-dark m-0">🏭 Direct Manufacturer & Wholesaler</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Zero intermediary markups with direct wholesale roll pricing per kg and meter for industrial B2B buyers.
+                                        Zero intermediary markups with direct factory pricing on automotive carpets, commercial roll goods, and rugs.
                                     </p>
                                 </div>
                                 <div className="bg-forth p-20 rounded-5">
-                                    <h5 className="headmini-text font-600 text-dark m-0">🛠️ Custom Slitting & Hardware</h5>
+                                    <h5 className="headmini-text font-600 text-dark m-0">✨ 1800 GSM Poly Shrink & Woven</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Custom width/thickness rolls, polar cold-flex compounds, anti-insect amber strips, and SS 304 mounting systems.
+                                        Advanced high-pile shrink technology, 100% polyester self-backing rugs, and precision needle-punch dilour & ribbed carpets.
                                     </p>
                                 </div>
                             </div>
@@ -357,14 +359,14 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
                             </h4>
                             <div className="grid-cols-2 sm-grid-cols-1 gap-12 mt-10">
                                 <div className="bg-white p-16 rounded-5">
-                                    <p className="mini-text text-gray font-500 uppercase">GSTIN Registration</p>
-                                    <h5 className="mid-text font-600 text-dark mt-4">{supplierInfo.gstin}</h5>
-                                    <p className="mini-text text-success font-500 mt-6">✓ Active & Tax-Compliant (Valid for Input Tax Credit)</p>
+                                    <p className="mini-text text-gray font-500 uppercase">Tax & Business Registration</p>
+                                    <h5 className="mid-text font-600 text-dark mt-4">PAN: {supplierInfo.panNo || 'AAJFU3175H'}</h5>
+                                    <p className="mini-text text-success font-500 mt-6">✓ Registered Commercial Enterprise (GST: Applied)</p>
                                 </div>
                                 <div className="bg-white p-16 rounded-5">
-                                    <p className="mini-text text-gray font-500 uppercase">IndiaMART Trust Certification</p>
-                                    <h5 className="mid-text font-600 text-dark mt-4">TrustSEAL Verified Member</h5>
-                                    <p className="mini-text text-primary font-500 mt-6">✓ Payment Protected & Verified Business Entity</p>
+                                    <p className="mini-text text-gray font-500 uppercase">Quality Verification</p>
+                                    <h5 className="mid-text font-600 text-dark mt-4">Quality Flooring Assured</h5>
+                                    <p className="mini-text text-primary font-500 mt-6">✓ Direct Factory Supply & Trusted Commercial Grade</p>
                                 </div>
                             </div>
                         </div>
