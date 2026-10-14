@@ -407,7 +407,7 @@ export const ProductCard = React.memo(({
                 )}
             </div>
 
-            {item.colors && item.colors.length > 0 && (
+            {/* {item.colors && item.colors.length > 0 && (
                 <div className="flex items-center gap-8 mt-6">
                     {item.colors.map((color, cIdx) => (
                         <span
@@ -422,7 +422,7 @@ export const ProductCard = React.memo(({
                         />
                     ))}
                 </div>
-            )}
+            )} */}
         </div>
     );
 });

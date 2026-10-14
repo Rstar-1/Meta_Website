@@ -126,7 +126,7 @@ const FilterSidebarContent = React.memo(({
             />
         </div>
 
-        <div className="py-20">
+        {/* <div className="py-20">
             <h4 className="headmini-text font-500 text-dark mb-12">Color</h4>
             <div className="flex flex-column gap-10">
                 {colorFilters.map((c) => {
@@ -159,7 +159,7 @@ const FilterSidebarContent = React.memo(({
                     );
                 })}
             </div>
-        </div>
+        </div> */}
     </div>
 ));
 FilterSidebarContent.displayName = 'FilterSidebarContent';
@@ -168,7 +168,7 @@ const ProductGrid = React.memo(({ productsList, isFilterVisible, onProductClick 
     <div className={`${isFilterVisible ? 'grid-cols-4' : 'grid-cols-5'} sm-grid-cols-2 gap-12`}>
         {productsList.map((item) => (
             <ProductCard
-                version='product2'
+                version='product'
                 key={item.id}
                 item={item}
                 onProductClick={onProductClick}

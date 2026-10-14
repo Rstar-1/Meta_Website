@@ -23,8 +23,8 @@ const FeatureSection = () => {
         <div className="w-full py-50 sm-py-20">
             <Heading
                 version="v2"
-                tag="BEST SELLING PVC STRIPS"
-                title="Featured PVC Strip Curtains & Rolls"
+                tag="FEATURED HEALTHCARE & FIRST AID"
+                title="Certified Hospital Equipment & Emergency Care"
                 actionText="View All Products"
                 actionLink="/product"
             />

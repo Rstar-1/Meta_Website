@@ -33,7 +33,7 @@ const connectSections = [
 
 const BREADCRUMBS = [
     { label: 'Home', path: '/home' },
-    { label: 'Connect Us', path: '/connect' }
+    { label: 'Connect With Us', path: '/connect' }
 ];
 
 const SectionFallback = memo(({ minHeight = '100px' }) => (
@@ -43,10 +43,15 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 const Connect = () => {
     return (
         <>
-            <SEO page="connect" breadcrumbs={BREADCRUMBS} />
+            <SEO
+                title="Connect With Us - Hospital Equipment & First Aid Supply | Goonj & Shreehari"
+                description="Get in touch with Goonj & Shreehari Surgicals for institutional hospital holloware, OT surgical lights, autoclaves, CE-certified first aid boxes, and emergency stretchers. Delhi & Mumbai distribution hubs."
+                path="/connect"
+                breadcrumbs={BREADCRUMBS}
+            />
             <Banner
-                title="Connect Us"
-                desc="Get In Touch With Us"
+                title="Connect With Us"
+                desc="Direct Factory Inquiries, Tender Specifications & Institutional Healthcare Quotations"
                 breadcrumbs={BREADCRUMBS}
             />
             {connectSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

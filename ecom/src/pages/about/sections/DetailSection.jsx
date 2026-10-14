@@ -9,18 +9,21 @@ import { resolveImagePath } from '../../../utils/imageResolver';
 const thumbnails = [
     {
         id: 1,
-        title: 'Non-Woven Dilour Carpet',
-        image: resolveImagePath('/products/dilour_car.jpg')
+        title: 'Hospital Holloware & Dressing Drums',
+        image: resolveImagePath('/products/goonj/dressing_drum_jointed.jpg'),
+        category: 'Hospital Holloware'
     },
     {
         id: 2,
-        title: 'Heavy Duty Ribs Carpet',
-        image: resolveImagePath('/products/ribs_car.jpg')
+        title: 'CE-Certified Industrial First Aid Kits',
+        image: resolveImagePath('/products/shreehari/type_a_metal_box.jpg'),
+        category: 'First Aid & Emergency Care'
     },
     {
         id: 3,
-        title: '1800 GSM Poly Shrink Rug',
-        image: resolveImagePath('/products/rugs/poly_shrink_p1_1.webp')
+        title: 'Emergency Scoop & Spine Stretchers',
+        image: resolveImagePath('/products/shreehari/scoop_stretcher_aluminium.jpg'),
+        category: 'First Aid & Emergency Care'
     }
 ];
 
@@ -32,8 +35,8 @@ const DetailSection = React.memo(() => {
             <div className="grid-cols-2 sm-grid-cols-1 items-center gap-12 w-full">
                 <div className="w-full pr-20 sm-pr-0">
                     <Badge
-                        text="Carpet Collections"
-                        icon="Layers"
+                        text="Certified Healthcare Manufacturing"
+                        icon="Shield"
                         variant="outline"
                         color="white"
                         size="md"
@@ -42,34 +45,38 @@ const DetailSection = React.memo(() => {
                     />
 
                     <h2 className="large-text font-700 text-dark uppercase mt-8">
-                        Crafting Luxury Carpets & Rugs.
+                        Excellence in Hospital Holloware, OT Lights & First Aid.
                     </h2>
 
-                    <p className="para-text text-gray font-400 mt-6">
-                        United Brothers is Ahmedabad's premier manufacturer of high-density Dilour non-woven rolls, heavy-duty Ribs carpets, and 1800 GSM New Poly Shrink luxury woven rugs.
+                    <p className="para-text text-gray font-400 mt-6 leading-relaxed">
+                        Goonj and Shreehari Surgicals are trusted Indian manufacturers of hospital-grade AISI 304 stainless steel holloware, shadowless cold-LED surgical lights, CE-certified emergency trauma stretchers, and Factory Act compliant industrial first aid stations.
                     </p>
 
                     <div className="grid-cols-3 gap-12 mt-30 w-95">
                         {thumbnails.map((item) => (
                             <div
                                 key={item.id}
-                                className='w-full h-250 rounded-5 bg-forth overflow-hidden cursor-pointer'
-                                onClick={() => navigate('/product')}
+                                className='w-full h-220 rounded-8 bg-forth overflow-hidden cursor-pointer border-ec shadow-sm p-8 flex flex-column items-center justify-center transition-transform hover:scale-105'
+                                onClick={() => navigate(`/product?category=${encodeURIComponent(item.category)}`)}
+                                title={item.title}
                             >
                                 <Image
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover flex hover:scale-105 transition-transform"
+                                    className="w-full h-150 object-contain flex"
                                 />
+                                <p className="mini-text font-600 text-dark text-center mt-6 line-clamp-1">
+                                    {item.title}
+                                </p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="w-full h-550 sm-h-350 rounded-10 overflow-hidden">
+                <div className="w-full h-550 sm-h-350 rounded-10 overflow-hidden shadow-md">
                     <Image
-                        src={resolveImagePath('/products/spaces/living_room.webp')}
-                        alt="United Brothers Carpet Showcase"
+                        src={resolveImagePath('/products/spaces/hospital_ward.jpg')}
+                        alt="Hospital Ward & Surgical Equipment Showcase"
                         className="w-full h-full object-cover flex"
                     />
                 </div>

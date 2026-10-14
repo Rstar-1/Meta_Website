@@ -7,43 +7,44 @@ import Image from '../common/Image';
 import Fields from '../forms/Fields';
 
 import { productsData } from '../../utils/apiData';
+import { resolveImagePath } from '../../utils/imageResolver';
 
 const QUICK_ACTIONS = [
     {
-        id: 'dilour',
-        title: 'Dilour Carpets',
-        subtitle: 'Automotive & Commercial',
-        icon: 'Grid',
-        iconBg: '#2563eb',
-        reply: 'United Brothers manufactures premium needle-punch Dilour non-woven rolls in Ahmedabad:\n\n• **Acoustic Insulation**: Damps vehicle cabin and road drone by ~35%.\n• **5 Curated Shades**: Black, Grey, Beige, Brown, and Red.\n• **Automotive OEM Grade**: Easily cut, molded, and fitted around contours without edge fraying.',
-        cta: { text: 'View Dilour Carpets', path: '/product?category=Dilour%20Carpets' }
-    },
-    {
-        id: 'ribs',
-        title: 'Ribs Carpets',
-        subtitle: 'Anti-Slip Linear Grooves',
-        icon: 'Reports',
-        iconBg: '#059669',
-        reply: 'Heavy-duty grooved Ribs Carpets engineered for traction and durability:\n\n• **Anti-Slip Linear Grooves**: Scrapes dirt, mud, and moisture.\n• **High-Traffic Corridors**: Perfect for commercial entrances, stairs, buses, and ramps.\n• **Rolls & Pre-cuts**: Available in Black, Grey, Brown, and Red.',
-        cta: { text: 'View Ribs Carpets', path: '/product?category=Ribs%20Carpets' }
-    },
-    {
-        id: 'rugs',
-        title: 'Luxury Rugs',
-        subtitle: '1800 GSM & Shalimar',
-        icon: 'Sparkles',
+        id: 'firstaid',
+        title: 'Industrial First Aid',
+        subtitle: 'Factories Act Types A, B, C',
+        icon: 'Shield',
         iconBg: '#dc2626',
-        reply: 'Explore United Brothers designer rug collections:\n\n• **1800 GSM New Poly Shrink**: Ultra-dense 3D sculpted texture with integrated heavy self-backing (30 styles).\n• **Shalimar Woven Rugs**: Heritage Persian and modern geometric jacquard weaves.\n• **Stain & Water Resistant**: Made from premium color-fast polyester yarns.',
-        cta: { text: 'Explore Rugs Collection', path: '/product?category=Rugs' }
+        reply: 'Shreehari Surgicals & Co. (SUPPORT) manufactures CE-certified emergency first aid kits conforming strictly to Section 45 of the Indian Factories Act:\n\n• **Type A Kit**: For heavy industrial units and factories with 50+ workers (38 items).\n• **Type B Kit**: Designed for mid-scale facilities with 20 to 50 personnel.\n• **Type C Kit**: Compact heavy-gauge sheet metal & ABS boxes for workshops up to 20 workers.\n• **Wall-Mount Medical Cabinets**: Key-locked stainless steel cabinets with clear observation windows.',
+        cta: { text: 'View First Aid Kits', path: '/product?category=First%20Aid%20%26%20Emergency%20Care' }
+    },
+    {
+        id: 'holloware',
+        title: 'Hospital Holloware',
+        subtitle: 'Dressing Drums & Trays',
+        icon: 'Layers',
+        iconBg: '#2563eb',
+        reply: 'Goonj & CYNOR manufacture hospital-grade AISI 304 non-magnetic stainless steel holloware:\n\n• **Dressing Drums**: Seamless jointed & jointless deep-drawn autoclave drums.\n• **Surgical Instrument Trays**: Trays with snug-fit flat lids, catheter trays, and Mayo table trays.\n• **Patient Care Utensils**: Kidney dishes, gallipots, bedpans, and male urinals.\n• **Autoclave Proof**: Tested for sterilization up to 134°C with smooth mirror polish.',
+        cta: { text: 'Explore Holloware Range', path: '/product?category=Hospital%20Holloware' }
+    },
+    {
+        id: 'otlights',
+        title: 'O.T. Lights & Autoclaves',
+        subtitle: 'Shadowless LED & Sterilizers',
+        icon: 'Sun',
+        iconBg: '#d97706',
+        reply: 'Precision clinical operation theatre, suction, and sterilization equipment:\n\n• **Cold LED OT Lights**: 7, 12, and 20 LED surgical lights with shadow-free optics (50,000h lifespan).\n• **Deluxe Steam Autoclaves**: 12x12 & 14x15 stainless steel sterilizers with dial pressure gauges.\n• **Suction Apparatus**: High-vacuum 1/4 HP heavy-duty ward and theatre suction units.',
+        cta: { text: 'View OT & Sterilization', path: '/product?category=Sterilization%20%26%20Suction' }
     },
     {
         id: 'contact',
-        title: 'Contact & Wholesale',
-        subtitle: 'Ahmedabad Headquarters',
-        icon: 'Support',
-        iconBg: '#7c3aed',
-        reply: `Get in touch with United Brothers directly:\n\n• **Phone / WhatsApp**: ${import.meta.env.VITE_PHONE || '+91 84548 38638'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com'}\n• **Location**: Vasna, Ahmedabad, Gujarat\n• **Direct Factory Supply**: Bulk master rolls and custom cuts shipped pan-India.`,
-        cta: { text: 'Contact Us', path: '/connect' }
+        title: 'Tenders & Wholesale',
+        subtitle: 'Delhi & Mumbai Central Hubs',
+        icon: 'Phone',
+        iconBg: '#059669',
+        reply: `Connect with our central coordination offices for institutional hospital tenders, wholesale rate cards, and bulk cargo supply:\n\n• **Delhi Hub (Goonj)**: ${import.meta.env.VITE_GOONJ_PHONE || '+91 98731 98731'} | ${import.meta.env.VITE_GOONJ_EMAIL || 'info@goonjcom.in'}\n• **Mumbai Hub (Shreehari)**: ${import.meta.env.VITE_SHREEHARI_PHONE || '+91 98179 26992'} | ${import.meta.env.VITE_SHREEHARI_EMAIL || 'shreeharisurgicals@gmail.com'}\n• **Pan-India Dispatch**: Express logistics with real-time transit consignment tracking.`,
+        cta: { text: 'Submit Institutional Inquiry', path: '/connect' }
     }
 ];
 
@@ -51,90 +52,122 @@ const generateBotReply = (userText) => {
     const q = (userText || '').toLowerCase().trim();
     const allProducts = (productsData || []).filter((p) => !p.isBanner);
 
-    // 1. Dilour / Automotive
-    if (q.includes('dilour') || q.includes('automotive') || q.includes('car') || q.includes('boot') || q.includes('noise') || q.includes('acoustic') || q.includes('velour')) {
-        const matching = allProducts.filter(p => p.category?.toLowerCase().includes('dilour') || p.name?.toLowerCase().includes('dilour')).slice(0, 3);
+    // 1. First Aid & Emergency Kits / Cabinets
+    if (q.includes('first aid') || q.includes('kit') || q.includes('type a') || q.includes('type b') || q.includes('type c') || q.includes('cabinet') || q.includes('burn') || q.includes('relief') || q.includes('factory act') || q.includes('support')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('first aid') || (p.subCategory || '').toLowerCase().includes('first aid') || (p.name || '').toLowerCase().includes('first aid')).slice(0, 3);
         return {
-            text: 'United Brothers Dilour carpets are premium needle-punch non-woven rolls engineered for automotive interiors, trunk linings, and luxury flooring:\n\n• **Acoustic Insulation**: Reduces engine and road drone by ~35%.\n• **5 Rich Colors**: Black, Grey, Beige, Brown, and Red.\n• **Zero-Fray Cut**: Easy to trim and mold around vehicle footwells.',
+            text: 'Shreehari Surgicals & Co. (brand SUPPORT) provides CE-certified industrial first aid equipment conforming to Section 45 of the Indian Factories Act:\n\n• **Types A, B & C Kits**: Equipped with 28 to 38 medical components, burn dressings, and multilingual resuscitation charts.\n• **Stainless Steel Wall Cabinets**: Heavy-gauge steel and SS 304 lockable medical stations.\n• **Trauma & Relief Kits**: Compact family, vehicle, and civil relief kits.',
             products: matching,
-            cta: { text: 'View Dilour Carpets', path: '/product?category=Dilour%20Carpets' }
+            cta: { text: 'Explore First Aid Kits', path: '/product?category=First%20Aid%20%26%20Emergency%20Care' }
         };
     }
 
-    // 2. Ribs / Anti-slip
-    if (q.includes('rib') || q.includes('slip') || q.includes('corridor') || q.includes('groove') || q.includes('tread')) {
-        const matching = allProducts.filter(p => p.category?.toLowerCase().includes('ribs') || p.name?.toLowerCase().includes('ribs')).slice(0, 3);
+    // 2. Emergency Stretchers & Evacuation
+    if (q.includes('stretcher') || q.includes('scoop') || q.includes('spine') || q.includes('evacuation') || q.includes('stair') || q.includes('chair') || q.includes('slide') || q.includes('transfer')) {
+        const matching = allProducts.filter(p => (p.name || '').toLowerCase().includes('stretcher') || (p.name || '').toLowerCase().includes('spine') || (p.name || '').toLowerCase().includes('slide') || (p.subCategory || '').toLowerCase().includes('stretcher') || (p.subCategory || '').toLowerCase().includes('chair')).slice(0, 3);
         return {
-            text: 'Our Ribs Carpets feature heavy-duty parallel grooves designed for high-traction commercial and automotive environments:\n\n• **Anti-Slip Grip**: Scrapes soil and moisture effectively.\n• **Heavy Traffic Ready**: Withstands commercial foot traffic, ramps, and stairwells.\n• **Available in**: Black, Grey, Brown, and Red.',
+            text: 'We manufacture certified patient immobilisation and emergency rescue stretchers:\n\n• **Aluminium Scoop Stretcher**: Decouple clutch hinges enable gentle sliding under patients without spinal flexion.\n• **HDPE Spine Board**: 100% X-ray translucent, buoyant water rescue spinal immobilizer.\n• **Evacuation Stair Chair**: Wheeled compact folding chair for multi-floor stair evacuation.',
             products: matching,
-            cta: { text: 'View Ribs Carpets', path: '/product?category=Ribs%20Carpets' }
+            cta: { text: 'View Emergency Stretchers', path: '/product?category=First%20Aid%20%26%20Emergency%20Care' }
         };
     }
 
-    // 3. Poly Shrink / 1800 GSM / 3D Rugs
-    if (q.includes('poly') || q.includes('shrink') || q.includes('1800') || q.includes('gsm') || q.includes('3d') || q.includes('living room')) {
-        const matching = allProducts.filter(p => p.subCategory?.toLowerCase().includes('poly') || p.name?.toLowerCase().includes('poly') || p.badge?.text?.includes('1800')).slice(0, 3);
+    // 3. Hospital Holloware & Utensils
+    if (q.includes('holloware') || q.includes('drum') || q.includes('tray') || q.includes('catheter') || q.includes('kidney') || q.includes('bedpan') || q.includes('urinal') || q.includes('gallipot') || q.includes('stainless steel') || q.includes('ss 304')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('holloware') || (p.name || '').toLowerCase().includes('drum') || (p.name || '').toLowerCase().includes('tray')).slice(0, 3);
         return {
-            text: 'Our 1800 GSM New Poly Shrink Rugs represent the peak of modern dimensional weaving:\n\n• **High-Pile 3D Texture**: Multi-level relief creates sculpted visual depth.\n• **Integrated Self-Backing**: Heavy non-slip anchor eliminates corner curling.\n• **30 Exclusive Designs**: Available in standard living room sizes.',
+            text: 'Goonj & CYNOR offer premium hospital-grade AISI 304 stainless steel holloware:\n\n• **Dressing Drums**: Autoclave sterilizing drums with perforated body vents.\n• **Instrument Trays**: With recessed flat lids, Mayo stand trays, and Cidex trays.\n• **Patient Utensils**: Contoured fracture bedpans, male urinals, and seamless kidney dishes.',
             products: matching,
-            cta: { text: 'Explore Poly Shrink Rugs', path: '/product?category=Rugs' }
+            cta: { text: 'View Hospital Holloware', path: '/product?category=Hospital%20Holloware' }
         };
     }
 
-    // 4. Shalimar / Persian / Traditional
-    if (q.includes('shalimar') || q.includes('persian') || q.includes('traditional') || q.includes('oriental') || q.includes('heritage')) {
-        const matching = allProducts.filter(p => p.subCategory?.toLowerCase().includes('shalimar') || p.name?.toLowerCase().includes('shalimar')).slice(0, 3);
+    // 4. OT Surgical & Examination Lights
+    if (q.includes('light') || q.includes('ot') || q.includes('led') || q.includes('lamp') || q.includes('theatre') || q.includes('shadowless') || q.includes('examination')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('light') || (p.name || '').toLowerCase().includes('light')).slice(0, 3);
         return {
-            text: 'Shalimar Woven Rugs offer timeless Persian and transitional geometric artistry:\n\n• **Precision Jacquard**: Dense, color-fast lustrous polyester yarns.\n• **Easy Care**: Vacuum safe and stain-resistant.\n• **Over 30 Designs**: Sized from accent rugs to large hall centerpieces.',
+            text: 'Our surgical illumination range features high-efficiency cold LED optical domes:\n\n• **7 & 12 LED Lights**: Compact mobile stand procedural lamps with 35,000–50,000 Lux.\n• **20 LED OT Surgical Light**: High-intensity shadowless dome delivering up to 100,000 Lux.\n• **50,000h Diode Life**: Energy-efficient, cool beam preventing tissue dehydration.',
             products: matching,
-            cta: { text: 'Explore Shalimar Rugs', path: '/product?category=Rugs' }
+            cta: { text: 'View OT Surgical Lights', path: '/product?category=O.T.%20%26%20Examination%20Lights' }
         };
     }
 
-    // 5. Price / Wholesale / Cost / Quote
-    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('wholesale') || q.includes('quote') || q.includes('bulk')) {
+    // 5. Autoclaves & Suction Apparatus
+    if (q.includes('autoclave') || q.includes('steril') || q.includes('suction') || q.includes('vacuum') || q.includes('steam')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('sterilization') || (p.name || '').toLowerCase().includes('autoclave') || (p.name || '').toLowerCase().includes('suction')).slice(0, 3);
+        return {
+            text: 'Sterilization & suction apparatus built for rigorous clinical environments:\n\n• **12x12 & 14x15 Deluxe Autoclaves**: Heavy stainless steel steam pressure vessels with safety valves.\n• **Triple-Wall Radial Locking Autoclaves**: Microprocessor-controlled automatic vacuum cycle.\n• **Electric Suction Machines**: Heavy-duty 1/4 HP oil-free pump with twin glass/polycarbonate bottles.',
+            products: matching,
+            cta: { text: 'View Autoclaves & Suction', path: '/product?category=Sterilization%20%26%20Suction' }
+        };
+    }
+
+    // 6. Hospital Furniture & Crash Carts
+    if (q.includes('furniture') || q.includes('bed') || q.includes('crash cart') || q.includes('cart') || q.includes('trolley') || q.includes('ecg') || q.includes('icu') || q.includes('fowler')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('furniture') || (p.name || '').toLowerCase().includes('cart') || (p.name || '').toLowerCase().includes('bed') || (p.name || '').toLowerCase().includes('trolley')).slice(0, 3);
+        return {
+            text: 'Heavy-duty hospital furniture engineered for patient comfort and emergency response:\n\n• **SSP Emergency Crash Carts**: Multi-tier locking drawers with cardiac backboard & IV pole.\n• **Stainless Steel ECG & Drug Trolleys**: Two and three-tier smooth rolling utility carts.\n• **ICU & Ward Beds**: Multi-position motorized and mechanical fowler hospital beds.',
+            products: matching,
+            cta: { text: 'View Hospital Furniture', path: '/product?category=Hospital%20Furniture' }
+        };
+    }
+
+    // 7. Hospital Linen, Gowns & Disposables
+    if (q.includes('linen') || q.includes('gown') || q.includes('scrub') || q.includes('mask') || q.includes('n95') || q.includes('ppe') || q.includes('apron') || q.includes('disposable')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('linen') || (p.name || '').toLowerCase().includes('gown') || (p.name || '').toLowerCase().includes('mask')).slice(0, 3);
+        return {
+            text: 'Sterile protective apparel and hospital ward linen:\n\n• **Disposable Surgical Gowns**: Hydrophobic SMS/SMMS liquid barrier, EO sterile packed.\n• **Doctor Lab Coats & Scrubs**: Premium reusable combed cotton surgeon suits.\n• **N95 Respirators & 3-Ply Masks**: High-filtration particulate surgical masks.',
+            products: matching,
+            cta: { text: 'View Hospital Linen & PPE', path: '/product?category=Hospital%20Linen%20%26%20Disposables' }
+        };
+    }
+
+    // 8. Wholesale / Price / Tender / Quotation
+    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('wholesale') || q.includes('quote') || q.includes('quotation') || q.includes('tender') || q.includes('bulk')) {
         const matching = allProducts.slice(0, 3);
         return {
-            text: 'We offer factory-direct wholesale pricing from our Ahmedabad facility:\n\n• **Dilour & Ribs Rolls**: Starting from ₹145 - ₹175/sq.m (bulk discounts available).\n• **1800 GSM Rugs**: Wholesale rates based on dimensions and quantity.\n• **Pan-India Dispatch**: Prompt delivery for showrooms, trimmers, and dealers.',
+            text: 'We provide direct manufacturer wholesale pricing and institutional tender quotations:\n\n• **Direct Factory Rates**: Zero distributor markups on hospital holloware, OT lights, and first aid kits.\n• **Bulk Tenders**: Custom specifications, rate contracts, and GST invoices provided.\n• **Pan-India Logistics**: Fast containerized cargo transit from Delhi and Mumbai warehouses.',
             products: matching,
-            cta: { text: 'Request Wholesale Quote', path: '/connect' }
+            cta: { text: 'Request Wholesale Quotation', path: '/connect' }
         };
     }
 
-    // 6. Contact / Phone / WhatsApp / Address / Location
-    if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('whatsapp') || q.includes('mail') || q.includes('address') || q.includes('where') || q.includes('location') || q.includes('ahmedabad')) {
+    // 9. Contact / Address / Helplines
+    if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('whatsapp') || q.includes('mail') || q.includes('address') || q.includes('where') || q.includes('location') || q.includes('delhi') || q.includes('mumbai')) {
         return {
-            text: `Here is our direct contact information:\n\n• **Phone / WhatsApp**: ${import.meta.env.VITE_PHONE || '+91 84548 38638'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com'}\n• **Office**: Vasna, Ahmedabad, Gujarat\n• **Timings**: Mon - Sat: 9:00 AM - 7:00 PM`,
-            cta: { text: 'Get in Touch', path: '/connect' }
+            text: `Contact our verified manufacturer hubs directly:\n\n• **Delhi Hub (Goonj & CYNOR)**: 58-B, Damodar Park, Dilshad Garden, Delhi - 110095\n  Phone: +91 98731 98731 / +91 98732 98731\n  Email: info@goonjcom.in\n\n• **Mumbai Hub (Shreehari Surgicals - SUPPORT)**: Samuel Street, Masjid Bunder (W), Mumbai - 400003\n  Phone: +91 98179 26992 / +91 98205 60982\n  Email: shreeharisurgicals@gmail.com\n\n• **Business Hours**: Mon–Sat: 09:00 AM – 07:00 PM IST (Emergency Dispatch: 24/7)`,
+            cta: { text: 'Go to Contact Page', path: '/connect' }
         };
     }
 
-    // 7. General search fallback with matching products
+    // 10. General search fallback with matching products
     const matching = allProducts.filter(p =>
         p.name?.toLowerCase().includes(q) ||
         p.category?.toLowerCase().includes(q) ||
-        p.subCategory?.toLowerCase().includes(q)
+        p.subCategory?.toLowerCase().includes(q) ||
+        p.brand?.toLowerCase().includes(q) ||
+        p.vendor?.toLowerCase().includes(q)
     ).slice(0, 3);
 
     if (matching.length > 0) {
         return {
-            text: `Here are matching carpet and rug collections for "${userText}":`,
+            text: `Here are matching healthcare and surgical equipment items for "${userText}":`,
             products: matching,
-            cta: { text: 'View Products', path: `/product?category=${encodeURIComponent(matching[0].category || 'Dilour Carpets')}` }
+            cta: { text: 'View Products', path: `/product?category=${encodeURIComponent(matching[0].category || 'Hospital Holloware')}` }
         };
     }
 
-    // 8. Default friendly fallback
+    // 11. Default friendly healthcare fallback
     return {
-        text: 'I can help you explore Dilour non-woven rolls, Ribs commercial carpets, 1800 GSM Poly Shrink rugs, or Shalimar woven rugs. You can also ask about wholesale rates, color swatches, or vehicle fitments!',
+        text: 'I can assist you with CE-certified industrial first aid kits, emergency scoop stretchers, AISI 304 hospital holloware, shadowless cold LED surgical lights, autoclaves, and institutional wholesale tenders. How can I help you today?',
         products: allProducts.slice(0, 2),
-        cta: { text: 'Explore All Collections', path: '/product' }
+        cta: { text: 'Explore All Products', path: '/product' }
     };
 };
 
 const ProductItem = memo(({ product, onSelect }) => {
-    const rawImg = product.image || product.images?.[0] || '/products/dilour_black.jpg';
-    const priceDisplay = product.priceFormatted || (product.price != null ? `₹${product.price}/sq.m` : '₹150/sq.m');
+    const rawImg = resolveImagePath(product.image || product.images?.[0] || '/products/enhanced/hd_first_aid_box.jpg');
+    const priceDisplay = product.priceFormatted || (product.price != null ? `₹${product.price}` : 'Factory Pricing');
     const handleClick = useCallback(() => onSelect(product), [onSelect, product]);
 
     return (
@@ -142,17 +175,17 @@ const ProductItem = memo(({ product, onSelect }) => {
             onClick={handleClick}
             className="flex items-center gap-12 p-8 bordb cursor-pointer hover:bg-forth transition-all"
         >
-            <div className="rounded-6 overflow-hidden flex-shrink-0 bg-forth" style={{ width: '60px', height: '48px' }}>
+            <div className="rounded-6 overflow-hidden flex-shrink-0 bg-forth border-ec" style={{ width: '56px', height: '56px' }}>
                 <Image
                     src={rawImg}
                     alt={product.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain p-2"
                 />
             </div>
             <div className="flex-1 min-w-0">
                 <h5 className="headmini-text font-600 text-dark line-clamp1 m-0">{product.name}</h5>
                 <p className="mini-text text-gray font-500 m-0 mt-2">
-                    Price: <span className="font-600 text-danger">{priceDisplay}</span>
+                    Brand: <span className="font-600 text-dark">{product.brand || product.vendor?.split(' ')[0]}</span> • <span className="font-600 text-danger">{priceDisplay}</span>
                 </p>
             </div>
         </div>
@@ -172,7 +205,8 @@ const ProductSearch = memo(({ searchQuery, onSearchChange, onSelect, onBack }) =
                 p.name?.toLowerCase().includes(q) ||
                 p.category?.toLowerCase().includes(q) ||
                 p.subCategory?.toLowerCase().includes(q) ||
-                p.vendor?.toLowerCase().includes(q);
+                p.vendor?.toLowerCase().includes(q) ||
+                p.brand?.toLowerCase().includes(q);
             if (isMatch && !seen.has(p.name)) {
                 seen.add(p.name);
                 matched.push(p);
@@ -188,7 +222,7 @@ const ProductSearch = memo(({ searchQuery, onSearchChange, onSelect, onBack }) =
                     <Fields
                         type="input"
                         version="v0"
-                        placeholder="Search carpets, rugs, dilour, ribs..."
+                        placeholder="Search first aid, drums, lights, autoclaves..."
                         value={searchQuery}
                         onChange={onSearchChange}
                         icon="Search"
@@ -222,7 +256,7 @@ const ProductSearch = memo(({ searchQuery, onSearchChange, onSelect, onBack }) =
                         className="font-500 w-max mini-text rounded-5 p-1"
                     />
                     <p className="mini-text text-gray font-500">
-                        {products.length} {products.length === 1 ? 'Product' : 'Products'} Found
+                        {products.length} {products.length === 1 ? 'Product' : 'Products'} Available
                     </p>
                 </div>
             </div>
@@ -235,8 +269,8 @@ const ProductSearch = memo(({ searchQuery, onSearchChange, onSelect, onBack }) =
                 ) : (
                     <div className="p-24 text-center text-gray">
                         <Icon name="Search" width="28" height="28" stroke="var(--gray)" className="mx-auto mb-8 opacity-50" />
-                        <p className="small-text font-500 text-dark m-0">No carpets found</p>
-                        <p className="mini-text text-gray m-0 mt-4">Try searching for "Dilour", "Ribs", "Poly Shrink", or "Shalimar"</p>
+                        <p className="small-text font-500 text-dark m-0">No medical products found</p>
+                        <p className="mini-text text-gray m-0 mt-4">Try searching for "First Aid", "Dressing Drum", "OT Light", "Autoclave", or "Stretcher"</p>
                     </div>
                 )}
             </div>
@@ -255,14 +289,14 @@ const ChatTeaser = memo(({ onOpen, onDismiss }) => {
     return (
         <div
             onClick={onOpen}
-            className="b-shadow p-10 rounded-5 cursor-pointer bg-white"
-            style={{ width: '240px', maxWidth: 'calc(100vw - 48px)', animation: 'fadeInUp 0.3s ease-out' }}
+            className="b-shadow p-10 rounded-5 cursor-pointer bg-white border-ec"
+            style={{ width: '250px', maxWidth: 'calc(100vw - 48px)', animation: 'fadeInUp 0.3s ease-out' }}
             data-no-cursor="true"
         >
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-6 text-primary">
-                    <Icon name="Sparkles" width="18" height="18" stroke="currentColor" />
-                    <p className="small-text font-500 text-dark uppercase tracking-wider">ASSISTANT</p>
+                    <Icon name="Shield" width="16" height="16" stroke="currentColor" />
+                    <p className="small-text font-600 text-dark uppercase tracking-wider">HEALTHCARE DESK</p>
                 </div>
                 <Button
                     version="icon"
@@ -275,8 +309,8 @@ const ChatTeaser = memo(({ onOpen, onDismiss }) => {
                     onClick={handleDismissClick}
                 />
             </div>
-            <p className="mini-text text-dark font-500 m-0">
-                Hi! 👋 Looking for Dilour carpets, Ribs, or luxury rugs? Let's chat!
+            <p className="mini-text text-dark font-500 m-0 leading-tight">
+                Hi! 👋 Need hospital holloware, OT equipment, or certified first aid kits? Let's chat!
             </p>
         </div>
     );
@@ -292,10 +326,10 @@ const ChatHeader = memo(({ onClose, activeMode, onToggleMode }) => (
                 <span className="absolute bg-success dot rounded-full bottom-0 right-0" />
             </div>
             <div>
-                <h4 className="headmini-text font-600 text-dark">
-                    {activeMode === 'search' ? 'Carpet & Rug Search' : 'Flooring Assistant'}
+                <h4 className="headmini-text font-600 text-dark m-0">
+                    {activeMode === 'search' ? 'Medical Product Catalog' : 'Healthcare Assistant'}
                 </h4>
-                <p className="mini-text font-400 text-gray">Online • United Brothers Live</p>
+                <p className="mini-text font-400 text-success m-0 mt-1">● Goonj & Shreehari Verified Live</p>
             </div>
         </div>
 
@@ -307,8 +341,8 @@ const ChatHeader = memo(({ onClose, activeMode, onToggleMode }) => (
                 iconHeight="15"
                 iconStroke={activeMode === 'search' ? 'var(--white)' : 'var(--dark)'}
                 bg={activeMode === 'search' ? 'primary' : 'forth'}
-                aria-label={activeMode === 'search' ? 'Switch to Chat' : 'Search Carpets'}
-                title={activeMode === 'search' ? 'Switch to Chat' : 'Search Carpets'}
+                aria-label={activeMode === 'search' ? 'Switch to Chat' : 'Search Catalog'}
+                title={activeMode === 'search' ? 'Switch to Chat' : 'Search Catalog'}
                 onClick={onToggleMode}
                 className="rounded-full"
             />
@@ -333,12 +367,12 @@ ChatHeader.displayName = 'ChatHeader';
 const ChatWelcome = memo(({ onActionClick }) => (
     <div className="h-350" data-no-cursor="true">
         <h2 className="title-text text-dark font-700 capitalize m-0">
-            Hey there 👋<br />
-            How can we <span className="text-primary">help</span>?
+            Healthcare Supply Desk 👋<br />
+            How can we <span className="text-primary">help you</span>?
         </h2>
 
-        <p className="mini-text text-gray mt-6 m-0">
-            Explore Dilour & Ribs rolls, 1800 GSM poly shrink rugs, or get a wholesale quote.
+        <p className="mini-text text-gray mt-6 m-0 leading-relaxed">
+            Explore certified first aid boxes, AISI 304 holloware, OT surgical lights, or request factory wholesale tenders.
         </p>
 
         <div className="grid-cols-2 gap-8 mt-12">
@@ -346,7 +380,7 @@ const ChatWelcome = memo(({ onActionClick }) => (
                 <div
                     key={card.id}
                     onClick={() => onActionClick(card)}
-                    className="bg-white rounded-10 p-15 cursor-pointer hover:shadow-sm transition-shadow"
+                    className="bg-white rounded-10 p-12 cursor-pointer hover:shadow-sm border-ec transition-shadow"
                 >
                     <div
                         className="icon rounded-30 flex items-center justify-center"
@@ -452,7 +486,7 @@ const ChatInput = memo(({ inputValue, onChange, onSend }) => {
                 <Fields
                     type="input"
                     version="v2"
-                    placeholder="Ask about Dilour, Ribs, Rugs, or price..."
+                    placeholder="Ask about first aid kits, drums, lights, quotes..."
                     value={inputValue}
                     onChange={onChange}
                     className="w-full"

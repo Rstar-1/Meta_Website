@@ -19,11 +19,11 @@ export const resolveImagePath = (path) => {
 
   // Local assets in public folder
   if (
-    trimmed.startsWith('/products/') ||
+    trimmed.startsWith('/') ||
     trimmed.startsWith('products/') ||
-    trimmed.startsWith('/united_brothers') ||
+    trimmed.startsWith('shreehari') ||
+    trimmed.startsWith('goonj') ||
     trimmed.startsWith('united_brothers') ||
-    trimmed.startsWith('/sobo_') ||
     trimmed.startsWith('sobo_')
   ) {
     return trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
@@ -38,10 +38,12 @@ export const resolveImagePath = (path) => {
   return base ? `${base}/${cleanPath}` : `/${cleanPath}`;
 };
 
-export const unitedBrothersColor = resolveImagePath('/united_brothers_color.png');
-export const unitedBrothersWhite = resolveImagePath('/united_brothers_white.png');
-export const soboLogo = unitedBrothersColor;
-export const soboWhite = unitedBrothersWhite;
+export const shreehariLogoColor = resolveImagePath('/shreehari_logo_color.png');
+export const shreehariLogoWhite = resolveImagePath('/shreehari_logo_white.png');
+export const unitedBrothersColor = shreehariLogoColor;
+export const unitedBrothersWhite = shreehariLogoWhite;
+export const soboLogo = shreehariLogoColor;
+export const soboWhite = shreehariLogoWhite;
 export const carpetPatchBanner = resolveImagePath('/products/carpet_patch_banner.jpg');
 export const carpetBanner = resolveImagePath('/products/carpet_banner.jpg');
 

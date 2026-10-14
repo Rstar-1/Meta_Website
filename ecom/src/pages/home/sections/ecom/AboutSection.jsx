@@ -3,62 +3,64 @@ import { useNavigate } from 'react-router-dom';
 
 import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
+import Icon from '../../../../components/common/Icon';
+import { resolveImagePath } from '../../../../utils/imageResolver';
 
-const AVATARS = [
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
-    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
-    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
+const keyFeatures = [
+    {
+        title: 'CE & ISO 9001:2015 Certified',
+        description: 'Certified medical manufacturing meeting European standards and international quality systems.'
+    },
+    {
+        title: 'Section 45 Factories Act Compliant',
+        description: 'Approved Type A, B & C industrial first aid boxes required for factories and construction sites.'
+    },
+    {
+        title: 'Medical Grade AISI-304 Stainless Steel',
+        description: 'Seamless, autoclavable hospital holloware, dressing drums, and surgical trays built for lifetime use.'
+    },
+    {
+        title: 'Pan-India Clinical & Institutional Supply',
+        description: 'Direct factory pricing and rapid dispatch for government tenders, private hospitals, and distributors.'
+    }
 ];
 
 const AboutSection = memo(() => {
     const navigate = useNavigate();
-    const handleGetStarted = useCallback(() => navigate('/connect'), [navigate]);
+    const handleExplore = useCallback(() => navigate('/product'), [navigate]);
+    const handleEnquiry = useCallback(() => navigate('/connect'), [navigate]);
 
     return (
         <div className="w-full py-60">
             <div className="grid-cols-2 sm-grid-cols-1 items-center gap-12">
-                {/* Left Content Column */}
                 <div>
-                    <p className="text-primary font-600 small-text uppercase mb-12">
-                        Your Trusted Shipping Partner
-                    </p>
 
                     <h2 className="large-text font-700 text-dark uppercase">
-                        Expert Ship Freight Services, Deliver Worldwide with Ease
+                        Precision Medical Supplies Engineered For Clinical Excellence
                     </h2>
-                    <p className="para-text text-gray font-400 mt-12">
-                        We specialize in global ocean freight solutions, offering full container load, less than container load, and bulk cargo shipping. With our trusted carrier network and years of expertise, we guarantee smooth operations, reliable schedules, and cost-effective delivery for businesses of all sizes.
+
+                    <p className="para-text text-gray font-400 mt-14">
+                        For over 15 years, Shreehari Surgicals & Goonj have stood as industry-leading manufacturers of CE-certified industrial first aid systems, AISI-304 surgical stainless steel holloware, and advanced O.T. shadowless examination lighting. Trusted by premier hospitals, manufacturing facilities, emergency response teams, and institutions across India.
                     </p>
 
                     <Button
-                        text="Get Started Now"
+                        text="Explore Catalog"
                         version="v1"
                         bg="primary"
                         color="white"
-                        className="rounded-30 font-500 mt-36"
-                        onClick={handleGetStarted}
+                        className="rounded-30 font-500 mt-16"
+                        onClick={handleExplore}
                     />
-
                 </div>
 
-                <div className="relative rounded-10 overflow-hidden h-500 sm-h-360 w-full sm-mt-16">
+                {/* Right Image Column */}
+                <div className="relative rounded-10 overflow-hidden h-500 sm-h-360 w-full sm-mt-12">
                     <Image
-                        src="https://madebydesignesia.com/themes/logixpress/images/misc/s3.webp"
-                        alt="Ship Freight Services"
+                        src={resolveImagePath('/products/spaces/operation_theater.jpg')}
+                        alt="State of the Art Medical Equipment & Surgical Care"
                         className="w-full h-full object-cover flex"
                         loading="eager"
                     />
-
-                    <div
-                        className="absolute bottom-20 right-20 z-10 bg-primary rounded-16 p-24 text-white flex flex-col justify-center"
-                        style={{
-                            minWidth: '150px',
-                            boxShadow: '0 12px 32px rgba(255, 107, 0, 0.35)',
-                        }}
-                    >
-                        <span style={{ fontSize: '56px', fontWeight: '700', lineHeight: 1 }}>15</span>
-                        <span className="font-500 small-text mt-8">Years of Excellence</span>
-                    </div>
                 </div>
             </div>
         </div>

@@ -32,41 +32,43 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 ));
 
 const KNOWN_NAMES = {
-    foxecom: 'United Brothers',
-    united: 'United Brothers',
-    unitedbrothers: 'United Brothers',
-    ashmita: 'United Brothers',
-    ashmitaenterprises: 'United Brothers',
-    ashmitavinyls: 'United Brothers',
-    wsi: 'United Brothers'
+    goonj: 'Goonj Communication & Electronic Scale Co.',
+    cynor: 'Goonj & CYNOR Healthcare',
+    goonjhealthcare: 'Goonj Communication & Electronic Scale Co.',
+    shreehari: 'Shreehari Surgicals & Co.',
+    shreeharisurgicals: 'Shreehari Surgicals & Co.',
+    support: 'Shreehari Surgicals & Co. (SUPPORT)',
+    united: 'Goonj & Shreehari Healthcare Network',
+    unitedbrothers: 'Goonj & Shreehari Healthcare Network',
+    foxecom: 'Goonj Communication & Electronic Scale Co.'
 };
 
 const Supplier = () => {
     const { brandName } = useParams();
-    const brandKey = (brandName || 'unitedbrothers').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brandKey = (brandName || 'goonj').toLowerCase().replace(/[^a-z0-9]/g, '');
     const displayName = useMemo(() => {
         return KNOWN_NAMES[brandKey] || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'United Brothers');
+            : 'Goonj & Shreehari Healthcare Network');
     }, [brandKey, brandName]);
 
     const breadcrumbs = useMemo(() => [
         { label: 'Home', path: '/home' },
-        { label: 'Products', path: '/products' },
+        { label: 'Products', path: '/product' },
         { label: displayName, path: `/supplier/${brandKey}` }
     ], [displayName, brandKey]);
 
     return (
         <>
             <SEO
-                title="United Brothers - Quality Flooring Solutions | Ahmedabad, Gujarat"
-                description="Manufacturer & Supplier of Dilour Carpets, Ribs Carpets, New Poly Shrink Rugs & Shalimar Rugs. Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad. Contact: +91 84548 38638."
+                title={`${displayName} - Certified Medical & Healthcare Equipment | Delhi & Mumbai`}
+                description="Verified manufacturers & suppliers of Hospital Holloware, OT Lights, Autoclaves, CE-Certified First Aid Kits, Stretchers & Surgical Linen. Direct factory supply across India."
                 path={`/supplier/${brandKey}`}
                 breadcrumbs={breadcrumbs}
             />
             <Banner
                 title={displayName}
-                desc="Quality Flooring Solutions — Better Floors Brighter Spaces | Ahmedabad, Gujarat"
+                desc="Verified Medical Equipment & Hospital Supplies — Delhi & Mumbai Central Hubs"
                 breadcrumbs={breadcrumbs}
             />
             {supplierSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {
