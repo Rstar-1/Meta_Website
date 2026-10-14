@@ -19,9 +19,9 @@
       "#94A3B8",
       "#64748B"
     ],
-    "image": "/metal/card_ss_pipes.jpg",
+    "image": "/metal/enhanced_ss_pipes.jpg",
     "images": [
-      "/metal/card_ss_pipes.jpg",
+      "/metal/enhanced_ss_pipes.jpg",
       "/metal/pipe-tubes.jpg",
       "/metal/slide-no2.jpg"
     ],
@@ -83,7 +83,7 @@
     "image": "/metal/pipe-tubes.jpg",
     "images": [
       "/metal/pipe-tubes.jpg",
-      "/metal/card_ss_pipes.jpg",
+      "/metal/enhanced_ss_pipes.jpg",
       "/metal/slide-no1.jpg"
     ],
     "inStock": true,
@@ -141,9 +141,9 @@
       "#F1F5F9",
       "#CBD5E1"
     ],
-    "image": "/metal/card_ss_pipes.jpg",
+    "image": "/metal/enhanced_ss_pipes.jpg",
     "images": [
-      "/metal/card_ss_pipes.jpg",
+      "/metal/enhanced_ss_pipes.jpg",
       "/metal/pipe-tubes.jpg"
     ],
     "inStock": true,
@@ -200,7 +200,7 @@
     "image": "/metal/pipe-tubes.jpg",
     "images": [
       "/metal/pipe-tubes.jpg",
-      "/metal/card_ss_pipes.jpg"
+      "/metal/enhanced_ss_pipes.jpg"
     ],
     "inStock": true,
     "trending": true,
@@ -249,9 +249,9 @@
       "#E2E8F0",
       "#334155"
     ],
-    "image": "/metal/card_ss_pipes.jpg",
+    "image": "/metal/enhanced_ss_pipes.jpg",
     "images": [
-      "/metal/card_ss_pipes.jpg",
+      "/metal/enhanced_ss_pipes.jpg",
       "/metal/pipe-tubes.jpg"
     ],
     "inStock": true,
@@ -297,9 +297,9 @@
       "#E2E8F0",
       "#94A3B8"
     ],
-    "image": "/metal/card_ss_flanges.jpg",
+    "image": "/metal/enhanced_ss_flanges.jpg",
     "images": [
-      "/metal/card_ss_flanges.jpg",
+      "/metal/enhanced_ss_flanges.jpg",
       "/metal/flanges.jpg",
       "/metal/slide-no2.jpg"
     ],
@@ -357,7 +357,7 @@
     "image": "/metal/flanges.jpg",
     "images": [
       "/metal/flanges.jpg",
-      "/metal/card_ss_flanges.jpg"
+      "/metal/enhanced_ss_flanges.jpg"
     ],
     "inStock": true,
     "trending": true,
@@ -406,9 +406,9 @@
       "#E2E8F0",
       "#94A3B8"
     ],
-    "image": "/metal/card_ss_flanges.jpg",
+    "image": "/metal/enhanced_ss_flanges.jpg",
     "images": [
-      "/metal/card_ss_flanges.jpg",
+      "/metal/enhanced_ss_flanges.jpg",
       "/metal/flanges.jpg"
     ],
     "inStock": true,
@@ -461,7 +461,7 @@
     "image": "/metal/flanges.jpg",
     "images": [
       "/metal/flanges.jpg",
-      "/metal/card_ss_flanges.jpg"
+      "/metal/enhanced_ss_flanges.jpg"
     ],
     "inStock": true,
     "trending": true,
@@ -506,9 +506,9 @@
       "#E2E8F0",
       "#94A3B8"
     ],
-    "image": "/metal/card_ss_pipe_fittings.jpg",
+    "image": "/metal/enhanced_ss_pipe_fittings.jpg",
     "images": [
-      "/metal/card_ss_pipe_fittings.jpg",
+      "/metal/enhanced_ss_pipe_fittings.jpg",
       "/metal/pipe-fittings.jpg"
     ],
     "inStock": true,
@@ -565,7 +565,7 @@
     "image": "/metal/pipe-fittings.jpg",
     "images": [
       "/metal/pipe-fittings.jpg",
-      "/metal/card_ss_pipe_fittings.jpg"
+      "/metal/enhanced_ss_pipe_fittings.jpg"
     ],
     "inStock": true,
     "trending": false,
@@ -610,9 +610,9 @@
       "#E2E8F0",
       "#94A3B8"
     ],
-    "image": "/metal/card_ss_pipe_fittings.jpg",
+    "image": "/metal/enhanced_ss_pipe_fittings.jpg",
     "images": [
-      "/metal/card_ss_pipe_fittings.jpg",
+      "/metal/enhanced_ss_pipe_fittings.jpg",
       "/metal/pipe-fittings.jpg"
     ],
     "inStock": true,
@@ -661,7 +661,7 @@
     "image": "/metal/pipe-fittings.jpg",
     "images": [
       "/metal/pipe-fittings.jpg",
-      "/metal/card_ss_pipe_fittings.jpg"
+      "/metal/enhanced_ss_pipe_fittings.jpg"
     ],
     "inStock": true,
     "trending": false,
@@ -702,9 +702,9 @@
       "#E2E8F0",
       "#94A3B8"
     ],
-    "image": "/metal/card_ss_fasteners.jpg",
+    "image": "/metal/enhanced_ss_fasteners.jpg",
     "images": [
-      "/metal/card_ss_fasteners.jpg",
+      "/metal/enhanced_ss_fasteners.jpg",
       "/metal/fastners.jpg"
     ],
     "inStock": true,
@@ -757,7 +757,7 @@
     "image": "/metal/fastners.jpg",
     "images": [
       "/metal/fastners.jpg",
-      "/metal/card_ss_fasteners.jpg"
+      "/metal/enhanced_ss_fasteners.jpg"
     ],
     "inStock": true,
     "trending": true,
@@ -798,9 +798,9 @@
       "#E2E8F0",
       "#94A3B8"
     ],
-    "image": "/metal/card_ss_fasteners.jpg",
+    "image": "/metal/enhanced_ss_fasteners.jpg",
     "images": [
-      "/metal/card_ss_fasteners.jpg",
+      "/metal/enhanced_ss_fasteners.jpg",
       "/metal/fastners.jpg"
     ],
     "inStock": true,
@@ -849,7 +849,7 @@
     "image": "/metal/fastners.jpg",
     "images": [
       "/metal/fastners.jpg",
-      "/metal/card_ss_fasteners.jpg"
+      "/metal/enhanced_ss_fasteners.jpg"
     ],
     "inStock": true,
     "trending": false,

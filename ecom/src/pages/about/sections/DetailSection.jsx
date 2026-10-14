@@ -44,37 +44,21 @@ const DetailSection = React.memo(() => {
                         iconColor="var(--primary)"
                     />
 
-                    <h2 className="large-text font-700 text-dark uppercase mt-8">
+                    <h2 className="large-text font-700 text-dark uppercase mt-6">
                         Stainless Steel Round Bars, Forged Fittings &amp; Flanges.
                     </h2>
 
-                    <p className="para-text text-gray font-400 mt-6">
+                    <p className="para-text text-gray font-400 mt-20">
                         Jubilant Metal And Alloys is Mumbai&apos;s premier stockholder and exporter of centerless ground stainless steel round bars (ASTM A276), Class 3000# &amp; 6000# forged fittings (ASME B16.11), precision flanges, and seamless piping solutions for petrochemical, refinery, and EPC engineering clients worldwide.
                     </p>
 
-                    <div className="grid-cols-3 gap-12 mt-30 w-95">
-                        {thumbnails.map((item) => (
-                            <div
-                                key={item.id}
-                                className='w-full h-250 rounded-5 bg-forth overflow-hidden cursor-pointer group'
-                                onClick={() => navigate(`/product?category=${encodeURIComponent(item.category)}`)}
-                                title={item.title}
-                            >
-                                <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="w-full h-full object-cover flex group-hover:scale-105 transition-transform"
-                                />
-                            </div>
-                        ))}
-                    </div>
                 </div>
 
-                <div className="w-full h-550 sm-h-350 rounded-10 overflow-hidden">
+                <div className="w-full h-600 sm-h-350 rounded-10 overflow-hidden">
                     <Image
                         src={resolveImagePath('/metal/special-features.png')}
                         alt="Jubilant Metal And Alloys Precision Scope"
-                        className="w-full h-full object-cover flex"
+                        className="w-full h-full object-contain flex"
                     />
                 </div>
             </div>

@@ -69,7 +69,7 @@ const SPACES_DATA = [
     },
     {
         id: 3,
-        image: "/metal/card_ss_pipes.jpg",
+        image: "/metal/enhanced_ss_pipes.jpg",
         title: "ASTM A312 Seamless & Welded Process Pipes",
         products: [
             {
@@ -77,14 +77,14 @@ const SPACES_DATA = [
                 name: "ASTM A312 TP304/304L Seamless Pipe (1/2\" to 12\")",
                 price: "₹320/kg",
                 originalPrice: "₹360/kg",
-                image: "/metal/card_ss_pipes.jpg"
+                image: "/metal/enhanced_ss_pipes.jpg"
             },
             {
                 id: 2,
                 name: "ASTM A312 TP316/316L Welded Pipe (Sch 10S/40S)",
                 price: "₹420/kg",
                 originalPrice: null,
-                image: "/metal/card_ss_pipes.jpg"
+                image: "/metal/enhanced_ss_pipes.jpg"
             },
             {
                 id: 3,
@@ -97,7 +97,7 @@ const SPACES_DATA = [
     },
     {
         id: 4,
-        image: "/metal/card_ss_flanges.jpg",
+        image: "/metal/enhanced_ss_flanges.jpg",
         title: "ASME B16.5 Heavy Forged Industrial Flanges",
         products: [
             {
@@ -105,14 +105,14 @@ const SPACES_DATA = [
                 name: "SS 304/304L Slip On Flange (SORF 150# - 600#)",
                 price: "₹850/pc",
                 originalPrice: "₹990/pc",
-                image: "/metal/card_ss_flanges.jpg"
+                image: "/metal/enhanced_ss_flanges.jpg"
             },
             {
                 id: 6,
                 name: "SS 316/316L Weld Neck Flange (WNRF 150# - 2500#)",
                 price: "₹1,450/pc",
                 originalPrice: null,
-                image: "/metal/card_ss_flanges.jpg"
+                image: "/metal/enhanced_ss_flanges.jpg"
             },
             {
                 id: 7,
@@ -125,7 +125,7 @@ const SPACES_DATA = [
     },
     {
         id: 5,
-        image: "/metal/card_ss_fasteners.jpg",
+        image: "/metal/enhanced_ss_fasteners.jpg",
         title: "High-Tensile Fasteners & Stud Bolts",
         products: [
             {
@@ -133,14 +133,14 @@ const SPACES_DATA = [
                 name: "SS Hex Head Bolts DIN 933 / ISO 4017 (A2-70 & A4-80)",
                 price: "₹45/pc",
                 originalPrice: "₹55/pc",
-                image: "/metal/card_ss_fasteners.jpg"
+                image: "/metal/enhanced_ss_fasteners.jpg"
             },
             {
                 id: 14,
                 name: "SS Heavy Hex Nuts DIN 934 / ASTM A194 Gr 8M",
                 price: "₹28/pc",
                 originalPrice: null,
-                image: "/metal/card_ss_fasteners.jpg"
+                image: "/metal/enhanced_ss_fasteners.jpg"
             },
             {
                 id: 15,
