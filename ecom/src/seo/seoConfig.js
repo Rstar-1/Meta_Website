@@ -1,6 +1,18 @@
-const SITE_URL = (import.meta.env.VITE_SITE_URL || "").replace(/\/$/, "");
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || "United Brothers";
-const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/united_brothers_color.png";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.jubilantmetal.com").replace(/\/$/, "");
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Jubilant Metal And Alloys";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/metal/jubilant_logo_transparent.png";
+
+export const getUrl = (path = "/") => {
+  if (!path) return SITE_URL;
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+};
+
+export const getImageUrl = (image) => {
+  if (!image) return getUrl(DEFAULT_IMAGE);
+  if (image.startsWith("http://") || image.startsWith("https://")) return image;
+  return getUrl(image);
+};
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 
@@ -9,22 +21,22 @@ export const siteInfo = {
   url: SITE_URL,
   description:
     import.meta.env.VITE_SEO_DESCRIPTION ||
-    "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications.",
-  phone: import.meta.env.VITE_PHONE || "07942562287",
-  email: import.meta.env.VITE_EMAIL || "info@ashmitavinyls.com",
+    "Jubilant Metal And Alloys is a leading ISO 9001:2008 certified manufacturer, stockist, and exporter of Stainless Steel Pipes, Tubes, Flanges, Buttweld Pipe Fittings, Forged Fittings, and Fasteners based in Mumbai, India.",
+  phone: import.meta.env.VITE_PHONE || "+91 9820171740",
+  email: import.meta.env.VITE_EMAIL || "info@jubilantmetal.com",
 
   address: {
-    streetAddress: "C 304, 3rd Floor, Eastern Business District, L.B.S Marg Road, Bhandup West",
+    streetAddress: "Shop No 6, A Wing, 1st Floor, Nakoda Mehta Sunshine Heights, Khadilkar Road, Sadashiv Lane, Kakadwadi, Girgaon",
     addressLocality: "Mumbai",
     addressRegion: "Maharashtra",
-    postalCode: "400078",
+    postalCode: "400004",
     addressCountry: "IN",
-    fullAddress: import.meta.env.VITE_ADDRESS || "Ashmita Enterprises C 304, 3 Rd Floor, Eastern Business Distric, Near Mangatram Petrol Pump L.B.S Marg Road, Bhandup West, Mumbai City, Mumbai - 400078, Maharashtra, India",
+    fullAddress: import.meta.env.VITE_ADDRESS || "Shop No 6, A Wing, 1st Floor, Nakoda Mehta Sunshine Heights, Khadilkar Road, Sadashiv Lane, Kakadwadi, Girgaon, Mumbai - 400004, Maharashtra, India",
   },
 
   geo: {
-    latitude: 19.1485,
-    longitude: 72.9367,
+    latitude: 18.9553,
+    longitude: 72.8205,
   },
 
   sameAs: [
@@ -37,18 +49,18 @@ export const siteInfo = {
 
 export const pageSeoData = {
   home: {
-    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Manufacturer in India | Ashmita Vinyls",
+    title: import.meta.env.VITE_SEO_TITLE || "Stainless Steel Pipes, Flanges, Fittings & Fasteners | Jubilant Metal And Alloys",
     description:
       import.meta.env.VITE_SEO_DESCRIPTION ||
-      "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications across India.",
+      "Jubilant Metal And Alloys is a leading ISO 9001:2008 certified manufacturer, stockist, and exporter of Stainless Steel Pipes, Tubes, Flanges, Buttweld Pipe Fittings, Forged Fittings, and Fasteners based in Mumbai, India.",
     path: "/home",
     breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
-    title: "About Ashmita Vinyls | PVC Vinyl Manufacturer in India",
+    title: "About Us | Jubilant Metal And Alloys Mumbai",
     description:
-      "Learn about Ashmita Vinyls, our PVC vinyl manufacturing capabilities, quality focus and industrial solutions.",
+      "Learn about Jubilant Metal And Alloys, our 25+ years of industry leadership, ISO 9001:2008 certification, and global supply footprint across 80+ countries.",
     path: "/about",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -57,9 +69,9 @@ export const pageSeoData = {
   },
 
   product: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Stainless Steel & Nickel Alloys Products Catalog | Jubilant Metal And Alloys",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Browse our comprehensive stock of ASTM A312 SS pipes, ASME B16.5 flanges, buttweld fittings, forged fittings, and high-tensile fasteners.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -68,9 +80,9 @@ export const pageSeoData = {
   },
 
   products: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Stainless Steel & Nickel Alloys Products Catalog | Jubilant Metal And Alloys",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Browse our comprehensive stock of ASTM A312 SS pipes, ASME B16.5 flanges, buttweld fittings, forged fittings, and high-tensile fasteners.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -79,9 +91,9 @@ export const pageSeoData = {
   },
 
   productDetail: {
-    title: "PVC Vinyl Product Details | Ashmita Vinyls",
+    title: "Product Specifications & Technical Datasheets | Jubilant Metal And Alloys",
     description:
-      "Explore detailed specifications, technical parameters, and applications for PVC vinyl products by Ashmita Vinyls.",
+      "Technical datasheets, chemical composition, mechanical properties, dimension charts, and MTC test certification for stainless steel and alloy products.",
     path: "/product-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -91,9 +103,9 @@ export const pageSeoData = {
   },
 
   supplier: {
-    title: "PVC Vinyl Applications & Industries | Ashmita Vinyls",
+    title: "Supplier Factsheet & Manufacturing Profile | Jubilant Metal And Alloys",
     description:
-      "Discover industries and applications using Ashmita Vinyls PVC vinyl solutions.",
+      "Verified enterprise factsheet, GSTIN 27ATUPD4241P1Z3, ISO certification, testing lab credentials, and mill capabilities of Jubilant Metal Mumbai.",
     path: "/supplier",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -103,9 +115,9 @@ export const pageSeoData = {
   },
 
   quality: {
-    title: "PVC Vinyl Manufacturing Quality | Ashmita Vinyls",
+    title: "Quality Assurance & MTC EN 10204 3.1 | Jubilant Metal And Alloys",
     description:
-      "Explore Ashmita Vinyls manufacturing quality, infrastructure and PVC vinyl production capabilities.",
+      "Our rigorous 5-stage quality assurance: 100% PMI testing, hydrostatic testing, radiography, ultrasonic testing, and third-party inspection.",
     path: "/quality",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -114,9 +126,9 @@ export const pageSeoData = {
   },
 
   connect: {
-    title: "Contact Ashmita Vinyls | PVC Vinyl Product Enquiry",
+    title: "Contact & RFQ | Jubilant Metal And Alloys Mumbai",
     description:
-      "Contact Ashmita Vinyls for PVC vinyl product enquiries, specifications and bulk requirements.",
+      "Send your material requirements, RFQ, or reach out to Director Virendra Desai directly at +91 9820171740 or info@jubilantmetal.com.",
     path: "/connect",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -125,9 +137,9 @@ export const pageSeoData = {
   },
 
   blog: {
-    title: "Carpets, Rugs & Flooring Insights | United Brothers",
+    title: "Piping & Metallurgy Technical Insights | Jubilant Metal And Alloys",
     description:
-      "Read expert guides on 1800 GSM poly shrink rugs, dilour & ribs carpets, interior styling, and commercial flooring solutions by United Brothers.",
+      "Expert engineering guides on stainless steel ASTM/ASME standards, corrosion resistance, flange ratings, and duplex alloy selection.",
     path: "/blog",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -136,9 +148,9 @@ export const pageSeoData = {
   },
 
   blogDetail: {
-    title: "Carpets & Rugs Articles | United Brothers",
+    title: "Technical Engineering Articles | Jubilant Metal And Alloys",
     description:
-      "Latest technical insights, styling guides, and care updates on carpets and luxury woven rugs by United Brothers.",
+      "Latest technical insights and specifications on stainless steel pipes, fittings, flanges, and high-performance alloys.",
     path: "/blog-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -148,8 +160,8 @@ export const pageSeoData = {
   },
 
   privacy: {
-    title: "Privacy Policy | Ashmita Vinyls",
-    description: "Read the Ashmita Vinyls privacy policy.",
+    title: "Privacy Policy | Jubilant Metal And Alloys",
+    description: "Read the Jubilant Metal And Alloys privacy policy.",
     path: "/privacy",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -158,8 +170,8 @@ export const pageSeoData = {
   },
 
   terms: {
-    title: "Terms & Conditions | Ashmita Vinyls",
-    description: "Read the terms and conditions of Ashmita Vinyls.",
+    title: "Terms & Conditions | Jubilant Metal And Alloys",
+    description: "Read the Jubilant Metal And Alloys terms and conditions.",
     path: "/terms",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -168,32 +180,10 @@ export const pageSeoData = {
   },
 };
 
-export const aeoFAQs = [
-  {
-    question: "What is Ashmita Vinyls?",
-    answer:
-      "Ashmita Vinyls is a PVC vinyl products manufacturer and supplier in India serving commercial and industrial requirements.",
-  },
-  {
-    question: "What products does Ashmita Vinyls supply?",
-    answer:
-      "Ashmita Vinyls supplies PVC vinyl products and industrial vinyl solutions for different commercial and industrial applications.",
-  },
-  {
-    question: "How can I enquire about PVC vinyl products?",
-    answer:
-      "You can contact Ashmita Vinyls through the website contact page, phone or email for product specifications and bulk enquiries.",
-  },
-];
-
-export const getUrl = (path = "/") =>
-  path.startsWith("http")
-    ? path
-    : `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
-
-export const getImageUrl = (image) =>
-  image
-    ? image.startsWith("http")
-      ? image
-      : getUrl(image)
-    : getUrl(DEFAULT_IMAGE);
+export default {
+  SITE_URL,
+  SITE_NAME,
+  DEFAULT_IMAGE,
+  siteInfo,
+  pageSeoData,
+};

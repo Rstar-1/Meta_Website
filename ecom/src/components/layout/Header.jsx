@@ -183,8 +183,8 @@ HeaderTopBar.displayName = "HeaderTopBar";
 const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => (
   <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
     <Image
-      src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "/united_brothers_color.png" : "/united_brothers_white.png")}
-      alt="United Brothers Logo"
+      src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "/metal/jubilant_logo_transparent.png" : "/metal/jubilant_logo_white.png")}
+      alt="Jubilant Metal And Alloys"
       className="object-contain w-90 sm-w-50"
       style={{ height: "60px" }}
     />

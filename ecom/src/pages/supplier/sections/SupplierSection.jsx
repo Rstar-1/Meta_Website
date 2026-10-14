@@ -7,48 +7,55 @@ import CardLayout from '../../../components/layout/sections/CardLayout';
 import Tab from '../../../components/common/Tab';
 import Table from '../../../components/common/Table';
 
-const UNITED_BROTHERS_DATA = {
-    name: 'United Brothers',
-    tagline: 'Quality Flooring Solutions — Better Floors Brighter Spaces',
-    category: 'Dilour Carpets, Ribs Carpets, New Poly Shrink Rugs & Shalimar Rugs',
-    location: 'Vasna, Ahmedabad, Gujarat',
-    fullAddress: 'Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad, Gujarat, India',
-    phone: '8454838638',
-    phoneFormatted: '+91 84548 38638',
-    contactPerson: 'Julie Shah',
-    email: 'unitedbrothers879@gmail.com',
-    rating: 4.8,
-    reviews: 86,
-    established: '2015',
-    experience: '10+ Years',
-    legalStatus: 'Registered Enterprise',
-    natureOfBusiness: 'Manufacturer, Wholesaler, Trader & Exporter',
-    panNo: 'AAJFU3175H',
-    gstin: 'Applied (PAN: AAJFU3175H)',
-    moq: '1 Roll / 10 Rugs',
-    responseRate: '98%',
-    responseTime: '< 1 hr',
-    fulfillmentRate: '99.8%',
-    trustBadge: 'Verified Supplier & Quality Assured Flooring',
-    about: 'United Brothers is a premier provider of high-grade flooring solutions based in Ahmedabad, Gujarat. We specialize in Dilour Carpets, Ribs Carpets, 1800 GSM New Poly Shrink Rugs, and Shalimar Woven Rugs for automotive interiors, residential spaces, and commercial facilities. We are committed to exceptional craftsmanship, acoustic comfort, superior durability, and modern aesthetic elegance.'
+const JUBILANT_METAL_DATA = {
+    name: 'Jubilant Metal And Alloys',
+    tagline: 'Trust • Quality • Long Term Partner — Your Trusted Partner in Stainless Steel Products',
+    category: 'Stainless Steel Pipes, Tubes, Flanges, Pipe Fittings, Forged Fittings & Fasteners',
+    location: 'Girgaon, Mumbai, Maharashtra',
+    fullAddress: 'Shop No 6, A Wing, 1st Floor, Nakoda Mehta Sunshine Heights, Khadilkar Road, Sadashiv Lane, Kakadwadi, Girgaon, Mumbai - 400004, Maharashtra, India',
+    phone: '9820171740',
+    phoneFormatted: '+91 9820171740',
+    landline: '022 6639 4511',
+    whatsapp: '+91 9867611740',
+    contactPerson: 'Virendra Desai (Director)',
+    email: 'info@jubilantmetal.com',
+    website: 'www.jubilantmetal.com',
+    rating: 4.9,
+    reviews: 142,
+    established: '1999',
+    experience: '25+ Years',
+    legalStatus: 'Registered Enterprise / Manufacturer & Exporter',
+    natureOfBusiness: 'Manufacturer, Supplier, Stockist & Exporter',
+    panNo: 'ATUPD4241P',
+    gstin: '27ATUPD4241P1Z3',
+    isoCertified: 'ISO 9001:2008 Certified Company',
+    moq: 'Ready Stock / Custom Mill Consignment',
+    responseRate: '99%',
+    responseTime: '< 30 min',
+    fulfillmentRate: '99.9%',
+    trustBadge: 'ISO 9001:2008 Certified & Verified Global Exporter',
+    about: 'Jubilant Metal And Alloys INC is one of the premier manufacturers, suppliers, stockists, and exporters of Stainless Steel Pipes, Tubes, Flanges, Buttweld Pipe Fittings, Forged Fittings, Fasteners, Round Bars, Sheets, and Plates based in Mumbai, India. We stock ferrous and non-ferrous alloys including SS 304/304L, SS 316/316L, 904L, Duplex 2205, Super Duplex 2507, Inconel, Monel, Hastelloy, Titanium, and Cupro-Nickel. Serving global clients across 80+ countries in refineries, chemical & petrochemical, oil & gas, power generation, sugar mills, and EPC engineering.'
 };
 
 const KNOWN_SUPPLIERS = {
-    foxecom: UNITED_BROTHERS_DATA,
-    unitedbrothers: UNITED_BROTHERS_DATA,
-    united: UNITED_BROTHERS_DATA,
-    ashmita: UNITED_BROTHERS_DATA,
-    ashmitaenterprises: UNITED_BROTHERS_DATA,
-    ashmitavinyls: UNITED_BROTHERS_DATA,
-    wsi: UNITED_BROTHERS_DATA
+    foxecom: JUBILANT_METAL_DATA,
+    unitedbrothers: JUBILANT_METAL_DATA,
+    united: JUBILANT_METAL_DATA,
+    jubilant: JUBILANT_METAL_DATA,
+    jubilantmetal: JUBILANT_METAL_DATA,
+    jubilantmetalandalloys: JUBILANT_METAL_DATA,
+    ashmita: JUBILANT_METAL_DATA,
+    ashmitaenterprises: JUBILANT_METAL_DATA,
+    ashmitavinyls: JUBILANT_METAL_DATA,
+    wsi: JUBILANT_METAL_DATA
 };
 
 const TRUST_POINTS = [
-    'PAN Registered: AAJFU3175H | GST Status: Applied',
-    'Premium 1800 GSM 100% Polyester Poly Shrink Technology',
-    'Heavy-Duty Automotive & Commercial Dilour & Ribs Carpets',
-    'Pan-India Safe Cargo Dispatch from Ahmedabad Central Hub',
-    'Direct Factory Wholesale Pricing & Extensive Ready Stock'
+    'GSTIN: 27ATUPD4241P1Z3 | ISO 9001:2008 Certified Company',
+    'Full Product Scope: Pipes, Tubes, Flanges, Fittings, Fasteners, Round Bars',
+    'Specialist in SS 304, 316L, 904L, Duplex, Inconel, Monel & Hastelloy',
+    '100% PMI Lab Tested with EN 10204 3.1 Mill Test Certificates (MTC)',
+    'Global Exports to 80+ Countries & Immediate Dispatch from Mumbai Stockyard'
 ];
 
 const SPEC_COLUMNS = [
@@ -58,40 +65,40 @@ const SPEC_COLUMNS = [
 
 const PRODUCT_CATEGORIES_RANGE = [
     {
-        title: 'Dilour Carpets',
-        count: '5 Color Options',
-        desc: 'Premium soft, durable, stylish non-woven dilour carpets engineered for automotive interiors, car trunk lining, and home flooring.',
-        highlight: 'Acoustic sound absorption, thermal insulation, luxury velour finish in Black, Grey, Beige, Brown & Red.'
+        title: 'Stainless Steel Pipes & Tubes',
+        count: 'ASTM A312 / A213 / A269',
+        desc: 'Seamless and welded stainless steel, duplex, and nickel alloy pipes engineered for high pressure, thermal, and subsea fluid handling.',
+        highlight: '1/8" to 24" NB, Schedule 5S to XXS, 100% hydrostatic and eddy current tested.'
     },
     {
-        title: 'Ribs Carpets',
-        count: '4 Color Options',
-        desc: 'Strong, anti-slip, long-lasting ribbed surface carpets designed for vehicle flooring, footwells, and commercial spaces.',
-        highlight: 'High traction, dirt-trapping grooved channels, heavy abrasion resistance in Black, Grey, Brown & Red.'
+        title: 'Stainless Steel Flanges',
+        count: 'ASME B16.5 Class 150# - 2500#',
+        desc: 'Heavy forged Slip On (SORF), Weld Neck (WNRF), Blind (BLRF), and Socket Weld flanges with serrated gasket facing.',
+        highlight: 'Forged ASTM A182 in SS 304, 316L, F51, F53, Inconel 625, and Monel 400.'
     },
     {
-        title: 'New Poly Shrink Rugs',
-        count: '30 Design Collections',
-        desc: '1800 GSM, 100% Polyester high pile shrink woven rugs with self backing, modern 3D shrink texture effect.',
-        highlight: 'Plush underfoot comfort, non-shedding, luxury embossed finish in multiple room sizes.'
+        title: 'Buttweld Pipe Fittings',
+        count: 'ASME B16.9 Specifications',
+        desc: 'Seamless 90° & 45° elbows, equal/reducing tees, concentric/eccentric reducers, and dished caps.',
+        highlight: 'Laminar flow contours, beveled weld ends, 100% radiography tested.'
     },
     {
-        title: 'Shalimar Rugs',
-        count: '74 Design Collections',
-        desc: 'Exquisite 182 x 270 cm & 183 x 270 cm woven area rugs blending traditional artistry with contemporary living aesthetics.',
-        highlight: 'Intricate patterns, vibrant color fastness, anti-fray bound edges.'
+        title: 'Stainless Steel Fasteners',
+        count: 'DIN / ISO / ASTM Standards',
+        desc: 'High tensile hex head bolts, heavy hex nuts, full threaded stud bolts, and washers in A2-70, A4-80, B8, and B8M.',
+        highlight: 'M6 to M48 diameter, non-magnetic, corrosion-resistant thread precision.'
     },
     {
-        title: 'Modern & Geometric Rugs',
-        count: 'Full Range',
-        desc: 'Abstract and geometric pattern rugs tailored for contemporary living rooms, bedrooms, and executive offices.',
-        highlight: 'Minimalist lines, balanced color palettes, easy maintenance.'
+        title: 'Round Bars & Rods',
+        count: 'ASTM A276 Centerless Ground',
+        desc: 'Bright drawn and peeled round bars in stainless steel, duplex, Inconel, and titanium for CNC machining and shafts.',
+        highlight: 'h8/h9 tolerances, 3 mm to 350 mm diameter, 100% ultrasonic tested.'
     },
     {
-        title: 'Traditional & Shaggy Rugs',
-        count: 'Full Range',
-        desc: 'Heritage motifs and ultra-soft shaggy deep-pile rugs for warm, luxurious interiors.',
-        highlight: 'Classic timeless appeal, ultra-dense fibers, maximum barefoot comfort.'
+        title: 'Forged Fittings (3000# / 6000#)',
+        count: 'ASME B16.11 Class Ratings',
+        desc: 'High pressure socket weld & threaded elbows, tees, unions, couplings, hex bushings, and branch Weldolets/Sockolets.',
+        highlight: 'Leak-proof for severe hydraulic, oil & gas, and chemical instrumentation.'
     }
 ];
 
@@ -100,13 +107,13 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('catalog');
 
-    const brandKey = (propBrandKey || brandName || 'unitedbrothers').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brandKey = (propBrandKey || brandName || 'jubilantmetal').toLowerCase().replace(/[^a-z0-9]/g, '');
 
     const supplierInfo = useMemo(() => {
-        const found = KNOWN_SUPPLIERS[brandKey] || UNITED_BROTHERS_DATA;
+        const found = KNOWN_SUPPLIERS[brandKey] || JUBILANT_METAL_DATA;
         const displayName = supplierName || found.name || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'United Brothers');
+            : 'Jubilant Metal And Alloys');
 
         return {
             ...found,
@@ -131,16 +138,18 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
     const specData = useMemo(() => [
         { id: 1, field: 'Company Name', value: supplierInfo.name },
         { id: 2, field: 'Nature of Business', value: supplierInfo.natureOfBusiness },
-        { id: 3, field: 'Contact Person', value: supplierInfo.contactPerson || 'Julie Shah' },
-        { id: 4, field: 'PAN Number', value: `${supplierInfo.panNo || 'AAJFU3175H'} (Registered)` },
-        { id: 5, field: 'GST Status', value: `${supplierInfo.gstin} (Registration in progress)` },
-        { id: 6, field: 'Year of Establishment', value: `${supplierInfo.established} (${supplierInfo.experience})` },
-        { id: 7, field: 'Registered Address', value: supplierInfo.fullAddress },
-        { id: 8, field: 'Primary Helpline', value: `${supplierInfo.phoneFormatted} (${supplierInfo.responseRate} Response Rate)` },
-        { id: 9, field: 'Verification & Quality', value: supplierInfo.trustBadge },
-        { id: 10, field: 'Product Category Focus', value: supplierInfo.category },
-        { id: 11, field: 'Minimum Order Quantity (MOQ)', value: supplierInfo.moq },
-        { id: 12, field: 'Dispatched Hub', value: 'Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad Hub' }
+        { id: 3, field: 'Key Director / Contact Person', value: supplierInfo.contactPerson },
+        { id: 4, field: 'GSTIN Registration', value: `${supplierInfo.gstin} (Verified Active)` },
+        { id: 5, field: 'PAN Number', value: `${supplierInfo.panNo} (Income Tax Dept. Registered)` },
+        { id: 6, field: 'Quality Management Certification', value: supplierInfo.isoCertified },
+        { id: 7, field: 'Year of Establishment', value: `${supplierInfo.established} (${supplierInfo.experience})` },
+        { id: 8, field: 'Corporate & Sales Office', value: supplierInfo.fullAddress },
+        { id: 9, field: 'Primary Helpline & Mobile', value: `${supplierInfo.phoneFormatted} / WhatsApp: ${supplierInfo.whatsapp}` },
+        { id: 10, field: 'Landline Phone', value: supplierInfo.landline },
+        { id: 11, field: 'Official Email & Website', value: `${supplierInfo.email} | ${supplierInfo.website}` },
+        { id: 12, field: 'Product Scope', value: supplierInfo.category },
+        { id: 13, field: 'Material Grades Stocked', value: 'SS 304/L, SS 316/L, SS 904L, Duplex 2205, Super Duplex 2507, Inconel, Monel, Hastelloy, Titanium' },
+        { id: 14, field: 'Dispatch Hub & Port', value: 'Central Stockyard, Mumbai / Nhava Sheva (JNPT) Port Export' }
     ], [supplierInfo]);
 
     const handleProductClick = useCallback((id) => {
@@ -309,21 +318,21 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
 
                             <div className="grid-cols-3 sm-grid-cols-1 gap-12 mt-4">
                                 <div className="bg-forth p-20 rounded-5">
-                                    <h5 className="headmini-text font-600 text-dark m-0">🚀 Pan-India Dispatch</h5>
+                                    <h5 className="headmini-text font-600 text-dark m-0">🚀 Global & Pan-India Dispatch</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Direct express cargo shipping from our central Vasna, Ahmedabad warehouse across all states in India.
+                                        Immediate dispatch from our Girgaon, Mumbai stockyard with export sea-worthy packing to 80+ countries worldwide.
                                     </p>
                                 </div>
                                 <div className="bg-forth p-20 rounded-5">
-                                    <h5 className="headmini-text font-600 text-dark m-0">🏭 Direct Manufacturer & Wholesaler</h5>
+                                    <h5 className="headmini-text font-600 text-dark m-0">🏭 Stockist, Supplier & Exporter</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Zero intermediary markups with direct factory pricing on automotive carpets, commercial roll goods, and rugs.
+                                        Zero intermediary markups with direct mill pricing on stainless steel pipes, fittings, flanges, and high-nickel alloys.
                                     </p>
                                 </div>
                                 <div className="bg-forth p-20 rounded-5">
-                                    <h5 className="headmini-text font-600 text-dark m-0">✨ 1800 GSM Poly Shrink & Woven</h5>
+                                    <h5 className="headmini-text font-600 text-dark m-0">✨ 100% PMI Lab Tested & Certified</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Advanced high-pile shrink technology, 100% polyester self-backing rugs, and precision needle-punch dilour & ribbed carpets.
+                                        Complete traceability with EN 10204 3.1 Mill Test Certificates (MTC), hydrostatic testing, and third-party inspection (TUV, DNV, SGS).
                                     </p>
                                 </div>
                             </div>

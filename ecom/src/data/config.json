@@ -13,7 +13,7 @@
   "HeroBanner": [
     {
       "HeroBannerVersion": 1,
-      "HeroBannerType": 2,
+      "HeroBannerType": 1,
       "HeroBannerCat": false,
       "CatShow": false,
       "HeroBannerText": 1,
@@ -22,7 +22,7 @@
   ],
   "Category": [
     {
-      "CategoryVersion": 3
+      "CategoryVersion": 1
     }
   ],
   "Product": [

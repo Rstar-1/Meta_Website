@@ -1,86 +1,121 @@
 [
   {
     "id": 1,
-    "name": "Dilour Carpets",
-    "slug": "dilour-carpets",
-    "icon": "/products/dilour_car.jpg",
+    "name": "Stainless Steel Pipes & Tubes",
+    "slug": "stainless-steel-pipes-tubes",
+    "icon": "/metal/card_ss_pipes.jpg",
+    "image": "/metal/card_ss_pipes.jpg",
     "iconName": "Layers",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
     "subCategories": [
-      {
-        "id": "automotive-dilour",
-        "name": "Automotive Dilour"
-      },
-      {
-        "id": "home-commercial-dilour",
-        "name": "Home & Commercial Dilour"
-      },
-      {
-        "id": "non-woven-carpets",
-        "name": "Non-Woven Carpets"
-      },
-      {
-        "id": "acoustic-dilour",
-        "name": "Acoustic Insulation"
-      }
+      { "id": "ss-seamless-pipes", "name": "SS Seamless Pipes" },
+      { "id": "ss-welded-pipes", "name": "SS Welded & ERW Pipes" },
+      { "id": "ss-tubes", "name": "SS Heat Exchanger & Instrumentation Tubes" },
+      { "id": "high-nickel-pipes", "name": "Duplex & High Nickel Alloy Pipes" }
     ],
-    "description": "High-quality non-woven carpets designed for automotive interiors and flooring applications. Offers excellent comfort, insulation and sound absorption."
+    "description": "Premium industrial grade Stainless Steel Pipes and Tubes manufactured in ASTM A312, A213, A269 standards in SS 304, 316L, 904L, Duplex & Inconel grades for high-pressure fluid conveyance."
   },
   {
     "id": 2,
-    "name": "Ribs Carpets",
-    "slug": "ribs-carpets",
-    "icon": "/products/ribs_car.jpg",
+    "name": "Stainless Steel Flanges",
+    "slug": "stainless-steel-flanges",
+    "icon": "/metal/card_ss_flanges.jpg",
+    "image": "/metal/card_ss_flanges.jpg",
     "iconName": "Shield",
     "bgColor": "#ECFDF5",
     "accentColor": "#059669",
     "subCategories": [
-      {
-        "id": "automotive-ribs",
-        "name": "Automotive Ribs"
-      },
-      {
-        "id": "anti-slip-ribs",
-        "name": "Anti-Slip Ribbed"
-      },
-      {
-        "id": "commercial-ribs",
-        "name": "Commercial Floor Ribs"
-      },
-      {
-        "id": "heavy-duty-ribs",
-        "name": "Heavy Duty Ribs"
-      }
+      { "id": "slip-on-flanges", "name": "Slip On Flanges (SORF)" },
+      { "id": "weld-neck-flanges", "name": "Weld Neck Flanges (WNRF)" },
+      { "id": "blind-flanges", "name": "Blind Flanges (BLRF)" },
+      { "id": "socket-weld-flanges", "name": "Socket Weld & Threaded Flanges" }
     ],
-    "description": "Ribbed surface carpets provide superior grip, durability and easy cleaning with anti-slip backing. Perfect for automotive and commercial use."
+    "description": "Precision-machined forged industrial flanges conforming to ASME/ANSI B16.5, DIN, and BS standards in pressure classes 150# to 2500# for petrochemical and process piping."
   },
   {
     "id": 3,
-    "name": "Rugs",
-    "slug": "rugs",
-    "icon": "/products/rugs/poly_shrink_p1_1.webp",
+    "name": "Stainless Steel Pipe Fittings",
+    "slug": "stainless-steel-pipe-fittings",
+    "icon": "/metal/card_ss_pipe_fittings.jpg",
+    "image": "/metal/card_ss_pipe_fittings.jpg",
     "iconName": "Box",
     "bgColor": "#FEF2F2",
     "accentColor": "#DC2626",
     "subCategories": [
-      {
-        "id": "poly-shrink-rugs",
-        "name": "New Poly Shrink Rugs"
-      },
-      {
-        "id": "shalimar-rugs",
-        "name": "Shalimar Rugs"
-      },
-      {
-        "id": "modern-geometric-rugs",
-        "name": "Modern & Geometric"
-      },
-      {
-        "id": "traditional-shaggy-rugs",
-        "name": "Traditional & Shaggy"
-      }
+      { "id": "buttweld-elbows", "name": "Buttweld 90° & 45° Elbows" },
+      { "id": "equal-unequal-tees", "name": "Equal & Reducing Tees" },
+      { "id": "concentric-eccentric-reducers", "name": "Concentric & Eccentric Reducers" },
+      { "id": "pipe-caps-stub-ends", "name": "End Caps & Stub Ends" }
     ],
-    "description": "Modern and classic rugs adding warmth and style. Featuring 1800 GSM High Pile Poly Shrink Woven Rugs and Shalimar Designer Collections."
+    "description": "High integrity butt weld and forged pipe fittings engineered to ASME B16.9 / B16.11 specifications, delivering leak-proof directional flow control and long-term corrosion resistance."
+  },
+  {
+    "id": 4,
+    "name": "Stainless Steel Fasteners",
+    "slug": "stainless-steel-fasteners",
+    "icon": "/metal/card_ss_fasteners.jpg",
+    "image": "/metal/card_ss_fasteners.jpg",
+    "iconName": "Sliders",
+    "bgColor": "#FFFBEB",
+    "accentColor": "#D97706",
+    "subCategories": [
+      { "id": "hex-bolts-screws", "name": "Hex Head Bolts & Machine Screws" },
+      { "id": "hex-heavy-nuts", "name": "Hex Nuts & Heavy Hex Nuts" },
+      { "id": "full-threaded-studs", "name": "Stud Bolts with 2 Heavy Nuts" },
+      { "id": "plain-spring-washers", "name": "Plain Flat & Spring Lock Washers" }
+    ],
+    "description": "Heavy-duty industrial fasteners in Grade 304 (A2-70), 316 (A4-80), 904L, and exotic Super Duplex alloys designed for extreme thermal cycling and high tensile loads."
+  },
+  {
+    "id": 5,
+    "name": "Round Bars",
+    "slug": "round-bars",
+    "icon": "/metal/round-bars.jpg",
+    "image": "/metal/round-bars.jpg",
+    "iconName": "Grid",
+    "bgColor": "#F5F3FF",
+    "accentColor": "#7C3AED",
+    "subCategories": [
+      { "id": "ss-bright-round-bars", "name": "SS Bright & Peeled Round Bars" },
+      { "id": "duplex-round-bars", "name": "Duplex & Super Duplex Round Bars" },
+      { "id": "high-nickel-round-bars", "name": "Inconel & Monel Round Bars" },
+      { "id": "titanium-round-bars", "name": "Titanium & Hastelloy Bars" }
+    ],
+    "description": "Centerless ground, peeled and cold drawn high tensile metal round bars and rods supplied in standard and cut-to-length dimensions for machining and precision shafts."
+  },
+  {
+    "id": 6,
+    "name": "Forged Fittings",
+    "slug": "forged-fittings",
+    "icon": "/metal/forged-fittings.jpg",
+    "image": "/metal/forged-fittings.jpg",
+    "iconName": "Zap",
+    "bgColor": "#ECFDF5",
+    "accentColor": "#059669",
+    "subCategories": [
+      { "id": "sw-threaded-elbows", "name": "Socket Weld & Threaded Elbows" },
+      { "id": "forged-unions-couplings", "name": "Forged Unions & Full Couplings" },
+      { "id": "hex-bushings-plugs", "name": "Hex Bushings, Plugs & Nipples" },
+      { "id": "weldolets-sockolets", "name": "Branch Outlets (Weldolets/Sockolets)" }
+    ],
+    "description": "Forged high-pressure pipe fittings conforming to ASME B16.11 in Class 2000, 3000, 6000, and 9000 ratings for critical hydraulic and chemical piping networks."
+  },
+  {
+    "id": 7,
+    "name": "Sheets, Plates & Shims",
+    "slug": "sheets-plates",
+    "icon": "/metal/slide-no3.jpg",
+    "image": "/metal/slide-no3.jpg",
+    "iconName": "Layers",
+    "bgColor": "#FEF2F2",
+    "accentColor": "#DC2626",
+    "subCategories": [
+      { "id": "ss-cold-rolled-sheets", "name": "SS Cold Rolled 2B Sheets" },
+      { "id": "ss-hot-rolled-plates", "name": "SS Hot Rolled No.1 Plates" },
+      { "id": "chequered-plates", "name": "Anti-Skid Chequered Floor Plates" },
+      { "id": "precision-metal-shims", "name": "Precision Slit Shims & Foils" }
+    ],
+    "description": "High-durability stainless steel and nickel alloy sheet plates with superior surface flatness, corrosion resistance, and excellent weldability for fabrication and pressure vessels."
   }
 ]

@@ -9,18 +9,21 @@ import { resolveImagePath } from '../../../utils/imageResolver';
 const thumbnails = [
     {
         id: 1,
-        title: 'Non-Woven Dilour Carpet',
-        image: resolveImagePath('/products/dilour_car.jpg')
+        title: 'SS Round Bars (ASTM A276 / Duplex)',
+        category: 'Round Bars',
+        image: resolveImagePath('/metal/round-bars.jpg')
     },
     {
         id: 2,
-        title: 'Heavy Duty Ribs Carpet',
-        image: resolveImagePath('/products/ribs_car.jpg')
+        title: 'Forged Fittings 3000# / 6000# (ASME B16.11)',
+        category: 'Forged Fittings',
+        image: resolveImagePath('/metal/forged-fittings.jpg')
     },
     {
         id: 3,
-        title: '1800 GSM Poly Shrink Rug',
-        image: resolveImagePath('/products/rugs/poly_shrink_p1_1.webp')
+        title: 'Stainless Steel Flanges (ASME B16.5)',
+        category: 'Stainless Steel Flanges',
+        image: resolveImagePath('/metal/card_ss_flanges.jpg')
     }
 ];
 
@@ -32,7 +35,7 @@ const DetailSection = React.memo(() => {
             <div className="grid-cols-2 sm-grid-cols-1 items-center gap-12 w-full">
                 <div className="w-full pr-20 sm-pr-0">
                     <Badge
-                        text="Carpet Collections"
+                        text="Certified Mill Stockist & Exporter"
                         icon="Layers"
                         variant="outline"
                         color="white"
@@ -42,24 +45,25 @@ const DetailSection = React.memo(() => {
                     />
 
                     <h2 className="large-text font-700 text-dark uppercase mt-8">
-                        Crafting Luxury Carpets & Rugs.
+                        Stainless Steel Round Bars, Forged Fittings &amp; Flanges.
                     </h2>
 
                     <p className="para-text text-gray font-400 mt-6">
-                        United Brothers is Ahmedabad's premier manufacturer of high-density Dilour non-woven rolls, heavy-duty Ribs carpets, and 1800 GSM New Poly Shrink luxury woven rugs.
+                        Jubilant Metal And Alloys is Mumbai&apos;s premier stockholder and exporter of centerless ground stainless steel round bars (ASTM A276), Class 3000# &amp; 6000# forged fittings (ASME B16.11), precision flanges, and seamless piping solutions for petrochemical, refinery, and EPC engineering clients worldwide.
                     </p>
 
                     <div className="grid-cols-3 gap-12 mt-30 w-95">
                         {thumbnails.map((item) => (
                             <div
                                 key={item.id}
-                                className='w-full h-250 rounded-5 bg-forth overflow-hidden cursor-pointer'
-                                onClick={() => navigate('/product')}
+                                className='w-full h-250 rounded-5 bg-forth overflow-hidden cursor-pointer group'
+                                onClick={() => navigate(`/product?category=${encodeURIComponent(item.category)}`)}
+                                title={item.title}
                             >
                                 <Image
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover flex hover:scale-105 transition-transform"
+                                    className="w-full h-full object-cover flex group-hover:scale-105 transition-transform"
                                 />
                             </div>
                         ))}
@@ -68,8 +72,8 @@ const DetailSection = React.memo(() => {
 
                 <div className="w-full h-550 sm-h-350 rounded-10 overflow-hidden">
                     <Image
-                        src={resolveImagePath('/products/spaces/living_room.webp')}
-                        alt="United Brothers Carpet Showcase"
+                        src={resolveImagePath('/metal/special-features.png')}
+                        alt="Jubilant Metal And Alloys Precision Scope"
                         className="w-full h-full object-cover flex"
                     />
                 </div>

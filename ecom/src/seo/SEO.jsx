@@ -48,7 +48,7 @@ const SEO = ({
     const finalTitle =
         title ||
         config.title ||
-        `${SITE_NAME} | PVC Vinyl Products Manufacturer`;
+        `${SITE_NAME} | Stainless Steel Products Manufacturer`;
 
     const finalDescription =
         description ||

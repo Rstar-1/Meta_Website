@@ -13,141 +13,141 @@ import { useCart } from '../../../../feature/slice/cartSlice';
 const SPACES_DATA = [
     {
         id: 1,
-        image: "/products/spaces/living_room.webp",
-        title: "1800 GSM Poly Shrink Living Space",
+        image: "/metal/round-bars.jpg",
+        title: "ASTM A276 Centerless Ground Round Bars",
         products: [
             {
-                id: 15,
-                name: "New Age Poly Shrink Rug - Abstract Linear",
-                price: "₹1,250/sq mtr",
-                originalPrice: "₹1,650/sq mtr",
-                image: "/products/rugs/poly_shrink_p1_1.webp"
+                id: 17,
+                name: "SS 316L Centerless Ground Round Bar (ASTM A276)",
+                price: "₹385/kg",
+                originalPrice: "₹420/kg",
+                image: "/metal/round-bars.jpg"
             },
             {
-                id: 16,
-                name: "New Age Poly Shrink Rug - Honeycomb Hexagon",
-                price: "₹1,250/sq mtr",
+                id: 18,
+                name: "Duplex 2205 (UNS S32205) Peeled Round Bar",
+                price: "₹650/kg",
                 originalPrice: null,
-                image: "/products/rugs/poly_shrink_p2_1.webp"
+                image: "/metal/round-bars.jpg"
             },
             {
                 id: 19,
-                name: "New Age Poly Shrink Rug - Stepped Border",
-                price: "₹1,250/sq mtr",
-                originalPrice: "₹1,650/sq mtr",
-                image: "/products/rugs/poly_shrink_p5_1.webp"
+                name: "Inconel 625 (UNS N06625) High-Nickel Round Bar",
+                price: "₹3,400/kg",
+                originalPrice: "₹3,800/kg",
+                image: "/metal/round-bars.jpg"
             }
         ]
     },
     {
         id: 2,
-        image: "/products/spaces/auto_interior.webp",
-        title: "Automotive Cabin & Trunk Flooring",
+        image: "/metal/forged-fittings.jpg",
+        title: "Class 3000# & 6000# High Pressure Forged Fittings",
         products: [
             {
-                id: 1,
-                name: "Black Dilour Carpet",
-                price: "₹380/sq mtr",
-                originalPrice: "₹480/sq mtr",
-                image: "/products/dilour_black.jpg"
+                id: 21,
+                name: "ASME B16.11 Forged Socket Weld 90° Elbow (3000#)",
+                price: "₹480/pc",
+                originalPrice: "₹560/pc",
+                image: "/metal/forged-fittings.jpg"
             },
             {
-                id: 9,
-                name: "Black Ribs Carpet",
-                price: "₹320/sq mtr",
-                originalPrice: "₹420/sq mtr",
-                image: "/products/ribs_black.jpg"
+                id: 22,
+                name: "ASME B16.11 Forged Threaded (NPT) Tee (3000#)",
+                price: "₹580/pc",
+                originalPrice: null,
+                image: "/metal/forged-fittings.jpg"
             },
             {
-                id: 6,
-                name: "Premium Automotive Interior Dilour",
-                price: "₹420/sq mtr",
-                originalPrice: "₹520/sq mtr",
-                image: "/products/dilour_car.jpg"
+                id: 23,
+                name: "High Pressure Forged Full Coupling (6000#)",
+                price: "₹620/pc",
+                originalPrice: "₹740/pc",
+                image: "/metal/forged-fittings.jpg"
             }
         ]
     },
     {
         id: 3,
-        image: "/products/spaces/office_corridor.webp",
-        title: "Commercial Anti-Slip Corridors",
+        image: "/metal/card_ss_pipes.jpg",
+        title: "ASTM A312 Seamless & Welded Process Pipes",
         products: [
             {
-                id: 10,
-                name: "Grey Ribs Carpet",
-                price: "₹320/sq mtr",
-                originalPrice: null,
-                image: "/products/ribs_grey.jpg"
-            },
-            {
-                id: 13,
-                name: "Heavy Duty Commercial Anti-Slip Ribs",
-                price: "₹360/sq mtr",
-                originalPrice: "₹460/sq mtr",
-                image: "/products/ribs_car.jpg"
+                id: 1,
+                name: "ASTM A312 TP304/304L Seamless Pipe (1/2\" to 12\")",
+                price: "₹320/kg",
+                originalPrice: "₹360/kg",
+                image: "/metal/card_ss_pipes.jpg"
             },
             {
                 id: 2,
-                name: "Grey Dilour Carpet",
-                price: "₹380/sq mtr",
-                originalPrice: "₹480/sq mtr",
-                image: "/products/dilour_grey.jpg"
+                name: "ASTM A312 TP316/316L Welded Pipe (Sch 10S/40S)",
+                price: "₹420/kg",
+                originalPrice: null,
+                image: "/metal/card_ss_pipes.jpg"
+            },
+            {
+                id: 3,
+                name: "ASTM A790 Duplex 2205 Subsea Pipeline Pipe",
+                price: "₹690/kg",
+                originalPrice: "₹780/kg",
+                image: "/metal/pipe-tubes.jpg"
             }
         ]
     },
     {
         id: 4,
-        image: "/products/spaces/dining_salon.webp",
-        title: "Shalimar Luxury Woven Dining Salon",
+        image: "/metal/card_ss_flanges.jpg",
+        title: "ASME B16.5 Heavy Forged Industrial Flanges",
         products: [
             {
-                id: 45,
-                name: "Shalimar Rug 24030 - Beige (182x270 cm)",
-                price: "₹8,500/piece",
-                originalPrice: "₹11,000/piece",
-                image: "/products/shalimar/shalimar_p1_1.webp"
+                id: 5,
+                name: "SS 304/304L Slip On Flange (SORF 150# - 600#)",
+                price: "₹850/pc",
+                originalPrice: "₹990/pc",
+                image: "/metal/card_ss_flanges.jpg"
             },
             {
-                id: 46,
-                name: "Shalimar Rug 24031 - Grey (182x270 cm)",
-                price: "₹8,500/piece",
+                id: 6,
+                name: "SS 316/316L Weld Neck Flange (WNRF 150# - 2500#)",
+                price: "₹1,450/pc",
                 originalPrice: null,
-                image: "/products/shalimar/shalimar_p1_2.webp"
+                image: "/metal/card_ss_flanges.jpg"
             },
             {
-                id: 48,
-                name: "Shalimar Rug 24031 - Steel Blue",
-                price: "₹8,500/piece",
-                originalPrice: "₹11,000/piece",
-                image: "/products/shalimar/shalimar_p1_4.webp"
+                id: 7,
+                name: "SS 316L Blind Flange (BLRF Raised Face)",
+                price: "₹1,150/pc",
+                originalPrice: "₹1,350/pc",
+                image: "/metal/flanges.jpg"
             }
         ]
     },
     {
         id: 5,
-        image: "/products/spaces/bedroom_retreat.webp",
-        title: "Minimalist Plush Bedroom Sanctuary",
+        image: "/metal/card_ss_fasteners.jpg",
+        title: "High-Tensile Fasteners & Stud Bolts",
         products: [
             {
-                id: 35,
-                name: "New Age Poly Shrink Rug - Pure Ivory",
-                price: "₹1,250/sq mtr",
-                originalPrice: "₹1,650/sq mtr",
-                image: "/products/rugs/poly_shrink_p21_1.webp"
+                id: 13,
+                name: "SS Hex Head Bolts DIN 933 / ISO 4017 (A2-70 & A4-80)",
+                price: "₹45/pc",
+                originalPrice: "₹55/pc",
+                image: "/metal/card_ss_fasteners.jpg"
             },
             {
-                id: 3,
-                name: "Beige Dilour Carpet",
-                price: "₹380/sq mtr",
+                id: 14,
+                name: "SS Heavy Hex Nuts DIN 934 / ASTM A194 Gr 8M",
+                price: "₹28/pc",
                 originalPrice: null,
-                image: "/products/dilour_beige.jpg"
+                image: "/metal/card_ss_fasteners.jpg"
             },
             {
-                id: 76,
-                name: "Plush Comfort Shaggy Area Rug",
-                price: "₹4,800/piece",
-                originalPrice: "₹6,500/piece",
-                image: "/products/rugs_shaggy.jpg"
+                id: 15,
+                name: "ASTM A193 B8 / B8M Continuous Thread Stud Bolts",
+                price: "₹190/pc",
+                originalPrice: "₹240/pc",
+                image: "/metal/fastners.jpg"
             }
         ]
     }
@@ -158,14 +158,14 @@ const ShopLookPopup = memo(({ products = [], onClose, onProductClick }) => {
         <div
             className="absolute rounded-10 bg-white top-0 right-0 p-12 m-20 z-20"
             style={{
-                width: '260px',
+                width: '280px',
                 maxWidth: 'calc(100% - 48px)',
             }}
             onClick={(e) => e.stopPropagation()}
         >
             <div className="flex items-center justify-between pb-12 bordb">
                 <div className="flex items-center gap-8">
-                    <h4 className="headmini-text font-500 text-dark capitalize">Shop this look</h4>
+                    <h4 className="headmini-text font-500 text-dark capitalize">Material Scope</h4>
                     <Badge text={`${products.length} items`} size="xs" color="forth" shape="rounded" />
                 </div>
                 <Button
@@ -357,8 +357,9 @@ const OfferSection = () => {
 
             <Heading
                 version="v2"
-                tag="CURATED SPACES & INSPIRATION"
-                title="Styled Spaces & Flooring Collections"
+                tag="ENGINEERED PRODUCT PACKAGES"
+                title="Stainless Steel Round Bars, Forged Fittings & Flanges Scope"
+                subtitle="Browse certified alloy packages ready for immediate dispatch from our Mumbai stockyard."
             />
 
             <div

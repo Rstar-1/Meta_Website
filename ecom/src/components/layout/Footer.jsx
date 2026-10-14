@@ -331,56 +331,31 @@ const Footer = () => {
       links: [
         { label: 'About Us', url: '/about' },
         { label: 'All Products', url: '/product' },
-        { label: 'Find A Store', url: '/supplier' },
-        { label: 'Flooring Insights', url: '/blog' },
-        { label: 'Contact & Enquiry', url: '/connect' }
+        { label: 'Supplier Factsheet', url: '/supplier' },
+        { label: 'Industry Insights', url: '/blog' },
+        { label: 'Contact & RFQ', url: '/connect' }
       ]
     };
 
-    const dilourProducts = getTopProducts(
-      (p) => p.categoryId === 1 || p.category?.toLowerCase().includes('dilour'),
-      3
+    const pipesAndFlanges = getTopProducts(
+      (p) => p.categoryId === 1 || p.categoryId === 2,
+      5
     );
-    const ribsProducts = getTopProducts(
-      (p) => p.categoryId === 2 || p.category?.toLowerCase().includes('rib'),
-      2
-    );
-    const combinedCarpets = [...dilourProducts, ...ribsProducts];
-    const carpetProducts = combinedCarpets.length > 0
-      ? combinedCarpets
-      : getTopProducts((p) => p.categoryId === 1 || p.categoryId === 2, 5);
 
-    const formatRugName = (name) => {
-      if (!name) return '';
-      if (name.startsWith('New Age Poly Shrink Rug - ')) {
-        return `Poly Shrink: ${name.replace('New Age Poly Shrink Rug - ', '').trim()}`;
-      }
-      return name;
-    };
-
-    const polyShrinkProducts = getTopProducts(
-      (p) => p.categoryId === 3 && (p.name?.toLowerCase().includes('poly shrink') || p.subCategory?.toLowerCase().includes('poly')),
-      3,
-      formatRugName
+    const fittingsAndFasteners = getTopProducts(
+      (p) => p.categoryId === 3 || p.categoryId === 4 || p.categoryId === 6,
+      5
     );
-    const shalimarProducts = getTopProducts(
-      (p) => p.categoryId === 3 && (p.name?.toLowerCase().includes('shalimar') || p.subCategory?.toLowerCase().includes('shalimar')),
-      2
-    );
-    const combinedRugs = [...polyShrinkProducts, ...shalimarProducts];
-    const rugProducts = combinedRugs.length > 0
-      ? combinedRugs
-      : getTopProducts((p) => p.categoryId === 3, 5, formatRugName);
 
     return [
       companyCol,
       {
-        title: 'Dilour & Ribs Carpets',
-        links: carpetProducts.length > 0 ? carpetProducts : (columns?.[1]?.links || [])
+        title: 'Pipes, Tubes & Flanges',
+        links: pipesAndFlanges.length > 0 ? pipesAndFlanges : (columns?.[1]?.links || [])
       },
       {
-        title: 'Poly Shrink & Shalimar Rugs',
-        links: rugProducts.length > 0 ? rugProducts : (columns?.[2]?.links || [])
+        title: 'Fittings & Fasteners',
+        links: fittingsAndFasteners.length > 0 ? fittingsAndFasteners : (columns?.[2]?.links || [])
       }
     ];
   }, [columns]);

@@ -3,38 +3,38 @@
     {
       "id": "service",
       "icon": "Support",
-      "title": "Customer Support",
-      "text": "Mon-Sat, 9am-7pm IST.",
+      "title": "Technical Support",
+      "text": "Mon-Sat, 9:30am-7pm IST",
       "type": "text"
     },
     {
       "id": "call",
       "icon": "Phone",
-      "title": "Call Us",
-      "text": "+91 84548 38638",
-      "link": "tel:8454838638",
+      "title": "Call Direct",
+      "text": "+91 9820171740",
+      "link": "tel:9820171740",
       "type": "text"
     },
     {
       "id": "touch",
       "icon": "Send",
       "title": "Email Us",
-      "text": "unitedbrothers879@gmail.com",
-      "link": "mailto:unitedbrothers879@gmail.com",
+      "text": "info@jubilantmetal.com",
+      "link": "mailto:info@jubilantmetal.com",
       "type": "link"
     },
     {
       "id": "address",
       "icon": "MapPin",
       "title": "Location",
-      "text": "Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad",
+      "text": "Girgaon, Mumbai - 400004, Maharashtra",
       "type": "text"
     }
   ],
   "newsletter": {
-    "title": "Join Us",
-    "description": "Get latest flooring updates, carpets, and rug collection catalogues.",
-    "placeholder": "Enter your business email",
+    "title": "Metal Insights & RFQs",
+    "description": "Receive updated ASTM/ASME datasheets, flange weight charts, and raw material index updates.",
+    "placeholder": "Enter your corporate email",
     "buttonText": "Subscribe",
     "disclaimer": {
       "prefix": "By subscribing you agree to our ",
@@ -52,38 +52,38 @@
       "links": [
         { "label": "About Us", "url": "/about" },
         { "label": "All Products", "url": "/product" },
-        { "label": "Find A Store", "url": "/supplier" },
-        { "label": "Flooring Insights", "url": "/blog" },
-        { "label": "Contact & Enquiry", "url": "/connect" }
+        { "label": "Supplier Factsheet", "url": "/supplier" },
+        { "label": "Industry Insights", "url": "/blog" },
+        { "label": "Contact & RFQ", "url": "/connect" }
       ]
     },
     {
-      "title": "Dilour & Ribs Carpets",
+      "title": "Pipes, Tubes & Flanges",
       "links": [
-        { "label": "Black Dilour Carpet", "url": "/product/1" },
-        { "label": "Grey Dilour Carpet", "url": "/product/2" },
-        { "label": "Beige Dilour Carpet", "url": "/product/3" },
-        { "label": "Black Ribs Carpet", "url": "/product/9" },
-        { "label": "Grey Ribs Carpet", "url": "/product/10" }
+        { "label": "SS Seamless Pipes (ASTM A312)", "url": "/product/1" },
+        { "label": "SS Welded Pipes & Tubes", "url": "/product/2" },
+        { "label": "SS Slip On Flanges (SORF)", "url": "/product/5" },
+        { "label": "SS Weld Neck Flanges (WNRF)", "url": "/product/6" },
+        { "label": "SS Blind Flanges (BLRF)", "url": "/product/7" }
       ]
     },
     {
-      "title": "Poly Shrink & Shalimar Rugs",
+      "title": "Fittings & Fasteners",
       "links": [
-        { "label": "Poly Shrink: Linear Striped", "url": "/product/15" },
-        { "label": "Poly Shrink: Honeycomb Hex", "url": "/product/16" },
-        { "label": "Poly Shrink: Vintage Medallion", "url": "/product/17" },
-        { "label": "Shalimar Rug 24030 - Beige", "url": "/product/45" },
-        { "label": "Shalimar Rug 24031 - Grey", "url": "/product/46" }
+        { "label": "SS Buttweld 90° Elbow", "url": "/product/9" },
+        { "label": "SS Equal Tee & Reducer", "url": "/product/10" },
+        { "label": "SS Hex Head Bolts & Screws", "url": "/product/13" },
+        { "label": "SS Heavy Hex Nuts & Washers", "url": "/product/14" },
+        { "label": "Forged Socket Weld Elbow (3000#)", "url": "/product/21" }
       ]
     }
   ],
   "bottom": {
     "region": {
       "flag": "🇮🇳",
-      "label": "India (INR ₹)"
+      "label": "India (INR ₹) / Global USD $"
     },
-    "paymentBadges": ["VISA", "MC", "AMEX", "UPI", "NEFT", "GPAY"],
+    "paymentBadges": ["LC", "TT", "NEFT", "RTGS", "VISA", "MC"],
     "socials": [
       {
         "platform": "facebook",
@@ -101,7 +101,7 @@
         "url": "https://www.youtube.com/"
       }
     ],
-    "copyright": "© 2026 United Brothers. All rights reserved.",
+    "copyright": "© 2026 Jubilant Metal And Alloys. All rights reserved.",
     "legalLinks": [
       { "label": "Terms & Conditions", "url": "/terms" },
       { "label": "Privacy Policy", "url": "/privacy" }

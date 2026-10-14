@@ -11,7 +11,6 @@ const ProductSection = lazy(() => import('./sections/ecom/ProductSection'));
 const AboutSection = lazy(() => import('./sections/ecom/AboutSection'));
 const PatchSection = lazy(() => import('./sections/ecom/PatchSection'));
 const OfferSection = lazy(() => import('./sections/ecom/OfferSection'));
-const TrackSection = lazy(() => import('./sections/ecom/TrackSection'));
 
 const ecomSections = [
     {
@@ -39,12 +38,6 @@ const ecomSections = [
         minHeight: '400px',
         isContainer: true,
         containerStyle: { background: 'var(--forth)' }
-    },
-    {
-        id: 'track',
-        Component: TrackSection,
-        minHeight: '400px',
-        isContainer: true
     },
     {
         id: 'patch',

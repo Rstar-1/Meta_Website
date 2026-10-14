@@ -74,7 +74,7 @@ const Type1SlideItem = memo(({ slide, onNavigate }) => {
 
     return (
         <div
-            className="w-full relative rounded-10 overflow-hidden cursor-pointer h-500"
+            className="w-full relative overflow-hidden cursor-pointer h-600"
             onClick={() => onNavigate(slide.path)}
         >
             <Image src={slide.image} alt={slide.alt} className="w-full h-full object-cover flex filter-b4" loading="eager" />
@@ -83,7 +83,7 @@ const Type1SlideItem = memo(({ slide, onNavigate }) => {
                 className='absolute top-0 left-0 w-full h-full'
             >
                 <div className='flex items-center justify-center h-full'>
-                    <div>
+                    <div className='pt-30 sm-pt-20'>
                         <p className="text-white font-500 headpara-text uppercase text-center">
                             {slide.tag}
                         </p>
@@ -109,8 +109,8 @@ const Type1Swiper = memo(({ onNavigate }) => {
     const handleDot = useCallback((idx) => swiper?.slideToLoop(idx), [swiper]);
 
     return (
-        <div className="w-full relative rounded-10 overflow-hidden">
-            <Swiper onSwiper={setSwiper} onSlideChange={handleSlideChange} modules={[Autoplay]} slidesPerView={1} loop autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }} speed={600} className="w-full rounded-10 overflow-hidden">
+        <div className="w-full relative overflow-hidden">
+            <Swiper onSwiper={setSwiper} onSlideChange={handleSlideChange} modules={[Autoplay]} slidesPerView={1} loop autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }} speed={600} className="w-full overflow-hidden">
                 {TYPE1_SLIDES.map((slide) => (
                     <SwiperSlide key={slide.id}>
                         <Type1SlideItem slide={slide} onNavigate={onNavigate} />

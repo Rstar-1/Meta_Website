@@ -1,68 +1,68 @@
 {
   "HeroSections": {
-    "titleLine1": "PREMIUM",
-    "titleLine2": "LUXURY & NON-WOVEN",
-    "titleHighlight": "CARPETS & WOVEN RUGS",
-    "agencyTitle": "MANUFACTURER",
-    "leftText": "United Brothers — Ahmedabad's premier manufacturer & wholesale distributor of Dilour non-woven carpets, Ribs carpets, and 1800 GSM Poly Shrink rugs.",
-    "rightText": "Engineered for luxury residential living, automotive cabin interiors, and heavy-duty commercial corridors with unmatched acoustic comfort and lasting durability."
+    "titleLine1": "PREMIER",
+    "titleLine2": "STAINLESS STEEL & ALLOY",
+    "titleHighlight": "PIPES, FLANGES & FITTINGS",
+    "agencyTitle": "MANUFACTURER & EXPORTER",
+    "leftText": "Jubilant Metal And Alloys INC — Mumbai's leading manufacturer, supplier, stockist & exporter of Stainless Steel Pipes, Tubes, Flanges, Pipe Fittings, Forged Fittings, Fasteners, and Round Bars.",
+    "rightText": "Engineered for critical industrial applications in refineries, petrochemical, oil & gas, chemical, power plants, shipbuilding, EPC, and offshore engineering with ISO 9001:2008 certified excellence."
   },
   "AboutSections": {
     "heading": {
-      "tag": "MANUFACTURING EXCELLENCE",
-      "title": "Master-Crafted Dilour Carpets, Ribs Non-Woven & 1800 GSM Woven Rugs"
+      "tag": "MANUFACTURING & SUPPLY EXCELLENCE",
+      "title": "ISO 9001:2008 Certified Manufacturer & Global Exporter of Ferrous and Non-Ferrous Alloys"
     },
     "crafter": {
-      "title": "Bespoke Carpets & Luxury Rugs",
-      "subtitle": "Precision needle-punch non-woven technology & high-density shrink weaving",
-      "buttonText": "< View Carpet Collections />",
+      "title": "Jubilant Metal And Alloys INC",
+      "subtitle": "High Precision Pipes, Flanges, Forged Fittings & Fasteners",
+      "buttonText": "< View All Metal Products />",
       "features": [
         {
-          "title": "Acoustic Damping & Cushioning",
-          "description": "Reduce airborne reverberation, footstep noise, and vehicle road drone by up to 35% with high-density fiber matrices."
+          "title": "High Pressure & Extreme Temperature Integrity",
+          "description": "Manufactured to ASTM, ASME, DIN, and BS standards in SS 304, 316L, 904L, Duplex 2205, Inconel, and Monel alloys."
         },
         {
-          "title": "Zero-Fray & Anti-Slip Durability",
-          "description": "Precision needle-punched backing allows custom cutting without edge unraveling, ideal for vehicle cabins and busy corridors."
+          "title": "100% Raw Material Traceability & Lab Inspection",
+          "description": "Every batch is verified through Positive Material Identification (PMI), Hydrostatic testing, Ultrasonic testing, and EN 10204 3.1 MTC."
         }
       ]
     },
-    "platforms": ["Dilour & Ribs Non-Woven", "1800 GSM Poly Shrink Rugs", "Shalimar Designer Weaves"],
+    "platforms": ["Stainless Steel Pipes & Tubes", "SS Flanges & Forged Fittings", "Industrial Fasteners & Round Bars"],
     "codeSnippets": {
-      "Dilour & Ribs Non-Woven": [
-        { "num": 1, "code": "const composition = '100% Virgin Synthetic Fiber'" },
-        { "num": 2, "code": "const surfaceType = 'Cut-Pile Velour & Linear Ribbed'" },
-        { "num": 3, "code": "const rollWidth = ['2.0m', '3.66m', '4.0m Master Rolls']" },
-        { "num": 4, "code": "const acousticAbsorption = 'NRC 0.35 Sound Damping'" },
-        { "num": 5, "code": "export default getAutomotiveCarpetSpec()" }
+      "Stainless Steel Pipes & Tubes": [
+        { "num": 1, "code": "const standard = 'ASTM A312 / ASME SA312 / ASTM A213'" },
+        { "num": 2, "code": "const grades = ['SS 304/L', 'SS 316/L', 'SS 904L', 'Duplex 2205']" },
+        { "num": 3, "code": "const sizeRange = '1/8\" NB to 24\" NB (Seamless & Welded)'" },
+        { "num": 4, "code": "const testing = '100% Hydrostatic, Eddy Current & PMI Tested'" },
+        { "num": 5, "code": "export default getPipesAndTubesSpecification()" }
       ],
-      "1800 GSM Poly Shrink Rugs": [
-        { "num": 1, "code": "const density = '1800 GSM Ultra-Dense High Pile'" },
-        { "num": 2, "code": "const weaveTechnology = 'Thermal Shrink 3D Dimension'" },
-        { "num": 3, "code": "const backing = 'Integrated Heavy Self-Backing'" },
-        { "num": 4, "code": "const stainResistance = 'Oleophobic Soil-Shield Weave'" },
-        { "num": 5, "code": "return <PolyShrinkLuxuryRug spec={density} />" }
+      "SS Flanges & Forged Fittings": [
+        { "num": 1, "code": "const flangeSpec = 'ASME / ANSI B16.5, DIN, BS 4504, EN 1092'" },
+        { "num": 2, "code": "const pressureClasses = ['150#', '300#', '600#', '900#', '1500#', '2500#']" },
+        { "num": 3, "code": "const types = ['Slip On (SORF)', 'Weld Neck (WNRF)', 'Blind (BLRF)']" },
+        { "num": 4, "code": "const forgedFittings = 'ASME B16.11 Class 3000# / 6000# Elbows, Tees, Unions'" },
+        { "num": 5, "code": "return <IndustrialFlangesAndFittings spec={flangeSpec} />" }
       ],
-      "Shalimar Designer Weaves": [
-        { "num": 1, "code": "const yarn = 'Lustrous Color-Fast Polyester Weft'" },
-        { "num": 2, "code": "const pattern = 'Heritage Persian & Modern Geometric'" },
-        { "num": 3, "code": "const pileHeight = '12mm High-Low Sculpted Feel'" },
-        { "num": 4, "code": "const maintenance = 'Spot Cleanable & Vacuum Friendly'" },
-        { "num": 5, "code": "export const shalimarCollection = getShalimarCatalog()" }
+      "Industrial Fasteners & Round Bars": [
+        { "num": 1, "code": "const fastenerGrades = ['A2-70 (304)', 'A4-80 (316)', 'ASTM A193 B8/B8M']" },
+        { "num": 2, "code": "const roundBarSpec = 'ASTM A276 / A479 Centerless Ground h8/h9'" },
+        { "num": 3, "code": "const highNickelAlloys = ['Inconel 625/718', 'Monel 400', 'Hastelloy C276']" },
+        { "num": 4, "code": "const certifications = 'ISO 9001:2008 & Third-Party Inspection'" },
+        { "num": 5, "code": "export const metalCatalog = getJubilantMetalCatalog()" }
       ]
     },
     "racers": [
       {
         "id": 1,
-        "title": "Direct Factory Wholesale",
-        "subtitle": "Ready inventory in Ahmedabad for immediate pan-India dispatch",
-        "description": "Vast ready stock of Dilour (Black, Grey, Beige, Brown, Red), Ribs, and Poly Shrink rug sizes shipped nationwide."
+        "title": "Immediate Stock & Dispatch",
+        "subtitle": "Ready inventory in Girgaon, Mumbai for fast domestic & global shipping",
+        "description": "Vast warehouse inventory of SS Pipes, Flanges, Buttweld Fittings, Forged Fittings, and Fasteners available for immediate dispatch."
       },
       {
         "id": 2,
-        "title": "Commercial & Automotive Grade",
-        "subtitle": "UV-treated, non-shedding, flame-resistant & odorless",
-        "description": "Engineered for vehicle OEM fitments, car trimmers, hotel suites, corporate corridors, and modern luxury living rooms."
+        "title": "Rigorous Quality Assurance",
+        "subtitle": "ISO 9001:2008 certified with 100% MTC documentation",
+        "description": "Supplied to premier refineries, chemical complexes, EPC contractors, and offshore engineering projects worldwide."
       }
     ]
   },
@@ -71,363 +71,345 @@
       {
         "id": "sizing",
         "step": 1,
-        "tag": "01 / Fiber Selection & Density Sizing",
+        "tag": "01 / Alloy Selection & Engineering Sizing",
         "color": "#3b82f6",
         "glowColor": "rgba(59, 130, 246, 0.48)",
-        "icon": "Feather",
-        "headingMain": "Tailored Carpet Pile Height &",
-        "headingHighlight": "Acoustic Density",
-        "description": "We assist in selecting the ideal carpet GSM (1800 GSM poly shrink, needle-punch dilour, or ribbed anti-slip) to match foot traffic and aesthetic demands.",
+        "icon": "Layers",
+        "headingMain": "Tailored Material Grades &",
+        "headingHighlight": "Pressure Class Sizing",
+        "description": "We assist engineers and procurement teams in selecting the exact alloy (SS 304, 316L, 904L, Duplex 2205, Inconel 625, Monel 400, Hastelloy) and wall schedule for critical service media.",
         "ctaText": "Enquire about custom sizes",
         "ctaLink": "/connect",
         "hasTopCta": true,
         "tabs": [
-          { "label": "Residential Living", "value": "Residential" },
-          { "label": "Automotive Cabins", "value": "Automotive" },
-          { "label": "Commercial Corridors", "value": "Commercial" },
-          { "label": "Banquet Halls", "value": "Banquet" },
-          { "label": "Corporate Offices", "value": "Office" },
-          { "label": "Hospitality Suites", "value": "Hospitality" }
+          { "label": "Oil & Gas", "value": "OilAndGas" },
+          { "label": "Petrochemical", "value": "Petrochemical" },
+          { "label": "Power Plants", "value": "Power" },
+          { "label": "Sugar Mills", "value": "Sugar" },
+          { "label": "Marine & Offshore", "value": "Marine" },
+          { "label": "Heavy Engineering", "value": "Engineering" }
         ],
         "collaboration": {
-          "title": "Select the perfect carpet grade and texture specification for your space.",
-          "titleHighlight": "for maximum barefoot comfort and lasting endurance",
+          "title": "Select the perfect metal grade and dimensional specification for your piping project.",
+          "titleHighlight": "for maximum corrosion resistance and leak-proof endurance",
           "items": [
-            "Needle-punch non-woven Dilour rolls (5 curated shades)",
-            "Anti-slip grooved Ribs carpets for high-traffic zones",
-            "1800 GSM New Poly Shrink luxury 3D rugs",
-            "Shalimar classic and contemporary Persian rugs"
+            "Seamless & Welded Stainless Steel Pipes (ASTM A312 1/8\" to 24\" NB)",
+            "Forged SS Flanges in Class 150# to 2500# (SORF, WNRF, BLRF, SWRF)",
+            "Buttweld & Forged 3000# / 6000# Pipe Fittings (Elbows, Tees, Reducers)",
+            "High Tensile Industrial Fasteners (Hex Bolts, Heavy Nuts, Stud Bolts)"
           ],
-          "buttonText": "Request Carpet Swatch Kit",
-          "linkText": "Explore full carpet & rug catalog"
+          "buttonText": "Request Technical Specification Sheet",
+          "linkText": "Explore full metal & alloys catalog"
         }
       },
       {
         "id": "manufacturing",
         "step": 2,
-        "tag": "02 / Precision Tufting & Thermal Shrink Weaving",
+        "tag": "02 / Precision Manufacturing & CNC Forging",
         "color": "#22c55e",
         "glowColor": "rgba(34, 197, 94, 0.48)",
         "icon": "Code",
-        "headingMain": "High-Density Weaves with 3D Dimensional Relief &",
-        "headingHighlight": "Self-Backing Quality",
-        "description": "Manufactured using state-of-the-art needle-punch looms and thermal shrink finishing, ensuring high pile rebound, stain resistance, and zero fraying.",
+        "headingMain": "High Integrity Forging, Heat Treatment &",
+        "headingHighlight": "Precision Machining",
+        "description": "Produced with state-of-the-art closed die forging, solution annealing, and CNC lathe machining to meet ASME B16.5 and B16.9 tolerances.",
         "ctaText": "View Product Catalog",
         "ctaLink": "/product",
         "hasTopCta": true,
-        "codeIntro": "Engineered carpet specifications and technical parameters:_",
+        "codeIntro": "Engineered metal product parameters and technical standards:_",
         "tools": [
-          { "label": "1800 GSM High Pile", "icon": "Box", "href": "/product" },
-          { "label": "Needle-Punch Non-Woven", "icon": "Layers", "href": "/product" },
-          { "label": "Acoustic Backing", "icon": "Builder", "href": "/product" },
-          { "label": "Pan-India Dispatch", "icon": "Headphones", "href": "/connect" }
+          { "label": "ASTM / ASME Standards", "icon": "Box", "href": "/product" },
+          { "label": "100% PMI Tested", "icon": "Layers", "href": "/product" },
+          { "label": "Hydrostatic Testing", "icon": "Shield", "href": "/product" },
+          { "label": "Global Export Dispatch", "icon": "Send", "href": "/connect" }
         ]
       },
       {
         "id": "installation",
         "step": 3,
-        "tag": "03 / Seamless Laying & Zero Fray Installation",
+        "tag": "03 / Quality Certification & Worldwide Export",
         "color": "#db5e1f",
         "glowColor": "rgba(219, 94, 31, 0.48)",
-        "icon": "PaperPlane",
-        "headingMain": "Effortless Cutting, Moldable Contours &",
-        "headingHighlight": "Anti-Slip Stability",
-        "description": "Flexible non-woven backing molds to vehicle footwells and flat floors without edge unraveling or corner curling.",
+        "icon": "Award",
+        "headingMain": "Comprehensive MTC, Third-Party Inspection &",
+        "headingHighlight": "Seaworthy Export Packing",
+        "description": "Every consignment ships with EN 10204 3.1 Mill Test Certificates, Lloyd's / TUV / DNV third-party inspection upon request, and robust wooden crate packaging.",
         "ctaText": "",
         "ctaLink": "",
         "hasTopCta": false
       }
     ],
     "industryTabsData": {
-      "Residential": {
-        "title": "1800 GSM 3D Woven",
-        "keyword": "Poly Shrink Luxury Rugs",
-        "titleEnd": "that bring warmth, texture, and barefoot comfort to living rooms",
-        "description": "Multi-level sculpted textures create dramatic visual depth while dense polyester yarns resist spills, stains, and daily family wear.",
+      "OilAndGas": {
+        "title": "Duplex & Super Duplex",
+        "keyword": "High Pressure Piping Systems",
+        "titleEnd": "engineered for offshore drilling rigs, sour gas, and subsea pipelines",
+        "description": "Duplex 2205 and Super Duplex 2507 seamless pipes and WNRF flanges provide exceptional yield strength and resistance to chloride stress corrosion cracking.",
         "bullets": [
-          "1800 GSM ultra-dense pile",
-          "Stain and water-resistant fibers",
-          "Integrated heavy self-backing",
-          "Sculpted 3D geometric patterns"
+          "PREN >= 42 Super Duplex performance",
+          "NACE MR0175 / ISO 15156 compliant",
+          "High pressure ratings up to 2500 LBS",
+          "Full ultrasonic and radiography inspection"
         ],
-        "cta": "View Living Room Rugs",
-        "badge": "1800 GSM Luxury",
-        "image": "/products/spaces/living_room.webp"
+        "cta": "View Oil & Gas Products",
+        "badge": "Offshore & Subsea Grade",
+        "image": "/metal/card_ss_pipes.jpg"
       },
-      "Automotive": {
-        "title": "Needle-punch velour",
-        "keyword": "Automotive Dilour Carpets",
-        "titleEnd": "for premium car passenger cabins and boot linings",
-        "description": "Damps road drone and chassis vibration while molding easily around curves, wheel arches, and footrest contours without edge fraying.",
+      "Petrochemical": {
+        "title": "Corrosion-resistant",
+        "keyword": "SS 316L & 904L Pipes & Flanges",
+        "titleEnd": "for aggressive chemical processing, acid storage, and heat recovery",
+        "description": "Molybdenum-stabilized austenitic stainless steels and high-nickel alloys prevent pitting in sulfuric, phosphoric, and organic acid environments.",
         "bullets": [
-          "35% road noise reduction",
-          "Cut-edge fray resistant",
-          "Available in 5 classic automotive shades",
-          "Easy to vacuum and pressure clean"
+          "Outstanding pitting resistance in acids",
+          "Low carbon 316L prevents intergranular corrosion",
+          "Seamless pipe fittings & flanges to ASME B16.9",
+          "Class 150# to Class 1500# flange stock"
         ],
-        "cta": "View Automotive Carpets",
-        "badge": "Automotive OEM Grade",
-        "image": "/products/spaces/auto_interior.webp"
+        "cta": "View Petrochemical Products",
+        "badge": "Chemical Plant Grade",
+        "image": "/metal/card_ss_flanges.jpg"
       },
-      "Commercial": {
-        "title": "Anti-slip grooved",
-        "keyword": "Commercial Ribs Carpets",
-        "titleEnd": "for high-traffic corridors, stairs, and entryways",
-        "description": "Heavy-duty parallel ribs scrape soil and dirt off shoes, providing traction and keeping high-traffic facilities pristine.",
+      "Power": {
+        "title": "High-temperature",
+        "keyword": "Boiler Tubes & Heat Exchangers",
+        "titleEnd": "for thermal power stations, nuclear plants, and superheater coils",
+        "description": "ASTM A213 seamless boiler tubes in TP 304H, 321, and 347 maintain creep rupture strength under elevated steam pressures and cyclic thermal fatigue.",
         "bullets": [
-          "Superior anti-slip traction",
-          "Scrapes soil and moisture",
-          "Withstands heavy wheeled carts",
-          "Durable needle-punch structure"
+          "High creep strength up to 650°C",
+          "100% Eddy Current and Hydrostatic tested",
+          "Tight dimensional wall tolerances",
+          "Annealed and pickled surface finish"
         ],
-        "cta": "View Ribs Carpets",
-        "badge": "Heavy Commercial",
-        "image": "/products/spaces/office_corridor.webp"
+        "cta": "View Boiler & Tube Products",
+        "badge": "Power Generation Grade",
+        "image": "/metal/card_ss_pipe_fittings.jpg"
       },
-      "Banquet": {
-        "title": "Lustrous heritage",
-        "keyword": "Shalimar Designer Rugs",
-        "titleEnd": "for grand reception halls, ballrooms, and luxury hotel suites",
-        "description": "Rich traditional and transitional woven patterns that deliver five-star elegance with easy spot-cleaning and fade resistance.",
+      "Sugar": {
+        "title": "Industrial grade",
+        "keyword": "Pipes, Tubes & Brass Olets",
+        "titleEnd": "for sugar processing mills, evaporators, and juice heating equipment",
+        "description": "High durability stainless steel and copper-nickel piping components designed for continuous duty during heavy seasonal crushing cycles.",
         "bullets": [
-          "Ornate Persian and modern motifs",
-          "Colorfast vibrant yarn dyes",
-          "Smooth vacuum-friendly pile",
-          "High foot-traffic durability"
+          "Corrosion resistance in sugar juice media",
+          "Heavy-duty forged branch outlets and fittings",
+          "Abrasion-resistant stainless steel tubes",
+          "Fast delivery during mill maintenance shutdowns"
         ],
-        "cta": "View Shalimar Rugs",
-        "badge": "Designer Weave",
-        "image": "/products/spaces/dining_salon.webp"
+        "cta": "View Sugar Industry Products",
+        "badge": "Heavy Duty Processing",
+        "image": "/metal/forged-fittings.jpg"
       },
-      "Office": {
-        "title": "Acoustic-enhancing",
-        "keyword": "Executive Floor Carpets",
-        "titleEnd": "for boardrooms, open workstations, and conference rooms",
-        "description": "Absorbs ambient office chatter and footstep noise, fostering a quiet, productive, and aesthetically refined corporate atmosphere.",
+      "Marine": {
+        "title": "Seawater-resisting",
+        "keyword": "Monel 400 & Cupro-Nickel Pipes",
+        "titleEnd": "for shipbuilding, ballast systems, and desalination facilities",
+        "description": "Nickel-copper Monel 400 and Copper-Nickel 90/10 & 70/30 alloys provide virtually zero bio-fouling and outstanding resistance to rapidly flowing seawater.",
         "bullets": [
-          "Reduces ambient reverberation",
-          "Castor-chair roll resistant",
-          "Low VOC indoor air safety",
-          "Seamless modular appearance"
+          "Immunity to seawater crevice corrosion",
+          "High thermal conductivity for marine coolers",
+          "Marine grade fasteners A4-80 & Monel 400",
+          "Lloyd's & DNV inspection availability"
         ],
-        "cta": "View Office Flooring",
-        "badge": "Acoustic Grade",
-        "image": "/products/spaces/bedroom_retreat.webp"
+        "cta": "View Marine Products",
+        "badge": "Marine & Naval Spec",
+        "image": "/metal/card_ss_fasteners.jpg"
       },
-      "Hospitality": {
-        "title": "Plush cut-pile",
-        "keyword": "Boutique Hotel Flooring",
-        "titleEnd": "for premium guest suites, lounges, and penthouse retreats",
-        "description": "Deep pile softness that envelops guests in comfort while enduring frequent professional cleaning cycles.",
+      "Engineering": {
+        "title": "Precision machined",
+        "keyword": "SS Round Bars & Heavy Fasteners",
+        "titleEnd": "for precision CNC machining, pump shafts, valves, and heavy equipment",
+        "description": "Centerless ground round bars with h8/h9 tolerances and high tensile stainless steel hex bolts, stud bolts, and nuts for structural assembly.",
         "bullets": [
-          "Plush underfoot sensation",
-          "Hypoallergenic non-shedding fibers",
-          "Flame-retardant treated",
-          "Custom wholesale roll lengths"
+          "High tensile strength (700-800 MPa)",
+          "Centerless ground precision tolerances",
+          "Full traceability with mill test certificates",
+          "Available in cut-to-length billets and rods"
         ],
-        "cta": "View Hospitality Carpets",
-        "badge": "Five-Star Luxury",
-        "image": "/products/spaces/living_room.webp"
+        "cta": "View Engineering Products",
+        "badge": "Precision Engineering",
+        "image": "/metal/round-bars.jpg"
       }
     },
     "platformCodeSnippets": {
-      "Dilour & Ribs Non-Woven": [
-        { "num": 1, "code": "const rollWidth = '2.00m | 3.66m | 4.00m'" },
-        { "num": 2, "code": "const thickness = '2.5mm to 4.5mm'" },
-        { "num": 3, "code": "const rollLength = '30m to 50m Master Rolls'" },
-        { "num": 4, "code": "const colors = ['Black', 'Grey', 'Beige', 'Brown', 'Red']" },
-        { "num": 5, "code": "return generateCustomCarpetCut(spec)" }
+      "Stainless Steel Pipes & Tubes": [
+        { "num": 1, "code": "const sizes = '1/8\" NB to 24\" NB (Schedule 5S to XXS)'" },
+        { "num": 2, "code": "const length = 'Single Random, Double Random & Cut Lengths'" },
+        { "num": 3, "code": "const standards = ['ASTM A312', 'A213', 'A269', 'A358', 'A790']" },
+        { "num": 4, "code": "const finish = 'Annealed, Pickled, Bright Annealed (BA)'" },
+        { "num": 5, "code": "return generateCustomPipingQuote(spec)" }
       ],
-      "1800 GSM Poly Shrink Rugs": [
-        { "num": 1, "code": "const gsm = '1800 GSM High Density'" },
-        { "num": 2, "code": "const technique = 'Thermal Poly Shrink 3D Weave'" },
-        { "num": 3, "code": "const sizes = ['4x6 ft', '5x7 ft', '6x9 ft', '8x10 ft']" },
-        { "num": 4, "code": "const backing = 'Self-Backing Non-Slip Anchor'" },
-        { "num": 5, "code": "return deployPolyShrinkRugs()" }
+      "SS Flanges & Forged Fittings": [
+        { "num": 1, "code": "const flangeTypes = ['SORF', 'WNRF', 'BLRF', 'SWRF', 'RTJ']" },
+        { "num": 2, "code": "const pressureClasses = '150#, 300#, 600#, 900#, 1500#, 2500#'" },
+        { "num": 3, "code": "const forgedRatings = 'Class 2000, 3000, 6000, 9000 LBS'" },
+        { "num": 4, "code": "const facing = 'Serrated Spiral Finish (125-250 AARH)'" },
+        { "num": 5, "code": "return deployIndustrialFlanges()" }
       ],
-      "Shalimar Designer Weaves": [
-        { "num": 1, "code": "const weave = 'Precision Jacquard Woven Rug'" },
-        { "num": 2, "code": "const pileType = 'Soft Touch Polyester High-Low'" },
-        { "num": 3, "code": "const style = 'Persian Traditional & Modern Minimalist'" },
-        { "num": 4, "code": "const washCare = 'Stain Resistant & Spot Cleanable'" },
-        { "num": 5, "code": "export const shalimarCollection = getShalimarCatalog()" }
+      "Industrial Fasteners & Round Bars": [
+        { "num": 1, "code": "const fastenerTypes = ['Hex Bolts', 'Stud Bolts', 'Heavy Nuts', 'Washers']" },
+        { "num": 2, "code": "const barDiameters = '3mm to 350mm Diameter (h8 / h9 Tolerance)'" },
+        { "num": 3, "code": "const alloys = ['SS 304/L', 'SS 316/L', 'Duplex 2205', 'Inconel 625', 'Monel 400']" },
+        { "num": 4, "code": "const testing = '100% Ultrasonic & Radiography Tested'" },
+        { "num": 5, "code": "export const metalCatalog = getJubilantMetalCatalog()" }
       ]
     },
     "securityCard": {
-      "title": "ISO Quality Standards, Fire Resistance & Eco-Friendly Fibers",
-      "description": "Our carpets and rugs are manufactured from 100% virgin synthetic fibers, offering UV color-fastness, non-shedding durability, and certified indoor air quality standards.",
-      "ctaText": "View Carpet Certifications"
+      "title": "ISO 9001:2008 Quality Systems, Third-Party Inspection & Mill Test Reports",
+      "description": "All products are backed by EN 10204 3.1 Mill Test Certificates, 100% Positive Material Identification (PMI), and undergo third-party inspection (TUV, DNV, Bureau Veritas) upon client request.",
+      "ctaText": "View Quality Certifications"
     },
     "businessMetricsCard": {
-      "title": "Trusted by 1,000+ Architects, Showrooms & Trimmers in India",
-      "ctaText": "Request Wholesale Price List",
+      "title": "Trusted by 500+ Refineries, EPC Contractors & Industrial Clients Globally",
+      "ctaText": "Request Wholesale Quotation",
       "metrics": [
-        { "value": "1000+", "label": "Projects & Trimmers" },
-        { "value": "1800", "label": "GSM Ultra-Dense Rugs" },
-        { "value": "99.8%", "label": "On-Time Dispatch" }
+        { "value": "500+", "label": "Happy Clients" },
+        { "value": "80+", "label": "Export Countries" },
+        { "value": "25", "label": "Years Experience" }
       ]
     },
     "bottomStatCapsules": [
       {
         "value": "100",
         "plus": "%",
-        "label": "Virgin Synthetic Fiber",
+        "label": "Lab PMI Verified",
         "icon": "Award"
       },
       {
-        "value": "35",
-        "plus": "%",
-        "label": "Acoustic Noise Damping",
+        "value": "80",
+        "plus": "+",
+        "label": "Export Countries",
         "icon": "TrendingUp"
       },
       {
         "value": "24",
         "plus": "h",
-        "label": "Dispatch from Ahmedabad",
+        "label": "Fast Quote & Dispatch",
         "icon": "Clock"
       },
       {
-        "value": "78",
-        "plus": "+",
-        "label": "Carpet & Rug Varieties",
+        "value": "25",
+        "plus": "Yrs",
+        "label": "Industry Experience",
         "icon": "Box"
       }
     ]
   },
   "FeedSection": {
     "heading": {
-      "tag": "CARPET INSPIRATION & SPACES",
-      "title": "Recent Living Room, Office & Automotive Installations",
-      "actionText": "View All Carpets",
+      "tag": "METAL INVENTORY & PRODUCT SHOWCASE",
+      "title": "Leading Manufacturer & Exporter of Pipes, Flanges & Fasteners",
+      "actionText": "View All Products",
       "actionLink": "/product"
     },
-    "buttonText": "View Carpet",
+    "buttonText": "View Product",
     "feedItems": [
       {
         "id": 1,
-        "image": "/products/spaces/living_room.webp",
-        "products": [
-          "/products/rugs/poly_shrink_p1_1.webp",
-          "/products/rugs/poly_shrink_p2_1.webp"
-        ]
+        "image": "/metal/card_ss_pipes.jpg",
+        "products": ["/metal/card_ss_pipes.jpg", "/metal/pipe-tubes.jpg"]
       },
       {
         "id": 2,
-        "image": "/products/spaces/auto_interior.webp",
-        "products": [
-          "/products/dilour_black.jpg",
-          "/products/dilour_grey.jpg"
-        ]
+        "image": "/metal/card_ss_flanges.jpg",
+        "products": ["/metal/card_ss_flanges.jpg", "/metal/flanges.jpg"]
       },
       {
         "id": 3,
-        "image": "/products/spaces/office_corridor.webp",
-        "products": [
-          "/products/ribs_black.jpg",
-          "/products/ribs_grey.jpg"
-        ]
+        "image": "/metal/card_ss_pipe_fittings.jpg",
+        "products": ["/metal/card_ss_pipe_fittings.jpg", "/metal/pipe-fittings.jpg"]
       },
       {
         "id": 4,
-        "image": "/products/spaces/dining_salon.webp",
-        "products": [
-          "/products/shalimar/shalimar_p1_1.webp",
-          "/products/shalimar/shalimar_p2_1.webp"
-        ]
+        "image": "/metal/card_ss_fasteners.jpg",
+        "products": ["/metal/card_ss_fasteners.jpg", "/metal/fastners.jpg"]
       },
       {
         "id": 5,
-        "image": "/products/spaces/bedroom_retreat.webp",
-        "products": [
-          "/products/rugs/poly_shrink_p3_1.webp",
-          "/products/rugs/poly_shrink_p4_1.webp"
-        ]
+        "image": "/metal/round-bars.jpg",
+        "products": ["/metal/round-bars.jpg", "/metal/slide-no1.jpg"]
       },
       {
         "id": 6,
-        "image": "/products/catalogue_full.png",
-        "products": [
-          "/products/dilour_red.jpg",
-          "/products/ribs_red.jpg"
-        ]
+        "image": "/metal/slide-no3.jpg",
+        "products": ["/metal/forged-fittings.jpg", "/metal/special-features.png"]
       }
     ]
   },
   "BlogSection": {
     "heading": {
-      "tag": "FLOORING EXPERTISE & TRENDS",
-      "title": "United Brothers Carpets & Rugs Insights",
+      "tag": "METALLURGICAL INSIGHTS & TECHNICAL GUIDES",
+      "title": "Jubilant Metal And Alloys Technical Insights",
       "actionText": "View All Articles"
     },
     "featuredPost": {
       "id": 1,
-      "tag": "Luxury Rugs",
+      "tag": "Piping Engineering",
       "tagBg": "#2563eb",
-      "date": "October 08, 2026",
-      "comments": "18 comments",
-      "title": "The Complete Guide to 1800 GSM Poly Shrink Rugs: Texture, Durability & Luxury Underfoot",
-      "description": "Explore how 1800 GSM high-pile poly shrink technology creates stunning dimensional 3D textures, self-backing stability, and enduring softness for contemporary residences.",
-      "image": "/products/spaces/living_room.webp",
+      "date": "October 10, 2026",
+      "comments": "28 comments",
+      "title": "The Comprehensive Guide to Stainless Steel Pipe Grades: SS 304 vs SS 316L vs Duplex 2205",
+      "description": "An in-depth metallurgical analysis comparing corrosion resistance, PREN numbers, tensile yield strengths, and operating temperature thresholds for industrial piping systems.",
+      "image": "/metal/slide-no2.jpg",
       "buttonText": "Read Guide"
     },
     "secondaryPosts": [
       {
         "id": 2,
-        "tag": "Automotive Flooring",
+        "tag": "Flanges & Ratings",
         "tagBg": "#EE6A2B",
-        "date": "October 02, 2026",
-        "comments": "24 comments",
-        "title": "Why Non-Woven Dilour Carpets Excel in Automotive Interiors & Trunk Linings",
-        "description": "An engineering overview of needle-punch dilour non-woven carpet rolls: acoustic damping, moldable flexibility, and heavy-duty wear resistance for vehicles.",
-        "image": "/products/spaces/auto_interior.webp",
+        "date": "October 04, 2026",
+        "comments": "19 comments",
+        "title": "Understanding ASME B16.5 Flange Pressure Classes: 150# to 2500# Selection Guide",
+        "description": "How to select the right flange face (Raised Face, Flat Face, RTJ) and pressure-temperature rating for petrochemical and steam headers.",
+        "image": "/metal/card_ss_flanges.jpg",
         "buttonText": "Read Guide"
       },
       {
         "id": 3,
-        "tag": "Commercial Corridors",
+        "tag": "Pipe Fittings",
         "tagBg": "#059669",
-        "date": "September 24, 2026",
-        "comments": "12 comments",
-        "title": "Ribs Carpets vs Flat Weave: Traction, Dirt Scraping & Longevity in Busy Entrances",
-        "description": "Discover why parallel-ribbed needle-punch carpets are the industry standard for high-traffic office hallways, showrooms, and commercial lobbies.",
-        "image": "/products/spaces/office_corridor.webp",
+        "date": "September 28, 2026",
+        "comments": "14 comments",
+        "title": "Buttweld vs Forged Pipe Fittings: When to Use ASME B16.9 vs ASME B16.11",
+        "description": "Examining flow resistance, socket weld depths, pressure classes 3000# vs 6000#, and welding inspection criteria for chemical process lines.",
+        "image": "/metal/card_ss_pipe_fittings.jpg",
         "buttonText": "Read Guide"
       },
       {
         "id": 4,
-        "tag": "Traditional Weaves",
+        "tag": "Fasteners & Metallurgy",
         "tagBg": "#7c3aed",
-        "date": "September 18, 2026",
-        "comments": "15 comments",
-        "title": "Styling Modern Living Spaces with Shalimar Heritage Woven Rugs",
-        "description": "Mastering the balance between traditional motifs and contemporary minimalist furniture with Shalimar woven rug collections.",
-        "image": "/products/spaces/dining_salon.webp",
+        "date": "September 20, 2026",
+        "comments": "22 comments",
+        "title": "Fastener Selection for Marine & Offshore Environments: A4-80 vs Inconel 718",
+        "description": "Preventing galvanic corrosion, thread galling, and chloride stress cracking in heavy hex bolts and stud bolts on offshore platforms.",
+        "image": "/metal/card_ss_fasteners.jpg",
         "buttonText": "Read Guide"
       }
     ]
   },
   "PatchSection": {
-    "badge": "AHMEDABAD'S PREMIER MANUFACTURER",
-    "title": "Crafting Luxury Carpets & Non-Woven Flooring for Homes, Vehicles & Offices Across India.",
-    "description": "United Brothers delivers precision-tufted Dilour carpets, heavy-duty Ribs rolls, and 1800 GSM Poly Shrink rugs with direct factory pricing and immediate pan-India dispatch.",
+    "badge": "MUMBAI'S PREMIER ALLOY STOCKIST & EXPORTER",
+    "title": "Supplying Precision Stainless Steel Pipes, Flanges & Fittings to 80+ Countries Worldwide.",
+    "description": "Jubilant Metal And Alloys INC delivers ISO 9001:2008 certified stainless steel, duplex, and nickel alloy raw materials with mill test certificates and prompt global dispatch.",
     "stats": [
       {
         "id": 1,
-        "value": "1000",
+        "value": "500",
         "symbol": "+",
-        "label": "Distributors, car trimmers & interior designers served."
+        "label": "Satisfied industrial clients across refineries, oil & gas & power projects."
       },
       {
         "id": 2,
-        "value": "1800",
-        "symbol": "GSM",
-        "label": "High-density woven poly shrink rug craftsmanship."
+        "value": "80",
+        "symbol": "+",
+        "label": "Export destination countries spanning Europe, the Middle East & Asia."
       },
       {
         "id": 3,
         "value": "100",
         "symbol": "%",
-        "label": "Virgin synthetic fiber with anti-fray durability."
+        "label": "Lab PMI verified with EN 10204 3.1 Mill Test Certificates."
       }
     ]
   }

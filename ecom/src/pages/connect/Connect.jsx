@@ -3,7 +3,7 @@ import LazySection from '../../components/common/LazySection';
 import Container from '../../components/common/Container';
 import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
-import { carpetPatchBanner } from '../../utils/imageResolver';
+import { metalPatchBanner } from '../../utils/imageResolver';
 
 const Enquiry = lazy(() => import('./sections/Enquiry'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
@@ -22,7 +22,7 @@ const connectSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${carpetPatchBanner})`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${metalPatchBanner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

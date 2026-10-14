@@ -51,8 +51,9 @@ const BlogDetail = () => {
         return blogData?.[0] || null;
     }, [location.state, id]);
 
-    const title = currentBlog?.title ? `${currentBlog.title} | United Brothers` : 'Blog Detail | United Brothers';
-    const description = currentBlog?.excerpt || currentBlog?.content?.slice(0, 160) || 'Read our latest blog post on carpets, rugs and flooring solutions by United Brothers.';
+    const siteName = import.meta.env.VITE_SITE_NAME || 'Jubilant Metal And Alloys';
+    const title = currentBlog?.title ? `${currentBlog.title} | ${siteName}` : `Engineering Insights | ${siteName}`;
+    const description = currentBlog?.excerpt || currentBlog?.content?.slice(0, 160) || `Read our latest technical insights on stainless steel pipes, flanges, and fittings by ${siteName}.`;
     const path = currentBlog?.slug ? `/blog/${currentBlog.slug}` : '/blog-detail';
 
     const breadcrumbs = useMemo(() => [

@@ -1,8 +1,8 @@
 {
   "topBar": {
-    "location": "Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad",
-    "email": "unitedbrothers879@gmail.com",
-    "timing": "Mon–Sat 09:00 AM – 07:00 PM"
+    "location": "Girgaon, Mumbai - 400004, Maharashtra",
+    "email": "info@jubilantmetal.com",
+    "timing": "Mon–Sat 09:30 AM – 07:00 PM"
   },
   "navLinks": [
     {
@@ -15,11 +15,11 @@
     },
     {
       "href": "/blog",
-      "label": "Blogs"
+      "label": "Insights"
     },
     {
       "href": "/supplier",
-      "label": "Find A Store"
+      "label": "Supplier"
     },
     {
       "href": "/connect",
@@ -29,8 +29,8 @@
   "bottomBar": {
     "menu": [
       {
-        "label": "Collection",
         "href": "/product",
+        "label": "Collection",
         "hasMegaMenu": false
       }
     ]

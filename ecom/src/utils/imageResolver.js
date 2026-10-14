@@ -21,6 +21,8 @@ export const resolveImagePath = (path) => {
   if (
     trimmed.startsWith('/products/') ||
     trimmed.startsWith('products/') ||
+    trimmed.startsWith('/metal/') ||
+    trimmed.startsWith('metal/') ||
     trimmed.startsWith('/united_brothers') ||
     trimmed.startsWith('united_brothers') ||
     trimmed.startsWith('/sobo_') ||
@@ -38,11 +40,16 @@ export const resolveImagePath = (path) => {
   return base ? `${base}/${cleanPath}` : `/${cleanPath}`;
 };
 
-export const unitedBrothersColor = resolveImagePath('/united_brothers_color.png');
-export const unitedBrothersWhite = resolveImagePath('/united_brothers_white.png');
-export const soboLogo = unitedBrothersColor;
-export const soboWhite = unitedBrothersWhite;
-export const carpetPatchBanner = resolveImagePath('/products/carpet_patch_banner.jpg');
-export const carpetBanner = resolveImagePath('/products/carpet_banner.jpg');
+export const jubilantLogo = resolveImagePath('/metal/jubilant_logo_transparent.png');
+export const jubilantLogoWhite = resolveImagePath('/metal/jubilant_logo_white.png');
+export const jubilantLogoBanner = resolveImagePath('/metal/jubilant_logo_banner.jpg');
+export const metalBanner = resolveImagePath('/metal/slide-no2.jpg');
+export const metalPatchBanner = resolveImagePath('/metal/slide-no1.jpg');
+export const unitedBrothersColor = resolveImagePath('/metal/jubilant_logo_transparent.png');
+export const unitedBrothersWhite = resolveImagePath('/metal/jubilant_logo_white.png');
+export const soboLogo = resolveImagePath('/metal/jubilant_logo_transparent.png');
+export const soboWhite = resolveImagePath('/metal/jubilant_logo_white.png');
+export const carpetPatchBanner = metalPatchBanner;
+export const carpetBanner = metalBanner;
 
 export default resolveImagePath;

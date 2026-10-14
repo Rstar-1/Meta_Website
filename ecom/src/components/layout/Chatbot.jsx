@@ -10,40 +10,40 @@ import { productsData } from '../../utils/apiData';
 
 const QUICK_ACTIONS = [
     {
-        id: 'dilour',
-        title: 'Dilour Carpets',
-        subtitle: 'Automotive & Commercial',
+        id: 'pipes',
+        title: 'Pipes & Tubes',
+        subtitle: 'ASTM A312 / A213 / A269',
         icon: 'Grid',
         iconBg: '#2563eb',
-        reply: 'United Brothers manufactures premium needle-punch Dilour non-woven rolls in Ahmedabad:\n\n• **Acoustic Insulation**: Damps vehicle cabin and road drone by ~35%.\n• **5 Curated Shades**: Black, Grey, Beige, Brown, and Red.\n• **Automotive OEM Grade**: Easily cut, molded, and fitted around contours without edge fraying.',
-        cta: { text: 'View Dilour Carpets', path: '/product?category=Dilour%20Carpets' }
+        reply: 'Jubilant Metal And Alloys supplies high-grade Stainless Steel & Nickel Alloy Pipes & Tubes:\n\n• **Seamless & Welded**: 1/8" NB to 24" NB, Schedule 5S to XXS.\n• **Grades**: SS 304/304L, 316/316L, 904L, Duplex 2205, Inconel 625.\n• **Certification**: 100% PMI tested with EN 10204 3.1 Mill Test Certificates.',
+        cta: { text: 'View Pipes & Tubes', path: '/product?category=Stainless%20Steel%20Pipes%20%26%20Tubes' }
     },
     {
-        id: 'ribs',
-        title: 'Ribs Carpets',
-        subtitle: 'Anti-Slip Linear Grooves',
+        id: 'flanges',
+        title: 'Flanges',
+        subtitle: 'ASME B16.5 150# - 2500#',
         icon: 'Reports',
         iconBg: '#059669',
-        reply: 'Heavy-duty grooved Ribs Carpets engineered for traction and durability:\n\n• **Anti-Slip Linear Grooves**: Scrapes dirt, mud, and moisture.\n• **High-Traffic Corridors**: Perfect for commercial entrances, stairs, buses, and ramps.\n• **Rolls & Pre-cuts**: Available in Black, Grey, Brown, and Red.',
-        cta: { text: 'View Ribs Carpets', path: '/product?category=Ribs%20Carpets' }
+        reply: 'Heavy forged flanges engineered for high-pressure, critical pipelines:\n\n• **Types**: Slip On (SORF), Weld Neck (WNRF), Blind (BLRF), Socket Weld.\n• **Standards**: ASME / ANSI B16.5, B16.47 Series A & B, DIN, BS.\n• **Materials**: Forged ASTM A182 in 304/L, 316/L, Duplex, Super Duplex & Monel.',
+        cta: { text: 'View Flanges', path: '/product?category=Stainless%20Steel%20Flanges' }
     },
     {
-        id: 'rugs',
-        title: 'Luxury Rugs',
-        subtitle: '1800 GSM & Shalimar',
+        id: 'fittings',
+        title: 'Fittings & Fasteners',
+        subtitle: 'Buttweld, Forged & Bolts',
         icon: 'Sparkles',
         iconBg: '#dc2626',
-        reply: 'Explore United Brothers designer rug collections:\n\n• **1800 GSM New Poly Shrink**: Ultra-dense 3D sculpted texture with integrated heavy self-backing (30 styles).\n• **Shalimar Woven Rugs**: Heritage Persian and modern geometric jacquard weaves.\n• **Stain & Water Resistant**: Made from premium color-fast polyester yarns.',
-        cta: { text: 'Explore Rugs Collection', path: '/product?category=Rugs' }
+        reply: 'Comprehensive piping components and high-tensile hardware:\n\n• **Buttweld (ASME B16.9)**: 90°/45° Elbows, Equal & Reducing Tees, Reducers, Caps.\n• **Forged (ASME B16.11)**: 3000# / 6000# Socket Weld & Threaded fittings.\n• **Fasteners**: Heavy Hex Bolts, Studs, Nuts & Washers in A2-70, A4-80, B8/B8M.',
+        cta: { text: 'Explore Pipe Fittings', path: '/product?category=Stainless%20Steel%20Pipe%20Fittings' }
     },
     {
         id: 'contact',
-        title: 'Contact & Wholesale',
-        subtitle: 'Ahmedabad Headquarters',
+        title: 'RFQ & Inquiries',
+        subtitle: 'Mumbai Stockyard',
         icon: 'Support',
         iconBg: '#7c3aed',
-        reply: `Get in touch with United Brothers directly:\n\n• **Phone / WhatsApp**: ${import.meta.env.VITE_PHONE || '+91 84548 38638'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com'}\n• **Location**: Vasna, Ahmedabad, Gujarat\n• **Direct Factory Supply**: Bulk master rolls and custom cuts shipped pan-India.`,
-        cta: { text: 'Contact Us', path: '/connect' }
+        reply: `Connect with Jubilant Metal And Alloys directly:\n\n• **Director & Sales**: ${import.meta.env.VITE_PHONE || '+91 9820171740'} / 022 6639 4511\n• **WhatsApp**: ${import.meta.env.VITE_WHATSAPP || '+91 9867611740'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'info@jubilantmetal.com'}\n• **Stockyard & Office**: Girgaon, Mumbai - 400004, Maharashtra\n• **Immediate Dispatch**: Fast domestic delivery & global exports to 80+ countries.`,
+        cta: { text: 'Request a Quote', path: '/connect' }
     }
 ];
 
@@ -51,61 +51,61 @@ const generateBotReply = (userText) => {
     const q = (userText || '').toLowerCase().trim();
     const allProducts = (productsData || []).filter((p) => !p.isBanner);
 
-    // 1. Dilour / Automotive
-    if (q.includes('dilour') || q.includes('automotive') || q.includes('car') || q.includes('boot') || q.includes('noise') || q.includes('acoustic') || q.includes('velour')) {
-        const matching = allProducts.filter(p => p.category?.toLowerCase().includes('dilour') || p.name?.toLowerCase().includes('dilour')).slice(0, 3);
+    // 1. Pipes & Tubes
+    if (q.includes('pipe') || q.includes('tube') || q.includes('tubing') || q.includes('seamless') || q.includes('welded') || q.includes('a312') || q.includes('a213')) {
+        const matching = allProducts.filter(p => p.categoryId === 1 || p.category?.toLowerCase().includes('pipe')).slice(0, 3);
         return {
-            text: 'United Brothers Dilour carpets are premium needle-punch non-woven rolls engineered for automotive interiors, trunk linings, and luxury flooring:\n\n• **Acoustic Insulation**: Reduces engine and road drone by ~35%.\n• **5 Rich Colors**: Black, Grey, Beige, Brown, and Red.\n• **Zero-Fray Cut**: Easy to trim and mold around vehicle footwells.',
+            text: 'Jubilant Metal carries extensive stock of ASTM A312 seamless and welded stainless steel pipes:\n\n• **Size Range**: 1/8" to 24" NB (custom mill runs up to 48").\n• **Wall Thickness**: Schedule 5S, 10S, 40S, 80S, 160, and XXS.\n• **Alloys**: SS 304/L, SS 316/L, SS 321, 904L, Duplex 2205, and Inconel 625.',
             products: matching,
-            cta: { text: 'View Dilour Carpets', path: '/product?category=Dilour%20Carpets' }
+            cta: { text: 'View Pipes & Tubes', path: '/product?category=Stainless%20Steel%20Pipes%20%26%20Tubes' }
         };
     }
 
-    // 2. Ribs / Anti-slip
-    if (q.includes('rib') || q.includes('slip') || q.includes('corridor') || q.includes('groove') || q.includes('tread')) {
-        const matching = allProducts.filter(p => p.category?.toLowerCase().includes('ribs') || p.name?.toLowerCase().includes('ribs')).slice(0, 3);
+    // 2. Flanges
+    if (q.includes('flange') || q.includes('sorf') || q.includes('wnrf') || q.includes('blind') || q.includes('b16.5') || q.includes('slip on') || q.includes('weld neck')) {
+        const matching = allProducts.filter(p => p.categoryId === 2 || p.category?.toLowerCase().includes('flange')).slice(0, 3);
         return {
-            text: 'Our Ribs Carpets feature heavy-duty parallel grooves designed for high-traction commercial and automotive environments:\n\n• **Anti-Slip Grip**: Scrapes soil and moisture effectively.\n• **Heavy Traffic Ready**: Withstands commercial foot traffic, ramps, and stairwells.\n• **Available in**: Black, Grey, Brown, and Red.',
+            text: 'Our forged stainless steel flanges are precision-machined to ASME / ANSI B16.5 standards:\n\n• **Pressure Classes**: 150#, 300#, 600#, 900#, 1500#, and 2500#.\n• **Face Types**: Raised Face (RF), Flat Face (FF), Ring Type Joint (RTJ).\n• **100% Traceability**: MTC EN 10204 3.1 with chemical & mechanical test results.',
             products: matching,
-            cta: { text: 'View Ribs Carpets', path: '/product?category=Ribs%20Carpets' }
+            cta: { text: 'View Flanges', path: '/product?category=Stainless%20Steel%20Flanges' }
         };
     }
 
-    // 3. Poly Shrink / 1800 GSM / 3D Rugs
-    if (q.includes('poly') || q.includes('shrink') || q.includes('1800') || q.includes('gsm') || q.includes('3d') || q.includes('living room')) {
-        const matching = allProducts.filter(p => p.subCategory?.toLowerCase().includes('poly') || p.name?.toLowerCase().includes('poly') || p.badge?.text?.includes('1800')).slice(0, 3);
+    // 3. Pipe Fittings
+    if (q.includes('fitting') || q.includes('elbow') || q.includes('tee') || q.includes('reducer') || q.includes('cap') || q.includes('buttweld') || q.includes('b16.9')) {
+        const matching = allProducts.filter(p => p.categoryId === 3 || p.category?.toLowerCase().includes('fitting')).slice(0, 3);
         return {
-            text: 'Our 1800 GSM New Poly Shrink Rugs represent the peak of modern dimensional weaving:\n\n• **High-Pile 3D Texture**: Multi-level relief creates sculpted visual depth.\n• **Integrated Self-Backing**: Heavy non-slip anchor eliminates corner curling.\n• **30 Exclusive Designs**: Available in standard living room sizes.',
+            text: 'Our ASME B16.9 buttweld pipe fittings are engineered for smooth flow and leak-tight welds:\n\n• **Configurations**: 90° & 45° Long Radius Elbows, Concentric/Eccentric Reducers, Equal Tees.\n• **Wall Thickness**: Seamless Schedule 10S to XXS.\n• **Applications**: Refineries, power plants, chemical reactors, and naval EPC projects.',
             products: matching,
-            cta: { text: 'Explore Poly Shrink Rugs', path: '/product?category=Rugs' }
+            cta: { text: 'View Pipe Fittings', path: '/product?category=Stainless%20Steel%20Pipe%20Fittings' }
         };
     }
 
-    // 4. Shalimar / Persian / Traditional
-    if (q.includes('shalimar') || q.includes('persian') || q.includes('traditional') || q.includes('oriental') || q.includes('heritage')) {
-        const matching = allProducts.filter(p => p.subCategory?.toLowerCase().includes('shalimar') || p.name?.toLowerCase().includes('shalimar')).slice(0, 3);
+    // 4. Fasteners
+    if (q.includes('fastener') || q.includes('bolt') || q.includes('nut') || q.includes('screw') || q.includes('stud') || q.includes('washer') || q.includes('din')) {
+        const matching = allProducts.filter(p => p.categoryId === 4 || p.category?.toLowerCase().includes('fastener')).slice(0, 3);
         return {
-            text: 'Shalimar Woven Rugs offer timeless Persian and transitional geometric artistry:\n\n• **Precision Jacquard**: Dense, color-fast lustrous polyester yarns.\n• **Easy Care**: Vacuum safe and stain-resistant.\n• **Over 30 Designs**: Sized from accent rugs to large hall centerpieces.',
+            text: 'We stock high-tensile stainless steel fasteners to DIN, ISO, and ASTM specifications:\n\n• **Products**: Hex Head Bolts (DIN 933), Heavy Hex Nuts (DIN 934), Full Thread Studs (DIN 975).\n• **Grades**: A2-70 (304), A4-80 (316), B8 Class 1/2, B8M, Duplex, Monel.\n• **Zero Corrosion**: Highly resistant to marine, atmospheric, and chemical exposure.',
             products: matching,
-            cta: { text: 'Explore Shalimar Rugs', path: '/product?category=Rugs' }
+            cta: { text: 'Explore Fasteners', path: '/product?category=Stainless%20Steel%20Fasteners' }
         };
     }
 
-    // 5. Price / Wholesale / Cost / Quote
-    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('wholesale') || q.includes('quote') || q.includes('bulk')) {
+    // 5. Price / Wholesale / Cost / RFQ / Quote
+    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('wholesale') || q.includes('quote') || q.includes('rfq') || q.includes('discount')) {
         const matching = allProducts.slice(0, 3);
         return {
-            text: 'We offer factory-direct wholesale pricing from our Ahmedabad facility:\n\n• **Dilour & Ribs Rolls**: Starting from ₹145 - ₹175/sq.m (bulk discounts available).\n• **1800 GSM Rugs**: Wholesale rates based on dimensions and quantity.\n• **Pan-India Dispatch**: Prompt delivery for showrooms, trimmers, and dealers.',
+            text: 'We offer competitive mill-direct prices with immediate dispatch from our Mumbai stockyard:\n\n• **Discounts**: Volume discounts on full container / truckload mill orders.\n• **Payment Terms**: Flexible L/C, TT, and advance terms for verified corporate buyers.\n• **Fast Turnaround**: Quotations delivered within 30 minutes with material test records.',
             products: matching,
-            cta: { text: 'Request Wholesale Quote', path: '/connect' }
+            cta: { text: 'Request RFQ / Pricing', path: '/connect' }
         };
     }
 
     // 6. Contact / Phone / WhatsApp / Address / Location
-    if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('whatsapp') || q.includes('mail') || q.includes('address') || q.includes('where') || q.includes('location') || q.includes('ahmedabad')) {
+    if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('whatsapp') || q.includes('mail') || q.includes('address') || q.includes('where') || q.includes('location') || q.includes('mumbai')) {
         return {
-            text: `Here is our direct contact information:\n\n• **Phone / WhatsApp**: ${import.meta.env.VITE_PHONE || '+91 84548 38638'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com'}\n• **Office**: Vasna, Ahmedabad, Gujarat\n• **Timings**: Mon - Sat: 9:00 AM - 7:00 PM`,
-            cta: { text: 'Get in Touch', path: '/connect' }
+            text: `Contact Jubilant Metal And Alloys:\n\n• **Director & Sales**: ${import.meta.env.VITE_PHONE || '+91 9820171740'} / 022 6639 4511\n• **WhatsApp**: ${import.meta.env.VITE_WHATSAPP || '+91 9867611740'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'info@jubilantmetal.com'}\n• **Office**: Shop No 6, A Wing, 1st Floor, Nakoda Mehta Sunshine Heights, Khadilkar Road, Sadashiv Lane, Kakadwadi, Girgaon, Mumbai - 400004\n• **Hours**: Mon - Sat: 9:30 AM - 7:00 PM`,
+            cta: { text: 'Connect With Us', path: '/connect' }
         };
     }
 
@@ -118,17 +118,17 @@ const generateBotReply = (userText) => {
 
     if (matching.length > 0) {
         return {
-            text: `Here are matching carpet and rug collections for "${userText}":`,
+            text: `Here are matching stainless steel and alloy products for "${userText}":`,
             products: matching,
-            cta: { text: 'View Products', path: `/product?category=${encodeURIComponent(matching[0].category || 'Dilour Carpets')}` }
+            cta: { text: 'View Products', path: `/product?category=${encodeURIComponent(matching[0].category || 'Stainless Steel Pipes & Tubes')}` }
         };
     }
 
     // 8. Default friendly fallback
     return {
-        text: 'I can help you explore Dilour non-woven rolls, Ribs commercial carpets, 1800 GSM Poly Shrink rugs, or Shalimar woven rugs. You can also ask about wholesale rates, color swatches, or vehicle fitments!',
+        text: 'I can assist you with Stainless Steel Pipes & Tubes, Forged Flanges, Buttweld Pipe Fittings, Forged Fittings, Fasteners, Round Bars, or custom raw material specifications. You can also request an instant RFQ or technical MTC datasheet!',
         products: allProducts.slice(0, 2),
-        cta: { text: 'Explore All Collections', path: '/product' }
+        cta: { text: 'Explore All Products', path: '/product' }
     };
 };
 
@@ -293,9 +293,9 @@ const ChatHeader = memo(({ onClose, activeMode, onToggleMode }) => (
             </div>
             <div>
                 <h4 className="headmini-text font-600 text-dark">
-                    {activeMode === 'search' ? 'Carpet & Rug Search' : 'Flooring Assistant'}
+                    {activeMode === 'search' ? 'Alloy & Product Search' : 'Metal & Alloys Assistant'}
                 </h4>
-                <p className="mini-text font-400 text-gray">Online • United Brothers Live</p>
+                <p className="mini-text font-400 text-gray">Online • Jubilant Metal Live</p>
             </div>
         </div>
 
@@ -307,8 +307,8 @@ const ChatHeader = memo(({ onClose, activeMode, onToggleMode }) => (
                 iconHeight="15"
                 iconStroke={activeMode === 'search' ? 'var(--white)' : 'var(--dark)'}
                 bg={activeMode === 'search' ? 'primary' : 'forth'}
-                aria-label={activeMode === 'search' ? 'Switch to Chat' : 'Search Carpets'}
-                title={activeMode === 'search' ? 'Switch to Chat' : 'Search Carpets'}
+                aria-label={activeMode === 'search' ? 'Switch to Chat' : 'Search Products'}
+                title={activeMode === 'search' ? 'Switch to Chat' : 'Search Products'}
                 onClick={onToggleMode}
                 className="rounded-full"
             />
@@ -338,7 +338,7 @@ const ChatWelcome = memo(({ onActionClick }) => (
         </h2>
 
         <p className="mini-text text-gray mt-6 m-0">
-            Explore Dilour & Ribs rolls, 1800 GSM poly shrink rugs, or get a wholesale quote.
+            Explore SS pipes & tubes, forged flanges, buttweld fittings, fasteners, or request an RFQ.
         </p>
 
         <div className="grid-cols-2 gap-8 mt-12">
