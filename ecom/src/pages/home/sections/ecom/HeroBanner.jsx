@@ -16,40 +16,46 @@ const HeroBackground = React.memo(() => (
     <div className='absolute top-0 left-0 w-full h-full z-10'>
         <Image
             src={import.meta.env.VITE_IMAGE + "Hero1.mp4"}
-            alt="Agency Hero Background Video"
+            alt="Healthcare Hero Background Video"
             className='w-full h-full flex object-cover filter-b4'
         />
         <div
             className='absolute w-full h-full top-0 left-0'
+            style={{
+                background: 'linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.2) 100%)'
+            }}
         />
     </div>
 ));
 
-const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) => (
+const HeroContent = React.memo(({ onGetInTouch, onExplore, isHeaderSticky, heroVersion }) => (
     <div className={`w-full ${isHeaderSticky
         ? 'pb-100'
         : [1, 2].includes(heroVersion)
             ? 'pb-100 sm-pb-30'
             : 'pb-60'
         } relative z-20`}>
-        <h1 className='largemid-text text-white font-600'>
-            A ERA IN
+
+        <h1 className='largemid-text text-white font-700 uppercase'>
+            Advanced
             <br />
-            <span className='text-primary'>COMMUNICATION</span>
+            <span className='text-primary'>Hospital Holloware</span>
         </h1>
-        <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12'>
-            Are You Struggling To Turn Your <br />Ideas Into Something Users Love? Pixelr Designs Digital Products.
+        <p className='text-white headpara-text font-300 sm-mt-6 mt-12' style={{ maxWidth: '580px', opacity: 0.9 }}>
+            Section 45 Factories Act compliant emergency kits and AISI-304 surgical stainless steel holloware direct from verified manufacturers.
         </p>
-        <Button
-            text="Get In Touch"
-            icon="ArrowUpRight"
-            iconPosition="right"
-            iconWidth="16"
-            iconHeight="16"
-            version="v1"
-            className="rounded-20 mt-18"
-            onClick={onGetInTouch}
-        />
+        <div className="flex items-center gap-12 mt-20">
+            <Button
+                text="Explore Products"
+                icon="ArrowUpRight"
+                iconPosition="right"
+                iconWidth="16"
+                iconHeight="16"
+                version="v1"
+                className="rounded-20"
+                onClick={onExplore}
+            />
+        </div>
     </div>
 ));
 
@@ -98,6 +104,10 @@ const HeroBanner = React.memo(() => {
         navigate('/connect');
     }, [navigate]);
 
+    const handleExplore = useCallback(() => {
+        navigate('/product');
+    }, [navigate]);
+
     useEffect(() => {
         handleResize();
         window.addEventListener('resize', handleResize);
@@ -133,7 +143,12 @@ const HeroBanner = React.memo(() => {
             style={containerStyle}
         >
             <HeroBackground />
-            <HeroContent isHeaderSticky={isHeaderSticky} heroVersion={heroVersion} onGetInTouch={handleGetInTouch} />
+            <HeroContent
+                isHeaderSticky={isHeaderSticky}
+                heroVersion={heroVersion}
+                onGetInTouch={handleGetInTouch}
+                onExplore={handleExplore}
+            />
             <BreadcrumbTab isMobile={isMobile} heroVersion={heroVersion} />
         </Container>
     );
