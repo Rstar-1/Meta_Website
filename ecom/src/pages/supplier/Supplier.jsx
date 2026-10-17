@@ -32,24 +32,22 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 ));
 
 const KNOWN_NAMES = {
-    goonj: 'Goonj Communication & Electronic Scale Co.',
-    cynor: 'Goonj & CYNOR Healthcare',
-    goonjhealthcare: 'Goonj Communication & Electronic Scale Co.',
-    shreehari: 'Shreehari Surgicals & Co.',
-    shreeharisurgicals: 'Shreehari Surgicals & Co.',
-    support: 'Shreehari Surgicals & Co. (SUPPORT)',
-    united: 'Goonj & Shreehari Healthcare Network',
-    unitedbrothers: 'Goonj & Shreehari Healthcare Network',
-    foxecom: 'Goonj Communication & Electronic Scale Co.'
+    roxy: 'Roxy Enterprises',
+    roxyenterprises: 'Roxy Enterprises',
+    ambalal: 'Roxy Enterprises',
+    ambalalchoudhary: 'Roxy Enterprises',
+    roxyenterprisesmumbai: 'Roxy Enterprises',
+    goonj: 'Roxy Enterprises',
+    shreehari: 'Roxy Enterprises'
 };
 
 const Supplier = () => {
     const { brandName } = useParams();
-    const brandKey = (brandName || 'goonj').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brandKey = (brandName || 'roxy').toLowerCase().replace(/[^a-z0-9]/g, '');
     const displayName = useMemo(() => {
         return KNOWN_NAMES[brandKey] || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'Goonj & Shreehari Healthcare Network');
+            : 'Roxy Enterprises');
     }, [brandKey, brandName]);
 
     const breadcrumbs = useMemo(() => [
@@ -61,14 +59,14 @@ const Supplier = () => {
     return (
         <>
             <SEO
-                title={`${displayName} - Certified Medical & Healthcare Equipment | Delhi & Mumbai`}
-                description="Verified manufacturers & suppliers of Hospital Holloware, OT Lights, Autoclaves, CE-Certified First Aid Kits, Stretchers & Surgical Linen. Direct factory supply across India."
+                title={`${displayName} - Exporter, Stockiest & Supplier of Stainless Steel & Nickel Alloys | Mumbai`}
+                description="Roxy Enterprises - Exporter, Stockiest & Supplier of Stainless Steel (SS 304/316/321/Duplex), Nickel Alloys (Inconel, Monel, Hastelloy), Alloy Steel & Carbon Steel. Tested with 3.1/3.2 Mill Test Certificates."
                 path={`/supplier/${brandKey}`}
                 breadcrumbs={breadcrumbs}
             />
             <Banner
                 title={displayName}
-                desc="Verified Medical Equipment & Hospital Supplies — Delhi & Mumbai Central Hubs"
+                desc="Exporter, Stockiest & Supplier of Stainless Steel, Nickel Alloy, Alloy Steel & Carbon Steel — Mumbai"
                 breadcrumbs={breadcrumbs}
             />
             {supplierSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

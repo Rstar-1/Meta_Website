@@ -6,6 +6,7 @@ import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
 
 import { configData } from '../../../../utils/apiData';
+import { resolveImagePath } from '../../../../utils/imageResolver';
 
 const HEIGHT_MAP = {
     sticky: { 1: 'h-800 sm-h-550', 2: 'h-650 sm-h-550' },
@@ -15,15 +16,9 @@ const HEIGHT_MAP = {
 const HeroBackground = React.memo(() => (
     <div className='absolute top-0 left-0 w-full h-full z-10'>
         <Image
-            src={import.meta.env.VITE_IMAGE + "Hero1.mp4"}
-            alt="Healthcare Hero Background Video"
-            className='w-full h-full flex object-cover filter-b4'
-        />
-        <div
-            className='absolute w-full h-full top-0 left-0'
-            style={{
-                background: 'linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.2) 100%)'
-            }}
+            src={resolveImagePath('/products/roxy/bg-video.mp4')}
+            alt="Stainless Steel Manufacturing Video"
+            className='w-full h-full flex object-cover filter-b3'
         />
     </div>
 ));
@@ -37,16 +32,16 @@ const HeroContent = React.memo(({ onGetInTouch, onExplore, isHeaderSticky, heroV
         } relative z-20`}>
 
         <h1 className='largemid-text text-white font-700 uppercase'>
-            Advanced
+            Certified Steel &
             <br />
-            <span className='text-primary'>Hospital Holloware</span>
+            <span className='text-primary'>Nickel Alloys</span>
         </h1>
-        <p className='text-white headpara-text font-300 sm-mt-6 mt-12' style={{ maxWidth: '580px', opacity: 0.9 }}>
-            Section 45 Factories Act compliant emergency kits and AISI-304 surgical stainless steel holloware direct from verified manufacturers.
+        <p className='text-white headpara-text font-300 sm-mt-6 mt-12' style={{ maxWidth: '640px', opacity: 0.9 }}>
+            Exporter, Stockiest & Supplier of Stainless Steel, Nickel Alloy, Alloy Steel, & Carbon Steel pipes, tubes, plates, flanges, fittings, and fasteners with 3.1 & 3.2 Mill Test Certificates.
         </p>
         <div className="flex items-center gap-12 mt-20">
             <Button
-                text="Explore Products"
+                text="Explore Catalog"
                 icon="ArrowUpRight"
                 iconPosition="right"
                 iconWidth="16"

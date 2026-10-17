@@ -1,6 +1,6 @@
 const SITE_URL = (import.meta.env.VITE_SITE_URL || "").replace(/\/$/, "");
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || "United Brothers";
-const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/united_brothers_color.png";
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Roxy Enterprises";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/products/roxy/logo.png";
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 
@@ -9,22 +9,22 @@ export const siteInfo = {
   url: SITE_URL,
   description:
     import.meta.env.VITE_SEO_DESCRIPTION ||
-    "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications.",
-  phone: import.meta.env.VITE_PHONE || "07942562287",
-  email: import.meta.env.VITE_EMAIL || "info@ashmitavinyls.com",
+    "Roxy Enterprises is a premier Exporter, Stockiest, & Supplier of Stainless Steel, Nickel Alloy, Alloy Steel, & Carbon Steel Pipes, Plates, Flanges, and Fittings based in Mumbai.",
+  phone: import.meta.env.VITE_PHONE || "+91 97692 57080",
+  email: import.meta.env.VITE_EMAIL || "roxyenterprises91@gmail.com",
 
   address: {
-    streetAddress: "C 304, 3rd Floor, Eastern Business District, L.B.S Marg Road, Bhandup West",
+    streetAddress: "Office no.12, 2nd Floor, 20/26, Doctor Building D Block, Maruti Mandir Marg, 5th Kumbharwada",
     addressLocality: "Mumbai",
     addressRegion: "Maharashtra",
-    postalCode: "400078",
+    postalCode: "400004",
     addressCountry: "IN",
-    fullAddress: import.meta.env.VITE_ADDRESS || "Ashmita Enterprises C 304, 3 Rd Floor, Eastern Business Distric, Near Mangatram Petrol Pump L.B.S Marg Road, Bhandup West, Mumbai City, Mumbai - 400078, Maharashtra, India",
+    fullAddress: import.meta.env.VITE_ADDRESS || "Office no.12, 2nd Floor, 20/26, Doctor Building D Block, Maruti Mandir Marg, 5th Kumbharwada, Mumbai 400004 (MH), India",
   },
 
   geo: {
-    latitude: 19.1485,
-    longitude: 72.9367,
+    latitude: 18.9595,
+    longitude: 72.8239,
   },
 
   sameAs: [
@@ -37,18 +37,18 @@ export const siteInfo = {
 
 export const pageSeoData = {
   home: {
-    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Manufacturer in India | Ashmita Vinyls",
+    title: import.meta.env.VITE_SEO_TITLE || "Roxy Enterprises - Exporter, Stockiest & Supplier of Stainless Steel & Nickel Alloys | Mumbai",
     description:
       import.meta.env.VITE_SEO_DESCRIPTION ||
-      "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications across India.",
+      "Roxy Enterprises is a leading Exporter, Stockiest, & Supplier of Stainless Steel, Nickel Alloy, Alloy Steel, & Carbon Steel Pipes, Plates, Flanges, and Fittings. Tested with 3.1/3.2 Mill Test Certificates.",
     path: "/home",
     breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
-    title: "About Ashmita Vinyls | PVC Vinyl Manufacturer in India",
+    title: "About Us | Roxy Enterprises - Metal & Steel Exporter Mumbai",
     description:
-      "Learn about Ashmita Vinyls, our PVC vinyl manufacturing capabilities, quality focus and industrial solutions.",
+      "Learn about Roxy Enterprises, our Mumbai stockyard, our mission, vision, and core steel product portfolio with complete 3.1/3.2 Mill Test Certificates.",
     path: "/about",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -57,9 +57,9 @@ export const pageSeoData = {
   },
 
   product: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Steel, Nickel Alloys & Metal Products | Roxy Enterprises",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore Pipes & Tubes, Industrial Plates, Flanges, Butt-Weld Fittings, Nickel Alloys, Circles, and Fasteners from Roxy Enterprises.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -68,9 +68,9 @@ export const pageSeoData = {
   },
 
   products: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Steel, Nickel Alloys & Metal Products | Roxy Enterprises",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore Pipes & Tubes, Industrial Plates, Flanges, Butt-Weld Fittings, Nickel Alloys, Circles, and Fasteners from Roxy Enterprises.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -79,9 +79,9 @@ export const pageSeoData = {
   },
 
   productDetail: {
-    title: "PVC Vinyl Product Details | Ashmita Vinyls",
+    title: "Product Specifications & Mill Test Data | Roxy Enterprises",
     description:
-      "Explore detailed specifications, technical parameters, and applications for PVC vinyl products by Ashmita Vinyls.",
+      "Explore detailed specifications, ASTM/ASME standards, UNS numbers, chemical composition, and mechanical test parameters by Roxy Enterprises.",
     path: "/product-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -91,9 +91,9 @@ export const pageSeoData = {
   },
 
   supplier: {
-    title: "PVC Vinyl Applications & Industries | Ashmita Vinyls",
+    title: "Roxy Enterprises - Exporter, Stockiest & Supplier Profile | Mumbai",
     description:
-      "Discover industries and applications using Ashmita Vinyls PVC vinyl solutions.",
+      "Verified Exporter, Stockiest, and Supplier of Stainless Steel, Nickel Alloy, and Carbon Steel. Contact: Mr. Ambalal Choudhary (+91 9769257080).",
     path: "/supplier",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -103,9 +103,9 @@ export const pageSeoData = {
   },
 
   quality: {
-    title: "PVC Vinyl Manufacturing Quality | Ashmita Vinyls",
+    title: "3.1 / 3.2 Mill Test Certificates & Quality Testing | Roxy Enterprises",
     description:
-      "Explore Ashmita Vinyls manufacturing quality, infrastructure and PVC vinyl production capabilities.",
+      "Discover Roxy Enterprises testing protocols: Spectro chemical analysis, hydrostatic testing, ultrasonic NDT, and EN 10204 3.1/3.2 certificates.",
     path: "/quality",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -114,9 +114,9 @@ export const pageSeoData = {
   },
 
   connect: {
-    title: "Contact Ashmita Vinyls | PVC Vinyl Product Enquiry",
+    title: "Connect With Us - Roxy Enterprises | Exporter, Stockiest & Supplier Mumbai",
     description:
-      "Contact Ashmita Vinyls for PVC vinyl product enquiries, specifications and bulk requirements.",
+      "Kind Attention: Procurement Department — Contact Roxy Enterprises for quotations on Stainless Steel, Nickel Alloys, Plates, and Pipes. Call +91 97692 57080.",
     path: "/connect",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -125,75 +125,52 @@ export const pageSeoData = {
   },
 
   blog: {
-    title: "Carpets, Rugs & Flooring Insights | United Brothers",
+    title: "Steel & Metallurgical Insights | Roxy Enterprises Blogs",
     description:
-      "Read expert guides on 1800 GSM poly shrink rugs, dilour & ribs carpets, interior styling, and commercial flooring solutions by United Brothers.",
+      "Technical guides on Pipe Fittings, Stainless Steel Plates, Carbon Steel Pipes, and Superalloys by Roxy Enterprises.",
     path: "/blog",
     breadcrumbs: [
       { label: "Home", path: "/home" },
-      { label: "News & Media", path: "/blog" },
+      { label: "Blogs", path: "/blog" },
     ],
   },
 
-  blogDetail: {
-    title: "Carpets & Rugs Articles | United Brothers",
-    description:
-      "Latest technical insights, styling guides, and care updates on carpets and luxury woven rugs by United Brothers.",
-    path: "/blog-detail",
+  terms: {
+    title: "Terms & Conditions | Roxy Enterprises",
+    description: "Terms and conditions governing industrial supply and export orders with Roxy Enterprises.",
+    path: "/terms",
     breadcrumbs: [
       { label: "Home", path: "/home" },
-      { label: "News & Media", path: "/blog" },
-      { label: "Blog Detail", path: "/blog-detail" },
+      { label: "Terms", path: "/terms" },
     ],
   },
 
   privacy: {
-    title: "Privacy Policy | Ashmita Vinyls",
-    description: "Read the Ashmita Vinyls privacy policy.",
+    title: "Privacy Policy | Roxy Enterprises",
+    description: "Privacy policy and corporate data protection guidelines of Roxy Enterprises.",
     path: "/privacy",
     breadcrumbs: [
       { label: "Home", path: "/home" },
       { label: "Privacy Policy", path: "/privacy" },
     ],
   },
-
-  terms: {
-    title: "Terms & Conditions | Ashmita Vinyls",
-    description: "Read the terms and conditions of Ashmita Vinyls.",
-    path: "/terms",
-    breadcrumbs: [
-      { label: "Home", path: "/home" },
-      { label: "Terms & Conditions", path: "/terms" },
-    ],
-  },
 };
 
-export const aeoFAQs = [
-  {
-    question: "What is Ashmita Vinyls?",
-    answer:
-      "Ashmita Vinyls is a PVC vinyl products manufacturer and supplier in India serving commercial and industrial requirements.",
-  },
-  {
-    question: "What products does Ashmita Vinyls supply?",
-    answer:
-      "Ashmita Vinyls supplies PVC vinyl products and industrial vinyl solutions for different commercial and industrial applications.",
-  },
-  {
-    question: "How can I enquire about PVC vinyl products?",
-    answer:
-      "You can contact Ashmita Vinyls through the website contact page, phone or email for product specifications and bulk enquiries.",
-  },
-];
+export const getUrl = (path = "") => {
+  if (!path) return SITE_URL;
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  return `${SITE_URL}${path.startsWith("/") ? "" : "/"}${path}`;
+};
 
-export const getUrl = (path = "/") =>
-  path.startsWith("http")
-    ? path
-    : `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+export const getImageUrl = (image = DEFAULT_IMAGE) => {
+  if (!image) return DEFAULT_IMAGE;
+  if (image.startsWith("http://") || image.startsWith("https://") || image.startsWith("data:")) return image;
+  return `${SITE_URL}${image.startsWith("/") ? "" : "/"}${image}`;
+};
 
-export const getImageUrl = (image) =>
-  image
-    ? image.startsWith("http")
-      ? image
-      : getUrl(image)
-    : getUrl(DEFAULT_IMAGE);
+export default {
+  siteInfo,
+  pageSeoData,
+  getUrl,
+  getImageUrl,
+};

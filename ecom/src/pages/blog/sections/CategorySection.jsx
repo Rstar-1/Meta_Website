@@ -9,21 +9,15 @@ import Badge from '../../../components/common/Badge';
 import { resolveImagePath } from '../../../utils/imageResolver';
 import blogData from '../../../data/blog.json';
 
-const CARPET_SWATCH_COLORS = [
-    { name: 'Jet Black', hex: '#18181b', type: 'Dilour & Ribs' },
-    { name: 'Slate Grey', hex: '#64748b', type: 'Dilour & Ribs' },
-    { name: 'Royal Beige', hex: '#d4b896', type: 'Dilour Velour' },
-    { name: 'Chestnut Brown', hex: '#5c3d28', type: 'Dilour & Ribs' },
-    { name: 'Ruby Red', hex: '#881337', type: 'Dilour & Ribs' },
-];
-
-const POPULAR_CARPET_TAGS = [
-    '1800 GSM Rugs',
-    'Dilour Automotive',
-    'Ribs Carpets',
-    'Poly Shrink 3D',
-    'Shalimar Weaves',
-    'Acoustic Damping'
+const POPULAR_STEEL_TAGS = [
+    'Seamless Pipes',
+    'ASTM A516 Gr. 70',
+    'Hardox 400/500',
+    'Inconel 625',
+    'Butt-Weld Fittings',
+    'ASME B16.5 Flanges',
+    '3.1 Mill Certificates',
+    'Duplex 2205'
 ];
 
 const CategorySection = React.memo(({
@@ -95,7 +89,7 @@ const CategorySection = React.memo(({
             <div className="mb-25 bg-forth rounded-10 p-15">
                 <Fields
                     type="input"
-                    placeholder="Search carpet & rug guides..."
+                    placeholder="Search steel, piping & alloy guides..."
                     value={searchQuery}
                     onChange={handleSearch}
                     icon="Search"
@@ -103,10 +97,10 @@ const CategorySection = React.memo(({
                 />
             </div>
 
-            {/* Carpet Categories */}
+            {/* Steel & Piping Categories */}
             <div className="mb-25">
                 <h4 className="text-dark mid-text font-600">
-                    Carpet & Rug Categories
+                    Steel & Piping Categories
                 </h4>
                 <div className="grid-cols-1 gap-10 mt-15">
                     {categories.map((cat, idx) => {
@@ -130,10 +124,10 @@ const CategorySection = React.memo(({
                 </div>
             </div>
 
-            {/* Recent Carpet Posts */}
+            {/* Recent Metallurgy Articles */}
             <div className="mb-25">
                 <h4 className="text-dark mid-text font-600">
-                    Recent Flooring Articles
+                    Recent Metallurgy Articles
                 </h4>
                 <div className="mt-15 grid-cols-1 gap-12">
                     {recentPosts.map((post) => (
@@ -161,6 +155,24 @@ const CategorySection = React.memo(({
                                 </p>
                             </div>
                         </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Popular Topics */}
+            <div className="mb-25">
+                <h4 className="text-dark mid-text font-600">
+                    Popular Topics
+                </h4>
+                <div className="flex flex-wrap gap-8 mt-15">
+                    {POPULAR_STEEL_TAGS.map((tag, idx) => (
+                        <span
+                            key={idx}
+                            onClick={() => handleTagClick(tag)}
+                            className="mini-text font-500 py-6 px-12 rounded-30 bg-forth text-dark hover:bg-primary hover:text-white cursor-pointer transition-colors"
+                        >
+                            #{tag}
+                        </span>
                     ))}
                 </div>
             </div>

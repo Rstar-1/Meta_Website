@@ -1,68 +1,117 @@
 {
   "HeroSections": {
-    "titleLine1": "CERTIFIED",
-    "titleLine2": "HOSPITAL, SURGICAL &",
-    "titleHighlight": "FIRST AID HEALTHCARE SOLUTIONS",
-    "agencyTitle": "MANUFACTURERS & SUPPLIERS",
-    "leftText": "Goonj & Shreehari Surgicals — Leading manufacturers & wholesale distributors of stainless steel hospital holloware, OT equipment, CE-certified industrial first aid boxes, and emergency patient stretchers.",
-    "rightText": "Equipping leading hospitals, clinical trauma centers, pharmaceutical clean rooms, and manufacturing plants across India with certified medical devices, hospital furniture, and life-saving rescue solutions."
+    "titleLine1": "EXPORTER, STOCKIEST & SUPPLIER",
+    "titleLine2": "STAINLESS STEEL, NICKEL ALLOY &",
+    "titleHighlight": "CARBON STEEL INDUSTRIAL SOLUTIONS",
+    "agencyTitle": "ROXY ENTERPRISES — MUMBAI",
+    "leftText": "Roxy Enterprises — Leading Exporter, Stockiest, & Supplier of high-grade Stainless Steel, Nickel Alloy, Alloy Steel, & Carbon Steel. Providing certified materials applied in Oil & Gas, Chemical, Refinery, Pharmacy, Fertilizer, and Heavy Engineering.",
+    "rightText": "Stocking and supplying premium Pipes & Tubes (Seamless, ERW), Industrial Plates (Boiler Quality, Hardox, Corten, High Tensile), Flanges, Fittings, Circles, Rings, Nut-Bolts, and Tool Steels with complete 3.1 / 3.2 Mill Test Certificates."
   },
   "AboutSections": {
     "heading": {
-      "tag": "MANUFACTURING & QUALITY EXCELLENCE",
-      "title": "Medical-Grade 304 Stainless Steel Holloware, OT Equipment & CE-Certified First Aid Kits"
+      "tag": "WHERE STRENGTH MEETS PRECISION",
+      "title": "Supplying Certified Stainless Steel, Nickel Alloys, Alloy Steel & Carbon Steel Worldwide"
     },
     "crafter": {
-      "title": "Hospital Furniture, Holloware & Emergency Rescue",
-      "subtitle": "Precision stainless steel fabrication, cold-LED surgical illumination & Factory Act compliance",
-      "buttonText": "< View Medical Catalog />",
+      "title": "Mission, Vision & Value Driven Steel Solutions",
+      "subtitle": "Precision engineering, strict dimensional accuracy & dependable delivery for critical industrial sectors",
+      "buttonText": "< View Metals Catalog />",
       "features": [
         {
-          "title": "Sterilization Integrity & Corrosion Resistance",
-          "description": "Seamless deep-drawn Grade 304 stainless steel dressing drums, catheter trays, and holloware built to endure continuous 134°C autoclave steam sterilization."
+          "title": "Quality Manufacturing & Stockholding Expertise",
+          "description": "At Roxy Enterprises, our mission is to supply high-quality industrial metal products including Carbon Steel Pipes, Seamless Steel Pipes, Stainless Steel Nut & Bolts, Aluminium Flat Bars, and precision-engineered products that add value to industries."
         },
         {
-          "title": "CE & Statutory Safety Compliance",
-          "description": "Industrial first aid boxes, evacuation stair chairs, and scoop stretchers fully certified to CE Directive 2006/42/CE and Indian Factories Act requirements."
+          "title": "3.1 / 3.2 Mill Test Certificate Traceability",
+          "description": "We provide complete chemical composition, mechanical properties, IGC, Charpy impact, and ultrasonic test certifications conforming to EN 10204 3.1 & 3.2 inspection standards."
         }
       ]
     },
-    "platforms": ["First Aid & Emergency (Shreehari)", "Hospital Holloware & OT (Goonj)", "Protective Linen & Disposables"],
+    "platforms": [
+      "Stainless Steel (SS 304, 316, Duplex)",
+      "Nickel Alloys (Inconel, Monel, Hastelloy)",
+      "Industrial Plates (BQ, Hardox, Corten)"
+    ],
     "codeSnippets": {
-      "First Aid & Emergency (Shreehari)": [
-        { "num": 1, "code": "const standard = 'CE Certified (Directive 2006/42/CE)'" },
-        { "num": 2, "code": "const kitTypes = ['Type A (28 items)', 'Type B (34 items)', 'Type C (38 items)']" },
-        { "num": 3, "code": "const stretcherSpecs = ['Aluminium Scoop', 'HDPE Spine Board', '4-Fold Wheeled']" },
-        { "num": 4, "code": "const certification = 'ISO 9001:2015 Registered (Shreehari Surgicals)'" },
-        { "num": 5, "code": "export default getEmergencyFirstAidCatalog()" }
+      "Stainless Steel (SS 304, 316, Duplex)": [
+        {
+          "num": 1,
+          "code": "const standard = 'ASTM A312 / ASME SA240 / EN 10216-5'"
+        },
+        {
+          "num": 2,
+          "code": "const grades = ['SS 304/L (S30400/3)', 'SS 316/L (S31600/3)', 'Duplex 2205 (S31803)']"
+        },
+        {
+          "num": 3,
+          "code": "const superDuplex = ['Super Duplex 2507 (S32750/60)', 'SS 904L (N08904)']"
+        },
+        {
+          "num": 4,
+          "code": "const certification = 'EN 10204 3.1 & 3.2 Mill Test Certificate (Roxy Enterprises)'"
+        },
+        {
+          "num": 5,
+          "code": "export default getRoxyStainlessSteelCatalog()"
+        }
       ],
-      "Hospital Holloware & OT (Goonj)": [
-        { "num": 1, "code": "const steelGrade = 'AISI 304 Non-Magnetic Stainless Steel'" },
-        { "num": 2, "code": "const holloware = ['Jointed & Jointless Dressing Drums', 'Instrument Trays', 'Kidney Dishes']" },
-        { "num": 3, "code": "const otLighting = 'Cold LED Shadowless 35,000 to 100,000 Lux'" },
-        { "num": 4, "code": "const autoclaveRating = '15 PSI Standard / Triple-Wall Radial 134°C'" },
-        { "num": 5, "code": "return <HospitalEquipmentSupplier brand='Goonj' />" }
+      "Nickel Alloys (Inconel, Monel, Hastelloy)": [
+        {
+          "num": 1,
+          "code": "const superalloys = ['Inconel 600/601/625', 'Incoloy 800/H/HT', 'Inconel 825']"
+        },
+        {
+          "num": 2,
+          "code": "const acidResistant = ['Hastelloy C276 (N01276)', 'Hastelloy C22 (N06022)']"
+        },
+        {
+          "num": 3,
+          "code": "const marineAlloys = ['Monel 400 (N04400)', 'Cupro-Nickel 70-30', 'Cupro-Nickel 90-10']"
+        },
+        {
+          "num": 4,
+          "code": "const specialAlloy = ['Alloy 20 (N08020)', 'Sanrico 28 (N08028)', 'Alloy 200/201']"
+        },
+        {
+          "num": 5,
+          "code": "return <NickelAlloyStockiest supplier='Roxy Enterprises' />"
+        }
       ],
-      "Protective Linen & Disposables": [
-        { "num": 1, "code": "const fabric = '45-60 GSM Hydrophobic SMMS Non-Woven'" },
-        { "num": 2, "code": "const barrierLevel = 'AAMI Level 3 Liquid & Viral Barrier'" },
-        { "num": 3, "code": "const sterilization = 'Ethylene Oxide (EO) Individually Pouched'" },
-        { "num": 4, "code": "const masks = 'N95 Respirators (≥95% BFE/PFE) & 3-Ply Surgical'" },
-        { "num": 5, "code": "export const medicalDisposables = getGoonjCatalog()" }
+      "Industrial Plates (BQ, Hardox, Corten)": [
+        {
+          "num": 1,
+          "code": "const boilerQuality = ['ASTM A516 Gr. 60/70 (NACE & HIC)', 'ASTM A537 Cl. 1/2']"
+        },
+        {
+          "num": 2,
+          "code": "const wearResistant = ['HARDOX 400/450/500', 'STRENX 700', 'DOCOL', 'ABREX']"
+        },
+        {
+          "num": 3,
+          "code": "const alloyPlates = ['ASTM A387 Gr. 11/22/91', '16Mo3', 'API 52/60/70']"
+        },
+        {
+          "num": 4,
+          "code": "const highTensile = ['IS 2062 E350/E450', 'ASTM A572 Gr. 60/70', 'Corten ASTM A588']"
+        },
+        {
+          "num": 5,
+          "code": "export const industrialPlates = getRoxyPlatesCatalog()"
+        }
       ]
     },
     "racers": [
       {
         "id": 1,
-        "title": "Direct Factory Wholesale Supply",
-        "subtitle": "Central distribution hubs in Delhi & Mumbai for rapid nationwide dispatch",
-        "description": "Vast ready stock of hospital holloware, dressing drums, first aid boxes, stretchers, surgical gowns, and autoclaves shipped across India."
+        "title": "Direct Stockyard & Exporter Supply",
+        "subtitle": "Central stockyard at 5th Kumbharwada, Mumbai for swift domestic & global export dispatch",
+        "description": "Vast ready inventory of seamless pipes, industrial plates, forged flanges, butt-weld fittings, circles, and fasteners shipped across India and exported worldwide."
       },
       {
         "id": 2,
-        "title": "Hospital & Industrial Grade Certified",
-        "subtitle": "ISO 9001 (QMS), ISO 14001 (EMS), ISO 45001, CE, RoHS & BMW 2016 Compliant",
-        "description": "Engineered for government and corporate multi-specialty hospitals, emergency EMS fleets, defense establishments, and manufacturing factories."
+        "title": "3.1 / 3.2 Mill Test Certified",
+        "subtitle": "100% material inspection, PMI spectro tested, chemical & mechanical traceability",
+        "description": "Materials conforming strictly to ASTM, ASME, BS, DIN, EN, and IS standards for demanding oil & gas, refinery, chemical, and fertilizer installations."
       }
     ]
   },
@@ -71,363 +120,451 @@
       {
         "id": "sizing",
         "step": 1,
-        "tag": "01 / Clinical Sizing & Requirement Audit",
+        "tag": "01 / Engineering Audit & Material Selection",
         "color": "#3b82f6",
         "glowColor": "rgba(59, 130, 246, 0.48)",
         "icon": "Shield",
-        "headingMain": "Tailored Hospital Equipment &",
-        "headingHighlight": "Statutory Safety Compliance",
-        "description": "We assist hospital administrators, safety directors, and procurement teams in selecting the exact specifications of holloware, autoclaves, first aid kits (Type A, B, or C), and emergency stretchers.",
-        "ctaText": "Enquire about institutional supply",
+        "headingMain": "Material Selection &",
+        "headingHighlight": "Procurement Assistance",
+        "description": "We assist procurement departments, piping engineers, and project contractors in specifying exact steel grades, UNS numbers, schedules, plate thicknesses, and test requirements.",
+        "ctaText": "Enquire about project supply",
         "ctaLink": "/connect",
         "hasTopCta": true,
         "tabs": [
-          { "label": "Hospital Wards & ICUs", "value": "Hospital" },
-          { "label": "Factories & Workshops", "value": "Factory" },
-          { "label": "Emergency EMS & Rescue", "value": "Rescue" },
-          { "label": "Maternity & Neonatal", "value": "Neonatal" },
-          { "label": "Operation Theatres", "value": "Operation" },
-          { "label": "Home Healthcare", "value": "Homecare" }
+          {
+            "label": "Oil & Gas Sector",
+            "value": "OilGas"
+          },
+          {
+            "label": "Chemical & Fertilizer",
+            "value": "Chemical"
+          },
+          {
+            "label": "Power & Boilers",
+            "value": "Boiler"
+          },
+          {
+            "label": "Fabrication & Mining",
+            "value": "Fabrication"
+          },
+          {
+            "label": "Pharma & Food Processing",
+            "value": "Pharma"
+          },
+          {
+            "label": "Marine & Shipbuilding",
+            "value": "Marine"
+          }
         ],
         "collaboration": {
-          "title": "Select certified medical equipment and emergency care solutions for your institution.",
-          "titleHighlight": "for maximum patient safety, infection control, and operational readiness",
+          "title": "Select certified industrial metals and precision steel solutions for your plant.",
+          "titleHighlight": "for maximum structural strength, corrosion resistance, and operational safety",
           "items": [
-            "Seamless Grade 304 stainless steel hospital holloware & dressing drums",
-            "CE-Certified industrial first aid kits (Types A, B, and C) & wall cabinets",
-            "Emergency scoop stretchers, spine boards & stair evacuation chairs",
-            "Shadowless LED surgical OT lights & steam autoclave sterilizers"
+            "Seamless & ERW Pipes in Stainless Steel, Carbon Steel ASTM A106 & Boiler Quality",
+            "Industrial Plates: Boiler Quality (A516 Gr. 60/70 HIC), Hardox 400/500, Corten A588",
+            "Forged Flanges (WNRF / SORF / BLRF Class 150 to 2500) & Butt-Weld Pipe Fittings",
+            "Nickel Alloys: Inconel 625, Hastelloy C276, Monel 400 & Cupro-Nickel Marine Tubes"
           ],
-          "buttonText": "Request Institutional Price List",
-          "linkText": "Explore complete medical & surgical catalog"
+          "buttonText": "Request Procurement Price List",
+          "linkText": "Explore complete steel & metal catalog"
         }
       },
       {
         "id": "manufacturing",
         "step": 2,
-        "tag": "02 / Precision Manufacturing & Quality Testing",
+        "tag": "02 / Precision Cutting & Quality Inspection",
         "color": "#22c55e",
         "glowColor": "rgba(34, 197, 94, 0.48)",
         "icon": "Activity",
-        "headingMain": "Quality Controlled Fabrication &",
-        "headingHighlight": "Certified Compliance",
-        "description": "Manufactured using state-of-the-art sheet metal deep drawing, precision optical LED clustering, and rigorous pressure testing under ISO 9001, CE, and RoHS standards.",
+        "headingMain": "Strict Quality Control &",
+        "headingHighlight": "Certified Testing",
+        "description": "Every batch undergoes rigorous positive material identification (PMI), hydrostatic pressure testing, ultrasonic flaw detection, and chemical spectrometry with 3.1/3.2 certificates.",
         "ctaText": "View Product Catalog",
         "ctaLink": "/product",
         "hasTopCta": true,
-        "codeIntro": "Verified hospital equipment specifications and technical parameters:_",
+        "codeIntro": "Verified steel specifications and metallurgical parameters:_",
         "tools": [
-          { "label": "SS 304 Holloware", "icon": "Layers", "href": "/product" },
-          { "label": "CE Certified First Aid", "icon": "Shield", "href": "/product" },
-          { "label": "Shadowless OT Lights", "icon": "Sun", "href": "/product" },
-          { "label": "Pan-India Dispatch", "icon": "Headphones", "href": "/connect" }
+          {
+            "label": "SS 304/316/Duplex",
+            "icon": "Layers",
+            "href": "/product"
+          },
+          {
+            "label": "3.1/3.2 Mill Certs",
+            "icon": "Shield",
+            "href": "/product"
+          },
+          {
+            "label": "Hardox & BQ Plates",
+            "icon": "Box",
+            "href": "/product"
+          },
+          {
+            "label": "Mumbai Stockyard Dispatch",
+            "icon": "Headphones",
+            "href": "/connect"
+          }
         ]
       },
       {
         "id": "installation",
         "step": 3,
-        "tag": "03 / Safe Cargo Delivery & Reliable Support",
+        "tag": "03 / Heavy Export Packaging & Swift Dispatch",
         "color": "#db5e1f",
         "glowColor": "rgba(219, 94, 31, 0.48)",
         "icon": "Box",
-        "headingMain": "Protective Packaging, Swift Transit &",
-        "headingHighlight": "After-Sales Technical Assistance",
-        "description": "Cushioned export-grade wooden crate and carton packaging ensures all sensitive electronic phototherapy units, monitors, and holloware arrive pristine.",
+        "headingMain": "Seaworthy Wooden Crating, Swift Logistics &",
+        "headingHighlight": "Prompt Customer Support",
+        "description": "Seaworthy wooden boxed packaging, end capping, and rust-preventive bundling ensures all tubes, plates, and machined flanges reach job sites in pristine condition.",
         "ctaText": "",
         "ctaLink": "",
         "hasTopCta": false
       }
     ],
     "industryTabsData": {
-      "Hospital": {
-        "title": "Grade 304 Stainless Steel",
-        "keyword": "Hospital Holloware & Ward Furniture",
-        "titleEnd": "engineered for aseptic patient hygiene and continuous autoclave cycles",
-        "description": "Heavy-gauge dressing drums, instrument trays, kidney dishes, bedpans, and emergency crash carts manufactured to withstand harsh disinfectant protocols.",
+      "OilGas": {
+        "title": "High Pressure Sour Gas Service",
+        "keyword": "Seamless Stainless & Carbon Steel Pipes",
+        "titleEnd": "engineered to withstand extreme pressures and corrosive hydrocarbons",
+        "description": "ASTM A106 Gr. B seamless pipes, API 5L X65/X80 PSL2, Duplex 2205, and Super Duplex 2507 for subsea manifolds, refineries, and offshore drilling platforms.",
         "bullets": [
-          "AISI 304 non-magnetic stainless steel",
-          "Seamless deep-drawn jointless construction",
-          "Smooth anti-microbial mirror polished finish",
-          "Complete autoclave steam compatibility (134°C)"
+          "100% NACE MR0175 / ISO 15156 compliance",
+          "HIC & SSCC sour service crack resistance",
+          "Heavy wall schedules (SCH 80, 160, XXS)",
+          "Hydrostatically tested with 3.2 third party inspection"
         ],
-        "cta": "View Hospital Holloware",
-        "badge": "Grade 304 Stainless Steel",
-        "image": "/products/spaces/hospital_ward.jpg"
+        "cta": "View Oil & Gas Piping",
+        "badge": "Oil & Gas Grade",
+        "image": "/products/roxy/ss_pipe.jpg"
       },
-      "Factory": {
-        "title": "Statutory Factory Act Compliant",
-        "keyword": "Industrial First Aid Kits (Types A, B & C)",
-        "titleEnd": "providing certified emergency trauma care for manufacturing facilities",
-        "description": "Durable metal and plastic wall-mounted first aid stations equipped with sterile dressings, burn treatments, splints, and eye-wash essentials.",
+      "Chemical": {
+        "title": "Aggressive Acid & Chlorine Handling",
+        "keyword": "Nickel Alloys: Hastelloy C276 & Inconel 625",
+        "titleEnd": "for chemical reactors, fertilizer plants, and acid scrubbers",
+        "description": "Superalloy pipes, plates, and fittings engineered to withstand wet chlorine, boiling hydrochloric acid, phosphoric acid, and sulfuric solutions.",
         "bullets": [
-          "Conforms to Section 45 Factories Act",
-          "CE Certified (Directive 2006/42/CE & 92/29)",
-          "Trilingual Resuscitation chart included",
-          "Waterproof & dust-tight locked cabinets"
+          "Hastelloy C276 (UNS N01276) & C22 (UNS N06022)",
+          "Inconel 625 (UNS N06625) & Incoloy 825",
+          "Alloy 20 (UNS N08020) & Sanrico 28",
+          "Zero pitting and crevice corrosion under high heat"
         ],
-        "cta": "View Industrial First Aid Kits",
-        "badge": "Factory Act Compliant",
-        "image": "/products/spaces/first_aid_action.jpg"
+        "cta": "View Nickel Alloys",
+        "badge": "Chemical Resistant",
+        "image": "/products/roxy/about_1.jpg"
       },
-      "Rescue": {
-        "title": "Rapid Trauma Extrication",
-        "keyword": "Emergency Stretchers & Evacuation Chairs",
-        "titleEnd": "for ambulance fleets, fire safety squads, and disaster management teams",
-        "description": "Aluminium scoop stretchers that decouple to scoop supine patients without spinal manipulation, rigid HDPE spine boards, and wheeled stair evacuation chairs.",
+      "Boiler": {
+        "title": "High Thermal & Steam Pressure",
+        "keyword": "Boiler Quality Plates & Tubes BS 3059 / A516",
+        "titleEnd": "for thermal power generation, superheaters, and economizers",
+        "description": "ASTM A516 Gr. 60/70 Normalized plates, ASTM A387 Cr-Mo plates, and BS 3059 Part-I/II seamless boiler tubes built for severe thermal cycling.",
         "bullets": [
-          "Aluminium scoop with rapid clutch release",
-          "100% X-Ray and CT translucent spine boards",
-          "4-fold compact wheeled evacuation chairs",
-          "Heavy patient capacity up to 180 kg"
+          "ASTM A516 Gr. 70 with Charpy impact at -46°C",
+          "BS 3059 Part-II Gr. 360 / 440 seamless tubes",
+          "ASTM A387 Gr. 11 & Gr. 22 Class 2 Cr-Mo plates",
+          "IBR Form III-B & Mill Test Certificates"
         ],
-        "cta": "View Emergency Stretchers",
-        "badge": "Emergency Rescue Grade",
-        "image": "/products/shreehari/scoop_stretcher_aluminium.jpg"
+        "cta": "View Boiler Quality Steel",
+        "badge": "Boiler & Pressure Vessel",
+        "image": "/products/roxy/ss_plate.jpg"
       },
-      "Neonatal": {
-        "title": "Gentle Narrow-Spectrum LED",
-        "keyword": "Neonatal Phototherapy & Infant Warmers",
-        "titleEnd": "for effective neonatal jaundice management in maternity nurseries and NICUs",
-        "description": "450-470 nm high-intensity blue LED illumination ensures rapid bilirubin degradation with zero ultraviolet hazards and minimal thermal stress.",
+      "Fabrication": {
+        "title": "Abrasion Resistance & High Tensile",
+        "keyword": "Hardox 400/450/500 & Corten Weathering Plates",
+        "titleEnd": "for earthmoving buckets, cement plants, and railway wagons",
+        "description": "Quenched-and-tempered wear-resistant plates (Hardox, Abrex, Rockstar) and weathering Corten steel (ASTM A588 / IRSM 41) for high-wear structural fabrications.",
         "bullets": [
-          "Peak 460 nm blue wavelength irradiance",
-          ">50,000 hours continuous LED operating life",
-          "Integrated treatment timer & hour counter",
-          "Zero harmful UV and minimal infrared emission"
+          "370 to 540 HBW Brinell hardness wear plates",
+          "High yield strength 1000 - 1400 MPa",
+          "Corten A588 self-healing protective patina",
+          "Custom laser and plasma profile cutting"
         ],
-        "cta": "View Neonatal Phototherapy",
-        "badge": "NICU Certified",
-        "image": "/products/goonj/led_phototherapy_unit.jpg"
+        "cta": "View Hardox & Corten Plates",
+        "badge": "Mining & Fabrication",
+        "image": "/products/roxy/about_2.jpg"
       },
-      "Operation": {
-        "title": "Cold-Light Shadowless",
-        "keyword": "Surgical Operation Theatre Lights",
-        "titleEnd": "delivering depth cavity illumination with true natural tissue color rendering",
-        "description": "Multi-lens optical clusters produce homogeneous, shadow-free illumination up to 100,000 Lux with autoclavable positioning handles.",
+      "Pharma": {
+        "title": "Ultra-Clean Sanitary & Dairy Systems",
+        "keyword": "Electro-Polished SS 316L Tubes & 3A Sanitary Unions",
+        "titleEnd": "for hygienic pharmaceutical, food processing, and biotech manufacturing",
+        "description": "Mirror finished austenitic SS 304L/316L tubing and ASME-BPE / SMS / 3A union fittings designed for CIP/SIP sterilization and bio-burden prevention.",
         "bullets": [
-          "High color rendering index (Ra > 95)",
-          "Cold LED technology with zero heat radiation",
-          "360-degree balanced spring suspension arms",
-          "Available in mobile stand and ceiling configurations"
+          "Internal surface roughness Ra < 0.4 µm electro-polished",
+          "ASME-BPE & 3A sanitary tri-clamp fittings",
+          "Low ferrite austenitic microstructure",
+          "Certified FDA & biopharma compliance"
         ],
-        "cta": "View OT Surgical Lights",
-        "badge": "Shadow-Free Optics",
-        "image": "/products/spaces/operation_theater.jpg"
+        "cta": "View Sanitary Piping",
+        "badge": "Pharma & Dairy Grade",
+        "image": "/products/roxy/pipe_fittings.jpg"
       },
-      "Homecare": {
-        "title": "Reliable Aerosol & Care",
-        "keyword": "Home Care Nebulizers & Patient Mobility",
-        "titleEnd": "supporting chronic respiratory patients, homebound elders, and rehabilitation",
-        "description": "Ultra-fine medical aerosol nebulizers, digital weighing scales, hand exercisers, and low-friction SafeSlide patient transfer boards.",
+      "Marine": {
+        "title": "Seawater Corrosion Immunity",
+        "keyword": "Monel 400 & Cupro-Nickel 70-30 / 90-10",
+        "titleEnd": "for naval shipbuilding, marine condensers, and desalination plants",
+        "description": "Copper-nickel and Monel 400 piping systems resistant to high-velocity seawater flow, marine bio-fouling, and cavitation erosion.",
         "bullets": [
-          "Droplet size <5 microns for deep lung delivery",
-          "Low-noise quiet compressor and ultrasonic units",
-          "SafeSlide transfer boards prevent caregiver back injury",
-          "Easy to disinfect and sanitize at home"
+          "Cupro-Nickel 70-30 (C71500) & 90-10 (C70600)",
+          "Monel 400 (UNS N04400) seamless tubes & bars",
+          "Shipbuilding plates Grade A, B, D, E & AH36/DH36",
+          "Marine grade Aluminium 5083 & 6061 plates"
         ],
-        "cta": "View Home Care Products",
-        "badge": "Home Health & Rehab",
-        "image": "/products/goonj/ultrasonic_nebulizer.jpg"
+        "cta": "View Marine & Shipbuilding",
+        "badge": "Marine Engineering",
+        "image": "/products/roxy/cs_pipe.jpg"
       }
     },
     "platformCodeSnippets": {
-      "First Aid & Emergency (Shreehari)": [
-        { "num": 1, "code": "const supplier = 'Shreehari Surgicals & Co. (Mumbai)'" },
-        { "num": 2, "code": "const brand = 'SUPPORT (Learn First Aid, Save Lives)'" },
-        { "num": 3, "code": "const certifications = ['CE 9511/CE/R001', 'ISO 9001:2015']" },
-        { "num": 4, "code": "const productLines = ['Type A/B/C Kits', 'Scoop Stretchers', 'Spine Boards']" },
-        { "num": 5, "code": "return generateEmergencyCatalog(supplier)" }
+      "Stainless Steel (SS 304, 316, Duplex)": [
+        {
+          "num": 1,
+          "code": "const supplier = 'Roxy Enterprises (Mumbai)'"
+        },
+        {
+          "num": 2,
+          "code": "const coreGrades = ['SS 304/L', 'SS 316/L', 'SS 310S', 'SS 321', 'SS 904L']"
+        },
+        {
+          "num": 3,
+          "code": "const duplexSteel = ['Duplex S31803/S32205', 'Super Duplex S32750/S32760']"
+        },
+        {
+          "num": 4,
+          "code": "const certification = ['EN 10204 3.1 & 3.2 Mill Test Certificates']"
+        },
+        {
+          "num": 5,
+          "code": "return generateMetalsCatalog(supplier)"
+        }
       ],
-      "Hospital Holloware & OT (Goonj)": [
-        { "num": 1, "code": "const supplier = 'Goonj Communication & Electronic Scale Co. (Delhi)'" },
-        { "num": 2, "code": "const brands = ['Goonj', 'CYNOR Healthcare']" },
-        { "num": 3, "code": "const steelSpec = 'Grade 304 Stainless Steel Seamless Deep Drawn'" },
-        { "num": 4, "code": "const equipment = ['OT Lights', 'Autoclaves', 'Suction Machines', 'Hospital Beds']" },
-        { "num": 5, "code": "return deployHospitalEquipment(supplier)" }
+      "Nickel Alloys (Inconel, Monel, Hastelloy)": [
+        {
+          "num": 1,
+          "code": "const stockiest = 'Roxy Enterprises - 5th Kumbharwada, Mumbai'"
+        },
+        {
+          "num": 2,
+          "code": "const alloys = ['Inconel 600/625', 'Hastelloy C276/C22', 'Monel 400']"
+        },
+        {
+          "num": 3,
+          "code": "const marinePipes = ['Cupro-Nickel 70-30', 'Cupro-Nickel 90-10']"
+        },
+        {
+          "num": 4,
+          "code": "const forms = ['Pipes', 'Plates', 'Flanges', 'Fittings', 'Round Bars']"
+        },
+        {
+          "num": 5,
+          "code": "return deploySuperalloyCatalog(stockiest)"
+        }
       ],
-      "Protective Linen & Disposables": [
-        { "num": 1, "code": "const fabric = 'SMS/SMMS Hydrophobic Non-Woven'" },
-        { "num": 2, "code": "const protectionStandard = 'AAMI Level 3 Liquid & Viral Barrier'" },
-        { "num": 3, "code": "const sterilization = 'EO Sterile Pouches (Disposable Gowns, Packs)'" },
-        { "num": 4, "code": "const respirators = 'N95 5-Ply BFE/PFE >= 95%'" },
-        { "num": 5, "code": "export const disposablesCatalog = getCmsLinenSpec()" }
+      "Industrial Plates (BQ, Hardox, Corten)": [
+        {
+          "num": 1,
+          "code": "const boilerSpecs = 'ASTM A516 Gr. 60/70 with NACE MR0175 & HIC'"
+        },
+        {
+          "num": 2,
+          "code": "const hardoxGrades = 'HARDOX 400 / 450 / 500 Wear Plates'"
+        },
+        {
+          "num": 3,
+          "code": "const highTensilePlates = 'IS 2062 E350/E450, ASTM A572, Corten A588'"
+        },
+        {
+          "num": 4,
+          "code": "const testing = '100% Ultrasonic & Charpy V-Notch Impact Tested'"
+        },
+        {
+          "num": 5,
+          "code": "export const platesCatalog = getRoxyPlatesSpec()"
+        }
       ]
     },
     "securityCard": {
-      "title": "ISO 9001, CE Certified, RoHS Compliant & Bio-Medical Waste Standards",
-      "description": "Our medical equipment, hospital holloware, and emergency first aid supplies adhere to international safety directives, CE marking, and certified quality management systems.",
-      "ctaText": "View Certifications & Compliance"
+      "title": "3.1 & 3.2 Mill Test Certificates, ISO 9001:2015 & NACE MR0175 Compliance",
+      "description": "Our stainless steel, nickel alloys, and industrial plates adhere strictly to ASTM, ASME, EN, DIN, and IS quality directives, with complete chemical, mechanical, and ultrasonic NDT test traceability.",
+      "ctaText": "View Certifications & Quality Norms"
     },
     "businessMetricsCard": {
-      "title": "Trusted by 2,500+ Hospitals, Trauma Centers, Factories & Paramedics in India",
-      "ctaText": "Request Wholesale Price List",
+      "title": "Trusted by 1,800+ Procurement Teams, Fabricators & EPC Contractors in India & Overseas",
+      "ctaText": "Request Wholesale Quotation",
       "metrics": [
-        { "value": "2500+", "label": "Hospitals & Facilities" },
-        { "value": "304", "label": "Grade Stainless Steel" },
-        { "value": "99.8%", "label": "On-Time Cargo Dispatch" }
+        {
+          "value": "1800+",
+          "label": "Industrial Clients"
+        },
+        {
+          "value": "40+",
+          "label": "Steel & Alloy Grades"
+        },
+        {
+          "value": "99.8%",
+          "label": "On-Time Dispatch"
+        }
       ]
     },
     "bottomStatCapsules": [
       {
         "value": "100",
         "plus": "%",
-        "label": "Medical Grade SS 304",
+        "label": "3.1 / 3.2 Certified",
         "icon": "Award"
       },
       {
-        "value": "CE",
-        "plus": "✓",
-        "label": "Certified Compliance",
+        "value": "40",
+        "plus": "+",
+        "label": "Metal & Steel Grades",
         "icon": "Shield"
       },
       {
         "value": "24",
         "plus": "h",
-        "label": "Express Dispatch Delhi/Mumbai",
+        "label": "Stockyard Dispatch Mumbai",
         "icon": "Clock"
       },
       {
-        "value": "500",
+        "value": "1500",
         "plus": "+",
-        "label": "Medical & First Aid Products",
+        "label": "Tons Ready Inventory",
         "icon": "Box"
       }
     ]
   },
   "FeedSection": {
     "heading": {
-      "tag": "CLINICAL SPACES & REAL INSTALLATIONS",
-      "title": "Recent Operation Theatre, Hospital Ward & Emergency Rescues",
-      "actionText": "View Full Product Catalog",
+      "tag": "STOCKYARD GALLERY & REAL DISPATCHES",
+      "title": "Recent Industrial Piping, Heavy Plates & Alloy Shipments",
+      "actionText": "View Full Steel Catalog",
       "actionLink": "/product"
     },
-    "buttonText": "View Equipment",
+    "buttonText": "View Product",
     "feedItems": [
       {
         "id": 1,
-        "image": "/products/spaces/hospital_ward.jpg",
+        "image": "/products/roxy/ss_pipe.jpg",
         "products": [
-          "/products/goonj/ssp_crash_cart.jpg",
-          "/products/goonj/patient_monitor_12inch.jpg"
+          "/products/roxy/ss_pipe.jpg",
+          "/products/roxy/pipe_fittings.jpg"
         ]
       },
       {
         "id": 2,
-        "image": "/products/spaces/operation_theater.jpg",
+        "image": "/products/roxy/ss_plate.jpg",
         "products": [
-          "/products/goonj/ot_light_20_led.jpg",
-          "/products/goonj/disposable_sterile_gown.jpg"
+          "/products/roxy/ss_plate.jpg",
+          "/products/roxy/ss_circle.jpg"
         ]
       },
       {
         "id": 3,
-        "image": "/products/spaces/first_aid_action.jpg",
+        "image": "/products/roxy/cs_pipe.jpg",
         "products": [
-          "/products/shreehari/factory_kit_type_a.jpg",
-          "/products/shreehari/industrial_kit_type_b.jpg"
+          "/products/roxy/cs_pipe.jpg",
+          "/products/roxy/about_1.jpg"
         ]
       },
       {
         "id": 4,
-        "image": "/products/spaces/surgical_instruments.jpg",
+        "image": "/products/roxy/ss_flange.jpg",
         "products": [
-          "/products/goonj/dressing_drum_jointed.jpg",
-          "/products/goonj/surgical_instrument_tray.jpg"
+          "/products/roxy/ss_flange.jpg",
+          "/products/roxy/pipe_fittings.jpg"
         ]
       },
       {
         "id": 5,
-        "image": "/products/shreehari/scoop_stretcher_aluminium.jpg",
+        "image": "/products/roxy/ss_nut_bolt.jpg",
         "products": [
-          "/products/shreehari/scoop_stretcher_aluminium.jpg",
-          "/products/shreehari/spine_board_stretcher.jpg"
+          "/products/roxy/ss_nut_bolt.jpg",
+          "/products/roxy/ss_angle.jpg"
         ]
       },
       {
         "id": 6,
-        "image": "/products/goonj/led_phototherapy_unit.jpg",
+        "image": "/products/roxy/about_2.jpg",
         "products": [
-          "/products/goonj/led_phototherapy_unit.jpg",
-          "/products/goonj/touchscreen_syringe_pump.jpg"
+          "/products/roxy/about_1.jpg",
+          "/products/roxy/about_2.jpg"
         ]
       }
     ]
   },
   "BlogSection": {
     "heading": {
-      "tag": "HEALTHCARE EXPERTISE & CLINICAL GUIDES",
-      "title": "Medical, Surgical & First Aid Insights",
+      "tag": "METALLURGICAL EXPERTISE & BUYER GUIDES",
+      "title": "Steel, Nickel Alloy & Industrial Piping Insights",
       "actionText": "View All Articles"
     },
     "featuredPost": {
       "id": 1,
-      "tag": "Industrial Safety",
-      "tagBg": "#dc2626",
-      "date": "October 10, 2026",
-      "comments": "18 comments",
-      "title": "Essential Workplace First Aid Compliance: Types A, B, and C Kits Under the Factory Act",
-      "description": "Understand statutory requirements for Types A, B, and C first aid boxes, minimum mandatory supplies, and regular inspection protocols for factories and commercial facilities.",
-      "image": "/products/spaces/first_aid_action.jpg",
+      "tag": "Piping Systems",
+      "tagBg": "#2563eb",
+      "date": "June 17, 2026",
+      "comments": "24 comments",
+      "title": "Best Quality Pipe Fittings: Complete Engineering Guide to Butt-Weld, Socket-Weld & Instrumentation Fittings",
+      "description": "Understand material specifications for ASME B16.9 butt-weld elbows, Class 3000# socket-weld unions, and double ferrule compression fittings across petrochemical and process piping.",
+      "image": "/products/roxy/pipe_fittings.jpg",
       "buttonText": "Read Guide"
     },
     "secondaryPosts": [
       {
         "id": 2,
-        "tag": "Infection Control",
-        "tagBg": "#2563eb",
-        "date": "October 05, 2026",
-        "comments": "24 comments",
-        "title": "Hospital Holloware & Autoclave Sterilization: Standards for 304 Stainless Steel Utensils",
-        "description": "Why Grade 304 stainless steel seamless jointless dressing drums, instrument trays, and catheter trays prevent bacterial contamination and withstand 134°C steam sterilization.",
-        "image": "/products/spaces/surgical_instruments.jpg",
+        "tag": "Stainless Steel",
+        "tagBg": "#dc2626",
+        "date": "June 17, 2026",
+        "comments": "19 comments",
+        "title": "Stainless Steel Plates & Sheets: Grades SS 304, 316L, 310S, 321, Duplex & Super Duplex",
+        "description": "How to select the right stainless steel plate grade, hot rolled vs cold rolled finish, and thickness tolerances for chemical storage tanks and pressure vessels.",
+        "image": "/products/roxy/ss_plate.jpg",
         "buttonText": "Read Guide"
       },
       {
         "id": 3,
-        "tag": "Emergency Rescue",
-        "tagBg": "#ea580c",
-        "date": "September 28, 2026",
-        "comments": "16 comments",
-        "title": "Emergency Patient Stretchers Guide: Comparing Scoop Stretchers, Spine Boards, and Evacuation Chairs",
-        "description": "A critical comparative guide for trauma first responders: choosing between spinal immobilization boards, rapid decouple scoop stretchers, and wheeled evacuation stair chairs.",
-        "image": "/products/shreehari/scoop_stretcher_aluminium.jpg",
+        "tag": "Boiler Quality",
+        "tagBg": "#d97706",
+        "date": "June 17, 2026",
+        "comments": "21 comments",
+        "title": "Industrial Plates Demystified: Boiler Quality (ASTM A516 Gr. 60/70), Hardox 400/500, Corten & High Tensile",
+        "description": "A comprehensive comparative breakdown of pressure vessel boiler quality steel, abrasion-resistant Hardox, weathering Corten, and structural high tensile plates.",
+        "image": "/products/roxy/about_1.jpg",
         "buttonText": "Read Guide"
       },
       {
         "id": 4,
-        "tag": "Hospital Linen",
-        "tagBg": "#059669",
-        "date": "September 20, 2026",
-        "comments": "21 comments",
-        "title": "Sterile Surgical Gowns & Operation Theatre PPE: AAMI Levels and Liquid Barrier Protection",
-        "description": "An engineering look at SMS/SMMS hydrophobic fabrics, AAMI Level 3 fluid barriers, and sterile protective apparel designed for surgical operating teams.",
-        "image": "/products/spaces/operation_theater.jpg",
+        "tag": "Nickel Alloys",
+        "tagBg": "#7c3aed",
+        "date": "June 17, 2026",
+        "comments": "16 comments",
+        "title": "Nickel Alloys in Harsh Chemical & Marine Environments: Inconel 625, Hastelloy C276, Monel 400 & Cupro-Nickel",
+        "description": "Engineering insights into extreme temperature resistance and acid corrosion protection using nickel-chromium and copper-nickel alloys in critical plants.",
+        "image": "/products/roxy/about_2.jpg",
         "buttonText": "Read Guide"
       }
     ]
   },
   "PatchSection": {
-    "badge": "DELHI & MUMBAI HEALTHCARE NETWORK",
-    "title": "Delivering Certified Hospital Equipment, Surgical Holloware & Industrial First Aid Across India.",
-    "description": "Goonj and Shreehari Surgicals combine precision manufacturing, ISO and CE accreditations, and direct factory pricing to equip hospitals, emergency EMS fleets, and factories nationwide.",
+    "badge": "ROXY ENTERPRISES — MUMBAI STOCKYARD & EXPORT HUB",
+    "title": "Supplying Certified Stainless Steel, Nickel Alloys, Alloy Steel & Carbon Steel Worldwide.",
+    "description": "Roxy Enterprises combines vast stockyard inventory at 5th Kumbharwada, Mumbai, authentic 3.1/3.2 Mill Test Certificates, and competitive wholesale pricing to serve oil & gas, refinery, chemical, and engineering sectors globally.",
     "stats": [
       {
         "id": 1,
-        "value": "2500",
+        "value": "1800",
         "symbol": "+",
-        "label": "Hospitals, factories, trauma centers & clinics equipped."
+        "label": "Industrial plants, EPC contractors, refineries & fabricators supplied."
       },
       {
         "id": 2,
-        "value": "304",
-        "symbol": "SS",
-        "label": "Medical grade stainless steel & biocompatible polymers."
+        "value": "40",
+        "symbol": "+",
+        "label": "Stainless steel, nickel alloy, carbon steel & tool steel grades."
       },
       {
         "id": 3,
         "value": "100",
         "symbol": "%",
-        "label": "CE & ISO certified compliance with pan-India dispatch."
+        "label": "Mill test certified with prompt pan-India and international export dispatch."
       }
     ]
   }

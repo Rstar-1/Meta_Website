@@ -21,6 +21,7 @@ export const resolveImagePath = (path) => {
   if (
     trimmed.startsWith('/') ||
     trimmed.startsWith('products/') ||
+    trimmed.startsWith('roxy') ||
     trimmed.startsWith('shreehari') ||
     trimmed.startsWith('goonj') ||
     trimmed.startsWith('united_brothers') ||
@@ -38,13 +39,19 @@ export const resolveImagePath = (path) => {
   return base ? `${base}/${cleanPath}` : `/${cleanPath}`;
 };
 
-export const shreehariLogoColor = resolveImagePath('/shreehari_logo_color.png');
-export const shreehariLogoWhite = resolveImagePath('/shreehari_logo_white.png');
-export const unitedBrothersColor = shreehariLogoColor;
-export const unitedBrothersWhite = shreehariLogoWhite;
-export const soboLogo = shreehariLogoColor;
-export const soboWhite = shreehariLogoWhite;
-export const carpetPatchBanner = resolveImagePath('/products/carpet_patch_banner.jpg');
-export const carpetBanner = resolveImagePath('/products/carpet_banner.jpg');
+export const roxyLogoColor = resolveImagePath('/products/roxy/logo-horizontal.png');
+export const roxyLogoWhite = resolveImagePath('/products/roxy/logo-horizontal-white.png');
+export const roxyLogoVertical = resolveImagePath('/products/roxy/logo.png');
+export const roxyLogoVerticalWhite = resolveImagePath('/products/roxy/logo-2.png');
+export const roxyEmblemColor = resolveImagePath('/products/roxy/roxy-emblem.png');
+export const roxyEmblemWhite = resolveImagePath('/products/roxy/roxy-emblem-white.png');
+export const shreehariLogoColor = roxyLogoColor;
+export const shreehariLogoWhite = roxyLogoWhite;
+export const unitedBrothersColor = roxyLogoColor;
+export const unitedBrothersWhite = roxyLogoWhite;
+export const soboLogo = roxyLogoColor;
+export const soboWhite = roxyLogoWhite;
+export const carpetPatchBanner = resolveImagePath('/products/roxy/cta_bg.jpg');
+export const carpetBanner = resolveImagePath('/products/roxy/breadcumb_bg.jpg');
 
 export default resolveImagePath;

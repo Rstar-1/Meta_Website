@@ -11,40 +11,40 @@ import { resolveImagePath } from '../../utils/imageResolver';
 
 const QUICK_ACTIONS = [
     {
-        id: 'firstaid',
-        title: 'Industrial First Aid',
-        subtitle: 'Factories Act Types A, B, C',
-        icon: 'Shield',
-        iconBg: '#dc2626',
-        reply: 'Shreehari Surgicals & Co. (SUPPORT) manufactures CE-certified emergency first aid kits conforming strictly to Section 45 of the Indian Factories Act:\n\n• **Type A Kit**: For heavy industrial units and factories with 50+ workers (38 items).\n• **Type B Kit**: Designed for mid-scale facilities with 20 to 50 personnel.\n• **Type C Kit**: Compact heavy-gauge sheet metal & ABS boxes for workshops up to 20 workers.\n• **Wall-Mount Medical Cabinets**: Key-locked stainless steel cabinets with clear observation windows.',
-        cta: { text: 'View First Aid Kits', path: '/product?category=First%20Aid%20%26%20Emergency%20Care' }
-    },
-    {
-        id: 'holloware',
-        title: 'Hospital Holloware',
-        subtitle: 'Dressing Drums & Trays',
+        id: 'pipes',
+        title: 'Pipes & Tubes',
+        subtitle: 'Seamless, ERW & Welded',
         icon: 'Layers',
         iconBg: '#2563eb',
-        reply: 'Goonj & CYNOR manufacture hospital-grade AISI 304 non-magnetic stainless steel holloware:\n\n• **Dressing Drums**: Seamless jointed & jointless deep-drawn autoclave drums.\n• **Surgical Instrument Trays**: Trays with snug-fit flat lids, catheter trays, and Mayo table trays.\n• **Patient Care Utensils**: Kidney dishes, gallipots, bedpans, and male urinals.\n• **Autoclave Proof**: Tested for sterilization up to 134°C with smooth mirror polish.',
-        cta: { text: 'Explore Holloware Range', path: '/product?category=Hospital%20Holloware' }
+        reply: 'Roxy Enterprises supplies premium industrial pipes and tubes with EN 10204 3.1 & 3.2 Mill Test Certificates:\n\n• **Stainless Steel Pipes**: Seamless & ERW in SS 304, 304L, 316, 316L, 321, 310S, and 904L.\n• **Duplex & Super Duplex**: UNS S31803 / S32205 & S32750 for offshore and high-chloride services.\n• **Carbon Steel & Alloy Steel**: ASTM A106 Gr. B, A333 Low Temp, A335 (P11, P22, P91).\n• **Custom Sizing**: Schedules Sch 10 to Sch XXS with full ultrasonic NDT testing.',
+        cta: { text: 'View Pipes & Tubes', path: '/product?category=Pipes%20%26%20Tubes%20(Seamless%2C%20ERW%2C%20Welded)' }
     },
     {
-        id: 'otlights',
-        title: 'O.T. Lights & Autoclaves',
-        subtitle: 'Shadowless LED & Sterilizers',
+        id: 'plates',
+        title: 'Plates & Sheets',
+        subtitle: 'Hardox, Boiler & Corten',
+        icon: 'Shield',
+        iconBg: '#dc2626',
+        reply: 'We maintain extensive stock of high-grade industrial plates ready for immediate dispatch:\n\n• **Boiler Quality Plates**: ASTM A516 Gr. 60 / Gr. 70 for pressure vessels and autoclaves.\n• **Wear Resistant Plates**: Hardox 400, Hardox 500 & Abrex 400 for mining, crushing, and fabrication.\n• **Corten & Weathering Steel**: ASTM A588 & A242 atmospheric corrosion resistant plates.\n• **High Tensile & Structural**: S355JR, IS 2062, and quenched & tempered alloy plates.',
+        cta: { text: 'Explore Industrial Plates', path: '/product?category=Industrial%20Plates%20%26%20Sheets' }
+    },
+    {
+        id: 'alloys',
+        title: 'Nickel & Superalloys',
+        subtitle: 'Inconel, Monel & Hastelloy',
         icon: 'Sun',
         iconBg: '#d97706',
-        reply: 'Precision clinical operation theatre, suction, and sterilization equipment:\n\n• **Cold LED OT Lights**: 7, 12, and 20 LED surgical lights with shadow-free optics (50,000h lifespan).\n• **Deluxe Steam Autoclaves**: 12x12 & 14x15 stainless steel sterilizers with dial pressure gauges.\n• **Suction Apparatus**: High-vacuum 1/4 HP heavy-duty ward and theatre suction units.',
-        cta: { text: 'View OT & Sterilization', path: '/product?category=Sterilization%20%26%20Suction' }
+        reply: 'Specialty high-nickel alloys and corrosion-resistant materials for demanding process plants:\n\n• **Inconel**: Inconel 600, 625, 718, and 825 for extreme thermal and oxidizing environments.\n• **Hastelloy**: C276 and C22 for severe acid, wet chlorine, and chemical processing.\n• **Monel & Cupro-Nickel**: Monel 400, K500, and Copper-Nickel 90/10 & 70/30 for marine piping.\n• **Complete Traceability**: 100% positive material identification (PMI) verified.',
+        cta: { text: 'View Nickel Alloys', path: '/product?category=Nickel%20Alloys%20%26%20High-Performance%20Superalloys' }
     },
     {
         id: 'contact',
-        title: 'Tenders & Wholesale',
-        subtitle: 'Delhi & Mumbai Central Hubs',
+        title: 'Procurement & Quotes',
+        subtitle: 'Mumbai Stockyard Desk',
         icon: 'Phone',
         iconBg: '#059669',
-        reply: `Connect with our central coordination offices for institutional hospital tenders, wholesale rate cards, and bulk cargo supply:\n\n• **Delhi Hub (Goonj)**: ${import.meta.env.VITE_GOONJ_PHONE || '+91 98731 98731'} | ${import.meta.env.VITE_GOONJ_EMAIL || 'info@goonjcom.in'}\n• **Mumbai Hub (Shreehari)**: ${import.meta.env.VITE_SHREEHARI_PHONE || '+91 98179 26992'} | ${import.meta.env.VITE_SHREEHARI_EMAIL || 'shreeharisurgicals@gmail.com'}\n• **Pan-India Dispatch**: Express logistics with real-time transit consignment tracking.`,
-        cta: { text: 'Submit Institutional Inquiry', path: '/connect' }
+        reply: `Connect with Mr. Ambalal Choudhary at Roxy Enterprises procurement desk for fast mill rate quotes and project inquiries:\n\n• **Direct Phone**: ${import.meta.env.VITE_PHONE || '+91 97692 57080'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'roxyenterprises91@gmail.com'}\n• **Mumbai Stockyard & Office**: Office no.12, 2nd Floor, Doctor Bldg D Block, Maruti Mandir Marg, 5th Kumbharwada, Mumbai - 400004 (MH), India\n• **Pan-India & Global Export**: Fast containerized cargo and road logistics with real-time MTC dispatch.`,
+        cta: { text: 'Submit Procurement RFP', path: '/connect' }
     }
 ];
 
@@ -52,90 +52,88 @@ const generateBotReply = (userText) => {
     const q = (userText || '').toLowerCase().trim();
     const allProducts = (productsData || []).filter((p) => !p.isBanner);
 
-    // 1. First Aid & Emergency Kits / Cabinets
-    if (q.includes('first aid') || q.includes('kit') || q.includes('type a') || q.includes('type b') || q.includes('type c') || q.includes('cabinet') || q.includes('burn') || q.includes('relief') || q.includes('factory act') || q.includes('support')) {
-        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('first aid') || (p.subCategory || '').toLowerCase().includes('first aid') || (p.name || '').toLowerCase().includes('first aid')).slice(0, 3);
+    // 1. Pipes & Tubes (Seamless, ERW, Welded)
+    if (q.includes('pipe') || q.includes('tube') || q.includes('tubing') || q.includes('seamless') || q.includes('erw') || q.includes('welded pipe') || q.includes('sch ') || q.includes('schedule') || q.includes('a106') || q.includes('a312') || q.includes('a335') || q.includes('a213')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('pipe') || (p.name || '').toLowerCase().includes('pipe') || (p.subCategory || '').toLowerCase().includes('pipe')).slice(0, 3);
         return {
-            text: 'Shreehari Surgicals & Co. (brand SUPPORT) provides CE-certified industrial first aid equipment conforming to Section 45 of the Indian Factories Act:\n\n• **Types A, B & C Kits**: Equipped with 28 to 38 medical components, burn dressings, and multilingual resuscitation charts.\n• **Stainless Steel Wall Cabinets**: Heavy-gauge steel and SS 304 lockable medical stations.\n• **Trauma & Relief Kits**: Compact family, vehicle, and civil relief kits.',
+            text: 'Roxy Enterprises stocks a comprehensive range of industrial seamless, ERW, and welded pipes:\n\n• **Stainless Steel Pipes**: SS 304/304L, 316/316L, 321, 310, 904L, Duplex 2205, and Super Duplex 2507.\n• **Carbon Steel & Alloy Steel**: ASTM A106 Gr. B, ASTM A333 (Grade 6), ASTM A335 (P11, P22, P91).\n• **Certifications**: 100% EN 10204 3.1 & 3.2 Mill Test Certificates with ultrasonic NDT.',
             products: matching,
-            cta: { text: 'Explore First Aid Kits', path: '/product?category=First%20Aid%20%26%20Emergency%20Care' }
+            cta: { text: 'View Pipes & Tubes', path: '/product?category=Pipes%20%26%20Tubes%20(Seamless%2C%20ERW%2C%20Welded)' }
         };
     }
 
-    // 2. Emergency Stretchers & Evacuation
-    if (q.includes('stretcher') || q.includes('scoop') || q.includes('spine') || q.includes('evacuation') || q.includes('stair') || q.includes('chair') || q.includes('slide') || q.includes('transfer')) {
-        const matching = allProducts.filter(p => (p.name || '').toLowerCase().includes('stretcher') || (p.name || '').toLowerCase().includes('spine') || (p.name || '').toLowerCase().includes('slide') || (p.subCategory || '').toLowerCase().includes('stretcher') || (p.subCategory || '').toLowerCase().includes('chair')).slice(0, 3);
+    // 2. Industrial Plates & Sheets (Boiler Quality, Hardox, Corten)
+    if (q.includes('plate') || q.includes('sheet') || q.includes('hardox') || q.includes('boiler') || q.includes('a516') || q.includes('corten') || q.includes('a588') || q.includes('wear') || q.includes('abrex') || q.includes('shim') || q.includes('strip')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('plate') || (p.name || '').toLowerCase().includes('plate') || (p.name || '').toLowerCase().includes('sheet')).slice(0, 3);
         return {
-            text: 'We manufacture certified patient immobilisation and emergency rescue stretchers:\n\n• **Aluminium Scoop Stretcher**: Decouple clutch hinges enable gentle sliding under patients without spinal flexion.\n• **HDPE Spine Board**: 100% X-ray translucent, buoyant water rescue spinal immobilizer.\n• **Evacuation Stair Chair**: Wheeled compact folding chair for multi-floor stair evacuation.',
+            text: 'We maintain ready stock of heavy industrial plates and pressure-vessel steels:\n\n• **Boiler Quality (BQ) Plates**: ASTM A516 Gr. 60 / 70 for autoclaves, boilers, and petrochemical reactors.\n• **Abrasion Resistant Plates**: Hardox 400 & 500 for heavy earthmoving, mining chutes, and fabrication.\n• **Weathering & High Tensile**: Corten ASTM A588, IS 2062 E350, S355JR structural plates.',
             products: matching,
-            cta: { text: 'View Emergency Stretchers', path: '/product?category=First%20Aid%20%26%20Emergency%20Care' }
+            cta: { text: 'View Industrial Plates', path: '/product?category=Industrial%20Plates%20%26%20Sheets' }
         };
     }
 
-    // 3. Hospital Holloware & Utensils
-    if (q.includes('holloware') || q.includes('drum') || q.includes('tray') || q.includes('catheter') || q.includes('kidney') || q.includes('bedpan') || q.includes('urinal') || q.includes('gallipot') || q.includes('stainless steel') || q.includes('ss 304')) {
-        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('holloware') || (p.name || '').toLowerCase().includes('drum') || (p.name || '').toLowerCase().includes('tray')).slice(0, 3);
+    // 3. Pipe Fittings & Butt-Weld
+    if (q.includes('fitting') || q.includes('elbow') || q.includes('tee') || q.includes('reducer') || q.includes('cap') || q.includes('stub end') || q.includes('butt-weld') || q.includes('socket weld') || q.includes('union') || q.includes('nipple')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('fitting') || (p.name || '').toLowerCase().includes('elbow') || (p.name || '').toLowerCase().includes('tee')).slice(0, 3);
         return {
-            text: 'Goonj & CYNOR offer premium hospital-grade AISI 304 stainless steel holloware:\n\n• **Dressing Drums**: Autoclave sterilizing drums with perforated body vents.\n• **Instrument Trays**: With recessed flat lids, Mayo stand trays, and Cidex trays.\n• **Patient Utensils**: Contoured fracture bedpans, male urinals, and seamless kidney dishes.',
+            text: 'Industrial butt-weld, socket-weld, and threaded pipe fittings conforming to ASME B16.9 / B16.11:\n\n• **Types**: Long/short radius 90° & 45° elbows, equal/reducing tees, concentric/eccentric reducers, end caps.\n• **Grades**: ASTM A403 WP304/304L, WP316/316L, Duplex, ASTM A234 WPB, and Nickel alloys.\n• **Pressure Ratings**: Sch 10 to Sch XXS, and 3000# / 6000# forged socket-weld fittings.',
             products: matching,
-            cta: { text: 'View Hospital Holloware', path: '/product?category=Hospital%20Holloware' }
+            cta: { text: 'View Pipe Fittings', path: '/product?category=Pipe%20Fittings%20%26%20Butt-Weld%20Fittings' }
         };
     }
 
-    // 4. OT Surgical & Examination Lights
-    if (q.includes('light') || q.includes('ot') || q.includes('led') || q.includes('lamp') || q.includes('theatre') || q.includes('shadowless') || q.includes('examination')) {
-        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('light') || (p.name || '').toLowerCase().includes('light')).slice(0, 3);
+    // 4. Forged Steel Flanges
+    if (q.includes('flange') || q.includes('weld neck') || q.includes('slip on') || q.includes('blind') || q.includes('socket weld flange') || q.includes('threaded flange') || q.includes('lap joint') || q.includes('150#') || q.includes('300#') || q.includes('600#')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('flange') || (p.name || '').toLowerCase().includes('flange')).slice(0, 3);
         return {
-            text: 'Our surgical illumination range features high-efficiency cold LED optical domes:\n\n• **7 & 12 LED Lights**: Compact mobile stand procedural lamps with 35,000–50,000 Lux.\n• **20 LED OT Surgical Light**: High-intensity shadowless dome delivering up to 100,000 Lux.\n• **50,000h Diode Life**: Energy-efficient, cool beam preventing tissue dehydration.',
+            text: 'Precision forged industrial flanges adhering to ASME B16.5, DIN, and BS specifications:\n\n• **Class Ratings**: Class 150#, 300#, 600#, 900#, 1500#, and 2500# (PN6 to PN64).\n• **Configurations**: Weld Neck (WN), Slip-On (SORF), Blind (BLRF), Socket Weld (SWRF), Threaded.\n• **Metallurgy**: Stainless Steel 304/316L, ASTM A105 Carbon Steel, Alloy Steel A182 F11/F22, Inconel.',
             products: matching,
-            cta: { text: 'View OT Surgical Lights', path: '/product?category=O.T.%20%26%20Examination%20Lights' }
+            cta: { text: 'View Flanges Range', path: '/product?category=Flanges%20(Forged%2C%20Slip-On%2C%20Blind%2C%20Weld-Neck)' }
         };
     }
 
-    // 5. Autoclaves & Suction Apparatus
-    if (q.includes('autoclave') || q.includes('steril') || q.includes('suction') || q.includes('vacuum') || q.includes('steam')) {
-        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('sterilization') || (p.name || '').toLowerCase().includes('autoclave') || (p.name || '').toLowerCase().includes('suction')).slice(0, 3);
+    // 5. Nickel Alloys & Superalloys
+    if (q.includes('nickel') || q.includes('inconel') || q.includes('hastelloy') || q.includes('monel') || q.includes('cupro') || q.includes('copper nickel') || q.includes('alloy 20') || q.includes('super duplex') || q.includes('uns ')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('nickel') || (p.name || '').toLowerCase().includes('inconel') || (p.name || '').toLowerCase().includes('hastelloy') || (p.name || '').toLowerCase().includes('monel')).slice(0, 3);
         return {
-            text: 'Sterilization & suction apparatus built for rigorous clinical environments:\n\n• **12x12 & 14x15 Deluxe Autoclaves**: Heavy stainless steel steam pressure vessels with safety valves.\n• **Triple-Wall Radial Locking Autoclaves**: Microprocessor-controlled automatic vacuum cycle.\n• **Electric Suction Machines**: Heavy-duty 1/4 HP oil-free pump with twin glass/polycarbonate bottles.',
+            text: 'Specialty high-nickel superalloys engineered for aggressive corrosion and elevated temperatures:\n\n• **Inconel**: 600, 625, 718, and 825 pipes, plates, round bars, and fittings.\n• **Hastelloy**: C276, C22, and B2 for chemical and wet chlorine processing.\n• **Monel & Cupro-Nickel**: Monel 400 and Copper-Nickel 90/10 & 70/30 for marine seawater piping.',
             products: matching,
-            cta: { text: 'View Autoclaves & Suction', path: '/product?category=Sterilization%20%26%20Suction' }
+            cta: { text: 'View Nickel Alloys', path: '/product?category=Nickel%20Alloys%20%26%20High-Performance%20Superalloys' }
         };
     }
 
-    // 6. Hospital Furniture & Crash Carts
-    if (q.includes('furniture') || q.includes('bed') || q.includes('crash cart') || q.includes('cart') || q.includes('trolley') || q.includes('ecg') || q.includes('icu') || q.includes('fowler')) {
-        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('furniture') || (p.name || '').toLowerCase().includes('cart') || (p.name || '').toLowerCase().includes('bed') || (p.name || '').toLowerCase().includes('trolley')).slice(0, 3);
+    // 6. Circles, Rings, Shims & Fasteners
+    if (q.includes('circle') || q.includes('ring') || q.includes('fastener') || q.includes('bolt') || q.includes('nut') || q.includes('stud') || q.includes('washer') || q.includes('angle') || q.includes('tool steel') || q.includes('flat bar') || q.includes('d2') || q.includes('h13')) {
+        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('circle') || (p.category || '').toLowerCase().includes('fastener') || (p.name || '').toLowerCase().includes('circle') || (p.name || '').toLowerCase().includes('bolt')).slice(0, 3);
         return {
-            text: 'Heavy-duty hospital furniture engineered for patient comfort and emergency response:\n\n• **SSP Emergency Crash Carts**: Multi-tier locking drawers with cardiac backboard & IV pole.\n• **Stainless Steel ECG & Drug Trolleys**: Two and three-tier smooth rolling utility carts.\n• **ICU & Ward Beds**: Multi-position motorized and mechanical fowler hospital beds.',
+            text: 'Cut-to-size stainless steel circles, rings, precision shims, and heavy-duty fasteners:\n\n• **SS Circles & Rings**: Plasma and laser cut to exact project diameters.\n• **Industrial Fasteners**: High tensile ASTM A193 B7 / A194 2H stud bolts, SS 304/316 hex bolts & nuts.\n• **Structural & Tool Steels**: SS Angles, Channels, and D2 / H13 alloy tool steel round bars.',
             products: matching,
-            cta: { text: 'View Hospital Furniture', path: '/product?category=Hospital%20Furniture' }
+            cta: { text: 'View Fasteners & Hardware', path: '/product?category=Fasteners%2C%20Nuts%2C%20Bolts%20%26%20Hardware' }
         };
     }
 
-    // 7. Hospital Linen, Gowns & Disposables
-    if (q.includes('linen') || q.includes('gown') || q.includes('scrub') || q.includes('mask') || q.includes('n95') || q.includes('ppe') || q.includes('apron') || q.includes('disposable')) {
-        const matching = allProducts.filter(p => (p.category || '').toLowerCase().includes('linen') || (p.name || '').toLowerCase().includes('gown') || (p.name || '').toLowerCase().includes('mask')).slice(0, 3);
+    // 7. Mill Test Certificates & Quality
+    if (q.includes('mtc') || q.includes('certificate') || q.includes('en 10204') || q.includes('3.1') || q.includes('3.2') || q.includes('testing') || q.includes('ndt') || q.includes('quality') || q.includes('pmi')) {
         return {
-            text: 'Sterile protective apparel and hospital ward linen:\n\n• **Disposable Surgical Gowns**: Hydrophobic SMS/SMMS liquid barrier, EO sterile packed.\n• **Doctor Lab Coats & Scrubs**: Premium reusable combed cotton surgeon suits.\n• **N95 Respirators & 3-Ply Masks**: High-filtration particulate surgical masks.',
-            products: matching,
-            cta: { text: 'View Hospital Linen & PPE', path: '/product?category=Hospital%20Linen%20%26%20Disposables' }
+            text: 'All materials supplied by Roxy Enterprises adhere strictly to international quality norms:\n\n• **EN 10204 3.1 & 3.2**: Certified manufacturer test certificates issued with heat numbers.\n• **Testing Protocols**: 100% PMI spectro chemical analysis, ultrasonic flaw detection, tensile/hardness tests.\n• **Third-Party Inspection**: TUV, Lloyd’s Register, Bureau Veritas, DNV, and SGS inspections accommodated.',
+            cta: { text: 'Learn About Quality Assurance', path: '/supplier' }
         };
     }
 
-    // 8. Wholesale / Price / Tender / Quotation
-    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('wholesale') || q.includes('quote') || q.includes('quotation') || q.includes('tender') || q.includes('bulk')) {
+    // 8. Wholesale / Price / Quotation / RFP
+    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('wholesale') || q.includes('quote') || q.includes('quotation') || q.includes('tender') || q.includes('bulk') || q.includes('rfp')) {
         const matching = allProducts.slice(0, 3);
         return {
-            text: 'We provide direct manufacturer wholesale pricing and institutional tender quotations:\n\n• **Direct Factory Rates**: Zero distributor markups on hospital holloware, OT lights, and first aid kits.\n• **Bulk Tenders**: Custom specifications, rate contracts, and GST invoices provided.\n• **Pan-India Logistics**: Fast containerized cargo transit from Delhi and Mumbai warehouses.',
+            text: 'We provide competitive direct stockyard pricing and project rate contracts:\n\n• **Stockyard Wholesale Rates**: Direct supply from Mumbai without intermediary markups.\n• **Quick Turnaround**: Custom Bill of Materials (BOM) quotations provided within 2 to 4 business hours.\n• **Pan-India & Global Export**: Full container load (FCL) and less than container load (LCL) dispatches.',
             products: matching,
             cta: { text: 'Request Wholesale Quotation', path: '/connect' }
         };
     }
 
     // 9. Contact / Address / Helplines
-    if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('whatsapp') || q.includes('mail') || q.includes('address') || q.includes('where') || q.includes('location') || q.includes('delhi') || q.includes('mumbai')) {
+    if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('whatsapp') || q.includes('mail') || q.includes('address') || q.includes('where') || q.includes('location') || q.includes('mumbai') || q.includes('ambalal')) {
         return {
-            text: `Contact our verified manufacturer hubs directly:\n\n• **Delhi Hub (Goonj & CYNOR)**: 58-B, Damodar Park, Dilshad Garden, Delhi - 110095\n  Phone: +91 98731 98731 / +91 98732 98731\n  Email: info@goonjcom.in\n\n• **Mumbai Hub (Shreehari Surgicals - SUPPORT)**: Samuel Street, Masjid Bunder (W), Mumbai - 400003\n  Phone: +91 98179 26992 / +91 98205 60982\n  Email: shreeharisurgicals@gmail.com\n\n• **Business Hours**: Mon–Sat: 09:00 AM – 07:00 PM IST (Emergency Dispatch: 24/7)`,
+            text: `Connect with Roxy Enterprises procurement & sales desk:\n\n• **Key Person**: Mr. Ambalal Choudhary (Procurement & Sales)\n• **Phone / WhatsApp**: ${import.meta.env.VITE_PHONE || '+91 97692 57080'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'roxyenterprises91@gmail.com'}\n• **Address**: Office no.12, 2nd Floor, 20/26, Doctor Building D Block, Maruti Mandir Marg, 5th Kumbharwada, Mumbai - 400004 (MH), India\n• **Operating Hours**: Monday – Saturday: 09:30 AM – 07:00 PM IST`,
             cta: { text: 'Go to Contact Page', path: '/connect' }
         };
     }
@@ -151,22 +149,22 @@ const generateBotReply = (userText) => {
 
     if (matching.length > 0) {
         return {
-            text: `Here are matching healthcare and surgical equipment items for "${userText}":`,
+            text: `Here are matching steel and piping items for "${userText}":`,
             products: matching,
-            cta: { text: 'View Products', path: `/product?category=${encodeURIComponent(matching[0].category || 'Hospital Holloware')}` }
+            cta: { text: 'View Products', path: `/product?category=${encodeURIComponent(matching[0].category || 'Pipes & Tubes (Seamless, ERW, Welded)')}` }
         };
     }
 
-    // 11. Default friendly healthcare fallback
+    // 11. Default friendly steel fallback
     return {
-        text: 'I can assist you with CE-certified industrial first aid kits, emergency scoop stretchers, AISI 304 hospital holloware, shadowless cold LED surgical lights, autoclaves, and institutional wholesale tenders. How can I help you today?',
+        text: 'I can assist you with Seamless & ERW Pipes, Industrial Plates (Boiler Quality, Hardox, Corten), High-Nickel Alloys (Inconel, Hastelloy, Monel), Butt-Weld Fittings, Flanges, and Mill Test Certificates (EN 10204 3.1 & 3.2). How can I assist your procurement team today?',
         products: allProducts.slice(0, 2),
-        cta: { text: 'Explore All Products', path: '/product' }
+        cta: { text: 'Explore All Metals', path: '/product' }
     };
 };
 
 const ProductItem = memo(({ product, onSelect }) => {
-    const rawImg = resolveImagePath(product.image || product.images?.[0] || '/products/enhanced/hd_first_aid_box.jpg');
+    const rawImg = resolveImagePath(product.image || product.images?.[0] || '/products/roxy/ss_pipe.jpg');
     const priceDisplay = product.priceFormatted || (product.price != null ? `₹${product.price}` : 'Factory Pricing');
     const handleClick = useCallback(() => onSelect(product), [onSelect, product]);
 
@@ -222,7 +220,7 @@ const ProductSearch = memo(({ searchQuery, onSearchChange, onSelect, onBack }) =
                     <Fields
                         type="input"
                         version="v0"
-                        placeholder="Search first aid, drums, lights, autoclaves..."
+                        placeholder="Search pipes, plates, fittings, flanges, inconel, hardox..."
                         value={searchQuery}
                         onChange={onSearchChange}
                         icon="Search"
@@ -269,8 +267,8 @@ const ProductSearch = memo(({ searchQuery, onSearchChange, onSelect, onBack }) =
                 ) : (
                     <div className="p-24 text-center text-gray">
                         <Icon name="Search" width="28" height="28" stroke="var(--gray)" className="mx-auto mb-8 opacity-50" />
-                        <p className="small-text font-500 text-dark m-0">No medical products found</p>
-                        <p className="mini-text text-gray m-0 mt-4">Try searching for "First Aid", "Dressing Drum", "OT Light", "Autoclave", or "Stretcher"</p>
+                        <p className="small-text font-500 text-dark m-0">No metal products found</p>
+                        <p className="mini-text text-gray m-0 mt-4">Try searching for "Seamless Pipe", "Hardox", "Flange", "Fittings", or "Inconel"</p>
                     </div>
                 )}
             </div>
@@ -296,7 +294,7 @@ const ChatTeaser = memo(({ onOpen, onDismiss }) => {
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-6 text-primary">
                     <Icon name="Shield" width="16" height="16" stroke="currentColor" />
-                    <p className="small-text font-600 text-dark uppercase tracking-wider">HEALTHCARE DESK</p>
+                    <p className="small-text font-600 text-dark uppercase tracking-wider">ROXY METALS DESK</p>
                 </div>
                 <Button
                     version="icon"
@@ -310,7 +308,7 @@ const ChatTeaser = memo(({ onOpen, onDismiss }) => {
                 />
             </div>
             <p className="mini-text text-dark font-500 m-0 leading-tight">
-                Hi! 👋 Need hospital holloware, OT equipment, or certified first aid kits? Let's chat!
+                Hi! 👋 Need seamless pipes, boiler plates, nickel alloys, or mill certified fittings? Let's chat!
             </p>
         </div>
     );
@@ -327,9 +325,9 @@ const ChatHeader = memo(({ onClose, activeMode, onToggleMode }) => (
             </div>
             <div>
                 <h4 className="headmini-text font-600 text-dark m-0">
-                    {activeMode === 'search' ? 'Medical Product Catalog' : 'Healthcare Assistant'}
+                    {activeMode === 'search' ? 'Metals & Steel Catalog' : 'Roxy Metal Desk'}
                 </h4>
-                <p className="mini-text font-400 text-success m-0 mt-1">● Goonj & Shreehari Verified Live</p>
+                <p className="mini-text font-400 text-success m-0 mt-1">● Roxy Enterprises Verified Live</p>
             </div>
         </div>
 
@@ -367,12 +365,12 @@ ChatHeader.displayName = 'ChatHeader';
 const ChatWelcome = memo(({ onActionClick }) => (
     <div className="h-350" data-no-cursor="true">
         <h2 className="title-text text-dark font-700 capitalize m-0">
-            Healthcare Supply Desk 👋<br />
+            Roxy Metals Procurement Desk 👋<br />
             How can we <span className="text-primary">help you</span>?
         </h2>
 
         <p className="mini-text text-gray mt-6 m-0 leading-relaxed">
-            Explore certified first aid boxes, AISI 304 holloware, OT surgical lights, or request factory wholesale tenders.
+            Explore certified stainless steel pipes, industrial plates, nickel alloys, or request wholesale mill quotations.
         </p>
 
         <div className="grid-cols-2 gap-8 mt-12">

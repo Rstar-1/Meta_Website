@@ -44,14 +44,14 @@ const Connect = () => {
     return (
         <>
             <SEO
-                title="Connect With Us - Hospital Equipment & First Aid Supply | Goonj & Shreehari"
-                description="Get in touch with Goonj & Shreehari Surgicals for institutional hospital holloware, OT surgical lights, autoclaves, CE-certified first aid boxes, and emergency stretchers. Delhi & Mumbai distribution hubs."
+                title="Connect With Us - Roxy Enterprises | Exporter, Stockiest & Supplier Mumbai"
+                description="Kind Attention Procurement Department: Connect with Roxy Enterprises for Stainless Steel, Nickel Alloy, Alloy Steel & Carbon Steel Pipes, Plates, Flanges, and Fittings. Stockyard at 5th Kumbharwada, Mumbai. Call +91 9769257080."
                 path="/connect"
                 breadcrumbs={BREADCRUMBS}
             />
             <Banner
                 title="Connect With Us"
-                desc="Direct Factory Inquiries, Tender Specifications & Institutional Healthcare Quotations"
+                desc="Kind Attention: Procurement Department — Direct Exporter & Stockiest Quotations, MTC 3.1/3.2 Specs & Inquiries"
                 breadcrumbs={BREADCRUMBS}
             />
             {connectSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

@@ -18,16 +18,16 @@ const ENQUIRY_FIELDS = [
     },
     {
         name: 'institution',
-        label: 'Hospital / Facility / Organization Name',
+        label: 'Company / Organization / Plant Name',
         type: 'text',
-        placeholder: 'Enter hospital or company name',
+        placeholder: 'Enter company or procurement organization name',
         validation: { required: true }
     },
     {
         name: 'email',
         label: 'Official Email',
         type: 'email',
-        placeholder: 'Enter your email address',
+        placeholder: 'Enter your business email address',
         validation: { required: true }
     },
     {
@@ -42,15 +42,15 @@ const ENQUIRY_FIELDS = [
         label: 'Product Category of Interest',
         type: 'select',
         options: [
-            { label: 'Industrial First Aid Kits & Cabinets (Shreehari - SUPPORT)', value: 'Industrial First Aid' },
-            { label: 'Emergency Stretchers & Evacuation Chairs (Shreehari)', value: 'Emergency Stretchers' },
-            { label: 'Hospital Stainless Steel Holloware & Dressing Drums (Goonj)', value: 'Hospital Holloware' },
-            { label: 'O.T. & Examination LED Surgical Lights (Goonj / CYNOR)', value: 'OT Lights' },
-            { label: 'Pressure Autoclaves & Suction Apparatus (Goonj)', value: 'Sterilization & Suction' },
-            { label: 'Hospital ICU Beds, Crash Carts & Ward Furniture (CYNOR)', value: 'Hospital Furniture' },
-            { label: 'Sterile Surgical Gowns & Hospital Linen (CYNOR)', value: 'Hospital Linen' },
-            { label: 'Neonatal Phototherapy & Patient Monitors (CYNOR)', value: 'Diagnostic & Neonatal' },
-            { label: 'Color-Coded Biohazard Waste Bins (Goonj)', value: 'Clinical Waste Bins' }
+            { label: 'Stainless Steel Seamless & ERW Pipes (SS 304/316/321/Duplex)', value: 'SS Pipes' },
+            { label: 'Carbon Steel & Boiler Quality Pipes (ASTM A106 Gr. B / BS 3059)', value: 'CS Boiler Pipes' },
+            { label: 'Industrial Plates (Boiler Quality A516 Gr. 70, Hardox, Corten, High Tensile)', value: 'Industrial Plates' },
+            { label: 'Pipe Fittings & High Pressure Forged Fittings (ASME B16.9 / 3000#)', value: 'Pipe Fittings' },
+            { label: 'Stainless Steel & Nickel Alloy Flanges (WNRF / SORF / BLRF)', value: 'Flanges' },
+            { label: 'Nickel Alloys & Superalloys (Inconel 625, Hastelloy C276, Monel 400)', value: 'Nickel Alloys' },
+            { label: 'Stainless Steel Circles, Rings, Shims & Strips', value: 'Circles and Shims' },
+            { label: 'High Tensile Fasteners (ASTM A193 B7/B8 Studs, Hex Bolts & Nuts)', value: 'Fasteners' },
+            { label: 'Structural Steel Angles, Beams & Die/Tool Steel (D2, H13, EN-Series)', value: 'Structural and Tool Steel' }
         ],
         placeholder: 'Select Product Interest'
     },
@@ -58,7 +58,7 @@ const ENQUIRY_FIELDS = [
         name: 'message',
         label: 'Requirement Details & Quantity',
         type: 'textarea',
-        placeholder: 'Specify required quantities, models, delivery destination, or institutional tender requirements...',
+        placeholder: 'Specify material grade (e.g. SS 316L, ASTM A516 Gr. 70, Inconel 625), dimensions, schedule/thickness, quantity, required test certificates, or delivery destination...',
         style: { width: '97%' }
     }
 ];
@@ -66,37 +66,30 @@ const ENQUIRY_FIELDS = [
 const CONTACT_DETAILS = [
     {
         icon: 'MapPin',
-        title: 'Delhi Distribution Hub (Goonj / CYNOR)',
-        desc: '58-B, Damodar Park Ind. Area, Dilshad Garden, Delhi - 110095',
-        link: 'https://maps.google.com/?q=Dilshad+Garden+Delhi',
-        sub: 'Hospital Holloware, OT Lights, Autoclaves & ICU Furniture | GST: 07AAAFG8942K1ZV'
-    },
-    {
-        icon: 'MapPin',
-        title: 'Mumbai First Aid Hub (Shreehari Surgicals)',
-        desc: 'Off No: 11, 12, 2nd Floor, 290/292, Vadgadi Azad Chowk CHSL, Samuel Street, Masjid Bunder (W), Mumbai - 400003',
-        link: 'https://maps.google.com/?q=Masjid+Bunder+Mumbai',
-        sub: 'CE-Certified Industrial First Aid Kits & Stretchers | GST: 27AASFS9821L1Z4'
+        title: 'Roxy Enterprises Head Office & Stockyard',
+        desc: 'Office no.12, 2nd Floor, 20/26, Doctor Building D Block, Maruti Mandir Marg, 5th Kumbharwada, Mumbai 400004 (MH), India',
+        link: 'https://maps.google.com/?q=5th+Kumbharwada+Mumbai+400004',
+        sub: 'Exporter, Stockiest & Supplier | 3.1 / 3.2 Mill Test Certificates'
     },
     {
         icon: 'Phone',
-        title: 'Central Helplines',
-        desc: '+91 98731 98731 (Delhi) / +91 98179 26992 (Mumbai)',
-        link: 'tel:9873198731',
-        sub: 'Alt: +91 98732 98731 / +91 98205 60982 | Direct Factory Assistance'
+        title: 'Procurement & Sales Helplines',
+        desc: '+91 97692 57080 (Ambalal Choudhary)',
+        link: 'tel:+919769257080',
+        sub: 'Direct Factory & Stockyard Pricing | Instant Quotations'
     },
     {
         icon: 'Mail',
-        title: 'Official Inquiries & Tenders',
-        desc: 'info@goonjcom.in / shreeharisurgicals@gmail.com',
-        link: 'mailto:info@goonjcom.in',
-        sub: 'Technical catalogues & formal institutional rate cards'
+        title: 'Official Inquiries & Orders',
+        desc: 'roxyenterprises91@gmail.com',
+        link: 'mailto:roxyenterprises91@gmail.com',
+        sub: 'Send BOM / RFQ specifications for prompt reply from our sales desk'
     },
     {
         icon: 'Clock',
-        title: 'Dispatch & Working Hours',
-        desc: 'Mon to Sat: 9:00 AM – 7:00 PM IST',
-        sub: 'Emergency Hospital Supplies Dispatch: 24/7 Active Transit'
+        title: 'Working Hours & Logistics',
+        desc: 'Mon to Sat: 9:00 AM – 7:30 PM IST',
+        sub: 'Pan-India Cargo Transit & International Export Sea/Air Shipments'
     }
 ];
 

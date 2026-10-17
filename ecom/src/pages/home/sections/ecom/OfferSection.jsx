@@ -8,92 +8,92 @@ import { resolveImagePath } from '../../../../utils/imageResolver';
 const offerBanners = [
     {
         id: 1,
-        title: 'First Aid Kits',
-        description: 'Conform to Section 45 Factories Act with CE-certified Types A, B, and C emergency boxes.',
-        buttonText: 'View First Aid Kits',
-        discountLabel: 'Save up to',
-        discountPercent: '30%',
-        bgColor: '#FEF2F2',
-        badgeBg: '#DC2626',
+        title: 'Stainless Steel',
+        description: 'Seamless, ERW, and Welded pipes in SS 304, 316L, 321, Duplex, and ASTM A106 Gr. B with EN 10204 3.1 Mill Test Certificates.',
+        buttonText: 'Explore Pipes & Tubes',
+        discountLabel: 'Mill Tested',
+        discountPercent: '3.1/3.2',
+        bgColor: '#F0FDF4',
+        badgeBg: '#16A34A',
         badgeColor: '#FFFFFF',
-        image: resolveImagePath('/products/enhanced/hd_first_aid_box.jpg'),
-        category: 'First Aid & Emergency Care'
+        image: resolveImagePath('/products/roxy/ss_pipe.jpg'),
+        category: 'Pipes & Tubes (Seamless, ERW, Welded)'
     },
     {
         id: 2,
-        title: 'Hospital Holloware',
-        description: 'Direct manufacturer rates on AISI 304 seamless dressing drums, instrument trays, and shadowless lights.',
-        buttonText: 'Explore Hospital Equipment',
+        title: 'Industrial Plates',
+        description: 'Boiler quality ASTM A516 Gr. 70, abrasion-resistant Hardox 400/500, Corten weathering steel, and high tensile structural plates direct from stockyard.',
+        buttonText: 'Explore Industrial Plates',
         discountLabel: 'Direct',
-        discountPercent: 'Factory',
+        discountPercent: 'Stockyard',
         bgColor: '#EFF6FF',
         badgeBg: '#2563EB',
         badgeColor: '#FFFFFF',
-        image: resolveImagePath('/products/enhanced/hd_dressing_drum.jpg'),
-        category: 'Hospital Holloware'
+        image: resolveImagePath('/products/roxy/ss_plate.jpg'),
+        category: 'Industrial Plates & Sheets'
     }
 ];
 
 const categoryPills = [
     {
         id: 1,
-        name: 'First Aid Kits',
-        image: resolveImagePath('/products/enhanced/hd_first_aid_box.jpg'),
-        category: 'First Aid & Emergency Care'
+        name: 'SS Seamless Pipes',
+        image: resolveImagePath('/products/roxy/ss_pipe.jpg'),
+        category: 'Pipes & Tubes (Seamless, ERW, Welded)'
     },
     {
         id: 2,
-        name: 'Emergency Stretchers',
-        image: resolveImagePath('/products/shreehari/scoop_stretcher_aluminium.jpg'),
-        category: 'First Aid & Emergency Care'
+        name: 'Carbon Steel Pipes',
+        image: resolveImagePath('/products/roxy/cs_pipe.jpg'),
+        category: 'Pipes & Tubes (Seamless, ERW, Welded)'
     },
     {
         id: 3,
-        name: 'Dressing Drums',
-        image: resolveImagePath('/products/enhanced/hd_dressing_drum.jpg'),
-        category: 'Hospital Holloware'
+        name: 'Boiler & Hardox Plates',
+        image: resolveImagePath('/products/roxy/ss_plate.jpg'),
+        category: 'Industrial Plates & Sheets'
     },
     {
         id: 4,
-        name: 'OT Surgical Lights',
-        image: resolveImagePath('/products/enhanced/hd_ot_light.jpg'),
-        category: 'O.T. & Examination Lights'
+        name: 'Butt-Weld Pipe Fittings',
+        image: resolveImagePath('/products/roxy/pipe_fittings.jpg'),
+        category: 'Pipe Fittings & Butt-Weld Fittings'
     },
     {
         id: 5,
-        name: 'Steam Autoclaves',
-        image: resolveImagePath('/products/enhanced/hd_autoclave.jpg'),
-        category: 'Sterilization & Suction'
+        name: 'Forged Steel Flanges',
+        image: resolveImagePath('/products/roxy/ss_flange.jpg'),
+        category: 'Flanges (Forged, Slip-On, Blind, Weld-Neck)'
     },
     {
         id: 6,
-        name: 'Crash Carts & Trolleys',
-        image: resolveImagePath('/products/goonj/ssp_crash_cart.jpg'),
-        category: 'Hospital Furniture'
+        name: 'Nickel Alloys & Inconel',
+        image: resolveImagePath('/products/roxy/about_2.jpg'),
+        category: 'Nickel Alloys & High-Performance Superalloys'
     },
     {
         id: 7,
-        name: 'Surgical Gowns & PPE',
-        image: resolveImagePath('/products/goonj/disposable_sterile_gown.jpg'),
-        category: 'Hospital Linen & Disposables'
+        name: 'Stainless Steel Circles',
+        image: resolveImagePath('/products/roxy/ss_circle.jpg'),
+        category: 'Circles, Rings, Shims & Flat Products'
     },
     {
         id: 8,
-        name: 'Suction Apparatus',
-        image: resolveImagePath('/products/goonj/electric_suction_apparatus.jpg'),
-        category: 'Sterilization & Suction'
+        name: 'High-Tensile Fasteners',
+        image: resolveImagePath('/products/roxy/ss_nut_bolt.jpg'),
+        category: 'Fasteners, Nuts, Bolts & Hardware'
     },
     {
         id: 9,
-        name: 'LED Phototherapy',
-        image: resolveImagePath('/products/goonj/led_phototherapy_unit.jpg'),
-        category: 'Diagnostic & Neonatal Care'
+        name: 'Angle & Tool Steel',
+        image: resolveImagePath('/products/roxy/ss_angle.jpg'),
+        category: 'Structural Shapes, Tool Steels & Engineering Bars'
     },
     {
         id: 10,
-        name: 'Bio-Medical Waste Bins',
-        image: resolveImagePath('/products/goonj/biomedical_waste_bins_ss_frame_set.jpg'),
-        category: 'Home Care & Clinical Waste'
+        name: 'Hastelloy & Monel',
+        image: resolveImagePath('/products/roxy/about_1.jpg'),
+        category: 'Nickel Alloys & High-Performance Superalloys'
     }
 ];
 

@@ -1,8 +1,8 @@
 {
   "topBar": {
-    "location": "Delhi: Dilshad Garden | Mumbai: Masjid Bunder",
-    "email": "info@goonjcom.in",
-    "timing": "Mon–Sat 09:00 AM – 07:00 PM"
+    "location": "Mumbai: Maruti Mandir Marg, 5th Kumbharwada, Mumbai 400004",
+    "email": "roxyenterprises91@gmail.com",
+    "timing": "Mon–Sat 09:00 AM – 07:30 PM"
   },
   "navLinks": [
     {
@@ -29,7 +29,7 @@
   "bottomBar": {
     "menu": [
       {
-        "label": "Medical Products",
+        "label": "Steel & Metal Products",
         "href": "/product",
         "hasMegaMenu": false
       }

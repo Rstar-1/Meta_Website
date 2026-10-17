@@ -8,88 +8,55 @@ import Tab from '../../../components/common/Tab';
 import Table from '../../../components/common/Table';
 import Modal from '../../../components/common/Modal';
 
-const GOONJ_SUPPLIER_DATA = {
-    key: 'goonj',
-    name: 'Goonj Communication & Electronic Scale Co.',
-    tagline: 'Precision Healthcare, Hospital Furniture & Surgical Excellence',
-    category: 'Hospital Holloware, OT Equipment, Autoclaves, Linen & Diagnostics',
-    location: 'Dilshad Garden, Delhi, India',
-    fullAddress: '58-B, Damodar Park Ind. Area, Dilshad Garden, Delhi - 110095, India',
-    phone: '9873198731',
-    phoneFormatted: '+91 98731 98731 / +91 98732 98731',
-    contactPerson: 'Mr. Ajay Arora (Founder)',
-    email: 'info@goonjcom.in',
-    supportEmail: 'support@goonjcom.in',
-    website: 'www.goonjcom.in',
+const ROXY_SUPPLIER_DATA = {
+    key: 'roxy',
+    name: 'Roxy Enterprises',
+    tagline: 'Where Strength Meets Precision — Exporter, Stockiest & Supplier',
+    category: 'Stainless Steel, Nickel Alloy, Alloy Steel & Carbon Steel (Pipes, Plates, Flanges, Fittings & Fasteners)',
+    location: 'Maruti Mandir Marg, 5th Kumbharwada, Mumbai, Maharashtra',
+    fullAddress: 'Office no.12, 2nd Floor, 20/26, Doctor Building D Block, Maruti Mandir Marg, 5th Kumbharwada, Mumbai - 400004 (MH), India',
+    phone: '9769257080',
+    phoneFormatted: '+91 97692 57080',
+    contactPerson: 'Mr. Ambalal Choudhary (Procurement & Sales Desk)',
+    email: 'roxyenterprises91@gmail.com',
+    supportEmail: 'roxyenterprises91@gmail.com',
+    website: 'https://roxyenterprises.in',
     rating: 4.9,
-    reviews: 142,
-    established: '2011',
-    experience: '15+ Years',
-    legalStatus: 'Registered Enterprise (UDYAM & GST Registered)',
-    natureOfBusiness: 'Manufacturer, Importer & Wholesale Distributor',
-    panNo: 'Verified Commercial Entity',
-    gstin: '07AAAFG8942K1ZV',
-    moq: '1 Unit / Bulk Hospital Wholesale',
+    reviews: 185,
+    established: '2012',
+    experience: '14+ Years',
+    legalStatus: 'Registered Enterprise (GST & MSME Registered)',
+    natureOfBusiness: 'Exporter, Stockiest, Manufacturer & Wholesale Supplier',
+    panNo: 'Verified Industrial Commercial Entity',
+    gstin: '27AASFR7491K1ZX',
+    moq: 'Commercial Tonnage / Wholesale & Project Orders',
     responseRate: '99%',
-    responseTime: '< 30 mins',
+    responseTime: '< 15 mins',
     fulfillmentRate: '99.8%',
-    trustBadge: 'ISO 9001 (QMS) & CE Certified Healthcare Manufacturer',
-    about: 'Goonj Communication & Electronic Scale Co. was founded in 2011 by Mr. Ajay Arora. Over the years, Goonj and brand CYNOR have grown into premier names in manufacturing and importing high-quality hospital holloware, operation theatre equipment, shadowless cold LED surgical lights, autoclaves, suction apparatus, hospital ICU beds, medical linens, and precision diagnostics. Serving thousands of hospitals, clinics, and healthcare centers across India.',
+    trustBadge: '3.1 / 3.2 Mill Test Certified & ISO 9001:2015 Compliant',
+    about: 'We "Roxy Enterprises" are an established Exporter, Stockiest, & Supplier of Stainless Steel, Nickel Alloy, Alloy Steel, & Carbon Steel based in Mumbai. We cater to high-demand applications across the Oil & Gas Sector, Chemical Industry, Pharmacy Industry, Paper Pulp Industry, Fertilizer Industry, Food Processing Companies & Engineering Works & Fabricators. All our products are provided with complete 3.1/3.2 Mill Test Certificates.',
     trustPoints: [
-        'ISO 9001 (QMS) & ISO 14001 (EMS) Certified Manufacturing',
-        'CE Certificate of Compliance & RoHS Compliant Materials',
-        'AISI 304 Non-Magnetic Medical Grade Stainless Steel Holloware',
-        'Direct Factory Wholesale Pricing from Delhi Central Warehouse',
-        'Prompt Pan-India Cargo Transit with Real-Time Consignment Tracking'
+        'Complete EN 10204 3.1 / 3.2 Mill Test Certificates with Chemical & Mechanical Reports',
+        'Comprehensive Grade Portfolio: SS 304/L, 316/L, 310, 321, 904L, Duplex & Super Duplex',
+        'Special Superalloys: Inconel 600/625, Hastelloy C276/C22, Monel 400 & Cu-Ni 70/30',
+        'Industrial Plates: Boiler Quality (A516 Gr. 60/70 HIC), Hardox 400/500, Corten A588 & High Tensile',
+        'Central Stockyard at 5th Kumbharwada, Mumbai with Prompt Pan-India & Global Export Dispatch'
     ]
 };
 
-const SHREEHARI_SUPPLIER_DATA = {
-    key: 'shreehari',
-    name: 'Shreehari Surgicals & Co.',
-    tagline: 'SUPPORT — Learn First Aid, Save Lives',
-    category: 'First Aid Kits, Industrial Emergency Boxes, Stretchers & Trauma Care',
-    location: 'Masjid Bunder, Mumbai, Maharashtra',
-    fullAddress: 'Off No: 11, 12, 2nd Floor, 290/292, Vadgadi Azad Chowk CHSL, Samuel Street, Masjid Bunder (W), Mumbai - 400003, India',
-    phone: '9817926992',
-    phoneFormatted: '+91 98179 26992 / +91 98205 60982',
-    contactPerson: 'Director / Customer Care Desk',
-    email: 'shreeharisurgicals@gmail.com',
-    supportEmail: 'shreeharisurgicals.co2802@gmail.com',
-    website: 'www.shreeharisurgical.com',
-    rating: 4.9,
-    reviews: 118,
-    established: '2008',
-    experience: '18+ Years',
-    legalStatus: 'Registered Enterprise (CE & ISO 9001:2015 Certified)',
-    natureOfBusiness: 'Manufacturer, Wholesaler & Exporter',
-    panNo: 'Registered Commercial Enterprise',
-    gstin: '27AASFS9821L1Z4',
-    moq: '10 First Aid Kits / 1 Stretcher',
-    responseRate: '98%',
-    responseTime: '< 45 mins',
-    fulfillmentRate: '99.5%',
-    trustBadge: 'CE Certified (9511/CE/R001) & ISO 9001:2015 Registered',
-    about: 'Shreehari Surgicals & Co. (brand SUPPORT) is an ISO 9001:2015 and CE certified manufacturer and exporter of industrial first aid boxes, trauma kits, emergency scoop stretchers, spine boards, and wheeled evacuation stair chairs based in Masjid Bunder, Mumbai. Conforming strictly to the Indian Factories Act, Directive 2006/42/CE, and EC Directive 92/29, we supply certified emergency equipment to industrial plants, transport fleets, educational campuses, and defense teams nationwide.',
-    trustPoints: [
-        'CE Certificate of Compliance (Directive 2006/42/CE & 92/29, Cert No: 9511/CE/R001)',
-        'ISO 9001:2015 Certified Quality Management System',
-        'Section 45 Factories Act Compliant (Types A, B, C & Type 4 Kits)',
-        'Extruded High-Tensile Aluminium Alloy & HDPE Trauma Stretchers',
-        'Central Dispatch from Mumbai Maritime & Transport Transit Hub'
-    ]
-};
+const GOONJ_SUPPLIER_DATA = ROXY_SUPPLIER_DATA;
+const SHREEHARI_SUPPLIER_DATA = ROXY_SUPPLIER_DATA;
 
 const KNOWN_SUPPLIERS = {
-    goonj: GOONJ_SUPPLIER_DATA,
-    cynor: GOONJ_SUPPLIER_DATA,
-    goonjhealthcare: GOONJ_SUPPLIER_DATA,
-    foxecom: GOONJ_SUPPLIER_DATA,
-    shreehari: SHREEHARI_SUPPLIER_DATA,
-    shreeharisurgicals: SHREEHARI_SUPPLIER_DATA,
-    support: SHREEHARI_SUPPLIER_DATA,
-    united: GOONJ_SUPPLIER_DATA,
-    unitedbrothers: GOONJ_SUPPLIER_DATA
+    roxy: ROXY_SUPPLIER_DATA,
+    roxyenterprises: ROXY_SUPPLIER_DATA,
+    ambalal: ROXY_SUPPLIER_DATA,
+    ambalalchoudhary: ROXY_SUPPLIER_DATA,
+    goonj: ROXY_SUPPLIER_DATA,
+    cynor: ROXY_SUPPLIER_DATA,
+    shreehari: ROXY_SUPPLIER_DATA,
+    support: ROXY_SUPPLIER_DATA,
+    united: ROXY_SUPPLIER_DATA
 };
 
 const SPEC_COLUMNS = [
@@ -97,83 +64,47 @@ const SPEC_COLUMNS = [
     { header: 'Verified Business Detail', accessor: 'value', style: { width: '62%' } }
 ];
 
-const GOONJ_CATEGORIES_RANGE = [
+const ROXY_CATEGORIES_RANGE = [
     {
-        title: 'Hospital Holloware & Utensils',
-        count: 'Grade 304 Stainless Steel',
-        desc: 'Jointed and jointless dressing drums, surgical instrument trays with covers, catheter trays, kidney dishes, gallipots, bedpans, and Cidex sterilizing trays.',
-        highlight: 'Seamless deep-drawn AISI 304 stainless steel, autoclave safe up to 134°C with smooth mirror finish.'
+        title: 'Pipes & Tubes (Seamless, ERW, Welded)',
+        count: 'SS, CS, Alloy, Boiler & Marine',
+        desc: 'Seamless and welded pipes in SS 304/316, ASTM A106 Gr. B, API 5L X80 PSL2, BS 3059 boiler tubes, and AISI 4130 chrome moly tubes.',
+        highlight: '100% Hydrotested & Eddy Current tested with 3.1/3.2 Mill Test Certificates.'
     },
     {
-        title: 'O.T. & Examination Lights',
-        count: 'LED 6, 7, 12, 20 & Ceiling',
-        desc: 'Advanced cold LED examination lights, mobile procedural lamps, and 20-LED surgical operation theatre lights.',
-        highlight: 'Shadow-free optical design, 50,000 hours diode lifespan, 35,000 to 100,000 Lux cold illumination.'
+        title: 'Industrial Plates & Sheets',
+        count: 'BQ, Hardox, Corten, High Tensile',
+        desc: 'ASTM A516 Gr. 60/70 (NACE/HIC), Hardox 400/450/500 wear plates, Corten A588, IS 2062 E350/E450, and marine aluminium plates.',
+        highlight: 'Plasma, water-jet, and CNC laser profile cutting to custom fabrication drawings.'
     },
     {
-        title: 'Sterilization & Suction Apparatus',
-        count: 'Standard & Radial Triple Wall',
-        desc: '12x12 & 14x15 deluxe stainless steel pressure autoclaves, vertical triple-wall radial locking sterilizers, and 1/4 HP electric suction units.',
-        highlight: 'Automatic pressure release valves, dual safety cut-offs, high vacuum up to -700 mmHg.'
+        title: 'Pipe Fittings & Forged Fittings',
+        count: 'Butt-Weld, 3000# & Ferrule',
+        desc: 'ASME B16.9 elbows, tees, reducers, Class 3000#/6000# socket-weld fittings, and double ferrule instrumentation fittings.',
+        highlight: 'Seamless cold-drawn and hot-extruded construction with precision bevel ends.'
     },
     {
-        title: 'Hospital Furniture & Trolleys',
-        count: 'Full Ward & ICU Range',
-        desc: 'SSP emergency crash carts, stainless steel drug & ECG trolleys, stretcher trolleys, and ICU fowler beds.',
-        highlight: 'Heavy epoxy powder coating, smooth ball-bearing drawers, and anti-static castor wheels.'
+        title: 'Stainless Steel & Alloy Flanges',
+        count: 'Class 150 to 2500 LBS',
+        desc: 'Weld Neck (WNRF), Slip-On (SORF), Blind (BLRF), and RTJ flanges in SS 304, 316L, Duplex, and Nickel Alloys.',
+        highlight: 'Forged as per ANSI B16.5 and B16.47 with raised face and ring joint options.'
     },
     {
-        title: 'Hospital Linen & Protective Disposables',
-        count: 'AAMI Level 3 Certified',
-        desc: 'Sterile disposable surgical gowns, liquid barrier gowns, reusable scrub suits, N95 particulate respirators, and cotton drape sheets.',
-        highlight: 'Hydrophobic SMS/SMMS fabric, EO sterile sealed, certified viral and blood penetration barrier.'
+        title: 'Nickel Alloys & Superalloys',
+        count: 'Inconel, Hastelloy, Monel, Cu-Ni',
+        desc: 'Inconel 600/625, Hastelloy C276/C22, Monel 400, Incoloy 800H, and Cupro-Nickel 70-30/90-10 pipes, plates, and bars.',
+        highlight: 'Resists extreme high temperatures up to 980°C and aggressive acid environments.'
     },
     {
-        title: 'Diagnostic & Neonatal Care',
-        count: 'Specialized Medical Units',
-        desc: 'Neonatal jaundice LED phototherapy units, micro-infusion touchscreen syringe pumps, 12-inch patient monitors, and cardiology stethoscopes.',
-        highlight: '460 nm narrow-band blue LEDs, ±2% infusion accuracy, 120-hour trend storage monitors.'
+        title: 'SS Circles, Rings & Fasteners',
+        count: 'Circles, Rings, Shims & Bolts',
+        desc: 'Precision laser-cut SS circles (100mm to 1500mm), seamless rolled rings, ASTM A193 B7/B8 stud bolts, and SS 304/316 nut-bolts.',
+        highlight: 'A2-70, A4-80, and ASTM A194 heavy hex bolting for petrochemical pressure vessels.'
     }
 ];
 
-const SHREEHARI_CATEGORIES_RANGE = [
-    {
-        title: 'Industrial & Factory First Aid Kits',
-        count: 'Types A, B, C & Type 4',
-        desc: 'Full compliance with Section 45 Factories Act. Custom packed with 28 to 38 medical components in heavy plastic or sheet metal boxes.',
-        highlight: 'CE Certified, trilingual resuscitation instruction chart, tamper-evident safety latches.'
-    },
-    {
-        title: 'Emergency Scoop & Spine Stretchers',
-        count: 'Aluminium & HDPE Models',
-        desc: 'High-strength aluminium alloy scoop stretchers with rapid decoupling clutch hinges, and 100% X-Ray translucent HDPE spine boards.',
-        highlight: 'Prevents secondary spinal cord injury, 180 kg load capacity, water rescue buoyant.'
-    },
-    {
-        title: 'Evacuation Stair Chairs & Wheeled Stretchers',
-        count: 'Dual-Function Compact Fold',
-        desc: 'Multi-function emergency evacuation chairs that transition from flat wheeled stretchers into stair-descending transport chairs.',
-        highlight: 'Compact 4-fold profile for rapid emergency deployment in multi-story buildings and ambulances.'
-    },
-    {
-        title: 'Wall-Mounted Medical Cabinets',
-        count: 'Steel & SS 304 Models',
-        desc: 'Heavy-gauge steel and stainless steel wall-mounting first aid cabinets with acrylic/glass doors, interior shelving, and cylinder key locks.',
-        highlight: 'Keeps medications organized, clean, locked, and easily visible for emergency responders.'
-    },
-    {
-        title: 'Personal, Vehicle & Travel Kits',
-        count: 'Relief & Travel Series',
-        desc: 'Compact click-lock first aid kits for family vehicles, tour operators, trekking backpacks, and residential homes.',
-        highlight: 'Organized compartments, water-tight rubberized seal, high-grade burn lotions and dressings.'
-    },
-    {
-        title: 'SafeSlide Patient Transfer Boards',
-        count: 'Low-Friction Engineering',
-        desc: 'High-density low-friction patient transfer slide boards for bridging the gap between hospital beds, stretchers, and OT tables.',
-        highlight: 'Reduces caregiver back strain by over 70%, prevents shear damage on fragile patient skin.'
-    }
-];
+const GOONJ_CATEGORIES_RANGE = ROXY_CATEGORIES_RANGE;
+const SHREEHARI_CATEGORIES_RANGE = ROXY_CATEGORIES_RANGE;
 
 const SupplierSidebarContent = memo(({ supplierInfo, onConnectClick }) => (
     <div className='pb-50 sm-pb-5'>
@@ -275,39 +206,35 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
     const [activeTab, setActiveTab] = useState('catalog');
     const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
 
-    const brandKey = (propBrandKey || brandName || 'goonj').toLowerCase().replace(/[^a-z0-9]/g, '');
-
-    const isShreehari = brandKey.includes('shreehari') || brandKey.includes('support');
+    const brandKey = (propBrandKey || brandName || 'roxy').toLowerCase().replace(/[^a-z0-9]/g, '');
 
     const supplierInfo = useMemo(() => {
-        return KNOWN_SUPPLIERS[brandKey] || (isShreehari ? SHREEHARI_SUPPLIER_DATA : GOONJ_SUPPLIER_DATA);
-    }, [brandKey, isShreehari]);
+        return KNOWN_SUPPLIERS[brandKey] || ROXY_SUPPLIER_DATA;
+    }, [brandKey]);
 
-    const categoriesRange = isShreehari ? SHREEHARI_CATEGORIES_RANGE : GOONJ_CATEGORIES_RANGE;
+    const categoriesRange = ROXY_CATEGORIES_RANGE;
 
     const validProducts = useMemo(() => {
         const realProducts = productsData.filter((p) => !p.isBanner);
-        if (isShreehari) {
-            return realProducts.filter(p => (p.vendor || '').toLowerCase().includes('shreehari') || (p.brand || '').toLowerCase().includes('support'));
-        }
-        return realProducts.filter(p => (p.vendor || '').toLowerCase().includes('goonj') || (p.brand || '').toLowerCase().includes('cynor'));
-    }, [isShreehari]);
+        const filtered = realProducts.filter(p => (p.vendor || '').toLowerCase().includes('roxy') || (p.brand || '').toLowerCase().includes('roxy'));
+        return filtered.length > 0 ? filtered : realProducts;
+    }, []);
 
     const specData = useMemo(() => [
         { id: 1, field: 'Company Name', value: supplierInfo.name },
-        { id: 2, field: 'Brand Names', value: isShreehari ? 'SUPPORT (First Aid & Save Lives)' : 'Goonj & CYNOR Healthcare' },
+        { id: 2, field: 'Brand Names', value: 'Roxy Enterprises (Where Strength Meets Precision)' },
         { id: 3, field: 'Nature of Business', value: supplierInfo.natureOfBusiness },
         { id: 4, field: 'Key Contact / Leadership', value: supplierInfo.contactPerson },
         { id: 5, field: 'Quality Certifications', value: supplierInfo.trustBadge },
         { id: 6, field: 'GST / Legal Registration', value: `${supplierInfo.gstin} (${supplierInfo.legalStatus})` },
         { id: 7, field: 'Year of Establishment', value: `${supplierInfo.established} (${supplierInfo.experience})` },
-        { id: 8, field: 'Factory & Head Office Address', value: supplierInfo.fullAddress },
+        { id: 8, field: 'Stockyard & Head Office Address', value: supplierInfo.fullAddress },
         { id: 9, field: 'Primary Helpline', value: `${supplierInfo.phoneFormatted} (${supplierInfo.responseRate} Response Rate)` },
         { id: 10, field: 'Official Email & Web', value: `${supplierInfo.email} | ${supplierInfo.website}` },
         { id: 11, field: 'Product Specialization', value: supplierInfo.category },
         { id: 12, field: 'Minimum Order Quantity (MOQ)', value: supplierInfo.moq },
-        { id: 13, field: 'Central Dispatch Hub', value: isShreehari ? 'Masjid Bunder, Mumbai Logistics Hub' : 'Dilshad Garden, Delhi Industrial Hub' }
-    ], [supplierInfo, isShreehari]);
+        { id: 13, field: 'Central Dispatch Hub', value: '5th Kumbharwada, Mumbai Central Stockyard & Export Port' }
+    ], [supplierInfo]);
 
     const handleProductClick = useCallback((id) => {
         navigate(`/product/${id}`);

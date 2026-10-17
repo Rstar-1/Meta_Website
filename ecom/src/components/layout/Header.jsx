@@ -12,7 +12,7 @@ import Fields from "../forms/Fields";
 import EnquiryModal from "./generic/Enquiy";
 
 import { header, configData, productsData, categoriesData } from "../../utils/apiData";
-import { resolveImagePath, shreehariLogoColor, shreehariLogoWhite } from "../../utils/imageResolver";
+import { resolveImagePath, roxyLogoColor, roxyLogoWhite, roxyEmblemColor, roxyEmblemWhite } from "../../utils/imageResolver";
 import { useCart } from "../../feature/slice/cartSlice";
 import { ALL_LANGUAGES, changeWebsiteLanguage, getSavedLanguage } from "../../utils/i18n";
 
@@ -118,24 +118,24 @@ const isStickyConfig = Boolean(configData?.Header?.HeaderSticky ?? configData?.H
 
 const LogoClass = {
   1: "w-25 sm-w-85",
-  2: "w-25 sm-w-85",
-  3: "w-20 sm-w-85",
-  4: "w-20 sm-w-85",
-}[headerType] || "w-25 sm-w-85";
+  2: "w-10 sm-w-85 flex-shrink-0",
+  3: "w-25 sm-w-85 flex-shrink-0",
+  4: "w-25 sm-w-85 flex-shrink-0",
+}[headerType] || "w-25 sm-w-85 flex-shrink-0";
 
 const NavigationClass = {
   1: "w-50 justify-center",
-  2: "w-55 justify-start",
-  3: "w-60 justify-end",
-  4: "w-60 justify-end",
-}[headerType] || "w-55 justify-start";
+  2: "w-65 justify-start",
+  3: "w-55 justify-end",
+  4: "w-55 justify-end",
+}[headerType] || "w-50 justify-center";
 
 const ActionClass = {
   1: "w-25 sm-w-15",
-  2: "w-20 sm-w-15",
-  3: "w-20 sm-w-15",
+  2: "w-25 sm-w-15",
+  3: "w-25 sm-w-15",
   4: "w-20 sm-w-15",
-}[headerType] || "w-20 sm-w-15";
+}[headerType] || "w-25 sm-w-15";
 
 const CategoryClass = {
   1: "justify-between",
@@ -180,16 +180,29 @@ const HeaderTopBar = React.memo(() => {
 });
 HeaderTopBar.displayName = "HeaderTopBar";
 
-const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => (
-  <NavLink to="/home" className={`${LogoClass} flex items-center`} onClick={onCloseMobile} title="SUPPORT - Learn First Aid, Save Lives">
-    <Image
-      src={!isStickyConfig || isHeaderWhite ? shreehariLogoColor : shreehariLogoWhite}
-      alt="SUPPORT - Learn First Aid, Save Lives"
-      className="object-contain"
-      style={{ height: "46px", maxHeight: "48px", width: "auto" }}
-    />
-  </NavLink>
-));
+const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
+  const isLight = !isStickyConfig || isHeaderWhite;
+
+  return (
+    <NavLink
+      to="/home"
+      className={`${LogoClass} flex items-center flex-shrink-0`}
+      onClick={onCloseMobile}
+      title="Roxy Enterprises - Exporter, Stockiest & Supplier"
+      style={{ textDecoration: "none" }}
+    >
+      <div className="flex items-center gap-10">
+        <Image
+          src={isLight ? roxyEmblemColor : roxyEmblemWhite}
+          alt="Roxy Enterprises"
+          className="object-contain flex-shrink-0"
+          style={{ height: "42px", maxHeight: "46px", width: "auto" }}
+          loading="eager"
+        />
+      </div>
+    </NavLink>
+  );
+});
 HeaderLogo.displayName = "HeaderLogo";
 
 const LanguageDropdown = React.memo(({ isHeaderWhite, align = "right", className = "", showFlagOnMobile = true }) => {
@@ -931,10 +944,11 @@ const Header = () => {
     }, 180);
   }, []);
 
+  const isHomePage = location.pathname === "/" || location.pathname === "/home";
   const isMegaOpen = Boolean(activeMegaMenu);
-  const isHeaderWhite = isScrolled || isMobileOpen || isMegaOpen;
+  const isHeaderWhite = !isHomePage || isScrolled || isMobileOpen || isMegaOpen;
   const headerBg = isHeaderWhite ? "var(--white)" : "transparent";
-  const headerBorder = isHeaderWhite ? "1px solid var(--white)" : "1px solid rgba(255, 255, 255, 0.1)";
+  const headerBorder = isHeaderWhite ? "1px solid #e2e8f0" : "1px solid rgba(255, 255, 255, 0.1)";
 
   const handleCloseMobile = React.useCallback(() => setIsMobileOpen(false), []);
   const handleOpenCart = React.useCallback(() => setIsCartOpen(true), [setIsCartOpen]);
