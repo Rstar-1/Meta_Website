@@ -33,7 +33,7 @@ const ProductSection = () => {
             <Heading
                 version="v2"
                 tag="SPECIAL OFFERS FOR YOU"
-                title="FEATURED PRODUCTS & POPULAR DESIGNS"
+                title="Featured Products And Popular Designs"
                 actionText="SHOP ALL PRODUCTS"
                 actionLink="/products"
             />

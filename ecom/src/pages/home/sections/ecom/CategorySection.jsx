@@ -81,7 +81,7 @@ const CategoryVersion3 = React.memo(({ items, onCategoryClick }) => (
             }
         `}</style>
         <div className="grid-cols-3 sm-grid-cols-1 mt-30" style={{ gap: '20px' }}>
-            {items?.slice(0, 3)?.map((cat) => (
+            {items?.map((cat) => (
                 <div
                     key={cat.id}
                     className="category-card bg-forth rounded-5 overflow-hidden flex cursor-pointer relative"
@@ -157,7 +157,7 @@ const CategorySection = React.memo(() => {
             <Heading
                 version="v1"
                 tag="WHAT WE PROVIDE"
-                title="Expert Innovative And Deliver Exceptional For NOT Solution Now."
+                title="High-End Quality PVC Sheet Rolls Ready Stock With Fast service & Competitive Pricing."
             />
             <ActiveVersionComponent items={categories} onCategoryClick={handleCategoryClick} />
         </div>

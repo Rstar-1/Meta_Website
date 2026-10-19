@@ -1,15 +1,15 @@
 {
   "HeroSections": {
-    "titleLine1": "PREMIUM",
+    "titleLine1": "High Definition",
     "titleLine2": "INDUSTRIAL",
-    "titleHighlight": "PVC STRIP CURTAINS",
-    "agencyTitle": "MANUFACTURER",
-    "leftText": "India’s leading importer and supplier of PVC strip curtains, polar freezer rolls, and hanging hardware across India.",
+    "titleHighlight": "PVC Clear Sheet Rolls",
+    "agencyTitle": "STOCKIEST",
+    "leftText": "Leading importer & Wholesaler of PVC Super Clear Sheet Rolls & PVC Strip Curtain Rolls. (PAN India Supply)",
     "rightText": "Energy-saving thermal insulation, dust & noise control, and durable doorway barriers for cold storage and factories."
   },
   "AboutSections": {
     "heading": {
-      "tag": "MANUFACTURING EXCELLENCE",
+      "tag": "STOCKIEST EXCELLENCE",
       "title": "High-Clarity PVC Strip Curtains & Industrial Barrier Solutions"
     },
     "crafter": {
@@ -112,7 +112,7 @@
         "glowColor": "rgba(34, 197, 94, 0.48)",
         "icon": "Code",
         "headingMain": "Virgin-Grade Extrusions with Maximum Clarity & Tear Resistance",
-        "headingHighlight": "Quality Manufacturing",
+        "headingHighlight": "Quality Stockiest",
         "description": "Manufactured using premium flexible PVC polymers with UV stabilizers, ensuring long service life and high transparency.",
         "ctaText": "View Product Catalog",
         "ctaLink": "/product",
@@ -411,8 +411,8 @@
     ]
   },
   "PatchSection": {
-    "badge": "INDIA'S LEADING MANUFACTURER",
-    "title": "Manufacturing High-Clarity for Facilities Across India.",
+    "badge": "INDIA'S LEADING STOCKIEST",
+    "title": "Stocking High-Clarity PVC for Facilities Across India.",
     "description": "We deliver durable, temperature-controlling, and dust-isolating PVC curtain solutions with fast dispatch and direct factory pricing.",
     "stats": [
       {

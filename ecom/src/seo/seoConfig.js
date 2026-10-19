@@ -9,7 +9,7 @@ export const siteInfo = {
   url: SITE_URL,
   description:
     import.meta.env.VITE_SEO_DESCRIPTION ||
-    "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications.",
+    "Ashmita Vinyls is a leading stockiest and supplier of PVC vinyl products for commercial and industrial applications.",
   phone: import.meta.env.VITE_PHONE || "07942562287",
   email: import.meta.env.VITE_EMAIL || "info@ashmitavinyls.com",
 
@@ -37,18 +37,18 @@ export const siteInfo = {
 
 export const pageSeoData = {
   home: {
-    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Manufacturer in India | Ashmita Vinyls",
+    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Stockiest in India | Ashmita Vinyls",
     description:
       import.meta.env.VITE_SEO_DESCRIPTION ||
-      "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications across India.",
+      "Ashmita Vinyls is a leading stockiest and supplier of PVC vinyl products for commercial and industrial applications across India.",
     path: "/home",
     breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
-    title: "About Ashmita Vinyls | PVC Vinyl Manufacturer in India",
+    title: "About Ashmita Vinyls | PVC Vinyl Stockiest in India",
     description:
-      "Learn about Ashmita Vinyls, our PVC vinyl manufacturing capabilities, quality focus and industrial solutions.",
+      "Learn about Ashmita Vinyls, our PVC vinyl stockiest inventory, quality focus and industrial solutions.",
     path: "/about",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -103,9 +103,9 @@ export const pageSeoData = {
   },
 
   quality: {
-    title: "PVC Vinyl Manufacturing Quality | Ashmita Vinyls",
+    title: "PVC Vinyl Stockiest Quality | Ashmita Vinyls",
     description:
-      "Explore Ashmita Vinyls manufacturing quality, infrastructure and PVC vinyl production capabilities.",
+      "Explore Ashmita Vinyls stockiest quality, inventory and PVC vinyl distribution capabilities.",
     path: "/quality",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -172,7 +172,7 @@ export const aeoFAQs = [
   {
     question: "What is Ashmita Vinyls?",
     answer:
-      "Ashmita Vinyls is a PVC vinyl products manufacturer and supplier in India serving commercial and industrial requirements.",
+      "Ashmita Vinyls is a PVC vinyl products stockiest and supplier in India serving commercial and industrial requirements.",
   },
   {
     question: "What products does Ashmita Vinyls supply?",

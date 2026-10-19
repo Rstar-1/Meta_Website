@@ -35,13 +35,13 @@ const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) =
             ? 'pb-100 sm-pb-30'
             : 'pb-60'
         } relative z-20`}>
-        <h1 className='largemid-text text-white font-600'>
+        <h1 className='largemid-text text-white font-600 uppercase'>
             {heroCMS?.titleLine1 || 'PREMIUM'}
             <br />
             <span className='text-primary'>{heroCMS?.titleHighlight || 'PVC STRIP CURTAINS'}</span>
         </h1>
         <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12' style={{ maxWidth: '650px' }}>
-            {heroCMS?.leftText || 'Leading manufacturer & supplier of PVC strip curtains, polar freezer rolls, and hanging hardware across India.'}
+            {heroCMS?.leftText || 'Leading stockiest & supplier of PVC strip curtains, polar freezer rolls, and hanging hardware across India.'}
         </p>
         <Button
             text="Get Product Quote"

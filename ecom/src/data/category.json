@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "PVC strip Curtain Rolls",
+    "name": "PVC Strip Curtain Rolls",
     "slug": "pvc-strip-curtain-rolls",
     "icon": "product/Product4.jpg",
     "iconName": "Layers",
@@ -70,5 +70,233 @@
       }
     ],
     "description": "Strong mounting brackets in Mild Steel, Stainless Steel (SS202 & SS304), and Magnetic strip curtain tracks and bottom holders for secure installation."
+  },
+  {
+    "id": 8,
+    "name": "PVC mattress Film",
+    "slug": "pvc-mattress-film",
+    "icon": "product/Product6.jpg",
+    "iconName": "Film",
+    "bgColor": "#FDF2F8",
+    "accentColor": "#DB2777",
+    "subCategories": [
+      {
+        "id": "transparent-mattress-film",
+        "name": "Transparent Mattress Film"
+      },
+      {
+        "id": "printed-mattress-film",
+        "name": "Printed PVC Mattress Film"
+      },
+      {
+        "id": "embossed-mattress-sheeting",
+        "name": "Embossed Mattress Sheeting"
+      },
+      {
+        "id": "waterproof-mattress-film",
+        "name": "Waterproof Mattress Protective Film"
+      },
+      {
+        "id": "hospital-grade-mattress-film",
+        "name": "Anti-Bacterial Hospital Grade Film"
+      }
+    ],
+    "description": "Waterproof, antibacterial, and soft flexible PVC mattress films and sheeting for home bedding, healthcare, and hospitality."
+  },
+  {
+    "id": 4,
+    "name": "PVC Transparent Rolls",
+    "slug": "pvc-transparent-rolls",
+    "icon": "product/Product1.jpg",
+    "iconName": "ClearFilm",
+    "bgColor": "#ECFDF5",
+    "accentColor": "#059669",
+    "subCategories": [
+      {
+        "id": "super-clear-rolls",
+        "name": "Super Clear PVC Rolls"
+      },
+      {
+        "id": "flexible-soft-rolls",
+        "name": "Flexible Soft PVC Rolls"
+      },
+      {
+        "id": "heavy-duty-clear-rolls",
+        "name": "Heavy Duty Clear Rolls"
+      },
+      {
+        "id": "dgt-clear-rolls",
+        "name": "DGT Clear Transparent Rolls"
+      }
+    ],
+    "description": "High-clarity, flexible transparent PVC sheet rolls engineered for industrial packaging, partition barriers, and protective coverings."
+  },
+  {
+    "id": 5,
+    "name": "PVC Color Film",
+    "slug": "pvc-color-film",
+    "icon": "product/Product2.jpg",
+    "iconName": "Film",
+    "bgColor": "#FAF5FF",
+    "accentColor": "#9333EA",
+    "subCategories": [
+      {
+        "id": "opaque-color-film",
+        "name": "Opaque Color PVC Film"
+      },
+      {
+        "id": "translucent-color-film",
+        "name": "Translucent Color Film"
+      },
+      {
+        "id": "decorative-color-film",
+        "name": "Decorative & Lamination Film"
+      },
+      {
+        "id": "embossed-color-film",
+        "name": "Embossed Colored PVC Film"
+      }
+    ],
+    "description": "Vibrant, flexible colored PVC films for industrial lamination, decorative surfaces, stationary, and protective wrapping."
+  },
+  {
+    "id": 6,
+    "name": "Reinforce Sheet",
+    "slug": "reinforce-sheet",
+    "icon": "product/Product3.jpg",
+    "iconName": "Sheet",
+    "bgColor": "#FFFBEB",
+    "accentColor": "#D97706",
+    "subCategories": [
+      {
+        "id": "mesh-reinforced-pvc",
+        "name": "Mesh Reinforced PVC Sheet"
+      },
+      {
+        "id": "ripstop-tarpaulin-sheet",
+        "name": "Ripstop Tarpaulin Sheet"
+      },
+      {
+        "id": "heavy-duty-reinforced",
+        "name": "Heavy Duty Reinforced Sheet"
+      },
+      {
+        "id": "fire-retardant-reinforced",
+        "name": "Fire-Retardant Reinforced Sheet"
+      }
+    ],
+    "description": "High-strength, tear-resistant reinforced PVC sheets with embedded polyester mesh for heavy-duty industrial covers and enclosures."
+  },
+  {
+    "id": 7,
+    "name": "PVC Curtain",
+    "slug": "pvc-curtain",
+    "icon": "product/Product4.jpg",
+    "iconName": "Curtain",
+    "bgColor": "#ECFEFF",
+    "accentColor": "#0891B2",
+    "subCategories": [
+      {
+        "id": "industrial-pvc-curtain",
+        "name": "Industrial PVC Curtains"
+      },
+      {
+        "id": "cleanroom-curtains",
+        "name": "Cleanroom & Lab Curtains"
+      },
+      {
+        "id": "welding-screen-curtains",
+        "name": "Welding Safety Screen Curtains"
+      },
+      {
+        "id": "cold-storage-curtains",
+        "name": "Cold Storage PVC Curtains"
+      }
+    ],
+    "description": "Pre-cut and ready-to-mount PVC curtain solutions providing superior thermal insulation, sound dampening, and dust control."
+  },
+  {
+    "id": 9,
+    "name": "Stretch Ceiling Film",
+    "slug": "stretch-ceiling-film",
+    "icon": "sides/slide5.png",
+    "iconName": "Home",
+    "bgColor": "#F0FDF4",
+    "accentColor": "#16A34A",
+    "subCategories": [
+      {
+        "id": "glossy-lacquer-film",
+        "name": "Glossy / Lacquer Ceiling Film"
+      },
+      {
+        "id": "matte-finish-film",
+        "name": "Matte & Satin Ceiling Film"
+      },
+      {
+        "id": "translucent-backlit-film",
+        "name": "Translucent Backlit Light Film"
+      },
+      {
+        "id": "printed-acoustic-film",
+        "name": "Printed & 3D Acoustic Ceiling Film"
+      }
+    ],
+    "description": "Premium PVC architectural stretch ceiling membranes available in glossy, matte, and backlit translucent finishes for modern interiors."
+  },
+  {
+    "id": 10,
+    "name": "Aluminum Profile",
+    "slug": "aluminum-profile",
+    "icon": "sides/slide6.png",
+    "iconName": "Management",
+    "bgColor": "#F8FAFC",
+    "accentColor": "#475569",
+    "subCategories": [
+      {
+        "id": "wall-mount-profile",
+        "name": "Wall-Mounted Aluminum Track"
+      },
+      {
+        "id": "ceiling-mount-profile",
+        "name": "Ceiling-Mounted Profile Track"
+      },
+      {
+        "id": "separator-h-profile",
+        "name": "Separator H-Profile Track"
+      },
+      {
+        "id": "led-shadow-profile",
+        "name": "Shadow Gap & LED Light Profile"
+      }
+    ],
+    "description": "Precision-extruded aluminum track profiles designed for harpoon-locking stretch ceiling installations and structural framing."
+  },
+  {
+    "id": 11,
+    "name": "Harpoon",
+    "slug": "harpoon",
+    "icon": "product/Product5.jpg",
+    "iconName": "Shield",
+    "bgColor": "#FFF7ED",
+    "accentColor": "#EA580C",
+    "subCategories": [
+      {
+        "id": "welding-harpoon-profile",
+        "name": "HF Welded Harpoon Strip"
+      },
+      {
+        "id": "flexible-pvc-harpoon",
+        "name": "Flexible PVC Harpoon Insert"
+      },
+      {
+        "id": "locking-beaded-harpoon",
+        "name": "Locking Beaded Harpoon Profile"
+      },
+      {
+        "id": "harpoon-installation-tools",
+        "name": "Spatula & Harpoon Fitting Tools"
+      }
+    ],
+    "description": "Semi-rigid PVC harpoon edging strips manufactured for high-frequency welding to tension-lock stretch ceiling membranes securely."
   }
 ]

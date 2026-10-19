@@ -75,7 +75,7 @@ const Heading = ({
                             </div>
                         )}
                         {title && (
-                            <h2 className={`text-dark font-600 large-text uppercase ${align === 'center' ? 'w-80 sm-w-full mx-auto' : ''}`}>
+                            <h2 className={`text-dark font-600 large-text capitalize ${align === 'center' ? 'w-full sm-w-full mx-auto' : ''}`}>
                                 {title}
                             </h2>
                         )}

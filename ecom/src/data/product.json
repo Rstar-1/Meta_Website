@@ -22,9 +22,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide1.png",
-    "images": ["sides/slide1.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": true,
     "stockCount": 50,
@@ -122,9 +127,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide2.png",
-    "images": ["sides/slide1.png", "sides/slide3.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide3.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 53,
@@ -222,9 +232,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide3.png",
-    "images": ["sides/slide4.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide4.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 56,
@@ -322,9 +337,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide4.png",
-    "images": ["sides/slide3.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide3.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 59,
@@ -422,9 +442,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide5.png",
-    "images": ["sides/slide1.png", "sides/slide4.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide4.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 62,
@@ -522,9 +547,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide6.png",
-    "images": ["sides/slide1.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 65,
@@ -622,9 +652,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide3.png",
-    "images": ["sides/slide1.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": true,
     "stockCount": 68,
@@ -722,9 +757,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide1.png",
-    "images": ["sides/slide1.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 71,
@@ -822,9 +862,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide2.png",
-    "images": ["sides/slide4.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide4.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 74,
@@ -922,9 +967,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide3.png",
-    "images": ["sides/slide5.png", "sides/slide6.png"],
+    "images": [
+      "sides/slide5.png",
+      "sides/slide6.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 77,
@@ -1022,9 +1072,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide2.png",
-    "images": ["sides/slide1.png", "sides/slide5.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide5.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 80,
@@ -1122,9 +1177,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide4.png",
-    "images": ["sides/slide1.png", "sides/slide4.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide4.png"
+    ],
     "inStock": true,
     "trending": false,
     "stockCount": 83,
@@ -1222,9 +1282,14 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide6.png",
-    "images": ["sides/slide1.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": true,
     "stockCount": 86,
@@ -1322,7 +1387,9 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1426,7 +1493,9 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1530,7 +1599,9 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1634,7 +1705,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#fde047"],
+    "colors": [
+      "#fde047"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1738,7 +1811,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#fde047"],
+    "colors": [
+      "#fde047"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -1842,9 +1917,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "sides/slide2.png",
-    "images": ["sides/slide1.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": true,
     "stockCount": 64,
@@ -1942,7 +2022,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -2046,7 +2128,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2150,7 +2234,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2254,7 +2340,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2358,7 +2446,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -2462,9 +2552,14 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#0284c7"],
+    "colors": [
+      "#0284c7"
+    ],
     "image": "sides/slide3.png",
-    "images": ["sides/slide1.png", "sides/slide2.png"],
+    "images": [
+      "sides/slide1.png",
+      "sides/slide2.png"
+    ],
     "inStock": true,
     "trending": true,
     "stockCount": 82,
@@ -2562,7 +2657,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#0284c7"],
+    "colors": [
+      "#0284c7"
+    ],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -2666,7 +2763,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -2770,7 +2869,9 @@
       "text": "WSI",
       "color": "#2563eb"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -2874,7 +2975,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -2978,7 +3081,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -3082,7 +3187,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -3186,7 +3293,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -3290,7 +3399,9 @@
       "text": "LKY",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3394,7 +3505,9 @@
       "text": "LKY",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3498,7 +3611,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3602,7 +3717,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3706,7 +3823,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3810,7 +3929,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -3914,7 +4035,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4018,7 +4141,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4122,7 +4247,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4226,7 +4353,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4330,7 +4459,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4434,7 +4565,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4538,7 +4671,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4642,7 +4777,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4746,7 +4883,9 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4850,7 +4989,9 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -4954,7 +5095,9 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5058,7 +5201,9 @@
       "text": "Phthalate Free",
       "color": "#10b981"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5162,7 +5307,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#fde047"],
+    "colors": [
+      "#fde047"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5266,7 +5413,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#fde047"],
+    "colors": [
+      "#fde047"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5370,7 +5519,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5474,7 +5625,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -5578,7 +5731,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -5682,7 +5837,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -5786,7 +5943,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -5890,7 +6049,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -5994,7 +6155,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#0284c7"],
+    "colors": [
+      "#0284c7"
+    ],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -6098,7 +6261,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#0284c7"],
+    "colors": [
+      "#0284c7"
+    ],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -6202,7 +6367,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -6306,7 +6473,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -6410,7 +6579,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -6514,7 +6685,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -6618,7 +6791,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -6722,7 +6897,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -6826,7 +7003,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -6930,7 +7109,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7034,7 +7215,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7138,7 +7321,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7242,7 +7427,9 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7346,7 +7533,9 @@
       "text": "Polar Grade",
       "color": "#0284c7"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7450,7 +7639,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7554,7 +7745,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product4.jpg",
     "images": [
       "product/Product4.jpg",
@@ -7658,7 +7851,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -7762,7 +7957,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -7866,7 +8063,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -7970,7 +8169,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#ef4444"],
+    "colors": [
+      "#ef4444"
+    ],
     "image": "product/Product3.jpg",
     "images": [
       "product/Product3.jpg",
@@ -8074,7 +8275,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#0284c7"],
+    "colors": [
+      "#0284c7"
+    ],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -8178,7 +8381,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#0284c7"],
+    "colors": [
+      "#0284c7"
+    ],
     "image": "product/Product1.jpg",
     "images": [
       "product/Product1.jpg",
@@ -8282,7 +8487,9 @@
       "text": "Vietnam",
       "color": "#2563eb"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -8386,7 +8593,9 @@
       "text": "Standard Roll",
       "color": "#64748b"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product2.jpg",
     "images": [
       "product/Product2.jpg",
@@ -8490,7 +8699,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -8594,7 +8805,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -8698,7 +8911,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -8802,7 +9017,9 @@
       "text": "Anti-Insect",
       "color": "#f59e0b"
     },
-    "colors": ["#f59e0b"],
+    "colors": [
+      "#f59e0b"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -8907,7 +9124,9 @@
       "text": "Magnetic",
       "color": "#059669"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -9012,7 +9231,9 @@
       "text": "Magnetic",
       "color": "#059669"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product5.jpg",
     "images": [
       "product/Product5.jpg",
@@ -9116,7 +9337,9 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9188,7 +9411,9 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#f8fafc"],
+    "colors": [
+      "#f8fafc"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9260,7 +9485,9 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9332,7 +9559,9 @@
       "text": "Mild Steel",
       "color": "#64748b"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9404,7 +9633,9 @@
       "text": "SS 202",
       "color": "#0284c7"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9476,7 +9707,9 @@
       "text": "SS 202",
       "color": "#0284c7"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9548,7 +9781,9 @@
       "text": "SS 304",
       "color": "#059669"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9620,7 +9855,9 @@
       "text": "SS 304",
       "color": "#059669"
     },
-    "colors": ["#94a3b8"],
+    "colors": [
+      "#94a3b8"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9692,7 +9929,9 @@
       "text": "Magnetic Track",
       "color": "#2563eb"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9764,7 +10003,9 @@
       "text": "Magnetic Track",
       "color": "#2563eb"
     },
-    "colors": ["#64748b"],
+    "colors": [
+      "#64748b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9836,7 +10077,9 @@
       "text": "Bottom Holder",
       "color": "#f59e0b"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9908,7 +10151,9 @@
       "text": "Bottom Holder",
       "color": "#f59e0b"
     },
-    "colors": ["#1e293b"],
+    "colors": [
+      "#1e293b"
+    ],
     "image": "product/Product7.jpg",
     "images": [
       "product/Product7.jpg",
@@ -9962,6 +10207,1855 @@
       {
         "name": "Surface Finish",
         "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "PVC Mattress Film 0.03 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.03 mm X 88\" X 402 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.03 mm X 88\" X 402 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name": "PVC Mattress Film 0.04 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.04 mm X 88\" X 301 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.04 mm X 88\" X 301 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name": "PVC Mattress Film 0.05 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.05 mm X 88\" X 241 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.05 mm X 88\" X 241 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "name": "PVC Mattress Film 0.06 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.06 mm X 88\" X 201 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.06 mm X 88\" X 201 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "name": "PVC Mattress Film 0.07 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.07 mm X 88\" X 172 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.07 mm X 88\" X 172 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "name": "PVC Mattress Film 0.08 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.08 mm X 88\" X 151 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.08 mm X 88\" X 151 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "name": "PVC Mattress Film 0.09 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.09 mm X 88\" X 134 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.09 mm X 88\" X 134 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "name": "PVC Mattress Film 0.10 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.10 mm X 88\" X 120 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.10 mm X 88\" X 120 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "name": "PVC Mattress Film 0.11 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.11 mm X 88\" X 110 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.11 mm X 88\" X 110 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "name": "PVC Mattress Film 0.12 mm",
+    "categoryId": 8,
+    "category": "PVC mattress Film",
+    "subCategory": "Transparent Mattress Film",
+    "subCategoryId": "transparent-mattress-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Mattress Film",
+    "price": 154,
+    "priceFormatted": "₹148 - ₹160/kg",
+    "originalPrice": 185,
+    "badge": {
+      "text": "Ashmita",
+      "color": "#db2777"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product6.jpg",
+    "images": [
+      "product/Product6.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 50,
+    "description": "PVC Mattress Film is a flexible and durable film available in thicknesses from 0.03 mm to 0.12 mm, with an 88-inch width. It is suitable for mattress covering, protection, packaging, and other related applications. Available in multiple thickness options, it offers a practical solution for mattress manufacturers and packaging requirements.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.12 mm X 88\" X 100 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC"
+      },
+      {
+        "name": "Color",
+        "spec": "Transparent"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.12 mm X 88\" X 100 Mtrs"
+      },
+      {
+        "name": "Weight in Roll",
+        "spec": "35 kg (Approx)"
+      },
+      {
+        "name": "PHR",
+        "spec": "38"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Plain"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Super Clear PVC Transparent Roll (2mm)",
+    "categoryId": 4,
+    "category": "PVC Transparent Rolls",
+    "subCategory": "Super Clear PVC Rolls",
+    "subCategoryId": "super-clear-rolls",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Transparent Sheet Roll",
+    "price": 165,
+    "priceFormatted": "₹160 - ₹170/kg",
+    "originalPrice": 195,
+    "badge": {
+      "text": "Super Clear",
+      "color": "#059669"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product1.jpg",
+    "images": [
+      "product/Product1.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 50,
+    "description": "Premium optical clarity super clear flexible PVC transparent rolls. Highly resistant to tearing, UV exposure, and weather conditions, ideal for industrial packaging, cleanroom barriers, partition curtains, and table protection.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "RCI"
+      },
+      {
+        "name": "Material",
+        "spec": "100% Virgin Flexible PVC"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "2MM X 54\" X 30 Mtrs"
+      },
+      {
+        "name": "Colours,Shades,Pattern",
+        "spec": "Super Clear Transparent, Plain"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Glossy / Plain"
+      },
+      {
+        "name": "Weight",
+        "spec": "32 Kg (Approx)"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "RCI"
+      },
+      {
+        "name": "Material",
+        "spec": "100% Virgin Flexible PVC"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "2MM X 54\" X 30 Mtrs"
+      },
+      {
+        "name": "Colours,Shades,Pattern",
+        "spec": "Super Clear Transparent, Plain"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Glossy / Plain"
+      },
+      {
+        "name": "Weight",
+        "spec": "32 Kg (Approx)"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Industrial Opaque Colored PVC Film (0.25mm)",
+    "categoryId": 5,
+    "category": "PVC Color Film",
+    "subCategory": "Opaque Color PVC Film",
+    "subCategoryId": "opaque-color-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Color Film Roll",
+    "price": 175,
+    "priceFormatted": "₹170 - ₹180/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "Colored",
+      "color": "#9333ea"
+    },
+    "colors": [
+      "#2563eb",
+      "#dc2626",
+      "#16a34a",
+      "#eab308"
+    ],
+    "image": "product/Product2.jpg",
+    "images": [
+      "product/Product2.jpg",
+      "product/Product1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 40,
+    "description": "High-grade opaque and translucent colored PVC film rolls engineered for decorative lamination, privacy partitions, stationeries, industrial safety marking, and packaging wrapping.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC Polymer"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.25MM X 54\" X 50 Mtrs"
+      },
+      {
+        "name": "Colours,Shades,Pattern",
+        "spec": "Multi-Color (Blue, Red, Green, Yellow), Plain"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Semi-Gloss / Matte"
+      },
+      {
+        "name": "Weight",
+        "spec": "28 Kg (Approx)"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "CI"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC Polymer"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.25MM X 54\" X 50 Mtrs"
+      },
+      {
+        "name": "Colours,Shades,Pattern",
+        "spec": "Multi-Color (Blue, Red, Green, Yellow), Plain"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Semi-Gloss / Matte"
+      },
+      {
+        "name": "Weight",
+        "spec": "28 Kg (Approx)"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Mesh Reinforced Heavy-Duty PVC Sheet (550 GSM)",
+    "categoryId": 6,
+    "category": "Reinforce Sheet",
+    "subCategory": "Mesh Reinforced PVC Sheet",
+    "subCategoryId": "mesh-reinforced-pvc",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Reinforced Mesh Tarpaulin",
+    "price": 210,
+    "priceFormatted": "₹200 - ₹220/sqm",
+    "originalPrice": 250,
+    "badge": {
+      "text": "Heavy Duty",
+      "color": "#d97706"
+    },
+    "colors": [
+      "#f8fafc",
+      "#1e293b"
+    ],
+    "image": "product/Product3.jpg",
+    "images": [
+      "product/Product3.jpg",
+      "product/Product4.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 35,
+    "description": "Tear-resistant, high-tensile polyester grid reinforced transparent PVC sheet. Engineered for heavy industrial windbreaks, weatherproof covers, temporary enclosures, and harsh outdoor working environments.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "100% Waterproof"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes (Flame Retardant)"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "Industrial Grade"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC with Embedded Polyester Scrim Mesh"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.5MM (550 GSM) X 2 Mtrs X 30 Mtrs"
+      },
+      {
+        "name": "Tear Strength",
+        "spec": "High Tensile Ripstop Mesh"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Laminated Smooth Finish"
+      },
+      {
+        "name": "Weight",
+        "spec": "33 Kg (Approx)"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "100% Waterproof"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes (Flame Retardant)"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "Industrial Grade"
+      },
+      {
+        "name": "Material",
+        "spec": "PVC with Embedded Polyester Scrim Mesh"
+      },
+      {
+        "name": "Thickness X Width X Length",
+        "spec": "0.5MM (550 GSM) X 2 Mtrs X 30 Mtrs"
+      },
+      {
+        "name": "Tear Strength",
+        "spec": "High Tensile Ripstop Mesh"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Laminated Smooth Finish"
+      },
+      {
+        "name": "Weight",
+        "spec": "33 Kg (Approx)"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Pre-Assembled Industrial PVC Doorway Curtain",
+    "categoryId": 7,
+    "category": "PVC Curtain",
+    "subCategory": "Industrial PVC Curtains",
+    "subCategoryId": "industrial-pvc-curtain",
+    "vendor": "Ashmita Vinyls",
+    "type": "Complete PVC Curtain System",
+    "price": 3200,
+    "priceFormatted": "₹2,999 - ₹3,499/set",
+    "originalPrice": 3999,
+    "badge": {
+      "text": "Ready to Mount",
+      "color": "#0891b2"
+    },
+    "colors": [
+      "#f8fafc"
+    ],
+    "image": "product/Product4.jpg",
+    "images": [
+      "product/Product4.jpg",
+      "product/Product7.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 45,
+    "description": "Pre-cut and ready-to-hang flexible PVC strip curtain kit complete with top mounting hanger and pre-punched strips with 50% overlap. Reduces thermal transfer and controls dust, airborne contamination, and insect entry across doorways.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "Commercial & Industrial"
+      },
+      {
+        "name": "Material",
+        "spec": "Virgin Flexible PVC + Stainless Steel Hardware"
+      },
+      {
+        "name": "Dimensions (W x H)",
+        "spec": "4 Ft X 7 Ft (Customizable)"
+      },
+      {
+        "name": "Strip Size",
+        "spec": "2MM X 200MM Strips"
+      },
+      {
+        "name": "Overlap",
+        "spec": "50% Standard Overlap"
+      },
+      {
+        "name": "Hardware Included",
+        "spec": "SS304 Hook-On Track & Clamps"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Box Kit"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Water/Moisture Resistance",
+        "spec": "Yes"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Yes"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "Commercial & Industrial"
+      },
+      {
+        "name": "Material",
+        "spec": "Virgin Flexible PVC + Stainless Steel Hardware"
+      },
+      {
+        "name": "Dimensions (W x H)",
+        "spec": "4 Ft X 7 Ft (Customizable)"
+      },
+      {
+        "name": "Strip Size",
+        "spec": "2MM X 200MM Strips"
+      },
+      {
+        "name": "Overlap",
+        "spec": "50% Standard Overlap"
+      },
+      {
+        "name": "Hardware Included",
+        "spec": "SS304 Hook-On Track & Clamps"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Box Kit"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Architectural Translucent Backlit Stretch Ceiling Film",
+    "categoryId": 9,
+    "category": "Stretch Ceiling Film",
+    "subCategory": "Translucent Backlit Light Film",
+    "subCategoryId": "translucent-backlit-film",
+    "vendor": "Ashmita Vinyls",
+    "type": "PVC Stretch Ceiling Membrane",
+    "price": 450,
+    "priceFormatted": "₹420 - ₹480/sqm",
+    "originalPrice": 550,
+    "badge": {
+      "text": "Light Diffusing",
+      "color": "#16a34a"
+    },
+    "colors": [
+      "#ffffff",
+      "#f8fafc"
+    ],
+    "image": "sides/slide5.png",
+    "images": [
+      "sides/slide5.png",
+      "sides/slide4.png"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 60,
+    "description": "Modern high-transmittance PVC stretch ceiling membrane designed for uniform backlighting, acoustic comfort, and seamless ceiling installations. Anti-static, moisture-proof, and washable for luxury interior spaces.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Light Transmittance",
+        "spec": "75% Uniform Diffusion"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Class B1 / M1 Flame Retardant"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "Residential & Commercial Architectural"
+      },
+      {
+        "name": "Material",
+        "spec": "Specialized Architectural PVC Membrane"
+      },
+      {
+        "name": "Thickness X Width",
+        "spec": "0.18MM X 3.2 Mtrs X 100 Mtrs"
+      },
+      {
+        "name": "Elasticity / Stretch",
+        "spec": "Up to 20% Elongation with Heat"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Satin Translucent"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll with Protective Foam"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Light Transmittance",
+        "spec": "75% Uniform Diffusion"
+      },
+      {
+        "name": "Fire Retardant",
+        "spec": "Class B1 / M1 Flame Retardant"
+      },
+      {
+        "name": "Residential/Commercial/Industrial",
+        "spec": "Residential & Commercial Architectural"
+      },
+      {
+        "name": "Material",
+        "spec": "Specialized Architectural PVC Membrane"
+      },
+      {
+        "name": "Thickness X Width",
+        "spec": "0.18MM X 3.2 Mtrs X 100 Mtrs"
+      },
+      {
+        "name": "Elasticity / Stretch",
+        "spec": "Up to 20% Elongation with Heat"
+      },
+      {
+        "name": "Surface Finish",
+        "spec": "Satin Translucent"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Roll with Protective Foam"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Heavy-Duty Wall Mount Aluminum Profile Track (2.5M)",
+    "categoryId": 10,
+    "category": "Aluminum Profile",
+    "subCategory": "Wall-Mounted Aluminum Track",
+    "subCategoryId": "wall-mount-profile",
+    "vendor": "Ashmita Vinyls",
+    "type": "Architectural Profile Track",
+    "price": 350,
+    "priceFormatted": "₹320 - ₹380/piece",
+    "originalPrice": 420,
+    "badge": {
+      "text": "Heavy Duty",
+      "color": "#475569"
+    },
+    "colors": [
+      "#94a3b8",
+      "#1e293b"
+    ],
+    "image": "sides/slide6.png",
+    "images": [
+      "sides/slide6.png",
+      "product/Product7.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 100,
+    "description": "Extruded architectural grade aluminum profile designed to lock stretch ceiling harpoons firmly under high tension. Features precision internal locking channels for seamless perimeter installation with zero deflection.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Material Grade",
+        "spec": "6063-T5 Structural Aluminum Alloy"
+      },
+      {
+        "name": "Corrosion Resistance",
+        "spec": "Anodized Anti-Oxidation Finish"
+      },
+      {
+        "name": "Mounting Type",
+        "spec": "Wall Mount / Perimeter Track"
+      },
+      {
+        "name": "Profile Length",
+        "spec": "2.5 Meters (8.2 Ft) per Bar"
+      },
+      {
+        "name": "Weight",
+        "spec": "0.45 Kg/Meter"
+      },
+      {
+        "name": "Load Bearing",
+        "spec": "High Tension Lock Resistant"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Bundle / Pack of 10 Pieces"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Material Grade",
+        "spec": "6063-T5 Structural Aluminum Alloy"
+      },
+      {
+        "name": "Corrosion Resistance",
+        "spec": "Anodized Anti-Oxidation Finish"
+      },
+      {
+        "name": "Mounting Type",
+        "spec": "Wall Mount / Perimeter Track"
+      },
+      {
+        "name": "Profile Length",
+        "spec": "2.5 Meters (8.2 Ft) per Bar"
+      },
+      {
+        "name": "Weight",
+        "spec": "0.45 Kg/Meter"
+      },
+      {
+        "name": "Load Bearing",
+        "spec": "High Tension Lock Resistant"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Bundle / Pack of 10 Pieces"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "name": "HF Weldable Semi-Rigid PVC Harpoon Strip (200 Mtrs)",
+    "categoryId": 11,
+    "category": "Harpoon",
+    "subCategory": "HF Welded Harpoon Strip",
+    "subCategoryId": "welding-harpoon-profile",
+    "vendor": "Ashmita Vinyls",
+    "type": "Harpoon Edge Profile",
+    "price": 65,
+    "priceFormatted": "₹55 - ₹70/mtr",
+    "originalPrice": 85,
+    "badge": {
+      "text": "HF Weldable",
+      "color": "#ea580c"
+    },
+    "colors": [
+      "#f8fafc",
+      "#1e293b"
+    ],
+    "image": "product/Product5.jpg",
+    "images": [
+      "product/Product5.jpg",
+      "sides/slide6.png"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 80,
+    "description": "High-frequency welding semi-rigid PVC harpoon edging strip. Welded permanently around the perimeter of stretch ceiling films to click-lock directly into aluminum profile tracks for a smooth, taut finish.",
+    "brand": "Ashmita Vinyls",
+    "specifications": [
+      {
+        "name": "Material",
+        "spec": "Semi-Rigid Thermoplastic PVC"
+      },
+      {
+        "name": "Welding Method",
+        "spec": "High Frequency (HF) Machine Weldable"
+      },
+      {
+        "name": "Profile Type",
+        "spec": "Standard Hook Harpoon (Universal Fit)"
+      },
+      {
+        "name": "Length",
+        "spec": "200 Meters per Coil"
+      },
+      {
+        "name": "Operating Temperature",
+        "spec": "-15°C to +60°C"
+      },
+      {
+        "name": "Tensile Grip Strength",
+        "spec": "High Retention Locking Hook"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Coil / Spool in Carton"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Material",
+        "spec": "Semi-Rigid Thermoplastic PVC"
+      },
+      {
+        "name": "Welding Method",
+        "spec": "High Frequency (HF) Machine Weldable"
+      },
+      {
+        "name": "Profile Type",
+        "spec": "Standard Hook Harpoon (Universal Fit)"
+      },
+      {
+        "name": "Length",
+        "spec": "200 Meters per Coil"
+      },
+      {
+        "name": "Operating Temperature",
+        "spec": "-15°C to +60°C"
+      },
+      {
+        "name": "Tensile Grip Strength",
+        "spec": "High Retention Locking Hook"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "Coil / Spool in Carton"
       }
     ]
   }

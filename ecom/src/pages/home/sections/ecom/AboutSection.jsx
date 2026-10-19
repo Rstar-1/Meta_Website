@@ -11,8 +11,8 @@ import { resolveImagePath } from '../../../../utils/imageResolver';
 
 const defaultAboutData = {
     experienceYears: "25+",
-    experienceTagline: "Years of PVC Extrusion & Manufacturing Excellence",
-    description: "Ashmita Vinyls is a leading manufacturer of industrial PVC strip curtains, polar freezer rolls, and hanging hardware systems across India.",
+    experienceTagline: "Years of PVC Extrusion & Stockiest Excellence",
+    description: "Established in 2010 at Bhandup West, Mumbai, Maharashtra. We Ashmita Vinyls Pvt.Ltd.. is a Proprietor based firm, engaged as the foremost Importer and Wholesaler of PVC Strip Curtains,  PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
     images: {
         team: resolveImagePath('blog/Blog9.jpg'),
         developer: resolveImagePath('blog/Blog10.jpg')
