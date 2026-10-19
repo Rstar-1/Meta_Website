@@ -9,6 +9,7 @@ import Heading from '../../../../components/layout/generic/Heading';
 import { resolveImagePath } from '../../../../utils/imageResolver';
 
 import { configData, categories } from '../../../../utils/apiData';
+import Button from '../../../../components/common/Button';
 
 const CategoryVersion1 = React.memo(({ items, onCategoryClick }) => (
     <div className="grid-cols-6 sm-grid-cols-1 mt-30">
@@ -63,74 +64,97 @@ const CategoryVersion2 = React.memo(({ items, onCategoryClick }) => (
     </div>
 ));
 
-const CategoryVersion3 = React.memo(({ items, onCategoryClick }) => (
-    <>
-        <style>{`
-            .category-card {
-                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-            .category-card:hover {
-                transform: translateY(-2px);
-            }
-            .card-image-right {
-                clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
-                transition: clip-path 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-            .category-card:hover .card-image-right {
-                clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
-            }
-        `}</style>
-        <div className="grid-cols-3 sm-grid-cols-1 mt-30" style={{ gap: '20px' }}>
-            {items?.map((cat) => (
-                <div
-                    key={cat.id}
-                    className="category-card bg-forth rounded-5 overflow-hidden flex cursor-pointer relative"
-                    onClick={() => onCategoryClick(cat)}
-                >
-                    <div className="w-55 sm-w-60 p-20">
-                        <div>
-                            <div
-                                className="icon-lg rounded-5"
-                                style={{ backgroundColor: cat.bgColor, color: cat.accentColor }}
-                            >
-                                <Icon name={cat.iconName || 'Grid'} width="22" height="22" stroke={cat.accentColor} />
+const CategoryVersion3 = React.memo(({ items, onCategoryClick }) => {
+    const [showAll, setShowAll] = React.useState(false);
+
+    const visibleItems = React.useMemo(() => {
+        if (showAll || !items || items.length <= 6) return items;
+        return items.slice(0, 6);
+    }, [items, showAll]);
+
+    return (
+        <>
+            <style>{`
+                .category-card {
+                    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+                .category-card:hover {
+                    transform: translateY(-2px);
+                }
+                .card-image-right {
+                    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+                    transition: clip-path 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+                .category-card:hover .card-image-right {
+                    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+                }
+            `}</style>
+            <div className="grid-cols-3 sm-grid-cols-1 mt-30" style={{ gap: '20px' }}>
+                {visibleItems?.map((cat) => (
+                    <div
+                        key={cat.id}
+                        className="category-card bg-forth rounded-5 overflow-hidden flex cursor-pointer relative"
+                        onClick={() => onCategoryClick(cat)}
+                    >
+                        <div className="w-55 sm-w-60 p-20">
+                            <div>
+                                <div
+                                    className="icon-lg rounded-5"
+                                    style={{ backgroundColor: cat.bgColor, color: cat.accentColor }}
+                                >
+                                    <Icon name={cat.iconName || 'Grid'} width="22" height="22" stroke={cat.accentColor} />
+                                </div>
+                                <h3 className="mid-text text-dark font-600 pt-8">{cat.name || cat.title}</h3>
+                                <p className="text-gray mini-text line-clamp3 mt-4">
+                                    {cat.description}
+                                </p>
                             </div>
-                            <h3 className="mid-text text-dark font-600 pt-8">{cat.name || cat.title}</h3>
-                            <p className="text-gray mini-text line-clamp3 mt-4">
-                                {cat.description}
+                            <p className="mini-text font-500 mt-12 flex items-center gap-4" style={{ color: cat.accentColor }}>
+                                Explore Products <Icon name="ArrowRight" width="13" height="13" stroke="currentColor" />
                             </p>
                         </div>
-                        <p className="mini-text font-500 mt-12 flex items-center gap-4" style={{ color: cat.accentColor }}>
-                            Explore Products <Icon name="ArrowRight" width="13" height="13" stroke="currentColor" />
-                        </p>
-                    </div>
 
-                    <div className="card-image-right w-45 sm-w-40 relative overflow-hidden rounded-5 h-full">
-                        <Image
-                            src={resolveImagePath(cat.icon || cat.image)}
-                            alt={cat.name || cat.title}
-                            className="card-image-element w-full h-full object-cover flex"
-                            loading="lazy"
-                        />
-                        <div
-                            style={{
-                                position: 'absolute',
-                                bottom: 0,
-                                right: 0,
-                                width: '60px',
-                                height: '60px',
-                                background: cat.accentColor,
-                                clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
-                                opacity: 0.85,
-                                zIndex: 2
-                            }}
-                        />
+                        <div className="card-image-right w-45 sm-w-40 relative overflow-hidden rounded-5 h-full">
+                            <Image
+                                src={resolveImagePath(cat.icon || cat.image)}
+                                alt={cat.name || cat.title}
+                                className="card-image-element w-full h-full object-cover flex"
+                                loading="lazy"
+                            />
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    right: 0,
+                                    width: '60px',
+                                    height: '60px',
+                                    background: cat.accentColor,
+                                    clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
+                                    opacity: 0.85,
+                                    zIndex: 2
+                                }}
+                            />
+                        </div>
                     </div>
+                ))}
+            </div>
+            {items && items.length > 6 && (
+                <div className="mt-25 flex justify-center">
+                    <Button
+                        version="v2"
+                        variant="outline"
+                        text={showAll ? "View Less" : "View All"}
+                        icon={showAll ? "ArrowUp" : "ArrowRight"}
+                        iconPosition="right"
+                        iconWidth="12"
+                        iconHeight="12"
+                        onClick={() => setShowAll((prev) => !prev)}
+                    />
                 </div>
-            ))}
-        </div>
-    </>
-));
+            )}
+        </>
+    );
+});
 
 const VERSION_COMPONENTS = {
     1: CategoryVersion1,
