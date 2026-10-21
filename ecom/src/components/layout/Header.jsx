@@ -186,7 +186,7 @@ const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => (
       src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "sobo_logo.png" : "sobo_white.png")}
       alt="Infitech Logo"
       className="object-contain w-80 sm-w-50"
-      style={{ height: (!isStickyConfig || isHeaderWhite) ? "60px" : "52px" }}
+      style={{ height: (!isStickyConfig || isHeaderWhite) ? "52px" : "50px" }}
     />
   </NavLink>
 ));
