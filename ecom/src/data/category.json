@@ -28,82 +28,6 @@
     "description": "High-durability PVC strip curtain rolls for temperature control, cleanrooms, warehouses, and dust prevention."
   },
   {
-    "id": 2,
-    "name": "PVC Magnetic strip Curtain Rolls",
-    "slug": "pvc-magnetic-strip-curtain-rolls",
-    "icon": "product/Product5.jpg",
-    "iconName": "Shield",
-    "bgColor": "#ECFDF5",
-    "accentColor": "#059669",
-    "subCategories": [
-      {
-        "id": "magnetic-transparent",
-        "name": "Transparent Magnetic Strips"
-      }
-    ],
-    "description": "Hands-free automatic magnetic sealing PVC strip curtains for rapid closure, cold storage, and pest control."
-  },
-  {
-    "id": 3,
-    "name": "Brackets",
-    "slug": "brackets",
-    "icon": "product/Product7.jpg",
-    "iconName": "Box",
-    "bgColor": "#FEF2F2",
-    "accentColor": "#DC2626",
-    "subCategories": [
-      {
-        "id": "ms-mounting-brackets",
-        "name": "Mounting Brackets (MS)"
-      },
-      {
-        "id": "ss202-mounting-brackets",
-        "name": "Stainless Steel 202 (SS202)"
-      },
-      {
-        "id": "ss304-mounting-brackets",
-        "name": "Stainless Steel 304 (SS304)"
-      },
-      {
-        "id": "magnetic-curtain-brackets",
-        "name": "Magnetic Tracks & Bottom"
-      }
-    ],
-    "description": "Strong mounting brackets in Mild Steel, Stainless Steel (SS202 & SS304), and Magnetic strip curtain tracks and bottom holders for secure installation."
-  },
-  {
-    "id": 8,
-    "name": "PVC mattress Film",
-    "slug": "pvc-mattress-film",
-    "icon": "product/Product6.jpg",
-    "iconName": "Film",
-    "bgColor": "#FDF2F8",
-    "accentColor": "#DB2777",
-    "subCategories": [
-      {
-        "id": "transparent-mattress-film",
-        "name": "Transparent Mattress Film"
-      },
-      {
-        "id": "printed-mattress-film",
-        "name": "Printed PVC Mattress Film"
-      },
-      {
-        "id": "embossed-mattress-sheeting",
-        "name": "Embossed Mattress Sheeting"
-      },
-      {
-        "id": "waterproof-mattress-film",
-        "name": "Waterproof Mattress Protective Film"
-      },
-      {
-        "id": "hospital-grade-mattress-film",
-        "name": "Anti-Bacterial Hospital Grade Film"
-      }
-    ],
-    "description": "Waterproof, antibacterial, and soft flexible PVC mattress films and sheeting for home bedding, healthcare, and hospitality."
-  },
-  {
     "id": 4,
     "name": "PVC Transparent Rolls",
     "slug": "pvc-transparent-rolls",
@@ -216,6 +140,38 @@
     "description": "Pre-cut and ready-to-mount PVC curtain solutions providing superior thermal insulation, sound dampening, and dust control."
   },
   {
+    "id": 8,
+    "name": "PVC mattress Film",
+    "slug": "pvc-mattress-film",
+    "icon": "product/Product6.jpg",
+    "iconName": "Film",
+    "bgColor": "#FDF2F8",
+    "accentColor": "#DB2777",
+    "subCategories": [
+      {
+        "id": "transparent-mattress-film",
+        "name": "Transparent Mattress Film"
+      },
+      {
+        "id": "printed-mattress-film",
+        "name": "Printed PVC Mattress Film"
+      },
+      {
+        "id": "embossed-mattress-sheeting",
+        "name": "Embossed Mattress Sheeting"
+      },
+      {
+        "id": "waterproof-mattress-film",
+        "name": "Waterproof Mattress Protective Film"
+      },
+      {
+        "id": "hospital-grade-mattress-film",
+        "name": "Anti-Bacterial Hospital Grade Film"
+      }
+    ],
+    "description": "Waterproof, antibacterial, and soft flexible PVC mattress films and sheeting for home bedding, healthcare, and hospitality."
+  },
+  {
     "id": 9,
     "name": "Stretch Ceiling Film",
     "slug": "stretch-ceiling-film",
@@ -242,6 +198,34 @@
       }
     ],
     "description": "Premium PVC architectural stretch ceiling membranes available in glossy, matte, and backlit translucent finishes for modern interiors."
+  },
+  {
+    "id": 3,
+    "name": "Brackets",
+    "slug": "brackets",
+    "icon": "product/Product7.jpg",
+    "iconName": "Box",
+    "bgColor": "#FEF2F2",
+    "accentColor": "#DC2626",
+    "subCategories": [
+      {
+        "id": "ms-mounting-brackets",
+        "name": "Mounting Brackets (MS)"
+      },
+      {
+        "id": "ss202-mounting-brackets",
+        "name": "Stainless Steel 202 (SS202)"
+      },
+      {
+        "id": "ss304-mounting-brackets",
+        "name": "Stainless Steel 304 (SS304)"
+      },
+      {
+        "id": "magnetic-curtain-brackets",
+        "name": "Magnetic Tracks & Bottom"
+      }
+    ],
+    "description": "Strong mounting brackets in Mild Steel, Stainless Steel (SS202 & SS304), and Magnetic strip curtain tracks and bottom holders for secure installation."
   },
   {
     "id": 10,
@@ -298,5 +282,21 @@
       }
     ],
     "description": "Semi-rigid PVC harpoon edging strips manufactured for high-frequency welding to tension-lock stretch ceiling membranes securely."
+  },
+  {
+    "id": 2,
+    "name": "PVC Magnetic strip Curtain Rolls",
+    "slug": "pvc-magnetic-strip-curtain-rolls",
+    "icon": "product/Product5.jpg",
+    "iconName": "Shield",
+    "bgColor": "#ECFDF5",
+    "accentColor": "#059669",
+    "subCategories": [
+      {
+        "id": "magnetic-transparent",
+        "name": "Transparent Magnetic Strips"
+      }
+    ],
+    "description": "Hands-free automatic magnetic sealing PVC strip curtains for rapid closure, cold storage, and pest control."
   }
 ]
