@@ -23,8 +23,8 @@ const FeatureSection = () => {
         <div className="w-full py-50 sm-py-20">
             <Heading
                 version="v2"
-                tag="FEATURED HEALTHCARE & FIRST AID"
-                title="Certified Hospital Equipment & Emergency Care"
+                tag="FEATURED METALS & PIPING PRODUCTS"
+                title="Certified Seamless Pipes, Plates, Flanges & Superalloys"
                 actionText="View All Products"
                 actionLink="/product"
             />

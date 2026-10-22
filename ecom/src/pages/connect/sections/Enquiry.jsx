@@ -124,7 +124,7 @@ const Enquiry = React.memo(() => {
 
     const handleFormSubmit = React.useCallback(async (data) => {
         setFormKey((prev) => prev + 1);
-        showToast('Thank you! Your healthcare supply enquiry has been submitted successfully.', 'success');
+        showToast('Thank you! Your steel & metal enquiry has been submitted successfully.', 'success');
 
         const messageLines = ENQUIRY_FIELDS
             .map((field) => {
@@ -135,7 +135,7 @@ const Enquiry = React.memo(() => {
             .join('\n');
 
         try {
-            await sendEmail(data, 'New Medical & First Aid Product Enquiry', messageLines);
+            await sendEmail(data, 'New Steel & Metal Product Enquiry - Roxy Enterprises', messageLines);
         } catch (err) {
             console.error('Enquiry email delivery issue:', err);
         }
@@ -146,10 +146,10 @@ const Enquiry = React.memo(() => {
             <div className="w-60 sm-w-full pr-20 sm-pr-1 bordr">
                 <Heading
                     version="v2"
-                    tag="INSTITUTIONAL & B2B INQUIRY"
+                    tag="INDUSTRIAL & B2B PROCUREMENT"
                     tagIcon="Phone"
-                    title="Connect With Healthcare Solutions"
-                    subtitle="Request direct factory wholesale quotations, institutional hospital tenders, bulk supply discounts, or custom industrial first aid kits from Goonj and Shreehari Surgicals."
+                    title="Connect With Roxy Enterprises"
+                    subtitle="Request mill-direct wholesale quotations, project tenders, tonnage rate estimates, or custom cutting for Stainless Steel, Nickel Alloys, Alloy Steel & Carbon Steel."
                     className="mb-20"
                 />
 

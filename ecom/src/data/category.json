@@ -35,9 +35,13 @@
       {
         "id": "aluminium-pipes",
         "name": "Aluminium Marine Grade Pipes & Tubes (6061, 6063, 5083)"
+      },
+      {
+        "id": "special-ss-tubes",
+        "name": "Special Stainless Steel & High-Performance Tubes (347H, 317L, 254 SMO, 253MA, Alloy 826)"
       }
     ],
-    "description": "High-pressure seamless, ERW, and welded pipes and tubes in Stainless Steel, Carbon Steel, Boiler Quality, Alloy Steel, and Aluminium supplied with 3.1/3.2 Mill Test Certificates."
+    "description": "High-pressure seamless, ERW, and welded pipes and tubes in Stainless Steel, Carbon Steel, Boiler Quality, Alloy Steel, and Aluminium supplied with 3.1/3.2 Mill Test Certificates for Oil & Gas, Chemical, Pharmacy, Paper Pulp, Fertilizer, and Food Processing industries."
   },
   {
     "id": 2,
@@ -79,9 +83,13 @@
       {
         "id": "aluminium-bimetallic-plates",
         "name": "Aluminium Plates (6061, 5083, 7075) & Bimetallic Al-Cu Sheets"
+      },
+      {
+        "id": "mild-high-carbon-plates",
+        "name": "Mild Steel & High Carbon Plates (E250, A36, C-45, C-55, C-60, EN-8, SAIL HARD)"
       }
     ],
-    "description": "Comprehensive range of industrial plates: AS, CS, MS, BQ, Hardox wear-resistant, high tensile, Corten weathering, shipbuilding, and aluminium plates cut to custom dimensions."
+    "description": "Comprehensive range of industrial plates: AS, CS, MS, BQ, Hardox 400/450/500 wear-resistant, high tensile, Corten weathering, shipbuilding, high carbon, and aluminium plates cut to custom dimensions."
   },
   {
     "id": 3,
@@ -109,7 +117,7 @@
         "name": "Sanitary Union Fittings (3A / ASME-BPE / BS & ISO / SMS Unions)"
       }
     ],
-    "description": "Precision-engineered pipe fittings, seamless butt-weld elbows, tees, reducers, forged high-pressure socket-weld fittings, and double ferrule instrumentation connections."
+    "description": "Precision-engineered pipe fittings, seamless butt-weld elbows, tees, reducers, forged high-pressure socket-weld fittings, and double ferrule instrumentation connections for high-integrity piping systems."
   },
   {
     "id": 4,
@@ -141,7 +149,7 @@
         "name": "Nickel Alloy & Super Duplex Heavy Duty Forged Flanges"
       }
     ],
-    "description": "Industrial forged and plate flanges conforming to ANSI/ASME B16.5, DIN, BS, and EN standards in SS 304/L, 316/L, Duplex, Carbon Steel, and High-Nickel Alloys."
+    "description": "Industrial forged and plate flanges conforming to ANSI/ASME B16.5, DIN, BS, and EN standards in SS 304/L, 316/L, Duplex, Carbon Steel, and High-Nickel Alloys with 3.1/3.2 MTC."
   },
   {
     "id": 5,
@@ -169,7 +177,7 @@
         "name": "Alloy 20, Sanrico 28, Alloy 904L, Alloy 200/201 Nickel"
       }
     ],
-    "description": "Premium corrosion-resistant and extreme-temperature nickel alloys, Inconel, Monel, Hastelloy, and Cupro-Nickel materials for petrochemical, marine, and aerospace applications."
+    "description": "Premium corrosion-resistant and extreme-temperature nickel alloys, Inconel, Monel, Hastelloy, and Cupro-Nickel materials for petrochemical, marine, fertilizer, and aerospace applications."
   },
   {
     "id": 6,
@@ -197,7 +205,7 @@
         "name": "Stainless Steel & Mild Steel Flat Bar Products & Slit Coils"
       }
     ],
-    "description": "High-precision laser-cut and plasma-cut stainless steel circles, forged rings, slit coils, and calibration shim foils for engineering fabricators and vessel manufacturers."
+    "description": "High-precision laser-cut and plasma-cut stainless steel circles, forged rings, slit coils, and calibration shim foils for engineering fabricators, pressure vessel builders, and machinery manufacturers."
   },
   {
     "id": 7,
@@ -225,7 +233,7 @@
         "name": "Forged Valves, Instrumentation Needle & Ball Valves"
       }
     ],
-    "description": "High-tensile and corrosion-resistant fasteners, stud bolts, hex nuts, washers, stainless steel wire mesh, and perforated sheets for heavy structural assembly."
+    "description": "High-tensile and corrosion-resistant fasteners, stud bolts, hex nuts, washers, stainless steel wire mesh, perforated sheets, and industrial valves for heavy structural and process piping assembly."
   },
   {
     "id": 8,
@@ -253,10 +261,14 @@
         "name": "Case Hardened & EN Series Steel (EN-8, EN-9, EN-19, EN-24, EN-31, EN-353, 8620)"
       },
       {
+        "id": "chrome-moly-bearing-steel",
+        "name": "Chrome Moly (4140, 4130) & Bearing Steel (EN-31, 52100)"
+      },
+      {
         "id": "aluminium-busbars",
         "name": "Electrical Aluminium Busbars & Marine Grade Flat Bars"
       }
     ],
-    "description": "Heavy structural sections, stainless steel angles, MS beams and channels, precision die and tool steel round bars, EN series alloy steel, and electrical aluminium busbars."
+    "description": "Heavy structural sections, stainless steel angles, MS beams and channels, precision die and tool steel round bars, EN series alloy steel, chrome moly, bearing steel, and electrical aluminium busbars."
   }
 ]

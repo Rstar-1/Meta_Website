@@ -164,8 +164,8 @@ const CategorySection = React.memo(() => {
         <div className="w-full py-50">
             <Heading
                 version="v1"
-                tag="HEALTHCARE & MEDICAL SUPPLIES"
-                title="Certified Medical Equipment, Surgical Holloware & Industrial First Aid Solutions"
+                tag="CORE PRODUCT CATEGORIES"
+                title="Exporter, Stockiest & Supplier of Stainless Steel, Nickel Alloys & Industrial Steels"
             />
             <ActiveVersionComponent items={categoryData} onCategoryClick={handleCategoryClick} />
         </div>

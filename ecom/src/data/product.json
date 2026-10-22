@@ -1351,7 +1351,7 @@
     "name": "Slip-On Raised Face Flanges (SORF - Class 150 to 900 LBS)",
     "categoryId": 4,
     "category": "Stainless Steel & Alloy Flanges",
-    "subCategory": "Slip-On Flanges (SORF - Class 150 to 900 LBS)",
+    "subCategory": "Slip-On Raised Face Flanges (SORF - Class 150 to 900 LBS)",
     "vendor": "Roxy Enterprises",
     "brand": "Roxy Enterprises",
     "type": "Slip-On Flange",
@@ -1475,7 +1475,7 @@
     "name": "Inconel 625 & Inconel 600 Pipes, Sheets & Round Bars",
     "categoryId": 5,
     "category": "Nickel Alloys & Superalloys",
-    "subCategory": "Inconel & Incoloy Series (Inconel 600, 601, 625, Incoloy 800/H/HT, Inconel 825)",
+    "subCategory": "Inconel 600, 601, 625 & Incoloy 800/H/HT, Inconel 825",
     "vendor": "Roxy Enterprises",
     "brand": "Roxy Enterprises",
     "type": "Superalloy",
@@ -1547,7 +1547,7 @@
     "name": "Hastelloy C276 / C22 Corrosion Resistant Pipes & Plates",
     "categoryId": 5,
     "category": "Nickel Alloys & Superalloys",
-    "subCategory": "Hastelloy & Monel (Hastelloy C276, C22, Monel 400)",
+    "subCategory": "Hastelloy C276, C22 & Monel 400 (Pipes, Plates, Round Bars, Fittings)",
     "vendor": "Roxy Enterprises",
     "brand": "Roxy Enterprises",
     "type": "Superalloy",
@@ -1671,7 +1671,7 @@
     "name": "Incoloy 800 / 800H / 800HT & Alloy 20 / Sanrico 28 Pipes & Plates",
     "categoryId": 5,
     "category": "Nickel Alloys & Superalloys",
-    "subCategory": "Special Superalloys (Alloy 20, Sanrico 28, Alloy 904L, Alloy 200/201 Nickel)",
+    "subCategory": "Alloy 20, Sanrico 28, Alloy 904L, Alloy 200/201 Nickel",
     "vendor": "Roxy Enterprises",
     "brand": "Roxy Enterprises",
     "type": "Superalloy",
@@ -2390,6 +2390,1606 @@
       },
       {
         "name": "Supplier",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Aluminium Marine Grade Pipes & Extruded Tubes (6061, 6063, 5083)",
+    "categoryId": 1,
+    "category": "Pipes & Tubes (Seamless, ERW, Welded)",
+    "subCategory": "Aluminium Marine Grade Pipes & Tubes (6061, 6063, 5083)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Marine Grade Aluminium Tube",
+    "price": 340,
+    "priceFormatted": "₹340/kg",
+    "originalPrice": 390,
+    "badge": {
+      "text": "Marine Grade 6061 / 5083",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#e2e8f0",
+      "#94a3b8",
+      "#64748b"
+    ],
+    "image": "/products/roxy/ss_pipe.jpg",
+    "images": [
+      "/products/roxy/ss_pipe.jpg",
+      "/products/roxy/cs_pipe.jpg",
+      "/products/roxy/about_1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 850,
+    "description": "High-strength extruded and seamless aluminium pipes and tubes in marine alloys 6061-T6, 6063-T6, and 5083-H111. Highly resistant to saltwater corrosion and ideal for shipbuilding, offshore structures, pneumatic systems, chemical conduits, and architectural fabrications with mill test certificates.",
+    "specifications": [
+      {
+        "name": "Aluminium Alloy Grades",
+        "spec": "AA 6061-T6, 6063-T6, 5083-H111, 6082"
+      },
+      {
+        "name": "Manufacturing Standard",
+        "spec": "ASTM B221, ASTM B241, EN 755, IS 738"
+      },
+      {
+        "name": "Size & OD Range",
+        "spec": "1/2\" NB to 12\" NB (Wall thickness 1.5mm to 20mm)"
+      },
+      {
+        "name": "Temper & Finish",
+        "spec": "T6 / H111 / Mill Finish / Anodized"
+      },
+      {
+        "name": "Certification & MTC",
+        "spec": "EN 10204 3.1 Mill Test Certificate, DNV Marine Approved"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Alloy",
+        "spec": "6061 / 6063 / 5083 Marine"
+      },
+      {
+        "name": "Process",
+        "spec": "Extruded & Drawn Seamless"
+      },
+      {
+        "name": "Standard",
+        "spec": "ASTM B221 / B241"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "JSL / MSL / ISMT Carbon Steel & Mild Steel Pipes (IS 1239, IS 3589, API 5L X80 PSL2, Class A/B/C)",
+    "categoryId": 1,
+    "category": "Pipes & Tubes (Seamless, ERW, Welded)",
+    "subCategory": "Carbon Steel & Mild Steel SMLS/ERW Pipes (ASTM A106 Gr.B, API 5L X42-X80)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Heavy SMLS & ERW Pipe",
+    "price": 85,
+    "priceFormatted": "₹85/kg",
+    "originalPrice": 105,
+    "badge": {
+      "text": "JSL / MSL / ISMT Mill Source",
+      "color": "#1e293b"
+    },
+    "colors": [
+      "#334155",
+      "#475569",
+      "#1e293b"
+    ],
+    "image": "/products/roxy/cs_pipe.jpg",
+    "images": [
+      "/products/roxy/cs_pipe.jpg",
+      "/products/roxy/ss_pipe.jpg",
+      "/products/roxy/pipe_fittings.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 2400,
+    "description": "Primary mill make (JSL, MSL, ISMT, ASIAN) Carbon Steel and Mild Steel seamless and ERW pipes conforming to IS 1239, IS 3589, IS 1161, IS 4270 (YST 210, 240, FE 330/410), ASTM A53, ASTM A106 Gr.B, and API 5L up to X80 PSL2. Available in MS Class A (Yellow), Class B (Blue), and Class C (Red) with 3.1/3.2 MTC for Oil & Gas, Water Transmission, Firefighting, and Heavy Engineering.",
+    "specifications": [
+      {
+        "name": "Primary Mill Makes",
+        "spec": "Jindal SAW (JSL), MSL, ISMT, Asian Tubes"
+      },
+      {
+        "name": "Applicable Standards",
+        "spec": "IS 1239 Part 1 & 2, IS 3589 (FE 330/410), IS 1161 (YST 210/240), IS 4270"
+      },
+      {
+        "name": "Line Pipe Standards",
+        "spec": "API 5L Gr. B through X52, X60, X65, X70, X80 PSL1 & PSL2, ASTM A106 Gr.B, A53"
+      },
+      {
+        "name": "Classification",
+        "spec": "Mild Steel Class A (Light), Class B (Medium), Class C (Heavy)"
+      },
+      {
+        "name": "Nominal Size Range",
+        "spec": "1/2\" NB (15mm) to 48\" NB (1200mm OD)"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Standard",
+        "spec": "IS 1239 / IS 3589 / API 5L X80"
+      },
+      {
+        "name": "Grades",
+        "spec": "YST 210/240, FE 410, ASTM A106B"
+      },
+      {
+        "name": "Classes",
+        "spec": "Class A, B, C / Heavy ERW & SMLS"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Special Stainless Steel Seamless & Welded Pipes (SS 321, 347/H, 310S, 317L, 904L, 254 SMO / S31254, 253MA, Alloy 826)",
+    "categoryId": 1,
+    "category": "Pipes & Tubes (Seamless, ERW, Welded)",
+    "subCategory": "Special Stainless Steel & High-Performance Tubes (347H, 317L, 254 SMO, 253MA, Alloy 826)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "High-Alloy Seamless Pipe",
+    "price": 620,
+    "priceFormatted": "₹620/kg",
+    "originalPrice": 720,
+    "badge": {
+      "text": "3.1 / 3.2 MTC UNS Certified",
+      "color": "#7c3aed"
+    },
+    "colors": [
+      "#cbd5e1",
+      "#94a3b8",
+      "#64748b"
+    ],
+    "image": "/products/roxy/ss_pipe.jpg",
+    "images": [
+      "/products/roxy/ss_pipe.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/pipe_fittings.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 980,
+    "description": "High-alloy and heat-resistant stainless steel seamless and semi-welded pipes: SS 309 (UNS S30908), SS 314 (UNS S31400), SS 321 (UNS S32100), SS 347/H (UNS S34700/9), SS 317L (UNS S31703), SS 904L (UNS N08904), 254 SMO / 31254 (UNS S31254), Alloy 826 / A286 (UNS S66286), and 253MA (UNS S30815). Supplied with complete 3.1/3.2 Mill Test Certificates for chemical reactors, furnace retorts, paper pulp digesters, and pharmaceutical processing.",
+    "specifications": [
+      {
+        "name": "Stainless Steel Grades & UNS",
+        "spec": "SS 309 (S30908), SS 314 (S31400), SS 321 (S32100), SS 347/H (S34700/9), SS 317L (S31703), SS 904L (N08904)"
+      },
+      {
+        "name": "Super Austenitic & Heat Grades",
+        "spec": "254 SMO / 31254 (UNS S31254), 253MA (UNS S30815), Alloy 826 (UNS S66286)"
+      },
+      {
+        "name": "Manufacturing Standards",
+        "spec": "ASTM A312, ASTM A213, ASTM A269, ASTM A358, EN 10216-5"
+      },
+      {
+        "name": "Size & Wall Thickness",
+        "spec": "1/4\" NB to 20\" NB (SCH 10S, 40S, 80S, 160, XXS)"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "100% PMI Verified, Eddy Current & Hydrotested, EN 10204 3.1/3.2 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "SS 321/347, 904L, 31254, 253MA"
+      },
+      {
+        "name": "UNS Numbers",
+        "spec": "S32100, S34700, N08904, S31254, S30815"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM A312 / ASME SA312 / A213"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Ship Building High Strength Steel Plates (Grade A, B, D, E, AH 32/36/40, DH 32/36/40, EH 32/36/40)",
+    "categoryId": 2,
+    "category": "Industrial Plates & Sheets",
+    "subCategory": "Ship Building Steel Plates (Grade A, B, D, E, AH 32/36/40, DH/EH 36)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Shipbuilding Structural Plate",
+    "price": 92,
+    "priceFormatted": "₹92/kg",
+    "originalPrice": 110,
+    "badge": {
+      "text": "Marine Class DNV / LRS / ABS",
+      "color": "#0369a1"
+    },
+    "colors": [
+      "#475569",
+      "#334155",
+      "#1e293b"
+    ],
+    "image": "/products/roxy/ss_plate.jpg",
+    "images": [
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/cs_pipe.jpg",
+      "/products/roxy/about_1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1650,
+    "description": "Marine classification society approved shipbuilding structural steel plates conforming to Grade A, Grade B, Grade D, Grade E, and high-tensile grades AH32, AH36, AH40, DH32, DH36, DH40, EH32, EH36, and EH40. Suitable for hull construction, ship fabrication, offshore oil rigs, barge decking, and marine engineering with Charpy V-notch low temperature impact testing.",
+    "specifications": [
+      {
+        "name": "Classification Grades",
+        "spec": "Normal Strength: Grade A, B, D, E | High Strength: AH32/36/40, DH32/36/40, EH32/36/40"
+      },
+      {
+        "name": "Marine Approvals",
+        "spec": "DNV-GL, Lloyd's Register (LR), ABS, Bureau Veritas (BV), IRS"
+      },
+      {
+        "name": "Thickness Range",
+        "spec": "5mm to 120mm | Widths: 1500mm to 3500mm | Lengths: up to 14,000mm"
+      },
+      {
+        "name": "Heat Treatment",
+        "spec": "As Rolled, Normalized (N), Thermomechanically Controlled Processed (TMCP)"
+      },
+      {
+        "name": "Impact Testing",
+        "spec": "Charpy V-Notch at 0°C, -20°C, and -40°C"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "Grade A, B, D, E, AH/DH/EH 36"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM A131 / EN 10025 / Marine Class"
+      },
+      {
+        "name": "Condition",
+        "spec": "TMCP / Normalized / Shot Blasted"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Marine Class Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Mild Steel Industrial Hot Rolled Plates (IS 2062 E250, ASTM A36, A283 Gr.C, FE 410B, IS 1079, S235, S275Jr)",
+    "categoryId": 2,
+    "category": "Industrial Plates & Sheets",
+    "subCategory": "Mild Steel & High Carbon Plates (E250, A36, C-45, C-55, C-60, EN-8, SAIL HARD)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Hot Rolled MS Plate",
+    "price": 68,
+    "priceFormatted": "₹68/kg",
+    "originalPrice": 82,
+    "badge": {
+      "text": "IS 2062 E250 / ASTM A36",
+      "color": "#475569"
+    },
+    "colors": [
+      "#334155",
+      "#64748b",
+      "#94a3b8"
+    ],
+    "image": "/products/roxy/ss_plate.jpg",
+    "images": [
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/ss_angle.jpg",
+      "/products/roxy/about_2.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 3500,
+    "description": "Prime industrial mild steel hot rolled plates conforming to IS 2062 Grade E250 (Fe 410WA/WB/WC), ASTM A36, ASTM A283 Grade C, FE 410B, IS 1079, EN 10025 S235JR, and S275JR. Ideal for structural fabrication, machine base frames, yellow goods, storage tanks, and engineering fabrications with excellent weldability and machinability.",
+    "specifications": [
+      {
+        "name": "Steel Grades",
+        "spec": "IS 2062 E250 (Fe 410 B), ASTM A36, ASTM A283 Gr.C, S235JR, S275JR, IS 1079"
+      },
+      {
+        "name": "Thickness Range",
+        "spec": "3mm to 150mm (Custom CNC Profiling & Gas/Plasma Cutting)"
+      },
+      {
+        "name": "Plate Widths & Lengths",
+        "spec": "Width: 1250mm, 1500mm, 2000mm, 2500mm | Length: up to 12,000mm"
+      },
+      {
+        "name": "Mechanical Properties",
+        "spec": "Yield Strength ≥ 250 MPa, Tensile Strength 410-540 MPa, Elongation ≥ 23%"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "Ultrasonic Tested (UT Class I/II), EN 10204 3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "E250, A36, A283 Gr.C, S235, S275Jr"
+      },
+      {
+        "name": "Standard",
+        "spec": "IS 2062 / ASTM A36 / EN 10025"
+      },
+      {
+        "name": "Execution",
+        "spec": "Hot Rolled & Pickled"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "High Carbon & EN Series Heavy Plates (C-45, C-55, C-60, EN-8, EN-9, EN-19, EN-24, EN-91)",
+    "categoryId": 2,
+    "category": "Industrial Plates & Sheets",
+    "subCategory": "Mild Steel & High Carbon Plates (E250, A36, C-45, C-55, C-60, EN-8, SAIL HARD)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "High Carbon Engineering Plate",
+    "price": 98,
+    "priceFormatted": "₹98/kg",
+    "originalPrice": 120,
+    "badge": {
+      "text": "High Carbon C-45 / EN-8 / EN-19",
+      "color": "#b45309"
+    },
+    "colors": [
+      "#1e293b",
+      "#334155",
+      "#475569"
+    ],
+    "image": "/products/roxy/ss_plate.jpg",
+    "images": [
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/ss_angle.jpg",
+      "/products/roxy/about_1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1200,
+    "description": "Precision medium and high carbon alloy engineering steel plates: C-45 (1045), C-55, C-60, and EN series EN-8 (BS 970 080M40), EN-9 (070M55), EN-19 (709M40 / AISI 4140), EN-24 (817M40 / AISI 4340), and EN-91. Suited for heavy gears, die bolsters, crankshafts, hydraulic press platens, shafts, and machinery parts requiring high tensile strength and wear resistance.",
+    "specifications": [
+      {
+        "name": "High Carbon Grades",
+        "spec": "C-45 (SAE 1045), C-55 (SAE 1055), C-60 (SAE 1060)"
+      },
+      {
+        "name": "EN Series Grades",
+        "spec": "EN-8 (080M40), EN-9 (070M55), EN-19 (4140), EN-24 (4340), EN-91"
+      },
+      {
+        "name": "Thickness Range",
+        "spec": "10mm to 200mm (Block and Profile Cut to Drawing)"
+      },
+      {
+        "name": "Supply Condition",
+        "spec": "Normalized, Annealed, or Quenched & Tempered (Q&T 28-34 HRC)"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "100% Ultrasonic Tested as per ASTM A578 Level B, EN 10204 3.1 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "C-45, C-55, C-60, EN-8, EN-19, EN-24"
+      },
+      {
+        "name": "Standards",
+        "spec": "BS 970 / DIN 17200 / IS 5517"
+      },
+      {
+        "name": "Hardness",
+        "spec": "180 - 320 BHN"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Wear Resistant & Abrasion Resistant Plates (DOCOL, STRENX 700, JFE, DELIDURE, WELTEN, QST 380, RAEX, ABREX, ROCKSTAR, SAIL HARD, UTTAM HARD)",
+    "categoryId": 2,
+    "category": "Industrial Plates & Sheets",
+    "subCategory": "400/450/500 Hardness Wear Resistant Plates (HARDOX, DOCOL, STRENX 700, WELTEN)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Abrasion Resistant Plate",
+    "price": 195,
+    "priceFormatted": "₹195/kg",
+    "originalPrice": 235,
+    "badge": {
+      "text": "400 / 450 / 500 HBW Hardness",
+      "color": "#dc2626"
+    },
+    "colors": [
+      "#1e293b",
+      "#334155",
+      "#475569"
+    ],
+    "image": "/products/roxy/ss_plate.jpg",
+    "images": [
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/about_2.jpg",
+      "/products/roxy/cs_pipe.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1800,
+    "description": "Extreme duty abrasion and impact wear resistant steel plates: DOCOL, STRENX 700, JFE EVERHARD, DELIDURE, WELTEN, QST 380, RAEX 400/450/500, ABREX 400/500, ROCKSTAR 400/450/500, SAIL HARD, UTTAM HARD, JSPL HARD, and High Manganese Hadfield Steel (11-14% Mn). Designed for mining tippers, concrete crushers, cement chutes, excavator buckets, and dredging equipment.",
+    "specifications": [
+      {
+        "name": "Wear Resistant Brands",
+        "spec": "DOCOL, STRENX 700, JFE, DELIDURE, WELTEN, QST 380, RAEX, ABREX, ROCKSTAR"
+      },
+      {
+        "name": "Special Hardness Plates",
+        "spec": "SAIL HARD, UTTAM HARD, JSPL HARD, High Manganese & Hadfield Steel"
+      },
+      {
+        "name": "Hardness Levels",
+        "spec": "400 HBW, 450 HBW, 500 HBW, High Impact Manganese"
+      },
+      {
+        "name": "Thickness Range",
+        "spec": "3.2mm to 100mm | Widths: 1500mm, 2000mm, 2500mm"
+      },
+      {
+        "name": "Processing Available",
+        "spec": "High-definition CNC Plasma, Waterjet Cutting, Chamfering, Drilling & Rolling"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Hardness",
+        "spec": "400 / 450 / 500 HBW / Hadfield"
+      },
+      {
+        "name": "Brands",
+        "spec": "RAEX, ABREX, ROCKSTAR, SAIL HARD"
+      },
+      {
+        "name": "Execution",
+        "spec": "Quenched & Tempered Through-Hardened"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Alloy Steel Heavy Chrome Moly Plates (ASTM A387 Gr. 2 Class 1/2, Gr. 25, Gr. 11, Gr. 12, Gr. 22, Gr. 91, 16Mo3, 204 Gr. A/B)",
+    "categoryId": 2,
+    "category": "Industrial Plates & Sheets",
+    "subCategory": "Alloy Steel Plates (ASTM A387 Gr.11, Gr.22, Gr.91, 16M03, API 52/60/70)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Boiler Quality Alloy Plate",
+    "price": 175,
+    "priceFormatted": "₹175/kg",
+    "originalPrice": 210,
+    "badge": {
+      "text": "ASTM A387 / 16Mo3 High Temp",
+      "color": "#ea580c"
+    },
+    "colors": [
+      "#475569",
+      "#334155",
+      "#64748b"
+    ],
+    "image": "/products/roxy/ss_plate.jpg",
+    "images": [
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/cs_pipe.jpg",
+      "/products/roxy/about_1.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1150,
+    "description": "Elevated temperature pressure vessel chromium-molybdenum alloy steel plates: ASTM A387 Gr. 2 Class 1/2, Gr. 25, Gr. 11 Class 2, Gr. 12 Class 2, Gr. 22 Class 2, Gr. 91 Class 2, EN 10028-2 16Mo3, and ASTM A204 Grade A/B (Molybdenum alloy). Engineered for petrochemical hydrotreaters, steam boilers, power station heat exchangers, and refinery distillation columns with hot tensile and creep rupture resistance.",
+    "specifications": [
+      {
+        "name": "ASTM A387 Chrome Moly Grades",
+        "spec": "A387 Grade 2 (Cl. 1/2), Grade 25, Grade 11 (Cl. 2), Grade 12 (Cl. 2), Grade 22 (Cl. 2), Grade 91 (Cl. 2)"
+      },
+      {
+        "name": "European & Other Pressure Grades",
+        "spec": "16Mo3 (EN 10028-2 / DIN 17155), ASTM A204 Gr. A, Gr. B (Mo Alloy)"
+      },
+      {
+        "name": "Thickness Range",
+        "spec": "6mm to 160mm | Full Plates & Cut-to-Size Profiles"
+      },
+      {
+        "name": "Heat Treatment & Testing",
+        "spec": "Normalized & Tempered (N+T), Simulated Post Weld Heat Treatment (SPWHT), Hot Tensile Tested"
+      },
+      {
+        "name": "Certification & Compliance",
+        "spec": "EN 10204 3.1 & 3.2 MTC, IBR Form IV Approved, NACE MR0175 Compliant"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "A387 Gr. 11/22/91, 16Mo3, A204"
+      },
+      {
+        "name": "Standard",
+        "spec": "ASTM A387 / ASME SA387 / EN 10028"
+      },
+      {
+        "name": "Execution",
+        "spec": "Normalized & Tempered (N+T)"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "High Tensile Quenched & Tempered Structural Plates (ASTM A572 Gr. 60/70, IS 2062 E350, E410, E450, E600, E355Jr/JO & J2+N, S550ME, ST52, S690QL, API 52/60/70)",
+    "categoryId": 2,
+    "category": "Industrial Plates & Sheets",
+    "subCategory": "High Tensile Plates (IS 2062 E350, E410, E450, ASTM A572 Gr.60/70, ST52, S690QL)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "High Strength Structural Plate",
+    "price": 115,
+    "priceFormatted": "₹115/kg",
+    "originalPrice": 140,
+    "badge": {
+      "text": "S690QL / E450 / ST52 High Yield",
+      "color": "#16a34a"
+    },
+    "colors": [
+      "#1e293b",
+      "#334155",
+      "#475569"
+    ],
+    "image": "/products/roxy/ss_plate.jpg",
+    "images": [
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/ss_angle.jpg",
+      "/products/roxy/cs_pipe.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 2100,
+    "description": "High yield strength micro-alloyed and quenched & tempered structural steel plates: ASTM A572 Gr. 60/70, IS 2062 E350, E410, E450, E600, E355Jr/JO/J2+N, S550ME, DIN 17100 ST52-3, EN 10025-6 S690QL (690 MPa yield), and API 2W / API 52/60/70 offshore grades. Engineered for mobile cranes, bridge girders, heavy transport chassis, wind towers, and high-load industrial machinery.",
+    "specifications": [
+      {
+        "name": "High Tensile Standards & Grades",
+        "spec": "ASTM A572 Gr. 60/70, IS 2062 E350, E410, E450, E600, E355 (Jr/JO/J2+N)"
+      },
+      {
+        "name": "Quenched & Tempered High Yield",
+        "spec": "S690QL, S550ME, ST52-3, API 52/60/70 Offshore Structural"
+      },
+      {
+        "name": "Yield & Tensile Strength",
+        "spec": "Yield 350 to 690 MPa, Tensile 490 to 980 MPa, Charpy Impact at -40°C"
+      },
+      {
+        "name": "Thickness Range",
+        "spec": "5mm to 150mm | Lengths up to 14,000mm"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "100% UT Tested, Through-Thickness Z-Testing (Z25/Z35), EN 10204 3.1 & 3.2 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "A572 Gr.60/70, E350, E450, S690QL, ST52"
+      },
+      {
+        "name": "Standards",
+        "spec": "IS 2062 / EN 10025-6 / ASTM A572"
+      },
+      {
+        "name": "Condition",
+        "spec": "Q&T / TMCP / Normalized"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Aluminium Alloy Plates & Sheets (6061, 6063, 5083, 6082, 7075, 2014, 2024 & Al-Cu Bimetallic Sheets)",
+    "categoryId": 2,
+    "category": "Industrial Plates & Sheets",
+    "subCategory": "Aluminium Plates (6061, 5083, 7075) & Bimetallic Al-Cu Sheets",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Alloy Aluminium Plate & Sheet",
+    "price": 380,
+    "priceFormatted": "₹380/kg",
+    "originalPrice": 440,
+    "badge": {
+      "text": "Aerospace & Marine 6061 / 7075 / 5083",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f1f5f9",
+      "#cbd5e1",
+      "#94a3b8"
+    ],
+    "image": "/products/roxy/ss_plate.jpg",
+    "images": [
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/ss_circle.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 950,
+    "description": "Comprehensive range of industrial and aerospace grade aluminium plates and sheets: 6061-T6, 6063, 5083-H111 (Marine Grade), 6082-T6, 7075-T6 (High Strength Aircraft Alloy), 2014-T6, 2024-T3, and explosion-bonded Bimetallic Sheets/Plates (Aluminum-Copper Al-Cu transition plates). Widely used in defence, aerospace, cryogenic tanks, shipbuilding, and electrical switchgear.",
+    "specifications": [
+      {
+        "name": "Aluminium Plate Grades",
+        "spec": "6061-T6/T651, 6063, 5083-H111/H321, 6082-T6, 7075-T651, 2014-T6, 2024-T351"
+      },
+      {
+        "name": "Bimetallic Transition Plates",
+        "spec": "Al-Cu (Aluminum-Copper) Explosion Bonded Electrical Clad Sheets"
+      },
+      {
+        "name": "Manufacturing Standards",
+        "spec": "ASTM B209, AMS 4027, AMS 4045, EN 485, IS 737"
+      },
+      {
+        "name": "Thickness Range",
+        "spec": "0.5mm to 150mm (Pre-cut blocks, precision sheared sheets, custom rings)"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "Ultrasonic Class A/B Tested, Conductivity Verified, EN 10204 3.1 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "6061, 5083, 7075, 2024, Al-Cu"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM B209 / AMS 4027"
+      },
+      {
+        "name": "Tempers",
+        "spec": "T6, T651, H111, H321, T351"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Socket Weld, Lap Joint & Threaded Companion Flanges (Class 150 to 2500 LBS)",
+    "categoryId": 4,
+    "category": "Stainless Steel & Alloy Flanges",
+    "subCategory": "Socket Weld, Lap Joint & Threaded Companion Flanges",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Forged Companion Flange",
+    "price": 650,
+    "priceFormatted": "₹650/piece",
+    "originalPrice": 780,
+    "badge": {
+      "text": "ASME B16.5 Class 150-2500#",
+      "color": "#16a34a"
+    },
+    "colors": [
+      "#94a3b8",
+      "#cbd5e1",
+      "#334155"
+    ],
+    "image": "/products/roxy/ss_flange.jpg",
+    "images": [
+      "/products/roxy/ss_flange.jpg",
+      "/products/roxy/pipe_fittings.jpg",
+      "/products/roxy/ss_pipe.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1100,
+    "description": "High-pressure forged socket weld (SW), lap joint (LJ / loose backing flanges), and threaded companion (NPT / BSPT / screwed) flanges conforming to ASME B16.5, DIN 2566, and EN 1092-1. Available in SS 304/304L, 316/316L, 321, 310, Duplex 2205, and Carbon Steel ASTM A105N with 3.1/3.2 MTC for chemical, pharmaceutical, and high-pressure instrumentation connections.",
+    "specifications": [
+      {
+        "name": "Flange Types",
+        "spec": "Socket Weld (SW), Lap Joint Flange, Threaded Companion Flange (NPT/BSPT)"
+      },
+      {
+        "name": "Pressure Ratings",
+        "spec": "Class 150#, 300#, 600#, 900#, 1500#, 2500# (PN6 to PN400)"
+      },
+      {
+        "name": "Material Grades",
+        "spec": "SS 304/L, SS 316/L, SS 321, SS 310S, ASTM A105N, A350 LF2, Alloy Steel F11/F22"
+      },
+      {
+        "name": "Size Range",
+        "spec": "1/2\" NB (15mm) to 24\" NB (600mm)"
+      },
+      {
+        "name": "Facing Options",
+        "spec": "Raised Face (RF), Flat Face (FF), Ring Type Joint (RTJ)"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Types",
+        "spec": "Socket Weld, Lap Joint, Threaded"
+      },
+      {
+        "name": "Standard",
+        "spec": "ASME B16.5 / BS 4504 / DIN"
+      },
+      {
+        "name": "Pressure",
+        "spec": "Class 150# to 2500#"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Nickel Alloy & Super Duplex Heavy Duty Forged Flanges (Inconel 625, Hastelloy C276, Super Duplex S32750 / S32760)",
+    "categoryId": 4,
+    "category": "Stainless Steel & Alloy Flanges",
+    "subCategory": "Nickel Alloy & Super Duplex Heavy Duty Forged Flanges",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Severe Service Superalloy Flange",
+    "price": 2850,
+    "priceFormatted": "₹2,850/piece",
+    "originalPrice": 3400,
+    "badge": {
+      "text": "Severe Service 3.2 Mill Certified",
+      "color": "#7c3aed"
+    },
+    "colors": [
+      "#94a3b8",
+      "#cbd5e1",
+      "#475569"
+    ],
+    "image": "/products/roxy/ss_flange.jpg",
+    "images": [
+      "/products/roxy/ss_flange.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/pipe_fittings.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 650,
+    "description": "Heavy-duty forged high-nickel and super duplex alloy flanges: Inconel 625 (UNS N06625), Inconel 600 (UNS N06600), Hastelloy C276 (UNS N01276), Hastelloy C22 (UNS N06022), Monel 400 (UNS N04400), Super Duplex 2507 (UNS S32750 / S32760), and Incoloy 825 (UNS N08825). Built for offshore subsea manifolds, aggressive acid piping, desulfurization units, and sour gas service with complete EN 10204 3.1 & 3.2 MTC.",
+    "specifications": [
+      {
+        "name": "Nickel Alloy Grades",
+        "spec": "Inconel 625 (N06625), Inconel 600 (N06600), Hastelloy C276 (N01276), Hastelloy C22 (N06022), Monel 400 (N04400)"
+      },
+      {
+        "name": "Duplex & Special Grades",
+        "spec": "Super Duplex S32750 / S32760, Duplex S31803 / S32205, Incoloy 825 (N08825)"
+      },
+      {
+        "name": "Flange Configurations",
+        "spec": "WNRF, SORF, BLRF, SW, RTJ, Spectacle Blind, Long Weld Neck"
+      },
+      {
+        "name": "Pressure Ratings",
+        "spec": "Class 150#, 300#, 600#, 900#, 1500#, 2500#, API 5000/10000 PSI"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "100% PMI, Dye Penetrant Tested, Ultrasonic Tested, 3.1 & 3.2 Third Party Inspected"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "Inconel 625, Hastelloy C276, S32750"
+      },
+      {
+        "name": "UNS Numbers",
+        "spec": "N06625, N01276, S32750/60"
+      },
+      {
+        "name": "Standard",
+        "spec": "ASME B16.5 / B16.47 / MSS SP-44"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Nickel 200 / 201 & Special Superalloys Pipes, Sheets & Bars (Alloy 200/1 N02200/1, Alloy 20 N08020, Sanrico 28 N08028, Alloy 904L N08904)",
+    "categoryId": 5,
+    "category": "Nickel Alloys & Superalloys",
+    "subCategory": "Alloy 20, Sanrico 28, Alloy 904L, Alloy 200/201 Nickel",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Specialty Corrosion Superalloy",
+    "price": 2450,
+    "priceFormatted": "₹2,450/kg",
+    "originalPrice": 2900,
+    "badge": {
+      "text": "Commercially Pure Ni & Alloy 20",
+      "color": "#7c3aed"
+    },
+    "colors": [
+      "#94a3b8",
+      "#cbd5e1",
+      "#64748b"
+    ],
+    "image": "/products/roxy/about_2.jpg",
+    "images": [
+      "/products/roxy/about_2.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/ss_pipe.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 720,
+    "description": "Commercially pure nickel and specialty acid-resistant superalloys: Nickel 200 (UNS N02200), Nickel 201 (UNS N02201 - low carbon), Carpenter 20 / Alloy 20 (UNS N08020), Sanrico 28 (UNS N08028), and Alloy 904L (UNS N08904). Available in seamless pipes, sheets, plates, round bars, and fittings for caustic soda production, sulfuric acid processing, synthetic fiber manufacturing, and fertilizer reactors with 3.1/3.2 MTC.",
+    "specifications": [
+      {
+        "name": "Material Grades & UNS",
+        "spec": "Nickel 200 (UNS N02200), Nickel 201 (UNS N02201), Alloy 20 (UNS N08020), Sanrico 28 (UNS N08028), Alloy 904L (UNS N08904)"
+      },
+      {
+        "name": "Product Forms Available",
+        "spec": "Seamless & Welded Pipes, Heat Exchanger Tubes, Plates, Sheets, Round Bars, Wire"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM B161, ASTM B162, ASTM B464, ASTM B463, ASTM B668, ASME SB161"
+      },
+      {
+        "name": "Corrosion Resistance",
+        "spec": "Immunity to caustic embrittlement up to 315°C, superior resistance to sulfuric and phosphoric acids"
+      },
+      {
+        "name": "Certification & MTC",
+        "spec": "100% Positive Material Identification (PMI), EN 10204 3.1 / 3.2 Mill Certified"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "Alloy 200/1, Alloy 20, Sanrico 28"
+      },
+      {
+        "name": "UNS Numbers",
+        "spec": "N02200/1, N08020, N08028, N08904"
+      },
+      {
+        "name": "Forms",
+        "spec": "Pipes, Tubes, Plates, Round Bars"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Inconel 601, 825 & Incoloy 800 / 800H / 800HT High-Temperature Pipes & Tubes (UNS N06601, N08825, N08800/10/11)",
+    "categoryId": 5,
+    "category": "Nickel Alloys & Superalloys",
+    "subCategory": "Inconel 600, 601, 625 & Incoloy 800/H/HT, Inconel 825",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "High-Temp Nickel Alloy Tube",
+    "price": 2650,
+    "priceFormatted": "₹2,650/kg",
+    "originalPrice": 3150,
+    "badge": {
+      "text": "Thermal Oxidation Proof 1150°C",
+      "color": "#9333ea"
+    },
+    "colors": [
+      "#94a3b8",
+      "#cbd5e1",
+      "#64748b"
+    ],
+    "image": "/products/roxy/about_1.jpg",
+    "images": [
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/about_2.jpg",
+      "/products/roxy/ss_pipe.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 680,
+    "description": "High-temperature and severe oxidation-resistant nickel-chromium-iron alloys: Inconel 601 (UNS N06601), Incoloy 800 (UNS N08800), Incoloy 800H (UNS N08810), Incoloy 800HT (UNS N08811), and Inconel 825 (UNS N08825). Resistant to thermal cyclic oxidation up to 1150°C, carburization, and stress corrosion cracking in petrochemical crackers, ethylene furnaces, and nuclear power heat exchangers with 3.1/3.2 MTC.",
+    "specifications": [
+      {
+        "name": "Alloy Grades & UNS",
+        "spec": "Inconel 601 (UNS N06601), Inconel 825 (UNS N08825), Incoloy 800 (UNS N08800), 800H (UNS N08810), 800HT (UNS N08811)"
+      },
+      {
+        "name": "Manufacturing Standards",
+        "spec": "ASTM B167, ASTM B163, ASTM B407, ASTM B423, ASME SB407"
+      },
+      {
+        "name": "Execution",
+        "spec": "Cold Drawn Seamless (SMLS), Annealed & Solution Annealed"
+      },
+      {
+        "name": "High Temp Resistance",
+        "spec": "Continuous service up to 1150°C with exceptional creep rupture strength"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "100% Hydrotested, Ultrasonic / Eddy Current Tested, EN 10204 3.1 & 3.2 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "Inconel 601, 825, Incoloy 800/H/HT"
+      },
+      {
+        "name": "UNS Numbers",
+        "spec": "N06601, N08825, N08800/10/11"
+      },
+      {
+        "name": "Standard",
+        "spec": "ASTM B167 / B407 / ASME SB407"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 / 3.2 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Stainless Steel & Mild Steel Flat Bar Products & Slit Coils (ISF, Flat Bars, Slit Strips, Edge Conditioned)",
+    "categoryId": 6,
+    "category": "SS Circles, Rings, Shims & Strips",
+    "subCategory": "Stainless Steel & Mild Steel Flat Bar Products & Slit Coils",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Precision Flat Bar & Slit Coil",
+    "price": 320,
+    "priceFormatted": "₹320/kg",
+    "originalPrice": 370,
+    "badge": {
+      "text": "Precision Slit & De-burred",
+      "color": "#e11d48"
+    },
+    "colors": [
+      "#cbd5e1",
+      "#94a3b8",
+      "#334155"
+    ],
+    "image": "/products/roxy/ss_circle.jpg",
+    "images": [
+      "/products/roxy/ss_circle.jpg",
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/ss_angle.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1750,
+    "description": "Hot rolled, cold drawn, and precision slit flat bar products: Stainless Steel (SS 304, 304L, 316, 316L, 310, 321), Mild Steel ISF Flat Bars (IS 2062 E250), and precision slit coils with rounded, de-burred, and square edges. Designed for architectural trims, fabrication brackets, grounding busbars, grating flats, and machine guide rails.",
+    "specifications": [
+      {
+        "name": "Material Grades",
+        "spec": "Stainless Steel SS 304/L, 316/L, 310S, 321 | Mild Steel IS 2062 E250 (ISF)"
+      },
+      {
+        "name": "Size Range Widths",
+        "spec": "Width: 10mm to 300mm | Thickness: 2mm to 40mm | Length: 3m to 6m or Continuous Coils"
+      },
+      {
+        "name": "Edge Treatments",
+        "spec": "Slit Edge, De-burred Edge, Round Safety Edge, Machined Square Edge"
+      },
+      {
+        "name": "Finish",
+        "spec": "Cold Drawn Bright, Hot Rolled Annealed & Pickled (No.1), Polished Hairline/Mirror"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "Dimensional Tolerance ASTM A484 / EN 10058, EN 10204 3.1 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "SS 304/L, SS 316/L, MS ISF E250"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM A276 / ASTM A484 / IS 2062"
+      },
+      {
+        "name": "Edges",
+        "spec": "Slit / Round / De-burred"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Industrial Forged & Instrumentation Valves (Needle Valves, Ball Valves, Gate, Globe & Check Valves - Class 800# - 2500#)",
+    "categoryId": 7,
+    "category": "Fasteners, Nuts, Bolts & Wire Mesh",
+    "subCategory": "Forged Valves, Instrumentation Needle & Ball Valves",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Industrial High Pressure Valve",
+    "price": 1450,
+    "priceFormatted": "₹1,450/piece",
+    "originalPrice": 1800,
+    "badge": {
+      "text": "100% Hydro-Tested API 598",
+      "color": "#059669"
+    },
+    "colors": [
+      "#94a3b8",
+      "#cbd5e1",
+      "#334155"
+    ],
+    "image": "/products/roxy/pipe_fittings.jpg",
+    "images": [
+      "/products/roxy/pipe_fittings.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/ss_flange.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 850,
+    "description": "High-pressure forged steel and bar stock process valves: 2-way and 3-way Instrumentation Needle Valves, High-Pressure Ball Valves, Forged Gate Valves, Globe Valves, and Piston / Swing Check Valves conforming to API 602, BS 5352, and ASME B16.34. Offered in SS 304, SS 316, Duplex 2205, Monel 400, and ASTM A105N for chemical, petroleum, and laboratory fluid isolation.",
+    "specifications": [
+      {
+        "name": "Valve Types Available",
+        "spec": "Needle Valves, 1-Piece/3-Piece Ball Valves, Forged Gate, Globe, Check Valves, Gauge Cock Valves"
+      },
+      {
+        "name": "Pressure Classes",
+        "spec": "Class 800#, 1500#, 2500#, 3000 PSI to 10,000 PSI High Pressure"
+      },
+      {
+        "name": "Body Materials",
+        "spec": "SS 316 / 316L (UNS S31603), SS 304, Duplex S31803, Monel 400, Inconel 625, ASTM A105N"
+      },
+      {
+        "name": "End Connections",
+        "spec": "NPT / BSPT Screwed Female/Male, Socket Weld (SW), Double Ferrule Tube End"
+      },
+      {
+        "name": "Testing Standard",
+        "spec": "100% Factory Hydrostatic & Pneumatic Seat/Shell Tested as per API 598 / BS 6755"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Types",
+        "spec": "Needle, Ball, Gate, Globe, Check"
+      },
+      {
+        "name": "Standard",
+        "spec": "API 602 / ASME B16.34 / BS 5352"
+      },
+      {
+        "name": "Pressure",
+        "spec": "800# to 2500# / 6000 PSI"
+      },
+      {
+        "name": "Certification",
+        "spec": "API 598 / 3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Stainless Steel & Nickel Alloy Industrial Wires & Spring Wire Coils (SS 304, 316, Inconel 625, Monel 400)",
+    "categoryId": 7,
+    "category": "Fasteners, Nuts, Bolts & Wire Mesh",
+    "subCategory": "Stainless Steel Wire Mesh, Wire Coils & Perforated Industrial Sheets",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Industrial Spring & Tie Wire",
+    "price": 410,
+    "priceFormatted": "₹410/kg",
+    "originalPrice": 480,
+    "badge": {
+      "text": "Bright Drawn Spring Wire",
+      "color": "#059669"
+    },
+    "colors": [
+      "#cbd5e1",
+      "#94a3b8",
+      "#e2e8f0"
+    ],
+    "image": "/products/roxy/ss_nut_bolt.jpg",
+    "images": [
+      "/products/roxy/ss_nut_bolt.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/ss_circle.jpg"
+    ],
+    "inStock": true,
+    "trending": false,
+    "stockCount": 1300,
+    "description": "Cold drawn bright finish industrial wires and spring wire coils in Stainless Steel (SS 304, SS 304L, SS 316, SS 316L, SS 310, SS 302) and High Nickel Alloys (Inconel 625, Inconel 600, Monel 400, Hastelloy C276). Used for precision industrial springs, wire mesh weaving, fastener cold heading, welding filler wire, and conveyor belt fabrication.",
+    "specifications": [
+      {
+        "name": "Material Grades",
+        "spec": "Stainless Steel 304, 316, 310S, 302 | Nickel Alloys Inconel 625, Monel 400"
+      },
+      {
+        "name": "Wire Diameter Range",
+        "spec": "0.10mm (ultra-fine) to 12.00mm diameter in catch coils and spools"
+      },
+      {
+        "name": "Tensile Strength Tempers",
+        "spec": "Soft Annealed (500-700 MPa), 1/4 Hard, 1/2 Hard, Full Hard Spring Temper (1400-2200 MPa)"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM A313, ASTM A580, EN 10270-3, DIN 17224"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "Wrapping Test, Tensile & Elongation Tested, EN 10204 3.1 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "SS 304, SS 316, Inconel 625"
+      },
+      {
+        "name": "Standard",
+        "spec": "ASTM A313 / ASTM A580"
+      },
+      {
+        "name": "Diameter",
+        "spec": "0.10mm to 12.00mm"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Electrical Aluminium Busbars & Marine Grade Flat Bars (EC Grade Aluminium Bus Bar Flats 6061/6063/6082)",
+    "categoryId": 8,
+    "category": "Structural Steels, Angles & Tool Steel",
+    "subCategory": "Electrical Aluminium Busbars & Marine Grade Flat Bars",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Electrical Aluminium Busbar",
+    "price": 360,
+    "priceFormatted": "₹360/kg",
+    "originalPrice": 420,
+    "badge": {
+      "text": "61% IACS High Conductivity",
+      "color": "#0284c7"
+    },
+    "colors": [
+      "#f1f5f9",
+      "#cbd5e1",
+      "#94a3b8"
+    ],
+    "image": "/products/roxy/ss_angle.jpg",
+    "images": [
+      "/products/roxy/ss_angle.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/ss_plate.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1400,
+    "description": "High electrical conductivity EC grade aluminium busbar flat products conforming to IS 5082 (19501), ASTM B236, and EN 573-3, alongside marine grade structural aluminium flat bars in 6061-T6, 6063-T6, and 6082-T6. Features ≥ 61% IACS electrical conductivity, smooth radiused edges for switchgear, transformer bus ducts, electrolysis plants, and marine decking.",
+    "specifications": [
+      {
+        "name": "Aluminium Busbar Alloys",
+        "spec": "EC Grade (IS 5082 / 19501 / AA 1350), 6061-T6, 6063-T6, 6082-T6"
+      },
+      {
+        "name": "Electrical Conductivity",
+        "spec": "≥ 61.0% IACS (International Annealed Copper Standard), Low Resistivity"
+      },
+      {
+        "name": "Size Range",
+        "spec": "Width: 12mm to 250mm | Thickness: 3mm to 25mm | Length: 3m to 6m"
+      },
+      {
+        "name": "Edge Finish",
+        "spec": "Full Rounded Edge, Radius Edge, Square Edge for Corona-Free Performance"
+      },
+      {
+        "name": "Certification & Testing",
+        "spec": "Conductivity Verified, Bend Tested (90° & 180° crack-free), EN 10204 3.1 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Alloy",
+        "spec": "EC Grade 1350 / 6061 / 6063"
+      },
+      {
+        "name": "Standard",
+        "spec": "IS 5082 / ASTM B236 / EN 573"
+      },
+      {
+        "name": "Conductivity",
+        "spec": "≥ 61% IACS"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Case Hardened & Bearing Steel Round Bars (EN-353, SAE 8620, EN-31, 52100 High Carbon Bearing Steel)",
+    "categoryId": 8,
+    "category": "Structural Steels, Angles & Tool Steel",
+    "subCategory": "Chrome Moly (4140, 4130) & Bearing Steel (EN-31, 52100)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Bearing & Case Hardened Bar",
+    "price": 145,
+    "priceFormatted": "₹145/kg",
+    "originalPrice": 175,
+    "badge": {
+      "text": "Vacuum Degassed 52100 / EN-31",
+      "color": "#475569"
+    },
+    "colors": [
+      "#1e293b",
+      "#334155",
+      "#475569"
+    ],
+    "image": "/products/roxy/ss_angle.jpg",
+    "images": [
+      "/products/roxy/ss_angle.jpg",
+      "/products/roxy/about_1.jpg",
+      "/products/roxy/ss_circle.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1600,
+    "description": "High-purity vacuum degassed bearing steel and case carburizing alloy steel round bars: EN-31 (100Cr6 / SAE 52100 high carbon chrome bearing steel), EN-353 (15CrNi6), and SAE 8620 (20NiCrMo2). Engineered for ball and roller bearings, automotive transmission pinions, kingpins, camshafts, and heavy-duty gears demanding core toughness with surface case hardness up to 62 HRC.",
+    "specifications": [
+      {
+        "name": "Bearing Steel Grades",
+        "spec": "EN-31 (BS 970), SAE 52100, DIN 100Cr6 (1.3505), IS 103Cr1"
+      },
+      {
+        "name": "Case Hardening Grades",
+        "spec": "EN-353 (15CrNi6), SAE 8620 (AISI 8620), 16MnCr5, 20MnCr5"
+      },
+      {
+        "name": "Diameter Range",
+        "spec": "Round: 16mm to 450mm diameter (Peeled, Turned, Ground & Polished)"
+      },
+      {
+        "name": "Heat Treatment",
+        "spec": "Spheroidize Annealed (Max 207 BHN) for EN-31; As-Rolled / Annealed for EN-353/8620"
+      },
+      {
+        "name": "Purity & Testing",
+        "spec": "Vacuum Degassed, Micro-cleanliness ASTM E45 Method A, 100% Ultrasonic Tested"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "EN-31, 52100, EN-353, 8620"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM A295 / BS 970 / DIN 17230"
+      },
+      {
+        "name": "Condition",
+        "spec": "Annealed / Peeled & Ground"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
+        "spec": "Roxy Enterprises Mumbai"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Chrome Moly & Plastic Mould Tool Steel Round Bars (AISI 4140, AISI 4130, P20, 1.2378, 1.2379, 1.2311)",
+    "categoryId": 8,
+    "category": "Structural Steels, Angles & Tool Steel",
+    "subCategory": "Die & Tool Steel (D2, D3, 2738, 1.2379, 1.2311, H13, H11, P20)",
+    "vendor": "Roxy Enterprises",
+    "brand": "Roxy Enterprises",
+    "type": "Pre-Hardened Mould & Tool Steel",
+    "price": 185,
+    "priceFormatted": "₹185/kg",
+    "originalPrice": 225,
+    "badge": {
+      "text": "Pre-Hardened P20 / 4140 / 1.2379",
+      "color": "#ea580c"
+    },
+    "colors": [
+      "#1e293b",
+      "#334155",
+      "#64748b"
+    ],
+    "image": "/products/roxy/ss_angle.jpg",
+    "images": [
+      "/products/roxy/ss_angle.jpg",
+      "/products/roxy/ss_plate.jpg",
+      "/products/roxy/about_2.jpg"
+    ],
+    "inStock": true,
+    "trending": true,
+    "stockCount": 1350,
+    "description": "Premium quality pre-hardened plastic mould steel and chrome-moly engineering alloy steel: AISI 4140 (EN-19 / 42CrMo4), AISI 4130 (25CrMo4), AISI P20 (DIN 1.2311 / 1.2378 pre-hardened 28-32 HRC), and Cold Work Tool Steel DIN 1.2379 (D2). Designed for plastic injection moulds, die-casting bolster plates, extrusion dies, oilfield drill collars, and heavy-duty shafting.",
+    "specifications": [
+      {
+        "name": "Mould & Tool Steel Grades",
+        "spec": "AISI P20, DIN 1.2311, DIN 1.2378, DIN 1.2379 (D2), DIN 2738"
+      },
+      {
+        "name": "Chrome Moly Engineering Grades",
+        "spec": "AISI 4140 (42CrMo4 / EN-19), AISI 4130 (25CrMo4 / EN-16)"
+      },
+      {
+        "name": "Available Shapes",
+        "spec": "Round Bars (20mm to 500mm OD), Flat Blocks, Rectangular Slabs"
+      },
+      {
+        "name": "Supply Hardness",
+        "spec": "P20: Pre-hardened 280-325 HBW (28-34 HRC); 4140: Annealed or Q&T"
+      },
+      {
+        "name": "Testing & Certification",
+        "spec": "100% Ultrasonic Tested as per ASTM A388 / SEP 1921, EN 10204 3.1 MTC"
+      },
+      {
+        "name": "Stockiest & Supplier",
+        "spec": "Roxy Enterprises - 5th Kumbharwada, Mumbai (Phone: +91 9769257080)"
+      }
+    ],
+    "specs": [
+      {
+        "name": "Grades",
+        "spec": "4140, 4130, P20, 1.2379, 1.2311"
+      },
+      {
+        "name": "Standards",
+        "spec": "ASTM A29 / DIN 17350 / AISI"
+      },
+      {
+        "name": "Execution",
+        "spec": "Pre-Hardened / Annealed"
+      },
+      {
+        "name": "Certification",
+        "spec": "3.1 Mill Test Certificate"
+      },
+      {
+        "name": "Origin",
         "spec": "Roxy Enterprises Mumbai"
       }
     ]
