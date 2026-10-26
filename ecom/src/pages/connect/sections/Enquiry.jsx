@@ -42,29 +42,35 @@ const ENQUIRY_FIELDS = [
 const CONTACT_DETAILS = [
     {
         icon: 'MapPin',
-        title: 'ADDRESS',
-        desc: import.meta.env.VITE_ADDRESS,
-        sub: ''
+        title: 'Manufacturing Plant',
+        desc: 'Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel, Daman – 396210, India',
+        sub: 'Factory & Precision Moulding Facility'
+    },
+    {
+        icon: 'MapPin',
+        title: 'Sales & Corporate Hub',
+        desc: '303/B, Byculla Service Industries, Dadoji Konndeo Road, Byculla (E), Mumbai – 400 027, India',
+        sub: 'Sales, Distribution & Sample Dispatch'
     },
     {
         icon: 'Phone',
-        title: 'Call Us',
-        desc: import.meta.env.VITE_PHONE,
-        link: `tel:${(import.meta.env.VITE_PHONE || '').replace(/[^\d+]/g, '')}`,
-        sub: ''
+        title: 'Direct Call / WhatsApp',
+        desc: '+91 95126 51119',
+        link: 'tel:+919512651119',
+        sub: 'Quick Response for Bulk Orders'
     },
     {
         icon: 'Mail',
         title: 'Email Us',
-        desc: import.meta.env.VITE_EMAIL,
-        link: `mailto:${import.meta.env.VITE_EMAIL || ''}`,
-        sub: ''
+        desc: import.meta.env.VITE_EMAIL || 'sales@vasujavalplastics.com',
+        link: `mailto:${import.meta.env.VITE_EMAIL || 'sales@vasujavalplastics.com'}`,
+        sub: 'Quotation & Technical Queries'
     },
     {
         icon: 'Clock',
         title: 'Working Hours',
-        desc: import.meta.env.VITE_WORKING_HOURS,
-        sub: import.meta.env.VITE_WEEKEND_HOURS
+        desc: import.meta.env.VITE_WORKING_HOURS || 'Mon to Sat: 10:00 AM - 6:30 PM',
+        sub: import.meta.env.VITE_WEEKEND_HOURS || 'Sun: Closed'
     }
 ];
 
@@ -132,8 +138,8 @@ const Enquiry = React.memo(() => {
                     version="v2"
                     tag="GET IN TOUCH"
                     tagIcon="Phone"
-                    title="Contact Us"
-                    subtitle="Have a project in mind, need technical consultation, or have an inquiry? Reach out to our team."
+                    title="Request a Factory Quote"
+                    subtitle="Have an inquiry about closure dimensions, thread compatibility, custom colours, or bulk drum & IBC valve supply? Reach out to our team."
                     className="mb-20"
                 />
 
@@ -157,8 +163,8 @@ const Enquiry = React.memo(() => {
                 <Heading
                     version="v2"
                     tag=""
-                    title={import.meta.env.VITE_SUPPORT_TITLE || "Need Help?"}
-                    subtitle={import.meta.env.VITE_SUPPORT_SUBTITLE || "To us, design has a broader purpose and as you can read about on this website, we are on a mission."}
+                    title={import.meta.env.VITE_SUPPORT_TITLE || "Packaging Support"}
+                    subtitle={import.meta.env.VITE_SUPPORT_SUBTITLE || "From custom moulds to free sample testing kits, our engineering specialists ensure 100% leak-proof closure fitment for your containers."}
                     className="mb-20"
                 />
 

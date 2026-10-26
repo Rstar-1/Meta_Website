@@ -1,11 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Image from '../../../../components/common/Image';
 import Button from '../../../../components/common/Button';
-
-import { configData, heroCMS } from '../../../../utils/apiData';
 import Container from '../../../../components/common/Container';
+import { configData, heroCMS } from '../../../../utils/apiData';
+import bannerVideo from '../../../../assets/Banner.mp4';
 
 const HEIGHT_MAP = {
     sticky: { 1: 'h-800 sm-h-550', 2: 'h-700 sm-h-550' },
@@ -13,16 +12,19 @@ const HEIGHT_MAP = {
 };
 
 const HeroBackground = React.memo(() => (
-    <div className='absolute top-0 left-0 w-full h-full z-10'>
-        <Image
-            src={import.meta.env.VITE_IMAGE + "Hero1.mp4"}
-            alt="Ashmita Vinyls PVC Strip Curtains"
-            className='w-full h-full flex object-cover'
+    <div className='absolute top-0 left-0 w-full h-full z-10 overflow-hidden'>
+        <video
+            src={bannerVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className='w-full h-full object-cover flex'
         />
         <div
             className='absolute w-full h-full top-0 left-0'
             style={{
-                background: 'radial-gradient(ellipse 85% 75% at 70% 0%, rgba(255, 175, 40, 0.28) 0%, rgba(0, 0, 0, 0.5) 90%, rgba(10, 10, 10, 0.95) 100%), linear-gradient(180deg, rgba(10, 10, 10, 0.6) 90%, rgba(10, 10, 10, 0.9) 100%)',
+                background: 'linear-gradient(180deg, rgba(10, 15, 25, 0.65) 0%, rgba(10, 15, 25, 0.35) 50%, rgba(10, 15, 25, 0.88) 100%), radial-gradient(ellipse 90% 80% at 70% 20%, rgba(0, 180, 216, 0.15) 0%, rgba(10, 15, 25, 0.65) 100%)',
             }}
         />
     </div>
@@ -36,12 +38,12 @@ const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) =
             : 'pb-60'
         } relative z-20`}>
         <h1 className='largemid-text text-white font-600 uppercase'>
-            {heroCMS?.titleLine1 || 'PREMIUM'}
+            {heroCMS?.titleLine1 || 'PRECISION-MADE'}
             <br />
-            <span className='text-primary'>{heroCMS?.titleHighlight || 'PVC STRIP CURTAINS'}</span>
+            <span className='text-primary'>{heroCMS?.titleHighlight || 'INDUSTRIAL CLOSURES'}</span>
         </h1>
         <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12' style={{ maxWidth: '650px' }}>
-            {heroCMS?.leftText || 'Leading stockiest & supplier of PVC strip curtains, polar freezer rolls, and hanging hardware across India.'}
+            {heroCMS?.leftText || "India's premier manufacturer of high-performance closures, bungs, screw caps, inserts, and IBC valves for drums, jerry cans & IBCs."}
         </p>
         <Button
             text="Get Product Quote"

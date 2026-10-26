@@ -7,7 +7,7 @@ import SEO from '../../seo';
 const Enquiry = lazy(() => import('./sections/Enquiry'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 
-const patchBannerBg = (import.meta.env.VITE_IMAGE || '') + 'Banner.jpg';
+const patchBannerBg = 'https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp';
 
 const connectSections = [
     {
@@ -46,8 +46,8 @@ const Connect = () => {
         <>
             <SEO page="connect" breadcrumbs={BREADCRUMBS} />
             <Banner
-                title="Connect Us"
-                desc="Get In Touch With Us"
+                title="Connect With Us"
+                desc="Direct Factory Inquiries, Technical Support & Sample Requests Across India"
                 breadcrumbs={BREADCRUMBS}
             />
             {connectSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

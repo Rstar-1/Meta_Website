@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Icon from '../../../../components/common/Icon';
 import Image from '../../../../components/common/Image';
+import Button from '../../../../components/common/Button';
 
 import Heading from '../../../../components/layout/generic/Heading';
 
@@ -10,12 +11,12 @@ import { configData, aboutCMS } from '../../../../utils/apiData';
 import { resolveImagePath } from '../../../../utils/imageResolver';
 
 const defaultAboutData = {
-    experienceYears: "25+",
-    experienceTagline: "Years of PVC Extrusion & Stockiest Excellence",
-    description: "Established in 2010 at Bhandup West, Mumbai, Maharashtra. We Ashmita Vinyls Pvt.Ltd.. is a Proprietor based firm, engaged as the foremost Importer and Wholesaler of PVC Strip Curtains,  PVC Sheet, PVC Roll, PVC Curtain, PVC Film, Mounting Brackets. These products are highly demanded by the customers for their low maintenance, fine finishing, high functioning, super performance and longer service life.",
+    experienceYears: "15+",
+    experienceTagline: "Years of Precision Industrial Closures & Injection Moulding",
+    description: "Vasu Javal Plastics is a premier manufacturer and supplier of high-precision industrial closures, drum bungs, vented screw caps, inserts, and IBC dispensing valves. Operating state-of-the-art injection moulding facilities in Daman with central sales coordination in Byculla, Mumbai, we engineer leak-proof, chemical-resistant closure solutions from 100% virgin-grade HDPE and PE polymers for leading chemical, lubricant, paint, and agrochemical brands across India.",
     images: {
-        team: resolveImagePath('blog/Blog9.jpg'),
-        developer: resolveImagePath('blog/Blog10.jpg')
+        team: "https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp",
+        developer: "/images/products/bung-50mm-vented.webp"
     }
 };
 
@@ -37,34 +38,49 @@ export const AboutVersion1 = React.memo(({ aboutSide = 'left', onLearnMore, data
                 <p className="text-gray small-text font-400 mt-2">
                     {data.description}
                 </p>
+                {onLearnMore && (
+                    <div className="mt-20">
+                        <Button
+                            onClick={onLearnMore}
+                            text="Learn More About Us"
+                            icon="ArrowUpRight"
+                            iconPosition="right"
+                            version="v2"
+                            bg="dark"
+                            color="white"
+                            className="rounded-5 font-500"
+                        />
+                    </div>
+                )}
             </div>
 
             <div className="w-30 sm-w-full relative overflow-hidden rounded-5">
                 <Image
                     src={resolveImagePath(data?.images?.team)}
-                    alt="Team Collaboration"
+                    alt="Vasu Javal Plastics Industrial Closures"
                     className="w-full h-250 object-cover flex"
                 />
                 <div
                     className="absolute top-0 right-0 p-8 bg-white rounded-5 flex items-center gap-6 m-6"
+                    style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
                 >
                     <Icon name="Star" width="14" height="14" fill="var(--warning)" stroke="var(--warning)" />
-                    <p className="mini-text font-600 text-dark">4.9 / 5 Rating (1.2k+ Reviews)</p>
+                    <p className="mini-text font-600 text-dark">99.8% Leak-Proof Reliability</p>
                 </div>
             </div>
 
             <div className="w-40 sm-w-full relative overflow-hidden rounded-5">
                 <Image
                     src={resolveImagePath(data?.images?.developer)}
-                    alt="Developer working on code"
+                    alt="Precision Injection Moulded Closure"
                     className="w-full h-350 object-cover flex"
                 />
                 <div
                     className="absolute bottom-0 right-0 p-10 m-6 bg-white rounded-5 text-white"
-                    style={{ minWidth: '110px' }}
+                    style={{ minWidth: '130px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
                 >
-                    <p className="title-text font-600 text-dark text-center">1.2K+</p>
-                    <p className="mini-text text-gray font-400 text-center">Projects Shipped</p>
+                    <p className="title-text font-600 text-dark text-center">50+ SKUs</p>
+                    <p className="mini-text text-gray font-400 text-center">Direct Factory Supply</p>
                 </div>
             </div>
         </div>

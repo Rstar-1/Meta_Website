@@ -4,37 +4,37 @@
       "id": "service",
       "icon": "Support",
       "title": "Customer Support",
-      "text": "Mon-Sat, 9am-6pm IST.",
+      "text": "Mon-Sat, 10am-6:30pm IST.",
       "type": "text"
     },
     {
       "id": "call",
       "icon": "Phone",
       "title": "Call Us",
-      "text": "+91 7015163045",
-      "link": "tel:7015163045",
+      "text": "+91 95126 51119",
+      "link": "tel:9512651119",
       "type": "text"
     },
     {
       "id": "touch",
       "icon": "Send",
       "title": "Email Us",
-      "text": "kohad0681@gmail.com",
-      "link": "mailto:kohad0681@gmail.com",
+      "text": "sales@vasujavalplastics.com",
+      "link": "mailto:sales@vasujavalplastics.com",
       "type": "link"
     },
     {
       "id": "address",
       "icon": "MapPin",
-      "title": "Location",
-      "text": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001",
+      "title": "Locations",
+      "text": "Daman (Mfg) | Byculla, Mumbai (Sales)",
       "type": "text"
     }
   ],
   "newsletter": {
-    "title": "Join Us",
-    "description": "Get PVC updates, prices, and installation tips.",
-    "placeholder": "Enter your business email",
+    "title": "Partner with Vasujaval Plastics",
+    "description": "Receive updates on precision industrial closures, IBC valves, and custom packaging solutions.",
+    "placeholder": "Enter your corporate email",
     "buttonText": "Subscribe",
     "disclaimer": {
       "prefix": "By subscribing you agree to our ",
@@ -52,29 +52,29 @@
       "links": [
         { "label": "About Us", "url": "/about" },
         { "label": "All Products", "url": "/product" },
-        { "label": "Applications", "url": "/supplier" },
-        { "label": "Technical Guides", "url": "/blog" },
-        { "label": "Contact & Enquiry", "url": "/connect" }
+        { "label": "Manufacturing Units", "url": "/supplier" },
+        { "label": "Technical Guides & Insights", "url": "/blog" },
+        { "label": "Contact & Custom Inquiry", "url": "/connect" }
       ]
     },
     {
-      "title": "PVC Strip Curtains",
+      "title": "Closures & Bungs",
       "links": [
-        { "label": "Transparent Standard", "url": "/product/1" },
-        { "label": "Transparent Reliable", "url": "/product/3" },
-        { "label": "Transparent Supreme", "url": "/product/9" },
-        { "label": "Crystal Clear", "url": "/product/11" },
-        { "label": "Polar Freezer", "url": "/product/13" }
+        { "label": "50mm Vented Bung Plugs", "url": "/product?category=Bungs" },
+        { "label": "50mm Top Ring Metal Drum Bungs", "url": "/product?category=Bungs" },
+        { "label": "75mm Bottom Ring Bungs", "url": "/product?category=Bungs" },
+        { "label": "50mm Vented Screw Caps", "url": "/product?category=Caps%20%26%20Closures" },
+        { "label": "Open Top Drum Lids 250mm/350mm", "url": "/product?category=Caps%20%26%20Closures" }
       ]
     },
     {
-      "title": "Brackets",
+      "title": "Valves & Accessories",
       "links": [
-        { "label": "MS Brackets (White)", "url": "/product/89" },
-        { "label": "MS Brackets (Grey)", "url": "/product/91" },
-        { "label": "SS 202 Mounting Brackets", "url": "/product/93" },
-        { "label": "SS 304 Mounting Brackets", "url": "/product/95" },
-        { "label": "Galvanised Magnetic Track", "url": "/product/97" }
+        { "label": "DN80 Integrated Butterfly Valve", "url": "/product?category=Dispensing%20Solutions" },
+        { "label": "DN50 Split Thread Ball Valve", "url": "/product?category=Dispensing%20Solutions" },
+        { "label": "IBC DN150 Top Lids", "url": "/product?category=Caps%20%26%20Closures" },
+        { "label": "Industrial Bung Dust Covers", "url": "/product?category=Accessories" },
+        { "label": "Drum Opening Spanner Wrenches", "url": "/product?category=Accessories" }
       ]
     }
   ],
@@ -83,25 +83,25 @@
       "flag": "🇮🇳",
       "label": "India (INR ₹)"
     },
-    "paymentBadges": ["VISA", "MC", "AMEX", "UPI", "NEFT", "GPAY"],
+    "paymentBadges": ["NEFT", "RTGS", "UPI", "GPAY", "VISA", "MC"],
     "socials": [
       {
         "platform": "facebook",
         "iconName": "Facebook",
-        "url": "https://www.facebook.com/share/p/1EhdBQaRw4/"
+        "url": "https://www.facebook.com/"
       },
       {
         "platform": "instagram",
         "iconName": "Instagram",
-        "url": "https://www.instagram.com/inraclick/"
+        "url": "https://www.instagram.com/"
       },
       {
-        "platform": "youtube",
-        "iconName": "YouTube",
-        "url": "https://www.youtube.com/@INRACLICK"
+        "platform": "linkedin",
+        "iconName": "Linkedin",
+        "url": "https://www.linkedin.com/"
       }
     ],
-    "copyright": "© 2026 Ashmita Vinyls Private Limited. All rights reserved.",
+    "copyright": "© 2026 Vasujaval Plastics. All rights reserved.",
     "legalLinks": [
       { "label": "Terms & Conditions", "url": "/terms" },
       { "label": "Privacy Policy", "url": "/privacy" }

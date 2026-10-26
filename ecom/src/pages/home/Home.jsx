@@ -9,7 +9,7 @@ const FeatureSection = lazy(() => import('./sections/ecom/FeatureSection'));
 const ProductSection = lazy(() => import('./sections/ecom/ProductSection'));
 const AboutSection = lazy(() => import('./sections/ecom/AboutSection'));
 const PatchSection = lazy(() => import('./sections/ecom/PatchSection'));
-const OfferSection = lazy(() => import('./sections/ecom/OfferSection'));
+const DemoSection = lazy(() => import('./sections/ecom/DemoSection'));
 
 const ecomSections = [
     {
@@ -38,18 +38,10 @@ const ecomSections = [
         containerStyle: { background: 'var(--forth)' }
     },
     {
-        id: 'patch',
-        Component: PatchSection,
+        id: 'demo',
+        Component: DemoSection,
         minHeight: '300px',
-        isContainer: true,
-        containerClass: 'relative z-10',
-        containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${import.meta.env.VITE_IMAGE + "Patch1.jpg"})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
-        }
+        isContainer: true
     },
     {
         id: 'feature',
@@ -59,11 +51,19 @@ const ecomSections = [
         containerStyle: { background: 'var(--forth)' }
     },
     {
-        id: 'offer',
-        Component: OfferSection,
+        id: 'patch',
+        Component: PatchSection,
         minHeight: '300px',
-        isContainer: true
-    },
+        isContainer: true,
+        containerClass: 'relative z-10',
+        containerStyle: {
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url('https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp')`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
+        }
+    }
 ];
 
 const SectionFallback = memo(({ minHeight = '100px' }) => (

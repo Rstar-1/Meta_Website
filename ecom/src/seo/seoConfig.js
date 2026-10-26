@@ -1,6 +1,6 @@
-const SITE_URL = (import.meta.env.VITE_SITE_URL || "").replace(/\/$/, "");
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Ashmita Vinyls";
-const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/sobo_logo.webp";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://vasujavalplastics.com").replace(/\/$/, "");
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Vasu Javal Plastics";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp";
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 
@@ -9,22 +9,22 @@ export const siteInfo = {
   url: SITE_URL,
   description:
     import.meta.env.VITE_SEO_DESCRIPTION ||
-    "Ashmita Vinyls is a leading stockiest and supplier of PVC vinyl products for commercial and industrial applications.",
-  phone: import.meta.env.VITE_PHONE || "07942562287",
-  email: import.meta.env.VITE_EMAIL || "info@ashmitavinyls.com",
+    "Vasu Javal Plastics is a premier manufacturer and supplier of high-performance industrial closures, drum bungs, vented screw caps, inserts, and IBC dispensing valves in India.",
+  phone: import.meta.env.VITE_PHONE || "+91 95126 51119",
+  email: import.meta.env.VITE_EMAIL || "sales@vasujavalplastics.com",
 
   address: {
-    streetAddress: "C 304, 3rd Floor, Eastern Business District, L.B.S Marg Road, Bhandup West",
-    addressLocality: "Mumbai",
-    addressRegion: "Maharashtra",
-    postalCode: "400078",
+    streetAddress: "Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel",
+    addressLocality: "Daman",
+    addressRegion: "Dadra and Nagar Haveli and Daman and Diu",
+    postalCode: "396210",
     addressCountry: "IN",
-    fullAddress: import.meta.env.VITE_ADDRESS || "Ashmita Enterprises C 304, 3 Rd Floor, Eastern Business Distric, Near Mangatram Petrol Pump L.B.S Marg Road, Bhandup West, Mumbai City, Mumbai - 400078, Maharashtra, India",
+    fullAddress: import.meta.env.VITE_ADDRESS || "Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel, Daman – 396210, India | Sales Office: 303/B, Byculla Service Industries, Dadoji Konndeo Road, Byculla (E), Mumbai – 400 027, India",
   },
 
   geo: {
-    latitude: 19.1485,
-    longitude: 72.9367,
+    latitude: 20.4069,
+    longitude: 72.8687,
   },
 
   sameAs: [
@@ -32,23 +32,24 @@ export const siteInfo = {
     import.meta.env.VITE_SOCIAL_YOUTUBE,
     import.meta.env.VITE_SOCIAL_FACEBOOK,
     import.meta.env.VITE_SOCIAL_LINKEDIN,
+    import.meta.env.VITE_SOCIAL_WHATSAPP,
   ].filter(Boolean),
 };
 
 export const pageSeoData = {
   home: {
-    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Stockiest in India | Ashmita Vinyls",
+    title: import.meta.env.VITE_SEO_TITLE || "Industrial Closures, Bungs, Caps & IBC Valves | Vasu Javal Plastics",
     description:
       import.meta.env.VITE_SEO_DESCRIPTION ||
-      "Ashmita Vinyls is a leading stockiest and supplier of PVC vinyl products for commercial and industrial applications across India.",
+      "Vasu Javal Plastics is a premier manufacturer of high-performance industrial closures, bungs, screw caps, inserts, and IBC dispensing valves for drums, jerry cans, and containers.",
     path: "/home",
     breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
-    title: "About Ashmita Vinyls | PVC Vinyl Stockiest in India",
+    title: "About Vasu Javal Plastics | Industrial Closures Manufacturer in India",
     description:
-      "Learn about Ashmita Vinyls, our PVC vinyl stockiest inventory, quality focus and industrial solutions.",
+      "Learn about Vasu Javal Plastics, our Daman manufacturing plant, 100% virgin-grade polymer injection moulding, and leak-proof industrial closures.",
     path: "/about",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -57,9 +58,9 @@ export const pageSeoData = {
   },
 
   product: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Industrial Closures, Bungs & IBC Valves Catalog | Vasu Javal Plastics",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore over 50 precision-engineered industrial closures, 50mm/75mm drum bungs, vented screw caps, drum handles, and IBC valves from Vasu Javal Plastics.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -68,9 +69,9 @@ export const pageSeoData = {
   },
 
   products: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Industrial Closures, Bungs & IBC Valves Catalog | Vasu Javal Plastics",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore over 50 precision-engineered industrial closures, 50mm/75mm drum bungs, vented screw caps, drum handles, and IBC valves from Vasu Javal Plastics.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -79,9 +80,9 @@ export const pageSeoData = {
   },
 
   productDetail: {
-    title: "PVC Vinyl Product Details | Ashmita Vinyls",
+    title: "Industrial Closure Technical Specifications | Vasu Javal Plastics",
     description:
-      "Explore detailed specifications, technical parameters, and applications for PVC vinyl products by Ashmita Vinyls.",
+      "Explore detailed specifications, technical parameters, thread standards, and virgin HDPE material properties for industrial closures by Vasu Javal Plastics.",
     path: "/product-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -91,9 +92,9 @@ export const pageSeoData = {
   },
 
   supplier: {
-    title: "PVC Vinyl Applications & Industries | Ashmita Vinyls",
+    title: "Industrial Closures Supplier & Manufacturer Profile | Vasu Javal Plastics",
     description:
-      "Discover industries and applications using Ashmita Vinyls PVC vinyl solutions.",
+      "Direct factory supply of industrial packaging closures, drum plugs, and IBC valves to chemical, lubricant, paint, and agrochemical industries.",
     path: "/supplier",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -103,9 +104,9 @@ export const pageSeoData = {
   },
 
   quality: {
-    title: "PVC Vinyl Stockiest Quality | Ashmita Vinyls",
+    title: "Quality Assurance & Leak-Proof Standards | Vasu Javal Plastics",
     description:
-      "Explore Ashmita Vinyls stockiest quality, inventory and PVC vinyl distribution capabilities.",
+      "Explore Vasu Javal Plastics' quality testing, 100% virgin polymer certification, ESCR compliance, and zero-leakage assurance.",
     path: "/quality",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -114,9 +115,9 @@ export const pageSeoData = {
   },
 
   connect: {
-    title: "Contact Ashmita Vinyls | PVC Vinyl Product Enquiry",
+    title: "Contact Vasu Javal Plastics | Request Closure Quotations & Samples",
     description:
-      "Contact Ashmita Vinyls for PVC vinyl product enquiries, specifications and bulk requirements.",
+      "Contact Vasu Javal Plastics for industrial closure enquiries, sample requests, and bulk B2B container packaging requirements. Plants in Daman and Sales in Mumbai.",
     path: "/connect",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -125,9 +126,9 @@ export const pageSeoData = {
   },
 
   blog: {
-    title: "PVC Vinyl News & Industry Insights | Ashmita Vinyls",
+    title: "Industrial Packaging & Closures Insights | Vasu Javal Plastics",
     description:
-      "Read PVC vinyl industry news, product information, technical articles and business insights.",
+      "Read industrial packaging articles, technical guides on pressure venting bungs, IBC butterfly valves, and virgin HDPE closure performance.",
     path: "/blog",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -136,9 +137,9 @@ export const pageSeoData = {
   },
 
   blogDetail: {
-    title: "PVC Vinyl News & Articles | Ashmita Vinyls",
+    title: "Technical Packaging Insights & Guides | Vasu Javal Plastics",
     description:
-      "Latest technical insights, case studies, and updates on PVC vinyl solutions by Ashmita Vinyls.",
+      "In-depth technical guides on industrial drum bungs, IBC valves, microporous venting, and packaging closure engineering by Vasu Javal Plastics.",
     path: "/blog-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -148,8 +149,8 @@ export const pageSeoData = {
   },
 
   privacy: {
-    title: "Privacy Policy | Ashmita Vinyls",
-    description: "Read the Ashmita Vinyls privacy policy.",
+    title: "Privacy Policy | Vasu Javal Plastics",
+    description: "Read the Vasu Javal Plastics privacy policy.",
     path: "/privacy",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -158,8 +159,8 @@ export const pageSeoData = {
   },
 
   terms: {
-    title: "Terms & Conditions | Ashmita Vinyls",
-    description: "Read the terms and conditions of Ashmita Vinyls.",
+    title: "Terms & Conditions | Vasu Javal Plastics",
+    description: "Read the terms and conditions of Vasu Javal Plastics.",
     path: "/terms",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -170,19 +171,24 @@ export const pageSeoData = {
 
 export const aeoFAQs = [
   {
-    question: "What is Ashmita Vinyls?",
+    question: "What is Vasu Javal Plastics?",
     answer:
-      "Ashmita Vinyls is a PVC vinyl products stockiest and supplier in India serving commercial and industrial requirements.",
+      "Vasu Javal Plastics is an Indian precision injection moulding manufacturer specializing in high-performance industrial closures, drum bungs, vented screw caps, neck inserts, and IBC dispensing valves.",
   },
   {
-    question: "What products does Ashmita Vinyls supply?",
+    question: "What products does Vasu Javal Plastics manufacture?",
     answer:
-      "Ashmita Vinyls supplies PVC vinyl products and industrial vinyl solutions for different commercial and industrial applications.",
+      "Vasu Javal Plastics manufactures over 50 SKUs including 50mm and 75mm drum bungs (solid & vented), 25mm to 350mm screw caps & open top lids, neck inserts, drum handles, spanners, and DN50/DN80 IBC butterfly & ball valves.",
   },
   {
-    question: "How can I enquire about PVC vinyl products?",
+    question: "What materials are used in Vasu Javal Plastics closures?",
     answer:
-      "You can contact Ashmita Vinyls through the website contact page, phone or email for product specifications and bulk enquiries.",
+      "All closures and valves are moulded from 100% prime virgin-grade HDPE and PE polymers with EPDM/LLDPE sealing gaskets and microporous vent membranes for superior Environmental Stress Crack Resistance (ESCR).",
+  },
+  {
+    question: "How can I request closure samples or bulk pricing?",
+    answer:
+      "You can request sample kits and direct factory quotations through our contact page, by emailing sales@vasujavalplastics.com, or calling +91 95126 51119.",
   },
 ];
 

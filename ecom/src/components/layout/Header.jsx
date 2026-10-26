@@ -180,16 +180,23 @@ const HeaderTopBar = React.memo(() => {
 });
 HeaderTopBar.displayName = "HeaderTopBar";
 
-const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => (
-  <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
-    <Image
-      src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "sobo_logo.png" : "sobo_white.png")}
-      alt="Infitech Logo"
-      className="object-contain w-80 sm-w-50"
-      style={{ height: (!isStickyConfig || isHeaderWhite) ? "52px" : "50px" }}
-    />
-  </NavLink>
-));
+const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
+  const isLight = !isStickyConfig || isHeaderWhite;
+  const logoSrc = isLight ? "/images/logo/logo-dark.svg" : "/images/logo/logo-white.svg";
+  const fallbackSrc = isLight ? "/images/logo/logo-dark.png" : "/images/logo/logo-white.png";
+
+  return (
+    <NavLink to="/home" className={`${LogoClass} flex items-center`} onClick={onCloseMobile}>
+      <Image
+        src={logoSrc}
+        fallback={fallbackSrc}
+        alt="Vasu Javal Plastics"
+        className="object-contain"
+        style={{ height: "46px", maxWidth: "230px", width: "auto" }}
+      />
+    </NavLink>
+  );
+});
 HeaderLogo.displayName = "HeaderLogo";
 
 const LanguageDropdown = React.memo(({ isHeaderWhite, align = "right", className = "", showFlagOnMobile = true }) => {

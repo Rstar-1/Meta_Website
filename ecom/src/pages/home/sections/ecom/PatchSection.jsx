@@ -7,7 +7,7 @@ import { patchCMS } from '../../../../utils/apiData';
 const PatchSection = () => {
     return (
         <div className='w-full py-100 sm-py-50'>
-            <div className="w-70 sm-w-full">
+            <div className="w-80 sm-w-full">
                 <Badge
                     text={patchCMS?.badge}
                     icon="Settings"

@@ -1,302 +1,182 @@
 [
   {
     "id": 1,
-    "name": "PVC Strip Curtain Rolls",
-    "slug": "pvc-strip-curtain-rolls",
-    "icon": "product/Product4.jpg",
-    "iconName": "Layers",
+    "name": "Bungs",
+    "slug": "bungs",
+    "icon": "/images/products/bung-50mm-vented.webp",
+    "iconName": "Disc",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
     "subCategories": [
       {
-        "id": "standard-clear",
-        "name": "Transparent Standard"
+        "id": "vented-bungs",
+        "name": "Vented Bung Plugs",
+        "image": "/images/products/bung-50mm-vented.webp"
       },
       {
-        "id": "reliable-clear",
-        "name": "Transparent Reliable"
+        "id": "bottom-ring-bungs",
+        "name": "Bottom Ring Bungs (50mm & 75mm)",
+        "image": "/images/products/bung-50mm-solid.webp"
       },
       {
-        "id": "polar-freezer",
-        "name": "Polar / Anti-Freeze"
+        "id": "top-ring-metal-bungs",
+        "name": "Top Ring Metal Drum Bungs",
+        "image": "/images/products/bung-50mm-solid.webp"
       },
       {
-        "id": "anti-insect-yellow",
-        "name": "Anti-Insect Amber / Yellow"
+        "id": "large-75mm-bungs",
+        "name": "75mm Heavy Duty Bungs",
+        "image": "/images/products/bung-75mm-heavy.webp"
       }
     ],
-    "description": "High-durability PVC strip curtain rolls for temperature control, cleanrooms, warehouses, and dust prevention."
+    "description": "High-durability precision-moulded PE bung plugs and sealing rings for 210L barrels and metal drums, available with silicone pressure relief vents.",
+    "image": "/images/products/bung-75mm-heavy.webp",
+    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
   },
   {
-    "id": 4,
-    "name": "PVC Transparent Rolls",
-    "slug": "pvc-transparent-rolls",
-    "icon": "product/Product1.jpg",
-    "iconName": "ClearFilm",
+    "id": 2,
+    "name": "Caps & Closures",
+    "slug": "caps-closures",
+    "icon": "/images/products/screw-cap-red.webp",
+    "iconName": "Package",
     "bgColor": "#ECFDF5",
     "accentColor": "#059669",
     "subCategories": [
       {
-        "id": "super-clear-rolls",
-        "name": "Super Clear PVC Rolls"
+        "id": "small-screw-caps",
+        "name": "Screw Caps (25mm - 50mm)",
+        "image": "/images/products/screw-cap-red.webp"
       },
       {
-        "id": "flexible-soft-rolls",
-        "name": "Flexible Soft PVC Rolls"
+        "id": "vented-screw-caps",
+        "name": "Vented Screw Caps",
+        "image": "/images/products/screw-cap-vented.webp"
       },
       {
-        "id": "heavy-duty-clear-rolls",
-        "name": "Heavy Duty Clear Rolls"
+        "id": "large-screw-caps",
+        "name": "Large Mouth Screw Caps (150mm - 250mm)",
+        "image": "/images/products/ibc-top-lid.webp"
       },
       {
-        "id": "dgt-clear-rolls",
-        "name": "DGT Clear Transparent Rolls"
+        "id": "open-top-lids",
+        "name": "Open Top Drum Lids (250mm - 350mm)",
+        "image": "/images/products/ibc-top-lid.webp"
+      },
+      {
+        "id": "ibc-top-lids",
+        "name": "IBC DN150 Top Lids",
+        "image": "/images/products/ibc-top-lid.webp"
       }
     ],
-    "description": "High-clarity, flexible transparent PVC sheet rolls engineered for industrial packaging, partition barriers, and protective coverings."
+    "description": "Versatile industrial screw caps and open-top drum lids from 25mm to 350mm for drums, canisters, carboys, and IBC containers.",
+    "image": "/images/products/screw-cap-vented.webp",
+    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/Jerrycans_Icon.png"
   },
   {
-    "id": 5,
-    "name": "PVC Color Film",
-    "slug": "pvc-color-film",
-    "icon": "product/Product2.jpg",
-    "iconName": "Film",
-    "bgColor": "#FAF5FF",
-    "accentColor": "#9333EA",
-    "subCategories": [
-      {
-        "id": "opaque-color-film",
-        "name": "Opaque Color PVC Film"
-      },
-      {
-        "id": "translucent-color-film",
-        "name": "Translucent Color Film"
-      },
-      {
-        "id": "decorative-color-film",
-        "name": "Decorative & Lamination Film"
-      },
-      {
-        "id": "embossed-color-film",
-        "name": "Embossed Colored PVC Film"
-      }
-    ],
-    "description": "Vibrant, flexible colored PVC films for industrial lamination, decorative surfaces, stationary, and protective wrapping."
-  },
-  {
-    "id": 6,
-    "name": "Reinforce Sheet",
-    "slug": "reinforce-sheet",
-    "icon": "product/Product3.jpg",
-    "iconName": "Sheet",
+    "id": 3,
+    "name": "Inserts",
+    "slug": "inserts",
+    "icon": "/images/products/drum-insert.webp",
+    "iconName": "Layers",
     "bgColor": "#FFFBEB",
     "accentColor": "#D97706",
     "subCategories": [
       {
-        "id": "mesh-reinforced-pvc",
-        "name": "Mesh Reinforced PVC Sheet"
+        "id": "inserts-small",
+        "name": "Jerrycan & Drum Inserts (25mm - 48mm)",
+        "image": "/images/products/drum-insert.webp"
       },
       {
-        "id": "ripstop-tarpaulin-sheet",
-        "name": "Ripstop Tarpaulin Sheet"
+        "id": "inserts-dust-protector",
+        "name": "Dust Protector Inserts (50mm Single Use)",
+        "image": "/images/products/drum-insert.webp"
       },
       {
-        "id": "heavy-duty-reinforced",
-        "name": "Heavy Duty Reinforced Sheet"
+        "id": "inserts-medium",
+        "name": "Carboy Inserts (150mm & 200mm)",
+        "image": "/images/products/drum-insert.webp"
       },
       {
-        "id": "fire-retardant-reinforced",
-        "name": "Fire-Retardant Reinforced Sheet"
+        "id": "inserts-large",
+        "name": "Heavy Drum Inserts (250mm)",
+        "image": "/images/products/drum-insert.webp"
       }
     ],
-    "description": "High-strength, tear-resistant reinforced PVC sheets with embedded polyester mesh for heavy-duty industrial covers and enclosures."
+    "description": "Precision-moulded neck inserts and single-use dust protectors ensuring leak-proof sealing and tamper security for drums and carboys.",
+    "image": "/images/products/drum-insert.webp",
+    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
   },
   {
-    "id": 7,
-    "name": "PVC Curtain",
-    "slug": "pvc-curtain",
-    "icon": "product/Product4.jpg",
-    "iconName": "Curtain",
-    "bgColor": "#ECFEFF",
-    "accentColor": "#0891B2",
+    "id": 4,
+    "name": "Dispensing Solutions",
+    "slug": "dispensing-solutions",
+    "icon": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
+    "iconName": "Sliders",
+    "bgColor": "#FAF5FF",
+    "accentColor": "#9333EA",
     "subCategories": [
       {
-        "id": "industrial-pvc-curtain",
-        "name": "Industrial PVC Curtains"
+        "id": "valves-butterfly-dn80",
+        "name": "DN80 Butterfly Valves (Threaded & Welded)",
+        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Female-Welded-Butterfly.webp"
       },
       {
-        "id": "cleanroom-curtains",
-        "name": "Cleanroom & Lab Curtains"
+        "id": "valves-ball-dn50",
+        "name": "DN50 Ball Valves (Split & Integrated Thread)",
+        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp"
       },
       {
-        "id": "welding-screen-curtains",
-        "name": "Welding Safety Screen Curtains"
+        "id": "valves-butterfly-dn50",
+        "name": "DN50 Butterfly Valves",
+        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Butterfly-Valve.webp"
       },
       {
-        "id": "cold-storage-curtains",
-        "name": "Cold Storage PVC Curtains"
+        "id": "valves-camlock",
+        "name": "Camlock & Welded Valves",
+        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Welded-Ball-Valve.webp"
       }
     ],
-    "description": "Pre-cut and ready-to-mount PVC curtain solutions providing superior thermal insulation, sound dampening, and dust control."
+    "description": "Advanced IBC container butterfly valves and ball valves engineered with EPDM sealing rings for smooth, controlled, and leak-free fluid dispensing.",
+    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp",
+    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
   },
   {
-    "id": 8,
-    "name": "PVC mattress Film",
-    "slug": "pvc-mattress-film",
-    "icon": "product/Product6.jpg",
-    "iconName": "Film",
-    "bgColor": "#FDF2F8",
-    "accentColor": "#DB2777",
-    "subCategories": [
-      {
-        "id": "transparent-mattress-film",
-        "name": "Transparent Mattress Film"
-      },
-      {
-        "id": "printed-mattress-film",
-        "name": "Printed PVC Mattress Film"
-      },
-      {
-        "id": "embossed-mattress-sheeting",
-        "name": "Embossed Mattress Sheeting"
-      },
-      {
-        "id": "waterproof-mattress-film",
-        "name": "Waterproof Mattress Protective Film"
-      },
-      {
-        "id": "hospital-grade-mattress-film",
-        "name": "Anti-Bacterial Hospital Grade Film"
-      }
-    ],
-    "description": "Waterproof, antibacterial, and soft flexible PVC mattress films and sheeting for home bedding, healthcare, and hospitality."
-  },
-  {
-    "id": 9,
-    "name": "Stretch Ceiling Film",
-    "slug": "stretch-ceiling-film",
-    "icon": "sides/slide5.png",
-    "iconName": "Home",
-    "bgColor": "#F0FDF4",
-    "accentColor": "#16A34A",
-    "subCategories": [
-      {
-        "id": "glossy-lacquer-film",
-        "name": "Glossy / Lacquer Ceiling Film"
-      },
-      {
-        "id": "matte-finish-film",
-        "name": "Matte & Satin Ceiling Film"
-      },
-      {
-        "id": "translucent-backlit-film",
-        "name": "Translucent Backlit Light Film"
-      },
-      {
-        "id": "printed-acoustic-film",
-        "name": "Printed & 3D Acoustic Ceiling Film"
-      }
-    ],
-    "description": "Premium PVC architectural stretch ceiling membranes available in glossy, matte, and backlit translucent finishes for modern interiors."
-  },
-  {
-    "id": 3,
-    "name": "Brackets",
-    "slug": "brackets",
-    "icon": "product/Product7.jpg",
-    "iconName": "Box",
+    "id": 5,
+    "name": "Accessories",
+    "slug": "accessories",
+    "icon": "/images/products/drum-spanner.webp",
+    "iconName": "Tool",
     "bgColor": "#FEF2F2",
     "accentColor": "#DC2626",
     "subCategories": [
       {
-        "id": "ms-mounting-brackets",
-        "name": "Mounting Brackets (MS)"
+        "id": "bung-dust-covers",
+        "name": "Bung Dust Covers (210L Barrels)",
+        "image": "/images/products/bung-dust-cover.webp"
       },
       {
-        "id": "ss202-mounting-brackets",
-        "name": "Stainless Steel 202 (SS202)"
+        "id": "drum-spanners",
+        "name": "Heavy Duty Drum Opening Spanners",
+        "image": "/images/products/drum-spanner.webp"
       },
       {
-        "id": "ss304-mounting-brackets",
-        "name": "Stainless Steel 304 (SS304)"
+        "id": "rivets-and-lugs",
+        "name": "Container Rivets & Mounting Lugs",
+        "image": "/images/products/container-rivet.webp"
       },
       {
-        "id": "magnetic-curtain-brackets",
-        "name": "Magnetic Tracks & Bottom"
+        "id": "handle-sets",
+        "name": "High-Strength Drum Handle Sets",
+        "image": "/images/products/drum-handle-set.webp"
+      },
+      {
+        "id": "sealing-rings-clips",
+        "name": "Sealing Rings (250mm/350mm) & Locking Clips",
+        "image": "/images/products/sealing-ring.webp"
       }
     ],
-    "description": "Strong mounting brackets in Mild Steel, Stainless Steel (SS202 & SS304), and Magnetic strip curtain tracks and bottom holders for secure installation."
-  },
-  {
-    "id": 10,
-    "name": "Aluminum Profile",
-    "slug": "aluminum-profile",
-    "icon": "sides/slide6.png",
-    "iconName": "Management",
-    "bgColor": "#F8FAFC",
-    "accentColor": "#475569",
-    "subCategories": [
-      {
-        "id": "wall-mount-profile",
-        "name": "Wall-Mounted Aluminum Track"
-      },
-      {
-        "id": "ceiling-mount-profile",
-        "name": "Ceiling-Mounted Profile Track"
-      },
-      {
-        "id": "separator-h-profile",
-        "name": "Separator H-Profile Track"
-      },
-      {
-        "id": "led-shadow-profile",
-        "name": "Shadow Gap & LED Light Profile"
-      }
-    ],
-    "description": "Precision-extruded aluminum track profiles designed for harpoon-locking stretch ceiling installations and structural framing."
-  },
-  {
-    "id": 11,
-    "name": "Harpoon",
-    "slug": "harpoon",
-    "icon": "product/Product5.jpg",
-    "iconName": "Shield",
-    "bgColor": "#FFF7ED",
-    "accentColor": "#EA580C",
-    "subCategories": [
-      {
-        "id": "welding-harpoon-profile",
-        "name": "HF Welded Harpoon Strip"
-      },
-      {
-        "id": "flexible-pvc-harpoon",
-        "name": "Flexible PVC Harpoon Insert"
-      },
-      {
-        "id": "locking-beaded-harpoon",
-        "name": "Locking Beaded Harpoon Profile"
-      },
-      {
-        "id": "harpoon-installation-tools",
-        "name": "Spatula & Harpoon Fitting Tools"
-      }
-    ],
-    "description": "Semi-rigid PVC harpoon edging strips manufactured for high-frequency welding to tension-lock stretch ceiling membranes securely."
-  },
-  {
-    "id": 2,
-    "name": "PVC Magnetic strip Curtain Rolls",
-    "slug": "pvc-magnetic-strip-curtain-rolls",
-    "icon": "product/Product5.jpg",
-    "iconName": "Shield",
-    "bgColor": "#ECFDF5",
-    "accentColor": "#059669",
-    "subCategories": [
-      {
-        "id": "magnetic-transparent",
-        "name": "Transparent Magnetic Strips"
-      }
-    ],
-    "description": "Hands-free automatic magnetic sealing PVC strip curtains for rapid closure, cold storage, and pest control."
+    "description": "Industrial drum and container accessories including dust covers, opening spanner wrenches, rivets, lugs, handle sets, sealing rings, and locking clips.",
+    "image": "/images/products/drum-handle-set.webp",
+    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
   }
 ]

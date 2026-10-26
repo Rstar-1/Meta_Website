@@ -12,7 +12,10 @@ export const resolveImagePath = (path) => {
     trimmed.startsWith('https://') ||
     trimmed.startsWith('data:') ||
     trimmed.startsWith('blob:') ||
-    trimmed.startsWith('//')
+    trimmed.startsWith('//') ||
+    trimmed.startsWith('/images/') ||
+    trimmed.startsWith('/assets/') ||
+    trimmed.startsWith('/')
   ) {
     return trimmed;
   }
@@ -26,8 +29,8 @@ export const resolveImagePath = (path) => {
   return base ? `${base}/${cleanPath}` : `/${cleanPath}`;
 };
 
-export const soboLogo = resolveImagePath('sobo_logo.png');
-export const soboWhite = resolveImagePath('sobo_white.png');
+export const soboLogo = resolveImagePath('/images/logo/logo-dark.svg');
+export const soboWhite = resolveImagePath('/images/logo/logo-white.svg');
 
 export default resolveImagePath;
 

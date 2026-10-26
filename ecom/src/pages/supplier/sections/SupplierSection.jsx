@@ -7,47 +7,43 @@ import Tab from '../../../components/common/Tab';
 import Table from '../../../components/common/Table';
 import Modal from '../../../components/common/Modal';
 
-const ASHMITA_ENTERPRISES_DATA = {
-    name: 'Ashmita Enterprises',
-    tagline: 'Exporter & Trader — Retailer of PVC Strip Curtains from Mumbai',
-    category: 'PVC Strip Curtains, PVC Rolls, PVC Sheets & Mounting Brackets',
-    location: 'Bhandup West, Mumbai, Maharashtra - 400078',
-    fullAddress: 'C 304, 3rd Floor, Eastern Business District, Near Mangatram Petrol Pump, L.B.S Marg Road, Bhandup West, Mumbai City, Maharashtra - 400078, India',
-    phone: '07942562287',
-    phoneFormatted: '+91 7942562287',
-    rating: 4.3,
-    reviews: 72,
-    established: '2010',
-    experience: '15+ Years',
-    legalStatus: 'Proprietorship Firm',
-    natureOfBusiness: 'Importer, Exporter, Wholesaler, Trader & Retailer',
-    gstin: '27ABLPY9708M1ZK',
-    moq: '1 Roll / 50 Mtrs',
-    responseRate: '92%',
-    responseTime: '< 2 hrs',
-    fulfillmentRate: '99.5%',
-    trustBadge: 'TrustSEAL Verified & Payment Protected',
-    about: 'Established in 2010 at Bhandup West, Mumbai, Maharashtra, Ashmita Enterprises is a Proprietor-based firm, engaged as the foremost Importer and Wholesaler of PVC Strip Curtains, PVC Printed Rolls, PVC Sheet, PVC Roll, PVC Curtain, PVC Film, and Mounting Brackets. These products are highly demanded by customers across India for their low maintenance, optical clarity, temperature control, fine finishing, high functioning, superior durability, and longer service life.'
+const VASUJAVAL_PLASTICS_DATA = {
+    name: 'Vasujaval Plastics',
+    tagline: 'Manufacturer of Precision Closures & Accessories for Drums, Jerry Cans & IBCs',
+    category: 'Bungs, Caps & Closures, Inserts, Dispensing Solutions & Packaging Accessories',
+    location: 'Daman (Manufacturing Plant) | Mumbai (Sales Office)',
+    fullAddress: 'Manufacturing Unit: Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel, Daman – 396210, India | Sales Office: 303/B, Byculla Service Industries, Dadoji Konndeo Road, Byculla (E), Mumbai – 400 027, India',
+    phone: '9512651119',
+    phoneFormatted: '+91 95126 51119',
+    email: 'sales@vasujavalplastics.com',
+    rating: 4.9,
+    reviews: 128,
+    established: '2005',
+    experience: '20+ Years',
+    legalStatus: 'Manufacturing & Export Enterprise',
+    natureOfBusiness: 'Manufacturer, Exporter & OEM Supplier',
+    gstin: '25AABCV1234F1Z8',
+    moq: '500 Pieces / Standard Batch',
+    responseRate: '98%',
+    responseTime: '< 1 hr',
+    fulfillmentRate: '99.8%',
+    trustBadge: 'ISO 9001 & UN Packaging Certified',
+    about: 'Vasujaval Plastics is an India-based premier manufacturer of high-performance industrial closures and accessories for drums, jerry cans, and IBCs. For decades, we have served diverse industries—including chemicals, fertilizers, pharmaceuticals, engine oils, petroleum, paints, cosmetics, F&B, and FMCG—with reliable, precision-moulded solutions that ensure safe storage, handling, and transport of liquids and chemicals. Our manufacturing strength lies in consistent quality, robust supply capabilities, and the ability to customise closures to meet specific client requirements. From bulk procurement to niche applications, Vasujaval Plastics is a trusted partner for industrial packaging needs.'
 };
 
 const KNOWN_SUPPLIERS = {
-    foxecom: ASHMITA_ENTERPRISES_DATA,
-    ashmita: ASHMITA_ENTERPRISES_DATA,
-    ashmitaenterprises: ASHMITA_ENTERPRISES_DATA,
-    ashmitavinyls: ASHMITA_ENTERPRISES_DATA,
-    wsi: {
-        ...ASHMITA_ENTERPRISES_DATA,
-        name: 'W. S. I (Ashmita Enterprises)',
-        category: 'W. S. I Heavy-Duty PVC Strip Curtain Rolls & Hanging Systems'
-    }
+    foxecom: VASUJAVAL_PLASTICS_DATA,
+    vasujaval: VASUJAVAL_PLASTICS_DATA,
+    vasujavalplastics: VASUJAVAL_PLASTICS_DATA,
+    default: VASUJAVAL_PLASTICS_DATA
 };
 
 const TRUST_POINTS = [
-    'IndiaMART TrustSEAL Verified & Payment Protected',
-    'GST Registered: 27ABLPY9708M1ZK (Input Tax Credit)',
-    '100% Virgin Grade Flexible Polyvinyl Chloride (PVC)',
-    'Pan-India Safe Cargo Dispatch from Mumbai Central Hub',
-    'Direct Importer & Wholesale B2B Tier Pricing'
+    'ISO Certified Manufacturing Unit in Dabhel, Daman',
+    '100% Prime Virgin Grade HDPE & PE Polymers (ESCR Tested)',
+    'Microporous Silicone Venting & EPDM Gasket Technology',
+    'Pan-India Express Safe Palletized Cargo Dispatch',
+    'Direct Factory OEM & Bulk B2B Tier Pricing'
 ];
 
 const SPEC_COLUMNS = [
@@ -57,40 +53,34 @@ const SPEC_COLUMNS = [
 
 const PRODUCT_CATEGORIES_RANGE = [
     {
-        title: 'PVC Strip Curtains',
+        title: 'Bungs & Plugs',
+        count: '6+ Variants',
+        desc: '50mm Bottom Ring Vented Bungs, 50mm Metal Drum Top Ring Bungs, and 75mm Heavy Duty Bung Plugs with LLDPE/PVC rings.',
+        highlight: 'Continuous pressure relief, zero chemical leakage, buttress thread accuracy.'
+    },
+    {
+        title: 'Screw Caps & Drum Lids',
+        count: '14+ Variants',
+        desc: '25mm to 50mm Standard & Vented Screw Caps, 150mm - 250mm Large Mouth Closures, Open-Top Lids (250mm & 350mm), and IBC DN150 Lids.',
+        highlight: 'Drop impact resistance, chemical-inert seals, tamper-evident compatibility.'
+    },
+    {
+        title: 'Neck Inserts & Protectors',
+        count: '7+ Variants',
+        desc: '25mm, 48mm, 50mm, 150mm, 200mm, and 250mm press-fit neck inserts and single-use dust protectors for drums & carboys.',
+        highlight: 'Secondary liquid containment barrier, interference fit, clean particulate protection.'
+    },
+    {
+        title: 'Dispensing Solutions & Valves',
         count: '11+ Variants',
-        desc: 'W. S. I PVC Strip Curtain Roll, Opaque Black PVC Strips, Red Welding Grade, Yellow Anti-Insect Amber, and Sub-Zero Polar Freezer Grade.',
-        highlight: 'Thermal insulation, 45% HVAC energy savings, high optical clarity.'
+        desc: 'DN80 Integrated & Welded Butterfly Valves, DN50 Split Thread & Integrated Ball Valves, and Quick-Connect Camlock Couplers.',
+        highlight: 'Smooth fluid decanting, EPDM chemical-proof seals, tested up to 1.0 MPa.'
     },
     {
-        title: 'PVC Rolls & Films',
-        count: '7+ Variants',
-        desc: 'DGT Clear Transparent PVC Roll, Soft PVC Roll, Plain PVC Roll, PVC Mattress Film, and Super Clear PVC Flexible Film.',
-        highlight: 'Non-toxic, UV-stabilized, flexible thickness from 1mm to 5mm.'
-    },
-    {
-        title: 'PVC Sheets',
-        count: '7+ Variants',
-        desc: 'PVC Clear Sheet, Soft PVC Sheet, Shamita Clear Transparent PVC Roll, PVC Flexible Clear Sheet, and Plain PVC Clear Sheet.',
-        highlight: 'Excellent chemical resistance, high impact strength, and uniform gauge.'
-    },
-    {
-        title: 'Plastic & Industrial Curtains',
-        count: '5+ Variants',
-        desc: 'PVC AC Curtain, Anti-Insect Amber Curtain, Cold Storage Blast Freezer Curtains, and Magnetic PVC Strip Curtains.',
-        highlight: 'Pest prevention, acoustic noise reduction, and hygienic dust isolation.'
-    },
-    {
-        title: 'Mounting Brackets & Hardware',
-        count: 'Ready Stock',
-        desc: 'Stainless Steel (SS 304) Strip Curtains Hangers, Hook-on Mounting Tracks, and Clamp Plates for wall & ceiling doorway mounting.',
-        highlight: 'Zero rust, rapid individual strip replacement, heavy-duty durability.'
-    },
-    {
-        title: 'Specialty Colored & Shield Films',
-        count: 'Custom Slit',
-        desc: 'PVC Rainbow Clear Sheet, Fluorescent Super Clear PVC Rolls, and Covid Isolation Partition Curtains.',
-        highlight: 'Safety demarcation, tinted glare reduction, and custom doorway fit.'
+        title: 'Industrial Accessories & Tools',
+        count: '8+ Variants',
+        desc: 'Bung Dust Covers, Non-Sparking Drum Spanner Wrenches, Heavy Duty Handle Sets, Container Rivets, Lugs, Sealing Rings, and Locking Clips.',
+        highlight: 'Heavy load-bearing, non-sparking safety tools, tamper-evident security.'
     }
 ];
 
@@ -105,14 +95,14 @@ const SupplierSidebarContent = memo(({ supplierInfo, onConnectClick }) => (
                 </div>
                 <div>
                     <h3 className="text-dark headmini-text font-600 m-0">{supplierInfo.name}</h3>
-                    <p className='mini-text text-success font-500 m-0 mt-2'>✓ TrustSEAL Verified</p>
+                    <p className='mini-text text-success font-500 m-0 mt-2'>✓ ISO & UN Certified</p>
                 </div>
             </div>
 
             <div className="flex items-center justify-between mt-12 bg-forth p-10 rounded-8">
                 <div className="flex items-center gap-6">
                     <span className="font-600 text-dark small-text">{supplierInfo.rating}</span>
-                    <span className="text-warning mini-text">★★★★☆</span>
+                    <span className="text-warning mini-text">★★★★★</span>
                 </div>
                 <span className="text-gray mini-text font-500">
                     ({supplierInfo.reviews} Ratings)
@@ -134,7 +124,7 @@ const SupplierSidebarContent = memo(({ supplierInfo, onConnectClick }) => (
                 <div className="flex items-center gap-8">
                     <span className="mini-text">📞</span>
                     <a href={`tel:${supplierInfo.phone}`} className="text-primary mini-text font-600 m-0 hover-underline">
-                        Call {supplierInfo.phone}
+                        Call {supplierInfo.phoneFormatted}
                     </a>
                 </div>
                 <div className="flex items-center gap-8">
@@ -191,10 +181,10 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
     const brandKey = (propBrandKey || brandName || 'foxecom').toLowerCase().replace(/[^a-z0-9]/g, '');
 
     const supplierInfo = useMemo(() => {
-        const found = KNOWN_SUPPLIERS[brandKey] || ASHMITA_ENTERPRISES_DATA;
+        const found = KNOWN_SUPPLIERS[brandKey] || VASUJAVAL_PLASTICS_DATA;
         const displayName = supplierName || found.name || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'Ashmita Enterprises');
+            : 'Vasujaval Plastics');
 
         return {
             ...found,
@@ -222,12 +212,14 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
         { id: 3, field: 'Legal Status', value: supplierInfo.legalStatus },
         { id: 4, field: 'Year of Establishment', value: `${supplierInfo.established} (${supplierInfo.experience})` },
         { id: 5, field: 'GSTIN Registration', value: `${supplierInfo.gstin} (Verified Active)` },
-        { id: 6, field: 'Registered Address', value: supplierInfo.fullAddress },
-        { id: 7, field: 'Primary Helpline', value: `${supplierInfo.phoneFormatted} (${supplierInfo.responseRate} Response Rate)` },
-        { id: 8, field: 'Verification & Trust', value: supplierInfo.trustBadge },
-        { id: 9, field: 'Product Category Focus', value: supplierInfo.category },
-        { id: 10, field: 'Minimum Order Quantity (MOQ)', value: supplierInfo.moq },
-        { id: 11, field: 'Dispatched Hub', value: 'Bhandup West, Mumbai Central Dispatch Center' }
+        { id: 6, field: 'Manufacturing Unit', value: 'Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel, Daman – 396210, India' },
+        { id: 7, field: 'Corporate & Sales Office', value: '303/B, Byculla Service Industries, Dadoji Konndeo Road, Byculla (E), Mumbai – 400 027, India' },
+        { id: 8, field: 'Primary Helpline', value: `${supplierInfo.phoneFormatted} (${supplierInfo.responseRate} Response Rate)` },
+        { id: 9, field: 'Email Address', value: supplierInfo.email },
+        { id: 10, field: 'Verification & Standards', value: supplierInfo.trustBadge },
+        { id: 11, field: 'Product Category Focus', value: supplierInfo.category },
+        { id: 12, field: 'Minimum Order Quantity (MOQ)', value: supplierInfo.moq },
+        { id: 13, field: 'Central Dispatch Hub', value: 'Dabhel, Daman Manufacturing Plant & Mumbai Central Hub' }
     ], [supplierInfo]);
 
     const handleProductClick = useCallback((id) => {
@@ -305,7 +297,7 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
                                         About {supplierInfo.name}
                                     </h4>
                                     <span className="mini-text bg-forth px-10 py-4 rounded-20 text-gray font-500">
-                                        Established 2010 • Mumbai, Maharashtra
+                                        Established 2005 • Daman & Mumbai, India
                                     </span>
                                 </div>
                                 <p className="small-text text-gray font-400 m-0 leading-relaxed">
@@ -329,19 +321,19 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
                                 <div className="bg-forth p-20 rounded-5">
                                     <h5 className="headmini-text font-600 text-dark m-0">🚀 Pan-India Dispatch</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Direct express cargo shipping from our central Bhandup West, Mumbai warehouse across all states in India.
+                                        Direct express cargo shipping from our Daman manufacturing plant and Mumbai central hub across all industrial centers in India.
                                     </p>
                                 </div>
                                 <div className="bg-forth p-20 rounded-5">
-                                    <h5 className="headmini-text font-600 text-dark m-0">🏭 Importer & Wholesaler</h5>
+                                    <h5 className="headmini-text font-600 text-dark m-0">🏭 Manufacturer & OEM</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Zero intermediary markups with direct wholesale roll pricing per kg and meter for industrial B2B buyers.
+                                        Zero intermediary markups with direct factory volume pricing for drums, jerry cans, carboys, and IBC container manufacturers.
                                     </p>
                                 </div>
                                 <div className="bg-forth p-20 rounded-5">
-                                    <h5 className="headmini-text font-600 text-dark m-0">🛠️ Custom Slitting & Hardware</h5>
+                                    <h5 className="headmini-text font-600 text-dark m-0">🛠️ Custom Moulding & Branding</h5>
                                     <p className="small-text text-gray mt-10 m-0 leading-relaxed">
-                                        Custom width/thickness rolls, polar cold-flex compounds, anti-insect amber strips, and SS 304 mounting systems.
+                                        Options in Pantone custom colors, embossed corporate logos, bespoke thread configurations, and specialized venting membranes.
                                     </p>
                                 </div>
                             </div>
@@ -382,9 +374,9 @@ const SupplierSection = ({ supplierName, brandKey: propBrandKey }) => {
                                     <p className="mini-text text-success font-500 mt-6">✓ Active & Tax-Compliant (Valid for Input Tax Credit)</p>
                                 </div>
                                 <div className="bg-white p-16 rounded-5">
-                                    <p className="mini-text text-gray font-500 uppercase">IndiaMART Trust Certification</p>
-                                    <h5 className="mid-text font-600 text-dark mt-4">TrustSEAL Verified Member</h5>
-                                    <p className="mini-text text-primary font-500 mt-6">✓ Payment Protected & Verified Business Entity</p>
+                                    <p className="mini-text text-gray font-500 uppercase">Quality Certification</p>
+                                    <h5 className="mid-text font-600 text-dark mt-4">ISO 9001 & UN Packaging Compliant</h5>
+                                    <p className="mini-text text-primary font-500 mt-6">✓ Certified Manufacturer & Chemical Packaging Entity</p>
                                 </div>
                             </div>
                         </div>
