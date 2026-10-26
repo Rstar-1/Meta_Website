@@ -168,6 +168,7 @@ const ProductGrid = React.memo(({ productsList, isFilterVisible, onProductClick 
     <div className={`${isFilterVisible ? 'grid-cols-4' : 'grid-cols-5'} sm-grid-cols-2 gap-12`}>
         {productsList.map((item) => (
             <ProductCard
+                version='product2'
                 key={item.id}
                 item={item}
                 onProductClick={onProductClick}

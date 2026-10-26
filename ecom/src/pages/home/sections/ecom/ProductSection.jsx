@@ -44,7 +44,7 @@ const ProductSection = () => {
                 renderItem={(item) => (
                     <CardLayout
                         key={item.id}
-                        version="product"
+                        version="product2"
                         item={item}
                         onClick={() => handleProductClick(item)}
                         onCategoryClick={handleCategoryClick}
@@ -58,7 +58,7 @@ const ProductSection = () => {
                 renderItem={(item) => (
                     <CardLayout
                         key={item.id}
-                        version="product"
+                        version="product2"
                         item={item}
                         onClick={() => handleProductClick(item)}
                         onCategoryClick={handleCategoryClick}

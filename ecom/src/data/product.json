@@ -1,14 +1,5 @@
 [
   {
-    "id": 101,
-    "isBanner": true,
-    "title": "PRECISION-MADE CLOSURES & IBC VALVES",
-    "subtitle": "FOR DRUMS, JERRY CANS & IBCS",
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
-    "brand": "Vasujaval Plastics",
-    "thumb": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp"
-  },
-  {
     "id": 1,
     "name": "Bung - 50mm - Bottom Ring - Vented",
     "categoryId": 1,
@@ -23,11 +14,7 @@
       "text": "Vented",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#d97706"
-    ],
+    "colors": ["#ffffff", "#000000", "#d97706"],
     "image": "/images/products/bung-50mm-vented.webp",
     "images": [
       "/images/products/bung-50mm-vented.webp",
@@ -124,11 +111,7 @@
       "text": "Heavy Duty",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#dc2626"
-    ],
+    "colors": ["#ffffff", "#000000", "#dc2626"],
     "image": "/images/products/bung-50mm-solid.webp",
     "images": [
       "/images/products/bung-50mm-solid.webp",
@@ -217,11 +200,7 @@
       "text": "Metal Drum Fit",
       "color": "#475569"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#000000", "#2563eb"],
     "image": "/images/products/bung-50mm-solid.webp",
     "images": [
       "/images/products/bung-50mm-solid.webp",
@@ -310,10 +289,7 @@
       "text": "Type A",
       "color": "#475569"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/bung-50mm-solid.webp",
     "images": [
       "/images/products/bung-50mm-solid.webp",
@@ -394,10 +370,7 @@
       "text": "75mm / 3 Inch",
       "color": "#9333ea"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/bung-75mm-heavy.webp",
     "images": [
       "/images/products/bung-75mm-heavy.webp",
@@ -478,10 +451,7 @@
       "text": "PVC Ring",
       "color": "#d97706"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/bung-75mm-heavy.webp",
     "images": [
       "/images/products/bung-75mm-heavy.webp",
@@ -562,12 +532,7 @@
       "text": "HDPE",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#2563eb",
-      "#dc2626"
-    ],
+    "colors": ["#ffffff", "#000000", "#2563eb", "#dc2626"],
     "image": "/images/products/screw-cap-red.webp",
     "images": [
       "/images/products/screw-cap-red.webp",
@@ -640,12 +605,7 @@
       "text": "Jerrycan Fit",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#2563eb",
-      "#f59e0b"
-    ],
+    "colors": ["#ffffff", "#000000", "#2563eb", "#f59e0b"],
     "image": "/images/products/screw-cap-red.webp",
     "images": [
       "/images/products/screw-cap-red.webp",
@@ -718,11 +678,7 @@
       "text": "Type A",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#16a34a"
-    ],
+    "colors": ["#ffffff", "#000000", "#16a34a"],
     "image": "/images/products/screw-cap-red.webp",
     "images": [
       "/images/products/screw-cap-red.webp",
@@ -795,11 +751,7 @@
       "text": "Standard",
       "color": "#475569"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#000000", "#2563eb"],
     "image": "/images/products/screw-cap-red.webp",
     "images": [
       "/images/products/screw-cap-red.webp",
@@ -864,12 +816,7 @@
       "text": "Best Seller",
       "color": "#d97706"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#dc2626",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#000000", "#dc2626", "#2563eb"],
     "image": "/images/products/screw-cap-red.webp",
     "images": [
       "/images/products/screw-cap-red.webp",
@@ -942,10 +889,7 @@
       "text": "Vented",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/screw-cap-vented.webp",
     "images": [
       "/images/products/screw-cap-vented.webp",
@@ -1018,11 +962,7 @@
       "text": "PVC Ring & Vent",
       "color": "#9333ea"
     },
-    "colors": [
-      "#ffffff",
-      "#000000",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#000000", "#2563eb"],
     "image": "/images/products/screw-cap-vented.webp",
     "images": [
       "/images/products/screw-cap-vented.webp",
@@ -1103,10 +1043,7 @@
       "text": "6 Inch",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/ibc-top-lid.webp",
     "images": [
       "/images/products/ibc-top-lid.webp",
@@ -1171,10 +1108,7 @@
       "text": "8 Inch",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/ibc-top-lid.webp",
     "images": [
       "/images/products/ibc-top-lid.webp",
@@ -1239,10 +1173,7 @@
       "text": "10 Inch Threaded",
       "color": "#9333ea"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/ibc-top-lid.webp",
     "images": [
       "/images/products/ibc-top-lid.webp",
@@ -1307,10 +1238,7 @@
       "text": "Open Top",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/ibc-top-lid.webp",
     "images": [
       "/images/products/ibc-top-lid.webp",
@@ -1383,10 +1311,7 @@
       "text": "14 Inch Head",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#000000"
-    ],
+    "colors": ["#ffffff", "#000000"],
     "image": "/images/products/ibc-top-lid.webp",
     "images": [
       "/images/products/ibc-top-lid.webp",
@@ -1459,10 +1384,7 @@
       "text": "IBC DN150",
       "color": "#dc2626"
     },
-    "colors": [
-      "#000000",
-      "#dc2626"
-    ],
+    "colors": ["#000000", "#dc2626"],
     "image": "/images/products/ibc-top-lid.webp",
     "images": [
       "/images/products/ibc-top-lid.webp",
@@ -1535,9 +1457,7 @@
       "text": "IBC Solid Lid",
       "color": "#475569"
     },
-    "colors": [
-      "#000000"
-    ],
+    "colors": ["#000000"],
     "image": "/images/products/ibc-top-lid.webp",
     "images": [
       "/images/products/ibc-top-lid.webp",
@@ -1610,9 +1530,7 @@
       "text": "Plug Fit",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "/images/products/drum-insert.webp",
     "images": [
       "/images/products/drum-insert.webp",
@@ -1685,9 +1603,7 @@
       "text": "48mm Insert",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "/images/products/drum-insert.webp",
     "images": [
       "/images/products/drum-insert.webp",
@@ -1760,9 +1676,7 @@
       "text": "Dust Protector",
       "color": "#059669"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "/images/products/drum-insert.webp",
     "images": [
       "/images/products/drum-insert.webp",
@@ -1835,9 +1749,7 @@
       "text": "Standard 2 Inch",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "/images/products/drum-insert.webp",
     "images": [
       "/images/products/drum-insert.webp",
@@ -1910,9 +1822,7 @@
       "text": "6 Inch",
       "color": "#9333ea"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "/images/products/drum-insert.webp",
     "images": [
       "/images/products/drum-insert.webp",
@@ -1985,9 +1895,7 @@
       "text": "8 Inch",
       "color": "#9333ea"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "/images/products/drum-insert.webp",
     "images": [
       "/images/products/drum-insert.webp",
@@ -2060,9 +1968,7 @@
       "text": "10 Inch",
       "color": "#d97706"
     },
-    "colors": [
-      "#f8fafc"
-    ],
+    "colors": ["#f8fafc"],
     "image": "/images/products/drum-insert.webp",
     "images": [
       "/images/products/drum-insert.webp",
@@ -2135,11 +2041,7 @@
       "text": "DN80 Integrated",
       "color": "#dc2626"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb",
-      "#dc2626"
-    ],
+    "colors": ["#ffffff", "#2563eb", "#dc2626"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
@@ -2228,10 +2130,7 @@
       "text": "DN80 Welded",
       "color": "#9333ea"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#2563eb"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Female-Welded-Butterfly.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Female-Welded-Butterfly.webp",
@@ -2304,11 +2203,7 @@
       "text": "Fine Thread",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#059669",
-      "#dc2626"
-    ],
+    "colors": ["#ffffff", "#059669", "#dc2626"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp",
@@ -2381,10 +2276,7 @@
       "text": "DN50 Butterfly",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#2563eb"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Butterfly-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Butterfly-Valve.webp",
@@ -2449,10 +2341,7 @@
       "text": "Aluminum Hoop",
       "color": "#475569"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#2563eb"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Ball-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Ball-Valve.webp",
@@ -2525,10 +2414,7 @@
       "text": "Lightweight Welded",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#059669"
-    ],
+    "colors": ["#ffffff", "#059669"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Welded-Butterfly-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Welded-Butterfly-Valve.webp",
@@ -2593,10 +2479,7 @@
       "text": "Female Welded",
       "color": "#2563eb"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#2563eb"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Welded-Butterfly-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Welded-Butterfly-Valve.webp",
@@ -2653,10 +2536,7 @@
       "text": "Integrated Thread",
       "color": "#d97706"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#2563eb"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Integrated-Threaded-Ball-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Integrated-Threaded-Ball-Valve.webp",
@@ -2713,10 +2593,7 @@
       "text": "Plastic Hoop",
       "color": "#059669"
     },
-    "colors": [
-      "#ffffff",
-      "#059669"
-    ],
+    "colors": ["#ffffff", "#059669"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Integrated-Thread-Ball-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Integrated-Thread-Ball-Valve.webp",
@@ -2789,11 +2666,7 @@
       "text": "Camlock Welded",
       "color": "#dc2626"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb",
-      "#dc2626"
-    ],
+    "colors": ["#ffffff", "#2563eb", "#dc2626"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Welded-Ball-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Welded-Ball-Valve.webp",
@@ -2866,10 +2739,7 @@
       "text": "Camlock Threaded",
       "color": "#dc2626"
     },
-    "colors": [
-      "#ffffff",
-      "#2563eb"
-    ],
+    "colors": ["#ffffff", "#2563eb"],
     "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp",
     "images": [
       "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp",
@@ -2934,11 +2804,7 @@
       "text": "Dust Cover",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc",
-      "#2563eb",
-      "#dc2626"
-    ],
+    "colors": ["#f8fafc", "#2563eb", "#dc2626"],
     "image": "/images/products/bung-dust-cover.webp",
     "images": [
       "/images/products/bung-dust-cover.webp",
@@ -3003,10 +2869,7 @@
       "text": "Heavy Duty Tool",
       "color": "#d97706"
     },
-    "colors": [
-      "#f59e0b",
-      "#000000"
-    ],
+    "colors": ["#f59e0b", "#000000"],
     "image": "/images/products/drum-spanner.webp",
     "images": [
       "/images/products/drum-spanner.webp",
@@ -3071,10 +2934,7 @@
       "text": "HDPE Rivet",
       "color": "#475569"
     },
-    "colors": [
-      "#000000",
-      "#ffffff"
-    ],
+    "colors": ["#000000", "#ffffff"],
     "image": "/images/products/container-rivet.webp",
     "images": [
       "/images/products/container-rivet.webp",
@@ -3131,10 +2991,7 @@
       "text": "Mounting Lug",
       "color": "#475569"
     },
-    "colors": [
-      "#000000",
-      "#2563eb"
-    ],
+    "colors": ["#000000", "#2563eb"],
     "image": "/images/products/container-rivet.webp",
     "images": [
       "/images/products/container-rivet.webp",
@@ -3191,11 +3048,7 @@
       "text": "Load Tested",
       "color": "#059669"
     },
-    "colors": [
-      "#000000",
-      "#2563eb",
-      "#dc2626"
-    ],
+    "colors": ["#000000", "#2563eb", "#dc2626"],
     "image": "/images/products/drum-handle-set.webp",
     "images": [
       "/images/products/drum-handle-set.webp",
@@ -3268,10 +3121,7 @@
       "text": "10 Inch Ring",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc",
-      "#000000"
-    ],
+    "colors": ["#f8fafc", "#000000"],
     "image": "/images/products/sealing-ring.webp",
     "images": [
       "/images/products/sealing-ring.webp",
@@ -3336,10 +3186,7 @@
       "text": "14 Inch Ring",
       "color": "#2563eb"
     },
-    "colors": [
-      "#f8fafc",
-      "#000000"
-    ],
+    "colors": ["#f8fafc", "#000000"],
     "image": "/images/products/sealing-ring.webp",
     "images": [
       "/images/products/sealing-ring.webp",
@@ -3404,11 +3251,7 @@
       "text": "Security Clip",
       "color": "#dc2626"
     },
-    "colors": [
-      "#dc2626",
-      "#f59e0b",
-      "#2563eb"
-    ],
+    "colors": ["#dc2626", "#f59e0b", "#2563eb"],
     "image": "/images/products/drum-locking-clip.webp",
     "images": [
       "/images/products/drum-locking-clip.webp",
