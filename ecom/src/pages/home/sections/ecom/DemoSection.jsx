@@ -238,7 +238,9 @@ function generateSvgMarkup(st) {
 // 1. Industry Selector
 const IndustrySection = memo(({ selectedIndex, onSelect }) => {
     const tabs = useMemo(() => INDS.map((x, i) => ({ name: x.n, value: i })), []);
-    return <Tab version="v1" tabs={tabs} activeTab={selectedIndex} onChange={onSelect} className="w-full" />;
+    return <div className="overflow-auto">
+        <Tab version="v1" tabs={tabs} activeTab={selectedIndex} onChange={onSelect} className="w-full" />
+    </div>;
 });
 IndustrySection.displayName = "IndustrySection";
 
@@ -353,12 +355,12 @@ const ClosureControls = memo(({ st, onTypeChange, onFieldChange }) => {
             <h3 className="title-text font-700 text-dark uppercase mt-4 mb-6">{currentType.n}</h3>
             <p className="small-text text-gray font-400 mb-16">{currentType.sub}</p>
 
-            <div className="mb-14">
+            <div className="mb-14 overflow-auto">
                 <p className="mini-text font-600 text-gray uppercase mb-6">Closure type</p>
                 <Tab version="v2" tabs={typeTabs} activeTab={st.t} onChange={onTypeChange} className="w-full" />
             </div>
 
-            <div className="mb-14">
+            <div className="mb-14 overflow-auto">
                 <p className="mini-text font-600 text-gray uppercase mb-6">Size</p>
                 <Tab version="v2" tabs={sizeTabs} activeTab={safeSizeIdx} onChange={(val) => onFieldChange("s", val)} className="w-full" />
             </div>
@@ -440,7 +442,7 @@ const SealCheckMatrix = memo(({ st, onSelectLiquid, onSelectCell }) => {
         <div className="bg-white">
 
             <div className="overflow-auto">
-                <table className="w-full text-center" style={{ minWidth: 520, borderCollapse: "collapse" }}>
+                <table className="w-full text-center" style={{ borderCollapse: "collapse" }}>
                     <thead>
                         <tr>
                             <th className="text-left py-8 px-6 mini-text font-600 text-gray uppercase">Liquid</th>
@@ -547,7 +549,7 @@ const EnquirySection = memo(({ st, onQuantitySelect, onCopy, copyNote }) => {
                     Your choices are collected here. Set a quantity and copy the enquiry to send to the sales team. Custom colours, branding and bespoke designs are handled on request.
                 </p>
 
-                <div className="mt-16">
+                <div className="mt-16 overflow-auto">
                     <p className="mini-text font-600 text-gray uppercase mb-6">Quantity</p>
                     <Tab version="v2" tabs={quantityTabs} activeTab={st.q} onChange={onQuantitySelect} className="w-full" />
                 </div>
