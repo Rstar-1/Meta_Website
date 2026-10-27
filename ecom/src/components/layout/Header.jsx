@@ -119,22 +119,22 @@ const isStickyConfig = Boolean(configData?.Header?.HeaderSticky);
 const LogoClass = {
   1: "w-25 sm-w-85",
   2: "w-15 sm-w-85",
-  3: "w-15 sm-w-85",
-  4: "w-15 sm-w-85",
+  3: "w-25 sm-w-85",
+  4: "w-25 sm-w-85",
 }[headerType] || "w-25 sm-w-85";
 
 const NavigationClass = {
   1: "w-50 justify-center",
   2: "w-60 justify-start",
-  3: "w-70 justify-end",
-  4: "w-70 justify-end",
+  3: "w-50 justify-end",
+  4: "w-50 justify-end",
 }[headerType] || "w-50 justify-center";
 
 const ActionClass = {
   1: "w-25 sm-w-15",
   2: "w-25 sm-w-15",
   3: "w-25 sm-w-15",
-  4: "w-20 sm-w-15",
+  4: "w-25 sm-w-15",
 }[headerType] || "w-25 sm-w-15";
 
 const CategoryClass = {
@@ -186,13 +186,18 @@ const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
   const fallbackSrc = isLight ? "/images/logo/logo-dark.png" : "/images/logo/logo-white.png";
 
   return (
-    <NavLink to="/home" className={`${LogoClass} flex items-center`} onClick={onCloseMobile}>
+    <NavLink
+      to="/home"
+      className={`${LogoClass} flex items-center`}
+      style={{ flexShrink: 0, textDecoration: "none" }}
+      onClick={onCloseMobile}
+    >
       <Image
         src={logoSrc}
         fallback={fallbackSrc}
-        alt="Vasu Javal Plastics"
+        alt="Global Chemie"
         className="object-contain"
-        style={{ height: "46px", maxWidth: "230px", width: "auto" }}
+        style={{ height: "38px", maxWidth: "210px", display: "block" }}
       />
     </NavLink>
   );

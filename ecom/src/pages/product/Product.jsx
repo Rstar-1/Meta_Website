@@ -36,8 +36,9 @@ const Product = () => {
         <>
             <SEO page="product" breadcrumbs={BREADCRUMBS} />
             <Banner
-                title="Products Collection"
-                desc="Products"
+                title="Chemical Catalog & Intermediates"
+                desc="High-Purity Silyl Reagents, Triflic Building Blocks, Coupling Agents & Rare Chemicals"
+                image="/images/banners/product-banner.webp"
                 breadcrumbs={BREADCRUMBS}
             />
             {productSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle, version }) => {

@@ -38,15 +38,15 @@ const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) =
             : 'pb-60'
         } relative z-20`}>
         <h1 className='largemid-text text-white font-600 uppercase'>
-            {heroCMS?.titleLine1 || 'PRECISION-MADE'}
+            {heroCMS?.titleLine1 || 'HIGH-PURITY'}
             <br />
-            <span className='text-primary'>{heroCMS?.titleHighlight || 'INDUSTRIAL CLOSURES'}</span>
+            <span className='text-primary'>{heroCMS?.titleHighlight || 'BULK DRUG INTERMEDIATES'}</span>
         </h1>
-        <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12' style={{ maxWidth: '650px' }}>
-            {heroCMS?.leftText || "India's premier manufacturer of high-performance closures, bungs, screw caps, inserts, and IBC valves for drums, jerry cans & IBCs."}
-        </p>
+        {/* <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12' style={{ maxWidth: '650px' }}>
+                {heroCMS?.leftText || "Reputed Indian contract manufacturer, wholesaler, trader, importer, and exporter of bulk drug intermediates, speciality chemicals, fine chemicals, and rare research compounds."}
+            </p> */}
         <Button
-            text="Get Product Quote"
+            text="Get Chemical Quote"
             icon="ArrowUpRight"
             iconPosition="right"
             iconWidth="16"

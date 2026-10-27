@@ -11,12 +11,12 @@ import { configData, aboutCMS } from '../../../../utils/apiData';
 import { resolveImagePath } from '../../../../utils/imageResolver';
 
 const defaultAboutData = {
-    experienceYears: "15+",
-    experienceTagline: "Years of Precision Industrial Closures & Injection Moulding",
-    description: "Vasu Javal Plastics is a premier manufacturer and supplier of high-precision industrial closures, drum bungs, vented screw caps, inserts, and IBC dispensing valves. Operating state-of-the-art injection moulding facilities in Daman with central sales coordination in Byculla, Mumbai, we engineer leak-proof, chemical-resistant closure solutions from 100% virgin-grade HDPE and PE polymers for leading chemical, lubricant, paint, and agrochemical brands across India.",
+    experienceYears: "20+",
+    experienceTagline: "Years of Chemical Synthesis & Global Sourcing Excellence",
+    description: "Global Chemie was established in Mumbai, Maharashtra in 2003. We are a reputed Contract Manufacturer, Wholesaler, Trader, Importer, and Exporter of Bulk drug intermediates, Speciality chemicals, Fine chemicals, Pharma Chemicals, and Rare chemicals. With more than 2,500 products in ready stock across R&D, semi-bulk, and commercial bulk quantities, we meet the demanding needs of Indian MNCs, pharmaceutical innovators, and scientific research institutes.",
     images: {
-        team: "https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp",
-        developer: "/images/products/bung-50mm-vented.webp"
+        team: "/images/globalchemie/chemical-lab.jpg",
+        developer: "/images/chemicals/tms-azide.webp"
     }
 };
 
@@ -57,7 +57,7 @@ export const AboutVersion1 = React.memo(({ aboutSide = 'left', onLearnMore, data
             <div className="w-30 sm-w-full relative overflow-hidden rounded-5">
                 <Image
                     src={resolveImagePath(data?.images?.team)}
-                    alt="Vasu Javal Plastics Industrial Closures"
+                    alt="Global Chemie Analytical Laboratory and Synthesis Facility"
                     className="w-full h-250 object-cover flex"
                 />
                 <div
@@ -65,22 +65,22 @@ export const AboutVersion1 = React.memo(({ aboutSide = 'left', onLearnMore, data
                     style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
                 >
                     <Icon name="Star" width="14" height="14" fill="var(--warning)" stroke="var(--warning)" />
-                    <p className="mini-text font-600 text-dark">99.8% Leak-Proof Reliability</p>
+                    <p className="mini-text font-600 text-dark">99.5%+ Assay Purity</p>
                 </div>
             </div>
 
             <div className="w-40 sm-w-full relative overflow-hidden rounded-5">
                 <Image
                     src={resolveImagePath(data?.images?.developer)}
-                    alt="Precision Injection Moulded Closure"
+                    alt="High-Purity Fine Chemical Synthesis"
                     className="w-full h-350 object-cover flex"
                 />
                 <div
                     className="absolute bottom-0 right-0 p-10 m-6 bg-white rounded-5 text-white"
                     style={{ minWidth: '130px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
                 >
-                    <p className="title-text font-600 text-dark text-center">50+ SKUs</p>
-                    <p className="mini-text text-gray font-400 text-center">Direct Factory Supply</p>
+                    <p className="title-text font-600 text-dark text-center">2,500+ SKUs</p>
+                    <p className="mini-text text-gray font-400 text-center">Ready Stock Available</p>
                 </div>
             </div>
         </div>

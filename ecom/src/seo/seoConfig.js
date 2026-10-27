@@ -1,6 +1,6 @@
-const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://vasujavalplastics.com").replace(/\/$/, "");
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Vasu Javal Plastics";
-const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://globalchemie.in").replace(/\/$/, "");
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Global Chemie";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/images/globalchemie/contract-manufacturing.jpeg";
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 
@@ -9,22 +9,22 @@ export const siteInfo = {
   url: SITE_URL,
   description:
     import.meta.env.VITE_SEO_DESCRIPTION ||
-    "Vasu Javal Plastics is a premier manufacturer and supplier of high-performance industrial closures, drum bungs, vented screw caps, inserts, and IBC dispensing valves in India.",
-  phone: import.meta.env.VITE_PHONE || "+91 95126 51119",
-  email: import.meta.env.VITE_EMAIL || "sales@vasujavalplastics.com",
+    "Global Chemie is a reputed contract manufacturer, wholesaler, trader, importer, and exporter of bulk drug intermediates, speciality chemicals, fine chemicals, pharma chemicals, R&D chemicals, and rare chemicals.",
+  phone: import.meta.env.VITE_PHONE || "022-49232700",
+  email: import.meta.env.VITE_EMAIL || "bhaven@globalchemie.in",
 
   address: {
-    streetAddress: "Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel",
-    addressLocality: "Daman",
-    addressRegion: "Dadra and Nagar Haveli and Daman and Diu",
-    postalCode: "396210",
+    streetAddress: "Office No.519, 5th Floor, Bezzola Complex, Sion Trombay Road",
+    addressLocality: "Chembur, Mumbai",
+    addressRegion: "Maharashtra",
+    postalCode: "400071",
     addressCountry: "IN",
-    fullAddress: import.meta.env.VITE_ADDRESS || "Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel, Daman – 396210, India | Sales Office: 303/B, Byculla Service Industries, Dadoji Konndeo Road, Byculla (E), Mumbai – 400 027, India",
+    fullAddress: import.meta.env.VITE_ADDRESS || "Office No.519, 5th Floor, Bezzola Complex, Sion Trombay Road, Chembur, Mumbai - 400071, Maharashtra, India",
   },
 
   geo: {
-    latitude: 20.4069,
-    longitude: 72.8687,
+    latitude: 19.0522,
+    longitude: 72.8995,
   },
 
   sameAs: [
@@ -38,18 +38,18 @@ export const siteInfo = {
 
 export const pageSeoData = {
   home: {
-    title: import.meta.env.VITE_SEO_TITLE || "Industrial Closures, Bungs, Caps & IBC Valves | Vasu Javal Plastics",
+    title: import.meta.env.VITE_SEO_TITLE || "Bulk Drug Intermediates, Speciality Chemicals & Fine Chemicals | Global Chemie",
     description:
       import.meta.env.VITE_SEO_DESCRIPTION ||
-      "Vasu Javal Plastics is a premier manufacturer of high-performance industrial closures, bungs, screw caps, inserts, and IBC dispensing valves for drums, jerry cans, and containers.",
+      "Global Chemie is a reputed contract manufacturer, wholesaler, trader, importer, and exporter of bulk drug intermediates, speciality chemicals, fine chemicals, pharma chemicals, R&D chemicals, and rare chemicals.",
     path: "/home",
     breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
-    title: "About Vasu Javal Plastics | Industrial Closures Manufacturer in India",
+    title: "About Global Chemie | Contract Chemical Manufacturer & Exporter in Mumbai",
     description:
-      "Learn about Vasu Javal Plastics, our Daman manufacturing plant, 100% virgin-grade polymer injection moulding, and leak-proof industrial closures.",
+      "Established in 2003 in Mumbai, Global Chemie specializes in contract manufacturing, custom synthesis, and global sourcing of fine chemicals and bulk drug intermediates.",
     path: "/about",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -58,9 +58,9 @@ export const pageSeoData = {
   },
 
   product: {
-    title: "Industrial Closures, Bungs & IBC Valves Catalog | Vasu Javal Plastics",
+    title: "Chemical Product Catalog | Intermediates, Reagents & Fine Chemicals | Global Chemie",
     description:
-      "Explore over 50 precision-engineered industrial closures, 50mm/75mm drum bungs, vented screw caps, drum handles, and IBC valves from Vasu Javal Plastics.",
+      "Explore over 2,500 products in ready stock: silyl reagents, triflic compounds, carbodiimide coupling agents, pharma intermediates, and rare R&D chemicals from Global Chemie.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -69,9 +69,9 @@ export const pageSeoData = {
   },
 
   products: {
-    title: "Industrial Closures, Bungs & IBC Valves Catalog | Vasu Javal Plastics",
+    title: "Chemical Product Catalog | Intermediates, Reagents & Fine Chemicals | Global Chemie",
     description:
-      "Explore over 50 precision-engineered industrial closures, 50mm/75mm drum bungs, vented screw caps, drum handles, and IBC valves from Vasu Javal Plastics.",
+      "Explore over 2,500 products in ready stock: silyl reagents, triflic compounds, carbodiimide coupling agents, pharma intermediates, and rare R&D chemicals from Global Chemie.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -80,9 +80,9 @@ export const pageSeoData = {
   },
 
   productDetail: {
-    title: "Industrial Closure Technical Specifications | Vasu Javal Plastics",
+    title: "Chemical Specifications & COA Technical Sheet | Global Chemie",
     description:
-      "Explore detailed specifications, technical parameters, thread standards, and virgin HDPE material properties for industrial closures by Vasu Javal Plastics.",
+      "View high-purity chemical assay, CAS registry numbers, boiling points, molecular formulas, and analytical test parameters certified by Global Chemie.",
     path: "/product-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -92,21 +92,21 @@ export const pageSeoData = {
   },
 
   supplier: {
-    title: "Industrial Closures Supplier & Manufacturer Profile | Vasu Javal Plastics",
+    title: "Custom Manufacturing & Global Sourcing Partner | Global Chemie",
     description:
-      "Direct factory supply of industrial packaging closures, drum plugs, and IBC valves to chemical, lubricant, paint, and agrochemical industries.",
+      "Contract manufacturing, custom chemical synthesis, and global rare chemical imports from the USA, Japan, and China to pharmaceutical manufacturers and research institutes.",
     path: "/supplier",
     breadcrumbs: [
       { label: "Home", path: "/home" },
       { label: "Products", path: "/product" },
-      { label: "Supplier Profile", path: "/supplier" },
+      { label: "Manufacturing Profile", path: "/supplier" },
     ],
   },
 
   quality: {
-    title: "Quality Assurance & Leak-Proof Standards | Vasu Javal Plastics",
+    title: "Analytical Testing & Purity Standards | Global Chemie",
     description:
-      "Explore Vasu Javal Plastics' quality testing, 100% virgin polymer certification, ESCR compliance, and zero-leakage assurance.",
+      "Learn about Global Chemie's HPLC, GC, NMR, and Karl Fischer titration quality testing protocols ensuring 99.5%+ assay for bulk drug intermediates.",
     path: "/quality",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -115,9 +115,9 @@ export const pageSeoData = {
   },
 
   connect: {
-    title: "Contact Vasu Javal Plastics | Request Closure Quotations & Samples",
+    title: "Contact Global Chemie | Request Chemical Quotations & COA",
     description:
-      "Contact Vasu Javal Plastics for industrial closure enquiries, sample requests, and bulk B2B container packaging requirements. Plants in Daman and Sales in Mumbai.",
+      "Contact Global Chemie in Chembur, Mumbai for chemical enquiries, custom synthesis projects, and bulk intermediate supply across India and global export destinations.",
     path: "/connect",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -126,9 +126,9 @@ export const pageSeoData = {
   },
 
   blog: {
-    title: "Industrial Packaging & Closures Insights | Vasu Javal Plastics",
+    title: "Chemical Insights & Technical Articles | Global Chemie",
     description:
-      "Read industrial packaging articles, technical guides on pressure venting bungs, IBC butterfly valves, and virgin HDPE closure performance.",
+      "Read technical articles on bulk drug intermediate synthesis, HPLC chromatographic analysis, green chemistry solvents, and global rare chemicals logistics.",
     path: "/blog",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -137,9 +137,9 @@ export const pageSeoData = {
   },
 
   blogDetail: {
-    title: "Technical Packaging Insights & Guides | Vasu Javal Plastics",
+    title: "Technical Chemical Guide & Research Article | Global Chemie",
     description:
-      "In-depth technical guides on industrial drum bungs, IBC valves, microporous venting, and packaging closure engineering by Vasu Javal Plastics.",
+      "In-depth analysis of chemical synthesis routes, reaction mechanisms, and reagent handling by Global Chemie's chemical engineering team.",
     path: "/blog-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -149,8 +149,8 @@ export const pageSeoData = {
   },
 
   privacy: {
-    title: "Privacy Policy | Vasu Javal Plastics",
-    description: "Read the Vasu Javal Plastics privacy policy.",
+    title: "Privacy Policy | Global Chemie",
+    description: "Read the Global Chemie privacy policy.",
     path: "/privacy",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -159,8 +159,8 @@ export const pageSeoData = {
   },
 
   terms: {
-    title: "Terms & Conditions | Vasu Javal Plastics",
-    description: "Read the terms and conditions of Vasu Javal Plastics.",
+    title: "Terms & Conditions | Global Chemie",
+    description: "Read the terms and conditions of Global Chemie.",
     path: "/terms",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -171,24 +171,24 @@ export const pageSeoData = {
 
 export const aeoFAQs = [
   {
-    question: "What is Vasu Javal Plastics?",
+    question: "What is Global Chemie?",
     answer:
-      "Vasu Javal Plastics is an Indian precision injection moulding manufacturer specializing in high-performance industrial closures, drum bungs, vented screw caps, neck inserts, and IBC dispensing valves.",
+      "Global Chemie, established in 2003 in Mumbai, is a leading contract manufacturer, wholesaler, trader, importer, and exporter of bulk drug intermediates, fine chemicals, speciality chemicals, and rare research compounds.",
   },
   {
-    question: "What products does Vasu Javal Plastics manufacture?",
+    question: "What products and chemical grades does Global Chemie offer?",
     answer:
-      "Vasu Javal Plastics manufactures over 50 SKUs including 50mm and 75mm drum bungs (solid & vented), 25mm to 350mm screw caps & open top lids, neck inserts, drum handles, spanners, and DN50/DN80 IBC butterfly & ball valves.",
+      "Global Chemie maintains over 2,500 products in ready stock across R&D, semi-bulk, and commercial bulk quantities, including Silyl Reagents (TMS-N3, TMS-CN), Triflic Compounds, Carbodiimides (EDC HCl), MOM Chloride, DFTA Fluconazole Intermediates, DBU, and 1,10-Phenanthroline AR.",
   },
   {
-    question: "What materials are used in Vasu Javal Plastics closures?",
+    question: "Does Global Chemie provide custom contract manufacturing?",
     answer:
-      "All closures and valves are moulded from 100% prime virgin-grade HDPE and PE polymers with EPDM/LLDPE sealing gaskets and microporous vent membranes for superior Environmental Stress Crack Resistance (ESCR).",
+      "Yes. Global Chemie provides tailor-made contract manufacturing and custom synthesis according to customer specifications, catering to Indian MNCs, pharmaceutical leaders, government science institutes, and university laboratories.",
   },
   {
-    question: "How can I request closure samples or bulk pricing?",
+    question: "How can I request a Certificate of Analysis (COA) or price quote?",
     answer:
-      "You can request sample kits and direct factory quotations through our contact page, by emailing sales@vasujavalplastics.com, or calling +91 95126 51119.",
+      "You can contact Global Chemie at bhaven@globalchemie.in, call 022-49232700 or mobile +91 98208 39939, or visit our office at Bezzola Complex, Chembur, Mumbai.",
   },
 ];
 

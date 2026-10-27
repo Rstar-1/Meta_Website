@@ -17,7 +17,7 @@ const supplierSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url('https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp')`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url('/images/globalchemie/chemical-lab.jpg')`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -31,21 +31,19 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 ));
 
 const KNOWN_NAMES = {
-    vasujaval: 'Vasu Javal Plastics',
-    vasu: 'Vasu Javal Plastics',
-    vasujavalplastics: 'Vasu Javal Plastics',
-    vjp: 'Vasu Javal Plastics',
-    factory: 'Vasu Javal Plastics (Daman Plant)',
-    sales: 'Vasu Javal Plastics (Mumbai Hub)'
+    globalchemie: 'Global Chemie',
+    gc: 'Global Chemie',
+    mumbai: 'Global Chemie (Mumbai Corporate Hub)',
+    synthesis: 'Global Chemie (Custom Synthesis Facility)'
 };
 
 const Supplier = () => {
     const { brandName } = useParams();
-    const brandKey = (brandName || 'vasujaval').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brandKey = (brandName || 'globalchemie').toLowerCase().replace(/[^a-z0-9]/g, '');
     const displayName = useMemo(() => {
         return KNOWN_NAMES[brandKey] || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'Vasu Javal Plastics');
+            : 'Global Chemie');
     }, [brandKey, brandName]);
 
     const breadcrumbs = useMemo(() => [
@@ -57,14 +55,15 @@ const Supplier = () => {
     return (
         <>
             <SEO
-                title="Vasu Javal Plastics - Manufacturer & Supplier of Industrial Closures, Bungs & Valves"
-                description="Manufacturer and B2B supplier of industrial drum bungs, vented screw caps, neck inserts, and IBC dispensing valves from Daman & Mumbai, Maharashtra, India. Call +91 95126 51119."
+                title="Global Chemie - Contract Manufacturer & Sourcing Partner | Bulk Intermediates"
+                description="Contract manufacturer, wholesaler, importer, and exporter of bulk drug intermediates, fine chemicals, and rare research compounds in Mumbai, India. Call 022-49232700 / +91 98208 39939."
                 path={`/supplier/${brandKey}`}
                 breadcrumbs={breadcrumbs}
             />
             <Banner
                 title={displayName}
-                desc="Premier Manufacturer & B2B Supplier — Industrial Closures, Bungs, Caps & IBC Valves"
+                desc="Contract Manufacturer & Exporter — Bulk Drug Intermediates, Fine Chemicals & Rare Reagents"
+                image="/images/banners/product-banner.webp"
                 breadcrumbs={breadcrumbs}
             />
             {supplierSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

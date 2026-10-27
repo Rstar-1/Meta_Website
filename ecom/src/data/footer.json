@@ -4,37 +4,37 @@
       "id": "service",
       "icon": "Support",
       "title": "Customer Support",
-      "text": "Mon-Sat, 10am-6:30pm IST.",
+      "text": "Mon-Sat, 9:30am-6:30pm IST.",
       "type": "text"
     },
     {
       "id": "call",
       "icon": "Phone",
       "title": "Call Us",
-      "text": "+91 95126 51119",
-      "link": "tel:9512651119",
+      "text": "022-49232700 / 098208 39939",
+      "link": "tel:02249232700",
       "type": "text"
     },
     {
       "id": "touch",
       "icon": "Send",
       "title": "Email Us",
-      "text": "sales@vasujavalplastics.com",
-      "link": "mailto:sales@vasujavalplastics.com",
+      "text": "bhaven@globalchemie.in",
+      "link": "mailto:bhaven@globalchemie.in",
       "type": "link"
     },
     {
       "id": "address",
       "icon": "MapPin",
-      "title": "Locations",
-      "text": "Daman (Mfg) | Byculla, Mumbai (Sales)",
+      "title": "Head Office",
+      "text": "Chembur, Mumbai - 400071, India",
       "type": "text"
     }
   ],
   "newsletter": {
-    "title": "Partner with Vasujaval Plastics",
-    "description": "Receive updates on precision industrial closures, IBC valves, and custom packaging solutions.",
-    "placeholder": "Enter your corporate email",
+    "title": "Partner with Global Chemie",
+    "description": "Subscribe to receive the latest product list of over 2,500 chemicals, COA updates, and custom synthesis quotes.",
+    "placeholder": "Enter your corporate chemical email",
     "buttonText": "Subscribe",
     "disclaimer": {
       "prefix": "By subscribing you agree to our ",
@@ -50,31 +50,76 @@
     {
       "title": "Company",
       "links": [
-        { "label": "About Us", "url": "/about" },
-        { "label": "All Products", "url": "/product" },
-        { "label": "Manufacturing Units", "url": "/supplier" },
-        { "label": "Technical Guides & Insights", "url": "/blog" },
-        { "label": "Contact & Custom Inquiry", "url": "/connect" }
+        {
+          "label": "About Us",
+          "url": "/about"
+        },
+        {
+          "label": "Chemical Catalog",
+          "url": "/product"
+        },
+        {
+          "label": "Custom Manufacturing",
+          "url": "/supplier"
+        },
+        {
+          "label": "Technical Insights & Guides",
+          "url": "/blog"
+        },
+        {
+          "label": "Contact & COA Request",
+          "url": "/connect"
+        }
       ]
     },
     {
-      "title": "Closures & Bungs",
+      "title": "Intermediates & Reagents",
       "links": [
-        { "label": "50mm Vented Bung Plugs", "url": "/product?category=Bungs" },
-        { "label": "50mm Top Ring Metal Drum Bungs", "url": "/product?category=Bungs" },
-        { "label": "75mm Bottom Ring Bungs", "url": "/product?category=Bungs" },
-        { "label": "50mm Vented Screw Caps", "url": "/product?category=Caps%20%26%20Closures" },
-        { "label": "Open Top Drum Lids 250mm/350mm", "url": "/product?category=Caps%20%26%20Closures" }
+        {
+          "label": "Trimethylsilyl Azide (TMS-N3)",
+          "url": "/product?category=Silyl%20Reagents"
+        },
+        {
+          "label": "Trifluoromethanesulfonic Anhydride",
+          "url": "/product?category=Triflic%20%26%20Fluorinated%20Compounds"
+        },
+        {
+          "label": "EDC HCl (Water Soluble Carbodiimide)",
+          "url": "/product?category=Coupling%20Agents%20%26%20Carbodiimides"
+        },
+        {
+          "label": "DFTA (Fluconazole Intermediate)",
+          "url": "/product?category=Bulk%20Drug%20Intermediates"
+        },
+        {
+          "label": "Boron Trifluoride Etherate",
+          "url": "/product?category=Speciality%20%26%20Fine%20Chemicals"
+        }
       ]
     },
     {
-      "title": "Valves & Accessories",
+      "title": "Speciality & Rare Chemicals",
       "links": [
-        { "label": "DN80 Integrated Butterfly Valve", "url": "/product?category=Dispensing%20Solutions" },
-        { "label": "DN50 Split Thread Ball Valve", "url": "/product?category=Dispensing%20Solutions" },
-        { "label": "IBC DN150 Top Lids", "url": "/product?category=Caps%20%26%20Closures" },
-        { "label": "Industrial Bung Dust Covers", "url": "/product?category=Accessories" },
-        { "label": "Drum Opening Spanner Wrenches", "url": "/product?category=Accessories" }
+        {
+          "label": "Chloromethyl Methyl Ether (MOM-Cl)",
+          "url": "/product?category=Speciality%20%26%20Fine%20Chemicals"
+        },
+        {
+          "label": "1,8-Diazabicyclo[5.4.0]undec-7-ene (DBU)",
+          "url": "/product?category=Speciality%20%26%20Fine%20Chemicals"
+        },
+        {
+          "label": "1,10-Phenanthroline Monohydrate AR 99.5%",
+          "url": "/product?category=Rare%20%26%20R%26D%20Chemicals%20(Import)"
+        },
+        {
+          "label": "1,2,3-Benzotriazole 99%",
+          "url": "/product?category=Rare%20%26%20R%26D%20Chemicals%20(Import)"
+        },
+        {
+          "label": "1,3-Bis(diphenylphosphino)propane (DPPP)",
+          "url": "/product?category=Rare%20%26%20R%26D%20Chemicals%20(Import)"
+        }
       ]
     }
   ],
@@ -83,7 +128,14 @@
       "flag": "🇮🇳",
       "label": "India (INR ₹)"
     },
-    "paymentBadges": ["NEFT", "RTGS", "UPI", "GPAY", "VISA", "MC"],
+    "paymentBadges": [
+      "NEFT",
+      "RTGS",
+      "UPI",
+      "GPAY",
+      "VISA",
+      "MC"
+    ],
     "socials": [
       {
         "platform": "facebook",
@@ -99,12 +151,17 @@
         "platform": "linkedin",
         "iconName": "Linkedin",
         "url": "https://www.linkedin.com/"
+      },
+      {
+        "platform": "twitter",
+        "iconName": "Twitter",
+        "url": "https://x.com/"
+      },
+      {
+        "platform": "whatsapp",
+        "iconName": "MessageCircle",
+        "url": "https://wa.me/919820839939"
       }
-    ],
-    "copyright": "© 2026 Vasujaval Plastics. All rights reserved.",
-    "legalLinks": [
-      { "label": "Terms & Conditions", "url": "/terms" },
-      { "label": "Privacy Policy", "url": "/privacy" }
     ]
   }
 }

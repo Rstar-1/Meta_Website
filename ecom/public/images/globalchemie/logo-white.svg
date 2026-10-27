@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 75" height="75" width="340">
+  <defs>
+    <filter id="whiteLogo" x="0" y="0" width="100%" height="100%">
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 1
+        0 1 0 0 1
+        0 0 1 0 1
+        0 0 0 1 0" />
+    </filter>
+  </defs>
+  <rect x="0" y="5" width="340" height="65" rx="8" fill="#ffffff" fill-opacity="0.95" />
+  <image href="/images/globalchemie/logo.png" x="5" y="0" width="330" height="75" />
+</svg>

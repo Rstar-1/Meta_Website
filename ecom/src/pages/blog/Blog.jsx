@@ -21,7 +21,7 @@ const blogSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url('https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp')`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url('/images/globalchemie/chemical-lab.jpg')`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -44,8 +44,9 @@ const Blog = () => {
         <>
             <SEO page="blog" breadcrumbs={BREADCRUMBS} />
             <Banner
-                title="News & Articles"
-                desc="News & Media"
+                title="Chemical Insights & Technical Articles"
+                desc="Latest Research, Reagent Methodologies, Analytical Validation & Industry Whitepapers"
+                image="/images/banners/blog-banner.webp"
                 breadcrumbs={BREADCRUMBS}
             />
             {blogSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {

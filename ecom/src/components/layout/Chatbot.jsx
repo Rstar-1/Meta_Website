@@ -10,40 +10,40 @@ import { productsData } from '../../utils/apiData';
 
 const QUICK_ACTIONS = [
     {
-        id: 'supplier',
-        title: 'Supplier',
-        subtitle: 'Verified Brands & Partners',
-        icon: 'Users',
+        id: 'customMfg',
+        title: 'Custom Mfg',
+        subtitle: 'Contract Synthesis & Scale-up',
+        icon: 'Layers',
         iconBg: '#2563eb',
-        reply: 'We partner with certified industrial suppliers and leading manufacturers to offer premium PVC solutions:\n\n• **Certified Quality**: Food-grade, fire-retardant, and polar-grade.\n• **Direct Wholesale**: Competitive bulk rates and fast cargo shipping.',
-        cta: { text: 'View Suppliers', path: '/supplier' }
+        reply: 'Global Chemie provides tailor-made contract manufacturing and custom synthesis according to your specifications:\n\n• **Certified Assay**: HPLC & GC purity ≥ 99.5% with detailed COAs.\n• **Flexible Batch Scales**: From 100g R&D lots to pilot and multi-ton commercial production.',
+        cta: { text: 'Custom Manufacturing', path: '/supplier' }
     },
     {
         id: 'contact',
         title: 'Get in Touch',
-        subtitle: 'Speak with our team',
+        subtitle: 'Quotes & Technical Inquiries',
         icon: 'Support',
         iconBg: '#059669',
-        reply: `Reach out to our customer support and sales team directly:\n\n• **Phone**: ${import.meta.env.VITE_PHONE || '07942562287'}\n• **Email**: ${import.meta.env.VITE_EMAIL || 'info@ashmitavinyls.com'}`,
-        cta: { text: 'Get in Touch', path: '/connect' }
+        reply: `Connect directly with our commercial team in Chembur, Mumbai:\n\n• **Telephone**: ${import.meta.env.VITE_PHONE || '022-49232700'}\n• **Mobile / WhatsApp**: +91 98208 39939\n• **Email**: ${import.meta.env.VITE_EMAIL || 'bhaven@globalchemie.in'}`,
+        cta: { text: 'Contact Us', path: '/connect' }
     },
     {
         id: 'blogs',
-        title: 'Blogs',
-        subtitle: 'Guides & Insights',
+        title: 'Tech Insights',
+        subtitle: 'Synthesis & Testing Guides',
         icon: 'Reports',
         iconBg: '#7c3aed',
-        reply: 'Explore our latest technical installation guides, overlap charts, and warehouse energy saving calculators.',
-        cta: { text: 'Read Blogs', path: '/blog' }
+        reply: 'Explore technical articles on bulk drug intermediate routes, HPLC impurity profiling, and silyl protecting group chemistry.',
+        cta: { text: 'Read Articles', path: '/blog' }
     },
     {
         id: 'collection',
-        title: 'Collection',
-        subtitle: 'Curtains & Brackets',
+        title: 'Chemical Catalog',
+        subtitle: '2,500+ Ready Stock SKUs',
         icon: 'Grid',
         iconBg: '#06b6d4',
-        reply: 'Browse our full catalog of standard clear PVC rolls, polar sub-zero strips, and stainless steel mounting hardware.',
-        cta: { text: 'Explore Collection', path: '/product' }
+        reply: 'Browse over 2,500 products in ready stock: silyl reagents (TMS-N3, TMS-CN), triflic anhydride, EDC HCl, DFTA, and rare research compounds.',
+        cta: { text: 'Explore Chemicals', path: '/product' }
     }
 ];
 
@@ -150,8 +150,8 @@ const ProductSearch = memo(({ searchQuery, onSearchChange, onSelect, onBack }) =
                 ) : (
                     <div className="p-24 text-center text-gray">
                         <Icon name="Search" width="28" height="28" stroke="var(--gray)" className="mx-auto mb-8 opacity-50" />
-                        <p className="small-text font-500 text-dark m-0">No products found</p>
-                        <p className="mini-text text-gray m-0 mt-4">Try searching for "Transparent", "Polar", or "Brackets"</p>
+                        <p className="small-text font-500 text-dark m-0">No chemicals found</p>
+                        <p className="mini-text text-gray m-0 mt-4">Try searching for "TMS-N3", "Triflic", "EDC", or "DFTA"</p>
                     </div>
                 )}
             </div>
@@ -191,7 +191,7 @@ const ChatTeaser = memo(({ onOpen, onDismiss }) => {
                 />
             </div>
             <p className="mini-text text-dark font-500 m-0">
-                Hi! 👋 Looking for PVC strip curtains or need help? Let's chat!
+                Hi! 👋 Looking for chemical intermediates, COAs or quotes? Let's chat!
             </p>
         </div>
     );
@@ -253,7 +253,7 @@ const ChatWelcome = memo(({ onActionClick }) => (
         </h2>
 
         <p className="mini-text text-gray mt-6 m-0">
-            Search our products, explore verified suppliers, or get in touch.
+            Search 2,500+ chemical products, explore custom synthesis, or get in touch.
         </p>
 
         <div className="grid-cols-2 gap-8 mt-12">

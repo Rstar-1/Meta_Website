@@ -7,7 +7,7 @@ import SEO from '../../seo';
 const Enquiry = lazy(() => import('./sections/Enquiry'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 
-const patchBannerBg = 'https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp';
+const patchBannerBg = '/images/globalchemie/chemical-lab.jpg';
 
 const connectSections = [
     {
@@ -46,8 +46,9 @@ const Connect = () => {
         <>
             <SEO page="connect" breadcrumbs={BREADCRUMBS} />
             <Banner
-                title="Connect With Us"
-                desc="Direct Factory Inquiries, Technical Support & Sample Requests Across India"
+                title="Connect With Global Chemie"
+                desc="Bulk Chemical Inquiries, Custom Synthesis, COA Requests & Pan-India Dispatch"
+                image="/images/banners/connect-banner.webp"
                 breadcrumbs={BREADCRUMBS}
             />
             {connectSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

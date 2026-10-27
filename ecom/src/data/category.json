@@ -1,182 +1,206 @@
 [
   {
     "id": 1,
-    "name": "Bungs",
-    "slug": "bungs",
-    "icon": "/images/products/bung-50mm-vented.webp",
-    "iconName": "Disc",
+    "name": "Bulk Drug Intermediates",
+    "slug": "bulk-drug-intermediates",
+    "icon": "/images/chemicals/dfta-fluconazole.webp",
+    "iconName": "Activity",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
     "subCategories": [
       {
-        "id": "vented-bungs",
-        "name": "Vented Bung Plugs",
-        "image": "/images/products/bung-50mm-vented.webp"
+        "id": "antifungal-intermediates",
+        "name": "Antifungal & Fluconazole Intermediates",
+        "image": "/images/chemicals/dfta-fluconazole.webp"
       },
       {
-        "id": "bottom-ring-bungs",
-        "name": "Bottom Ring Bungs (50mm & 75mm)",
-        "image": "/images/products/bung-50mm-solid.webp"
+        "id": "triazole-derivatives",
+        "name": "4-Amino-1,2,4-Triazole & Heterocycles",
+        "image": "/images/chemicals/benzotriazole.webp"
       },
       {
-        "id": "top-ring-metal-bungs",
-        "name": "Top Ring Metal Drum Bungs",
-        "image": "/images/products/bung-50mm-solid.webp"
+        "id": "formamidine-derivatives",
+        "name": "Formamidine Acetate & Alkylating Intermediates",
+        "image": "/images/chemicals/tms-azide.webp"
       },
       {
-        "id": "large-75mm-bungs",
-        "name": "75mm Heavy Duty Bungs",
-        "image": "/images/products/bung-75mm-heavy.webp"
+        "id": "hydroxybenzyl-alcohols",
+        "name": "4-Hydroxy Benzyl Alcohol Precursors",
+        "image": "/images/chemicals/edc-hcl.webp"
       }
     ],
-    "description": "High-durability precision-moulded PE bung plugs and sealing rings for 210L barrels and metal drums, available with silicone pressure relief vents.",
-    "image": "/images/products/bung-75mm-heavy.webp",
-    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+    "description": "High-purity advance bulk drug intermediates and heterocyclic building blocks synthesized to strict international pharmacopeial standards for active pharmaceutical ingredients (APIs).",
+    "image": "/images/chemicals/dfta-fluconazole.webp",
+    "banner": "/images/globalchemie/contract-manufacturing.jpeg"
   },
   {
     "id": 2,
-    "name": "Caps & Closures",
-    "slug": "caps-closures",
-    "icon": "/images/products/screw-cap-red.webp",
-    "iconName": "Package",
+    "name": "Silyl Reagents",
+    "slug": "silyl-reagents",
+    "icon": "/images/chemicals/tms-azide.webp",
+    "iconName": "Layers",
     "bgColor": "#ECFDF5",
     "accentColor": "#059669",
     "subCategories": [
       {
-        "id": "small-screw-caps",
-        "name": "Screw Caps (25mm - 50mm)",
-        "image": "/images/products/screw-cap-red.webp"
+        "id": "tms-azide",
+        "name": "Trimethylsilyl Azide (TMS-N3)",
+        "image": "/images/chemicals/tms-azide.webp"
       },
       {
-        "id": "vented-screw-caps",
-        "name": "Vented Screw Caps",
-        "image": "/images/products/screw-cap-vented.webp"
+        "id": "tms-cyanide",
+        "name": "Trimethylsilyl Cyanide (TMS-CN)",
+        "image": "/images/chemicals/tms-cyanide.webp"
       },
       {
-        "id": "large-screw-caps",
-        "name": "Large Mouth Screw Caps (150mm - 250mm)",
-        "image": "/images/products/ibc-top-lid.webp"
+        "id": "tms-halides",
+        "name": "Trimethylsilyl Iodide & Bromide",
+        "image": "/images/chemicals/tms-azide.webp"
       },
       {
-        "id": "open-top-lids",
-        "name": "Open Top Drum Lids (250mm - 350mm)",
-        "image": "/images/products/ibc-top-lid.webp"
-      },
-      {
-        "id": "ibc-top-lids",
-        "name": "IBC DN150 Top Lids",
-        "image": "/images/products/ibc-top-lid.webp"
+        "id": "silyl-protecting-groups",
+        "name": "Silylation & Protecting Reagents",
+        "image": "/images/chemicals/mom-chloride.webp"
       }
     ],
-    "description": "Versatile industrial screw caps and open-top drum lids from 25mm to 350mm for drums, canisters, carboys, and IBC containers.",
-    "image": "/images/products/screw-cap-vented.webp",
-    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/Jerrycans_Icon.png"
+    "description": "Premium organosilicon reagents used extensively in organic synthesis, nucleophilic additions, azidations, cyanation, and selective protecting group chemistry.",
+    "image": "/images/chemicals/tms-azide.webp",
+    "banner": "/images/globalchemie/pan-india-supply.jpeg"
   },
   {
     "id": 3,
-    "name": "Inserts",
-    "slug": "inserts",
-    "icon": "/images/products/drum-insert.webp",
-    "iconName": "Layers",
-    "bgColor": "#FFFBEB",
+    "name": "Triflic & Fluorinated Compounds",
+    "slug": "triflic-fluorinated-compounds",
+    "icon": "/images/chemicals/triflic-anhydride.webp",
+    "iconName": "Zap",
+    "bgColor": "#FEF3C7",
     "accentColor": "#D97706",
     "subCategories": [
       {
-        "id": "inserts-small",
-        "name": "Jerrycan & Drum Inserts (25mm - 48mm)",
-        "image": "/images/products/drum-insert.webp"
+        "id": "triflic-anhydride",
+        "name": "Trifluoromethanesulfonic Anhydride",
+        "image": "/images/chemicals/triflic-anhydride.webp"
       },
       {
-        "id": "inserts-dust-protector",
-        "name": "Dust Protector Inserts (50mm Single Use)",
-        "image": "/images/products/drum-insert.webp"
+        "id": "trifluoroethyl-triflate",
+        "name": "2,2,2-Trifluoroethyl Triflate",
+        "image": "/images/chemicals/triflic-anhydride.webp"
       },
       {
-        "id": "inserts-medium",
-        "name": "Carboy Inserts (150mm & 200mm)",
-        "image": "/images/products/drum-insert.webp"
+        "id": "tfaa-anhydride",
+        "name": "Trifluoroacetic Anhydride (TFAA)",
+        "image": "/images/chemicals/tfaa-anhydride.webp"
       },
       {
-        "id": "inserts-large",
-        "name": "Heavy Drum Inserts (250mm)",
-        "image": "/images/products/drum-insert.webp"
+        "id": "trichloroacetic-anhydride",
+        "name": "Trichloroacetic Anhydride",
+        "image": "/images/chemicals/tfaa-anhydride.webp"
       }
     ],
-    "description": "Precision-moulded neck inserts and single-use dust protectors ensuring leak-proof sealing and tamper security for drums and carboys.",
-    "image": "/images/products/drum-insert.webp",
-    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+    "description": "Specialized triflating agents, fluorinated activating electrophiles, and superacid anhydrides critical for glycosylation, cross-coupling, and peptide synthesis.",
+    "image": "/images/chemicals/triflic-anhydride.webp",
+    "banner": "/images/globalchemie/chemical-lab.jpg"
   },
   {
     "id": 4,
-    "name": "Dispensing Solutions",
-    "slug": "dispensing-solutions",
-    "icon": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
-    "iconName": "Sliders",
-    "bgColor": "#FAF5FF",
-    "accentColor": "#9333EA",
+    "name": "Coupling Agents & Carbodiimides",
+    "slug": "coupling-agents-carbodiimides",
+    "icon": "/images/chemicals/edc-hcl.webp",
+    "iconName": "Shield",
+    "bgColor": "#F5F3FF",
+    "accentColor": "#7C3AED",
     "subCategories": [
       {
-        "id": "valves-butterfly-dn80",
-        "name": "DN80 Butterfly Valves (Threaded & Welded)",
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Female-Welded-Butterfly.webp"
+        "id": "edc-hcl",
+        "name": "EDC HCl (Water Soluble Carbodiimide)",
+        "image": "/images/chemicals/edc-hcl.webp"
       },
       {
-        "id": "valves-ball-dn50",
-        "name": "DN50 Ball Valves (Split & Integrated Thread)",
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp"
+        "id": "free-base-carbodiimides",
+        "name": "1-(3-Dimethylaminopropyl)-3-ethylcarbodiimide",
+        "image": "/images/chemicals/edc-hcl.webp"
       },
       {
-        "id": "valves-butterfly-dn50",
-        "name": "DN50 Butterfly Valves",
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Butterfly-Valve.webp"
+        "id": "bromomalonates",
+        "name": "Diethyl Bromomalonate",
+        "image": "/images/chemicals/boron-trifluoride.webp"
       },
       {
-        "id": "valves-camlock",
-        "name": "Camlock & Welded Valves",
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Welded-Ball-Valve.webp"
+        "id": "amide-coupling-reagents",
+        "name": "Amide & Ester Condensation Catalysts",
+        "image": "/images/chemicals/edc-hcl.webp"
       }
     ],
-    "description": "Advanced IBC container butterfly valves and ball valves engineered with EPDM sealing rings for smooth, controlled, and leak-free fluid dispensing.",
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp",
-    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
+    "description": "Water-soluble and organic-phase carbodiimide coupling agents essential for peptide synthesis, bioconjugation, amide bond formation, and cross-linking reactions.",
+    "image": "/images/chemicals/edc-hcl.webp",
+    "banner": "/images/globalchemie/contract-manufacturing.jpeg"
   },
   {
     "id": 5,
-    "name": "Accessories",
-    "slug": "accessories",
-    "icon": "/images/products/drum-spanner.webp",
-    "iconName": "Tool",
-    "bgColor": "#FEF2F2",
-    "accentColor": "#DC2626",
+    "name": "Speciality & Fine Chemicals",
+    "slug": "speciality-fine-chemicals",
+    "icon": "/images/chemicals/mom-chloride.webp",
+    "iconName": "Sliders",
+    "bgColor": "#FDF2F8",
+    "accentColor": "#DB2777",
     "subCategories": [
       {
-        "id": "bung-dust-covers",
-        "name": "Bung Dust Covers (210L Barrels)",
-        "image": "/images/products/bung-dust-cover.webp"
+        "id": "ether-chloromethyl",
+        "name": "Chloromethyl Methyl Ether (MOM Chloride)",
+        "image": "/images/chemicals/mom-chloride.webp"
       },
       {
-        "id": "drum-spanners",
-        "name": "Heavy Duty Drum Opening Spanners",
-        "image": "/images/products/drum-spanner.webp"
+        "id": "benzyl-chloromethyl",
+        "name": "Benzyl Chloromethyl Ether (BOM Chloride)",
+        "image": "/images/chemicals/mom-chloride.webp"
       },
       {
-        "id": "rivets-and-lugs",
-        "name": "Container Rivets & Mounting Lugs",
-        "image": "/images/products/container-rivet.webp"
+        "id": "lewis-acids",
+        "name": "Boron Trifluoride Etherate (BF3)",
+        "image": "/images/chemicals/boron-trifluoride.webp"
       },
       {
-        "id": "handle-sets",
-        "name": "High-Strength Drum Handle Sets",
-        "image": "/images/products/drum-handle-set.webp"
-      },
-      {
-        "id": "sealing-rings-clips",
-        "name": "Sealing Rings (250mm/350mm) & Locking Clips",
-        "image": "/images/products/sealing-ring.webp"
+        "id": "organic-bases",
+        "name": "1,8-Diazabicyclo[5.4.0]-7-undecene (DBU)",
+        "image": "/images/chemicals/dbu-reagent.webp"
       }
     ],
-    "description": "Industrial drum and container accessories including dust covers, opening spanner wrenches, rivets, lugs, handle sets, sealing rings, and locking clips.",
-    "image": "/images/products/drum-handle-set.webp",
-    "banner": "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+    "description": "High-specification specialty reagents, Lewis acids, protecting ether building blocks, and superbase catalysts manufactured for high-yield organic transformations.",
+    "image": "/images/chemicals/mom-chloride.webp",
+    "banner": "/images/globalchemie/pan-india-supply.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Rare & R&D Chemicals (Import)",
+    "slug": "rare-rd-chemicals-import",
+    "icon": "/images/chemicals/phenanthroline.webp",
+    "iconName": "Globe",
+    "bgColor": "#FFF7ED",
+    "accentColor": "#EA580C",
+    "subCategories": [
+      {
+        "id": "analytical-reagents",
+        "name": "1,10-Phenanthroline Monohydrate AR 99.5%",
+        "image": "/images/chemicals/phenanthroline.webp"
+      },
+      {
+        "id": "heterocyclic-corrosion-inhibitors",
+        "name": "1,2,3-Benzotriazole 99%",
+        "image": "/images/chemicals/benzotriazole.webp"
+      },
+      {
+        "id": "phosphine-ligands",
+        "name": "1,3-Bis(diphenylphosphino)propane (DPPP)",
+        "image": "/images/chemicals/dppp-catalyst.webp"
+      },
+      {
+        "id": "trifluoromethyl-aromatics",
+        "name": "1-Bromo-4-(trifluoromethyl)benzene",
+        "image": "/images/chemicals/triflic-anhydride.webp"
+      }
+    ],
+    "description": "Rare specialty chemicals, organometallic ligands, analytical standards, and research grade compounds imported directly from the USA, Japan, and China.",
+    "image": "/images/chemicals/phenanthroline.webp",
+    "banner": "/images/globalchemie/api-imports.jpeg"
   }
 ]

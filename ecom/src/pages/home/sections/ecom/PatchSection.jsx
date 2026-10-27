@@ -10,7 +10,7 @@ const PatchSection = () => {
             <div className="w-80 sm-w-full">
                 <Badge
                     text={patchCMS?.badge}
-                    icon="Settings"
+                    icon="Layers"
                     bg="var(--white)"
                     textColor="var(--dark)"
                     iconColor="var(--primary)"

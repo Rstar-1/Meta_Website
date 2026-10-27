@@ -1,94 +1,94 @@
 {
   "HeroSections": {
-    "titleLine1": "Precision-Made",
-    "titleLine2": "INDUSTRIAL",
-    "titleHighlight": "Closures & Accessories",
-    "agencyTitle": "MANUFACTURER",
-    "leftText": "India's premier manufacturer of high-performance closures, bungs, screw caps, inserts, and IBC valves for drums, jerry cans & IBCs.",
-    "rightText": "Built for performance. Trusted for durability. Complete drums and IBC closure systems engineered for chemicals, oils, paints, fertilizers, and pharmaceuticals."
+    "titleLine1": "High-Purity",
+    "titleLine2": "BULK DRUG",
+    "titleHighlight": "Intermediates & Fine Chemicals",
+    "agencyTitle": "CONTRACT MANUFACTURER",
+    "leftText": "Reputed Indian contract manufacturer, wholesaler, trader, importer, and exporter of bulk drug intermediates, fine chemicals, speciality chemicals, and rare research compounds.",
+    "rightText": "Established in Mumbai in 2003. More than 2,500 products in ready stock available in R&D, semi-bulk, and commercial bulk quantities with full COA testing."
   },
   "AboutSections": {
     "heading": {
-      "tag": "MANUFACTURING EXCELLENCE",
-      "title": "Precision-Moulded Industrial Closures & IBC Dispensing Systems"
+      "tag": "SYNTHESIS & MANUFACTURING EXCELLENCE",
+      "title": "Precision Fine Chemicals & Bulk Drug Intermediates"
     },
     "crafter": {
-      "title": "Custom Industrial Closures",
-      "subtitle": "Engineered injection moulding for dependable, leak-proof performance",
-      "buttonText": "< View All Closures />",
+      "title": "Custom Chemical Synthesis",
+      "subtitle": "Tailor-made contract manufacturing engineered to client specifications",
+      "buttonText": "< View Chemical Catalog />",
       "features": [
         {
-          "title": "Superior Chemical & Stress Crack Resistance",
-          "description": "Moulded from prime virgin HDPE and PE polymers engineered to withstand aggressive chemicals, solvents, acids, and rough cargo transit."
+          "title": "High Assay & Analytical Purity",
+          "description": "Synthesized with state-of-the-art processing techniques by highly trained professionals, achieving ≥ 99.5% assay by HPLC and GC."
         },
         {
-          "title": "Complete Closure & Dispensing Range",
-          "description": "Over 50 specialized SKUs spanning 50mm/75mm bungs, 25mm-350mm screw caps & open top lids, neck inserts, and DN50/DN80 IBC valves."
+          "title": "2,500+ Ready Stock Compounds",
+          "description": "Comprehensive portfolio spanning Silyl Reagents (TMS-N3, TMS-CN), Triflic Anhydride, EDC HCl, MOM Chloride, and imported rare research catalysts."
         }
       ]
     },
     "platforms": [
-      "Precision Moulding",
-      "Leak-Proof Testing"
+      "Custom Synthesis",
+      "Analytical Testing"
     ],
     "codeSnippets": {
-      "Precision Moulding": [
+      "Custom Synthesis": [
         {
           "num": 1,
-          "code": "const polymer = '100% Virgin Prime HDPE / PE'"
+          "code": "const reactionClass = 'Organosilicon & Superacid Coupling'"
         },
         {
           "num": 2,
-          "code": "const closureTypes = ['Bungs', 'Caps', 'Inserts', 'Valves']"
+          "code": "const intermediates = ['TMS-N3', 'Triflic Anhydride', 'EDC HCl', 'DFTA']"
         },
         {
           "num": 3,
-          "code": "const mouthSizes = ['25mm', '48mm', '50mm', '150mm', '250mm', '350mm']"
+          "code": "const batchScale = ['100g R&D', '10kg Pilot', 'Multi-Ton Commercial']"
         },
         {
           "num": 4,
-          "code": "const qualityStandard = 'ESCR Tested & Drop Impact Verified'"
+          "code": "const compliance = 'ICH Q7 & Pharmacopeial Standard'"
         },
         {
           "num": 5,
-          "code": "export default getMouldedClosure(polymer, closureTypes)"
+          "code": "export default getCertifiedIntermediate(intermediates, batchScale)"
         }
       ],
-      "Leak-Proof Testing": [
+      "Analytical Testing": [
         {
           "num": 1,
-          "code": "const gasketElastomer = 'EPDM Sealing Ring / LLDPE'"
+          "code": "const hplcAssay = '≥ 99.5% Area Purity'"
         },
         {
           "num": 2,
-          "code": "const ventTechnology = 'Microporous Silicone Vent Membrane'"
+          "code": "const moistureContent = '≤ 0.05% Karl Fischer'"
         },
         {
           "num": 3,
-          "code": "const hydrostaticTest = 'Zero-Leakage at 0.5 Bar Pressure'"
+          "code": "const residualSolvent = 'GC-HS Headspace Validated'"
         },
         {
           "num": 4,
-          "code": "const containerApplication = ['210L Drums', 'IBC Tanks', 'Jerrycans']"
+          "code": "const coaValidation = 'Batch Release Certificate Issued'"
         },
         {
           "num": 5,
-          "code": "return <LeakProofClosure system={gasketElastomer} />"
+          "code": "return <CertifiedChemical COA={coaValidation} assay={hplcAssay} />"
         }
       ]
     },
     "racers": [
       {
         "id": 1,
-        "title": "Direct Factory Pricing & Ready Stock",
-        "subtitle": "Immediate dispatch from Daman & Mumbai",
-        "description": "Bulk inventory of standard and vented bungs, screw caps, IBC valves, and open-top drum lids shipped across India with zero intermediary markups."
+        "title": "Immediate Delivery & Ready Stock",
+        "subtitle": "Dispatch within 24 hours across India",
+        "description": "Over 2,500 chemical intermediates and speciality reagents stored in climate-controlled dangerous goods warehousing in Mumbai for rapid dispatch."
       },
       {
         "id": 2,
-        "title": "100% Virgin Grade Polymers",
-        "subtitle": "UV-treated, food & hazardous cargo compliant",
-        "description": "Formulated without reprocessed fillers to ensure high Environmental Stress Crack Resistance (ESCR) and reliable long-term chemical compatibility."
+        "title": "Global Import Network",
+        "subtitle": "USA, Japan & China rare chemical sourcing",
+        "description": "Direct import channels for rare research chemicals, chiral ligands, and analytical standards with full regulatory customs clearance."
       }
     ]
   },
@@ -97,263 +97,263 @@
       {
         "id": "requirement",
         "step": 1,
-        "tag": "01 / Requirement & Mould Selection",
+        "tag": "01 / Requirement & Route Selection",
         "color": "#3b82f6",
         "glowColor": "rgba(59, 130, 246, 0.48)",
         "icon": "Sliders",
-        "headingMain": "Tailored Closure Sizing &",
-        "headingHighlight": "Thread Engineering",
-        "description": "We assist clients in selecting the exact bung plug, screw cap diameter (25mm to 350mm), buttress thread pitch, and vented membrane configuration for optimal container security.",
-        "ctaText": "Enquire About Closures",
+        "headingMain": "Tailored Chemical Specification &",
+        "headingHighlight": "Custom Route Design",
+        "description": "We evaluate client target molecules, reaction pathways, purity requirements (HPLC ≥ 99.5%), and packaging sizes (from 100g vials to multi-ton drums).",
+        "ctaText": "Enquire Chemical Synthesis",
         "ctaLink": "/connect",
         "hasTopCta": true,
         "tabs": [
           {
-            "label": "Chemicals",
-            "value": "Chemicals"
-          },
-          {
-            "label": "Fertilizers",
-            "value": "Fertilizers"
-          },
-          {
-            "label": "Industrial Packaging",
-            "value": "Packaging"
-          },
-          {
             "label": "Pharmaceuticals",
-            "value": "Pharma"
+            "value": "Pharmaceuticals"
           },
           {
-            "label": "Engine Oils & Petroleum",
-            "value": "Lubricants"
+            "label": "Agrochemicals",
+            "value": "Agrochemicals"
           },
           {
-            "label": "Paints & Coatings",
-            "value": "Paints"
+            "label": "Research Institutes",
+            "value": "Research"
+          },
+          {
+            "label": "Biotechnology",
+            "value": "Biotech"
+          },
+          {
+            "label": "Contract Labs",
+            "value": "ContractLabs"
+          },
+          {
+            "label": "Specialty Polymers",
+            "value": "Polymers"
           }
         ],
         "collaboration": {
-          "title": "Select the ideal closure and gasket specification for your industrial packaging application.",
-          "titleHighlight": "for 100% leak-proof cargo containment",
+          "title": "Select the ideal intermediate grade and reaction volume for your manufacturing campaign.",
+          "titleHighlight": "guaranteeing zero chemical impurity carryover",
           "items": [
-            "50mm & 75mm Bottom and Top Ring Bungs",
-            "Vented Screw Caps with Microporous Silicone Membranes",
-            "DN50 & DN80 IBC Butterfly and Ball Valves",
-            "Full Open-Top Drum Lids (250mm & 350mm) with Sealing Rings"
+            "Silyl Azide & Cyanide Reagents (TMS-N3, TMS-CN)",
+            "Trifluoromethanesulfonic Anhydride & Trifluoroethyl Triflate",
+            "EDC HCl Water-Soluble Carbodiimide Coupling Agents",
+            "DFTA Fluconazole & Heterocyclic Precursors"
           ],
-          "buttonText": "Request B2B Quote",
-          "linkText": "Explore Full Catalog"
+          "buttonText": "Request Bulk Chemical Quote",
+          "linkText": "Explore Product Catalog"
         }
       },
       {
         "id": "manufacturing",
         "step": 2,
-        "tag": "02 / Precision Injection Moulding",
+        "tag": "02 / Precision Chemical Synthesis",
         "color": "#22c55e",
         "glowColor": "rgba(34, 197, 94, 0.48)",
         "icon": "Package",
-        "headingMain": "Virgin-Grade Injection Moulding with",
-        "headingHighlight": "Strict Dimensional Tolerances",
-        "description": "Moulded using state-of-the-art injection machinery in our Daman manufacturing plant, ensuring uniform wall thickness, clean flash-free threads, and high impact durability.",
-        "ctaText": "View Product Catalog",
+        "headingMain": "High-Yield Processing with",
+        "headingHighlight": "State-of-the-Art Laboratory Reactors",
+        "description": "Manufactured using glass-lined and SS-316 jacketed reaction vessels with inert nitrogen blankets, precise cryogenic cooling, and fractional distillations.",
+        "ctaText": "View Chemical Catalog",
         "ctaLink": "/product",
         "hasTopCta": true,
-        "codeIntro": "Engineered closure parameters and quality metrics:_",
+        "codeIntro": "Batch analytical release parameters and quality metrics:_",
         "codeSnippet": {
           "lang": "javascript",
-          "code": "const closureBatch = {\n  polymer: 'Virgin HDPE / PE',\n  mfiRating: 'High Impact ESCR Grade',\n  gasketRing: 'EPDM / LLDPE Seamless Fit',\n  pressureRelief: 'Silicone Breathable Vent',\n  torqueLimit: 'Strip-Resistant Buttress Teeth',\n  compliance: 'UN Packaging & Drop Test Certified'\n};"
+          "code": "const chemicalBatch = {\n  compound: 'Trimethylsilyl Azide (TMS-N3)',\n  casNumber: '4648-54-8',\n  hplcAssay: '≥ 98.5% (GC)',\n  boilingRange: '95 - 96 °C',\n  moistureKF: '< 0.05%',\n  packaging: 'UN-Certified Fluoropolymer Drum'\n};"
         },
         "collaboration": {
-          "title": "Every batch is inspected for thread accuracy, seal compression, and drop resistance.",
-          "titleHighlight": "guaranteeing zero-leak performance",
+          "title": "Every synthesized batch is subjected to comprehensive HPLC, GC, and Karl Fischer testing.",
+          "titleHighlight": "guaranteeing international pharmacopeial quality",
           "items": [
-            "Automated multi-cavity precision tooling",
-            "Zero regrind policy for hazardous chemical closures",
-            "Custom Pantone color matching and embossed brand logos",
-            "Hydrostatic pressure leak testing on every production run"
+            "Automated reaction temperature and pressure monitoring",
+            "Multi-stage crystallization and fractional column distillation",
+            "Standardized COA with chromatographic purity trace",
+            "Full traceability from raw material to sealed container"
           ],
-          "buttonText": "Request Technical Specs",
-          "linkText": "Learn About Manufacturing"
+          "buttonText": "Request COA Sample",
+          "linkText": "Learn About Synthesis"
         }
       },
       {
         "id": "fulfilment",
         "step": 3,
-        "tag": "03 / Bulk Dispatch & Pan-India Logistics",
+        "tag": "03 / Dangerous Goods & Pan-India Dispatch",
         "color": "#a855f7",
         "glowColor": "rgba(168, 85, 247, 0.48)",
         "icon": "Shield",
-        "headingMain": "Rapid Order Fulfilment with",
-        "headingHighlight": "Safe Palletized Dispatch",
-        "description": "Handling both high-volume contract manufacturing orders and specialized niche requirements with swift turnaround times from our Daman plant and Mumbai central hub.",
+        "headingMain": "Prompt Order Fulfilment with",
+        "headingHighlight": "UN-Certified Dangerous Goods Logistics",
+        "description": "Fulfilling both high-volume multi-ton commercial orders and urgent research bench quantities with express hazardous cargo dispatch across India and overseas.",
         "ctaText": "Connect with Sales",
         "ctaLink": "/connect",
         "hasTopCta": true,
         "collaboration": {
-          "title": "Supplying India's leading industrial conglomerates for decades.",
-          "titleHighlight": "with verified reliability and trust",
+          "title": "Trusted partner to Indian MNCs and global chemical corporations since 2003.",
+          "titleHighlight": "with verified reliability and rapid dispatch",
           "items": [
-            "Over 50 SKUs maintained in ready stock for fast dispatch",
-            "Express freight logistics across all Indian industrial hubs",
-            "Corrugated export-grade packaging preventing transit scuffing",
-            "Dedicated B2B account support from inquiry to on-site delivery"
+            "More than 2,500 products maintained in ready stock in Mumbai",
+            "Compliant packaging in UN steel drums, glass carboys & amber bottles",
+            "Dedicated dangerous goods transport network across all industrial corridors",
+            "Immediate response with quotations and technical COAs within 24 hours"
           ],
-          "buttonText": "Schedule Consultation",
-          "linkText": "View Warehouse Locations"
+          "buttonText": "Schedule Chemical Consultation",
+          "linkText": "View Contact Information"
         }
       }
     ],
     "industryTabsData": {
-      "Chemicals": {
-        "title": "High-Containment Chemical Solutions",
-        "description": "Impermeable closures and EPDM valves resistant to corrosive acids, alkalis, solvents, and agrochemical formulations.",
+      "Pharmaceuticals": {
+        "title": "API Intermediates & Active Substance Synthesis",
+        "description": "High-purity intermediates for antifungals, antibiotics, cardiovascular, and oncology APIs with strict impurity limits.",
         "features": [
-          "EPDM & LLDPE Seals",
-          "Zero Vapor Loss",
-          "Silicone Vents"
+          "DFTA Fluconazole Intermediate",
+          "ICH Q7 Impurity Limits",
+          "Bulk Commercial Supply"
         ]
       },
-      "Fertilizers": {
-        "title": "Agrochemical & Fertilizer Containers",
-        "description": "Two-way vented closures engineered to relieve off-gassing pressure in liquid bio-fertilizers and organic soil nutrients.",
+      "Agrochemicals": {
+        "title": "Pesticide & Herbicide Active Building Blocks",
+        "description": "Halogenated intermediates, fluorinated building blocks, and triazole heterocycles for high-efficiency crop protection chemicals.",
         "features": [
-          "Anti-Bloat Breathers",
-          "Tamper-Evident Caps",
-          "Uniform Torque"
+          "1,2,3-Benzotriazole",
+          "Fluorinated Aromatics",
+          "Multi-ton Capacity"
         ]
       },
-      "Packaging": {
-        "title": "Industrial Drums, Canisters & IBCs",
-        "description": "Complete packaging hardware including bung plugs, screw caps, neck inserts, handle sets, and opening spanners.",
+      "Research": {
+        "title": "University & National Laboratory Research Compounds",
+        "description": "Rare research catalysts, chiral ligands, and analytical reagents supplied in grams and bench-scale quantities.",
         "features": [
-          "25mm to 350mm Diameters",
-          "Full Open-Top Lids",
-          "Stacking Durability"
+          "1,10-Phenanthroline AR",
+          "DPPP Phosphine Ligands",
+          "Ready Lab Stock"
         ]
       },
-      "Pharma": {
-        "title": "Cleanroom & Pharmaceutical Applications",
-        "description": "Virgin food & pharma grade HDPE closures and dust protector inserts preventing particulate contamination.",
+      "Biotech": {
+        "title": "Bioconjugation & Peptide Synthesis Reagents",
+        "description": "Water-soluble carbodiimide coupling agents and crosslinking compounds for peptide bond formation and biomolecule labeling.",
         "features": [
-          "Pharma Grade Polymers",
-          "Dust Protector Inserts",
-          "Zero Leaching"
+          "EDC HCl High Purity",
+          "Zero Leachable Metal",
+          "High Coupling Yield"
         ]
       },
-      "Lubricants": {
-        "title": "Engine Oils, Lubricants & Petroleum",
-        "description": "Heavy-duty screw caps and 210L barrel bungs that maintain airtight seals through rough vibration and long-distance transport.",
+      "ContractLabs": {
+        "title": "Custom Synthesis & Contract R&D",
+        "description": "Confidential custom synthesis and scale-up of proprietary building blocks under strict Non-Disclosure Agreements (NDAs).",
         "features": [
-          "Hydrocarbon Resistance",
-          "Non-Sparking Tools",
-          "Impact Resistance"
+          "Custom Route Scouting",
+          "Process Optimization",
+          "Complete IP Protection"
         ]
       },
-      "Paints": {
-        "title": "Paints, Inks & Specialty Coatings",
-        "description": "Airtight closures preventing solvent evaporation, skinning, and pigment drying in bulk pails and drums.",
+      "Polymers": {
+        "title": "Polymer Additives & Lewis Acid Catalysts",
+        "description": "High-activity Lewis acids, non-nucleophilic superbases, and curing agents for specialty resins and advanced functional polymers.",
         "features": [
-          "Airtight Sealing Rings",
-          "High Shear Lugs",
-          "Solvent Tolerant"
+          "BF3 Etherate",
+          "DBU Superbase",
+          "Controlled Reactivity"
         ]
       }
     },
     "platformCodeSnippets": {
       "PrecisionMoulding": {
         "language": "javascript",
-        "title": "ClosureSpecification.js",
-        "code": "const specification = {\n  polymer: 'High Density Polyethylene (HDPE)',\n  grade: 'Prime Virgin Injection Moulding',\n  escrResistance: '> 1000 hrs F50',\n  dropImpact: '1.8 Meter Free Fall',\n  gasketRing: 'EPDM / LLDPE Resilient Seal',\n  application: '210L Drums, Jerrycans & IBCs'\n};"
+        "title": "ChemicalCOASpecification.js",
+        "code": "const coaSpecification = {\n  product: 'Trifluoromethanesulfonic Anhydride',\n  casNumber: '358-23-6',\n  purityAssay: '≥ 99.0% (GC)',\n  density: '1.677 g/mL at 25 °C',\n  waterContent: '≤ 0.05% (Karl Fischer)',\n  packaging: 'Corrosion-Resistant UN Drum'\n};"
       }
     },
     "securityCard": {
-      "title": "100% Leak-Proof Testing",
-      "subtitle": "Drop and hydrostatic pressure verified for reliable cargo transit.",
+      "title": "100% Quality & COA Verification",
+      "subtitle": "HPLC, GC, NMR, and Karl Fischer tested for uncompromising chemical purity.",
       "compliancePoints": [
-        "Tested for negative pressure vacuum resistance",
-        "Positive pressure vent calibration (0.2 to 0.5 bar)",
-        "Zero environmental stress cracking under chemical load",
-        "Precision thread profile for mechanized capper lines"
+        "Gas chromatography & HPLC assay validation",
+        "Trace moisture measurement via Coulometric Karl Fischer",
+        "Zero genotoxic impurity carryover protocol",
+        "UN-certified packaging for dangerous goods transport"
       ]
     },
     "businessMetricsCard": {
-      "title": "Manufacturing & Supply Power",
+      "title": "Global Chemie Synthesis & Supply Power",
       "stats": [
         {
-          "label": "Moulded Components Monthly",
-          "value": "2.5M+"
+          "label": "Ready Stock Products",
+          "value": "2,500+"
         },
         {
-          "label": "Active Industrial SKUs",
-          "value": "50+"
+          "label": "Satisfied Clients",
+          "value": "1,200+"
         },
         {
-          "label": "Client Dispatch On-Time Rate",
-          "value": "99.4%"
+          "label": "Assay Purity Standard",
+          "value": "99.5%+"
         },
         {
-          "label": "Pan-India Industrial Reach",
-          "value": "Decades"
+          "label": "Industry Experience",
+          "value": "20+ Years"
         }
       ]
     },
     "bottomStatCapsules": [
       {
-        "text": "50+ Industrial SKUs"
+        "text": "2,500+ Ready Stock Chemicals"
       },
       {
-        "text": "Daman Manufacturing Plant"
+        "text": "Custom Synthesis & Contract Mfg"
       },
       {
-        "text": "Mumbai Sales Office"
+        "text": "Mumbai Head Office & Warehouse"
       },
       {
-        "text": "100% Virgin Grade Polymers"
+        "text": "Direct Import from USA, Japan & China"
       },
       {
-        "text": "Pan-India Safe Cargo Dispatch"
+        "text": "Pan-India & Global Export Supply"
       }
     ]
   },
   "FeedSection": {
     "heading": {
-      "tag": "PACKAGING PORTFOLIO",
-      "title": "Engineered For Demanding Industrial Applications",
-      "actionText": "Explore Full Catalog",
+      "tag": "CHEMICAL CATALOG",
+      "title": "Engineered For Demanding Pharmaceutical & Synthesis Applications",
+      "actionText": "Explore Chemical Catalog",
       "actionLink": "/product"
     },
     "feedItems": [
       {
         "id": 1,
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
+        "image": "/images/chemicals/tms-azide.webp",
         "products": [
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp"
+          "/images/chemicals/tms-azide.webp",
+          "/images/chemicals/tms-cyanide.webp"
         ]
       },
       {
         "id": 2,
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Bottom-Ring-Vented.webp",
+        "image": "/images/chemicals/triflic-anhydride.webp",
         "products": [
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Bottom-Ring-Vented.webp",
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-75mm-Bottom-Ring.webp"
+          "/images/chemicals/triflic-anhydride.webp",
+          "/images/chemicals/tfaa-anhydride.webp"
         ]
       },
       {
         "id": 3,
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-50-mm-Vented.webp",
+        "image": "/images/chemicals/edc-hcl.webp",
         "products": [
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-50-mm.webp",
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/Open-Top-Drum-Lid-250mm.webp"
+          "/images/chemicals/edc-hcl.webp",
+          "/images/chemicals/dfta-fluconazole.webp"
         ]
       },
       {
         "id": 4,
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-50mm.webp",
+        "image": "/images/chemicals/dbu-reagent.webp",
         "products": [
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-50mm.webp",
-          "https://vasujavalplastics.com/wp-content/uploads/2025/10/Spanner.webp"
+          "/images/chemicals/dbu-reagent.webp",
+          "/images/chemicals/phenanthroline.webp"
         ]
       }
     ]
@@ -361,75 +361,75 @@
   "BlogSection": {
     "heading": {
       "tag": "TECHNICAL GUIDES & INSIGHTS",
-      "title": "Industrial Closures & IBC Dispensing Knowledge",
+      "title": "Chemical Synthesis, Analytical Testing & Sourcing Knowledge",
       "actionText": "View All Articles"
     },
     "featuredPost": {
       "id": 1,
-      "slug": "industrial-closures-guide-2026-selecting-bungs-caps-valves",
-      "title": "Industrial Closures Guide 2026: Selecting the Right Bungs, Caps & Seals for Drums and IBCs",
-      "category": "Buying & Selection Guide",
-      "author": "Packaging Engineering Specialist",
-      "date": "October 15, 2026",
-      "readTime": "7 min read",
-      "image": "https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp",
-      "excerpt": "A comprehensive guide to selecting high-integrity closures, bungs, screw caps, and IBC valves to prevent leakages and ensure regulatory transport compliance."
+      "slug": "bulk-drug-intermediates-synthesis-selection-guide-2026",
+      "title": "Bulk Drug Intermediates 2026 Guide: Synthesis Routes, CAS Sourcing & Regulatory Compliance",
+      "category": "Pharmaceutical Manufacturing",
+      "author": "Dr. Bhaven Shah, Head of Technical Operations",
+      "date": "October 20, 2026",
+      "readTime": "8 min read",
+      "image": "/images/blogs/bulk-intermediates-guide.webp",
+      "excerpt": "A definitive guide to selecting advance pharmaceutical intermediates, ensuring impurity profiling, and securing dependable multi-ton supply chains for active drug substance synthesis."
     },
     "secondaryPosts": [
       {
         "id": 2,
-        "slug": "why-pressure-vented-closures-are-vital-for-chemical-storage",
-        "title": "Why Pressure Vented Closures Are Vital for Volatile Chemical and Fertilizer Storage",
-        "category": "Chemical Safety & Storage",
-        "author": "Chemical Storage Consultant",
-        "date": "October 08, 2026",
+        "slug": "hplc-purity-testing-standards-for-fine-chemicals",
+        "title": "Analytical Purity Standards: HPLC, GC & Karl Fischer Testing in Fine Chemical Quality Control",
+        "category": "Quality Control & Analysis",
+        "author": "Quality Assurance Team, Global Chemie",
+        "date": "October 14, 2026",
         "readTime": "6 min read",
-        "image": "/images/products/screw-cap-vented.webp"
+        "image": "/images/blogs/hplc-purity-standards.webp"
       },
       {
         "id": 3,
-        "slug": "dn50-vs-dn80-ibc-butterfly-and-ball-valves-dispensing-guide",
-        "title": "DN50 vs DN80 IBC Butterfly & Ball Valves: Optimizing Dispensing Flow and Leak Prevention",
-        "category": "IBC Dispensing Solutions",
-        "author": "Fluid Dynamics Engineer",
-        "date": "September 28, 2026",
-        "readTime": "8 min read",
-        "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png"
+        "slug": "contract-manufacturing-custom-synthesis-best-practices",
+        "title": "Scaling from Lab to Pilot: Best Practices in Chemical Contract Manufacturing & Custom Synthesis",
+        "category": "Custom Synthesis",
+        "author": "Dr. Bhaven Shah, Head of Technical Operations",
+        "date": "October 05, 2026",
+        "readTime": "9 min read",
+        "image": "/images/blogs/custom-synthesis-contract.webp"
       },
       {
         "id": 4,
-        "slug": "hdpe-vs-pe-in-industrial-packaging-durability-and-impact",
-        "title": "HDPE vs PE in Industrial Drum Accessories: Durability, Impact Strength & Chemical Resistance",
-        "category": "Material Science & Quality",
-        "author": "Senior Polymer Technologist",
-        "date": "September 19, 2026",
-        "readTime": "5 min read",
-        "image": "/images/products/drum-spanner.webp"
+        "slug": "green-chemistry-solvents-and-sustainable-reagents",
+        "title": "Green Chemistry Innovations: Eco-Friendly Solvents and High-Atom-Economy Silyl Reagents",
+        "category": "Sustainable Chemistry",
+        "author": "Green Chemistry Initiative, Global Chemie",
+        "date": "September 25, 2026",
+        "readTime": "7 min read",
+        "image": "/images/blogs/green-chemistry-solvents.webp"
       }
     ]
   },
   "PatchSection": {
-    "badge": "INDIA'S LEADING CLOSURES MANUFACTURER",
-    "title": "Supplying Precision Closures & IBC Valves Across India.",
-    "description": "Vasujaval Plastics delivers durable, chemical-resistant industrial closures, bung plugs, screw caps, inserts, and IBC valves with fast dispatch, custom colors, and direct factory pricing.",
+    "badge": "REPUTED CHEMICAL CONTRACT MANUFACTURER",
+    "title": "Supplying Bulk Drug Intermediates & Speciality Chemicals Globally.",
+    "description": "Global Chemie delivers high-purity chemical intermediates, custom synthesis, and rare imported compounds with certified HPLC purity, immediate delivery, and competitive pricing.",
     "stats": [
       {
         "id": 1,
-        "value": "50",
+        "value": "2500",
         "symbol": "+",
-        "label": "Specialized SKUs covering major drum, canister & IBC needs."
+        "label": "Products in ready stock offered in R&D, semi-bulk & commercial bulk."
       },
       {
         "id": 2,
-        "value": "100",
-        "symbol": "%",
-        "label": "Prime virgin-grade HDPE & PE polymer construction."
+        "value": "99.5",
+        "symbol": "%+",
+        "label": "Assay purity compliance verified through HPLC & GC analytical testing."
       },
       {
         "id": 3,
-        "value": "10",
+        "value": "20",
         "symbol": "+",
-        "label": "Core industries served including chemicals, pharma & lubricants."
+        "label": "Years of chemical synthesis, wholesale trading, and global export trust."
       }
     ]
   }

@@ -1,3303 +1,833 @@
 [
   {
     "id": 1,
-    "name": "Bung - 50mm - Bottom Ring - Vented",
-    "categoryId": 1,
-    "category": "Bungs",
-    "subCategory": "Vented Bung Plugs",
-    "vendor": "Vasujaval Plastics",
-    "type": "Bung Plug",
-    "price": 32,
-    "priceFormatted": "₹28 - ₹35/piece",
-    "originalPrice": 42,
+    "name": "Trimethylsilyl Azide (TMS-N3)",
+    "categoryId": 2,
+    "category": "Silyl Reagents",
+    "subCategory": "Trimethylsilyl Azide (TMS-N3)",
+    "vendor": "Global Chemie",
+    "type": "Organosilicon Reagent",
+    "price": 3850,
+    "priceFormatted": "₹3,500 - ₹4,200/kg",
+    "originalPrice": 4500,
     "badge": {
-      "text": "Vented",
+      "text": "Ready Stock",
       "color": "#059669"
     },
-    "colors": ["#ffffff", "#000000", "#d97706"],
-    "image": "/images/products/bung-50mm-vented.webp",
+    "colors": [
+      "#ffffff",
+      "#2B3A5E",
+      "#0284c7"
+    ],
+    "image": "/images/chemicals/tms-azide.webp",
     "images": [
-      "/images/products/bung-50mm-vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Bottom-Ring-Vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50mm-Bottom-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+      "/images/chemicals/tms-azide.webp",
+      "/images/globalchemie/contract-manufacturing.jpeg",
+      "/images/globalchemie/pan-india-supply.jpeg",
+      "/images/chemicals/tms-cyanide.webp"
     ],
     "inStock": true,
     "trending": true,
-    "stockCount": 15000,
-    "description": "Engineered specifically for 210L barrels and chemical drums, this 50mm bottom-ring bung plug incorporates an advanced microporous silicone vent membrane. It allows continuous pressure equalization, preventing container bloating or paneling caused by volatile chemical off-gassing while providing an impermeable liquid seal.",
-    "brand": "Vasujaval Plastics",
+    "stockCount": 1250,
+    "description": "Trimethylsilyl Azide (TMS-N3, CAS: 4648-54-8) is a premier organosilicon reagent used in organic synthesis as a safe, highly reactive alternative to hydrazoic acid for introducing azide functionality, synthesizing tetrazoles, and glycosyl azides in pharmaceutical manufacturing.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Container Application",
-        "spec": "210L Standard Barrels & Drums"
+        "name": "CAS Number",
+        "spec": "4648-54-8"
       },
       {
-        "name": "Size / Diameter",
-        "spec": "50 mm (2 Inch)"
+        "name": "Molecular Formula",
+        "spec": "C3H9N3Si"
       },
       {
-        "name": "Material",
-        "spec": "Prime Polyethylene (PE)"
+        "name": "Molecular Weight",
+        "spec": "115.21 g/mol"
       },
       {
-        "name": "Gasket Ring Material",
-        "spec": "LLDPE Sealing Ring"
+        "name": "Purity / Assay",
+        "spec": "≥ 98.5% (GC)"
       },
       {
-        "name": "Breather / Vent",
-        "spec": "Microporous Silicone Vent Membrane"
+        "name": "Physical State",
+        "spec": "Clear, Colorless Liquid"
       },
       {
-        "name": "Component Weight",
-        "spec": "25g"
+        "name": "Boiling Point",
+        "spec": "95 - 96 °C"
       },
       {
-        "name": "Chemical Resistance",
-        "spec": "Acids, Alkalis, Solvents & Agrochem"
+        "name": "Density",
+        "spec": "0.868 g/mL at 25 °C"
       },
       {
-        "name": "Packaging Type",
-        "spec": "Standard Export Carton (500 pcs/box)"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Application",
-        "spec": "210L Standard Barrels & Drums"
-      },
-      {
-        "name": "Size / Diameter",
-        "spec": "50 mm (2 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Prime Polyethylene (PE)"
-      },
-      {
-        "name": "Gasket Ring Material",
-        "spec": "LLDPE Sealing Ring"
-      },
-      {
-        "name": "Breather / Vent",
-        "spec": "Microporous Silicone Vent Membrane"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "25g"
-      },
-      {
-        "name": "Chemical Resistance",
-        "spec": "Acids, Alkalis, Solvents & Agrochem"
+        "name": "Flash Point",
+        "spec": "6 °C (Closed Cup)"
       },
       {
         "name": "Packaging Type",
-        "spec": "Standard Export Carton (500 pcs/box)"
+        "spec": "100g, 500g, 2.5kg & 25kg UN Steel Drums"
+      },
+      {
+        "name": "Storage Conditions",
+        "spec": "Store in cool dry place under inert argon/nitrogen atmosphere (2 - 8 °C)"
       }
     ]
   },
   {
     "id": 2,
-    "name": "50mm - Bottom Ring Bung",
-    "categoryId": 1,
-    "category": "Bungs",
-    "subCategory": "Bottom Ring Bungs (50mm & 75mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Bung Plug",
-    "price": 24,
-    "priceFormatted": "₹22 - ₹28/piece",
-    "originalPrice": 32,
+    "name": "Trifluoromethanesulfonic Anhydride (Triflic Anhydride)",
+    "categoryId": 3,
+    "category": "Triflic & Fluorinated Compounds",
+    "subCategory": "Trifluoromethanesulfonic Anhydride",
+    "vendor": "Global Chemie",
+    "type": "Superacid Anhydride",
+    "price": 7200,
+    "priceFormatted": "₹6,800 - ₹7,800/kg",
+    "originalPrice": 8500,
     "badge": {
-      "text": "Heavy Duty",
-      "color": "#2563eb"
+      "text": "High Purity 99%+",
+      "color": "#d97706"
     },
-    "colors": ["#ffffff", "#000000", "#dc2626"],
-    "image": "/images/products/bung-50mm-solid.webp",
+    "colors": [
+      "#ffffff",
+      "#2B3A5E",
+      "#ea580c"
+    ],
+    "image": "/images/chemicals/triflic-anhydride.webp",
     "images": [
-      "/images/products/bung-50mm-solid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50mm-Bottom-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Bottom-Ring-Vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+      "/images/chemicals/triflic-anhydride.webp",
+      "/images/globalchemie/chemical-lab.jpg",
+      "/images/chemicals/tfaa-anhydride.webp"
     ],
     "inStock": true,
-    "trending": false,
-    "stockCount": 20000,
-    "description": "Standard solid 50mm bung plug featuring a bottom-groove LLDPE sealing ring. Precision injection-moulded with reinforced wrench-drive lugs for seamless torque application without stripping. Ideal for petroleum, paints, lubricants, and standard liquid packaging in 210L barrels.",
-    "brand": "Vasujaval Plastics",
+    "trending": true,
+    "stockCount": 820,
+    "description": "Trifluoromethanesulfonic Anhydride (Tf2O, CAS: 358-23-6) is a vital activating reagent that converts ketones and aldehydes into vinyl triflates for cross-coupling reactions (Suzuki, Stille, Negishi) and serves as a powerful reagent in modern medicinal chemistry.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Container Application",
-        "spec": "210L Barrels & Composite Drums"
+        "name": "CAS Number",
+        "spec": "358-23-6"
       },
       {
-        "name": "Thread Standard",
-        "spec": "50 mm Buttress Thread"
+        "name": "Molecular Formula",
+        "spec": "C2F6O5S2"
       },
       {
-        "name": "Material",
-        "spec": "High Density Polyethylene (PE)"
+        "name": "Molecular Weight",
+        "spec": "282.14 g/mol"
       },
       {
-        "name": "Ring Material",
-        "spec": "LLDPE Resilient Gasket"
+        "name": "Purity / Assay",
+        "spec": "≥ 99.0% (GC/NMR)"
       },
       {
-        "name": "Component Weight",
-        "spec": "25g"
+        "name": "Physical State",
+        "spec": "Clear Colorless to Light Straw Liquid"
       },
       {
-        "name": "Torque Resistance",
-        "spec": "High Impact & Strip-Resistant"
+        "name": "Boiling Point",
+        "spec": "81 - 83 °C"
       },
       {
-        "name": "Available Colors",
-        "spec": "Natural, Black, Red, Custom"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Application",
-        "spec": "210L Barrels & Composite Drums"
+        "name": "Density",
+        "spec": "1.677 g/mL at 25 °C"
       },
       {
-        "name": "Thread Standard",
-        "spec": "50 mm Buttress Thread"
+        "name": "Packaging Type",
+        "spec": "100g, 500g, 1kg Glass Bottles & 25kg Corrosion Drums"
       },
       {
-        "name": "Material",
-        "spec": "High Density Polyethylene (PE)"
+        "name": "Moisture Content",
+        "spec": "≤ 0.05% (Karl Fischer)"
       },
       {
-        "name": "Ring Material",
-        "spec": "LLDPE Resilient Gasket"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "25g"
-      },
-      {
-        "name": "Torque Resistance",
-        "spec": "High Impact & Strip-Resistant"
-      },
-      {
-        "name": "Available Colors",
-        "spec": "Natural, Black, Red, Custom"
+        "name": "Storage Conditions",
+        "spec": "Moisture sensitive, store below 25 °C in tightly closed containers"
       }
     ]
   },
   {
     "id": 3,
-    "name": "50mm - Top Ring Bung (Metal Drum)",
-    "categoryId": 1,
-    "category": "Bungs",
-    "subCategory": "Top Ring Metal Drum Bungs",
-    "vendor": "Vasujaval Plastics",
-    "type": "Bung Plug",
-    "price": 26,
-    "priceFormatted": "₹24 - ₹30/piece",
-    "originalPrice": 35,
+    "name": "EDC HCl (1-(3-Dimethylaminopropyl)-3-Ethylcarbodiimide HCl)",
+    "categoryId": 4,
+    "category": "Coupling Agents & Carbodiimides",
+    "subCategory": "EDC HCl (Water Soluble Carbodiimide)",
+    "vendor": "Global Chemie",
+    "type": "Amide Coupling Agent",
+    "price": 2950,
+    "priceFormatted": "₹2,600 - ₹3,200/kg",
+    "originalPrice": 3600,
     "badge": {
-      "text": "Metal Drum Fit",
-      "color": "#475569"
+      "text": "Contract Mfg",
+      "color": "#2563eb"
     },
-    "colors": ["#ffffff", "#000000", "#2563eb"],
-    "image": "/images/products/bung-50mm-solid.webp",
+    "colors": [
+      "#ffffff",
+      "#059669",
+      "#2B3A5E"
+    ],
+    "image": "/images/chemicals/edc-hcl.webp",
     "images": [
-      "/images/products/bung-50mm-solid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50mm-Top-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Top-Ring-A.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+      "/images/chemicals/edc-hcl.webp",
+      "/images/globalchemie/contract-manufacturing.jpeg",
+      "/images/chemicals/dfta-fluconazole.webp"
     ],
     "inStock": true,
     "trending": true,
-    "stockCount": 18000,
-    "description": "Specifically engineered for 210L metal steel drums fitted with internal liners. The top-ring shoulder seat ensures tight compression against the steel flange opening, eliminating thread leakage during long-distance transit and pallet vibration.",
-    "brand": "Vasujaval Plastics",
+    "stockCount": 3500,
+    "description": "EDC HCl (CAS: 25952-53-8) is a water-soluble zero-length crosslinking and peptide coupling agent widely used in pharmaceuticals, bioconjugation, amide bond synthesis, and nucleic acid immobilisation.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Container Application",
-        "spec": "210L Metal Drums (with Liner)"
+        "name": "CAS Number",
+        "spec": "25952-53-8"
       },
       {
-        "name": "Size",
-        "spec": "50 mm (2 Inch)"
+        "name": "Molecular Formula",
+        "spec": "C8H17N3 · HCl"
       },
       {
-        "name": "Flange Seat",
-        "spec": "Top Sealing Shoulder Ring"
+        "name": "Molecular Weight",
+        "spec": "191.70 g/mol"
       },
       {
-        "name": "Material",
-        "spec": "Prime Polyethylene (PE)"
+        "name": "Purity / Assay",
+        "spec": "≥ 99.0% (Titration/HPLC)"
       },
       {
-        "name": "Gasket Ring",
-        "spec": "LLDPE Compression Ring"
+        "name": "Physical State",
+        "spec": "White to Off-White Crystalline Powder"
       },
       {
-        "name": "Component Weight",
-        "spec": "26g"
+        "name": "Melting Point",
+        "spec": "110 - 115 °C"
       },
       {
-        "name": "Testing",
-        "spec": "Drop & Hydrostatic Pressure Tested"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Application",
-        "spec": "210L Metal Drums (with Liner)"
+        "name": "Solubility",
+        "spec": "Freely soluble in water, ethanol, and DCM"
       },
       {
-        "name": "Size",
-        "spec": "50 mm (2 Inch)"
+        "name": "Packaging Type",
+        "spec": "1kg, 5kg, 25kg Fiber Drums with double LDPE liners"
       },
       {
-        "name": "Flange Seat",
-        "spec": "Top Sealing Shoulder Ring"
-      },
-      {
-        "name": "Material",
-        "spec": "Prime Polyethylene (PE)"
-      },
-      {
-        "name": "Gasket Ring",
-        "spec": "LLDPE Compression Ring"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "26g"
-      },
-      {
-        "name": "Testing",
-        "spec": "Drop & Hydrostatic Pressure Tested"
+        "name": "Storage Conditions",
+        "spec": "Store at -20 °C to 4 °C desiccated"
       }
     ]
   },
   {
     "id": 4,
-    "name": "50mm - Top Ring Bung - Type A",
+    "name": "DFTA (Fluconazole Advance Intermediate)",
     "categoryId": 1,
-    "category": "Bungs",
-    "subCategory": "Top Ring Metal Drum Bungs",
-    "vendor": "Vasujaval Plastics",
-    "type": "Bung Plug",
-    "price": 27,
-    "priceFormatted": "₹25 - ₹32/piece",
-    "originalPrice": 36,
+    "category": "Bulk Drug Intermediates",
+    "subCategory": "Antifungal & Fluconazole Intermediates",
+    "vendor": "Global Chemie",
+    "type": "Pharma API Intermediate",
+    "price": 4400,
+    "priceFormatted": "₹4,100 - ₹4,800/kg",
+    "originalPrice": 5200,
     "badge": {
-      "text": "Type A",
-      "color": "#475569"
+      "text": "Pharma Grade",
+      "color": "#7c3aed"
     },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/bung-50mm-solid.webp",
+    "colors": [
+      "#ffffff",
+      "#2B3A5E",
+      "#d97706"
+    ],
+    "image": "/images/chemicals/dfta-fluconazole.webp",
     "images": [
-      "/images/products/bung-50mm-solid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Top-Ring-A.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50mm-Top-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+      "/images/chemicals/dfta-fluconazole.webp",
+      "/images/globalchemie/chemical-lab.jpg",
+      "/images/chemicals/edc-hcl.webp"
     ],
     "inStock": true,
-    "trending": false,
-    "stockCount": 12000,
-    "description": "Type-A variant featuring reinforced drive teeth and modified crest angles for high-speed automated drum filling lines. Provides high torque retention and unyielding seal integrity under extreme hydrostatic pressure.",
-    "brand": "Vasujaval Plastics",
+    "trending": true,
+    "stockCount": 2200,
+    "description": "DFTA (CAS: 86404-63-9, 2-(2,4-Difluorophenyl)-1,3-bis(1H-1,2,4-triazol-1-yl)propan-2-ol intermediate) is a key penultimate intermediate manufactured for the commercial synthesis of the antifungal medication Fluconazole USP/EP.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Container Application",
-        "spec": "210L Metal Drums with PE Liner"
+        "name": "CAS Number",
+        "spec": "86404-63-9"
       },
       {
-        "name": "Configuration",
-        "spec": "Type A High-Torque Drive"
+        "name": "Molecular Formula",
+        "spec": "C13H12F2N6O"
       },
       {
-        "name": "Material",
-        "spec": "PE Polymer"
+        "name": "Molecular Weight",
+        "spec": "306.27 g/mol"
       },
       {
-        "name": "Ring Material",
-        "spec": "LLDPE"
+        "name": "Purity / Assay",
+        "spec": "≥ 99.5% (HPLC Area %)"
       },
       {
-        "name": "Component Weight",
-        "spec": "26g"
+        "name": "Individual Impurity",
+        "spec": "≤ 0.10%"
       },
       {
-        "name": "Automated Line Fit",
-        "spec": "Yes - High-Speed Capper Compatible"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Application",
-        "spec": "210L Metal Drums with PE Liner"
+        "name": "Total Impurities",
+        "spec": "≤ 0.50%"
       },
       {
-        "name": "Configuration",
-        "spec": "Type A High-Torque Drive"
+        "name": "Physical State",
+        "spec": "White to Almost White Crystalline Powder"
       },
       {
-        "name": "Material",
-        "spec": "PE Polymer"
+        "name": "Loss on Drying",
+        "spec": "≤ 0.5%"
       },
       {
-        "name": "Ring Material",
-        "spec": "LLDPE"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "26g"
-      },
-      {
-        "name": "Automated Line Fit",
-        "spec": "Yes - High-Speed Capper Compatible"
+        "name": "Packaging Type",
+        "spec": "25kg Fiber Drums with twin food-grade poly bags"
       }
     ]
   },
   {
     "id": 5,
-    "name": "75mm - Bottom Ring Bung",
-    "categoryId": 1,
-    "category": "Bungs",
-    "subCategory": "75mm Heavy Duty Bungs",
-    "vendor": "Vasujaval Plastics",
-    "type": "Bung Plug",
-    "price": 42,
-    "priceFormatted": "₹38 - ₹48/piece",
-    "originalPrice": 55,
+    "name": "Trimethylsilyl Cyanide (TMS-CN)",
+    "categoryId": 2,
+    "category": "Silyl Reagents",
+    "subCategory": "Trimethylsilyl Cyanide (TMS-CN)",
+    "vendor": "Global Chemie",
+    "type": "Organosilicon Reagent",
+    "price": 4100,
+    "priceFormatted": "₹3,800 - ₹4,400/kg",
+    "originalPrice": 4800,
     "badge": {
-      "text": "75mm / 3 Inch",
-      "color": "#9333ea"
+      "text": "Ready Stock",
+      "color": "#059669"
     },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/bung-75mm-heavy.webp",
+    "colors": [
+      "#ffffff",
+      "#0284c7",
+      "#2B3A5E"
+    ],
+    "image": "/images/chemicals/tms-cyanide.webp",
     "images": [
-      "/images/products/bung-75mm-heavy.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-75mm-Bottom-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-75mm-Top-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+      "/images/chemicals/tms-cyanide.webp",
+      "/images/chemicals/tms-azide.webp",
+      "/images/globalchemie/pan-india-supply.jpeg"
     ],
     "inStock": true,
-    "trending": true,
-    "stockCount": 9500,
-    "description": "Extra wide 75mm (3-inch) heavy duty bung plug designed for rapid-discharge drums and viscous chemical containers. Engineered with a bottom groove LLDPE gasket for robust leak prevention under bulk shipping conditions.",
-    "brand": "Vasujaval Plastics",
+    "trending": false,
+    "stockCount": 940,
+    "description": "Trimethylsilyl Cyanide (TMS-CN, CAS: 7677-24-9) is an essential cyanating reagent in organic synthesis, providing a versatile route to cyanohydrins, alpha-amino nitriles, and protected nitrile derivatives with superior chemoselectivity.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Container Application",
-        "spec": "210L Heavy Barrels & Industrial Drums"
+        "name": "CAS Number",
+        "spec": "7677-24-9"
       },
       {
-        "name": "Size / Thread",
-        "spec": "75 mm (3 Inch Wide Neck)"
+        "name": "Molecular Formula",
+        "spec": "C4H9NSi"
       },
       {
-        "name": "Material",
-        "spec": "Virgin Polyethylene (PE)"
+        "name": "Molecular Weight",
+        "spec": "99.21 g/mol"
       },
       {
-        "name": "Gasket Ring",
-        "spec": "LLDPE Resilient Ring"
+        "name": "Purity / Assay",
+        "spec": "≥ 98.0% (GC)"
       },
       {
-        "name": "Component Weight",
-        "spec": "35g"
+        "name": "Physical State",
+        "spec": "Colorless Clear Liquid"
       },
       {
-        "name": "Ideal For",
-        "spec": "Viscous Resins, Adhesives, Bulk Chemicals"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Application",
-        "spec": "210L Heavy Barrels & Industrial Drums"
+        "name": "Boiling Point",
+        "spec": "117 - 119 °C"
       },
       {
-        "name": "Size / Thread",
-        "spec": "75 mm (3 Inch Wide Neck)"
+        "name": "Density",
+        "spec": "0.744 g/mL at 20 °C"
       },
       {
-        "name": "Material",
-        "spec": "Virgin Polyethylene (PE)"
+        "name": "Packaging Type",
+        "spec": "500g, 5kg, 25kg UN Metal Cans"
       },
       {
-        "name": "Gasket Ring",
-        "spec": "LLDPE Resilient Ring"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "35g"
-      },
-      {
-        "name": "Ideal For",
-        "spec": "Viscous Resins, Adhesives, Bulk Chemicals"
+        "name": "Storage Conditions",
+        "spec": "Store under inert nitrogen, dry environment"
       }
     ]
   },
   {
     "id": 6,
-    "name": "75mm - Top Ring Bung",
-    "categoryId": 1,
-    "category": "Bungs",
-    "subCategory": "75mm Heavy Duty Bungs",
-    "vendor": "Vasujaval Plastics",
-    "type": "Bung Plug",
-    "price": 44,
-    "priceFormatted": "₹40 - ₹50/piece",
-    "originalPrice": 58,
+    "name": "Chloromethyl Methyl Ether (MOM Chloride)",
+    "categoryId": 5,
+    "category": "Speciality & Fine Chemicals",
+    "subCategory": "Chloromethyl Methyl Ether (MOM Chloride)",
+    "vendor": "Global Chemie",
+    "type": "Protecting Group Reagent",
+    "price": 3200,
+    "priceFormatted": "₹2,900 - ₹3,500/kg",
+    "originalPrice": 3800,
     "badge": {
-      "text": "PVC Ring",
-      "color": "#d97706"
+      "text": "Custom Synthesis",
+      "color": "#db2777"
     },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/bung-75mm-heavy.webp",
+    "colors": [
+      "#ffffff",
+      "#2B3A5E",
+      "#059669"
+    ],
+    "image": "/images/chemicals/mom-chloride.webp",
     "images": [
-      "/images/products/bung-75mm-heavy.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-75mm-Top-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-75mm-Bottom-Ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
+      "/images/chemicals/mom-chloride.webp",
+      "/images/globalchemie/contract-manufacturing.jpeg"
     ],
     "inStock": true,
     "trending": false,
-    "stockCount": 8000,
-    "description": "Heavy duty 75mm top-ring bung plug equipped with a high-durability elastomeric PVC ring. Provides superior solvent and oil barrier resistance while withstanding aggressive clamping forces.",
-    "brand": "Vasujaval Plastics",
+    "stockCount": 650,
+    "description": "Chloromethyl Methyl Ether (MOM-Cl, CAS: 107-30-2) is an alkylating reagent used extensively to protect hydroxyl groups as methoxymethyl (MOM) ethers in complex multi-step API and natural product total synthesis.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Container Application",
-        "spec": "210L Industrial Barrels"
+        "name": "CAS Number",
+        "spec": "107-30-2"
       },
       {
-        "name": "Size",
-        "spec": "75 mm"
+        "name": "Molecular Formula",
+        "spec": "C2H5ClO"
       },
       {
-        "name": "Material",
-        "spec": "Virgin PE"
+        "name": "Molecular Weight",
+        "spec": "80.51 g/mol"
       },
       {
-        "name": "Ring Material",
-        "spec": "Elastomeric PVC Ring"
+        "name": "Purity / Assay",
+        "spec": "≥ 98.0% (GC)"
       },
       {
-        "name": "Component Weight",
-        "spec": "35g"
+        "name": "Physical State",
+        "spec": "Clear Colorless Liquid"
       },
       {
-        "name": "Chemical Resistance",
-        "spec": "Superior Hydrocarbon & Chemical Tolerance"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Application",
-        "spec": "210L Industrial Barrels"
+        "name": "Boiling Point",
+        "spec": "59 °C"
       },
       {
-        "name": "Size",
-        "spec": "75 mm"
+        "name": "Density",
+        "spec": "1.060 g/mL at 25 °C"
       },
       {
-        "name": "Material",
-        "spec": "Virgin PE"
+        "name": "Packaging Type",
+        "spec": "1kg, 5kg, 25kg Teflon-Lined Drums"
       },
       {
-        "name": "Ring Material",
-        "spec": "Elastomeric PVC Ring"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "35g"
-      },
-      {
-        "name": "Chemical Resistance",
-        "spec": "Superior Hydrocarbon & Chemical Tolerance"
+        "name": "Storage Conditions",
+        "spec": "Store below 4 °C in dry ventilated area"
       }
     ]
   },
   {
     "id": 7,
-    "name": "Screw Cap - 25mm",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Screw Caps (25mm - 50mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 6.5,
-    "priceFormatted": "₹5.50 - ₹7.50/piece",
-    "originalPrice": 9,
+    "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene (DBU)",
+    "categoryId": 5,
+    "category": "Speciality & Fine Chemicals",
+    "subCategory": "1,8-Diazabicyclo[5.4.0]-7-undecene (DBU)",
+    "vendor": "Global Chemie",
+    "type": "Non-Nucleophilic Superbase",
+    "price": 2450,
+    "priceFormatted": "₹2,200 - ₹2,700/kg",
+    "originalPrice": 3100,
     "badge": {
-      "text": "HDPE",
-      "color": "#2563eb"
+      "text": "Ready Stock",
+      "color": "#059669"
     },
-    "colors": ["#ffffff", "#000000", "#2563eb", "#dc2626"],
-    "image": "/images/products/screw-cap-red.webp",
+    "colors": [
+      "#ffffff",
+      "#0284c7",
+      "#2B3A5E"
+    ],
+    "image": "/images/chemicals/dbu-reagent.webp",
     "images": [
-      "/images/products/screw-cap-red.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-25mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-25mm-1.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-25mm.webp"
+      "/images/chemicals/dbu-reagent.webp",
+      "/images/globalchemie/pan-india-supply.jpeg",
+      "/images/chemicals/phenanthroline.webp"
     ],
     "inStock": true,
-    "trending": false,
-    "stockCount": 50000,
-    "description": "Compact precision screw cap for 50L to 100L side-mouth drums and carboys. Manufactured from high-density polyethylene for tight closure, uniform torque engagement, and clean thread sealing.",
-    "brand": "Vasujaval Plastics",
+    "trending": true,
+    "stockCount": 1800,
+    "description": "DBU (CAS: 6674-22-2) is a strong, non-nucleophilic bicyclic amidine base used widely in dehalogenation, elimination reactions, Baylis-Hillman condensations, and esterification catalytic cycles.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Uses",
-        "spec": "Drums: 50L - 100L (Side Mouth)"
+        "name": "CAS Number",
+        "spec": "6674-22-2"
       },
       {
-        "name": "Mouth Size",
-        "spec": "25 mm (1 Inch)"
+        "name": "Molecular Formula",
+        "spec": "C9H16N2"
       },
       {
-        "name": "Material",
-        "spec": "HDPE (High Density Polyethylene)"
+        "name": "Molecular Weight",
+        "spec": "152.24 g/mol"
       },
       {
-        "name": "Weight",
-        "spec": "9g"
+        "name": "Purity / Assay",
+        "spec": "≥ 99.0% (GC)"
       },
       {
-        "name": "Finish",
-        "spec": "Ribbed Gripping Outer Wall"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L - 100L (Side Mouth)"
+        "name": "Physical State",
+        "spec": "Colorless to Light Yellow Viscous Liquid"
       },
       {
-        "name": "Mouth Size",
-        "spec": "25 mm (1 Inch)"
+        "name": "Boiling Point",
+        "spec": "261 °C"
       },
       {
-        "name": "Material",
-        "spec": "HDPE (High Density Polyethylene)"
+        "name": "Density",
+        "spec": "1.018 g/mL at 25 °C"
       },
       {
-        "name": "Weight",
-        "spec": "9g"
+        "name": "Refractive Index",
+        "spec": "1.523 at 20 °C"
       },
       {
-        "name": "Finish",
-        "spec": "Ribbed Gripping Outer Wall"
+        "name": "Packaging Type",
+        "spec": "1kg, 25kg, 200kg Drums"
       }
     ]
   },
   {
     "id": 8,
-    "name": "Screw Cap - 30mm",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Screw Caps (25mm - 50mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 7,
-    "priceFormatted": "₹6.00 - ₹8.00/piece",
-    "originalPrice": 10,
+    "name": "1,10-Phenanthroline Monohydrate AR 99.5%",
+    "categoryId": 6,
+    "category": "Rare & R&D Chemicals (Import)",
+    "subCategory": "1,10-Phenanthroline Monohydrate AR 99.5%",
+    "vendor": "Global Chemie",
+    "type": "Analytical Reagent & Ligand",
+    "price": 9500,
+    "priceFormatted": "₹8,900 - ₹10,500/kg",
+    "originalPrice": 11500,
     "badge": {
-      "text": "Jerrycan Fit",
-      "color": "#059669"
+      "text": "Import Grade",
+      "color": "#ea580c"
     },
-    "colors": ["#ffffff", "#000000", "#2563eb", "#f59e0b"],
-    "image": "/images/products/screw-cap-red.webp",
+    "colors": [
+      "#ffffff",
+      "#2B3A5E",
+      "#ea580c"
+    ],
+    "image": "/images/chemicals/phenanthroline.webp",
     "images": [
-      "/images/products/screw-cap-red.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-25mm-1.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-25mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-25mm.webp"
+      "/images/chemicals/phenanthroline.webp",
+      "/images/globalchemie/api-imports.jpeg",
+      "/images/chemicals/dppp-catalyst.webp"
     ],
     "inStock": true,
-    "trending": true,
-    "stockCount": 60000,
-    "description": "High-demand 30mm screw cap tailor-made for 5L jerrycans, canisters, and small liquid containers in retail agrochemical, oil, and consumer chemical packaging.",
-    "brand": "Vasujaval Plastics",
+    "trending": false,
+    "stockCount": 420,
+    "description": "1,10-Phenanthroline Monohydrate AR (CAS: 5144-89-8) is an analytical grade bidentate nitrogen chelating ligand imported from premium global producers. It is crucial for colorimetric iron determination, transition metal catalysis, and spectroscopic standards.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Uses",
-        "spec": "Jerrycans: 5L Containers"
+        "name": "CAS Number",
+        "spec": "5144-89-8"
       },
       {
-        "name": "Mouth Size",
-        "spec": "30 mm"
+        "name": "Molecular Formula",
+        "spec": "C12H8N2 · H2O"
       },
       {
-        "name": "Material",
-        "spec": "HDPE"
+        "name": "Molecular Weight",
+        "spec": "198.22 g/mol"
       },
       {
-        "name": "Weight",
-        "spec": "7g"
+        "name": "Purity / Assay",
+        "spec": "≥ 99.5% (Non-aqueous Titration)"
       },
       {
-        "name": "Features",
-        "spec": "Tamper Evident Band Option Available"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Jerrycans: 5L Containers"
+        "name": "Physical State",
+        "spec": "White to Off-White Needle Crystals"
       },
       {
-        "name": "Mouth Size",
-        "spec": "30 mm"
+        "name": "Melting Point",
+        "spec": "100 - 104 °C"
       },
       {
-        "name": "Material",
-        "spec": "HDPE"
+        "name": "Residue on Ignition",
+        "spec": "≤ 0.05%"
       },
       {
-        "name": "Weight",
-        "spec": "7g"
+        "name": "Packaging Type",
+        "spec": "100g, 500g, 5kg Amber Jars"
       },
       {
-        "name": "Features",
-        "spec": "Tamper Evident Band Option Available"
+        "name": "Source Country",
+        "spec": "Imported from USA & Japan"
       }
     ]
   },
   {
     "id": 9,
-    "name": "Screw Cap - 48mm Type A",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Screw Caps (25mm - 50mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 18,
-    "priceFormatted": "₹16 - ₹21/piece",
-    "originalPrice": 25,
+    "name": "Trifluoroacetic Anhydride (TFAA)",
+    "categoryId": 3,
+    "category": "Triflic & Fluorinated Compounds",
+    "subCategory": "Trifluoroacetic Anhydride (TFAA)",
+    "vendor": "Global Chemie",
+    "type": "Fluorinated Acylating Agent",
+    "price": 3600,
+    "priceFormatted": "₹3,200 - ₹3,900/kg",
+    "originalPrice": 4200,
     "badge": {
-      "text": "Type A",
-      "color": "#2563eb"
+      "text": "Ready Stock",
+      "color": "#059669"
     },
-    "colors": ["#ffffff", "#000000", "#16a34a"],
-    "image": "/images/products/screw-cap-red.webp",
+    "colors": [
+      "#ffffff",
+      "#d97706",
+      "#2B3A5E"
+    ],
+    "image": "/images/chemicals/tfaa-anhydride.webp",
     "images": [
-      "/images/products/screw-cap-red.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-30mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-25mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Jerrycans_Icon.png"
+      "/images/chemicals/tfaa-anhydride.webp",
+      "/images/chemicals/triflic-anhydride.webp",
+      "/images/globalchemie/chemical-lab.jpg"
     ],
     "inStock": true,
     "trending": false,
-    "stockCount": 35000,
-    "description": "Heavy duty 48mm Type-A screw cap engineered for 30L - 40L drums and jerrycans. Features reinforced sidewalls and sharp anti-slip knurling for easy manual or mechanical cap application.",
-    "brand": "Vasujaval Plastics",
+    "stockCount": 1100,
+    "description": "Trifluoroacetic Anhydride (TFAA, CAS: 407-25-0) is an activating dehydrating and trifluoroacetylating reagent widely used in the synthesis of trifluoromethyl compounds, Swern oxidations, and esterifications.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Uses",
-        "spec": "Drums: 30L - 40L | Jerrycans: 30L - 40L"
+        "name": "CAS Number",
+        "spec": "407-25-0"
       },
       {
-        "name": "Mouth Size",
-        "spec": "48 mm"
+        "name": "Molecular Formula",
+        "spec": "C4F6O3"
       },
       {
-        "name": "Material",
-        "spec": "HDPE"
+        "name": "Molecular Weight",
+        "spec": "210.03 g/mol"
       },
       {
-        "name": "Weight",
-        "spec": "25g"
+        "name": "Purity / Assay",
+        "spec": "≥ 99.0% (GC)"
       },
       {
-        "name": "Design",
-        "spec": "Type A Reinforced Flange"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 40L | Jerrycans: 30L - 40L"
+        "name": "Physical State",
+        "spec": "Colorless Clear Fuming Liquid"
       },
       {
-        "name": "Mouth Size",
-        "spec": "48 mm"
+        "name": "Boiling Point",
+        "spec": "39.5 - 40.5 °C"
       },
       {
-        "name": "Material",
-        "spec": "HDPE"
+        "name": "Density",
+        "spec": "1.511 g/mL at 20 °C"
       },
       {
-        "name": "Weight",
-        "spec": "25g"
-      },
-      {
-        "name": "Design",
-        "spec": "Type A Reinforced Flange"
+        "name": "Packaging Type",
+        "spec": "500g, 2.5kg, 25kg HDPE Carboys"
       }
     ]
   },
   {
     "id": 10,
-    "name": "Screw Cap - 48mm Standard",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Screw Caps (25mm - 50mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 17,
-    "priceFormatted": "₹15 - ₹20/piece",
-    "originalPrice": 24,
+    "name": "1,2,3-Benzotriazole 99%",
+    "categoryId": 6,
+    "category": "Rare & R&D Chemicals (Import)",
+    "subCategory": "1,2,3-Benzotriazole 99%",
+    "vendor": "Global Chemie",
+    "type": "Heterocyclic Inhibitor & Reagent",
+    "price": 1850,
+    "priceFormatted": "₹1,650 - ₹2,100/kg",
+    "originalPrice": 2400,
     "badge": {
-      "text": "Standard",
-      "color": "#475569"
+      "text": "Bulk Stock",
+      "color": "#2563eb"
     },
-    "colors": ["#ffffff", "#000000", "#2563eb"],
-    "image": "/images/products/screw-cap-red.webp",
+    "colors": [
+      "#ffffff",
+      "#2B3A5E",
+      "#ea580c"
+    ],
+    "image": "/images/chemicals/benzotriazole.webp",
     "images": [
-      "/images/products/screw-cap-red.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-48mm-A.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-48mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-48mm.webp"
+      "/images/chemicals/benzotriazole.webp",
+      "/images/chemicals/phenanthroline.webp",
+      "/images/globalchemie/api-imports.jpeg"
     ],
     "inStock": true,
-    "trending": false,
-    "stockCount": 40000,
-    "description": "Standard industrial 48mm screw cap offering consistent pitch accuracy and reliable seal engagement on 30L to 40L commercial plastic containers and canisters.",
-    "brand": "Vasujaval Plastics",
+    "trending": true,
+    "stockCount": 4200,
+    "description": "1,2,3-Benzotriazole (CAS: 95-14-7) is a heterocyclic nitrogen compound renowned for exceptional metal corrosion inhibition (copper, brass) and as a versatile building block for photographic, agrochemical, and pharmaceutical synthesis.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Uses",
-        "spec": "Drums & Jerrycans: 30L - 40L"
+        "name": "CAS Number",
+        "spec": "95-14-7"
       },
       {
-        "name": "Mouth Size",
-        "spec": "48 mm"
+        "name": "Molecular Formula",
+        "spec": "C6H5N3"
       },
       {
-        "name": "Material",
-        "spec": "HDPE"
+        "name": "Molecular Weight",
+        "spec": "119.12 g/mol"
       },
       {
-        "name": "Weight",
-        "spec": "25g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums & Jerrycans: 30L - 40L"
+        "name": "Purity / Assay",
+        "spec": "≥ 99.0% (HPLC)"
       },
       {
-        "name": "Mouth Size",
-        "spec": "48 mm"
+        "name": "Physical State",
+        "spec": "White to Off-White Needles / Granules"
       },
       {
-        "name": "Material",
-        "spec": "HDPE"
+        "name": "Melting Point",
+        "spec": "96 - 99 °C"
       },
       {
-        "name": "Weight",
-        "spec": "25g"
+        "name": "Ash Content",
+        "spec": "≤ 0.05%"
+      },
+      {
+        "name": "Packaging Type",
+        "spec": "25kg Multi-wall Paper Bags & Fiber Drums"
       }
     ]
   },
   {
     "id": 11,
-    "name": "Screw Cap - 50mm Heavy Duty",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Screw Caps (25mm - 50mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 22,
-    "priceFormatted": "₹19 - ₹25/piece",
-    "originalPrice": 30,
+    "name": "1,3-Bis(diphenylphosphino)propane (DPPP)",
+    "categoryId": 6,
+    "category": "Rare & R&D Chemicals (Import)",
+    "subCategory": "1,3-Bis(diphenylphosphino)propane (DPPP)",
+    "vendor": "Global Chemie",
+    "type": "Organophosphine Catalytic Ligand",
+    "price": 14500,
+    "priceFormatted": "₹13,500 - ₹16,000/kg",
+    "originalPrice": 17500,
     "badge": {
-      "text": "Best Seller",
-      "color": "#d97706"
+      "text": "Rare Chemical",
+      "color": "#7c3aed"
     },
-    "colors": ["#ffffff", "#000000", "#dc2626", "#2563eb"],
-    "image": "/images/products/screw-cap-red.webp",
+    "colors": [
+      "#ffffff",
+      "#ea580c",
+      "#2B3A5E"
+    ],
+    "image": "/images/chemicals/dppp-catalyst.webp",
     "images": [
-      "/images/products/screw-cap-red.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-48mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-48mm-A.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-48mm.webp"
+      "/images/chemicals/dppp-catalyst.webp",
+      "/images/chemicals/phenanthroline.webp",
+      "/images/globalchemie/api-imports.jpeg"
     ],
     "inStock": true,
-    "trending": true,
-    "stockCount": 55000,
-    "description": "Industry-standard 50mm (2-inch) heavy duty screw cap for 30L to 100L drums, carboys, and jerrycans. Built to withstand rough cargo handling and stack pressures while preventing chemical evaporation and seepage.",
-    "brand": "Vasujaval Plastics",
+    "trending": false,
+    "stockCount": 180,
+    "description": "DPPP (CAS: 6737-42-4) is a bidentate diphosphine ligand commonly coordinated to palladium and nickel complexes for Heck, Suzuki, and carbonylation cross-coupling reactions in high-value pharmaceutical R&D.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Uses",
-        "spec": "Drums: 30L - 100L | Carboys & Jerrycans: 30L - 100L"
+        "name": "CAS Number",
+        "spec": "6737-42-4"
       },
       {
-        "name": "Mouth Size",
-        "spec": "50 mm (2 Inch)"
+        "name": "Molecular Formula",
+        "spec": "C27H26P2"
       },
       {
-        "name": "Material",
-        "spec": "Virgin HDPE"
+        "name": "Molecular Weight",
+        "spec": "412.44 g/mol"
       },
       {
-        "name": "Weight",
-        "spec": "32g"
+        "name": "Purity / Assay",
+        "spec": "≥ 98.0% (31P-NMR & HPLC)"
       },
       {
-        "name": "Drop Impact",
-        "spec": "Passed 1.8m Drop Test"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 100L | Carboys & Jerrycans: 30L - 100L"
+        "name": "Physical State",
+        "spec": "White to Pale Cream Crystalline Powder"
       },
       {
-        "name": "Mouth Size",
-        "spec": "50 mm (2 Inch)"
+        "name": "Melting Point",
+        "spec": "59 - 63 °C"
       },
       {
-        "name": "Material",
-        "spec": "Virgin HDPE"
+        "name": "Packaging Type",
+        "spec": "25g, 100g, 500g & 5kg Aluminum Foil Vacuum Pouches"
       },
       {
-        "name": "Weight",
-        "spec": "32g"
-      },
-      {
-        "name": "Drop Impact",
-        "spec": "Passed 1.8m Drop Test"
+        "name": "Storage Conditions",
+        "spec": "Store under argon atmosphere at room temperature"
       }
     ]
   },
   {
     "id": 12,
-    "name": "Screw Cap Vented - 48mm",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Vented Screw Caps",
-    "vendor": "Vasujaval Plastics",
-    "type": "Vented Cap",
-    "price": 26,
-    "priceFormatted": "₹23 - ₹29/piece",
-    "originalPrice": 35,
+    "name": "Boron Trifluoride Etherate (BF3 Etherate)",
+    "categoryId": 5,
+    "category": "Speciality & Fine Chemicals",
+    "subCategory": "Boron Trifluoride Etherate (BF3)",
+    "vendor": "Global Chemie",
+    "type": "Lewis Acid Catalyst",
+    "price": 2150,
+    "priceFormatted": "₹1,950 - ₹2,350/L",
+    "originalPrice": 2600,
     "badge": {
-      "text": "Vented",
+      "text": "Ready Stock",
       "color": "#059669"
     },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/screw-cap-vented.webp",
+    "colors": [
+      "#ffffff",
+      "#2B3A5E",
+      "#db2777"
+    ],
+    "image": "/images/chemicals/boron-trifluoride.webp",
     "images": [
-      "/images/products/screw-cap-vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-48mm-Vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-48mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-48mm.webp"
+      "/images/chemicals/boron-trifluoride.webp",
+      "/images/globalchemie/pan-india-supply.jpeg",
+      "/images/chemicals/mom-chloride.webp"
     ],
     "inStock": true,
     "trending": true,
-    "stockCount": 25000,
-    "description": "48mm screw cap equipped with an integrated venting mechanism. Releases internal pressure buildup caused by hydrogen peroxide, sodium hypochlorite, and agricultural fertilizers while blocking liquid ingress and egress.",
-    "brand": "Vasujaval Plastics",
+    "stockCount": 2400,
+    "description": "Boron Trifluoride Diethyl Etherate (CAS: 109-63-7) is a benchmark Lewis acid catalyst used in Friedel-Crafts alkylations, acetalizations, stereoselective glycosylations, and polymerizations.",
+    "brand": "Global Chemie",
     "specifications": [
       {
-        "name": "Uses",
-        "spec": "Drums & Jerrycans: 30L - 40L"
+        "name": "CAS Number",
+        "spec": "109-63-7"
       },
       {
-        "name": "Mouth Size",
-        "spec": "48 mm"
+        "name": "Molecular Formula",
+        "spec": "C4H10BF3O"
       },
       {
-        "name": "Vent System",
-        "spec": "One-Way Chemical Breather"
+        "name": "Molecular Weight",
+        "spec": "141.93 g/mol"
       },
       {
-        "name": "Material",
-        "spec": "HDPE"
+        "name": "BF3 Content",
+        "spec": "46.5 - 48.0% w/w"
       },
       {
-        "name": "Weight",
-        "spec": "25g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums & Jerrycans: 30L - 40L"
-      },
-      {
-        "name": "Mouth Size",
-        "spec": "48 mm"
-      },
-      {
-        "name": "Vent System",
-        "spec": "One-Way Chemical Breather"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "25g"
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "name": "Screw Cap Vented - 50mm",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Vented Screw Caps",
-    "vendor": "Vasujaval Plastics",
-    "type": "Vented Cap",
-    "price": 29,
-    "priceFormatted": "₹26 - ₹33/piece",
-    "originalPrice": 38,
-    "badge": {
-      "text": "PVC Ring & Vent",
-      "color": "#9333ea"
-    },
-    "colors": ["#ffffff", "#000000", "#2563eb"],
-    "image": "/images/products/screw-cap-vented.webp",
-    "images": [
-      "/images/products/screw-cap-vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-50-mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-50-mm-Vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-50mm.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 30000,
-    "description": "Premium 50mm vented closure combining a secondary elastomeric PVC sealing ring with an active venting membrane. Recommended for volatile agrochemicals, oxidizers, and temperature-sensitive chemicals stored in 30L - 100L containers.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums & Carboys: 30L - 100L"
-      },
-      {
-        "name": "Mouth Size",
-        "spec": "50 mm (2 Inch)"
-      },
-      {
-        "name": "Sealing Features",
-        "spec": "Resilient PVC Gasket Ring"
-      },
-      {
-        "name": "Vent Technology",
-        "spec": "Gas-Permeable Liquid-Barrier Membrane"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "32g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums & Carboys: 30L - 100L"
-      },
-      {
-        "name": "Mouth Size",
-        "spec": "50 mm (2 Inch)"
-      },
-      {
-        "name": "Sealing Features",
-        "spec": "Resilient PVC Gasket Ring"
-      },
-      {
-        "name": "Vent Technology",
-        "spec": "Gas-Permeable Liquid-Barrier Membrane"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "32g"
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "name": "Screw Cap - 150mm (6 Inch Mouth)",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Large Mouth Screw Caps (150mm - 250mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 75,
-    "priceFormatted": "₹68 - ₹85/piece",
-    "originalPrice": 98,
-    "badge": {
-      "text": "6 Inch",
-      "color": "#2563eb"
-    },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/ibc-top-lid.webp",
-    "images": [
-      "/images/products/ibc-top-lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-50-mm-Vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-50-mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-50mm.webp"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 14000,
-    "description": "Wide-mouth 150mm (6-inch) screw cap for 50L drums and specialized industrial carboys. Facilitates rapid pouring, pump tube insertion, and easy cleaning of viscous liquids.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L | Carboys & Jerrycans: Mouth Size 6\""
-      },
-      {
-        "name": "Mouth Diameter",
-        "spec": "150 mm (6 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "100g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L | Carboys & Jerrycans: Mouth Size 6\""
-      },
-      {
-        "name": "Mouth Diameter",
-        "spec": "150 mm (6 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "100g"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "name": "Screw Cap - 200mm (8 Inch Mouth)",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Large Mouth Screw Caps (150mm - 250mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 135,
-    "priceFormatted": "₹120 - ₹150/piece",
-    "originalPrice": 175,
-    "badge": {
-      "text": "8 Inch",
-      "color": "#2563eb"
-    },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/ibc-top-lid.webp",
-    "images": [
-      "/images/products/ibc-top-lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-150mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-150mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 9000,
-    "description": "Extra wide 200mm (8-inch) threaded screw cap for 100L heavy drums and large storage carboys. Delivers high impact resistance and dependable containment for bulk paints, pastes, and viscous solutions.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 100L | Carboys & Jerrycans: Mouth Size 8\""
-      },
-      {
-        "name": "Mouth Diameter",
-        "spec": "200 mm (8 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "260g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 100L | Carboys & Jerrycans: Mouth Size 8\""
-      },
-      {
-        "name": "Mouth Diameter",
-        "spec": "200 mm (8 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "260g"
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "name": "Screw Cap - 250mm (10 Inch Mouth)",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Large Mouth Screw Caps (150mm - 250mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Screw Cap",
-    "price": 160,
-    "priceFormatted": "₹145 - ₹175/piece",
-    "originalPrice": 205,
-    "badge": {
-      "text": "10 Inch Threaded",
-      "color": "#9333ea"
-    },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/ibc-top-lid.webp",
-    "images": [
-      "/images/products/ibc-top-lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-200mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-200mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 7500,
-    "description": "Large 250mm (10-inch) threaded closure designed for 30L to 50L wide-mouth threaded drums and carboys. Provides uncompromised sealing over large surface diameters.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 50L Threaded Drums | Mouth Size 10\""
-      },
-      {
-        "name": "Mouth Diameter",
-        "spec": "250 mm (10 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "260g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 50L Threaded Drums | Mouth Size 10\""
-      },
-      {
-        "name": "Mouth Diameter",
-        "spec": "250 mm (10 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "260g"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "name": "Open Top Drum Lid - 250mm",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Open Top Drum Lids (250mm - 350mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Drum Lid",
-    "price": 145,
-    "priceFormatted": "₹130 - ₹160/piece",
-    "originalPrice": 190,
-    "badge": {
-      "text": "Open Top",
-      "color": "#059669"
-    },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/ibc-top-lid.webp",
-    "images": [
-      "/images/products/ibc-top-lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-250mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-250MM.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 11000,
-    "description": "Full open top drum lid for 30L to 50L open-head drums (mouth diameter 10 inches). Compatible with circular lever-lock clamping rings for airtight containment of powders, solids, and semi-liquids.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "30L - 50L Full Open Top Drums (Mouth Size 10\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "250 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "250g"
-      },
-      {
-        "name": "Clamp Compatibility",
-        "spec": "Metal & Plastic Clamping Ring Compatible"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "30L - 50L Full Open Top Drums (Mouth Size 10\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "250 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "250g"
-      },
-      {
-        "name": "Clamp Compatibility",
-        "spec": "Metal & Plastic Clamping Ring Compatible"
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "name": "Open Top Drum Lid - 350mm",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "Open Top Drum Lids (250mm - 350mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Drum Lid",
-    "price": 195,
-    "priceFormatted": "₹180 - ₹220/piece",
-    "originalPrice": 250,
-    "badge": {
-      "text": "14 Inch Head",
-      "color": "#059669"
-    },
-    "colors": ["#ffffff", "#000000"],
-    "image": "/images/products/ibc-top-lid.webp",
-    "images": [
-      "/images/products/ibc-top-lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Open-Top-Drum-Lid-250mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Sealing-Ring-250-mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Locking-clip.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 8500,
-    "description": "Heavy-duty 350mm (14-inch) full open-head lid for 50L to 60L open-top industrial drums. Moulded with heavy stiffening ribs for stacking resistance and perimeter gasket seating.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "50L - 60L Full Open Top Drums (Mouth Size 14\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "350 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "345g"
-      },
-      {
-        "name": "Reinforcement",
-        "spec": "Multi-Radial Stiffening Ribs"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "50L - 60L Full Open Top Drums (Mouth Size 14\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "350 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "345g"
-      },
-      {
-        "name": "Reinforcement",
-        "spec": "Multi-Radial Stiffening Ribs"
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "name": "IBC DN150 Top Lid Vented",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "IBC DN150 Top Lids",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Lid",
-    "price": 245,
-    "priceFormatted": "₹220 - ₹270/piece",
-    "originalPrice": 320,
-    "badge": {
-      "text": "IBC DN150",
-      "color": "#dc2626"
-    },
-    "colors": ["#000000", "#dc2626"],
-    "image": "/images/products/ibc-top-lid.webp",
-    "images": [
-      "/images/products/ibc-top-lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Open-Top-Drum-Lid-350mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Sealing-Ring-350-mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Locking-clip.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 6500,
-    "description": "Standard 150mm top filling lid for 1000L Intermediate Bulk Containers (IBCs). Features a central automatic pressure breather valve to equalize atmospheric pressure during thermal expansion and bulk emptying.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Container Fit",
-        "spec": "1000L IBC Containers (DN150 Neck)"
-      },
-      {
-        "name": "Diameter",
-        "spec": "DN150 (150 mm)"
-      },
-      {
-        "name": "Breather Vent",
-        "spec": "Integrated High-Flow Relief Valve"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE (UV Stabilized)"
-      },
-      {
-        "name": "Weight",
-        "spec": "270g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Fit",
-        "spec": "1000L IBC Containers (DN150 Neck)"
-      },
-      {
-        "name": "Diameter",
-        "spec": "DN150 (150 mm)"
-      },
-      {
-        "name": "Breather Vent",
-        "spec": "Integrated High-Flow Relief Valve"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE (UV Stabilized)"
-      },
-      {
-        "name": "Weight",
-        "spec": "270g"
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "name": "IBC DN150 Top Lid Standard",
-    "categoryId": 2,
-    "category": "Caps & Closures",
-    "subCategory": "IBC DN150 Top Lids",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Lid",
-    "price": 235,
-    "priceFormatted": "₹210 - ₹260/piece",
-    "originalPrice": 310,
-    "badge": {
-      "text": "IBC Solid Lid",
-      "color": "#475569"
-    },
-    "colors": ["#000000"],
-    "image": "/images/products/ibc-top-lid.webp",
-    "images": [
-      "/images/products/ibc-top-lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC-DN150-Top-Lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC-DN150-Top-Lid-Vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 7000,
-    "description": "Solid non-vented top lid for DN150 IBC tanks. Provides maximum airtight security for non-gassing liquids, hazardous chemical transport, and long-term bulk storage.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Container Fit",
-        "spec": "1000L IBC Tanks (DN150)"
-      },
-      {
-        "name": "Diameter",
-        "spec": "DN150"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      },
-      {
-        "name": "Gasket",
-        "spec": "EPDM / NBR Sealing Ring"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Container Fit",
-        "spec": "1000L IBC Tanks (DN150)"
-      },
-      {
-        "name": "Diameter",
-        "spec": "DN150"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      },
-      {
-        "name": "Gasket",
-        "spec": "EPDM / NBR Sealing Ring"
-      }
-    ]
-  },
-  {
-    "id": 21,
-    "name": "Insert - 25mm",
-    "categoryId": 3,
-    "category": "Inserts",
-    "subCategory": "Jerrycan & Drum Inserts (25mm - 48mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Neck Insert",
-    "price": 3.5,
-    "priceFormatted": "₹3.00 - ₹4.50/piece",
-    "originalPrice": 6,
-    "badge": {
-      "text": "Plug Fit",
-      "color": "#2563eb"
-    },
-    "colors": ["#f8fafc"],
-    "image": "/images/products/drum-insert.webp",
-    "images": [
-      "/images/products/drum-insert.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-25mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-25mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Jerrycans_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 75000,
-    "description": "Precision-moulded 25mm (1-inch) press-fit neck insert for 50L to 100L side-mouth drums and carboys. Acts as a secondary liquid barrier beneath the screw cap to eliminate leakage during transit.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L - 100L (Side Mouth) | Carboys: 1\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "25 mm (1 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Virgin HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "4g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L - 100L (Side Mouth) | Carboys: 1\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "25 mm (1 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Virgin HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "4g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "name": "Insert - 48mm",
-    "categoryId": 3,
-    "category": "Inserts",
-    "subCategory": "Jerrycan & Drum Inserts (25mm - 48mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Neck Insert",
-    "price": 5.5,
-    "priceFormatted": "₹4.80 - ₹6.50/piece",
-    "originalPrice": 8.5,
-    "badge": {
-      "text": "48mm Insert",
-      "color": "#2563eb"
-    },
-    "colors": ["#f8fafc"],
-    "image": "/images/products/drum-insert.webp",
-    "images": [
-      "/images/products/drum-insert.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-48mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-48mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Jerrycans_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 60000,
-    "description": "Press-fit 48mm neck insert for 30L - 40L drums and jerrycans. Tight interference fit seals neck irregularities and provides drip-free containment.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L – 40L | Carboys & Jerrycans: 48mm Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "48 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "8g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L – 40L | Carboys & Jerrycans: 48mm Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "48 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "8g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ]
-  },
-  {
-    "id": 23,
-    "name": "Dust Protector Insert - 50mm (Single Use)",
-    "categoryId": 3,
-    "category": "Inserts",
-    "subCategory": "Dust Protector Inserts (50mm Single Use)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Dust Protector",
-    "price": 3,
-    "priceFormatted": "₹2.50 - ₹3.80/piece",
-    "originalPrice": 5,
-    "badge": {
-      "text": "Dust Protector",
-      "color": "#059669"
-    },
-    "colors": ["#f8fafc"],
-    "image": "/images/products/drum-insert.webp",
-    "images": [
-      "/images/products/drum-insert.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/50-mm-SINGLE-USE-INSERT.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-50mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 90000,
-    "description": "Single-use hygienic 50mm dust protector insert. Prevents foreign particles, dust, and moisture from entering clean drums during pre-fill storage and warehouse staging.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L – 50L | Carboys & Jerrycans: 2\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "50 mm (2 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Food & Pharma Grade HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "3g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural Translucent"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L – 50L | Carboys & Jerrycans: 2\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "50 mm (2 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Food & Pharma Grade HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "3g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural Translucent"
-      }
-    ]
-  },
-  {
-    "id": 24,
-    "name": "Insert - 50mm Standard",
-    "categoryId": 3,
-    "category": "Inserts",
-    "subCategory": "Dust Protector Inserts (50mm Single Use)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Neck Insert",
-    "price": 6,
-    "priceFormatted": "₹5.00 - ₹7.20/piece",
-    "originalPrice": 9,
-    "badge": {
-      "text": "Standard 2 Inch",
-      "color": "#2563eb"
-    },
-    "colors": ["#f8fafc"],
-    "image": "/images/products/drum-insert.webp",
-    "images": [
-      "/images/products/drum-insert.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-50mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/50-mm-SINGLE-USE-INSERT.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-50-mm.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 80000,
-    "description": "Heavy duty 50mm (2-inch) press-fit insert designed for 30L to 100L chemical drums and heavy carboys. Engineered with an easy-pull tab for effortless removal by end-users.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 100L | Carboys & Jerrycans: 2\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "50 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "7.5g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 100L | Carboys & Jerrycans: 2\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "50 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "7.5g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ]
-  },
-  {
-    "id": 25,
-    "name": "Insert - 150mm (6 Inch Mouth)",
-    "categoryId": 3,
-    "category": "Inserts",
-    "subCategory": "Carboy Inserts (150mm & 200mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Neck Insert",
-    "price": 32,
-    "priceFormatted": "₹28 - ₹38/piece",
-    "originalPrice": 45,
-    "badge": {
-      "text": "6 Inch",
-      "color": "#9333ea"
-    },
-    "colors": ["#f8fafc"],
-    "image": "/images/products/drum-insert.webp",
-    "images": [
-      "/images/products/drum-insert.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-150mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-150mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 20000,
-    "description": "Wide 150mm (6-inch) neck insert for 50L drums and bulk carboys. Provides firm internal compression against wide cap threads.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L | Carboys & Jerrycans: 6\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "150 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "38g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L | Carboys & Jerrycans: 6\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "150 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "38g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ]
-  },
-  {
-    "id": 26,
-    "name": "Insert - 200mm (8 Inch Mouth)",
-    "categoryId": 3,
-    "category": "Inserts",
-    "subCategory": "Carboy Inserts (150mm & 200mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Neck Insert",
-    "price": 52,
-    "priceFormatted": "₹46 - ₹58/piece",
-    "originalPrice": 70,
-    "badge": {
-      "text": "8 Inch",
-      "color": "#9333ea"
-    },
-    "colors": ["#f8fafc"],
-    "image": "/images/products/drum-insert.webp",
-    "images": [
-      "/images/products/drum-insert.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-200mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-200mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 15000,
-    "description": "Large 200mm (8-inch) neck insert for 100L chemical and pharmaceutical storage carboys. Flanged rim locks firmly into container mouth to prevent liquid splashing.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 100L | Carboys & Jerrycans: 8\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "200 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "75g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 100L | Carboys & Jerrycans: 8\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "200 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "75g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ]
-  },
-  {
-    "id": 27,
-    "name": "Insert - 250mm (10 Inch Mouth)",
-    "categoryId": 3,
-    "category": "Inserts",
-    "subCategory": "Heavy Drum Inserts (250mm)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Neck Insert",
-    "price": 65,
-    "priceFormatted": "₹58 - ₹75/piece",
-    "originalPrice": 88,
-    "badge": {
-      "text": "10 Inch",
-      "color": "#d97706"
-    },
-    "colors": ["#f8fafc"],
-    "image": "/images/products/drum-insert.webp",
-    "images": [
-      "/images/products/drum-insert.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Insert-250MM.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Screw-Cap-250mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/1-1.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 12000,
-    "description": "Heavy-gauge 250mm (10-inch) neck insert for 50L to 100L large opening drums and carboys. Prevents volatile vapor loss and enhances packaging stability.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L - 100L | Carboys & Jerrycans: 10\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "250 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "75g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L - 100L | Carboys & Jerrycans: 10\" Mouth"
-      },
-      {
-        "name": "Diameter",
-        "spec": "250 mm"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "75g"
-      },
-      {
-        "name": "Color Options",
-        "spec": "Natural"
-      }
-    ]
-  },
-  {
-    "id": 28,
-    "name": "DN80 Integrated Thread Butterfly Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "DN80 Butterfly Valves (Threaded & Welded)",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 480,
-    "priceFormatted": "₹450 - ₹520/piece",
-    "originalPrice": 620,
-    "badge": {
-      "text": "DN80 Integrated",
-      "color": "#dc2626"
-    },
-    "colors": ["#ffffff", "#2563eb", "#dc2626"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Female-Welded-Butterfly.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 4500,
-    "description": "High-flow DN80 (3-inch) integrated thread butterfly valve for intermediate bulk containers (IBCs). Features a chemical-resistant EPDM sealing ring and precision-engineered disc flap that ensures smooth opening, low operating torque, and zero drip shut-off.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN80 Integrated Thread Butterfly Valve"
-      },
-      {
-        "name": "Nominal Size",
-        "spec": "DN80 (3 Inch)"
-      },
-      {
-        "name": "Sealing Material",
-        "spec": "EPDM Sealing Ring"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "522g"
-      },
-      {
-        "name": "Operating Pressure",
-        "spec": "PN 1.0 MPa"
-      },
-      {
-        "name": "Temperature Range",
-        "spec": "-20°C to +70°C"
-      },
-      {
-        "name": "Compatibility",
-        "spec": "Standard 1000L IBC Tanks"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN80 Integrated Thread Butterfly Valve"
-      },
-      {
-        "name": "Nominal Size",
-        "spec": "DN80 (3 Inch)"
-      },
-      {
-        "name": "Sealing Material",
-        "spec": "EPDM Sealing Ring"
-      },
-      {
-        "name": "Component Weight",
-        "spec": "522g"
-      },
-      {
-        "name": "Operating Pressure",
-        "spec": "PN 1.0 MPa"
-      },
-      {
-        "name": "Temperature Range",
-        "spec": "-20°C to +70°C"
-      },
-      {
-        "name": "Compatibility",
-        "spec": "Standard 1000L IBC Tanks"
-      }
-    ]
-  },
-  {
-    "id": 29,
-    "name": "DN80 Female Welded Butterfly Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "DN80 Butterfly Valves (Threaded & Welded)",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 460,
-    "priceFormatted": "₹430 - ₹490/piece",
-    "originalPrice": 590,
-    "badge": {
-      "text": "DN80 Welded",
-      "color": "#9333ea"
-    },
-    "colors": ["#ffffff", "#2563eb"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Female-Welded-Butterfly.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Female-Welded-Butterfly.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC-DN150-Top-Lid.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 4000,
-    "description": "DN80 female welded butterfly valve for direct ultrasonic or thermal welding onto IBC tank blow-moulded necks. Guarantees permanent, leak-proof bottle-to-valve integration without mechanical thread weakness.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN80 Female Welded Butterfly"
-      },
-      {
-        "name": "Nominal Size",
-        "spec": "DN80"
-      },
-      {
-        "name": "Weight",
-        "spec": "426g"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE with EPDM Seal"
-      },
-      {
-        "name": "Connection",
-        "spec": "Thermal Butt-Weld to IBC Outlet"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN80 Female Welded Butterfly"
-      },
-      {
-        "name": "Nominal Size",
-        "spec": "DN80"
-      },
-      {
-        "name": "Weight",
-        "spec": "426g"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE with EPDM Seal"
-      },
-      {
-        "name": "Connection",
-        "spec": "Thermal Butt-Weld to IBC Outlet"
-      }
-    ]
-  },
-  {
-    "id": 30,
-    "name": "DN50 Split Thread Ball Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "DN50 Ball Valves (Split & Integrated Thread)",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 360,
-    "priceFormatted": "₹330 - ₹390/piece",
-    "originalPrice": 460,
-    "badge": {
-      "text": "Fine Thread",
-      "color": "#059669"
-    },
-    "colors": ["#ffffff", "#059669", "#dc2626"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Integrated-Thread-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 6500,
-    "description": "DN50 (2-inch) split thread ball valve featuring a precision-polished spherical core and fine-thread collar with an EPDM sealing ring. Offers high chemical tolerance and bidirectional sealing for acid, solvent, and fertilizer discharge.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Split Thread Ball Valve"
-      },
-      {
-        "name": "Nominal Size",
-        "spec": "DN50 (2 Inch)"
-      },
-      {
-        "name": "Thread Type",
-        "spec": "Fine Thread Collar"
-      },
-      {
-        "name": "Sealing Material",
-        "spec": "EPDM Sealing Ring & PTFE Seats"
-      },
-      {
-        "name": "Weight",
-        "spec": "382g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Split Thread Ball Valve"
-      },
-      {
-        "name": "Nominal Size",
-        "spec": "DN50 (2 Inch)"
-      },
-      {
-        "name": "Thread Type",
-        "spec": "Fine Thread Collar"
-      },
-      {
-        "name": "Sealing Material",
-        "spec": "EPDM Sealing Ring & PTFE Seats"
-      },
-      {
-        "name": "Weight",
-        "spec": "382g"
-      }
-    ]
-  },
-  {
-    "id": 31,
-    "name": "DN50 Split Thread Butterfly Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "DN50 Butterfly Valves",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 320,
-    "priceFormatted": "₹290 - ₹350/piece",
-    "originalPrice": 410,
-    "badge": {
-      "text": "DN50 Butterfly",
-      "color": "#2563eb"
-    },
-    "colors": ["#ffffff", "#2563eb"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Butterfly-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Welded-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 7000,
-    "description": "Compact DN50 split thread butterfly valve. Light weight and reliable, designed for standard IBC pallet tank bottom dispensing with an EPDM elastomeric sealing ring.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Split Thread Butterfly Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      },
-      {
-        "name": "Sealing",
-        "spec": "EPDM Sealing Ring"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Split Thread Butterfly Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      },
-      {
-        "name": "Sealing",
-        "spec": "EPDM Sealing Ring"
-      }
-    ]
-  },
-  {
-    "id": 32,
-    "name": "DN50 Female Ball Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "DN50 Ball Valves (Split & Integrated Thread)",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 340,
-    "priceFormatted": "₹310 - ₹370/piece",
-    "originalPrice": 430,
-    "badge": {
-      "text": "Aluminum Hoop",
-      "color": "#475569"
-    },
-    "colors": ["#ffffff", "#2563eb"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Ball-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Integrated-Threaded-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 6000,
-    "description": "DN50 female ball valve reinforced with an external aluminum hoop to prevent flange deformation under mechanical stress. Features premium EPDM sealing rings for aggressive liquid containment.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Female Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Reinforcement",
-        "spec": "Aluminum Hoop Collar"
-      },
-      {
-        "name": "Sealing",
-        "spec": "EPDM Sealing Ring"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Female Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Reinforcement",
-        "spec": "Aluminum Hoop Collar"
-      },
-      {
-        "name": "Sealing",
-        "spec": "EPDM Sealing Ring"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      }
-    ]
-  },
-  {
-    "id": 33,
-    "name": "DN50 Welded Butterfly Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "Camlock & Welded Valves",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 290,
-    "priceFormatted": "₹260 - ₹320/piece",
-    "originalPrice": 380,
-    "badge": {
-      "text": "Lightweight Welded",
-      "color": "#059669"
-    },
-    "colors": ["#ffffff", "#059669"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Welded-Butterfly-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Welded-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Welded-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 5000,
-    "description": "Ultrasonic weld-mount DN50 butterfly valve for IBC container manufacturers. Weighing only 270g, it provides reliable flow control with zero leak risk at the base junction.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Welded Butterfly Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "270g"
-      },
-      {
-        "name": "Mounting",
-        "spec": "Ultrasonic / Butt-Weld"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Welded Butterfly Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "270g"
-      },
-      {
-        "name": "Mounting",
-        "spec": "Ultrasonic / Butt-Weld"
-      }
-    ]
-  },
-  {
-    "id": 34,
-    "name": "DN50 Female Welded Butterfly Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "Camlock & Welded Valves",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 310,
-    "priceFormatted": "₹280 - ₹340/piece",
-    "originalPrice": 390,
-    "badge": {
-      "text": "Female Welded",
-      "color": "#2563eb"
-    },
-    "colors": ["#ffffff", "#2563eb"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Welded-Butterfly-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Welded-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Welded-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Butterfly-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 5500,
-    "description": "DN50 female welded butterfly valve for high-integrity IBC factory assembly. Smooth manual lever handle with secure detent positions.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Female Welded Butterfly Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "320g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Female Welded Butterfly Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "320g"
-      }
-    ]
-  },
-  {
-    "id": 35,
-    "name": "DN50 Integrated Threaded Ball Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "DN50 Ball Valves (Split & Integrated Thread)",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 370,
-    "priceFormatted": "₹340 - ₹410/piece",
-    "originalPrice": 470,
-    "badge": {
-      "text": "Integrated Thread",
-      "color": "#d97706"
-    },
-    "colors": ["#ffffff", "#2563eb"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Integrated-Threaded-Ball-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Integrated-Threaded-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Integrated-Thread-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Female-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 6200,
-    "description": "Robust DN50 ball valve with one-piece integrated molded threads. Eliminates assembly seams, providing maximum resistance to hydraulic shock and external mechanical impact.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Integrated Threaded Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "382g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Integrated Threaded Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "382g"
-      }
-    ]
-  },
-  {
-    "id": 36,
-    "name": "DN50 Split Integrated Thread Ball Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "DN50 Ball Valves (Split & Integrated Thread)",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 365,
-    "priceFormatted": "₹335 - ₹400/piece",
-    "originalPrice": 460,
-    "badge": {
-      "text": "Plastic Hoop",
-      "color": "#059669"
-    },
-    "colors": ["#ffffff", "#059669"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Integrated-Thread-Ball-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Integrated-Thread-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Integrated-Threaded-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 5800,
-    "description": "DN50 ball valve fitted with a high-strength plastic collar hoop and an EPDM gasket ring. Ideal for corrosive fluids where metal hoop exposure is not permitted.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Split Integrated Thread Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Collar Type",
-        "spec": "Plastic Hoop (100% Non-Corrosive)"
-      },
-      {
-        "name": "Sealing",
-        "spec": "EPDM Ring"
-      },
-      {
-        "name": "Weight",
-        "spec": "382g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Split Integrated Thread Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Collar Type",
-        "spec": "Plastic Hoop (100% Non-Corrosive)"
-      },
-      {
-        "name": "Sealing",
-        "spec": "EPDM Ring"
-      },
-      {
-        "name": "Weight",
-        "spec": "382g"
-      }
-    ]
-  },
-  {
-    "id": 37,
-    "name": "DN50 Camlock Welded Ball Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "Camlock & Welded Valves",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 385,
-    "priceFormatted": "₹350 - ₹420/piece",
-    "originalPrice": 490,
-    "badge": {
-      "text": "Camlock Welded",
-      "color": "#dc2626"
-    },
-    "colors": ["#ffffff", "#2563eb", "#dc2626"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Welded-Ball-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Welded-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Split-Thread-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 5200,
-    "description": "DN50 welded ball valve equipped with a quick-connect Camlock outlet adapter. Allows instant hose hookup without wrenching, drastically cutting batch transfer turnaround times.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Camlock Welded Ball Valve"
-      },
-      {
-        "name": "Outlet Connection",
-        "spec": "Quick Connect Camlock Coupling"
-      },
-      {
-        "name": "Inlet Connection",
-        "spec": "Butt-Weld to Tank"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Camlock Welded Ball Valve"
-      },
-      {
-        "name": "Outlet Connection",
-        "spec": "Quick Connect Camlock Coupling"
-      },
-      {
-        "name": "Inlet Connection",
-        "spec": "Butt-Weld to Tank"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "326g"
-      }
-    ]
-  },
-  {
-    "id": 38,
-    "name": "DN50 Camlock Ball Valve",
-    "categoryId": 4,
-    "category": "Dispensing Solutions",
-    "subCategory": "Camlock & Welded Valves",
-    "vendor": "Vasujaval Plastics",
-    "type": "IBC Valve",
-    "price": 395,
-    "priceFormatted": "₹360 - ₹430/piece",
-    "originalPrice": 510,
-    "badge": {
-      "text": "Camlock Threaded",
-      "color": "#dc2626"
-    },
-    "colors": ["#ffffff", "#2563eb"],
-    "image": "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp",
-    "images": [
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Camlock-Welded-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/DN50-Integrated-Threaded-Ball-Valve.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/IBC_Icon.png"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 5400,
-    "description": "Thread-mount DN50 ball valve with male Camlock quick disconnect. Offers full compatibility with industrial hose couplers, cam arms, and dust caps.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Camlock Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "362g"
-      },
-      {
-        "name": "Coupling",
-        "spec": "Standard Part A / Camlock Fit"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Valve Type",
-        "spec": "DN50 Camlock Ball Valve"
-      },
-      {
-        "name": "Size",
-        "spec": "DN50"
-      },
-      {
-        "name": "Weight",
-        "spec": "362g"
-      },
-      {
-        "name": "Coupling",
-        "spec": "Standard Part A / Camlock Fit"
-      }
-    ]
-  },
-  {
-    "id": 39,
-    "name": "Bung Dust Cover",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "Bung Dust Covers (210L Barrels)",
-    "vendor": "Vasujaval Plastics",
-    "type": "Accessory",
-    "price": 4.5,
-    "priceFormatted": "₹3.80 - ₹5.50/piece",
-    "originalPrice": 7,
-    "badge": {
-      "text": "Dust Cover",
-      "color": "#2563eb"
-    },
-    "colors": ["#f8fafc", "#2563eb", "#dc2626"],
-    "image": "/images/products/bung-dust-cover.webp",
-    "images": [
-      "/images/products/bung-dust-cover.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-Dust-Cover-1.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-Dust-Cover.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Bottom-Ring-Vented.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 100000,
-    "description": "Protective snap-on bung dust cap for 210L chemical barrels. Shields the bung opening from rain, dirt, mud, and external contaminants during yard storage and open flatbed transit.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "210L Barrels & Composite Drums"
-      },
-      {
-        "name": "Material",
-        "spec": "Polyethylene (PE)"
-      },
-      {
-        "name": "Weight",
-        "spec": "7.5g"
-      },
-      {
-        "name": "Snap Fit",
-        "spec": "Secure Tamper-Resistant Snap Fit"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "210L Barrels & Composite Drums"
-      },
-      {
-        "name": "Material",
-        "spec": "Polyethylene (PE)"
-      },
-      {
-        "name": "Weight",
-        "spec": "7.5g"
-      },
-      {
-        "name": "Snap Fit",
-        "spec": "Secure Tamper-Resistant Snap Fit"
-      }
-    ]
-  },
-  {
-    "id": 40,
-    "name": "Industrial Drum Spanner Wrench",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "Heavy Duty Drum Opening Spanners",
-    "vendor": "Vasujaval Plastics",
-    "type": "Tool",
-    "price": 185,
-    "priceFormatted": "₹165 - ₹210/piece",
-    "originalPrice": 260,
-    "badge": {
-      "text": "Heavy Duty Tool",
-      "color": "#d97706"
-    },
-    "colors": ["#f59e0b", "#000000"],
-    "image": "/images/products/drum-spanner.webp",
-    "images": [
-      "/images/products/drum-spanner.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Spanner.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-50-mm-Bottom-Ring-Vented.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Bung-75mm-Bottom-Ring.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 8500,
-    "description": "Multipurpose ergonomic HDPE drum opening spanner wrench. Specially designed jaws securely grip 30mm & 50mm screw caps as well as 2-inch and 3-inch bung plugs for effortless opening and closing without damaging closure threads or creating sparks.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Compatible Closures",
-        "spec": "Caps: 30mm & 50mm | Bungs: 50mm & 75mm"
-      },
-      {
-        "name": "Material",
-        "spec": "Non-Sparking Reinforced HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "85g"
-      },
-      {
-        "name": "Safety Feature",
-        "spec": "Non-Sparking for Flammable Solvent Handling"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Compatible Closures",
-        "spec": "Caps: 30mm & 50mm | Bungs: 50mm & 75mm"
-      },
-      {
-        "name": "Material",
-        "spec": "Non-Sparking Reinforced HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "85g"
-      },
-      {
-        "name": "Safety Feature",
-        "spec": "Non-Sparking for Flammable Solvent Handling"
-      }
-    ]
-  },
-  {
-    "id": 41,
-    "name": "Heavy Duty Container Rivet",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "Container Rivets & Mounting Lugs",
-    "vendor": "Vasujaval Plastics",
-    "type": "Fastener",
-    "price": 3.5,
-    "priceFormatted": "₹2.80 - ₹4.20/piece",
-    "originalPrice": 6,
-    "badge": {
-      "text": "HDPE Rivet",
-      "color": "#475569"
-    },
-    "colors": ["#000000", "#ffffff"],
-    "image": "/images/products/container-rivet.webp",
-    "images": [
-      "/images/products/container-rivet.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Rivet.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Lug.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Handle-Set.webp"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 85000,
-    "description": "High shear strength plastic rivet for mounting container handles and structural brackets on 50L rocket drums and 50L jerrycans.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L Rocket Drums | Carboys & Jerrycans: 50L"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "5g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L Rocket Drums | Carboys & Jerrycans: 50L"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "5g"
-      }
-    ]
-  },
-  {
-    "id": 42,
-    "name": "Container Mounting Lug",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "Container Rivets & Mounting Lugs",
-    "vendor": "Vasujaval Plastics",
-    "type": "Fastener",
-    "price": 6.5,
-    "priceFormatted": "₹5.50 - ₹7.80/piece",
-    "originalPrice": 9.5,
-    "badge": {
-      "text": "Mounting Lug",
-      "color": "#475569"
-    },
-    "colors": ["#000000", "#2563eb"],
-    "image": "/images/products/container-rivet.webp",
-    "images": [
-      "/images/products/container-rivet.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Lug.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Rivet.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Handle-Set.webp"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 50000,
-    "description": "Moulded container mounting lug designed for handle attachment points on 50L rocket drums and heavy carboys. High load-bearing capacity.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L Rocket Drums | Carboys & Jerrycans: 50L"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "13g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 50L Rocket Drums | Carboys & Jerrycans: 50L"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "13g"
-      }
-    ]
-  },
-  {
-    "id": 43,
-    "name": "High-Strength Handle Set for Drums",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "High-Strength Drum Handle Sets",
-    "vendor": "Vasujaval Plastics",
-    "type": "Handle",
-    "price": 24,
-    "priceFormatted": "₹21 - ₹28/piece",
-    "originalPrice": 35,
-    "badge": {
-      "text": "Load Tested",
-      "color": "#059669"
-    },
-    "colors": ["#000000", "#2563eb", "#dc2626"],
-    "image": "/images/products/drum-handle-set.webp",
-    "images": [
-      "/images/products/drum-handle-set.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Handle-Set-.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Handle-Set.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Rivet.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 30000,
-    "description": "Heavy duty ergonomic handle set for 30L to 80L industrial plastic drums. High tensile polymer compound tested to withstand up to 120kg vertical dynamic lifting load.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L – 80L Plastic Containers"
-      },
-      {
-        "name": "Load Capacity",
-        "spec": "Tested up to 120 kg Load"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "35g"
-      },
-      {
-        "name": "Grip",
-        "spec": "Comfort-Contoured Hand Grip"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L – 80L Plastic Containers"
-      },
-      {
-        "name": "Load Capacity",
-        "spec": "Tested up to 120 kg Load"
-      },
-      {
-        "name": "Material",
-        "spec": "HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "35g"
-      },
-      {
-        "name": "Grip",
-        "spec": "Comfort-Contoured Hand Grip"
-      }
-    ]
-  },
-  {
-    "id": 44,
-    "name": "Sealing Ring - 250mm (10 Inch)",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "Sealing Rings (250mm/350mm) & Locking Clips",
-    "vendor": "Vasujaval Plastics",
-    "type": "Gasket Ring",
-    "price": 45,
-    "priceFormatted": "₹40 - ₹52/piece",
-    "originalPrice": 65,
-    "badge": {
-      "text": "10 Inch Ring",
-      "color": "#2563eb"
-    },
-    "colors": ["#f8fafc", "#000000"],
-    "image": "/images/products/sealing-ring.webp",
-    "images": [
-      "/images/products/sealing-ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Sealing-Ring-250-mm-1.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Sealing-Ring-250-mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Open-Top-Drum-Lid-250mm.webp"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 22000,
-    "description": "Precision circular sealing gasket ring for 30L full open-top mouth drums (10-inch diameter). Provides tight elastomeric seal under metal and plastic drum closing rings.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "30L Full Open Top Mouth Drums (Mouth Size 10\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "250 mm (10 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Polyethylene (PE)"
-      },
-      {
-        "name": "Weight",
-        "spec": "112g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "30L Full Open Top Mouth Drums (Mouth Size 10\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "250 mm (10 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Polyethylene (PE)"
-      },
-      {
-        "name": "Weight",
-        "spec": "112g"
-      }
-    ]
-  },
-  {
-    "id": 45,
-    "name": "Sealing Ring - 350mm (14 Inch)",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "Sealing Rings (250mm/350mm) & Locking Clips",
-    "vendor": "Vasujaval Plastics",
-    "type": "Gasket Ring",
-    "price": 55,
-    "priceFormatted": "₹48 - ₹62/piece",
-    "originalPrice": 78,
-    "badge": {
-      "text": "14 Inch Ring",
-      "color": "#2563eb"
-    },
-    "colors": ["#f8fafc", "#000000"],
-    "image": "/images/products/sealing-ring.webp",
-    "images": [
-      "/images/products/sealing-ring.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Sealing-Ring-350-mm-1.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Sealing-Ring-350-mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Open-Top-Drum-Lid-350mm.webp"
-    ],
-    "inStock": true,
-    "trending": false,
-    "stockCount": 18000,
-    "description": "350mm (14-inch) heavy duty perimeter sealing ring for 50L open top mouth drums. Eliminates powder puffing and liquid oozing during transport.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "50L Full Open Top Mouth Drums (Mouth Size 14\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "350 mm (14 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Polyethylene (PE)"
-      },
-      {
-        "name": "Weight",
-        "spec": "124g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "50L Full Open Top Mouth Drums (Mouth Size 14\")"
-      },
-      {
-        "name": "Diameter",
-        "spec": "350 mm (14 Inch)"
-      },
-      {
-        "name": "Material",
-        "spec": "Polyethylene (PE)"
-      },
-      {
-        "name": "Weight",
-        "spec": "124g"
-      }
-    ]
-  },
-  {
-    "id": 46,
-    "name": "Drum Locking Clip",
-    "categoryId": 5,
-    "category": "Accessories",
-    "subCategory": "Sealing Rings (250mm/350mm) & Locking Clips",
-    "vendor": "Vasujaval Plastics",
-    "type": "Security Clip",
-    "price": 2.5,
-    "priceFormatted": "₹2.00 - ₹3.20/piece",
-    "originalPrice": 4.5,
-    "badge": {
-      "text": "Security Clip",
-      "color": "#dc2626"
-    },
-    "colors": ["#dc2626", "#f59e0b", "#2563eb"],
-    "image": "/images/products/drum-locking-clip.webp",
-    "images": [
-      "/images/products/drum-locking-clip.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Locking-clip.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Sealing-Ring-350-mm.webp",
-      "https://vasujavalplastics.com/wp-content/uploads/2025/10/Open-Top-Drum-Lid-350mm.webp"
-    ],
-    "inStock": true,
-    "trending": true,
-    "stockCount": 120000,
-    "description": "Tamper-evident drum security locking clip for 30L to 50L clamp-ring drums. Locks the closing latch and breaks on initial opening, giving clear proof of transit integrity.",
-    "brand": "Vasujaval Plastics",
-    "specifications": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 50L Clamped Containers"
-      },
-      {
-        "name": "Function",
-        "spec": "Tamper Evident Security Latch Lock"
-      },
-      {
-        "name": "Material",
-        "spec": "High Impact HDPE"
-      },
-      {
-        "name": "Weight",
-        "spec": "1.8g"
-      }
-    ],
-    "specs": [
-      {
-        "name": "Uses",
-        "spec": "Drums: 30L - 50L Clamped Containers"
+        "name": "Physical State",
+        "spec": "Clear Colorless to Light Amber Fuming Liquid"
       },
       {
-        "name": "Function",
-        "spec": "Tamper Evident Security Latch Lock"
+        "name": "Boiling Point",
+        "spec": "126 - 129 °C"
       },
       {
-        "name": "Material",
-        "spec": "High Impact HDPE"
+        "name": "Density",
+        "spec": "1.125 g/mL at 25 °C"
       },
       {
-        "name": "Weight",
-        "spec": "1.8g"
+        "name": "Packaging Type",
+        "spec": "500mL, 2.5L Glass Bottles & 25L, 200L UN Steel Drums"
       }
     ]
   }

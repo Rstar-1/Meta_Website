@@ -5,8 +5,7 @@ import Banner from '../../components/layout/generic/Banner';
 import SEO from '../../seo';
 
 const DetailSection = lazy(() => import('./sections/DetailSection'));
-const OfferSection = lazy(() => import('../home/sections/ecom/OfferSection'));
-const FeatureSection = lazy(() => import('../home/sections/ecom/FeatureSection'));
+const DemoSection = lazy(() => import('../home/sections/ecom/DemoSection'));
 const PatchSection = lazy(() => import('../home/sections/ecom/PatchSection'));
 
 const aboutSections = [
@@ -17,15 +16,8 @@ const aboutSections = [
         isContainer: true,
     },
     {
-        id: 'feature',
-        Component: FeatureSection,
-        minHeight: '400px',
-        isContainer: true,
-        containerStyle: { background: 'var(--forth)' }
-    },
-    {
-        id: 'offer',
-        Component: OfferSection,
+        id: 'demo',
+        Component: DemoSection,
         minHeight: '300px',
         isContainer: true
     },
@@ -36,7 +28,7 @@ const aboutSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url('https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp')`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url('/images/globalchemie/chemical-lab.jpg')`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -59,8 +51,9 @@ const About = () => {
         <main className="w-full">
             <SEO page="about" breadcrumbs={BREADCRUMBS} />
             <Banner
-                title="About Us"
-                desc="About Our Story"
+                title="About Global Chemie"
+                desc="Two Decades of Organic Synthesis, Bulk Drug Intermediates & Custom Chemical Manufacturing"
+                image="/images/banners/about-banner.webp"
                 breadcrumbs={BREADCRUMBS}
             />
             {aboutSections.map(({ id, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle }) => {

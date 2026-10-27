@@ -42,34 +42,34 @@ const ENQUIRY_FIELDS = [
 const CONTACT_DETAILS = [
     {
         icon: 'MapPin',
-        title: 'Manufacturing Plant',
-        desc: 'Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel, Daman – 396210, India',
-        sub: 'Factory & Precision Moulding Facility'
+        title: 'Head Office & Commercial Hub',
+        desc: 'Office No.519, 5th Floor, Bezzola Complex, Sion Trombay Road, Chembur, Mumbai - 400071, Maharashtra, India',
+        sub: 'Commercial Operations, Export Coordination & Sourcing Desk'
     },
     {
         icon: 'MapPin',
-        title: 'Sales & Corporate Hub',
-        desc: '303/B, Byculla Service Industries, Dadoji Konndeo Road, Byculla (E), Mumbai – 400 027, India',
-        sub: 'Sales, Distribution & Sample Dispatch'
+        title: 'Custom Synthesis & Logistics Hub',
+        desc: 'Contract Manufacturing Facilities & Dangerous Goods Warehouse, MMR, Maharashtra',
+        sub: 'R&D, Semi-bulk & Bulk Dispatch Center'
     },
     {
         icon: 'Phone',
-        title: 'Direct Call / WhatsApp',
-        desc: '+91 95126 51119',
-        link: 'tel:+919512651119',
-        sub: 'Quick Response for Bulk Orders'
+        title: 'Telephone & WhatsApp',
+        desc: '022-49232700 / +91 98208 39939',
+        link: 'tel:02249232700',
+        sub: 'Direct Line for Technical & Bulk Pricing Queries'
     },
     {
         icon: 'Mail',
         title: 'Email Us',
-        desc: import.meta.env.VITE_EMAIL || 'sales@vasujavalplastics.com',
-        link: `mailto:${import.meta.env.VITE_EMAIL || 'sales@vasujavalplastics.com'}`,
-        sub: 'Quotation & Technical Queries'
+        desc: import.meta.env.VITE_EMAIL || 'bhaven@globalchemie.in',
+        link: `mailto:${import.meta.env.VITE_EMAIL || 'bhaven@globalchemie.in'}`,
+        sub: 'COA Requests, Inquiries & Contract Bids'
     },
     {
         icon: 'Clock',
         title: 'Working Hours',
-        desc: import.meta.env.VITE_WORKING_HOURS || 'Mon to Sat: 10:00 AM - 6:30 PM',
+        desc: import.meta.env.VITE_WORKING_HOURS || 'Mon to Sat: 9:30 AM - 6:30 PM',
         sub: import.meta.env.VITE_WEEKEND_HOURS || 'Sun: Closed'
     }
 ];

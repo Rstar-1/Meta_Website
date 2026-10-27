@@ -86,6 +86,7 @@ const ProductDetail = () => {
             <Banner
                 title="Product Overview"
                 desc={productName}
+                image={product?.image || "/images/banners/product-banner.webp"}
                 breadcrumbs={breadcrumbs}
             />
             {productDetailSections.map(({ id: sectionId, Component, isEager, minHeight, isContainer = true, containerClass, containerStyle, version }) => {

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 72" width="380" height="72">
+  <defs>
+    <linearGradient id="gcCyanLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0090c5" />
+      <stop offset="100%" stop-color="#00b4d8" />
+    </linearGradient>
+    <linearGradient id="gcNavyLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b223d" />
+      <stop offset="100%" stop-color="#14365d" />
+    </linearGradient>
+    <style>
+      .gc-brand-title {
+        font-family: 'Cinzel', 'Times New Roman', 'Baskerville', 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        font-size: 26px;
+        letter-spacing: 2px;
+      }
+      .gc-brand-subtitle {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 9.5px;
+        letter-spacing: 0.8px;
+      }
+    </style>
+  </defs>
+
+  <!-- GC Interlocking Monogram Emblem -->
+  <g id="gc-emblem" transform="translate(6, 4)">
+    <!-- Stylized 'G' -->
+    <path d="M 52 14 C 42 3 24 3 13 15 C 2 28 3 48 15 58 C 26 67 43 66 52 56 L 46 51 C 39 58 27 59 19 52 C 10 44 9 29 17 19 C 25 10 39 10 47 18 Z" fill="url(#gcCyanLight)" />
+    <!-- G Crossbar -->
+    <path d="M 33 34 L 54 34 L 54 48 L 47 48 L 47 40 L 33 40 Z" fill="url(#gcCyanLight)" />
+    
+    <!-- Stylized 'C' Interlocking -->
+    <path d="M 76 15 C 67 4 50 4 41 14 C 44 18 47 23 48 28 C 53 20 62 17 70 23 C 74 26 77 31 77 36 C 73 35 68 35 63 36 C 63 43 63 49 67 54 C 62 57 56 57 50 54 C 49 56 47 58 45 61 C 53 66 64 66 72 60 C 82 52 85 36 84 25 C 84 21 81 17 76 15 Z" fill="url(#gcNavyLight)" />
+    
+    <!-- Dynamic Chemical Orbit Swoosh -->
+    <path d="M 6 36 C 24 30 54 28 85 39 C 64 34 32 34 10 40 Z" fill="#0090c5" opacity="0.9" />
+  </g>
+
+  <!-- Typography: GLOBAL CHEMIE -->
+  <!-- 'GLOBAL' in Vivid Cyan -->
+  <text x="104" y="32" class="gc-brand-title" fill="#0090c5">GLOBAL</text>
+
+  <!-- Chemical Reactor / 3-Bladed Catalyst Emblem in 'O' of GLOBAL -->
+  <g transform="translate(163.5, 23)">
+    <circle cx="0" cy="0" r="4.2" fill="none" stroke="#0090c5" stroke-width="1.3" />
+    <circle cx="0" cy="0" r="1.3" fill="#0b223d" />
+    <line x1="0" y1="0" x2="0" y2="-3.2" stroke="#0b223d" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="0" y1="0" x2="2.8" y2="1.6" stroke="#0b223d" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="0" y1="0" x2="-2.8" y2="1.6" stroke="#0b223d" stroke-width="1.2" stroke-linecap="round" />
+  </g>
+
+  <!-- 'CHEMIE' in Authoritative Navy -->
+  <text x="219" y="32" class="gc-brand-title" fill="#0b223d">CHEMIE</text>
+
+  <!-- Two-line Precision Subtitle -->
+  <text x="240" y="47" text-anchor="middle" class="gc-brand-subtitle" fill="#1e3a5f">Custom Mfg. - Intermediates</text>
+  <text x="240" y="59" text-anchor="middle" class="gc-brand-subtitle" fill="#1e3a5f">Speciality Chemicals &amp; Fine Chemicals</text>
+</svg>

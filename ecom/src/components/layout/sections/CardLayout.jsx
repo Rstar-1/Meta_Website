@@ -529,7 +529,7 @@ export const ProductCard2 = React.memo(({
                     {item.name}
                 </h3>
 
-                <Fields
+                {/* <Fields
                     type="rating"
                     value={item.rating || 0}
                     size={13}
@@ -537,9 +537,9 @@ export const ProductCard2 = React.memo(({
                     inactiveColor="#d1d5db"
                     disabled
                     className="mt-5"
-                />
+                /> */}
 
-                <div className="flex items-center gap-6 mt-4 flex-wrap">
+                {/* <div className="flex items-center gap-6 mt-4 flex-wrap">
                     <p
                         className={`small-text font-600 ${oldPrice
                             ? 'text-danger'
@@ -564,8 +564,8 @@ export const ProductCard2 = React.memo(({
                             className="font-500"
                         />
                     )}
-                </div>
-
+                </div> */}
+                {/* 
                 {item.images?.length > 0 && (
                     <div className="flex items-center gap-6 mt-8">
                         {item.images.map((vUrl, vIdx) => (
@@ -590,7 +590,7 @@ export const ProductCard2 = React.memo(({
                             </div>
                         ))}
                     </div>
-                )}
+                )} */}
             </div>
         </div>
     );

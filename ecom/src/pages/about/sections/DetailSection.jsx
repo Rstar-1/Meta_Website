@@ -9,18 +9,18 @@ import { resolveImagePath } from '../../../utils/imageResolver';
 const thumbnails = [
     {
         id: 1,
-        title: '50mm Vented Drum Bungs',
-        image: '/images/products/bung-50mm-vented.webp'
+        title: 'Silyl Reagents (TMS-N3)',
+        image: '/images/chemicals/tms-azide.webp'
     },
     {
         id: 2,
-        title: 'Tamper-Evident Screw Caps',
-        image: '/images/products/screw-cap-red.webp'
+        title: 'Triflic Anhydride & Fluoro Compounds',
+        image: '/images/chemicals/triflic-anhydride.webp'
     },
     {
         id: 3,
-        title: 'IBC Dispensing Valves',
-        image: 'https://vasujavalplastics.com/wp-content/uploads/2025/10/DN80-Integrated-Thread-Butterfly-Valve.png'
+        title: 'Bulk Drug Intermediates (DFTA)',
+        image: '/images/chemicals/dfta-fluconazole.webp'
     }
 ];
 
@@ -32,8 +32,8 @@ const DetailSection = React.memo(() => {
             <div className="grid-cols-2 sm-grid-cols-1 items-center gap-12 w-full">
                 <div className="w-full pr-20 sm-pr-0">
                     <Badge
-                        text="Precision Engineering"
-                        icon="Settings"
+                        text="Custom Synthesis & Contract Mfg"
+                        icon="Layers"
                         variant="outline"
                         color="white"
                         size="md"
@@ -42,11 +42,11 @@ const DetailSection = React.memo(() => {
                     />
 
                     <h2 className="large-text font-700 text-dark uppercase mt-8">
-                        High-Performance Industrial Closures & Hardware.
+                        Advanced Bulk Drug Intermediates & Fine Chemicals.
                     </h2>
 
                     <p className="para-text text-gray font-400 mt-6">
-                        Vasu Javal Plastics specializes in precision injection-moulded packaging closures, bung plugs, vented screw caps, neck inserts, and IBC valves. Engineered with 100% virgin-grade polymers to deliver zero-leakage security across India's chemical, lubricant, paint, and agrochemical sectors.
+                        Established in Mumbai in 2003, Global Chemie is a premier contract manufacturer, wholesaler, importer, and exporter of bulk drug intermediates, speciality chemicals, fine chemicals, and rare research compounds. With more than 2,500 products in ready stock offered in R&D, semi-bulk, and bulk commercial quantities, our products are processed using cutting-edge techniques by highly trained professionals.
                     </p>
 
                     <div className="grid-cols-3 gap-12 mt-30 w-95">
@@ -68,8 +68,8 @@ const DetailSection = React.memo(() => {
 
                 <div className="w-full h-550 sm-h-350 rounded-10 overflow-hidden">
                     <Image
-                        src="https://vasujavalplastics.com/wp-content/uploads/2025/11/123.webp"
-                        alt="Vasu Javal Plastics Industrial Packaging Closures"
+                        src="/images/globalchemie/chemical-lab.jpg"
+                        alt="Global Chemie Analytical Laboratory and Synthesis Facility"
                         className="w-full h-full object-cover flex"
                     />
                 </div>

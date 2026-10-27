@@ -2,303 +2,411 @@ import React, { useState, useMemo, useCallback, memo } from "react";
 import Button from "../../../../components/common/Button";
 import Fields from "../../../../components/forms/Fields";
 import Tab from "../../../../components/common/Tab";
+import Icon from "../../../../components/common/Icon";
+import { showToast } from "../../../../components/common/Toast";
 
 // ----------------------------------------------------
-// Constants & Static Data
+// Chemical Categories & Compounds
 // ----------------------------------------------------
-const COLS = [
-    { n: "Natural white", h: "#e9ecef" },
-    { n: "Black", h: "#2b2e35" },
-    { n: "Blue", h: "#2368d6" },
-    { n: "Red", h: "#d63a32" },
-    { n: "Green", h: "#2a9d62" },
-    { n: "Yellow", h: "#f2c230" },
-    { n: "Orange", h: "#f2812c" },
-    { n: "Grey", h: "#8a93a1" },
+const CHEMICAL_CATEGORIES = [
+    { name: "Silyl Reagents", value: "silyl", icon: "Layers" },
+    { name: "Triflic Compounds", value: "triflic", icon: "Zap" },
+    { name: "Coupling Agents", value: "coupling", icon: "Shield" },
+    { name: "Bulk Intermediates", value: "intermediate", icon: "Activity" },
+    { name: "Speciality & Rare", value: "speciality", icon: "Globe" },
 ];
 
-const GK = [
-    { k: "epdm", n: "EPDM", h: "#2a2d34" },
-    { k: "nbr", n: "NBR", h: "#5b3a28" },
-    { k: "fkm", n: "FKM", h: "#2f6b45" },
-    { k: "pe", n: "PE foam", h: "#f1efe8" },
-];
-
-const LIQ = [
-    { n: "Water", r: [2, 2, 2, 2] },
-    { n: "Engine oil", r: [0, 2, 2, 2] },
-    { n: "Diesel and petrol", r: [0, 2, 2, 1] },
-    { n: "Acetone and ketones", r: [2, 0, 0, 1] },
-    { n: "Aromatic solvents", r: [0, 0, 2, 0] },
-    { n: "Dilute acid", r: [2, 1, 2, 2] },
-    { n: "Strong alkali", r: [2, 1, 0, 2] },
-    { n: "Fertilizer solution", r: [2, 2, 1, 2] },
-    { n: "Edible oil", r: [0, 2, 2, 2] },
-];
-
-const TYPES = {
-    bung: {
-        n: "Bungs",
-        cat: "Drums and barrels",
-        sizes: [['2" bung', 1, "G 2 BSP"], ['3/4" bung', 0.62, "G 3/4 BSP"]],
-        fits: "200 L steel and plastic drums",
-        ctx: "drum",
-        sub: "A threaded plug with grip ribs. It screws into a flanged bung body fitted in the drum head, and a gasket seals the joint.",
-        parts: ["Bung plug", "Gasket", "Bung body"],
-    },
-    cap: {
-        n: "Caps and Closures",
-        cat: "Canisters",
-        sizes: [["38 mm cap", 0.8, "38 mm neck"], ["48 mm cap", 0.9, "48 mm neck"], ["61 mm cap", 1.05, "61 mm neck"]],
-        fits: "5 to 35 L jerry cans",
-        ctx: "can",
-        sub: "A ribbed screw cap for jerry cans, with a liner and a foil seal that keeps product in until first use.",
-        parts: ["Screw cap", "Liner", "Foil seal"],
-    },
-    insert: {
-        n: "Inserts",
-        cat: "Drums and barrels",
-        sizes: [['2" insert', 1, "G 2 BSP"], ['3/4" insert', 0.62, "G 3/4 BSP"]],
-        fits: "Drum bung holes",
-        ctx: "drum",
-        sub: "A pouring insert that fits the drum opening. The flip lid closes the spout between uses.",
-        parts: ["Flip lid", "Pouring spout", "Insert body"],
-    },
-    dispense: {
-        n: "Dispensing Solutions",
-        cat: "IBC",
-        sizes: [['2" valve', 0.82, "2 in outlet"], ['3" valve', 1.05, "3 in outlet"]],
-        fits: "1000 L IBC outlets",
-        ctx: "ibc",
-        sub: "A ball valve with a screw coupling for IBC outlets. A dust cap keeps the outlet clean.",
-        parts: ["Dust cap", "Ball valve", "Gasket", "Coupling"],
-    },
-    vent: {
-        n: "Accessories",
-        cat: "Drums and IBC",
-        sizes: [['2" vent plug', 1, "G 2 BSP"], ['3/4" vent plug', 0.62, "G 3/4 BSP"]],
-        fits: "Drums and IBC",
-        ctx: "drum",
-        sub: "A vent plug with a membrane. It lets air in and out while keeping liquid inside.",
-        parts: ["Vent cap", "Membrane", "Plug body"],
-    },
+const CHEMICAL_COMPOUNDS = {
+    silyl: [
+        {
+            id: "tms-n3",
+            name: "Trimethylsilyl Azide (TMS-N3)",
+            cas: "4648-54-8",
+            formula: "C3H9N3Si",
+            mw: "115.21 g/mol",
+            bp: "95 - 96 °C",
+            state: "Clear Liquid",
+            defaultPurity: 98.8,
+            color: "#0ea5e9",
+            application: "Azidation & Tetrazole Synthesis in Pharma APIs",
+            packaging: ["100g Glass Bottle", "2.5kg UN Bottle", "25kg Steel Drum"],
+            structureType: "silyl"
+        },
+        {
+            id: "tms-cn",
+            name: "Trimethylsilyl Cyanide (TMS-CN)",
+            cas: "7677-24-9",
+            formula: "C4H9NSi",
+            mw: "99.21 g/mol",
+            bp: "117 - 119 °C",
+            state: "Clear Liquid",
+            defaultPurity: 98.5,
+            color: "#06b6d4",
+            application: "Cyanohydrin synthesis & nucleophilic cyanation",
+            packaging: ["500g Glass Bottle", "5kg UN Canister", "25kg Steel Drum"],
+            structureType: "silyl"
+        },
+        {
+            id: "tms-i",
+            name: "Trimethylsilyl Iodide (TMS-I)",
+            cas: "16029-98-4",
+            formula: "C3H9ISi",
+            mw: "200.09 g/mol",
+            bp: "106 °C",
+            state: "Amber Liquid",
+            defaultPurity: 97.5,
+            color: "#f59e0b",
+            application: "Cleavage of ethers, esters, and acetals",
+            packaging: ["100g Amber Bottle", "1kg Amber Bottle", "10kg Carboy"],
+            structureType: "silyl"
+        }
+    ],
+    triflic: [
+        {
+            id: "tf2o",
+            name: "Trifluoromethanesulfonic Anhydride",
+            cas: "358-23-6",
+            formula: "C2F6O5S2",
+            mw: "282.14 g/mol",
+            bp: "81 - 83 °C",
+            state: "Fuming Liquid",
+            defaultPurity: 99.2,
+            color: "#6366f1",
+            application: "Vinyl triflates & Suzuki cross-coupling activator",
+            packaging: ["100g Bottle", "1kg Corrosion Bottle", "25kg Drum"],
+            structureType: "triflic"
+        },
+        {
+            id: "tfe-otf",
+            name: "2,2,2-Trifluoroethyl Triflate",
+            cas: "6226-25-1",
+            formula: "C3H2F6O3S",
+            mw: "232.10 g/mol",
+            bp: "89 - 91 °C",
+            state: "Colorless Liquid",
+            defaultPurity: 98.6,
+            color: "#8b5cf6",
+            application: "Trifluoroethylation of amines and phenols",
+            packaging: ["250g Glass Bottle", "1kg Bottle", "10kg Drum"],
+            structureType: "triflic"
+        },
+        {
+            id: "tfaa",
+            name: "Trifluoroacetic Anhydride (TFAA)",
+            cas: "407-25-0",
+            formula: "C4F6O3",
+            mw: "210.03 g/mol",
+            bp: "39.5 - 40.5 °C",
+            state: "Volatile Liquid",
+            defaultPurity: 99.0,
+            color: "#ec4899",
+            application: "Swern oxidation, acylation & dehydration",
+            packaging: ["500g Bottle", "2.5kg Carboy", "25kg HDPE Carboy"],
+            structureType: "triflic"
+        }
+    ],
+    coupling: [
+        {
+            id: "edc-hcl",
+            name: "EDC HCl (Carbodiimide)",
+            cas: "25952-53-8",
+            formula: "C8H17N3·HCl",
+            mw: "191.70 g/mol",
+            bp: "Decomposes (MP 115°C)",
+            state: "White Crystalline",
+            defaultPurity: 99.4,
+            color: "#10b981",
+            application: "Water-soluble peptide coupling & bioconjugation",
+            packaging: ["500g Bottle", "5kg Fiber Drum", "25kg Fiber Drum"],
+            structureType: "coupling"
+        },
+        {
+            id: "diethyl-bromomalonate",
+            name: "Diethyl Bromomalonate",
+            cas: "685-87-0",
+            formula: "C7H11BrO4",
+            mw: "239.06 g/mol",
+            bp: "231 - 235 °C",
+            state: "Pale Yellow Liquid",
+            defaultPurity: 98.0,
+            color: "#14b8a6",
+            application: "Cyclopropanation & organic intermediate synthesis",
+            packaging: ["500g Bottle", "2.5kg Carboy", "25kg Drum"],
+            structureType: "coupling"
+        }
+    ],
+    intermediate: [
+        {
+            id: "dfta",
+            name: "DFTA (Fluconazole Intermediate)",
+            cas: "86404-63-9",
+            formula: "C13H12F2N6O",
+            mw: "306.27 g/mol",
+            bp: "Solid (MP 140°C)",
+            state: "White Powder",
+            defaultPurity: 99.6,
+            color: "#3b82f6",
+            application: "Penultimate bulk intermediate for Fluconazole API",
+            packaging: ["1kg Bag", "10kg Fiber Drum", "25kg Fiber Drum"],
+            structureType: "intermediate"
+        },
+        {
+            id: "triazole",
+            name: "4-Amino-1,2,4-Triazole",
+            cas: "584-13-4",
+            formula: "C2H4N4",
+            mw: "84.08 g/mol",
+            bp: "Solid (MP 86°C)",
+            state: "White Needles",
+            defaultPurity: 99.1,
+            color: "#a855f7",
+            application: "Heterocyclic building block & pharma intermediate",
+            packaging: ["1kg Bag", "25kg Multi-layer Drum"],
+            structureType: "intermediate"
+        }
+    ],
+    speciality: [
+        {
+            id: "mom-cl",
+            name: "Chloromethyl Methyl Ether (MOM-Cl)",
+            cas: "107-30-2",
+            formula: "C2H5ClO",
+            mw: "80.51 g/mol",
+            bp: "59 °C",
+            state: "Clear Liquid",
+            defaultPurity: 98.2,
+            color: "#f97316",
+            application: "Protecting group for alcohols (MOM ether)",
+            packaging: ["1kg Canister", "5kg Canister", "25kg Steel Drum"],
+            structureType: "speciality"
+        },
+        {
+            id: "dbu",
+            name: "1,8-Diazabicyclo[5.4.0]undec-7-ene (DBU)",
+            cas: "6674-22-2",
+            formula: "C9H16N2",
+            mw: "152.24 g/mol",
+            bp: "261 °C",
+            state: "Viscous Liquid",
+            defaultPurity: 99.2,
+            color: "#84cc16",
+            application: "Non-nucleophilic amidine superbase catalyst",
+            packaging: ["1kg Bottle", "25kg Drum", "200kg Drum"],
+            structureType: "speciality"
+        },
+        {
+            id: "phenanthroline",
+            name: "1,10-Phenanthroline Monohydrate AR",
+            cas: "5144-89-8",
+            formula: "C12H8N2·H2O",
+            mw: "198.22 g/mol",
+            bp: "Solid (MP 102°C)",
+            state: "Needle Crystals",
+            defaultPurity: 99.5,
+            color: "#ef4444",
+            application: "Analytical reagent, ligand & spectroscopic probe",
+            packaging: ["25g Bottle", "100g Bottle", "1kg Amber Jar"],
+            structureType: "speciality"
+        }
+    ]
 };
 
-const TORDER = ["bung", "cap", "insert", "dispense", "vent"];
-const INDS = [
-    { n: "Chemicals", t: "dispense", s: 0, c: 2, l: 5 },
-    { n: "Fertilizers", t: "cap", s: 2, c: 4, l: 7 },
-    { n: "Industrial Packaging", t: "bung", s: 0, c: 7, l: 0 },
-    { n: "Pharmaceuticals", t: "cap", s: 0, c: 0, l: 0 },
-    { n: "Engine Oils", t: "cap", s: 1, c: 5, l: 1 },
-    { n: "Petroleum", t: "bung", s: 0, c: 3, l: 2 },
-    { n: "Paints", t: "cap", s: 2, c: 6, l: 4 },
-    { n: "Cosmetics", t: "insert", s: 1, c: 0, l: 0 },
-    { n: "F&B", t: "dispense", s: 1, c: 0, l: 8 },
-    { n: "FMCG", t: "cap", s: 1, c: 2, l: 0 },
+const SOLVENTS = [
+    { name: "DCM (Dichloromethane)", r: [2, 2, 2, 1, 2] },
+    { name: "THF (Tetrahydrofuran)", r: [2, 1, 2, 2, 2] },
+    { name: "Acetonitrile (ACN)", r: [2, 2, 2, 2, 2] },
+    { name: "Toluene", r: [2, 1, 1, 1, 2] },
+    { name: "DMF (Dimethylformamide)", r: [1, 2, 2, 2, 2] },
+    { name: "Ethanol / Methanol", r: [0, 0, 1, 2, 1] },
+    { name: "Water (Aqueous Phase)", r: [0, 0, 2, 1, 0] },
+    { name: "Hexane / Heptane", r: [2, 1, 0, 0, 1] }
 ];
 
-const QTY = [1000, 5000, 10000, 25000];
-const numFormat = new Intl.NumberFormat("en-IN");
+const BATCH_SCALES = [
+    { name: "100 g (R&D)", value: 100 },
+    { name: "1 kg (Pilot)", value: 1000 },
+    { name: "25 kg (Trial)", value: 25000 },
+    { name: "500 kg (Bulk)", value: 500000 },
+    { name: "5 MT (Commercial)", value: 5000000 }
+];
+
+const INDUSTRIES = [
+    { name: "Pharmaceutical APIs", category: "intermediate", defaultCompound: 0 },
+    { name: "Custom Contract Synthesis", category: "silyl", defaultCompound: 0 },
+    { name: "Agrochemicals & Fine Chem", category: "speciality", defaultCompound: 0 },
+    { name: "Peptide & Biotech Labs", category: "coupling", defaultCompound: 0 },
+    { name: "Rare R&D & Catalysis", category: "speciality", defaultCompound: 2 },
+    { name: "Fluorinated Intermediates", category: "triflic", defaultCompound: 0 }
+];
 
 // ----------------------------------------------------
-// Color & SVG Helpers
-// ----------------------------------------------------
-const rgb = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
-const mix = (h, t, to) => "#" + rgb(h).map((v) => ("0" + Math.round(v + (to - v) * t).toString(16)).slice(-2)).join("");
-const lt = (h, t) => mix(h, t, 255);
-const dk = (h, t) => mix(h, t, 0);
-const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const HOLE_Y = 296;
-
-function generateSvgMarkup(st) {
-    const defs = {};
-    const G = (col) => {
-        const id = "g" + col.slice(1);
-        if (!defs[id]) {
-            defs[id] = `<linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="${dk(col, 0.32)}"/><stop offset=".3" stop-color="${lt(col, 0.12)}"/><stop offset=".55" stop-color="${col}"/><stop offset="1" stop-color="${dk(col, 0.4)}"/></linearGradient><radialGradient id="t${id}" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="${lt(col, 0.35)}"/><stop offset="1" stop-color="${dk(col, 0.05)}"/></radialGradient>`;
-        }
-        return id;
-    };
-
-    const cyl = (cx, cy, rx, ry, h, col, o = {}) => {
-        const id = G(col);
-        let s = `<path d="M${cx - rx} ${cy}V${cy + h}A${rx} ${ry} 0 0 0 ${cx + rx} ${cy + h}V${cy}Z" fill="url(#${id})" stroke="${dk(col, 0.45)}" stroke-opacity=".5" stroke-width=".8"/>`;
-
-        if (o.ribs) {
-            const n = Math.max(8, Math.round(rx / 3.2));
-            for (let i = 0; i <= n; i++) {
-                const a = -Math.PI / 2 + 0.12 + ((Math.PI - 0.24) * i) / n;
-                const x = cx + rx * Math.sin(a);
-                const y = cy + ry * Math.cos(a);
-                s += `<line x1="${x.toFixed(1)}" y1="${y.toFixed(1)}" x2="${x.toFixed(1)}" y2="${(y + h).toFixed(1)}" stroke="${dk(col, 0.5)}" stroke-opacity=".45" stroke-width="1.3"/><line x1="${(x + 1.3).toFixed(1)}" y1="${y.toFixed(1)}" x2="${(x + 1.3).toFixed(1)}" y2="${(y + h).toFixed(1)}" stroke="#fff" stroke-opacity=".28" stroke-width=".8"/>`;
-            }
-        }
-
-        if (o.thread) {
-            const n = Math.floor(h / 6.5);
-            for (let i = 1; i <= n; i++) {
-                const yy = cy + i * 6.5 - 3;
-                s += `<path d="M${cx - rx} ${yy}A${rx} ${ry} 0 0 0 ${cx + rx} ${yy + 3.2}" fill="none" stroke="${dk(col, 0.5)}" stroke-opacity=".7" stroke-width="1.6"/><path d="M${cx - rx} ${yy + 1.6}A${rx} ${ry} 0 0 0 ${cx + rx} ${yy + 4.8}" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="1"/>`;
-            }
-        }
-
-        s += `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="url(#t${id})" stroke="${lt(col, 0.35)}" stroke-opacity=".7" stroke-width=".9"/>`;
-        if (o.hole) s += `<ellipse cx="${cx}" cy="${cy}" rx="${o.hole}" ry="${((o.hole * ry) / rx).toFixed(1)}" fill="#0a0c10" stroke="${dk(col, 0.4)}"/>`;
-        if (o.ring) s += `<ellipse cx="${cx}" cy="${cy}" rx="${rx * 0.78}" ry="${ry * 0.78}" fill="none" stroke="${dk(col, 0.35)}" stroke-opacity=".6"/>`;
-        if (o.holes) {
-            for (let i = 0; i < 6; i++) {
-                const b = (i * Math.PI) / 3;
-                s += `<ellipse cx="${(cx + rx * 0.5 * Math.cos(b)).toFixed(1)}" cy="${(cy + ry * 0.5 * Math.sin(b)).toFixed(1)}" rx="2.6" ry="1.2" fill="#0a0c10"/>`;
-            }
-        }
-        if (o.text) {
-            const fs = Math.min(rx * 0.42, (rx * 1.35) / Math.max(3, o.text.length));
-            s += `<g transform="translate(${cx} ${cy}) scale(1 ${(ry / rx).toFixed(3)})"><text x="0.8" y="${(fs * 0.35 + 0.8).toFixed(1)}" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="${fs.toFixed(1)}" fill="${lt(col, 0.5)}" opacity=".7">${esc(o.text)}</text><text x="0" y="${(fs * 0.35).toFixed(1)}" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="${fs.toFixed(1)}" fill="${dk(col, 0.55)}" opacity=".9">${esc(o.text)}</text></g>`;
-        }
-        return s;
-    };
-
-    const bodyPart = (y, f, col) => `<g clip-path="url(#cut)">${cyl(200, y + 6, 32 * f, 8 * f, 38, col, { thread: true })}</g>` + cyl(200, y, 54 * f, 13 * f, 10, col, { ring: true });
-
-    const ctxSvg = (kind) => {
-        if (kind === "drum") {
-            return `<defs><linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#7f8a9a"/><stop offset=".4" stop-color="#d8dee8"/><stop offset="1" stop-color="#6f7a8a"/></linearGradient></defs><path d="M42 304V380H358V304A158 36 0 0 1 42 304Z" fill="url(#steel)"/><ellipse cx="200" cy="304" rx="158" ry="36" fill="#9aa5b5"/><ellipse cx="200" cy="302" rx="144" ry="31" fill="#c3ccd8" stroke="#8a95a6"/><ellipse cx="200" cy="302" rx="110" ry="22" fill="none" stroke="#9aa5b5" stroke-opacity=".8" stroke-width="3"/><ellipse cx="200" cy="296" rx="44" ry="10.5" fill="#0a0c10" stroke="#7f8a9a" stroke-width="2"/>`;
-        } else if (kind === "can") {
-            return `<defs><linearGradient id="canb" x1="0" x2="1"><stop offset="0" stop-color="#cfd6e0"/><stop offset=".45" stop-color="#f4f6f9"/><stop offset="1" stop-color="#b6bfcc"/></linearGradient></defs><path d="M56 380V318Q56 284 94 284H306Q344 284 344 318V380Z" fill="url(#canb)" stroke="#9aa5b5"/><rect x="92" y="300" width="216" height="3" fill="#9aa5b5" opacity=".5"/><path d="M300 292Q372 292 372 330V380" fill="none" stroke="#c3ccd8" stroke-width="10" stroke-linecap="round"/>${cyl(200, 262, 38, 9, 26, "#eef1f5", { thread: true })}`;
-        }
-        let s = `<defs><linearGradient id="ibcb" x1="0" x2="1"><stop offset="0" stop-color="#b9c3d1"/><stop offset=".5" stop-color="#e8edf3"/><stop offset="1" stop-color="#a9b4c3"/></linearGradient></defs><polygon points="30,380 30,316 110,282 290,282 370,316 370,380" fill="url(#ibcb)" stroke="#8d99aa"/>`;
-        for (let i = 0; i < 9; i++) s += `<line x1="${60 + i * 35}" y1="${i < 3 || i > 5 ? 318 : 284}" x2="${60 + i * 35}" y2="380" stroke="#8d99aa" stroke-opacity=".7"/>`;
-        return s + `<rect x="30" y="338" width="340" height="5" fill="#8d99aa" opacity=".6"/>` + cyl(200, 296, 44, 10, 24, "#dfe5ed", { thread: true });
-    };
-
-    const T = TYPES[st.t];
-    const safeSizeIdx = Math.min(st.s, T.sizes.length - 1);
-    const f = T.sizes[safeSizeIdx][1];
-    const col = COLS[st.c]?.h || "#2368d6";
-    const gk = GK[st.g] || GK[0];
-    const e = st.ex / 100;
-    const txt = (st.brand || "").trim();
-
-    const partsMap = {
-        bung: [
-            { ya: 262, off: -170, f: (y) => cyl(200, y, 56 * f, 13 * f, 22, col, { ribs: true, text: txt, ring: true }) },
-            { ya: 279, off: -102, f: (y) => cyl(200, y, 50 * f, 12 * f, 4, gk.h, { hole: 28 * f }) },
-            { ya: 284, off: -52, f: (y) => bodyPart(y, f, col) },
-        ],
-        cap: [
-            { ya: 236, off: -160, f: (y) => cyl(200, y, 48 * f, 12 * f, 38, col, { ribs: true, text: txt }) },
-            { ya: 252, off: -92, f: (y) => cyl(200, y, 40 * f, 10 * f, 3, "#f3f1ea", { hole: 12 * f }) },
-            { ya: 254, off: -52, f: (y) => cyl(200, y, 37 * f, 9 * f, 2, "#c9d0da") },
-        ],
-        insert: [
-            { ya: 250, off: -170, f: (y) => cyl(200, y, 26 * f, 7 * f, 14, col, { ribs: true, text: txt }) },
-            {
-                ya: 266,
-                off: -104,
-                f: (y) => `<path d="M${200 - 20 * f} ${y}L${200 - 34 * f} ${y + 30}A${34 * f} ${8 * f} 0 0 0 ${200 + 34 * f} ${y + 30}L${200 + 20 * f} ${y}Z" fill="url(#${G(col)})" stroke="${dk(col, 0.45)}" stroke-opacity=".5"/>` + cyl(200, y, 20 * f, 5 * f, 2, col, { hole: 11 * f }),
-            },
-            { ya: 284, off: -46, f: (y) => bodyPart(y, f, col) },
-        ],
-        dispense: [
-            { ya: 226, off: -176, f: (y) => cyl(200, y, 44 * f, 11 * f, 22, col, { ribs: true, text: txt }) },
-            {
-                ya: 250,
-                off: -118,
-                f: (y) => cyl(200, y, 30 * f, 8 * f, 42, "#8a93a1") + `<rect x="222" y="${y + 17}" width="${70 * f + 12}" height="12" rx="6" fill="${col}" stroke="${dk(col, 0.45)}" stroke-opacity=".6"/><circle cx="${232 + 70 * f}" cy="${y + 23}" r="9" fill="${dk(col, 0.1)}" stroke="${dk(col, 0.45)}"/>`,
-            },
-            { ya: 276, off: -62, f: (y) => cyl(200, y, 50 * f, 12 * f, 4, gk.h, { hole: 30 * f }) },
-            { ya: 280, off: -24, f: (y) => cyl(200, y, 48 * f, 12 * f, 18, col, { thread: true, ring: true }) },
-        ],
-        vent: [
-            { ya: 252, off: -170, f: (y) => cyl(200, y, 42 * f, 10 * f, 16, col, { ribs: true, holes: true }) },
-            { ya: 272, off: -108, f: (y) => cyl(200, y, 30 * f, 7 * f, 2, "#f6f7f9") },
-            { ya: 284, off: -52, f: (y) => bodyPart(y, f, col) },
-        ],
-    };
-
-    const P = partsMap[st.t] || partsMap.bung;
-    let parts = "";
-    for (let i = P.length - 1; i >= 0; i--) parts += P[i].f(P[i].ya + P[i].off * e);
-
-    const op = Math.max(0, Math.min(1, (e - 0.2) / 0.4));
-    let labels = "";
-    P.forEach((p, k) => {
-        const y = p.ya + p.off * e + 4;
-        labels += `<g opacity="${op.toFixed(2)}"><line x1="262" y1="${y.toFixed(1)}" x2="296" y2="${y.toFixed(1)}" stroke="#f0561d" stroke-width="1.2" stroke-dasharray="3 3"/><circle cx="262" cy="${y.toFixed(1)}" r="2.4" fill="#f0561d"/><text x="300" y="${(y + 4).toFixed(1)}" font-family="monospace" font-size="11" fill="#0e2740">${k + 1} ${T.parts[k]}</text></g>`;
-    });
-
-    return `<defs><clipPath id="cut"><rect x="0" y="0" width="400" height="${HOLE_Y + 2}"/></clipPath>${Object.values(defs).join("")}</defs>` + ctxSvg(T.ctx) + parts + labels;
-}
-
-// ----------------------------------------------------
-// Subcomponents
+// Sub-Components
 // ----------------------------------------------------
 
-// 1. Industry Selector
-const IndustrySection = memo(({ selectedIndex, onSelect }) => {
-    const tabs = useMemo(() => INDS.map((x, i) => ({ name: x.n, value: i })), []);
-    return <div className="overflow-auto">
-        <Tab version="v1" tabs={tabs} activeTab={selectedIndex} onChange={onSelect} className="w-full" />
-    </div>;
+// 1. Industry Presets
+const IndustryPresets = memo(({ selectedIdx, onSelect }) => {
+    return (
+        <div className="bg-white rounded-10 p-16">
+            <div className="flex items-center justify-between mb-12">
+                <div>
+                    <h3 className="title-text font-600 text-dark uppercase m-0">Chemical Application Preset</h3>
+                    <p className="mini-text text-gray m-0 mt-2">Select your industrial domain to auto-configure standard synthesis parameters.</p>
+                </div>
+                <div className="rounded-20 px-10 py-4 bg-forth text-primary mini-text font-600">
+                    2,500+ Stock Compounds
+                </div>
+            </div>
+            <div className="flex flex-wrap gap-8">
+                {INDUSTRIES.map((ind, idx) => {
+                    const active = selectedIdx === idx;
+                    return (
+                        <button
+                            key={ind.name}
+                            type="button"
+                            onClick={() => onSelect(idx)}
+                            className={`px-14 py-8 rounded-20 cursor-pointer small-text font-500 transition-all ${active
+                                ? "bg-primary text-white"
+                                : "bg-forth text-dark hover:bg-light-primary"
+                                }`}
+                            style={{ border: "none" }}
+                        >
+                            {ind.name}
+                        </button>
+                    );
+                })}
+            </div>
+        </div>
+    );
 });
-IndustrySection.displayName = "IndustrySection";
+IndustryPresets.displayName = "IndustryPresets";
 
-// 2. SVG Exploded Stage View with Percentage Field from Fields.jsx
-const ExplodedStage = memo(({ st, onExplodeChange }) => {
-    const currentType = TYPES[st.t];
-    const currentSize = currentType.sizes[Math.min(st.s, currentType.sizes.length - 1)];
-    const svgInner = useMemo(() => generateSvgMarkup(st), [st]);
-
-    const explodeLabel = useMemo(() => {
-        if (st.ex < 8) return "Assembled";
-        if (st.ex > 92) return "Fully exploded";
-        return "Opening up";
-    }, [st.ex]);
-
-    const handlePercentChange = useCallback((val) => {
-        const num = Number(val);
-        if (!isNaN(num)) onExplodeChange(Math.min(100, Math.max(0, num)));
-    }, [onExplodeChange]);
+// 2. Chemical Reactor & Percentage Stage
+const ExplodedStage = memo(({ compound, purity, onPurityChange, temperature, onTemperatureChange }) => {
+    const purityVal = parseFloat(purity) || 98.5;
+    const progressWidth = Math.min(100, Math.max(0, ((purityVal - 90) / 10) * 100));
 
     return (
-        <div className="w-full bg-white">
-            <div
-                className="relative overflow-hidden bg-forth"
-            >
-                <div className="absolute top-0 left-0 p-10 mini-text text-gray font-600 uppercase" style={{ pointerEvents: "none" }}>
-                    FIG. {TORDER.indexOf(st.t) + 1} · {currentSize[0].toUpperCase()}
+        <div className="bg-white rounded-10 p-16 h-full">
+            <div className="flex items-center justify-between pb-10 bordb">
+                <div>
+                    <span className="mini-text font-600 text-primary uppercase">Lab Simulation & Reaction Vessel</span>
+                    <h4 className="mid-text font-600 text-dark mt-2 m-0">{compound.name}</h4>
                 </div>
-                <svg
-                    viewBox="0 56 400 324"
-                    role="img"
-                    className="w-full h-auto block"
-                    aria-label="Exploded view of the selected closure"
-                    dangerouslySetInnerHTML={{ __html: svgInner }}
-                />
+                <div className="text-right">
+                    <span className="mini-text text-gray">CAS Registry</span>
+                    <p className="small-text font-700 text-dark m-0">{compound.cas}</p>
+                </div>
             </div>
 
-            <div className="mt-20">
-                <div className="flex items-center gap-8">
-                    <h4 className="mid-text font-500 text-dark uppercase">{explodeLabel}</h4>
-                    <span className="mini-text text-primary font-600 bg-light-primary px-8 py-2 rounded-20">{st.ex}%</span>
+            {/* Interactive SVG Chemical Reactor */}
+            <div
+                className="relative rounded-10 mt-14 overflow-hidden flex items-center justify-center p-14"
+                style={{
+                    minHeight: "260px",
+                    background: "linear-gradient(180deg, #0b1329 0%, #172554 100%)",
+                }}
+            >
+                <svg width="220" height="220" viewBox="0 0 220 220" className="relative z-1">
+                    {/* Condenser Column */}
+                    <rect x="98" y="15" width="24" height="60" rx="3" fill="#38bdf8" fillOpacity="0.25" stroke="#7dd3fc" strokeWidth="1.5" />
+                    <line x1="104" y1="25" x2="116" y2="25" stroke="#bae6fd" strokeWidth="1.5" strokeDasharray="2,2" />
+                    <line x1="104" y1="45" x2="116" y2="45" stroke="#bae6fd" strokeWidth="1.5" strokeDasharray="2,2" />
+                    <line x1="104" y1="65" x2="116" y2="65" stroke="#bae6fd" strokeWidth="1.5" strokeDasharray="2,2" />
+
+                    {/* Jacketed Flask Neck */}
+                    <rect x="94" y="70" width="32" height="25" rx="2" fill="#e0f2fe" fillOpacity="0.3" stroke="#93c5fd" strokeWidth="1.5" />
+
+                    {/* Flask Body */}
+                    <path
+                        d="M 94 95 C 60 135, 45 175, 75 195 C 95 208, 125 208, 145 195 C 175 175, 160 135, 126 95 Z"
+                        fill="rgba(255, 255, 255, 0.08)"
+                        stroke="#93c5fd"
+                        strokeWidth="2"
+                    />
+
+                    {/* Liquid Reaction Solution */}
+                    <path
+                        d="M 68 150 Q 110 142 152 150 C 168 178, 150 195, 110 197 C 70 195, 52 178, 68 150 Z"
+                        fill={compound.color}
+                        fillOpacity="0.75"
+                    >
+                        <animate
+                            attributeName="d"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            values="
+                                M 68 150 Q 110 142 152 150 C 168 178, 150 195, 110 197 C 70 195, 52 178, 68 150 Z;
+                                M 68 148 Q 110 156 152 148 C 168 178, 150 195, 110 197 C 70 195, 52 178, 68 148 Z;
+                                M 68 150 Q 110 142 152 150 C 168 178, 150 195, 110 197 C 70 195, 52 178, 68 150 Z
+                            "
+                        />
+                    </path>
+
+                    {/* Bubbling Active Particles */}
+                    <circle cx="95" cy="170" r="3" fill="#ffffff" opacity="0.8">
+                        <animate attributeName="cy" from="185" to="150" dur="1.8s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.9" to="0" dur="1.8s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="125" cy="175" r="4" fill="#ffffff" opacity="0.7">
+                        <animate attributeName="cy" from="190" to="148" dur="2.4s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.8" to="0" dur="2.4s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="110" cy="180" r="2.5" fill="#ffffff" opacity="0.9">
+                        <animate attributeName="cy" from="192" to="152" dur="1.4s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.9" to="0" dur="1.4s" repeatCount="indefinite" />
+                    </circle>
+
+                    {/* Magnetic Stirrer */}
+                    <rect x="98" y="190" width="24" height="6" rx="3" fill="#ffffff" opacity="0.9" />
+
+                    {/* Molecular Formula Badge inside vessel */}
+                    <rect x="75" y="105" width="70" height="20" rx="4" fill="rgba(0,0,0,0.5)" />
+                    <text x="110" y="119" textAnchor="middle" fill="#38bdf8" fontSize="10" fontFamily="monospace" fontWeight="600">
+                        {compound.formula}
+                    </text>
+                </svg>
+            </div>
+
+            {/* Reaction Temperature Control */}
+            <div className="mt-14 bg-forth p-12 rounded-8">
+                <div className="flex items-center justify-between mb-8">
+                    <label className="small-text font-600 text-dark">
+                        Synthesis Temperature Control
+                    </label>
+                    <span className="small-text font-700 text-primary">
+                        {temperature}°C &bull; {temperature <= 0 ? "Cryogenic" : temperature >= 80 ? "Exothermic Reflux" : "Ambient Stirring"}
+                    </span>
                 </div>
 
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value={st.ex}
-                    style={{ "--p": `${st.ex}%` }}
-                    className="custom-range-slider w-full cursor-pointer"
-                    aria-label="Exploded view slider"
-                    onChange={(e) => onExplodeChange(Number(e.target.value))}
+                <Fields
+                    type="number"
+                    value={temperature}
+                    onChange={(val) => onTemperatureChange(val === "" ? "" : Number(val))}
+                    min={-20}
+                    max={140}
+                    step={1}
+                    version="v2"
+                    placeholder="Enter temperature in °C (-20 to 140)"
+                    icon="Sun"
+                    iconPosition="right"
+                    className="w-full"
                 />
 
-                <div className="flex items-center justify-between mt-4">
-                    <p className="mini-text text-gray font-500">Assembled (0%)</p>
-                    <p className="mini-text text-gray font-500">Exploded (100%)</p>
+                <div className="flex items-center gap-8 mt-8">
+                    {[-10, 25, 80, 110].map((presetTemp) => (
+                        <button
+                            key={presetTemp}
+                            type="button"
+                            onClick={() => onTemperatureChange(presetTemp)}
+                            className={`px-8 py-4 rounded-4 mini-text font-500 cursor-pointer transition-all ${temperature === presetTemp
+                                ? "bg-primary text-white"
+                                : "bg-white text-dark hover:bg-light-primary"
+                                }`}
+                            style={{ border: "1px solid #e2e8f0" }}
+                        >
+                            {presetTemp}°C {presetTemp <= 0 ? "(Cryo)" : presetTemp >= 80 ? "(Reflux)" : "(RT)"}
+                        </button>
+                    ))}
                 </div>
             </div>
         </div>
@@ -306,272 +414,282 @@ const ExplodedStage = memo(({ st, onExplodeChange }) => {
 });
 ExplodedStage.displayName = "ExplodedStage";
 
-// 3. Closure Configuration Controls
-const ClosureControls = memo(({ st, onTypeChange, onFieldChange }) => {
-    const currentType = TYPES[st.t];
-    const safeSizeIdx = Math.min(st.s, currentType.sizes.length - 1);
-    const currentSize = currentType.sizes[safeSizeIdx];
-    const currentColor = COLS[st.c] || COLS[0];
-    const currentGasket = GK[st.g] || GK[0];
-    const currentLiquid = LIQ[st.l];
-    const ratingText = ["is not suitable", "is limited", "suits"][currentLiquid.r[st.g]];
+// 3. Chemical Controls & Technical Specifications
+const ChemicalControls = memo(({ activeCategory, onCategoryChange, selectedCompound, onSelectCompound }) => {
+    const compounds = CHEMICAL_COMPOUNDS[activeCategory] || [];
 
-    const typeTabs = useMemo(() => TORDER.map((k) => ({ name: TYPES[k].n, value: k })), []);
-    const sizeTabs = useMemo(() => currentType.sizes.map((z, i) => ({ name: z[0], value: i })), [currentType]);
-    const gasketTabs = useMemo(
-        () =>
-            GK.map((g, i) => ({
-                name: g.n,
-                value: i,
-                icon: (
-                    <span
-                        style={{
-                            width: 10,
-                            height: 10,
-                            borderRadius: "50%",
-                            display: "inline-block",
-                            background: g.h,
-                            border: "1px solid rgba(255,255,255,0.4)",
-                        }}
-                    />
-                ),
-                count: ["✕", "~", "✓"][currentLiquid.r[i]],
-            })),
-        [currentLiquid]
-    );
-
-    const specs = [
-        ["Thread", currentSize[2]],
-        ["Fits", currentType.fits],
-        ["Body", "Injection-moulded plastic"],
-        ["Seal", `${currentGasket.n} gasket`],
-    ];
+    const categoryTabs = useMemo(() => {
+        return CHEMICAL_CATEGORIES.map((c) => ({
+            name: c.name,
+            value: c.value,
+            icon: c.icon
+        }));
+    }, []);
 
     return (
-        <div className="w-full">
-            <p className="mini-text font-600 text-primary uppercase">
-                {currentType.cat} · {currentColor.n}
-            </p>
-            <h3 className="title-text font-700 text-dark uppercase mt-4 mb-6">{currentType.n}</h3>
-            <p className="small-text text-gray font-400 mb-16">{currentType.sub}</p>
+        <div className="bg-white rounded-10 p-16 h-full">
+            <h3 className="title-text font-600 text-dark uppercase m-0">Chemical Selection & Route</h3>
+            <p className="mini-text text-gray m-0 mt-2">Filter high-purity intermediates by synthesis family and chemical classification.</p>
 
-            <div className="mb-14 overflow-auto">
-                <p className="mini-text font-600 text-gray uppercase mb-6">Closure type</p>
-                <Tab version="v2" tabs={typeTabs} activeTab={st.t} onChange={onTypeChange} className="w-full" />
-            </div>
-
-            <div className="mb-14 overflow-auto">
-                <p className="mini-text font-600 text-gray uppercase mb-6">Size</p>
-                <Tab version="v2" tabs={sizeTabs} activeTab={safeSizeIdx} onChange={(val) => onFieldChange("s", val)} className="w-full" />
-            </div>
-
-            <div className="mb-14">
-                <p className="mini-text font-600 text-gray uppercase mb-6">Colour</p>
-                <div className="flex flex-wrap gap-8" role="group" aria-label="Colour">
-                    {COLS.map((c, i) => (
-                        <button
-                            key={c.n}
-                            type="button"
-                            title={c.n}
-                            aria-label={c.n}
-                            aria-pressed={i === st.c}
-                            className="rounded-5 cursor-pointer border-0"
-                            style={{
-                                width: 36,
-                                height: 36,
-                                background: c.h,
-                                border: i === st.c ? "2px solid #000" : "1px solid #c4d3e3",
-                                boxShadow: i === st.c ? "0 0 0 2px #fff inset" : "none",
-                            }}
-                            onClick={() => onFieldChange("c", i)}
-                        />
-                    ))}
-                </div>
-            </div>
-
-            <div className="mb-14">
-                <p className="mini-text font-600 text-gray uppercase mb-6">Your brand on the cap</p>
-                <div style={{ maxWidth: 260 }}>
-                    <Fields
-                        type="text"
-                        value={st.brand}
-                        onChange={(val) => onFieldChange("brand", (typeof val === "string" ? val : val?.target?.value || "").toUpperCase())}
-                        maxLength={8}
-                        version="v0"
-                        className="font-600 uppercase mini-text"
-                        style={{ letterSpacing: "0.12em" }}
-                    />
-                </div>
-            </div>
-
-            <div className="grid-cols-2 gap-12">
-                {specs.map(([label, val]) => (
-                    <div key={label} className="p-4 bordb">
-                        <p className="mini-text font-500 text-gray uppercase">{label}</p>
-                        <p className="small-text font-500 text-dark mt-2">{val}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-});
-ClosureControls.displayName = "ClosureControls";
-
-// 4. Seal Check Matrix
-const SealCheckMatrix = memo(({ st, onSelectLiquid, onSelectCell }) => {
-    const currentLiquid = LIQ[st.l];
-    const currentGasket = GK[st.g];
-
-    const verdict = useMemo(() => {
-        const r = currentLiquid.r;
-        const good = GK.filter((_, k) => r[k] === 2).map((g) => g.n);
-        const ok = GK.filter((_, k) => r[k] === 1).map((g) => g.n);
-        const suitMsg = good.length === GK.length ? "Every gasket here suits." : good.length ? `Use ${good.join(" or ")}.` : "No gasket here is fully suitable.";
-        const contactMsg = ok.length ? ` ${ok.join(" and ")} works for short contact only.` : "";
-        const userGasketMsg = ["is not suitable.", "has limited use.", "is a good match."][r[st.g]];
-
-        return {
-            title: currentLiquid.n,
-            suitMsg,
-            contactMsg,
-            choiceMsg: ` You have chosen ${currentGasket.n}, which ${userGasketMsg}`,
-        };
-    }, [currentLiquid, currentGasket, st.g]);
-
-    return (
-        <div className="bg-white">
-
-            <div className="overflow-auto">
-                <table className="w-full text-center" style={{ borderCollapse: "collapse" }}>
-                    <thead>
-                        <tr>
-                            <th className="text-left py-8 px-6 mini-text font-600 text-gray uppercase">Liquid</th>
-                            {GK.map((g) => (
-                                <th key={g.k} className="py-8 px-6 mini-text font-600 text-gray uppercase">
-                                    <span className="flex items-center justify-center gap-6">
-                                        <i style={{ width: 10, height: 10, borderRadius: "50%", background: g.h, display: "inline-block" }} />
-                                        {g.n}
-                                    </span>
-                                </th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {LIQ.map((l, li) => (
-                            <tr key={l.n} className={li === st.l ? "bg-forth" : ""}>
-                                <td className="text-left bordh">
-                                    <button
-                                        type="button"
-                                        className="w-full text-left py-12 px-8 cursor-pointer font-600 small-text text-dark bg-transparent border-0"
-                                        onClick={() => onSelectLiquid(li)}
-                                    >
-                                        {l.n}
-                                    </button>
-                                </td>
-                                {l.r.map((v, gi) => (
-                                    <td key={gi} className="bordh">
-                                        <button
-                                            type="button"
-                                            className="w-full py-10 px-6 cursor-pointer bg-transparent border-0 flex items-center justify-center"
-                                            aria-label={`${l.n}, ${GK[gi].n}: ${["avoid", "limited", "recommended"][v]}`}
-                                            aria-pressed={li === st.l && gi === st.g}
-                                            onClick={() => onSelectCell(li, gi)}
-                                        >
-                                            <span
-                                                className="flex items-center justify-center font-800 mini-text rounded-full"
-                                                style={{
-                                                    width: 28,
-                                                    height: 28,
-                                                    backgroundColor: v === 2 ? "#1a9a5b" : v === 1 ? "#d98a00" : "#d63a32",
-                                                    color: v === 1 ? "#1a1200" : "#fff",
-                                                    boxShadow: li === st.l && gi === st.g ? "0 0 0 2px #fff, 0 0 0 4px #0e2740" : "none",
-                                                    transform: li === st.l && gi === st.g ? "scale(1.1)" : "scale(1)",
-                                                }}
-                                            >
-                                                {["✕", "~", "✓"][v]}
-                                            </span>
-                                        </button>
-                                    </td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-
-            <div className="flex flex-wrap gap-12 mini-text text-gray mt-14">
-                <span className="flex items-center gap-6">
-                    <i style={{ width: 10, height: 10, borderRadius: "50%", background: "#1a9a5b", display: "inline-block" }} />
-                    Recommended
-                </span>
-                <span className="flex items-center gap-6">
-                    <i style={{ width: 10, height: 10, borderRadius: "50%", background: "#d98a00", display: "inline-block" }} />
-                    Limited use
-                </span>
-                <span className="flex items-center gap-6">
-                    <i style={{ width: 10, height: 10, borderRadius: "50%", background: "#d63a32", display: "inline-block" }} />
-                    Avoid
-                </span>
-            </div>
-        </div>
-    );
-});
-SealCheckMatrix.displayName = "SealCheckMatrix";
-
-// 5. Enquiry Sheet & Builder
-const EnquirySection = memo(({ st, onQuantitySelect, onCopy, copyNote }) => {
-    const currentType = TYPES[st.t];
-    const currentSize = currentType.sizes[Math.min(st.s, currentType.sizes.length - 1)];
-    const currentColor = COLS[st.c];
-    const currentGasket = GK[st.g];
-    const currentLiquid = LIQ[st.l];
-
-    const sheetRows = useMemo(
-        () => [
-            ["Closure", currentType.n],
-            ["Size", currentSize[0]],
-            ["Colour", currentColor.n],
-            ["Cap marking", st.brand.trim() || "None"],
-            ["Gasket", currentGasket.n],
-            ["Liquid", currentLiquid.n],
-            ["Quantity", `${numFormat.format(st.q)} pieces`],
-        ],
-        [currentType, currentSize, currentColor, st.brand, currentGasket, currentLiquid, st.q]
-    );
-
-    const quantityTabs = useMemo(() => QTY.map((v) => ({ name: `${numFormat.format(v)} pcs`, value: v })), []);
-
-    return (
-        <div className="bg-white grid-cols-2 sm-grid-cols-1 gap-12 items-start">
-            <div>
-                <h3 className="title-text font-600 text-dark uppercase">Enquiry sheet</h3>
-                <p className="small-text text-gray mt-6">
-                    Your choices are collected here. Set a quantity and copy the enquiry to send to the sales team. Custom colours, branding and bespoke designs are handled on request.
-                </p>
-
-                <div className="mt-16 overflow-auto">
-                    <p className="mini-text font-600 text-gray uppercase mb-6">Quantity</p>
-                    <Tab version="v2" tabs={quantityTabs} activeTab={st.q} onChange={onQuantitySelect} className="w-full" />
-                </div>
-
-                <Button
-                    onClick={onCopy}
-                    text="Get A Quote"
-                    version="v1"
-                    bg="primary"
-                    variant="outline"
-                    color="white"
-                    className='mt-14'
+            {/* Tab.jsx for Chemical Categories */}
+            <div className="mt-12 overflow-x-auto">
+                <Tab
+                    version="v2"
+                    tabs={categoryTabs}
+                    activeTab={activeCategory}
+                    onChange={onCategoryChange}
+                    className="w-full"
                 />
             </div>
 
-            <div className="rounded-5 rounded-5 py-10 px-20 bg-forth">
-                {sheetRows.map(([lbl, val], idx) => (
-                    <div key={lbl} className={`flex items-center justify-between py-10 gap-12 ${idx < sheetRows.length - 1 ? "bordb" : ""}`}>
-                        <p className="small-text font-500 text-gray">{lbl}</p>
-                        <p className="small-text font-600 text-dark text-right">{val}</p>
+            {/* Compound Selector List */}
+            <div className="mt-14 grid-cols-1 gap-8 flex-1">
+                {compounds.map((comp) => {
+                    const isSelected = selectedCompound.id === comp.id;
+                    return (
+                        <div
+                            key={comp.id}
+                            onClick={() => onSelectCompound(comp)}
+                            className={`p-12 rounded-8 cursor-pointer transition-all ${isSelected ? "bg-forth" : "bg-white hover:bg-forth"
+                                }`}
+                            style={{
+                                border: isSelected ? "1.5px solid var(--primary)" : "1px solid #e2e8f0"
+                            }}
+                        >
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-8">
+                                    <span
+                                        className="rounded-full flex-shrink-0"
+                                        style={{ width: "10px", height: "10px", background: comp.color }}
+                                    />
+                                    <h5 className="headmini-text font-600 text-dark m-0">{comp.name}</h5>
+                                </div>
+                                <span className="mini-text font-600 text-primary">CAS {comp.cas}</span>
+                            </div>
+
+                            <p className="mini-text text-gray m-0 mt-4 line-clamp1">{comp.application}</p>
+
+                            <div className="flex items-center justify-between mt-6 pt-6 bordt mini-text">
+                                <span className="text-dark font-500">MW: {comp.mw}</span>
+                                <span className="text-gray">BP/MP: {comp.bp}</span>
+                                <span className="font-600 text-success">≥ {comp.defaultPurity}% HPLC</span>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+
+            {/* Technical Specifications Box */}
+            <div className="mt-14 p-12 bg-forth rounded-8">
+                <h5 className="headmini-text font-600 text-dark mb-6">Technical Specifications</h5>
+                <div className="grid-cols-2 gap-6 mini-text">
+                    <div>
+                        <span className="text-gray">Molecular Formula:</span>
+                        <p className="font-600 text-dark m-0">{selectedCompound.formula}</p>
                     </div>
-                ))}
+                    <div>
+                        <span className="text-gray">Molecular Weight:</span>
+                        <p className="font-600 text-dark m-0">{selectedCompound.mw}</p>
+                    </div>
+                    <div>
+                        <span className="text-gray">Physical Appearance:</span>
+                        <p className="font-600 text-dark m-0">{selectedCompound.state}</p>
+                    </div>
+                    <div>
+                        <span className="text-gray">Boiling / Melting:</span>
+                        <p className="font-600 text-dark m-0">{selectedCompound.bp}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+});
+ChemicalControls.displayName = "ChemicalControls";
+
+// 4. Solvent Compatibility Matrix
+const SolventMatrix = memo(({ activeCategory }) => {
+    const catIdxMap = { silyl: 0, triflic: 1, coupling: 2, intermediate: 3, speciality: 4 };
+    const currentCatIdx = catIdxMap[activeCategory] || 0;
+
+    const ratingStyles = {
+        2: { label: "Optimal / High Yield", bg: "#dcfce7", color: "#166534" },
+        1: { label: "Anhydrous Required", bg: "#fef3c7", color: "#92400e" },
+        0: { label: "Incompatible / Hydrolysis", bg: "#fee2e2", color: "#991b1b" }
+    };
+
+    return (
+        <div className="bg-white rounded-10 p-16">
+            <div className="flex items-center justify-between mb-12">
+                <div>
+                    <h3 className="title-text font-600 text-dark uppercase m-0">Solvent & Reaction Compatibility Matrix</h3>
+                    <p className="mini-text text-gray m-0 mt-2">Verified compatibility for safe reaction execution and maximum synthetic conversion.</p>
+                </div>
+                <div className="flex items-center gap-12 mini-text">
+                    <span className="flex items-center gap-4">
+                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#166534" }} />
+                        Recommended
+                    </span>
+                    <span className="flex items-center gap-4">
+                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#92400e" }} />
+                        Moisture-Free
+                    </span>
+                    <span className="flex items-center gap-4">
+                        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#991b1b" }} />
+                        Incompatible
+                    </span>
+                </div>
+            </div>
+
+            <div className="overflow-x-auto">
+                <table className="w-full text-left mini-text" style={{ borderCollapse: "separate", borderSpacing: "0 6px" }}>
+                    <thead>
+                        <tr className="text-dark font-500 uppercase">
+                            <th className="py-6 px-10">Solvent System</th>
+                            <th className="py-6 px-10">Compatibility Status</th>
+                            <th className="py-6 px-10">Trace Water Tolerance</th>
+                            <th className="py-6 px-10">Recommended Reaction Atmosphere</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {SOLVENTS.map((sol) => {
+                            const rating = sol.r[currentCatIdx];
+                            const style = ratingStyles[rating] || ratingStyles[1];
+                            return (
+                                <tr key={sol.name} className="bg-forth rounded-6">
+                                    <td className="py-12 px-10 font-600 text-dark rounded-l-6">{sol.name}</td>
+                                    <td className="py-8 px-10">
+                                        <span
+                                            className="px-8 py-3 rounded-20 font-600 mini-text inline-block"
+                                            style={{ backgroundColor: style.bg, color: style.color }}
+                                        >
+                                            {style.label}
+                                        </span>
+                                    </td>
+                                    <td className="py-8 px-10 text-gray">
+                                        {rating === 2 ? "< 500 ppm (Standard)" : rating === 1 ? "< 50 ppm (Dry / Sieves)" : "Dry / Water-free"}
+                                    </td>
+                                    <td className="py-8 px-10 text-dark font-500 rounded-r-6">
+                                        {rating === 2 ? "Inert N2 / Ambient" : rating === 1 ? "Inert Argon Blanket" : "Avoid Reactivity"}
+                                    </td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
+});
+SolventMatrix.displayName = "SolventMatrix";
+
+// 5. Enquiry & Batch Quotation Builder
+const EnquirySection = memo(({ compound, purity, batchScale, onBatchScaleChange, selectedPackaging, onSelectPackaging }) => {
+    const handleCopyEnquiry = useCallback(() => {
+        const text = `Global Chemie Quote Request:\nProduct: ${compound.name} (CAS: ${compound.cas})\nTarget Purity: ${purity}% (HPLC Area)\nBatch Quantity: ${batchScale}g / ${(batchScale / 1000).toFixed(1)}kg\nPackaging: ${selectedPackaging}\n\nPlease share commercial quotation, Certificate of Analysis (COA), and dispatch lead time.`;
+
+        if (navigator?.clipboard?.writeText) {
+            navigator.clipboard.writeText(text);
+            showToast("Enquiry specifications copied to clipboard!", "success");
+        } else {
+            showToast("Please copy your enquiry details below.", "info");
+        }
+    }, [compound, purity, batchScale, selectedPackaging]);
+
+    const batchTabs = useMemo(() => {
+        return BATCH_SCALES.map((b) => ({
+            name: b.name,
+            value: b.value
+        }));
+    }, []);
+
+    return (
+        <div className="bg-white rounded-10 p-16 grid-cols-2 sm-grid-cols-1 gap-16 items-start">
+            <div>
+                <h3 className="title-text font-600 text-dark uppercase m-0">Chemical Inquiry Sheet</h3>
+                <p className="mini-text text-gray m-0 mt-4">
+                    Your chemical configuration is compiled below. Select your required batch volume and packaging to request direct factory quotes and official COA sheets.
+                </p>
+
+                {/* Batch Scale Selector with Tab.jsx */}
+                <div className="mt-14">
+                    <p className="mini-text font-600 text-gray uppercase mb-6">Batch Volume Scale</p>
+                    <Tab
+                        version="v2"
+                        tabs={batchTabs}
+                        activeTab={batchScale}
+                        onChange={onBatchScaleChange}
+                        className="w-full"
+                    />
+                </div>
+
+                {/* Packaging selection */}
+                <div className="mt-14">
+                    <p className="mini-text font-600 text-gray uppercase mb-6">UN-Certified Packaging</p>
+                    <div className="flex flex-wrap gap-8">
+                        {compound.packaging.map((pkg) => {
+                            const isSelected = selectedPackaging === pkg;
+                            return (
+                                <button
+                                    key={pkg}
+                                    type="button"
+                                    onClick={() => onSelectPackaging(pkg)}
+                                    className={`px-12 py-6 rounded-6 mini-text font-500 cursor-pointer transition-all ${isSelected
+                                        ? "bg-primary text-white"
+                                        : "bg-forth text-dark hover:bg-light-primary"
+                                        }`}
+                                    style={{ border: "none" }}
+                                >
+                                    {pkg}
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                <div className="mt-18">
+                    <Button
+                        onClick={handleCopyEnquiry}
+                        text="Request Quote & COA"
+                        icon="Send"
+                        iconPosition="right"
+                        version="v1"
+                        bg="primary"
+                        color="white"
+                    />
+                </div>
+            </div>
+
+            {/* Summary Review Sheet */}
+            <div className="rounded-8 p-16 bg-forth">
+                <h5 className="headmini-text font-600 text-dark mb-10 pb-6 bordb">Batch Specification Summary</h5>
+                <div className="grid-cols-1 gap-8 mini-text">
+                    <div className="flex justify-between py-4 bordb">
+                        <span className="text-gray">Chemical Compound:</span>
+                        <span className="font-600 text-dark text-right">{compound.name}</span>
+                    </div>
+                    <div className="flex justify-between py-4 bordb">
+                        <span className="text-gray">CAS Number:</span>
+                        <span className="font-600 text-dark">{compound.cas}</span>
+                    </div>
+                    <div className="flex justify-between py-4 bordb">
+                        <span className="text-gray">Target Assay Purity:</span>
+                        <span className="font-700 text-success">{purity}% (HPLC/GC)</span>
+                    </div>
+                    <div className="flex justify-between py-4 bordb">
+                        <span className="text-gray">Batch Scale:</span>
+                        <span className="font-600 text-dark">
+                            {batchScale >= 1000 ? `${batchScale / 1000} kg` : `${batchScale} g`}
+                        </span>
+                    </div>
+                    <div className="flex justify-between py-4 bordb">
+                        <span className="text-gray">Packaging Standard:</span>
+                        <span className="font-600 text-dark">{selectedPackaging}</span>
+                    </div>
+                    <div className="flex justify-between py-4">
+                        <span className="text-gray">Manufacturer / Sourcing:</span>
+                        <span className="font-600 text-primary">Global Chemie (Mumbai)</span>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -582,79 +700,46 @@ EnquirySection.displayName = "EnquirySection";
 // Main DemoSection Component
 // ----------------------------------------------------
 const DemoSection = () => {
-    const [st, setSt] = useState({
-        t: "bung",
-        s: 0,
-        c: 2,
-        g: 0,
-        l: 0,
-        ex: 60,
-        brand: "BRAND",
-        q: 5000,
-        ind: -1,
-    });
-    const [copyNote, setCopyNote] = useState("");
+    const [selectedIndustry, setSelectedIndustry] = useState(0);
+    const [activeCategory, setActiveCategory] = useState("silyl");
+    const [selectedCompound, setSelectedCompound] = useState(CHEMICAL_COMPOUNDS.silyl[0]);
+    const [purity, setPurity] = useState(98.8);
+    const [temperature, setTemperature] = useState(25);
+    const [batchScale, setBatchScale] = useState(1000);
+    const [selectedPackaging, setSelectedPackaging] = useState(CHEMICAL_COMPOUNDS.silyl[0].packaging[0]);
 
-    const updateField = useCallback((key, val) => setSt((p) => ({ ...p, [key]: val })), []);
-
-    const handleIndustrySelect = useCallback((i) => {
-        const x = INDS[i];
-        const targetType = TYPES[x.t];
-        const targetSize = Math.min(x.s, targetType.sizes.length - 1);
-        const targetLiquid = LIQ[x.l];
-
-        let bestRating = -1;
-        let bestGasketIndex = 0;
-        targetLiquid.r.forEach((v, k) => {
-            if (v > bestRating) {
-                bestRating = v;
-                bestGasketIndex = k;
-            }
-        });
-
-        setSt((prev) => ({
-            ...prev,
-            ind: i,
-            t: x.t,
-            s: targetSize,
-            c: x.c,
-            l: x.l,
-            g: bestGasketIndex,
-        }));
-    }, []);
-
-    const handleTypeChange = useCallback((k) => setSt((prev) => ({ ...prev, t: k, s: 0, ind: -1 })), []);
-    const handleLiquidSelect = useCallback((lIdx) => {
-        let bestRating = -1;
-        let bestGasketIndex = 0;
-        LIQ[lIdx].r.forEach((v, k) => {
-            if (v > bestRating) {
-                bestRating = v;
-                bestGasketIndex = k;
-            }
-        });
-        setSt((prev) => ({ ...prev, l: lIdx, g: bestGasketIndex }));
-    }, []);
-
-    const handleCellSelect = useCallback((lIdx, gIdx) => setSt((prev) => ({ ...prev, l: lIdx, g: gIdx })), []);
-    const handleExplodeChange = useCallback((val) => updateField("ex", val), [updateField]);
-    const handleQuantitySelect = useCallback((val) => updateField("q", val), [updateField]);
-
-    const handleCopyEnquiry = useCallback(() => {
-        const currentType = TYPES[st.t];
-        const safeSizeIdx = Math.min(st.s, currentType.sizes.length - 1);
-        const currentSize = currentType.sizes[safeSizeIdx];
-        const brandStr = st.brand.trim() ? `, cap marked ${st.brand.trim()}` : "";
-        const text = `Enquiry: ${numFormat.format(st.q)} x ${currentType.n}, ${currentSize[0]}, ${COLS[st.c].n}${brandStr}, ${GK[st.g].n} gasket, for ${LIQ[st.l].n.toLowerCase()}. Please share price and lead time.`;
-
-        const onSuccess = () => setCopyNote(`Copied: ${text}`);
-        const onFallback = () => setCopyNote(text);
-        if (navigator?.clipboard?.writeText) {
-            navigator.clipboard.writeText(text).then(onSuccess, onFallback);
-        } else {
-            onFallback();
+    const handleIndustrySelect = useCallback((idx) => {
+        setSelectedIndustry(idx);
+        const preset = INDUSTRIES[idx];
+        setActiveCategory(preset.category);
+        const compounds = CHEMICAL_COMPOUNDS[preset.category] || [];
+        const comp = compounds[preset.defaultCompound] || compounds[0];
+        if (comp) {
+            setSelectedCompound(comp);
+            setPurity(comp.defaultPurity);
+            setSelectedPackaging(comp.packaging[0]);
         }
-    }, [st]);
+    }, []);
+
+    const handleCategoryChange = useCallback((catKey) => {
+        setActiveCategory(catKey);
+        const compounds = CHEMICAL_COMPOUNDS[catKey] || [];
+        if (compounds.length > 0) {
+            setSelectedCompound(compounds[0]);
+            setPurity(compounds[0].defaultPurity);
+            setSelectedPackaging(compounds[0].packaging[0]);
+        }
+    }, []);
+
+    const handleSelectCompound = useCallback((comp) => {
+        setSelectedCompound(comp);
+        setPurity(comp.defaultPurity);
+        setSelectedPackaging(comp.packaging[0]);
+    }, []);
+
+    const handlePurityChange = useCallback((val) => {
+        setPurity(val);
+    }, []);
 
     return (
         <div className="py-30 sm-py-20">
@@ -662,57 +747,71 @@ const DemoSection = () => {
                 .custom-range-slider {
                     -webkit-appearance: none;
                     appearance: none;
-                    height: 24px;
+                    height: 20px;
                     background: transparent;
                 }
                 .custom-range-slider::-webkit-slider-runnable-track {
                     height: 6px;
                     border-radius: 6px;
-                    background: linear-gradient(90deg, #f0561d var(--p, 0%), #c4d3e3 var(--p, 0%));
+                    background: linear-gradient(90deg, #2563eb var(--p, 50%), #e2e8f0 var(--p, 50%));
                 }
                 .custom-range-slider::-moz-range-track {
                     height: 6px;
                     border-radius: 6px;
-                    background: #c4d3e3;
-                }
-                .custom-range-slider::-moz-range-progress {
-                    height: 6px;
-                    border-radius: 6px;
-                    background: #f0561d;
+                    background: #e2e8f0;
                 }
                 .custom-range-slider::-webkit-slider-thumb {
                     -webkit-appearance: none;
-                    width: 22px;
-                    height: 22px;
-                    border-radius: 6px;
-                    background: #fff;
-                    border: 3px solid #f0561d;
-                    margin-top: -8px;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    background: #ffffff;
+                    border: 3px solid #2563eb;
+                    margin-top: -6px;
                 }
                 .custom-range-slider::-moz-range-thumb {
                     width: 18px;
                     height: 18px;
-                    border-radius: 6px;
-                    background: #fff;
-                    border: 3px solid #f0561d;
+                    border-radius: 50%;
+                    background: #ffffff;
+                    border: 3px solid #2563eb;
                 }
             `}</style>
 
-            <div className="grid-cols-1 gap-12">
-                <IndustrySection selectedIndex={st.ind} onSelect={handleIndustrySelect} />
+            <div className="grid-cols-1 gap-16">
+                <IndustryPresets
+                    selectedIdx={selectedIndustry}
+                    onSelect={handleIndustrySelect}
+                />
 
-                <div className="grid-cols-2 sm-grid-cols-1 gap-12 items-start" aria-live="polite">
-                    <ExplodedStage st={st} onExplodeChange={handleExplodeChange} />
-                    <ClosureControls st={st} onTypeChange={handleTypeChange} onFieldChange={updateField} />
+                <div className="grid-cols-2 sm-grid-cols-1 gap-16 items-start">
+                    <ExplodedStage
+                        compound={selectedCompound}
+                        purity={purity}
+                        onPurityChange={handlePurityChange}
+                        temperature={temperature}
+                        onTemperatureChange={setTemperature}
+                    />
+                    <ChemicalControls
+                        activeCategory={activeCategory}
+                        onCategoryChange={handleCategoryChange}
+                        selectedCompound={selectedCompound}
+                        onSelectCompound={handleSelectCompound}
+                    />
                 </div>
 
-                <div className="mt-8">
-                    <SealCheckMatrix st={st} onSelectLiquid={handleLiquidSelect} onSelectCell={handleCellSelect} />
-                </div>
+                <SolventMatrix
+                    activeCategory={activeCategory}
+                />
 
-                <div className="mt-8">
-                    <EnquirySection st={st} onQuantitySelect={handleQuantitySelect} onCopy={handleCopyEnquiry} copyNote={copyNote} />
-                </div>
+                {/* <EnquirySection
+                    compound={selectedCompound}
+                    purity={purity}
+                    batchScale={batchScale}
+                    onBatchScaleChange={setBatchScale}
+                    selectedPackaging={selectedPackaging}
+                    onSelectPackaging={setSelectedPackaging}
+                /> */}
             </div>
         </div>
     );

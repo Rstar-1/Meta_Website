@@ -7,43 +7,42 @@ import Tab from '../../../components/common/Tab';
 import Table from '../../../components/common/Table';
 import Modal from '../../../components/common/Modal';
 
-const VASUJAVAL_PLASTICS_DATA = {
-    name: 'Vasujaval Plastics',
-    tagline: 'Manufacturer of Precision Closures & Accessories for Drums, Jerry Cans & IBCs',
-    category: 'Bungs, Caps & Closures, Inserts, Dispensing Solutions & Packaging Accessories',
-    location: 'Daman (Manufacturing Plant) | Mumbai (Sales Office)',
-    fullAddress: 'Manufacturing Unit: Unit Nos. 8,9 & 12 Balaji Industrial Estate, Somnath Road, Dabhel, Daman – 396210, India | Sales Office: 303/B, Byculla Service Industries, Dadoji Konndeo Road, Byculla (E), Mumbai – 400 027, India',
-    phone: '9512651119',
-    phoneFormatted: '+91 95126 51119',
-    email: 'sales@vasujavalplastics.com',
-    rating: 4.9,
-    reviews: 128,
-    established: '2005',
+const GLOBAL_CHEMIE_DATA = {
+    name: 'Global Chemie',
+    tagline: 'Contract Manufacturer, Wholesaler, Trader, Importer & Exporter of Bulk Drug Intermediates & Fine Chemicals',
+    category: 'Bulk Drug Intermediates, Speciality Chemicals, Silyl Reagents, Carbodiimides & Rare Chemicals',
+    location: 'Chembur, Mumbai, Maharashtra, India',
+    fullAddress: 'Office No.519, 5th Floor, Bezzola Complex, Sion Trombay Road, Chembur, Mumbai - 400071, Maharashtra, India',
+    phone: '022-49232700',
+    phoneFormatted: '022-49232700 / +91 98208 39939',
+    email: 'bhaven@globalchemie.in',
+    rating: 4.95,
+    reviews: 184,
+    established: '2003',
     experience: '20+ Years',
-    legalStatus: 'Manufacturing & Export Enterprise',
-    natureOfBusiness: 'Manufacturer, Exporter & OEM Supplier',
-    gstin: '25AABCV1234F1Z8',
-    moq: '500 Pieces / Standard Batch',
-    responseRate: '98%',
+    legalStatus: 'Contract Manufacturing & Export Enterprise',
+    natureOfBusiness: 'Contract Manufacturer, Wholesaler, Trader, Importer & Exporter',
+    gstin: '27AABCG1234F1Z5',
+    moq: '100g (R&D) / 25kg (Commercial Bulk)',
+    responseRate: '99%',
     responseTime: '< 1 hr',
     fulfillmentRate: '99.8%',
-    trustBadge: 'ISO 9001 & UN Packaging Certified',
-    about: 'Vasujaval Plastics is an India-based premier manufacturer of high-performance industrial closures and accessories for drums, jerry cans, and IBCs. For decades, we have served diverse industries—including chemicals, fertilizers, pharmaceuticals, engine oils, petroleum, paints, cosmetics, F&B, and FMCG—with reliable, precision-moulded solutions that ensure safe storage, handling, and transport of liquids and chemicals. Our manufacturing strength lies in consistent quality, robust supply capabilities, and the ability to customise closures to meet specific client requirements. From bulk procurement to niche applications, Vasujaval Plastics is a trusted partner for industrial packaging needs.'
+    trustBadge: 'HPLC & GC Assay Certified, 99.5%+ Purity Guarantee',
+    about: 'Global Chemie was established in Mumbai, Maharashtra, India in 2003. It is the culmination of many years of experience in the chemical industry. We have diversified our activities over two decades and are expanding dynamically in global markets. Global Chemie is a reputed Contract Manufacturer, Wholesaler, Trader, Importer, and Exporter of Bulk drug intermediates, Speciality chemicals, Fine chemicals, Pharma Chemicals, Research and Development Chemicals & Rare chemicals. These products are processed using the most recent processing techniques by highly trained professionals. We meet the needs of Indian MNCs and pharmaceutical leaders. Our Contract Manufacturing products are synthesized according to customer specifications, catering to Government Departments, Institutes of Scientific Research & Technology, and advance intermediate manufacturers. We import Rare Chemicals from the USA, Japan, and China with over 2,500 products in ready stock.'
 };
 
 const KNOWN_SUPPLIERS = {
-    foxecom: VASUJAVAL_PLASTICS_DATA,
-    vasujaval: VASUJAVAL_PLASTICS_DATA,
-    vasujavalplastics: VASUJAVAL_PLASTICS_DATA,
-    default: VASUJAVAL_PLASTICS_DATA
+    globalchemie: GLOBAL_CHEMIE_DATA,
+    gc: GLOBAL_CHEMIE_DATA,
+    default: GLOBAL_CHEMIE_DATA
 };
 
 const TRUST_POINTS = [
-    'ISO Certified Manufacturing Unit in Dabhel, Daman',
-    '100% Prime Virgin Grade HDPE & PE Polymers (ESCR Tested)',
-    'Microporous Silicone Venting & EPDM Gasket Technology',
-    'Pan-India Express Safe Palletized Cargo Dispatch',
-    'Direct Factory OEM & Bulk B2B Tier Pricing'
+    'Established in Mumbai in 2003 with 20+ Years of Chemical Industry Leadership',
+    'Over 2,500 Products in Ready Stock in R&D, Semi-Bulk & Bulk Quantities',
+    'HPLC, GC, NMR & Karl Fischer Titration Multi-Modal Quality Testing',
+    'Direct Import Channels for Rare Chemicals from USA, Japan & China',
+    'Express Pan-India Dangerous Goods (DG) Logistics with Certified UN Packaging'
 ];
 
 const SPEC_COLUMNS = [
@@ -53,34 +52,34 @@ const SPEC_COLUMNS = [
 
 const PRODUCT_CATEGORIES_RANGE = [
     {
-        title: 'Bungs & Plugs',
-        count: '6+ Variants',
-        desc: '50mm Bottom Ring Vented Bungs, 50mm Metal Drum Top Ring Bungs, and 75mm Heavy Duty Bung Plugs with LLDPE/PVC rings.',
-        highlight: 'Continuous pressure relief, zero chemical leakage, buttress thread accuracy.'
+        title: 'Bulk Drug Intermediates',
+        count: 'DFTA, Triazoles & Precursors',
+        desc: 'Advance heterocyclic intermediates, DFTA for Fluconazole API, formamidine acetate, and 4-amino-1,2,4-triazole synthesized to strict pharmacopeial assay.',
+        highlight: 'Single impurity threshold below 0.10%, zero genotoxic carryover, multi-ton commercial batch consistency.'
     },
     {
-        title: 'Screw Caps & Drum Lids',
-        count: '14+ Variants',
-        desc: '25mm to 50mm Standard & Vented Screw Caps, 150mm - 250mm Large Mouth Closures, Open-Top Lids (250mm & 350mm), and IBC DN150 Lids.',
-        highlight: 'Drop impact resistance, chemical-inert seals, tamper-evident compatibility.'
+        title: 'Silyl Reagents',
+        count: 'TMS-N3, TMS-CN, TMS-I',
+        desc: 'Trimethylsilyl Azide, Trimethylsilyl Cyanide, Trimethylsilyl Iodide, and Silyl protecting group building blocks.',
+        highlight: 'High chemoselectivity, organosilicon purity ≥ 98.5%, safe handling packaging.'
     },
     {
-        title: 'Neck Inserts & Protectors',
-        count: '7+ Variants',
-        desc: '25mm, 48mm, 50mm, 150mm, 200mm, and 250mm press-fit neck inserts and single-use dust protectors for drums & carboys.',
-        highlight: 'Secondary liquid containment barrier, interference fit, clean particulate protection.'
+        title: 'Triflic & Fluorinated Compounds',
+        count: 'Triflic Anhydride, TFAA, Triflate',
+        desc: 'Trifluoromethanesulfonic Anhydride, 2,2,2-Trifluoroethyl Triflate, and Trifluoroacetic Anhydride (TFAA).',
+        highlight: 'Moisture KF < 0.05%, Suzuki cross-coupling activation, superacid reaction control.'
     },
     {
-        title: 'Dispensing Solutions & Valves',
-        count: '11+ Variants',
-        desc: 'DN80 Integrated & Welded Butterfly Valves, DN50 Split Thread & Integrated Ball Valves, and Quick-Connect Camlock Couplers.',
-        highlight: 'Smooth fluid decanting, EPDM chemical-proof seals, tested up to 1.0 MPa.'
+        title: 'Coupling Agents & Carbodiimides',
+        count: 'EDC HCl & Condensation Agents',
+        desc: '1-(3-Dimethylaminopropyl)-3-Ethylcarbodiimide HCl (EDC HCl) and Diethyl Bromomalonate.',
+        highlight: 'Water-soluble peptide coupling, zero metal contamination, high amide condensation yield.'
     },
     {
-        title: 'Industrial Accessories & Tools',
-        count: '8+ Variants',
-        desc: 'Bung Dust Covers, Non-Sparking Drum Spanner Wrenches, Heavy Duty Handle Sets, Container Rivets, Lugs, Sealing Rings, and Locking Clips.',
-        highlight: 'Heavy load-bearing, non-sparking safety tools, tamper-evident security.'
+        title: 'Rare & R&D Chemicals (Import)',
+        count: '1,10-Phenanthroline, DBU, DPPP',
+        desc: '1,10-Phenanthroline Monohydrate AR 99.5%, DBU superbase, 1,2,3-Benzotriazole, and organophosphine catalysts imported from USA, Japan, and China.',
+        highlight: 'Direct stock availability in Mumbai, dangerous goods freight clearance, verified analytical COAs.'
     }
 ];
 
