@@ -358,12 +358,21 @@
       }
     ]
   },
+  "CategorySection": {
+    "heading": {
+      "tag": "WHAT WE PROVIDE",
+      "title": "High-Purity Bulk Drug Intermediates, Fine Chemicals & Speciality Reagents in Ready Stock."
+    }
+  },
   "BlogSection": {
     "heading": {
       "tag": "TECHNICAL GUIDES & INSIGHTS",
       "title": "Chemical Synthesis, Analytical Testing & Sourcing Knowledge",
       "actionText": "View All Articles"
     },
+    "searchPlaceholder": "Search chemical articles, CAS, synthesis routes...",
+    "categoryTitle": "Research & Industry Categories",
+    "recentTitle": "Recent Technical Insights",
     "featuredPost": {
       "id": 1,
       "slug": "bulk-drug-intermediates-synthesis-selection-guide-2026",

@@ -5,6 +5,7 @@ import Image from '../../../components/common/Image';
 import Fields from '../../../components/forms/Fields';
 
 import { resolveImagePath } from '../../../utils/imageResolver';
+import { blogCMS } from '../../../utils/apiData';
 import blogData from '../../../data/blog.json';
 
 const CategorySection = React.memo(({
@@ -67,7 +68,7 @@ const CategorySection = React.memo(({
             <div className="mb-25 bg-forth rounded-10 p-15">
                 <Fields
                     type="input"
-                    placeholder="Search articles..."
+                    placeholder={blogCMS?.searchPlaceholder || "Search chemical articles, CAS, synthesis routes..."}
                     value={searchQuery}
                     onChange={handleSearch}
                     icon="Search"
@@ -77,7 +78,7 @@ const CategorySection = React.memo(({
 
             <div className="mb-25">
                 <h4 className="text-dark mid-text font-600">
-                    All Categories
+                    {blogCMS?.categoryTitle || "Research & Industry Categories"}
                 </h4>
                 <div className="grid-cols-1 gap-10 mt-15">
                     {categories.map((cat, idx) => {
@@ -103,7 +104,7 @@ const CategorySection = React.memo(({
 
             <div className="mb-25">
                 <h4 className="text-dark mid-text font-600">
-                    Recent Posts
+                    {blogCMS?.recentTitle || "Recent Technical Insights"}
                 </h4>
                 <div className="mt-15 grid-cols-1 gap-12">
                     {recentPosts.map((post) => (

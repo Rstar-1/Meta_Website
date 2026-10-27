@@ -42,9 +42,9 @@ const HeroContent = React.memo(({ onGetInTouch, isHeaderSticky, heroVersion }) =
             <br />
             <span className='text-primary'>{heroCMS?.titleHighlight || 'BULK DRUG INTERMEDIATES'}</span>
         </h1>
-        {/* <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12' style={{ maxWidth: '650px' }}>
-                {heroCMS?.leftText || "Reputed Indian contract manufacturer, wholesaler, trader, importer, and exporter of bulk drug intermediates, speciality chemicals, fine chemicals, and rare research compounds."}
-            </p> */}
+        <p className='text-white headpara-text text-muted font-300 sm-mt-6 mt-12' style={{ maxWidth: '650px' }}>
+            {heroCMS?.leftText || "Reputed Indian contract manufacturer, wholesaler, trader, importer, and exporter of bulk drug intermediates, speciality chemicals, fine chemicals, and rare research compounds."}
+        </p>
         <Button
             text="Get Chemical Quote"
             icon="ArrowUpRight"

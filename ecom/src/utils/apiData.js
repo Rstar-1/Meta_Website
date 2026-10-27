@@ -41,6 +41,7 @@ export const {
     FeedSection: feedCMS,
     BlogSection: blogCMS,
     PatchSection: patchCMS,
+    CategorySection: categoryCMS,
 } = cmsData;
 
 export {

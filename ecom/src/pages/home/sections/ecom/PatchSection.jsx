@@ -8,7 +8,7 @@ const PatchSection = () => {
     return (
         <div className='w-full py-100 sm-py-50'>
             <div className="w-80 sm-w-full">
-                <Badge
+                {/* <Badge
                     text={patchCMS?.badge}
                     icon="Layers"
                     bg="var(--white)"
@@ -16,7 +16,7 @@ const PatchSection = () => {
                     iconColor="var(--primary)"
                     size='lg'
                     className="mb-18 font-600 uppercase"
-                />
+                /> */}
                 <h3 className='text-white large-text font-600 uppercase'>
                     {patchCMS?.title}
                 </h3>

@@ -246,13 +246,13 @@ const INDUSTRIES = [
 // 1. Industry Presets
 const IndustryPresets = memo(({ selectedIdx, onSelect }) => {
     return (
-        <div className="bg-white rounded-10 p-16">
-            <div className="flex items-center justify-between mb-12">
+        <div className="">
+            <div className="flex sm-grid-cols-1 items-center justify-between mb-12">
                 <div>
                     <h3 className="title-text font-600 text-dark uppercase m-0">Chemical Application Preset</h3>
                     <p className="mini-text text-gray m-0 mt-2">Select your industrial domain to auto-configure standard synthesis parameters.</p>
                 </div>
-                <div className="rounded-20 px-10 py-4 bg-forth text-primary mini-text font-600">
+                <div className="rounded-20 px-10 py-4 bg-forth text-primary mini-text font-600 sm-mt-10 w-max">
                     2,500+ Stock Compounds
                 </div>
             </div>
@@ -286,13 +286,13 @@ const ExplodedStage = memo(({ compound, purity, onPurityChange, temperature, onT
     const progressWidth = Math.min(100, Math.max(0, ((purityVal - 90) / 10) * 100));
 
     return (
-        <div className="bg-white rounded-10 p-16 h-full">
-            <div className="flex items-center justify-between pb-10 bordb">
+        <div className=" h-full">
+            <div className="flex sm-grid-cols-1 items-center justify-between pb-10 bordb">
                 <div>
                     <span className="mini-text font-600 text-primary uppercase">Lab Simulation & Reaction Vessel</span>
                     <h4 className="mid-text font-600 text-dark mt-2 m-0">{compound.name}</h4>
                 </div>
-                <div className="text-right">
+                <div className="text-right sm-text-left">
                     <span className="mini-text text-gray">CAS Registry</span>
                     <p className="small-text font-700 text-dark m-0">{compound.cas}</p>
                 </div>
@@ -368,31 +368,8 @@ const ExplodedStage = memo(({ compound, purity, onPurityChange, temperature, onT
             </div>
 
             {/* Reaction Temperature Control */}
-            <div className="mt-14 bg-forth p-12 rounded-8">
-                <div className="flex items-center justify-between mb-8">
-                    <label className="small-text font-600 text-dark">
-                        Synthesis Temperature Control
-                    </label>
-                    <span className="small-text font-700 text-primary">
-                        {temperature}°C &bull; {temperature <= 0 ? "Cryogenic" : temperature >= 80 ? "Exothermic Reflux" : "Ambient Stirring"}
-                    </span>
-                </div>
-
-                <Fields
-                    type="number"
-                    value={temperature}
-                    onChange={(val) => onTemperatureChange(val === "" ? "" : Number(val))}
-                    min={-20}
-                    max={140}
-                    step={1}
-                    version="v2"
-                    placeholder="Enter temperature in °C (-20 to 140)"
-                    icon="Sun"
-                    iconPosition="right"
-                    className="w-full"
-                />
-
-                <div className="flex items-center gap-8 mt-8">
+            <div className="my-14">
+                <div className="flex items-center gap-8">
                     {[-10, 25, 80, 110].map((presetTemp) => (
                         <button
                             key={presetTemp}
@@ -427,7 +404,7 @@ const ChemicalControls = memo(({ activeCategory, onCategoryChange, selectedCompo
     }, []);
 
     return (
-        <div className="bg-white rounded-10 p-16 h-full">
+        <div className=" h-full">
             <h3 className="title-text font-600 text-dark uppercase m-0">Chemical Selection & Route</h3>
             <p className="mini-text text-gray m-0 mt-2">Filter high-purity intermediates by synthesis family and chemical classification.</p>
 
@@ -456,7 +433,7 @@ const ChemicalControls = memo(({ activeCategory, onCategoryChange, selectedCompo
                                 border: isSelected ? "1.5px solid var(--primary)" : "1px solid #e2e8f0"
                             }}
                         >
-                            <div className="flex items-center justify-between">
+                            <div className="flex sm-grid-cols-1 items-center justify-between">
                                 <div className="flex items-center gap-8">
                                     <span
                                         className="rounded-full flex-shrink-0"
@@ -518,13 +495,13 @@ const SolventMatrix = memo(({ activeCategory }) => {
     };
 
     return (
-        <div className="bg-white rounded-10 p-16">
-            <div className="flex items-center justify-between mb-12">
+        <div className="">
+            <div className="flex sm-grid-cols-1 items-center justify-between mb-12">
                 <div>
                     <h3 className="title-text font-600 text-dark uppercase m-0">Solvent & Reaction Compatibility Matrix</h3>
                     <p className="mini-text text-gray m-0 mt-2">Verified compatibility for safe reaction execution and maximum synthetic conversion.</p>
                 </div>
-                <div className="flex items-center gap-12 mini-text">
+                <div className="flex items-center gap-12 mini-text sm-mt-10">
                     <span className="flex items-center gap-4">
                         <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#166534" }} />
                         Recommended
@@ -557,7 +534,7 @@ const SolventMatrix = memo(({ activeCategory }) => {
                             return (
                                 <tr key={sol.name} className="bg-forth rounded-6">
                                     <td className="py-12 px-10 font-600 text-dark rounded-l-6">{sol.name}</td>
-                                    <td className="py-8 px-10">
+                                    <td className="py-8 px-10" style={{ minWidth: '170px' }}>
                                         <span
                                             className="px-8 py-3 rounded-20 font-600 mini-text inline-block"
                                             style={{ backgroundColor: style.bg, color: style.color }}
@@ -603,7 +580,7 @@ const EnquirySection = memo(({ compound, purity, batchScale, onBatchScaleChange,
     }, []);
 
     return (
-        <div className="bg-white rounded-10 p-16 grid-cols-2 sm-grid-cols-1 gap-16 items-start">
+        <div className=" grid-cols-2 sm-grid-cols-1 gap-16 items-start">
             <div>
                 <h3 className="title-text font-600 text-dark uppercase m-0">Chemical Inquiry Sheet</h3>
                 <p className="mini-text text-gray m-0 mt-4">
@@ -778,13 +755,13 @@ const DemoSection = () => {
                 }
             `}</style>
 
-            <div className="grid-cols-1 gap-16">
+            <div className="grid-cols-1 gap-12">
                 <IndustryPresets
                     selectedIdx={selectedIndustry}
                     onSelect={handleIndustrySelect}
                 />
 
-                <div className="grid-cols-2 sm-grid-cols-1 gap-16 items-start">
+                <div className="grid-cols-2 sm-grid-cols-1 items-start mt-10" style={{ gap: '16px' }}>
                     <ExplodedStage
                         compound={selectedCompound}
                         purity={purity}

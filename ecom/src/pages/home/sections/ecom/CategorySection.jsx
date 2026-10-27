@@ -8,7 +8,7 @@ import Heading from '../../../../components/layout/generic/Heading';
 
 import { resolveImagePath } from '../../../../utils/imageResolver';
 
-import { configData, categories } from '../../../../utils/apiData';
+import { configData, categories, categoryCMS } from '../../../../utils/apiData';
 import Button from '../../../../components/common/Button';
 
 const CategoryVersion1 = React.memo(({ items, onCategoryClick }) => (
@@ -180,8 +180,8 @@ const CategorySection = React.memo(() => {
         <div className="w-full py-60 bordb">
             <Heading
                 version="v1"
-                tag="WHAT WE PROVIDE"
-                title="High-End Quality PVC Sheet Rolls Ready Stock With Fast service & Competitive Pricing."
+                tag={categoryCMS?.heading?.tag || "WHAT WE PROVIDE"}
+                title={categoryCMS?.heading?.title || "High-Purity Bulk Drug Intermediates, Fine Chemicals & Speciality Reagents in Ready Stock."}
             />
             <ActiveVersionComponent items={categories} onCategoryClick={handleCategoryClick} />
         </div>
