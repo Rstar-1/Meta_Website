@@ -1,6 +1,6 @@
-const SITE_URL = (import.meta.env.VITE_SITE_URL || "").replace(/\/$/, "");
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || "United Brothers";
-const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/united_brothers_color.png";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://realrainwear.in").replace(/\/$/, "");
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Real Rainwear";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "https://realrainwear.in/wp-content/uploads/2025/03/real-Logo.png";
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 
@@ -9,22 +9,22 @@ export const siteInfo = {
   url: SITE_URL,
   description:
     import.meta.env.VITE_SEO_DESCRIPTION ||
-    "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications.",
-  phone: import.meta.env.VITE_PHONE || "07942562287",
-  email: import.meta.env.VITE_EMAIL || "info@ashmitavinyls.com",
+    "Real Rainwear is India's premier manufacturer and exporter of premium raincoats, rain suits, waterproof jackets, and ponchos for men, women, and kids since 1979.",
+  phone: import.meta.env.VITE_PHONE || "+91 8104013898",
+  email: import.meta.env.VITE_EMAIL || "info@realrainwear.in",
 
   address: {
-    streetAddress: "C 304, 3rd Floor, Eastern Business District, L.B.S Marg Road, Bhandup West",
-    addressLocality: "Mumbai",
+    streetAddress: "3, 222, Durya Mansion, Kambekar Street, Masjid",
+    addressLocality: "Mandvi, Mumbai",
     addressRegion: "Maharashtra",
-    postalCode: "400078",
+    postalCode: "400003",
     addressCountry: "IN",
-    fullAddress: import.meta.env.VITE_ADDRESS || "Ashmita Enterprises C 304, 3 Rd Floor, Eastern Business Distric, Near Mangatram Petrol Pump L.B.S Marg Road, Bhandup West, Mumbai City, Mumbai - 400078, Maharashtra, India",
+    fullAddress: import.meta.env.VITE_ADDRESS || "3, 222, Durya Mansion, Kambekar Street, Masjid, Mandvi, Mumbai, Maharashtra - 400003, India",
   },
 
   geo: {
-    latitude: 19.1485,
-    longitude: 72.9367,
+    latitude: 18.9535,
+    longitude: 72.8385,
   },
 
   sameAs: [
@@ -32,23 +32,24 @@ export const siteInfo = {
     import.meta.env.VITE_SOCIAL_YOUTUBE,
     import.meta.env.VITE_SOCIAL_FACEBOOK,
     import.meta.env.VITE_SOCIAL_LINKEDIN,
+    import.meta.env.VITE_SOCIAL_TWITTER,
   ].filter(Boolean),
 };
 
 export const pageSeoData = {
   home: {
-    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Manufacturer in India | Ashmita Vinyls",
+    title: import.meta.env.VITE_SEO_TITLE || "Real Rainwear | Premium Raincoats for Men, Women & Kids",
     description:
       import.meta.env.VITE_SEO_DESCRIPTION ||
-      "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications across India.",
+      "Shop high-quality raincoats, rain suits & ponchos at Real Rainwear. Durable, stylish, and waterproof gear for all ages. Since 1979.",
     path: "/home",
     breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
-    title: "About Ashmita Vinyls | PVC Vinyl Manufacturer in India",
+    title: "About Real Rainwear | India's Premium Rainwear Brand Since 1979",
     description:
-      "Learn about Ashmita Vinyls, our PVC vinyl manufacturing capabilities, quality focus and industrial solutions.",
+      "Discover the heritage of Real Rainwear, pioneering waterproof raincoats and suits with craftsmanship and innovation since 1979.",
     path: "/about",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -57,9 +58,9 @@ export const pageSeoData = {
   },
 
   product: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Raincoats, Rainsuits & Waterproof Gear | Real Rainwear",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore men's rain suits, women's raincoats, kids' school rainwear, and trekking ponchos by Real Rainwear.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -68,9 +69,9 @@ export const pageSeoData = {
   },
 
   products: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Raincoats, Rainsuits & Waterproof Gear | Real Rainwear",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore men's rain suits, women's raincoats, kids' school rainwear, and trekking ponchos by Real Rainwear.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -79,9 +80,9 @@ export const pageSeoData = {
   },
 
   productDetail: {
-    title: "PVC Vinyl Product Details | Ashmita Vinyls",
+    title: "Rainwear Product Details | Real Rainwear",
     description:
-      "Explore detailed specifications, technical parameters, and applications for PVC vinyl products by Ashmita Vinyls.",
+      "Explore detailed specifications, waterproof ratings, seam construction, and sizing for Real Rainwear products.",
     path: "/product-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -91,9 +92,9 @@ export const pageSeoData = {
   },
 
   supplier: {
-    title: "PVC Vinyl Applications & Industries | Ashmita Vinyls",
+    title: "Real Rainwear - Manufacturing & Wholesale Distribution | Mumbai",
     description:
-      "Discover industries and applications using Ashmita Vinyls PVC vinyl solutions.",
+      "Real Rainwear wholesale supplier and exporter of heavy-duty rain suits, raincoats and monsoon essentials from Mumbai, Maharashtra.",
     path: "/supplier",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -103,9 +104,9 @@ export const pageSeoData = {
   },
 
   quality: {
-    title: "PVC Vinyl Manufacturing Quality | Ashmita Vinyls",
+    title: "Waterproof Quality & Standards | Real Rainwear",
     description:
-      "Explore Ashmita Vinyls manufacturing quality, infrastructure and PVC vinyl production capabilities.",
+      "Explore Real Rainwear's manufacturing quality, 100% heat-sealed taped seam testing, and leak-proof standards.",
     path: "/quality",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -114,9 +115,9 @@ export const pageSeoData = {
   },
 
   connect: {
-    title: "Contact Ashmita Vinyls | PVC Vinyl Product Enquiry",
+    title: "Contact Real Rainwear | Mumbai Showroom & Factory Enquiry",
     description:
-      "Contact Ashmita Vinyls for PVC vinyl product enquiries, specifications and bulk requirements.",
+      "Contact Real Rainwear for retail, dealership, and wholesale bulk rainwear enquiries. Visit our showroom in Mandvi, Mumbai.",
     path: "/connect",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -125,9 +126,9 @@ export const pageSeoData = {
   },
 
   blog: {
-    title: "Carpets, Rugs & Flooring Insights | United Brothers",
+    title: "Rainwear Buying Guides & Monsoon Insights | Real Rainwear",
     description:
-      "Read expert guides on 1800 GSM poly shrink rugs, dilour & ribs carpets, interior styling, and commercial flooring solutions by United Brothers.",
+      "Read expert guides on choosing the best raincoats for men, women & kids, trekking poncho selection, and monsoon garment care by Real Rainwear.",
     path: "/blog",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -136,9 +137,9 @@ export const pageSeoData = {
   },
 
   blogDetail: {
-    title: "Carpets & Rugs Articles | United Brothers",
+    title: "Monsoon & Rainwear Articles | Real Rainwear",
     description:
-      "Latest technical insights, styling guides, and care updates on carpets and luxury woven rugs by United Brothers.",
+      "Latest tips, maintenance guides, and fabric technology updates on waterproof rainwear by Real Rainwear.",
     path: "/blog-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -148,8 +149,8 @@ export const pageSeoData = {
   },
 
   privacy: {
-    title: "Privacy Policy | Ashmita Vinyls",
-    description: "Read the Ashmita Vinyls privacy policy.",
+    title: "Privacy Policy | Real Rainwear",
+    description: "Read the Real Rainwear privacy policy.",
     path: "/privacy",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -158,8 +159,8 @@ export const pageSeoData = {
   },
 
   terms: {
-    title: "Terms & Conditions | Ashmita Vinyls",
-    description: "Read the terms and conditions of Ashmita Vinyls.",
+    title: "Terms & Conditions | Real Rainwear",
+    description: "Read the terms and conditions of Real Rainwear.",
     path: "/terms",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -170,19 +171,24 @@ export const pageSeoData = {
 
 export const aeoFAQs = [
   {
-    question: "What is Ashmita Vinyls?",
+    question: "What is Real Rainwear?",
     answer:
-      "Ashmita Vinyls is a PVC vinyl products manufacturer and supplier in India serving commercial and industrial requirements.",
+      "Real Rainwear is India's premier rainwear manufacturer and exporter established in 1979, specializing in durable raincoats, biker rain suits, kids rainwear, and ponchos.",
   },
   {
-    question: "What products does Ashmita Vinyls supply?",
+    question: "What types of rainwear does Real Rainwear manufacture?",
     answer:
-      "Ashmita Vinyls supplies PVC vinyl products and industrial vinyl solutions for different commercial and industrial applications.",
+      "Real Rainwear manufactures men's heavy-duty and biker rainsuits, women's stylish trench coats and skirt suits, children's school raincoats with backpack covers, and trekking ponchos.",
   },
   {
-    question: "How can I enquire about PVC vinyl products?",
+    question: "Where is Real Rainwear located?",
     answer:
-      "You can contact Ashmita Vinyls through the website contact page, phone or email for product specifications and bulk enquiries.",
+      "Real Rainwear is based at 3, 222, Durya Mansion, Kambekar Street, Masjid, Mandvi, Mumbai, Maharashtra - 400003, India.",
+  },
+  {
+    question: "How can I purchase or enquire about wholesale rainwear orders?",
+    answer:
+      "You can contact Real Rainwear via phone / WhatsApp at +91 8104013898 or email at info@realrainwear.in for distributor, retail, and wholesale enquiries.",
   },
 ];
 

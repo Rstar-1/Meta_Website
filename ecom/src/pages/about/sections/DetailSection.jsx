@@ -9,18 +9,18 @@ import { resolveImagePath } from '../../../utils/imageResolver';
 const thumbnails = [
     {
         id: 1,
-        title: 'Non-Woven Dilour Carpet',
-        image: resolveImagePath('/products/dilour_car.jpg')
+        title: "Men's Heavy-Duty Rainsuits",
+        image: "https://realrainwear.in/wp-content/uploads/2025/05/TREX-_-GREY-4-600x799.jpg"
     },
     {
         id: 2,
-        title: 'Heavy Duty Ribs Carpet',
-        image: resolveImagePath('/products/ribs_car.jpg')
+        title: "Women's All-Weather Raincoats",
+        image: "https://realrainwear.in/wp-content/uploads/2023/09/women-01.png"
     },
     {
         id: 3,
-        title: '1800 GSM Poly Shrink Rug',
-        image: resolveImagePath('/products/rugs/poly_shrink_p1_1.webp')
+        title: "Kids Colourful Rainwear",
+        image: "https://realrainwear.in/wp-content/uploads/2025/03/kid-bann.jpg"
     }
 ];
 
@@ -32,7 +32,7 @@ const DetailSection = React.memo(() => {
             <div className="grid-cols-2 sm-grid-cols-1 items-center gap-12 w-full">
                 <div className="w-full pr-20 sm-pr-0">
                     <Badge
-                        text="Carpet Collections"
+                        text="Rainwear Heritage"
                         icon="Layers"
                         variant="outline"
                         color="white"
@@ -42,11 +42,11 @@ const DetailSection = React.memo(() => {
                     />
 
                     <h2 className="large-text font-700 text-dark uppercase mt-8">
-                        Crafting Luxury Carpets & Rugs.
+                        Crafting India's Finest Rainwear Since 1979.
                     </h2>
 
                     <p className="para-text text-gray font-400 mt-6">
-                        United Brothers is Ahmedabad's premier manufacturer of high-density Dilour non-woven rolls, heavy-duty Ribs carpets, and 1800 GSM New Poly Shrink luxury woven rugs.
+                        Real Rainwear has revolutionized the rainwear industry and made staying dry an art form. Firmly established since 1979 as India's preeminent manufacturer and exporter, our collections deliver 100% waterproof protection, fully sealed taped seams, and durable style for the entire family.
                     </p>
 
                     <div className="grid-cols-3 gap-12 mt-30 w-95">
@@ -68,8 +68,8 @@ const DetailSection = React.memo(() => {
 
                 <div className="w-full h-550 sm-h-350 rounded-10 overflow-hidden">
                     <Image
-                        src={resolveImagePath('/products/spaces/living_room.webp')}
-                        alt="United Brothers Carpet Showcase"
+                        src="https://realrainwear.in/wp-content/uploads/2025/05/Best-Raincoats-Rainsuits-Manufacturer-in-India-scaled.jpg"
+                        alt="Real Rainwear Manufacturing Showcase"
                         className="w-full h-full object-cover flex"
                     />
                 </div>

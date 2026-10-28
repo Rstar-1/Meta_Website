@@ -12,58 +12,47 @@ import { categories } from '../../../../utils/apiData';
 const FEATURED_CATEGORY_ITEMS = [
     {
         id: 1,
-        name: 'Dilour Carpets',
-        title: 'Dilour Carpets',
-        subtitle: 'Needle-Punch Non-Woven Automotive Velour & Trunk Linings',
-        badgeNumber: '30%',
-        badgeText: 'Automotive Grade',
-        tag: 'Acoustic Damping',
-        image: '/products/spaces/auto_interior.webp',
-        categoryParam: 'Dilour Carpets'
+        name: "Men's Rainwear",
+        title: "Men's Rainwear",
+        subtitle: "Heavy-Duty Biker Rainsuits, Double-Layer Storm Coats & Jackets",
+        badgeNumber: "45+",
+        badgeText: "Years of Excellence",
+        tag: "100% Sealed Seams",
+        image: "https://realrainwear.in/wp-content/uploads/2025/03/men-banner-02.jpg",
+        categoryParam: "Men's Rainwear"
     },
     {
         id: 2,
-        name: 'Ribs Carpets',
-        title: 'Ribs Carpets',
-        subtitle: 'Directional Grooved Anti-Slip High-Traffic Commercial Flooring',
-        badgeNumber: '20+',
-        badgeText: 'Years of Manufacturing',
-        tag: 'High Traffic',
-        image: '/products/spaces/office_corridor.webp',
-        categoryParam: 'Ribs Carpets'
+        name: "Women's Rainwear",
+        title: "Women's Rainwear",
+        subtitle: "Elegant Trench Raincoats, Skirt Suits & Waterproof Hooded Coats",
+        badgeNumber: "100%",
+        badgeText: "Waterproof",
+        tag: "Trench & Skirt Suits",
+        image: "https://realrainwear.in/wp-content/uploads/2025/03/women-bann.jpg",
+        categoryParam: "Women's Rainwear"
     },
     {
         id: 3,
-        name: 'New Poly Shrink Rugs',
-        title: 'New Poly Shrink Rugs',
-        subtitle: '1800 GSM Dimensional High-Low Textures & Self-Backing Stability',
-        badgeNumber: '23+',
-        badgeText: 'GSM Density',
-        tag: '3D Embossed',
-        image: '/products/spaces/living_room.webp',
-        categoryParam: 'Rugs'
+        name: "Kids' Rainwear",
+        title: "Kids' Rainwear",
+        subtitle: "Vibrant School Raincoats with Backpack Space & Reflective Trims",
+        badgeNumber: "Safety",
+        badgeText: "Reflective Strips",
+        tag: "School Bag Cover",
+        image: "https://realrainwear.in/wp-content/uploads/2025/03/kid-bann.jpg",
+        categoryParam: "Kids' Rainwear"
     },
     {
         id: 4,
-        name: 'Shalimar Heritage Rugs',
-        title: 'Shalimar Heritage Rugs',
-        subtitle: 'Classic Floral & Geometric Polypropylene Designer Collections',
-        badgeNumber: '30+',
-        badgeText: 'Timeless Weaves',
-        tag: 'Stain Resistant',
-        image: '/products/spaces/dining_salon.webp',
-        categoryParam: 'Rugs'
-    },
-    {
-        id: 5,
-        name: 'Acoustic Non-Woven Rolls',
-        title: 'Acoustic Non-Woven Rolls',
-        subtitle: 'Thermal & Sound Absorption Carpet Rolls for Studios & Venues',
-        badgeNumber: '35+',
-        badgeText: 'Sound Reduction',
-        tag: 'Thermal Insulation',
-        image: '/products/spaces/bedroom_retreat.webp',
-        categoryParam: 'Dilour Carpets'
+        name: "Accessories & Ponchos",
+        title: "Accessories & Ponchos",
+        subtitle: "Waterproof Backpack Covers, Trekking Ponchos & Travel Gear",
+        badgeNumber: "10,000",
+        badgeText: "mm Hydrostatic",
+        tag: "Trekking & Travel",
+        image: "https://realrainwear.in/wp-content/uploads/2025/05/How-to-Choose-the-Best-Rain-Jacket-for-Travelers-1300x867.jpg",
+        categoryParam: "Accessories & Ponchos"
     }
 ];
 
@@ -132,9 +121,21 @@ const CategorySection = memo(() => {
     );
 
     const categoryItems = useMemo(() => {
-        // Fall back to categories if available, enriched with FEATURED_CATEGORY_ITEMS
         if (categories && categories.length > 0) {
-            return FEATURED_CATEGORY_ITEMS;
+            return categories.map((cat, idx) => {
+                const feat = FEATURED_CATEGORY_ITEMS.find(f => f.id === cat.id || f.categoryParam === cat.name) || FEATURED_CATEGORY_ITEMS[idx] || {};
+                return {
+                    id: cat.id,
+                    name: cat.name,
+                    title: cat.name,
+                    subtitle: cat.description || feat.subtitle,
+                    badgeNumber: cat.badgeNumber || feat.badgeNumber,
+                    badgeText: cat.badgeText || feat.badgeText,
+                    tag: cat.tag || feat.tag,
+                    image: cat.image || cat.bannerImage || feat.image,
+                    categoryParam: cat.name
+                };
+            });
         }
         return FEATURED_CATEGORY_ITEMS;
     }, []);

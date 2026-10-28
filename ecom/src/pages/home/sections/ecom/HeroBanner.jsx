@@ -11,35 +11,37 @@ import Button from '../../../../components/common/Button';
 
 import { configData } from '../../../../utils/apiData';
 
+import banner1Video from '../../../../assets/Banner1.mp4';
+import banner2Video from '../../../../assets/Banner2.mp4';
 
 const CATEGORIES = [
-    { id: 'jackets', name: 'Jackets', image: import.meta.env.VITE_IMAGE + "Clothing1.jpg", path: '/product?category=Jackets' },
-    { id: 'socks', name: 'Socks', image: import.meta.env.VITE_IMAGE + "Clothing2.jpg", path: '/product?category=Socks' },
-    { id: 'hats', name: 'Hats', image: import.meta.env.VITE_IMAGE + "Clothing3.jpg", path: '/product?category=Hats' },
-    { id: 'hoodies', name: 'Hoodies', image: import.meta.env.VITE_IMAGE + "Clothing4.jpg", path: '/product?category=Hoodies' },
-    { id: 'sweaters', name: 'Sweaters', image: import.meta.env.VITE_IMAGE + "Clothing7.jpg", path: '/product?category=Sweaters' },
-    { id: 'puffers', name: 'Puffers', image: import.meta.env.VITE_IMAGE + "Clothing6.jpg", path: '/product?category=Puffers' },
+    { id: 'mens-rainsuits', name: "Men's Rainsuits", image: "https://realrainwear.in/wp-content/uploads/2025/05/TREX-_-GREY-4-600x799.jpg", path: "/product?category=Men's%20Rainwear" },
+    { id: 'womens-raincoats', name: "Women's Raincoats", image: "https://realrainwear.in/wp-content/uploads/2023/09/women-01.png", path: "/product?category=Women's%20Rainwear" },
+    { id: 'kids-rainwear', name: "Kids' Rainwear", image: "https://realrainwear.in/wp-content/uploads/2025/03/kid-bann.jpg", path: "/product?category=Kids'%20Rainwear" },
+    { id: 'biker-suits', name: "Biker Storm Suits", image: "https://realrainwear.in/wp-content/uploads/2025/05/EmptyName-930-600x799.jpg", path: "/product?category=Men's%20Rainwear" },
+    { id: 'trekking-ponchos', name: "Trekking Ponchos", image: "https://realrainwear.in/wp-content/uploads/2025/05/How-to-Choose-the-Best-Rain-Jacket-for-Travelers-1300x867.jpg", path: "/product?category=Accessories%20%26%20Ponchos" },
+    { id: 'backpack-covers', name: "Backpack Covers", image: "https://realrainwear.in/wp-content/uploads/2023/06/Mega-Menu.png", path: "/product?category=Accessories%20%26%20Ponchos" },
 ];
 
 /* ------------------- Type 1 Slides ------------------- */
 const TYPE1_SLIDES = [
     {
         id: 1,
-        tag: 'Modern Elegance',
-        title: 'Modern Elegance Spoke Sofa',
-        buttonText: 'Explore Collection',
-        path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Hero1.mp4",
-        alt: 'Modern Elegance Spoke Sofa'
+        tag: "India's Premier Rainwear Since 1979",
+        title: "100% Waterproof Heavy-Duty Rain Suits",
+        buttonText: "Explore Collection",
+        path: "/product",
+        image: banner1Video,
+        alt: "Real Rainwear Heavy Duty Rain Suits"
     },
     {
         id: 2,
-        tag: 'Timeless Living',
-        title: 'Nordic Lounge Interior',
-        buttonText: 'Explore Collection',
-        path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Hero2.mp4",
-        alt: 'Nordic Lounge Interior'
+        tag: "All-Weather Monsoon Protection",
+        title: "Stay Dry In Style With Real Rainwear",
+        buttonText: "Shop Bestsellers",
+        path: "/product",
+        image: banner2Video,
+        alt: "Real Rainwear Monsoon Collection"
     }
 ];
 
@@ -47,24 +49,24 @@ const TYPE1_SLIDES = [
 const TYPE2_SLIDES = [
     {
         id: 1,
-        title: 'EXPERIENCE\nUNPARALLELED AUDIO\nELEGANCE',
-        buttonText: 'Explore Collection',
-        path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Hero1.mp4",
-        alt: 'Experience Unparalleled Audio Elegance'
+        title: "PIONEERING RAIN PROTECTION\nBUILT FOR EVERY MONSOON",
+        buttonText: "Explore Collection",
+        path: "/product",
+        image: banner1Video,
+        alt: "Real Rainwear All Weather Rain Suits"
     },
     {
         id: 2,
-        title: 'STUDIO FIDELITY\nCRAFTED FOR PURITY',
-        buttonText: 'Explore Collection',
-        path: '/product',
-        image: import.meta.env.VITE_IMAGE + "Hero2.mp4",
-        alt: 'Studio Fidelity Audio'
+        title: "STAY DRY IN STYLE\nCRAFTED SINCE 1979",
+        buttonText: "Shop Bestsellers",
+        path: "/product",
+        image: banner2Video,
+        alt: "Real Rainwear Heritage Rainwear"
     }
 ];
 
 /* ========================================================
-   TYPE 1: Centered Scandinavian Furniture Swiper UI
+   TYPE 1: Centered Rainwear Swiper UI
    ======================================================== */
 const Type1SlideItem = memo(({ slide, onNavigate }) => {
     const handleButtonClick = useCallback((e) => {
@@ -110,7 +112,7 @@ const Type1Swiper = memo(({ onNavigate }) => {
 
     return (
         <div className="w-full relative rounded-10 overflow-hidden">
-            <Swiper onSwiper={setSwiper} onSlideChange={handleSlideChange} modules={[Autoplay]} slidesPerView={1} loop autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }} speed={600} className="w-full rounded-10 overflow-hidden">
+            <Swiper onSwiper={setSwiper} onSlideChange={handleSlideChange} modules={[Autoplay]} slidesPerView={1} loop autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }} speed={600} className="w-full rounded-10 overflow-hidden">
                 {TYPE1_SLIDES.map((slide) => (
                     <SwiperSlide key={slide.id}>
                         <Type1SlideItem slide={slide} onNavigate={onNavigate} />
@@ -137,7 +139,7 @@ const Type1Swiper = memo(({ onNavigate }) => {
 Type1Swiper.displayName = 'Type1Swiper';
 
 /* ========================================================
-   TYPE 2: Luxury Audio Elegance Swiper UI
+   TYPE 2: Luxury Rainwear Swiper UI
    ======================================================== */
 const Type2SlideItem = memo(({ slide, onNavigate }) => {
     const handleButtonClick = useCallback((e) => {

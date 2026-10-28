@@ -1,86 +1,134 @@
 [
   {
     "id": 1,
-    "name": "Dilour Carpets",
-    "slug": "dilour-carpets",
-    "icon": "/products/dilour_car.jpg",
-    "iconName": "Layers",
+    "name": "Men's Rainwear",
+    "slug": "mens-rainwear",
+    "image": "https://realrainwear.in/wp-content/uploads/2025/03/men-banner-02.jpg",
+    "bannerImage": "https://realrainwear.in/wp-content/uploads/2025/03/men-banner-02.jpg",
+    "icon": "https://realrainwear.in/wp-content/uploads/2023/06/men-01.png",
+    "thumbnail": "https://realrainwear.in/wp-content/uploads/2025/05/TREX-_-GREY-4-600x799.jpg",
+    "iconName": "ShieldCheck",
     "bgColor": "#EFF6FF",
     "accentColor": "#2563EB",
+    "badgeNumber": "45+",
+    "badgeText": "Years of Excellence",
+    "tag": "100% Sealed Seams",
     "subCategories": [
       {
-        "id": "automotive-dilour",
-        "name": "Automotive Dilour"
+        "id": "mens-rainsuits",
+        "name": "Men's Rainsuits"
       },
       {
-        "id": "home-commercial-dilour",
-        "name": "Home & Commercial Dilour"
+        "id": "mens-raincoats",
+        "name": "Men's Raincoats"
       },
       {
-        "id": "non-woven-carpets",
-        "name": "Non-Woven Carpets"
+        "id": "waterproof-jackets",
+        "name": "Waterproof Jackets"
       },
       {
-        "id": "acoustic-dilour",
-        "name": "Acoustic Insulation"
+        "id": "biker-rainsuits",
+        "name": "Biker Rain Suits"
       }
     ],
-    "description": "High-quality non-woven carpets designed for automotive interiors and flooring applications. Offers excellent comfort, insulation and sound absorption."
+    "description": "Heavy-duty waterproof raincoats, double-layer biker rainsuits, and storm-proof coats engineered for 100% dry protection and endurance during heavy monsoon."
   },
   {
     "id": 2,
-    "name": "Ribs Carpets",
-    "slug": "ribs-carpets",
-    "icon": "/products/ribs_car.jpg",
-    "iconName": "Shield",
-    "bgColor": "#ECFDF5",
-    "accentColor": "#059669",
+    "name": "Women's Rainwear",
+    "slug": "womens-rainwear",
+    "image": "https://realrainwear.in/wp-content/uploads/2025/03/women-bann.jpg",
+    "bannerImage": "https://realrainwear.in/wp-content/uploads/2025/03/women-bann.jpg",
+    "icon": "https://realrainwear.in/wp-content/uploads/2023/09/women-01.png",
+    "thumbnail": "https://realrainwear.in/wp-content/uploads/2025/05/NEON-COAT-1-600x799.jpg",
+    "iconName": "Heart",
+    "bgColor": "#FDF2F8",
+    "accentColor": "#DB2777",
+    "badgeNumber": "100%",
+    "badgeText": "Waterproof",
+    "tag": "Trench & Skirt Suits",
     "subCategories": [
       {
-        "id": "automotive-ribs",
-        "name": "Automotive Ribs"
+        "id": "womens-raincoats",
+        "name": "Women's Raincoats"
       },
       {
-        "id": "anti-slip-ribs",
-        "name": "Anti-Slip Ribbed"
+        "id": "womens-winter-jackets",
+        "name": "Winter Jackets"
       },
       {
-        "id": "commercial-ribs",
-        "name": "Commercial Floor Ribs"
+        "id": "womens-ponchos",
+        "name": "Waterproof Ponchos"
       },
       {
-        "id": "heavy-duty-ribs",
-        "name": "Heavy Duty Ribs"
+        "id": "womens-skirt-suits",
+        "name": "Skirt Rain Suits"
       }
     ],
-    "description": "Ribbed surface carpets provide superior grip, durability and easy cleaning with anti-slip backing. Perfect for automotive and commercial use."
+    "description": "Elegant, lightweight, and waterproof raincoats, hooded trench coats, and skirt suits combining style and all-weather protection."
   },
   {
     "id": 3,
-    "name": "Rugs",
-    "slug": "rugs",
-    "icon": "/products/rugs/poly_shrink_p1_1.webp",
-    "iconName": "Box",
-    "bgColor": "#FEF2F2",
-    "accentColor": "#DC2626",
+    "name": "Kids' Rainwear",
+    "slug": "kids-rainwear",
+    "image": "https://realrainwear.in/wp-content/uploads/2025/03/kid-bann.jpg",
+    "bannerImage": "https://realrainwear.in/wp-content/uploads/2025/03/kid-bann.jpg",
+    "icon": "https://realrainwear.in/wp-content/uploads/2025/06/kids-diy-raincoat-purple-1-600x799.png",
+    "thumbnail": "https://realrainwear.in/wp-content/uploads/2025/05/Artboard-7-3-1-1-600x799.jpg",
+    "iconName": "Award",
+    "bgColor": "#FEF3C7",
+    "accentColor": "#D97706",
+    "badgeNumber": "Safety",
+    "badgeText": "Reflective Strips",
+    "tag": "School Bag Cover",
     "subCategories": [
       {
-        "id": "poly-shrink-rugs",
-        "name": "New Poly Shrink Rugs"
+        "id": "boys-raincoats",
+        "name": "Boys Raincoats"
       },
       {
-        "id": "shalimar-rugs",
-        "name": "Shalimar Rugs"
+        "id": "girls-raincoats",
+        "name": "Girls Raincoats"
       },
       {
-        "id": "modern-geometric-rugs",
-        "name": "Modern & Geometric"
+        "id": "school-rainwear",
+        "name": "School Bag Cover Rainwear"
       },
       {
-        "id": "traditional-shaggy-rugs",
-        "name": "Traditional & Shaggy"
+        "id": "diy-raincoats",
+        "name": "DIY Colourful Rainwear"
       }
     ],
-    "description": "Modern and classic rugs adding warmth and style. Featuring 1800 GSM High Pile Poly Shrink Woven Rugs and Shalimar Designer Collections."
+    "description": "Vibrant, durable, and lightweight raincoats for boys and girls with reflective strips, extended hoods, and school backpack expansion."
+  },
+  {
+    "id": 4,
+    "name": "Accessories & Ponchos",
+    "slug": "accessories",
+    "image": "https://realrainwear.in/wp-content/uploads/2025/05/How-to-Choose-the-Best-Rain-Jacket-for-Travelers-1300x867.jpg",
+    "bannerImage": "https://realrainwear.in/wp-content/uploads/2025/05/How-to-Choose-the-Best-Rain-Jacket-for-Travelers-1300x867.jpg",
+    "icon": "https://realrainwear.in/wp-content/uploads/2023/06/Mega-Menu.png",
+    "thumbnail": "https://realrainwear.in/wp-content/uploads/2023/06/Category-Images.jpg",
+    "iconName": "Box",
+    "bgColor": "#F3F4F6",
+    "accentColor": "#4B5563",
+    "badgeNumber": "10,000",
+    "badgeText": "mm Hydrostatic",
+    "tag": "Trekking & Travel",
+    "subCategories": [
+      {
+        "id": "bag-covers",
+        "name": "Waterproof Backpack Covers"
+      },
+      {
+        "id": "trekking-ponchos",
+        "name": "Trekking Rain Ponchos"
+      },
+      {
+        "id": "emergency-rainwear",
+        "name": "Emergency Rainwear"
+      }
+    ],
+    "description": "Essential monsoon accessories including all-weather backpack rain covers, lightweight trekking ponchos, and travel waterproof gear."
   }
 ]

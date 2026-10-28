@@ -12,7 +12,13 @@ export const resolveImagePath = (path) => {
     trimmed.startsWith('https://') ||
     trimmed.startsWith('data:') ||
     trimmed.startsWith('blob:') ||
-    trimmed.startsWith('//')
+    trimmed.startsWith('//') ||
+    trimmed.startsWith('/src/assets/') ||
+    trimmed.startsWith('/assets/') ||
+    trimmed.startsWith('@fs/') ||
+    trimmed.endsWith('.mp4') ||
+    trimmed.endsWith('.webm') ||
+    trimmed.endsWith('.ogg')
   ) {
     return trimmed;
   }
@@ -38,11 +44,11 @@ export const resolveImagePath = (path) => {
   return base ? `${base}/${cleanPath}` : `/${cleanPath}`;
 };
 
-export const unitedBrothersColor = resolveImagePath('/united_brothers_color.png');
-export const unitedBrothersWhite = resolveImagePath('/united_brothers_white.png');
+export const unitedBrothersColor = resolveImagePath('https://realrainwear.in/wp-content/uploads/2025/03/real-Logo.png');
+export const unitedBrothersWhite = resolveImagePath('https://realrainwear.in/wp-content/uploads/2023/06/footer-logo-768x342.webp');
 export const soboLogo = unitedBrothersColor;
 export const soboWhite = unitedBrothersWhite;
-export const carpetPatchBanner = resolveImagePath('/products/carpet_patch_banner.jpg');
-export const carpetBanner = resolveImagePath('/products/carpet_banner.jpg');
+export const carpetPatchBanner = resolveImagePath('https://realrainwear.in/wp-content/uploads/2025/05/Best-Raincoats-Rainsuits-Manufacturer-in-India-scaled.jpg');
+export const carpetBanner = resolveImagePath('https://realrainwear.in/wp-content/uploads/2025/05/Untitled-design.jpg');
 
 export default resolveImagePath;

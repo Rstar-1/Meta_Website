@@ -180,16 +180,24 @@ const HeaderTopBar = React.memo(() => {
 });
 HeaderTopBar.displayName = "HeaderTopBar";
 
-const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => (
-  <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
-    <Image
-      src={resolveImagePath(!isStickyConfig || isHeaderWhite ? "/united_brothers_color.png" : "/united_brothers_white.png")}
-      alt="United Brothers Logo"
-      className="object-contain w-90 sm-w-50"
-      style={{ height: "60px" }}
-    />
-  </NavLink>
-));
+const DARK_LOGO = "https://realrainwear.in/wp-content/uploads/2025/03/real-Logo.png";
+const WHITE_LOGO = "https://realrainwear.in/wp-content/uploads/2023/06/footer-logo-768x342.webp";
+
+const HeaderLogo = React.memo(({ isHeaderWhite, onCloseMobile }) => {
+  const isLightHeader = !isStickyConfig || isHeaderWhite;
+  const logoSrc = isLightHeader ? DARK_LOGO : WHITE_LOGO;
+
+  return (
+    <NavLink to="/home" className={LogoClass} onClick={onCloseMobile}>
+      <Image
+        src={resolveImagePath(logoSrc)}
+        alt="Real Rainwear Logo"
+        className="object-contain w-90 sm-w-50"
+        style={{ height: "60px" }}
+      />
+    </NavLink>
+  );
+});
 HeaderLogo.displayName = "HeaderLogo";
 
 const LanguageDropdown = React.memo(({ isHeaderWhite, align = "right", className = "", showFlagOnMobile = true }) => {

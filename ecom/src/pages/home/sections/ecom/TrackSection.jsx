@@ -65,8 +65,8 @@ const TrackSection = memo(() => {
                 tabIndex={0}
             >
                 <Image
-                    src="https://madebydesignesia.com/themes/logixpress/images/background/2.webp"
-                    alt="Cargo Port Container Shipping"
+                    src="https://realrainwear.in/wp-content/uploads/2025/05/Best-Raincoats-Rainsuits-Manufacturer-in-India-scaled.jpg"
+                    alt="Real Rainwear Manufacturing & Dispatch Hub"
                     className="w-full h-full object-cover flex filter-b4 transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                 />
@@ -92,7 +92,7 @@ const TrackSection = memo(() => {
                     isOpen={isVideoOpen}
                     onClose={handleCloseVideo}
                     size="lg"
-                    title="Logistics Operations"
+                    title="Real Rainwear Manufacturing Showcase"
                 >
                     <div className="w-full overflow-hidden rounded-10 aspect-video">
                         <iframe
@@ -142,14 +142,14 @@ const TrackSection = memo(() => {
                         </form>
 
                         <p className="para-text text-white font-400 mt-16">
-                            Track your package with our trusted logistics service. From pickup to delivery, we provide updates, secure handling, and visibility so your shipment arrives safely and on time.
+                            Track your rainwear order with our expedited logistics network. Dispatched directly from our Mumbai manufacturing facility with live updates, secure waterproof packaging, and prompt doorstep delivery across India.
                         </p>
                     </div>
 
                     {/* Dotted World Map Graphic */}
                     <Image
-                        src="https://madebydesignesia.com/themes/logixpress/images/misc/c2.webp"
-                        alt="Global Coverage Map"
+                        src="https://realrainwear.in/wp-content/uploads/2023/06/footer-logo.webp"
+                        alt="Real Rainwear Watermark"
                         className="absolute bottom-0 right-0 h-150 flex"
                         loading="lazy"
                     />
@@ -159,8 +159,8 @@ const TrackSection = memo(() => {
                     className="rounded-10 relative overflow-hidden h-400"
                 >
                     <Image
-                        src="https://madebydesignesia.com/themes/logixpress/images/misc/s5.webp"
-                        alt="Happy Customer with Package"
+                        src="https://realrainwear.in/wp-content/uploads/2025/05/Untitled-design.jpg"
+                        alt="Real Rainwear Monsoon Collection"
                         className="absolute inset-0 w-full h-full object-cover flex"
                         loading="lazy"
                     />
@@ -177,14 +177,14 @@ const TrackSection = memo(() => {
                         }}
                     >
                         <p className="para-text text-white font-400 mb-16">
-                            &ldquo;We&apos;ve trusted this logistics company for years, and they never disappoint. Every shipment is handled with care, delivered on time, and supported with clear tracking. Their team makes global shipping simple, reliable, and stress-free for our business.&rdquo;
+                            &ldquo;We have sourced wholesale rain suits and raincoats from Real Rainwear for our retail outlets for years. The taped seam quality is 100% leak-proof, deliveries arrive ahead of the monsoon rush, and our customers always praise the durability.&rdquo;
                         </p>
 
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-12">
                                 <Image
-                                    src="https://madebydesignesia.com/themes/logixpress/images/testimonial/1.webp"
-                                    alt="Sarah Johnson"
+                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                                    alt="Devendra K. Patil"
                                     className="rounded-full object-cover border border-white border-opacity-30 flex-shrink-0"
                                     style={{ width: '42px', height: '42px' }}
                                 />

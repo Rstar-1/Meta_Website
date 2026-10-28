@@ -13,141 +13,141 @@ import { useCart } from '../../../../feature/slice/cartSlice';
 const SPACES_DATA = [
     {
         id: 1,
-        image: "/products/spaces/living_room.webp",
-        title: "1800 GSM Poly Shrink Living Space",
+        image: "https://realrainwear.in/wp-content/uploads/2025/03/men-banner-02.jpg",
+        title: "Heavy-Duty Biker & Highway Rainsuits",
         products: [
             {
-                id: 15,
-                name: "New Age Poly Shrink Rug - Abstract Linear",
-                price: "₹1,250/sq mtr",
-                originalPrice: "₹1,650/sq mtr",
-                image: "/products/rugs/poly_shrink_p1_1.webp"
+                id: 1,
+                name: "TREX Men's Rainsuit",
+                price: "₹1,200",
+                originalPrice: "₹3,220",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/TREX-_-GREY-4-600x799.jpg"
             },
             {
-                id: 16,
-                name: "New Age Poly Shrink Rug - Honeycomb Hexagon",
-                price: "₹1,250/sq mtr",
-                originalPrice: null,
-                image: "/products/rugs/poly_shrink_p2_1.webp"
+                id: 2,
+                name: "RIDER Men's Rainsuit",
+                price: "₹1,250",
+                originalPrice: "₹2,990",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/EmptyName-930-600x799.jpg"
             },
             {
-                id: 19,
-                name: "New Age Poly Shrink Rug - Stepped Border",
-                price: "₹1,250/sq mtr",
-                originalPrice: "₹1,650/sq mtr",
-                image: "/products/rugs/poly_shrink_p5_1.webp"
+                id: 6,
+                name: "LEXUS Men's Rainsuit",
+                price: "₹2,070",
+                originalPrice: "₹4,140",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/EmptyName-351-600x799.jpg"
             }
         ]
     },
     {
         id: 2,
-        image: "/products/spaces/auto_interior.webp",
-        title: "Automotive Cabin & Trunk Flooring",
+        image: "https://realrainwear.in/wp-content/uploads/2025/03/women-bann.jpg",
+        title: "Women's Trench Coats & Skirt Suits",
         products: [
             {
-                id: 1,
-                name: "Black Dilour Carpet",
-                price: "₹380/sq mtr",
-                originalPrice: "₹480/sq mtr",
-                image: "/products/dilour_black.jpg"
+                id: 25,
+                name: "NEON Women's Raincoat",
+                price: "₹1,475",
+                originalPrice: "₹2,950",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/NEON-COAT-1-600x799.jpg"
             },
             {
-                id: 9,
-                name: "Black Ribs Carpet",
-                price: "₹320/sq mtr",
-                originalPrice: "₹420/sq mtr",
-                image: "/products/ribs_black.jpg"
+                id: 22,
+                name: "All-Weather Long Raincoat",
+                price: "₹1,320",
+                originalPrice: "₹2,640",
+                image: "https://realrainwear.in/wp-content/uploads/2023/09/women-01.png"
             },
             {
-                id: 6,
-                name: "Premium Automotive Interior Dilour",
-                price: "₹420/sq mtr",
-                originalPrice: "₹520/sq mtr",
-                image: "/products/dilour_car.jpg"
+                id: 23,
+                name: "Women's Waterproof Jacket",
+                price: "₹1,450",
+                originalPrice: "₹2,800",
+                image: "https://realrainwear.in/wp-content/uploads/2025/12/1-600x799.jpg"
             }
         ]
     },
     {
         id: 3,
-        image: "/products/spaces/office_corridor.webp",
-        title: "Commercial Anti-Slip Corridors",
+        image: "https://realrainwear.in/wp-content/uploads/2025/03/kid-bann.jpg",
+        title: "Kids' School Rainwear with Bag Protection",
         products: [
             {
-                id: 10,
-                name: "Grey Ribs Carpet",
-                price: "₹320/sq mtr",
-                originalPrice: null,
-                image: "/products/ribs_grey.jpg"
+                id: 45,
+                name: "Daffodil Girl's Raincoat",
+                price: "₹1,070",
+                originalPrice: "₹2,140",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/Artboard-7-3-1-1-600x799.jpg"
             },
             {
-                id: 13,
-                name: "Heavy Duty Commercial Anti-Slip Ribs",
-                price: "₹360/sq mtr",
-                originalPrice: "₹460/sq mtr",
-                image: "/products/ribs_car.jpg"
+                id: 41,
+                name: "Kids DIY Colourful Raincoat",
+                price: "₹650",
+                originalPrice: "₹1,200",
+                image: "https://realrainwear.in/wp-content/uploads/2025/06/kids-diy-raincoat-purple-1-600x799.png"
             },
             {
-                id: 2,
-                name: "Grey Dilour Carpet",
-                price: "₹380/sq mtr",
-                originalPrice: "₹480/sq mtr",
-                image: "/products/dilour_grey.jpg"
+                id: 42,
+                name: "Boys Hooded School Raincoat",
+                price: "₹980",
+                originalPrice: "₹1,960",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/Untitled-design-1.png"
             }
         ]
     },
     {
         id: 4,
-        image: "/products/spaces/dining_salon.webp",
-        title: "Shalimar Luxury Woven Dining Salon",
+        image: "https://realrainwear.in/wp-content/uploads/2025/05/How-to-Choose-the-Best-Rain-Jacket-for-Travelers-1300x867.jpg",
+        title: "Trekking Ponchos & Backpack Covers",
         products: [
             {
-                id: 45,
-                name: "Shalimar Rug 24030 - Beige (182x270 cm)",
-                price: "₹8,500/piece",
-                originalPrice: "₹11,000/piece",
-                image: "/products/shalimar/shalimar_p1_1.webp"
+                id: 49,
+                name: "All-Weather Backpack Rain Cover",
+                price: "₹350",
+                originalPrice: "₹700",
+                image: "https://realrainwear.in/wp-content/uploads/2023/06/Mega-Menu.png"
             },
             {
-                id: 46,
-                name: "Shalimar Rug 24031 - Grey (182x270 cm)",
-                price: "₹8,500/piece",
-                originalPrice: null,
-                image: "/products/shalimar/shalimar_p1_2.webp"
+                id: 24,
+                name: "Waterproof Trekking Rain Poncho",
+                price: "₹1,150",
+                originalPrice: "₹2,300",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/How-to-Choose-the-Best-Rain-Jacket-for-Travelers-1300x867.jpg"
             },
             {
-                id: 48,
-                name: "Shalimar Rug 24031 - Steel Blue",
-                price: "₹8,500/piece",
-                originalPrice: "₹11,000/piece",
-                image: "/products/shalimar/shalimar_p1_4.webp"
+                id: 8,
+                name: "ACHIEVERS Nylon Men's Raincoat",
+                price: "₹1,500",
+                originalPrice: "₹3,000",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/ACHIEVERS-NYLON-2-600x799.jpg"
             }
         ]
     },
     {
         id: 5,
-        image: "/products/spaces/bedroom_retreat.webp",
-        title: "Minimalist Plush Bedroom Sanctuary",
+        image: "https://realrainwear.in/wp-content/uploads/2025/05/Best-Raincoats-Rainsuits-Manufacturer-in-India-scaled.jpg",
+        title: "Everyday Monsoon Commute & Storm Wear",
         products: [
             {
-                id: 35,
-                name: "New Age Poly Shrink Rug - Pure Ivory",
-                price: "₹1,250/sq mtr",
-                originalPrice: "₹1,650/sq mtr",
-                image: "/products/rugs/poly_shrink_p21_1.webp"
+                id: 4,
+                name: "BLACKBERRY Men's Rainsuit",
+                price: "₹1,325",
+                originalPrice: "₹2,650",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/EmptyName-1445-600x799.jpg"
             },
             {
-                id: 3,
-                name: "Beige Dilour Carpet",
-                price: "₹380/sq mtr",
-                originalPrice: null,
-                image: "/products/dilour_beige.jpg"
+                id: 5,
+                name: "FORCE Men's Raincoat",
+                price: "₹1,135",
+                originalPrice: "₹2,270",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/EmptyName-1563-600x799.jpg"
             },
             {
-                id: 76,
-                name: "Plush Comfort Shaggy Area Rug",
-                price: "₹4,800/piece",
-                originalPrice: "₹6,500/piece",
-                image: "/products/rugs_shaggy.jpg"
+                id: 9,
+                name: "SKIPPER Men's Rainsuit",
+                price: "₹1,375",
+                originalPrice: "₹2,750",
+                image: "https://realrainwear.in/wp-content/uploads/2025/05/SKIPPER_BRN-1-600x799.jpg"
             }
         ]
     }
@@ -357,8 +357,8 @@ const OfferSection = () => {
 
             <Heading
                 version="v2"
-                tag="CURATED SPACES & INSPIRATION"
-                title="Styled Spaces & Flooring Collections"
+                tag="MONSOON COLLECTIONS & INSPIRATION"
+                title="Engineered All-Weather Rainwear Looks"
             />
 
             <div

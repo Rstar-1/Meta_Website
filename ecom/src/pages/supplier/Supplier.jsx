@@ -18,7 +18,7 @@ const supplierSections = [
         isContainer: true,
         containerClass: 'relative z-10',
         containerStyle: {
-            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(${carpetPatchBanner})`,
+            backgroundImage: `linear-gradient(90deg, rgba(10, 15, 25, 0.94) 0%, rgba(10, 15, 25, 0.82) 50%, rgba(10, 15, 25, 0.45) 100%), url(https://realrainwear.in/wp-content/uploads/2025/05/Best-Raincoats-Rainsuits-Manufacturer-in-India-scaled.jpg)`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -32,22 +32,26 @@ const SectionFallback = memo(({ minHeight = '100px' }) => (
 ));
 
 const KNOWN_NAMES = {
-    foxecom: 'United Brothers',
-    united: 'United Brothers',
-    unitedbrothers: 'United Brothers',
-    ashmita: 'United Brothers',
-    ashmitaenterprises: 'United Brothers',
-    ashmitavinyls: 'United Brothers',
-    wsi: 'United Brothers'
+    realrainwear: 'Real Rainwear',
+    real: 'Real Rainwear',
+    rainwear: 'Real Rainwear',
+    mumbai: 'Real Rainwear',
+    foxecom: 'Real Rainwear',
+    united: 'Real Rainwear',
+    unitedbrothers: 'Real Rainwear',
+    ashmita: 'Real Rainwear',
+    ashmitaenterprises: 'Real Rainwear',
+    ashmitavinyls: 'Real Rainwear',
+    wsi: 'Real Rainwear'
 };
 
 const Supplier = () => {
     const { brandName } = useParams();
-    const brandKey = (brandName || 'unitedbrothers').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brandKey = (brandName || 'realrainwear').toLowerCase().replace(/[^a-z0-9]/g, '');
     const displayName = useMemo(() => {
         return KNOWN_NAMES[brandKey] || (brandName
             ? brandName.charAt(0).toUpperCase() + brandName.slice(1)
-            : 'United Brothers');
+            : 'Real Rainwear');
     }, [brandKey, brandName]);
 
     const breadcrumbs = useMemo(() => [
@@ -59,14 +63,14 @@ const Supplier = () => {
     return (
         <>
             <SEO
-                title="United Brothers - Quality Flooring Solutions | Ahmedabad, Gujarat"
-                description="Manufacturer & Supplier of Dilour Carpets, Ribs Carpets, New Poly Shrink Rugs & Shalimar Rugs. Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad. Contact: +91 84548 38638."
+                title="Real Rainwear - Quality Rainwear Solutions | Mumbai, Maharashtra"
+                description="Manufacturer & Exporter of Men's Rain Suits, Women's Raincoats, Kids Rainwear & Waterproof Ponchos. 3, 222, Durya Mansion, Kambekar Street, Masjid, Mandvi, Mumbai - 400003. Contact: +91 8104013898."
                 path={`/supplier/${brandKey}`}
                 breadcrumbs={breadcrumbs}
             />
             <Banner
                 title={displayName}
-                desc="Quality Flooring Solutions — Better Floors Brighter Spaces | Ahmedabad, Gujarat"
+                desc="India's Leading Rainwear Manufacturer & Exporter Since 1979 | Mandvi, Mumbai"
                 breadcrumbs={breadcrumbs}
             />
             {supplierSections.map(({ id, Component, isEager, minHeight, isContainer, containerClass, containerStyle }) => {

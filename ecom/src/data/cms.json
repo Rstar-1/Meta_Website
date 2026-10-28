@@ -27,28 +27,77 @@
         }
       ]
     },
-    "platforms": ["Dilour & Ribs Non-Woven", "1800 GSM Poly Shrink Rugs", "Shalimar Designer Weaves"],
+    "platforms": [
+      "Dilour & Ribs Non-Woven",
+      "1800 GSM Poly Shrink Rugs",
+      "Shalimar Designer Weaves"
+    ],
     "codeSnippets": {
       "Dilour & Ribs Non-Woven": [
-        { "num": 1, "code": "const composition = '100% Virgin Synthetic Fiber'" },
-        { "num": 2, "code": "const surfaceType = 'Cut-Pile Velour & Linear Ribbed'" },
-        { "num": 3, "code": "const rollWidth = ['2.0m', '3.66m', '4.0m Master Rolls']" },
-        { "num": 4, "code": "const acousticAbsorption = 'NRC 0.35 Sound Damping'" },
-        { "num": 5, "code": "export default getAutomotiveCarpetSpec()" }
+        {
+          "num": 1,
+          "code": "const composition = '100% Virgin Synthetic Fiber'"
+        },
+        {
+          "num": 2,
+          "code": "const surfaceType = 'Cut-Pile Velour & Linear Ribbed'"
+        },
+        {
+          "num": 3,
+          "code": "const rollWidth = ['2.0m', '3.66m', '4.0m Master Rolls']"
+        },
+        {
+          "num": 4,
+          "code": "const acousticAbsorption = 'NRC 0.35 Sound Damping'"
+        },
+        {
+          "num": 5,
+          "code": "export default getAutomotiveCarpetSpec()"
+        }
       ],
       "1800 GSM Poly Shrink Rugs": [
-        { "num": 1, "code": "const density = '1800 GSM Ultra-Dense High Pile'" },
-        { "num": 2, "code": "const weaveTechnology = 'Thermal Shrink 3D Dimension'" },
-        { "num": 3, "code": "const backing = 'Integrated Heavy Self-Backing'" },
-        { "num": 4, "code": "const stainResistance = 'Oleophobic Soil-Shield Weave'" },
-        { "num": 5, "code": "return <PolyShrinkLuxuryRug spec={density} />" }
+        {
+          "num": 1,
+          "code": "const density = '1800 GSM Ultra-Dense High Pile'"
+        },
+        {
+          "num": 2,
+          "code": "const weaveTechnology = 'Thermal Shrink 3D Dimension'"
+        },
+        {
+          "num": 3,
+          "code": "const backing = 'Integrated Heavy Self-Backing'"
+        },
+        {
+          "num": 4,
+          "code": "const stainResistance = 'Oleophobic Soil-Shield Weave'"
+        },
+        {
+          "num": 5,
+          "code": "return <PolyShrinkLuxuryRug spec={density} />"
+        }
       ],
       "Shalimar Designer Weaves": [
-        { "num": 1, "code": "const yarn = 'Lustrous Color-Fast Polyester Weft'" },
-        { "num": 2, "code": "const pattern = 'Heritage Persian & Modern Geometric'" },
-        { "num": 3, "code": "const pileHeight = '12mm High-Low Sculpted Feel'" },
-        { "num": 4, "code": "const maintenance = 'Spot Cleanable & Vacuum Friendly'" },
-        { "num": 5, "code": "export const shalimarCollection = getShalimarCatalog()" }
+        {
+          "num": 1,
+          "code": "const yarn = 'Lustrous Color-Fast Polyester Weft'"
+        },
+        {
+          "num": 2,
+          "code": "const pattern = 'Heritage Persian & Modern Geometric'"
+        },
+        {
+          "num": 3,
+          "code": "const pileHeight = '12mm High-Low Sculpted Feel'"
+        },
+        {
+          "num": 4,
+          "code": "const maintenance = 'Spot Cleanable & Vacuum Friendly'"
+        },
+        {
+          "num": 5,
+          "code": "export const shalimarCollection = getShalimarCatalog()"
+        }
       ]
     },
     "racers": [
@@ -82,12 +131,30 @@
         "ctaLink": "/connect",
         "hasTopCta": true,
         "tabs": [
-          { "label": "Residential Living", "value": "Residential" },
-          { "label": "Automotive Cabins", "value": "Automotive" },
-          { "label": "Commercial Corridors", "value": "Commercial" },
-          { "label": "Banquet Halls", "value": "Banquet" },
-          { "label": "Corporate Offices", "value": "Office" },
-          { "label": "Hospitality Suites", "value": "Hospitality" }
+          {
+            "label": "Residential Living",
+            "value": "Residential"
+          },
+          {
+            "label": "Automotive Cabins",
+            "value": "Automotive"
+          },
+          {
+            "label": "Commercial Corridors",
+            "value": "Commercial"
+          },
+          {
+            "label": "Banquet Halls",
+            "value": "Banquet"
+          },
+          {
+            "label": "Corporate Offices",
+            "value": "Office"
+          },
+          {
+            "label": "Hospitality Suites",
+            "value": "Hospitality"
+          }
         ],
         "collaboration": {
           "title": "Select the perfect carpet grade and texture specification for your space.",
@@ -117,10 +184,26 @@
         "hasTopCta": true,
         "codeIntro": "Engineered carpet specifications and technical parameters:_",
         "tools": [
-          { "label": "1800 GSM High Pile", "icon": "Box", "href": "/product" },
-          { "label": "Needle-Punch Non-Woven", "icon": "Layers", "href": "/product" },
-          { "label": "Acoustic Backing", "icon": "Builder", "href": "/product" },
-          { "label": "Pan-India Dispatch", "icon": "Headphones", "href": "/connect" }
+          {
+            "label": "1800 GSM High Pile",
+            "icon": "Box",
+            "href": "/product"
+          },
+          {
+            "label": "Needle-Punch Non-Woven",
+            "icon": "Layers",
+            "href": "/product"
+          },
+          {
+            "label": "Acoustic Backing",
+            "icon": "Builder",
+            "href": "/product"
+          },
+          {
+            "label": "Pan-India Dispatch",
+            "icon": "Headphones",
+            "href": "/connect"
+          }
         ]
       },
       {
@@ -232,25 +315,70 @@
     },
     "platformCodeSnippets": {
       "Dilour & Ribs Non-Woven": [
-        { "num": 1, "code": "const rollWidth = '2.00m | 3.66m | 4.00m'" },
-        { "num": 2, "code": "const thickness = '2.5mm to 4.5mm'" },
-        { "num": 3, "code": "const rollLength = '30m to 50m Master Rolls'" },
-        { "num": 4, "code": "const colors = ['Black', 'Grey', 'Beige', 'Brown', 'Red']" },
-        { "num": 5, "code": "return generateCustomCarpetCut(spec)" }
+        {
+          "num": 1,
+          "code": "const rollWidth = '2.00m | 3.66m | 4.00m'"
+        },
+        {
+          "num": 2,
+          "code": "const thickness = '2.5mm to 4.5mm'"
+        },
+        {
+          "num": 3,
+          "code": "const rollLength = '30m to 50m Master Rolls'"
+        },
+        {
+          "num": 4,
+          "code": "const colors = ['Black', 'Grey', 'Beige', 'Brown', 'Red']"
+        },
+        {
+          "num": 5,
+          "code": "return generateCustomCarpetCut(spec)"
+        }
       ],
       "1800 GSM Poly Shrink Rugs": [
-        { "num": 1, "code": "const gsm = '1800 GSM High Density'" },
-        { "num": 2, "code": "const technique = 'Thermal Poly Shrink 3D Weave'" },
-        { "num": 3, "code": "const sizes = ['4x6 ft', '5x7 ft', '6x9 ft', '8x10 ft']" },
-        { "num": 4, "code": "const backing = 'Self-Backing Non-Slip Anchor'" },
-        { "num": 5, "code": "return deployPolyShrinkRugs()" }
+        {
+          "num": 1,
+          "code": "const gsm = '1800 GSM High Density'"
+        },
+        {
+          "num": 2,
+          "code": "const technique = 'Thermal Poly Shrink 3D Weave'"
+        },
+        {
+          "num": 3,
+          "code": "const sizes = ['4x6 ft', '5x7 ft', '6x9 ft', '8x10 ft']"
+        },
+        {
+          "num": 4,
+          "code": "const backing = 'Self-Backing Non-Slip Anchor'"
+        },
+        {
+          "num": 5,
+          "code": "return deployPolyShrinkRugs()"
+        }
       ],
       "Shalimar Designer Weaves": [
-        { "num": 1, "code": "const weave = 'Precision Jacquard Woven Rug'" },
-        { "num": 2, "code": "const pileType = 'Soft Touch Polyester High-Low'" },
-        { "num": 3, "code": "const style = 'Persian Traditional & Modern Minimalist'" },
-        { "num": 4, "code": "const washCare = 'Stain Resistant & Spot Cleanable'" },
-        { "num": 5, "code": "export const shalimarCollection = getShalimarCatalog()" }
+        {
+          "num": 1,
+          "code": "const weave = 'Precision Jacquard Woven Rug'"
+        },
+        {
+          "num": 2,
+          "code": "const pileType = 'Soft Touch Polyester High-Low'"
+        },
+        {
+          "num": 3,
+          "code": "const style = 'Persian Traditional & Modern Minimalist'"
+        },
+        {
+          "num": 4,
+          "code": "const washCare = 'Stain Resistant & Spot Cleanable'"
+        },
+        {
+          "num": 5,
+          "code": "export const shalimarCollection = getShalimarCatalog()"
+        }
       ]
     },
     "securityCard": {
@@ -262,9 +390,18 @@
       "title": "Trusted by 1,000+ Architects, Showrooms & Trimmers in India",
       "ctaText": "Request Wholesale Price List",
       "metrics": [
-        { "value": "1000+", "label": "Projects & Trimmers" },
-        { "value": "1800", "label": "GSM Ultra-Dense Rugs" },
-        { "value": "99.8%", "label": "On-Time Dispatch" }
+        {
+          "value": "1000+",
+          "label": "Projects & Trimmers"
+        },
+        {
+          "value": "1800",
+          "label": "GSM Ultra-Dense Rugs"
+        },
+        {
+          "value": "99.8%",
+          "label": "On-Time Dispatch"
+        }
       ]
     },
     "bottomStatCapsules": [
@@ -407,27 +544,27 @@
     ]
   },
   "PatchSection": {
-    "badge": "AHMEDABAD'S PREMIER MANUFACTURER",
-    "title": "Crafting Luxury Carpets & Non-Woven Flooring for Homes, Vehicles & Offices Across India.",
-    "description": "United Brothers delivers precision-tufted Dilour carpets, heavy-duty Ribs rolls, and 1800 GSM Poly Shrink rugs with direct factory pricing and immediate pan-India dispatch.",
+    "badge": "INDIA'S PREMIER RAINWEAR BRAND",
+    "title": "Pioneering All-Weather Rain Protection & Waterproof Gear Across India.",
+    "description": "Since 1979, Real Rainwear has firmly established itself as India's preeminent manufacturer and exporter of heavy-duty rain suits, trendy women's raincoats, and school-ready kids' rainwear with 100% heat-sealed taped seams and direct factory wholesale dispatch.",
     "stats": [
       {
         "id": 1,
-        "value": "1000",
+        "value": "45",
         "symbol": "+",
-        "label": "Distributors, car trimmers & interior designers served."
+        "label": "Years of excellence in rainwear manufacturing since 1979."
       },
       {
         "id": 2,
-        "value": "1800",
-        "symbol": "GSM",
-        "label": "High-density woven poly shrink rug craftsmanship."
+        "value": "10000",
+        "symbol": "mm",
+        "label": "Hydrostatic head waterproof rating with heat-sealed seams."
       },
       {
         "id": 3,
         "value": "100",
         "symbol": "%",
-        "label": "Virgin synthetic fiber with anti-fray durability."
+        "label": "Waterproof protection guaranteed across every garment."
       }
     ]
   }

@@ -42,29 +42,29 @@ const ENQUIRY_FIELDS = [
 const CONTACT_DETAILS = [
     {
         icon: 'MapPin',
-        title: 'Office Address',
-        desc: import.meta.env.VITE_ADDRESS || 'Office No. 827, Siddhi Vinayak Arcade, Vasna, Ahmedabad',
-        sub: 'Gujarat, India'
+        title: 'Showroom & Head Office',
+        desc: import.meta.env.VITE_ADDRESS || '3, 222, Durya Mansion, Kambekar Street, Masjid',
+        sub: 'Mandvi, Mumbai - 400003, Maharashtra, India'
     },
     {
         icon: 'Phone',
-        title: 'Call Us',
-        desc: import.meta.env.VITE_PHONE || '+91 84548 38638',
-        link: `tel:${(import.meta.env.VITE_PHONE || '+918454838638').replace(/[^\d+]/g, '')}`,
-        sub: 'Contact Person: Julie Shah'
+        title: 'Call & WhatsApp',
+        desc: import.meta.env.VITE_PHONE || '+91 8104013898',
+        link: `tel:${(import.meta.env.VITE_PHONE || '+918104013898').replace(/[^\d+]/g, '')}`,
+        sub: 'Mon - Sat: 11:00 AM - 9:00 PM'
     },
     {
         icon: 'Mail',
         title: 'Email Us',
-        desc: import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com',
-        link: `mailto:${import.meta.env.VITE_EMAIL || 'unitedbrothers879@gmail.com'}`,
-        sub: 'PAN: AAJFU3175H | GST: Applied'
+        desc: import.meta.env.VITE_EMAIL || 'info@realrainwear.in',
+        link: `mailto:${import.meta.env.VITE_EMAIL || 'info@realrainwear.in'}`,
+        sub: 'Orders, Dealership & Wholesale Enquiries'
     },
     {
         icon: 'Clock',
-        title: 'Working Hours',
-        desc: import.meta.env.VITE_WORKING_HOURS || 'Mon to Sat: 9:00 AM - 7:00 PM',
-        sub: import.meta.env.VITE_WEEKEND_HOURS || 'Sun: Closed'
+        title: 'Operating Hours',
+        desc: import.meta.env.VITE_WORKING_HOURS || 'Monday to Saturday: 11:00 AM – 9:00 PM',
+        sub: import.meta.env.VITE_WEEKEND_HOURS || 'Sunday: Closed'
     }
 ];
 
@@ -132,8 +132,8 @@ const Enquiry = React.memo(() => {
                     version="v2"
                     tag="GET IN TOUCH"
                     tagIcon="Phone"
-                    title="Contact United Brothers"
-                    subtitle="Have a flooring project in mind, need custom carpet sizing, or require bulk rug catalog samples? Reach out to Julie Shah & our team."
+                    title="Contact Real Rainwear"
+                    subtitle="Have an enquiry about our men's, women's, or kids' rainwear collections, need distributor dealership details, or require bulk institutional quotes? Reach out to our team."
                     className="mb-20"
                 />
 
@@ -157,8 +157,8 @@ const Enquiry = React.memo(() => {
                 <Heading
                     version="v2"
                     tag=""
-                    title={import.meta.env.VITE_SUPPORT_TITLE || "Flooring Solutions Support"}
-                    subtitle={import.meta.env.VITE_SUPPORT_SUBTITLE || "Better Floors, Brighter Spaces — Dilour Carpets, Ribs Carpets, and Luxury Rugs direct from United Brothers Ahmedabad."}
+                    title={import.meta.env.VITE_SUPPORT_TITLE || "Rainwear Support & Dealership"}
+                    subtitle={import.meta.env.VITE_SUPPORT_SUBTITLE || "Stay Dry in Style Since 1979 — Premium raincoats, biker suits, and waterproof gear direct from Real Rainwear Mumbai."}
                     className="mb-20"
                 />
 
