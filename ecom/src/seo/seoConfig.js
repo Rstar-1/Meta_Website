@@ -1,6 +1,6 @@
-const SITE_URL = (import.meta.env.VITE_SITE_URL || "").replace(/\/$/, "");
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || "United Brothers";
-const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/united_brothers_color.png";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://goonjhealthcare.com").replace(/\/$/, "");
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || "Goonj & Shreehari Healthcare";
+const DEFAULT_IMAGE = import.meta.env.VITE_SEO_IMAGE || "/products/spaces/hospital_ward.jpg";
 
 export { SITE_URL, SITE_NAME, DEFAULT_IMAGE };
 
@@ -9,46 +9,94 @@ export const siteInfo = {
   url: SITE_URL,
   description:
     import.meta.env.VITE_SEO_DESCRIPTION ||
-    "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications.",
-  phone: import.meta.env.VITE_PHONE || "07942562287",
-  email: import.meta.env.VITE_EMAIL || "info@ashmitavinyls.com",
+    "Leading manufacturers & suppliers of Grade 304 Hospital Holloware, OT Surgical Lights, Autoclaves, CE-Certified First Aid Boxes, and Emergency Stretchers from Delhi & Mumbai.",
+  phone: import.meta.env.VITE_PHONE || "+91 98731 98731",
+  email: import.meta.env.VITE_EMAIL || "info@goonjcom.in",
+
+  // Central Hubs
+  delhiHub: {
+    name: "Delhi Distribution Hub (Goonj Communication & Electronic Scale Co. / Brand CYNOR)",
+    address: "58-B, Damodar Park Ind. Area, Dilshad Garden",
+    locality: "Dilshad Garden",
+    city: "Delhi",
+    postalCode: "110095",
+    country: "IN",
+    phone: "+91 98731 98731",
+    altPhone: "+91 98732 98731",
+    email: "info@goonjcom.in",
+    supportEmail: "support@goonjcom.in",
+    website: "https://www.goonjcom.in",
+    gstin: "07AAAFG8942K1ZV",
+    fullAddress: "58-B, Damodar Park Ind. Area, Dilshad Garden, Delhi - 110095, India",
+    geo: {
+      latitude: 28.6835,
+      longitude: 77.3178,
+    },
+  },
+
+  mumbaiHub: {
+    name: "Mumbai First Aid Hub (Shreehari Surgicals & Co. / Brand SUPPORT)",
+    address: "11/12, 2nd floor, 290/292, Vadgadi Azad Chowk CHSL, Samuel Street",
+    locality: "Masjid Bunder West",
+    city: "Mumbai",
+    region: "Maharashtra",
+    postalCode: "400003",
+    country: "IN",
+    phone: "+91 98179 26992",
+    altPhone: "+91 98205 60982",
+    email: "shreeharisurgicals.co2022@gmail.com",
+    website: "https://www.shreeharisurgicals.com",
+    gstin: "27NKOPS399G1ZY",
+    dlNo: "20B-MH-MZ1-521914 / 21B-MH-MZ1-521915",
+    fullAddress: "11/12, 2nd floor, 290/292, Vadgadi Azad Chowk CHSL, Samuel Street Masjid Bunder West Mumbai 400003.",
+    geo: {
+      latitude: 18.9536,
+      longitude: 72.8378,
+    },
+  },
 
   address: {
-    streetAddress: "C 304, 3rd Floor, Eastern Business District, L.B.S Marg Road, Bhandup West",
+    streetAddress: "11/12, 2nd floor, 290/292, Vadgadi Azad Chowk CHSL, Samuel Street Masjid Bunder West",
     addressLocality: "Mumbai",
     addressRegion: "Maharashtra",
-    postalCode: "400078",
+    postalCode: "400003",
     addressCountry: "IN",
-    fullAddress: import.meta.env.VITE_ADDRESS || "Ashmita Enterprises C 304, 3 Rd Floor, Eastern Business Distric, Near Mangatram Petrol Pump L.B.S Marg Road, Bhandup West, Mumbai City, Mumbai - 400078, Maharashtra, India",
+    fullAddress:
+      import.meta.env.VITE_ADDRESS ||
+      "Delhi Hub: 58-B, Damodar Park, Dilshad Garden - 110095 | Mumbai Hub: 11/12, 2nd floor, 290/292, Vadgadi Azad Chowk CHSL, Samuel Street Masjid Bunder West Mumbai 400003.",
   },
 
   geo: {
-    latitude: 19.1485,
-    longitude: 72.9367,
+    latitude: 18.9536,
+    longitude: 72.8378,
   },
 
   sameAs: [
-    import.meta.env.VITE_SOCIAL_INSTAGRAM,
-    import.meta.env.VITE_SOCIAL_YOUTUBE,
     import.meta.env.VITE_SOCIAL_FACEBOOK,
+    import.meta.env.VITE_SOCIAL_INSTAGRAM,
     import.meta.env.VITE_SOCIAL_LINKEDIN,
+    import.meta.env.VITE_SOCIAL_YOUTUBE,
+    "https://www.goonjcom.in",
+    "https://www.shreeharisurgicals.com",
   ].filter(Boolean),
 };
 
 export const pageSeoData = {
   home: {
-    title: import.meta.env.VITE_SEO_TITLE || "PVC Vinyl Products Manufacturer in India | Ashmita Vinyls",
+    title:
+      import.meta.env.VITE_SEO_TITLE ||
+      "Goonj & Shreehari Healthcare | Hospital Holloware, OT Equipment & Certified First Aid Kits",
     description:
       import.meta.env.VITE_SEO_DESCRIPTION ||
-      "Ashmita Vinyls manufactures and supplies PVC vinyl products for commercial and industrial applications across India.",
+      "Leading Indian manufacturers & suppliers of Grade 304 Stainless Steel Hospital Holloware, LED OT Surgical Lights, Vertical Autoclaves, Section 45 Factories Act First Aid Kits, and Emergency Stretchers.",
     path: "/home",
     breadcrumbs: [{ label: "Home", path: "/home" }],
   },
 
   about: {
-    title: "About Ashmita Vinyls | PVC Vinyl Manufacturer in India",
+    title: "About Us | Goonj Communication & Shreehari Surgicals Healthcare Network",
     description:
-      "Learn about Ashmita Vinyls, our PVC vinyl manufacturing capabilities, quality focus and industrial solutions.",
+      "Learn about Goonj Communication (brand CYNOR) in Delhi and Shreehari Surgicals & Co. (brand SUPPORT) in Mumbai, delivering CE-certified hospital furniture, surgical lighting, AISI 304 holloware, and workplace trauma supplies.",
     path: "/about",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -57,9 +105,9 @@ export const pageSeoData = {
   },
 
   product: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Hospital Holloware, OT Lights & First Aid Products Catalog | Goonj & Shreehari",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore certified AISI 304 hospital dressing drums, surgical instrument trays, shadowless cold LED OT lights, vertical autoclaves, Factories Act compliant first aid metal boxes, and emergency patient stretchers.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -68,9 +116,9 @@ export const pageSeoData = {
   },
 
   products: {
-    title: "PVC Vinyl Products & Solutions | Ashmita Vinyls",
+    title: "Hospital Holloware, OT Lights & First Aid Products Catalog | Goonj & Shreehari",
     description:
-      "Explore PVC vinyl products and industrial vinyl solutions from Ashmita Vinyls.",
+      "Explore certified AISI 304 hospital dressing drums, surgical instrument trays, shadowless cold LED OT lights, vertical autoclaves, Factories Act compliant first aid metal boxes, and emergency patient stretchers.",
     path: "/product",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -79,9 +127,9 @@ export const pageSeoData = {
   },
 
   productDetail: {
-    title: "PVC Vinyl Product Details | Ashmita Vinyls",
+    title: "Medical & Emergency Product Details | Technical Specifications & Wholesale Supply",
     description:
-      "Explore detailed specifications, technical parameters, and applications for PVC vinyl products by Ashmita Vinyls.",
+      "Detailed specifications, technical parameters, CE Certificate of Compliance, ISO 9001 certifications, and institutional hospital wholesale supply pricing.",
     path: "/product-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -91,32 +139,31 @@ export const pageSeoData = {
   },
 
   supplier: {
-    title: "PVC Vinyl Applications & Industries | Ashmita Vinyls",
+    title: "Direct Manufacturer Distribution Hubs | Delhi & Mumbai Warehouses",
     description:
-      "Discover industries and applications using Ashmita Vinyls PVC vinyl solutions.",
+      "Connect with Goonj Communication in Dilshad Garden, Delhi and Shreehari Surgicals & Co. in Masjid Bunder, Mumbai for direct manufacturer supply, pan-India cargo dispatch, and hospital tenders.",
     path: "/supplier",
     breadcrumbs: [
       { label: "Home", path: "/home" },
-      { label: "Products", path: "/product" },
       { label: "Supplier Profile", path: "/supplier" },
     ],
   },
 
   quality: {
-    title: "PVC Vinyl Manufacturing Quality | Ashmita Vinyls",
+    title: "Manufacturing Quality & Accreditations | CE, ISO 9001 & AISI 304 Stainless Steel",
     description:
-      "Explore Ashmita Vinyls manufacturing quality, infrastructure and PVC vinyl production capabilities.",
+      "Explore Goonj and Shreehari manufacturing quality standards, AISI 304 surgical steel fabrication, CE conformity (Directive 2006/42/CE & 92/29), ISO 9001:2015, and Section 45 Factories Act compliance.",
     path: "/quality",
     breadcrumbs: [
       { label: "Home", path: "/home" },
-      { label: "Quality", path: "/quality" },
+      { label: "Quality & Accreditations", path: "/quality" },
     ],
   },
 
   connect: {
-    title: "Contact Ashmita Vinyls | PVC Vinyl Product Enquiry",
+    title: "Institutional Enquiry & Contact | Delhi & Mumbai Healthcare Hubs",
     description:
-      "Contact Ashmita Vinyls for PVC vinyl product enquiries, specifications and bulk requirements.",
+      "Contact Goonj & Shreehari Surgicals for wholesale healthcare tenders, institutional hospital rate cards, custom industrial first aid kits, or emergency medical dispatches.",
     path: "/connect",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -125,31 +172,32 @@ export const pageSeoData = {
   },
 
   blog: {
-    title: "Carpets, Rugs & Flooring Insights | United Brothers",
+    title: "Healthcare, Sterilization & Workplace Safety Insights | Goonj & Shreehari",
     description:
-      "Read expert guides on 1800 GSM poly shrink rugs, dilour & ribs carpets, interior styling, and commercial flooring solutions by United Brothers.",
+      "Read expert technical guides on Section 45 Factories Act industrial first aid stations, AISI 304 autoclave sterilization cycles, LED OT lighting lux levels, and patient transfer ergonomics.",
     path: "/blog",
     breadcrumbs: [
       { label: "Home", path: "/home" },
-      { label: "News & Media", path: "/blog" },
+      { label: "Healthcare Insights", path: "/blog" },
     ],
   },
 
   blogDetail: {
-    title: "Carpets & Rugs Articles | United Brothers",
+    title: "Healthcare Technical Articles & Safety Compliance Guides | Goonj & Shreehari",
     description:
-      "Latest technical insights, styling guides, and care updates on carpets and luxury woven rugs by United Brothers.",
+      "In-depth clinical equipment guides, regulatory factory inspectorate standards, trauma rescue procedures, and surgical suite procurement insights.",
     path: "/blog-detail",
     breadcrumbs: [
       { label: "Home", path: "/home" },
-      { label: "News & Media", path: "/blog" },
-      { label: "Blog Detail", path: "/blog-detail" },
+      { label: "Healthcare Insights", path: "/blog" },
+      { label: "Article Detail", path: "/blog-detail" },
     ],
   },
 
   privacy: {
-    title: "Privacy Policy | Ashmita Vinyls",
-    description: "Read the Ashmita Vinyls privacy policy.",
+    title: "Privacy Policy | Goonj & Shreehari Healthcare Network",
+    description:
+      "Read our institutional privacy policy regarding healthcare procurement, customer quotations, and secure data practices.",
     path: "/privacy",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -158,8 +206,9 @@ export const pageSeoData = {
   },
 
   terms: {
-    title: "Terms & Conditions | Ashmita Vinyls",
-    description: "Read the terms and conditions of Ashmita Vinyls.",
+    title: "Terms & Conditions | Goonj & Shreehari Healthcare Network",
+    description:
+      "Terms of trade, institutional hospital warranties, wholesale return policies, and pan-India transit terms.",
     path: "/terms",
     breadcrumbs: [
       { label: "Home", path: "/home" },
@@ -170,19 +219,29 @@ export const pageSeoData = {
 
 export const aeoFAQs = [
   {
-    question: "What is Ashmita Vinyls?",
+    question: "What medical products does Goonj Communication & Brand CYNOR manufacture?",
     answer:
-      "Ashmita Vinyls is a PVC vinyl products manufacturer and supplier in India serving commercial and industrial requirements.",
+      "Goonj Communication & Brand CYNOR (Delhi) manufactures and supplies AISI 304 stainless steel hospital holloware (jointed and jointless dressing drums, surgical instrument trays, kidney dishes, catheter trays, bedpans), shadowless cold LED surgical lights (7, 12, and 20 LED), vertical radial autoclaves, electric surgical suction apparatus, ICU beds, crash carts, and sterile hospital linens.",
   },
   {
-    question: "What products does Ashmita Vinyls supply?",
+    question: "What emergency and first aid products does Shreehari Surgicals & Co. supply?",
     answer:
-      "Ashmita Vinyls supplies PVC vinyl products and industrial vinyl solutions for different commercial and industrial applications.",
+      "Shreehari Surgicals & Co. (Brand SUPPORT, Mumbai) specializes in CE-certified industrial first aid kits (Type A, Type B, Type C metal boxes compliant with Section 45 Factories Act), emergency scoop stretchers, folding stretchers, evacuation stair chairs, spine boards, trauma rescue kits, and stainless steel wall-mounted first aid cabinets.",
   },
   {
-    question: "How can I enquire about PVC vinyl products?",
+    question: "Where are the Goonj and Shreehari central distribution hubs located?",
     answer:
-      "You can contact Ashmita Vinyls through the website contact page, phone or email for product specifications and bulk enquiries.",
+      "Our North India hub is Goonj Communication, located at 58-B, Damodar Park Ind. Area, Dilshad Garden, Delhi - 110095 (Phone: +91 98731 98731). Our Western India emergency hub is Shreehari Surgicals & Co., located at 11/12, 2nd floor, 290/292, Vadgadi Azad Chowk CHSL, Samuel Street Masjid Bunder West Mumbai 400003 (Phone: +91 98179 26992 / +91 98205 60982 | Email: shreeharisurgicals.co2022@gmail.com).",
+  },
+  {
+    question: "How can hospitals and industrial enterprises request wholesale quotations or custom kits?",
+    answer:
+      "You can submit institutional requirements through the website contact form on the Connect Us page, email Delhi (info@goonjcom.in) or Mumbai (shreeharisurgicals.co2022@gmail.com), or call direct lines +91 98731 98731 / +91 98179 26992 for immediate tenders and factory wholesale pricing.",
+  },
+  {
+    question: "What quality certifications and regulatory approvals do the products hold?",
+    answer:
+      "All hospital holloware is fabricated from genuine AISI 304 surgical grade stainless steel. Emergency stretchers and first aid boxes carry CE Certificate of Compliance (Directive 2006/42/CE & EC Directive 92/29), ISO 9001:2015 quality management accreditation, statutory alignment with Indian Factories Act Section 45, and Drug License certifications (20B-MH-MZ1-521914 / 21B-MH-MZ1-521915).",
   },
 ];
 
